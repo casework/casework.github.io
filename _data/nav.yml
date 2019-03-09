@@ -1,0 +1,41 @@
+- name: Getting Started
+  link: /ontology/start.html
+- name: Ontology
+  submenuitems:
+    - name: Introduction
+      link: /ontology/intro.html
+    - name: Guides
+      link: /ontology/guides.html
+    - name: Examples
+      link: /ontology/examples.html
+    - name: Latest Specification
+      link: /ontology/spec.html
+    - name: SPACE
+    - name: Contribute
+      link: /ontology/contribute.html
+- name: Community
+  submenuitems:
+    - name: Governance Committee
+      link: /community/governance.html
+    - name: Ontology Committee
+      link: /community/ontology.html
+    - name: Members
+      link: /community/members.html
+    - name: Meetings
+      link: /community/meetings.html
+    - name: SPACE
+    - name: Join CASE Community
+      link: /community/join.html
+- name: Resources
+  submenuitems:
+    - header: Library
+    - name: Bylaws
+      link: /resources/bylaws.html
+    - name: Code of Conduct
+      link: /resources/coc.html
+    - name: Downloads
+      link: /resources/downloads.html
+    - header: Documentation
+    - name: Roadmap
+      link: /resources/roadmap.html
+    - name: Publications

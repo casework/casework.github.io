@@ -1,0 +1,38 @@
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/index.html">CASE</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          {% if site.data.nav[0] %}
+            {% for item in site.data.nav %}
+              {% if item.link %}
+                <li class="nav-item"><a class="nav-link {% if item.url == page.url %}active{% endif %}" href="#">{{ item.name }}</a></li>
+              {% else %}
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ item.name }}</a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                {% if item.submenuitems[0] %}
+                    {% for entry in item.submenuitems %}
+                      {% if entry.header %}
+                        <h6 class="dropdown-header">{{ entry.header }}</h6>
+                      {% elsif entry.name == "SPACE" %}
+                        <div class="dropdown-divider"></div>
+                      {% else %}
+                        <a class="dropdown-item {% if entry.link == page.url %}active{% endif %}" href="{{ entry.link }}">{{ entry.name }}</a>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                {% endif %}
+                </li>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+</nav>
