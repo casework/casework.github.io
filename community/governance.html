@@ -1,0 +1,33 @@
+---
+
+layout: home
+title: Governance Committee
+
+---
+
+<!-- Governance Committee -->
+<section class="default bg-light">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h2 class="display-4">CASE Governance Committee Directors</h2>
+      <p class="lead">The Governance Committee Directors are required to establish and maintain the governance structure
+        of the CASE Open Source Community and to represent the interests of their member class to the Governance Committee.</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row text-center">
+      {% for director in site.data.governance.directors %}
+        <div class="col-lg-4">
+          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+            <h4>{{ director.title }}</h4>
+            <img class="img-fluid rounded-sm mb-3" src="/assets/img/governance/{{ director.image }}" alt="">
+            <h5>{{ director.name }}</h5>
+            <h6 class="text-black-50">{{ director.subhead }}</h6>
+            <p class="font-weight-light mb-5 text-justify">{{ director.bio }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <p>For more information on the Governance Committee composition and responsibilities refer to the Community Bylaws.</p>
+  </div>
+</section>

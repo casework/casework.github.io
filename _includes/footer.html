@@ -20,7 +20,7 @@
             <a href="#">Privacy Policy</a>
           </li>
         </ul>
-        <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.</p>
+        <p class="text-muted small mb-4 mb-lg-0">&copy; CASE Community 2019. All Rights Reserved.</p>
       </div>
       <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
         <ul class="list-inline mb-0">
@@ -48,6 +48,11 @@
 <!-- Bootstrap core JavaScript -->
 <script src="/vendor/jquery/jquery.min.js"></script>
 <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+{% if page.custom_css %}
+  {% for stylesheet in page.custom_css %}
+    <script src="/assets/js/{{ stylesheet }}.js"></script>
+  {% endfor %}
+{% endif %}
 
 </body>
 
