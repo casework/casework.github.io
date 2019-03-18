@@ -6,8 +6,13 @@ jumbo_desc: Cyber-investigation Analysis Standard Expression (CASE) Open Source 
 ###### Ratification Date: 15 NOVEMBER 2018
 
 
-Change Register:
-1. Added Presiding Director and Community Secretary names at the end of the document after initial Governance Committee election. Date of change: 22 January 2019.
+##### Change Register:
+
+{: .table .table-bordered}
+| Date  | Description |
+| ------------- | ------------- |
+| 22 Jan 2019 | Added Presiding Director and Community Secretary names at the end of the document after initial Governance Committee election. |
+
 
 
 ### Article I: Name
