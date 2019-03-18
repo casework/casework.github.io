@@ -38,9 +38,9 @@
 <!-- Bootstrap core JavaScript -->
 <script src="/vendor/jquery/jquery.min.js"></script>
 <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-{% if page.custom_css %}
-  {% for stylesheet in page.custom_css %}
-    <script src="/assets/js/{{ stylesheet }}.js"></script>
+{% if page.custom_js %}
+  {% for js in page.custom_js %}
+    <script src="/assets/js/{{ js }}.js"></script>
   {% endfor %}
 {% endif %}
 
