@@ -1,0 +1,28 @@
+- title: Leveraging CybOX to Standardize Representation and Exchange of Digital Forensic Information
+  desc: Origins of CASE from the Digital Forensic Analysis eXpression (DFAX) are provided at DFRWS EU 2015.
+  type: Presentation
+  source: DFRWS EU
+  source_url: https://www.dfrws.org
+  date: 2015-03-23
+  url: https://www.dfrws.org/sites/default/files/session-files/paper-leveraging_cybox_to_standardize_representation_and_exchange_of_digital_forensic_information.pdf
+- title: Leveraging CybOX to Standardize Representation and Exchange of Digital Forensic Information
+  desc: This work summarizes the strengths and weaknesses of prior schemas, and defines an open-source schema called DFAX and underlying UCO ontology for representing and exchanging digital forensic information.
+  type: Paper
+  source: Digital Investigation Journal
+  source_url: https://www.journals.elsevier.com/digital-investigation
+  date: 2015-03-01
+  url: https://www.sciencedirect.com/science/article/pii/S1742287615000158?via%3Dihub
+- title: Using Standardization and Ontology to Enhance Data Protection and Intelligent Analysis of Electronic Evidence
+  desc: CASE includes data marking to support restricting access to privileged, proprietary, and personal in criminal and civil matters, controlling disclosure of information in regulatory compliance inquiries, and enable vendors to restrict use of data that is covered under license agreements.
+  type: Paper
+  source: International Conference on Artificial Intellgience
+  source_url: https://nms.kcl.ac.uk/icail2017/
+  date: 2017-06-12
+  url: http://users.umiacs.umd.edu/~oard/desi7/papers/EC.pdf
+- title: Pulling It Together
+  desc: Enabling Interoperability of Digital Forensic Systems Using a Standard Representation and Supporting API
+  type: Presentation
+  source: DFRWS
+  source_url: https://www.dfrws.org
+  date: 2017-08-06
+  url: http://dfrws.org/conferences/dfrws-usa-2017/sessions/pull-it-together-enabling-interoperability-digital-forensic

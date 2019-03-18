@@ -1,0 +1,32 @@
+---
+title: Publications
+jumbo_desc: Publications, Presentations, and Workshops about CASE.
+custom_js: table-filter
+---
+<input class="form-control" id="myInput" type="text" placeholder="Filter publications...">
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Source</th>
+      <th>Date Published</th>
+    </tr>
+  </thead>
+  <tbody id="myTable">
+    {% assign pubs_sorted = site.data.resources.publications | sort: 'date' | reverse %}
+    {% for item in pubs_sorted %}
+      <tr>
+        <td><a href="{{ item.url }}">{{ item.title }}</a></td>
+        <td>{{ item.desc }}</td>
+        <td>{{ item.type }}</td>
+        <td>{% if item.source_url %} <a href="{{ item.source_url }}">{% endif %}
+            {{ item.source }}
+          {% if item.source_url %} </a> {% endif %}
+        </td>
+          <td>{{ item.date | date_to_string }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
