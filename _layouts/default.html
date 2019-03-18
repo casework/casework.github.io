@@ -1,0 +1,21 @@
+{% include header.html %}
+{% include nav.html %}
+<!-- {{ page.title }} -->
+<section class="default bg-light">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h2 class="display-4">
+        {% if page.title == "404 Page Not Found" %}
+          <i class="fas fa-sad-cry m-auto text-warning"></i>
+        {% endif %}
+
+        {{ page.title }}
+      </h2>
+      <p class="lead">{{ page.jumbo_desc }}</p>
+    </div>
+  </div>
+  <div class="container">
+    {{ content }}
+  </div>
+</section>
+{% include footer.html %}

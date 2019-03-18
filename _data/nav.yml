@@ -35,6 +35,7 @@
       link: /resources/coc.html
     - name: Downloads
       link: /resources/downloads.html
+    - name: SPACE
     - header: Documentation
     - name: Roadmap
       link: /resources/roadmap.html
