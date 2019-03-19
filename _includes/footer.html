@@ -38,6 +38,15 @@
 <!-- Bootstrap core JavaScript -->
 <script src="/vendor/jquery/jquery.min.js"></script>
 <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Moments JavaScript -->
+<script src="/vendor/moments.js"></script>
+
+<!-- DataTables JavaScript -->
+<script src="/vendor/datatables/datatables.min.js"></script>
+<script src="/vendor/datatables/datetime.js"></script>
+
+<!-- custom page js -->
 {% if page.custom_js %}
   {% for js in page.custom_js %}
     <script src="/assets/js/{{ js }}.js"></script>
