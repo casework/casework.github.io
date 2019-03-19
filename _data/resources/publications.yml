@@ -7,14 +7,14 @@
   url: https://www.dfrws.org/sites/default/files/session-files/paper-leveraging_cybox_to_standardize_representation_and_exchange_of_digital_forensic_information.pdf
 - title: Leveraging CybOX to Standardize Representation and Exchange of Digital Forensic Information
   desc: This work summarizes the strengths and weaknesses of prior schemas, and defines an open-source schema called DFAX and underlying UCO ontology for representing and exchanging digital forensic information.
-  type: Paper
+  type: Publication
   source: Digital Investigation Journal
   source_url: https://www.journals.elsevier.com/digital-investigation
   date: 2015-03-01
   url: https://www.sciencedirect.com/science/article/pii/S1742287615000158?via%3Dihub
 - title: Using Standardization and Ontology to Enhance Data Protection and Intelligent Analysis of Electronic Evidence
   desc: CASE includes data marking to support restricting access to privileged, proprietary, and personal in criminal and civil matters, controlling disclosure of information in regulatory compliance inquiries, and enable vendors to restrict use of data that is covered under license agreements.
-  type: Paper
+  type: Presentation
   source: International Conference on Artificial Intellgience
   source_url: https://nms.kcl.ac.uk/icail2017/
   date: 2017-06-12
@@ -26,3 +26,30 @@
   source_url: https://www.dfrws.org
   date: 2017-08-06
   url: http://dfrws.org/conferences/dfrws-usa-2017/sessions/pull-it-together-enabling-interoperability-digital-forensic
+- title: The Evolution of Expressing and Exchanging Cyber-Investigation Information in a Standardized Form
+  desc: The CASE specification language and UCO ontology are a rational progression from the foundational work on Digital Forensic Analysis eXpression (DFAX).
+  type: Publication
+  source: Handling and Exchanging Electronic Evidence Across Europe
+  source_url: https://link.springer.com/book/10.1007/978-3-319-74872-6
+  date: 2018-06-27
+  url: https://link.springer.com/chapter/10.1007%2F978-3-319-74872-6_4
+- title: Pulling It Together
+  desc: Enabling Interoperability of Digital Forensic Systems Using a Standard Representation and Supporting API
+  type: Presentation
+  source: EU Evidence Project
+  source_url: http://www.evidenceproject.eu/final-conference.html#Summary
+  date: 2016-09-29
+- title: Advancing coordinated cyber-investigations and tool interoperability using a community developed specification language
+  desc: The foundations of CASE are provided in "Advancing coordinated cyber-investigations and tool interoperability using a community developed specification language," Journal of Digital Investigation (Issue 22, Sept 2017).
+  type: Publication
+  source: Digital Investigation Journal
+  source_url: https://www.sciencedirect.com/science/article/pii/S1742287617301007?via%3Dihub
+  date: 2017-09-22
+  url: https://drive.google.com/file/d/0B2Z-Slbvlz3aSkluRU1heUtkZEU/view
+- title: Corrigendum to ‘Advancing coordinated cyber-investigations and tool interoperability using a community developed specification language’
+  desc: This corrigendum addresses several corrections, clarifications, and updates to the JSON CASE example provided in this paper.
+  type: Publication
+  source: Digital Investigation Journal
+  source_url: https://www.sciencedirect.com/science/article/pii/S1742287618303839
+  date: 2018-11-28
+  url: https://www.sciencedirect.com/science/article/pii/S1742287618303839
