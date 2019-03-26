@@ -1,0 +1,147 @@
+# Variables Accepted
+# date: format must be YYYY-MM-DD
+# type: Community, Governance, Ontology
+# materials: slides, recording, notes
+
+- title: CASE Community Virtual Meeting
+  date: 2017-09-27
+  type: Community
+  materials:
+    slides: https://drive.google.com/file/d/0B2Z-Slbvlz3aWUFjMFc1ZjYyb1U/view
+  agenda-points:
+    bullet1: Eoghan Casey provided a status update on CASE/UCO, and proposed a vote on the name change of ‘ForensicAction’ to ‘InvestigativeAction’
+    bullet2: Cory Hall explained that MITRE is adding two software engineers to integrate CASE/UCO into U.S. Government tools, provide community reference implementations and documentation, and act as technical POC for community developers
+    bullet3: Erik Hjelmvik discussed his experience implementing CASE/UCO within Network Miner Pro
+    bullet4: Sean Barnum provided an overview of FireEye’s Information Integration Strategy and adoption plan for CASE/UCO
+- title: CASE Community Virtual Meeting
+  date: 2017-10-25
+  type: Community
+  materials:
+    slides: https://drive.google.com/file/d/0B2Z-Slbvlz3aNkxhajZLdk84Sk0/view
+  agenda-points:
+    bullet1: Representing network connections in PCAP file
+    bullet2: Mapping to known files/media databases
+    bullet3: Need for relativeFilePath property
+    bullet4: Referencing large files (e.g., forensic images)
+    bullet5: Proposal to representing deleted files
+- title: CASE Community Virtual Meeting
+  date: 2017-11-29
+  type: Community
+  materials:
+    slides: https://drive.google.com/file/d/1R7cbi4IcHRueTkBkavCrOubu9En6ejYV/view
+  agenda-points:
+    bullet1: MITRE developers discussed validator roadmap, and enhancements to Plaso CASE API
+    bullet2: Alex Nelson presented initial translation library between DFXML and CASE
+    bullet3: Final proposal for representing deleted files
+    bullet4: Reorganization of ucoProject and CASE GitHub
+- title: CASE Community Virtual Meeting
+  date: 2018-01-31
+  type: Community
+  materials:
+    slides: https://caseuco.adobeconnect.com/prb12ub2bih8/
+    recording: https://caseuco.adobeconnect.com/pvghuni2anxb/
+  agenda-points:
+    bullet1: Voting on proposed updates to CASE
+    bullet2: CASE API - case.py & NLG.py
+    bullet3: CASE Glossary verifier - verify.py
+    bullet4: Volatility implementation of CASE
+    bullet5: CASE implementation workshop details
+- title: CASE Community Virtual Meeting
+  date: 2018-02-28
+  type: Community
+  materials:
+    recording: https://caseuco.adobeconnect.com/p46asf7ci1vc/
+  agenda-points:
+    bullet1: Voting on proposed updates to CASE/UCO
+    bullet2: Looking at the turtle (ttl) - RDF/OWL
+    bullet3: GitHub harmonization
+    bullet4: Plaso module mapping updates
+- title: CASE Community Virtual Meeting
+  date: 2018-04-04
+  type: Community
+  materials:
+    recording: https://caseuco.adobeconnect.com/pk4dt8ue2031/
+  agenda-points:
+    bullet1: New proposed updates to CASE/UCO
+    bullet2: MITRE RDF verifier code release
+    bullet3: Volatility PoC code release
+    bullet4: License discussion (Apache 2)
+- title: CASE Community Virtual Meeting
+  date: 2018-04-25
+  type: Community
+  materials:
+    recording: https://caseuco.adobeconnect.com/p5unsly0vc5r/
+  agenda-points:
+    bullet1: Voting on proposed updates to CASE/UCO
+    bullet2: Representing Contacts using CASE/UCO
+    bullet3: CASE workshop recap
+    bullet4: CASE roadmap
+- title: CASE Community Virtual Meeting
+  date: 2018-07-25
+  type: Community
+  materials:
+    recording: https://caseuco.adobeconnect.com/prumef063or3/
+  agenda-points:
+    bullet1: Usage convention for InvestigativeAction
+    bullet2: Refinement to Mobile Accounts
+    bullet3: Tool mapping updates
+    bullet4: GitHub updates and community requests
+- title: CASE Community Virtual Meeting
+  date: 2018-08-29
+  type: Community
+  materials:
+    recording: https://caseuco.adobeconnect.com/pqhpquvob6cm/
+  agenda-points:
+    bullet1: JSON examples and documentation
+    bullet2: API auto-generation scripts proof-of-concept
+    bullet3: Proposed governance model
+    bullet4: dc3dd proof-of-concept
+- title: CASE Community Virtual Meeting
+  date: 2018-09-26
+  type: Community
+  materials:
+    recording: https://caseuco.adobeconnect.com/pz9ucfayt4dc/
+  agenda-points:
+    bullet1: Community roadmap updates
+    bullet2: Draft bylaws and adoption schedule
+    bullet3: Usage examples of CASE/UCO
+- title: CASE Community Virtual Meeting
+  date: 2018-10-31
+  type: Community
+  materials:
+    recording: https://caseuco.adobeconnect.com/p9llq6uzrzto/
+  agenda-points:
+    bullet1: CASE community interactions
+    bullet2: Final review of bylaws
+    bullet3: Voting on governance structure
+- title: CASE Adoption Workshop for Mobile Forensic Tool Developers
+  date: 2018-12-06
+  type: Community
+  materials:
+    recording: https://unewhaven.zoom.us/recording/share/ozZgZbL6PQVeS_UGB-R9vhrkZLuINeL-2NlUB1LTClWwIumekTziMw
+  agenda-points:
+    bullet1: Mobile forensic tool developers discuss common needs and issues with adopting CASE
+    bullet2: Presentations from Martin Westman (MSAB) and Nicholaos Matskanis (CETIC)
+    bullet3: Discussion to build translator tools for popular tools
+- title: Governance Committee Virtual Meeting
+  date: 2019-01-30
+  type: Governance
+  materials:
+    notes: https://docs.google.com/document/d/1drj1QVsZDYWr-JYt45P7ciO2hnwwfMeA_5vsUs6Fz0E/edit
+  agenda-points:
+    bullet1: Review CASE Community Code of Conduct
+    bullet2: Review Community Membership Forms
+    bullet3: Review Ontology Committee Charter
+    bullet4: Review proposed community budget for 2019
+    bullet5: Discuss establishment of membership dues structure
+    bullet6: DFRWS EU CASE Workshop Planning
+- title: Governance Committee Virtual Meeting
+  date: 2019-02-12
+  type: Governance
+  materials:
+    notes: https://docs.google.com/document/d/1AoAQ_TbFUjFvEpOPXIinAMMlog6_wcwYzew0Nd50HE0/edit
+  agenda-points:
+    bullet1: CASE Treasurer Announcement
+    bullet2: Review Ontology Committee Charter Updates
+    bullet3: CSAE Community Membership Application Review
+    bullet4: Domain name identified - caseontology.org selected by vote
