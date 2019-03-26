@@ -13,7 +13,7 @@ custom_js: publications
       <th>Date Published</th>
     </tr>
   </thead>
-  <tbody id="myTable">
+  <tbody>
     {% for item in site.data.resources.publications %}
       <tr>
         <td><a href="{{ item.url }}">{{ item.title }}</a></td>
