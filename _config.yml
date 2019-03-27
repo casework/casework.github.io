@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: CASE Community
-email: webmaster@caseontology.org
+email: casemaster@caseontology.org
 description: >- # this means to ignore newlines until "baseurl:"
   Open Source Community for the Cyber-investigation Anaylsis
   Standard Expression (CASE) Ontology.
