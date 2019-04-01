@@ -46,12 +46,9 @@
 <script src="/vendor/datatables/datatables.min.js"></script>
 <script src="/vendor/datatables/datetime.js"></script>
 
-<!-- custom page js -->
-{% if page.custom_js %}
-  {% for js in page.custom_js %}
-    <script src="/assets/js/{{ js }}.js"></script>
-  {% endfor %}
-{% endif %}
+<!-- Custom JavaScript for this page -->
+{% if page.custom_js %}{% for js in page.custom_js %}<script src="/assets/js/{{ js }}.js"></script>
+{% endfor %}{% endif %}
 
 </body>
 
