@@ -7,7 +7,7 @@
   date: 2017-09-27
   type: Community
   materials:
-    slides: https://drive.google.com/file/d/0B2Z-Slbvlz3aWUFjMFc1ZjYyb1U/view
+    slides: https://drive.google.com/open?id=1Lpivo88SigvYmpLnqfdz0IUz9M-Ojsm2
   agenda-points:
     bullet1: Eoghan Casey provided a status update on CASE/UCO, and proposed a vote on the name change of ‘ForensicAction’ to ‘InvestigativeAction’
     bullet2: Cory Hall explained that MITRE is adding two software engineers to integrate CASE/UCO into U.S. Government tools, provide community reference implementations and documentation, and act as technical POC for community developers
@@ -17,7 +17,7 @@
   date: 2017-10-25
   type: Community
   materials:
-    slides: https://drive.google.com/file/d/0B2Z-Slbvlz3aNkxhajZLdk84Sk0/view
+    slides: https://drive.google.com/open?id=1GnGi7lGDTGORohFLpY5uSoqR3gZk2GFh
   agenda-points:
     bullet1: Representing network connections in PCAP file
     bullet2: Mapping to known files/media databases
@@ -28,7 +28,7 @@
   date: 2017-11-29
   type: Community
   materials:
-    slides: https://drive.google.com/file/d/1R7cbi4IcHRueTkBkavCrOubu9En6ejYV/view
+    slides: https://drive.google.com/open?id=1vuJ5EGbq0rXPEw-dyEl7hIC2fzKsx81M
   agenda-points:
     bullet1: MITRE developers discussed validator roadmap, and enhancements to Plaso CASE API
     bullet2: Alex Nelson presented initial translation library between DFXML and CASE
@@ -127,7 +127,7 @@
   date: 2019-01-30
   type: Governance
   materials:
-    notes: https://docs.google.com/document/d/1drj1QVsZDYWr-JYt45P7ciO2hnwwfMeA_5vsUs6Fz0E/edit
+    notes: https://drive.google.com/open?id=19ioSTt8p0HDAyXLVzRO0J9X90ycuBfmK
   agenda-points:
     bullet1: Review CASE Community Code of Conduct
     bullet2: Review Community Membership Forms
@@ -139,9 +139,31 @@
   date: 2019-02-12
   type: Governance
   materials:
-    notes: https://docs.google.com/document/d/1AoAQ_TbFUjFvEpOPXIinAMMlog6_wcwYzew0Nd50HE0/edit
+    notes: https://drive.google.com/open?id=13PHrRWQr2PeY9HItLgiVwJDRYdXrgJay
   agenda-points:
     bullet1: CASE Treasurer Announcement
     bullet2: Review Ontology Committee Charter Updates
     bullet3: CSAE Community Membership Application Review
     bullet4: Domain name identified - caseontology.org selected by vote
+- title: Governance Committee Virtual Meeting
+  date: 2019-02-28
+  type: Governance
+  materials:
+    notes: https://drive.google.com/open?id=1rQYjP7TyjkLUsp6rfpmirXRGgmIcq2jO
+  agenda-points:
+    bullet1: Ontology Committee Charter Vote Update
+    bullet2: Membership Application Update
+    bullet3: Membership Requests
+    bullet4: Privacy Policy Update
+    bullet5: Changes to Bylaws
+- title: Governance Committee Virtual Meeting
+  date: 2019-03-28
+  type: Governance
+  materials:
+    notes: https://drive.google.com/open?id=1oF6BPI3ctpNu2jg3A_ACmDSBwdnbmvkV
+  agenda-points:
+    bullet1: Establishment of Community as Non-Profit Discussion
+    bullet2: Membership Request Presentation and Approval
+    bullet3: Website Establishment and Github Migration Update
+    bullet4: UCO Community SOP
+    bullet5: Advisory Board Discussion
