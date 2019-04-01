@@ -1,5 +1,12 @@
 - name: Getting Started
   link: /ontology/start.html
+- name: Releases
+  submenuitems:
+    - name: Latest Release
+      link: /ontology/releases/0.1.0/
+    - name: SPACE
+    - name: Archived Releases
+      link: /ontology/releases/archive/
 - name: Ontology
   submenuitems:
     - name: Introduction
@@ -8,11 +15,9 @@
       link: /ontology/guides.html
     - name: Examples
       link: /ontology/examples.html
+    - name: SPACE
     - name: Latest Specification
       link: /ontology/spec.html
-    - name: SPACE
-    - name: Contribute
-      link: /ontology/contribute.html
 - name: Community
   submenuitems:
     - name: Governance Committee
@@ -25,7 +30,7 @@
       link: /community/meetings.html
     - name: SPACE
     - name: Join CASE Community
-      link: /community/join.html
+      link: /contribute.html
 - name: Resources
   submenuitems:
     - header: Library
@@ -41,3 +46,5 @@
       link: /resources/roadmap.html
     - name: Publications
       link: /resources/publications.html
+- name: Contribute
+  link: /contribute.html
