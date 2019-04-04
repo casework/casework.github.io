@@ -1,6 +1,6 @@
 ---
-title: Use Cases
-jumbo_desc: Implementation examples of CASE
+title: Introduction
+jumbo_desc: What is CASE and where is it used?
 ---
 
 ### Exchange cyber-investigation information in standardized form

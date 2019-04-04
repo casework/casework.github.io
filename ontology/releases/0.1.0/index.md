@@ -6,8 +6,12 @@ layout: releases
 
 #### Release Notes
 
+Changes in this release include:
 
 #### Specifications
 
+(link to spec doc)
 
 #### Schemas
+
+(link to schema on GitHub)

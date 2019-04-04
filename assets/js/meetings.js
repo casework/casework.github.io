@@ -14,7 +14,7 @@ $(document).ready(function(){
 //            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
             $(".filter").not('.'+value).hide('3000');
             $('.filter').filter('.'+value).show('3000');
-
+            
         }
     });
 
