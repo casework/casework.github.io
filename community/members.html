@@ -1,0 +1,21 @@
+---
+title: Community Members
+jumbo_desc: A growing community working together to develop and implement CASE.
+custom_css: members
+custom_js: members
+---
+    <div class="mb-5">
+      <button class="btn btn-default filter-button" data-filter="all">All</button>
+      <button class="btn btn-default filter-button" data-filter="admins">Adminstrators</button>
+      <button class="btn btn-default filter-button" data-filter="dev">Developers & Implementers</button>
+      <span class="ml-5"><a href="/community/membership.html">Interested in joining?</a></span>
+    </div>
+
+    <div class="row">
+      {% assign member_sorted = site.data.members.members | sort: 'name'  %}
+      {% for member in member_sorted %}
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter {{ member.filter }}">
+            <a target="_blank" href="{{ member.url }}"><img alt="{{ member.name }}" src="/assets/img/members/{{ member.img }}" class="img-responsive"></a>
+        </div>
+      {% endfor %}
+    </div>

@@ -1,0 +1,104 @@
+- name: University of Lausanne
+  filter: admins
+  img: lausanne.png
+  url: https://www.unil.ch/central/en/home.html
+- name: DoD Cyber Crime Center
+  filter: admins
+  img: dc3.png
+  url: https://www.dc3.mil
+- name: MITRE
+  filter: admins
+  img: mitre.png
+  url: https://www.mitre.org
+- name: Netherlands Forensic Institute
+  filter: admins
+  img: nfi.png
+  url: https://www.forensicinstitute.nl
+- name: NIST
+  filter: admins
+  img: nist.png
+  url: https://www.nist.gov
+- name: AccessData
+  filter: dev
+  img: accessdata.png
+  url: https://www.accessdata.com
+- name: Basis Technology
+  filter: dev
+  img: basis.png
+  url: https://www.basistech.com/
+- name: Blackbag Technologies
+  filter: dev
+  img: blackbag.png
+  url: https://www.blackbagtech.com/
+- name: Cellebrite
+  filter: dev
+  img: cellebrite.png
+  url: https://www.cellebrite.com/
+- name: CETIC
+  filter: dev
+  img: cetic.png
+  url: https://www.cetic.be/
+- name: Darklight
+  filter: dev
+  img: darklight.png
+  url: https://www.darklightcyber.com/
+- name: DFLabs
+  filter: dev
+  img: dflabs.png
+  url: https://www.dflabs.com/
+- name: Europol Cyber Crime Center
+  filter: dev
+  img: ec3.png
+  url: https://www.europol.europa.eu/about-europol/european-cybercrime-centre-ec3
+- name: EVIDENCE2eCodex
+  filter: dev
+  img: evidence2ec.png
+  url:
+- name: FireEye
+  filter: dev
+  img: fireeye.png
+  url: https://www.fireeye.com
+- name: Guidance Software
+  filter: dev
+  img: guidance.png
+  url: https://www.guidancesoftware.com/
+- name: IBM I2
+  filter: dev
+  img: ibm.png
+  url: https://www.ibm.com/us-en/marketplace/enterprise-intelligence-analysis
+- name: Magnet Forensics
+  filter: dev
+  img: magnet.png
+  url: https://www.magnetforensics.com/
+- name: Ockjam Mercure
+  filter: dev
+  img: ockham.png
+  url: https://ockham-solutions.fr/en
+- name: MOBILEdit
+  filter: dev
+  img: mobiledit.png
+  url: http://www.mobiledit.com/
+- name: MSAB
+  filter: dev
+  img: msab.png
+  url: https://www.msab.com
+- name: National Cybersecurity Center of Excellence
+  filter: dev
+  img: nccoe.png
+  url: https://www.nccoe.nist.gov/
+- name: Netresec
+  filter: dev
+  img: netresec.png
+  url: https://www.netresec.com/
+- name: Nuix
+  filter: dev
+  img: nuix.png
+  url: https://www.nuix.com/
+- name: Oxygen Forensics
+  filter: dev
+  img: oxygen.png
+  url: https://www.oxygen-forensic.com/
+- name: Volatility
+  filter: dev
+  img: volatility.png
+  url: https://github.com/volatilityfoundation/volatility

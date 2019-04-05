@@ -1,0 +1,57 @@
+
+/* Center website */
+
+/* members */
+
+.gallery-title
+{
+    font-size: 36px;
+    color: #42B32F;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 70px;
+}
+.gallery-title:after {
+    content: "";
+    position: absolute;
+    width: 7.5%;
+    left: 46.5%;
+    height: 45px;
+    border-bottom: 1px solid #5e5e5e;
+}
+.filter-button
+{
+    border: 1px solid #000000;
+    outline: none;
+    padding: 10px 16px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 0px;
+}
+.filter-button:hover
+{
+    border: 1px solid #007bff;
+    background-color: white;
+    cursor: pointer;
+    color: #007bff;
+
+}
+.filter-button:active
+{
+    background-color: #007bff;
+    color: white;
+}
+
+.port-image
+{
+    width: 100%;
+}
+
+.gallery_product
+{
+    margin-bottom: 30px;
+}
+
+.gallery_product img {
+  width: 365px;
+}
