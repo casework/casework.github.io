@@ -12,8 +12,10 @@ custom_js: members
     </div>
 
     <div class="row">
-      {% assign member_sorted = site.data.members.members | sort: 'name'  %}
-      {% for member in member_sorted %}
+      {% assign admins = site.data.members.members | where:"filter","admins" %}
+      {% assign devs = site.data.members.members | where:"filter","dev" | sort: 'name' %}
+      {% assign list = admins | concat: devs %}
+      {% for member in list %}
         <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter {{ member.filter }}">
             <a target="_blank" href="{{ member.url }}"><img alt="{{ member.name }}" src="/assets/img/members/{{ member.img }}" class="img-responsive"></a>
         </div>
