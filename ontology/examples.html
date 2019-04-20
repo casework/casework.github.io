@@ -1,0 +1,378 @@
+---
+<!-- layout: releases -->
+title: Examples
+jumbo_desc: CASE Objects in the Real World
+custom_css:
+  - smart_wizard
+  - smart_wizard_theme_arrows
+custom_js:
+  - jquery.smartWizard
+  - examples
+---
+
+<div id="smartwizard">
+  <ul>
+      <li><a href="#step-0">Step 0<br /><small>Starting a Cyber-investigation</small></a></li>
+      <li><a href="#step-1">Step 1<br /><small>Evidence Seizure & Chain of Custody</small></a></li>
+      <li><a href="#step-2">Step 2<br /><small>Evidence Acquisition</small></a></li>
+      <li><a href="#step-3">Step 3<br /><small>Evidence Extraction</small></a></li>
+  </ul>
+
+  <div>
+    <div id="step-0" class="">
+      <h3 class="pt-3">Starting a Cyber-investigation</h3>
+      <p class="mb-3">When an investigation is initiated, the description and authorization are represented using a CASE
+        Investigation object. Any information related to a cyber-investigation must be wrapped within a CASE bundle.</p>
+      <h6>Examples of an Authorization & Investigation Objects</h6>
+{% highlight json %}
+{
+  "__CASE__":"ASGARD_2019_00162",
+  "@context":{
+    "@vocab":"http://caseontology.org/core#",
+    "case":"http://caseontology.org/core#",
+    "rdf":"http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs":"http://www.w3.org/2000/01/rdf-schema#",
+    "xsd":"http://www.w3.org/2001/XMLSchema#"
+  },
+  "@id":"bundle-{5715FCF3-6BC8-4996-8F7F-FDF289F31649}",
+  "@type":"Bundle",
+  "description":"Initial evidence seizure in cross border investigation into disruption of public transportation service",
+  "content":[
+    {
+      "@id":"investigation-79D6AB60-D679-49CE-9573-7176DFEEB7C3",
+      "@type":"Authorization",
+      "propertyBundle":[
+        {
+          "@authorizationType":"Odin_Decree",
+          "authorizationIdentifier":"Decree_2019_00013",
+          "authorizationAuthority":"530646A9-4290-4C02-B0B3-FD2EC363834A",
+          "authorizationIssuedDate":"20190330"
+        }
+      ]
+    },
+    {
+      "@id":"investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7",
+      "@type":"Investigation",
+      "name":"ASGARD_2018_00162",
+      "focus":"Denial of Service (Bifrost Bridge)",
+      "description":"An unknown person caused public disturbance and physical damage to property in Asgard, resulting in denial of service of public transportation (Bifrost Bridge).",
+      "object":[
+        {
+          "@id":"86F2E76A-434D-4D3F-9147-CD0CABCCA074"
+        },
+        {
+          "@id":"E9AA4F26-D187-4F32-A602-86A6DF4B8528"
+        },
+        {
+          "@id":"530646A9-4290-4C02-B0B3-FD2EC363834A"
+        },
+        {
+          "@id":"B1C22D51-4A3F-4353-84FB-E210B5EFDA48"
+        }
+      ]
+    }
+  ]
+}
+{% endhighlight %}
+      <p class="pb-3">An Investigation can contain any CASE object, including InvestigativeActions and Traces.</p>
+    </div>
+    <div id="step-1" class="">
+      <h3 class="pt-3">Evidence Seizure & Chain of Custody</h3>
+      <p class="mb-3">When a device is first touched, this is represented using an InvestigativeAction with an empty input to indicate that this is the
+        beginning of Chain of Custody. The output of this InvestigativeAction is the seized object and an associated provenance record.</p>
+      <h6>Examples of an InvestigativeAction & ProvenanceRecord Objects</h6>
+{% highlight json %}
+{
+  "@id":"investigative-action1-uuid",
+  "@type":"InvestigativeAction",
+  "name":"preserved",
+  "startTime":"2019-03-30T22:36:24.35Z",
+  "propertyBundle":[
+    {
+      "@type":"ActionReferences",
+      "instrument":"odin-decree13-uuid",
+      "location":"asgard-bifrost-uuid",
+      "performer":"investigator2-uuid",
+      "object":[
+
+      ],
+      "result":[
+        "provenance-record1-uuid",
+        "suspect-device-uuid"
+      ]
+    }
+  ]
+},
+{
+  "@id":"provenance-record1-uuid",
+  "@type":"ProvenanceRecord",
+  "description":"Suspect device found near Bifrost Bridge after disruption",
+  "exhibitNumber":"AsgardPD-20190330-001A",
+  "object":[
+    "suspect-device-uuid"
+  ]
+},
+{
+  "@id":"suspect-device-uuid",
+  "@type":"Trace",
+  "propertyBundle":[
+    {
+      "@type":"Device",
+      "manufacturer":"iPhone",
+      "model":"MG552",
+      "serialNumber":"F18Q4LGRG5MD"
+    },
+    {
+      "@type":"MobileDevice",
+      "keypadUnlockCode":"123789",
+      "IMEI":"359305065690067",
+      "MSISDN":"[suspect-mobileaccount-uuid]",
+      "clockSetting":"2019-03-30T22:36:24.35Z",
+      "localeLanguage":"no_AS",
+      "phoneActivationTime":"2018-05-09T07:36:24.35Z",
+      "storageCapacity":"16 GB"
+    },
+    {
+      "@type":"iPhoneDevice",
+      "uniqueID":"B3858A69A29375E6C706226B3633A3A11EB2A774",
+      "ownerName":"Loki iPhone"
+    },
+    {
+      "@type":"OperatingSystem",
+      "name":"iOS",
+      "manufacturer":"Apple",
+      "version":"10.3"
+    },
+    {
+      "@type":"WiFiAddress",
+      "value":"d0:33:11:13:e7:a1"
+    },
+    {
+      "@type":"BluetoothAddress",
+      "value":"d0:33:11:13:e7:a2"
+    }
+  ]
+},
+{% endhighlight %}
+      <p class="pb-3">All CASE objects are inserted within the associated Investigation, wrapped in a CASE Bundle.</p>
+    </div>
+    <div id="step-2" class="">
+      <h3 class="pt-3">Evidence Acquisition</h3>
+      <p class="mb-3">The tool used to acquire data, options used, and the resulting forensic copy are represented as an
+          <em><strong>InvestigativeAction</strong></em> and associated Tool using CASE.</p>
+      <h6>Example of an InvestigativeAction</h6>
+{% highlight json %}
+{
+  "@id":"219189B6-356C-4D53-A844-F0031E74F156",
+  "@type":"InvestigativeAction",
+  "name":"acquired",
+  "description":"Suspect device physical acquisition",
+  "startTime":"2019-03-30T22:17:31Z",
+  "endTime":"2019-03-30T22:47:32Z",
+  "propertyBundle":[
+    {
+      "@type":"ActionReferences",
+      "instrument":"tool-embeddedextractor1-uid",
+      "location":"{309BC178-1836-47B7-AA15-94EA3A2C7401}",
+      "performer":"{E9AA4F26-D187-4F32-A602-86A6DF4B8528}",
+      "object":[
+        "suspect-device-uuid"
+      ],
+      "result":[
+        "{90F73123-DB7E-41E5-B6CA-493B96E4B89F}",
+        "{97C74753-FCEB-49C8-A611-7A70EF46AB5D}",
+        "{EBAB06EE-7522-42D6-96EA-E3121D67E393}",
+        "{48C0F0E8-9A63-45EE-99BF-23CC354C3252}",
+        "{B2A7B20E-8307-40CF-ABAF-9733ABBF4335}"
+      ]
+    },
+    {
+      "@type":"ConfigurationSetting",
+      "ExtractionType":"File System",
+      "ExtractionMethod":"iOS Backup"
+    }
+  ]
+},
+{
+  "@id":"tool-embeddedextractor1-uid",
+  "@type":"Tool",
+  "name":"Embedded Device Extrator",
+  "toolType":"Extraction",
+  "creator":"Harald",
+  "version":"1.2.0",
+  "propertyBundle":[
+    {
+      "@type":"ToolConfiguration",
+      "configurationSetting":[
+        {
+          "@type":"ConfigurationSetting",
+          "itemName":"ExtractionMethod",
+          "itemValue":"iOS_Backup"
+        },
+        {
+          "@type":"ConfigurationSetting",
+          "itemName":"ExtractionType",
+          "itemValue":"File System"
+        }
+      ]
+    }
+  ]
+},
+{
+  "@type":"Trace",
+  "@id":"suspect-mobiledevice-forensicduplicate-uuid",
+  "propertyBundle":[
+    {
+      "@type":"File",
+      "createdTime":"2019-03-30T22:12:19.32Z",
+      "extension":"dd",
+      "fileName":"AsgardPD-2019033001-01.dd",
+      "fileSystemType":"NTFS",
+      "filePath":"C:/evidence/AsgardPD-2019033001-01.dd",
+      "isDirectory":false,
+      "sizeInBytes":160080500
+    },
+    {
+      "@type":"ContentData",
+      "hash":[
+        {
+          "@type":"Hash",
+          "hashMethod":"SHA256",
+          "hashValue":"7ea081166336119da78ee4bbdbd06840b94efe28988a2bdb0bcf2387a481e283"
+        }
+      ],
+      "sizeInBytes":9080500
+    }
+  ]
+},
+{% endhighlight %}
+      <p class="pb-3">[placeholder for dc3dd wrapper]</p>
+    </div>
+    <div id="step-3" class="">
+      <h3 class="pt-3">Evidence Extraction</h3>
+      <p class="mb-3">Information extracted from a forensic copy of digital evidence, along with the tool used, can be represented using CASE.</p>
+
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Filesystem</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Mobile Device</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Network Traffic</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <h6 class="mt-3">Example of a Filesystem Trace</h6>
+{% highlight json %}
+{
+  "@type":"Trace",
+  "@id":"suspect-device-mmssms-uuid",
+  "propertyBundle":[
+    {
+      "@type":"File",
+      "createdTime":"2019-03-30T08:12:19.32Z",
+      "fileSystemType":"HFSX",
+      "extension":"db",
+      "fileName":"/mobile/sms.db",
+      "isDirectory":false,
+      "sizeInBytes":142925
+    },
+    {
+      "@type":"ContentData",
+      "sizeInBytes":122925,
+      "magicNumber":"U1FMaXRlIGZvcm1hdCAzAA==",
+      "hash":[
+        {
+          "@type":"Hash",
+          "hashMethod":"SHA256",
+          "hashValue":"a13225720074371d56a4f4d5117fbb4953c5b1d316b31f21edcb7ed8fdf66c6e"
+        }
+      ]
+    }
+  ]
+},
+{
+  "@id":"trace-relationship3-uuid",
+  "@type":"Relationship",
+  "source":"suspect-device-mmssms-uuid",
+  "target":[
+    "susecpt-image-filesystem-uuid"
+  ],
+  "kindOfRelationship":"contained-within",
+  "isDirectional":true,
+  "propertyBundle":[
+    {
+      "@type":"PathRelation",
+      "path":"/mobile/sms.db"
+    }
+  ]
+}
+{% endhighlight %}
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <h6 class="mt-3">Example of a Mobile Device Trace</h6>
+{% highlight json %}
+{
+  "@id":"sms_message1",
+  "@type":"Trace",
+  "propertyBundle":[
+    {
+      "@type":"Message",
+      "application":"sms_application1",
+      "messageText":"Yo dude! This is my new number.",
+      "from":"phone_account3",
+      "to":[
+        "phone_account1"
+      ],
+      "sentTime":"2010-01-15T17:59:43.25Z"
+    }
+  ]
+},
+{
+  "@id":"phone_call1",
+  "@type":"Trace",
+  "propertyBundle":[
+    {
+      "@type":"PhoneCall",
+      "callType":"mobile",
+      "startTime":"2010-01-15T17:59:43.25Z",
+      "endTime":"2010-01-15T18:30:41.25Z",
+      "from":"phone_account1",
+      "to":"phone_account2",
+      "duration":"PT31M2S"
+    }
+  ]
+}
+{% endhighlight %}
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+          <h6 class="mt-3">Example of a Network Traffic Trace</h6>
+{% highlight json %}
+{
+  "@type":"Trace",
+  "@id":"network-connection1-uuid",
+  "createdBy":"investigator1-uuid",
+  "createdTime":"2017-09-29T11:47:54.2889922Z",
+  "propertyBundle":[
+    {
+      "@type":"NetworkConnection",
+      "startTime":"2009-04-03T02:29:25.6256260Z",
+      "endTime":"2009-04-03T02:29:25.6365510Z",
+      "dst":"destination-host-uuid",
+      "destinationPort":139,
+      "src":"source-host-uuid",
+      "sourcePort":52960,
+      "protocols":"TCP, NETBIOSSESSIONSERVICE",
+      "connectionState":"APSF"
+    }
+  ]
+}
+{% endhighlight %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
