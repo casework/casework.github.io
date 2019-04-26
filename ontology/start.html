@@ -1,4 +1,351 @@
 ---
+layout: blank
 title: Getting Started
 jumbo_desc: Get started with CASE
+custom_css:
+- start
+- contribute
+custom_js: start
 ---
+<!-- Bootstrap row -->
+<div class="row" id="body-row">
+    <!-- Sidebar -->
+    <div id="sidebar-container" class="sidebar-expanded d-none d-md-block col-2">
+        <!-- d-* hiddens the Sidebar in smaller devices. Its itens can be kept on the Navbar 'Menu' -->
+        <!-- Bootstrap List Group -->
+        <ul class="list-group sticky-top sticky-offset">
+            <!-- Separator with title -->
+            <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
+                <small>GETTING STARTED</small>
+            </li>
+            <!-- /END Separator -->
+            <a href="#about" class="bg-dark list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fa fa-info fa-fw mr-3"></span>
+                    <span class="menu-collapsed">About CASE</span>
+                </div>
+            </a>
+            <!-- Menu with submenu -->
+            <a href="#submenu1" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fa fa-bars fa-fw mr-3"></span>
+                    <span class="menu-collapsed">Site Navigation</span>
+                    <span class="submenu-icon ml-auto"></span>
+                </div>
+            </a>
+            <!-- Submenu content -->
+            <div id="submenu1" class="collapse sidebar-submenu">
+                <a href="#website" class="list-group-item list-group-item-action bg-dark text-white">
+                    <span class="menu-collapsed">Website & Email</span>
+                </a>
+                <a href="#framework" class="list-group-item list-group-item-action bg-dark text-white">
+                    <span class="menu-collapsed">Framework Tools</span>
+                </a>
+                <a href="#mappings" class="list-group-item list-group-item-action bg-dark text-white">
+                    <span class="menu-collapsed">Mappings</span>
+                </a>
+                <a href="#integration" class="list-group-item list-group-item-action bg-dark text-white">
+                    <span class="menu-collapsed">Tool Integration</span>
+                </a>
+                <a href="#tools" class="list-group-item list-group-item-action bg-dark text-white">
+                    <span class="menu-collapsed">Ontological Exploration Tools</span>
+                </a>
+            </div>
+            <!-- Menu with submenu -->
+            <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fa fa-search fa-fw mr-3"></span>
+                    <span class="menu-collapsed">Scope</span>
+                    <span class="submenu-icon ml-auto"></span>
+                </div>
+            </a>
+            <!-- Submenu content -->
+            <div id="submenu2" class="collapse sidebar-submenu">
+                <a href="#ontologists" class="list-group-item list-group-item-action bg-dark text-white">
+                    <span class="menu-collapsed">Ontologists</span>
+                </a>
+                <a href="#mappers" class="list-group-item list-group-item-action bg-dark text-white">
+                    <span class="menu-collapsed">Mappers</span>
+                </a>
+                <a href="#adopters" class="list-group-item list-group-item-action bg-dark text-white">
+                    <span class="menu-collapsed">Adopters</span>
+                </a>
+                <a href="#discussors" class="list-group-item list-group-item-action bg-dark text-white">
+                    <span class="menu-collapsed">Discussors</span>
+                </a>
+            </div>
+
+            <!-- Separator with title -->
+            <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
+                <small>EXTRAS</small>
+            </li>
+            <!-- /END Separator -->
+            <a href="#extras" class="bg-dark list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fa fa-tasks fa-fw mr-3"></span>
+                    <span class="menu-collapsed">Examples</span>
+                </div>
+            </a>
+            <a href="#extras" class="bg-dark list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fa fa-address-card fa-fw mr-3"></span>
+                    <span class="menu-collapsed">Contact</span>
+                </div>
+            </a>
+            <a href="#extras" class="bg-dark list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fa fa-balance-scale fa-fw mr-3"></span>
+                    <span class="menu-collapsed">Governance</span>
+                </div>
+            </a>
+            <!-- Separator without title -->
+            <!-- <li class="list-group-item sidebar-separator menu-collapsed"></li> -->
+            <!-- /END Separator -->
+            <a href="#extras" class="bg-dark list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fa fa-globe fa-fw mr-3"></span>
+                    <span class="menu-collapsed">Licensing</span>
+                </div>
+            </a>
+            <!-- Logo -->
+            <li class="list-group-item logo-separator d-flex justify-content-center">
+                <img src="/assets/img/case_logo.png" width="65" height="60">
+            </li>
+        </ul>
+        <!-- List Group END-->
+    </div>
+    <!-- sidebar-container END -->
+
+    <!-- MAIN -->
+    <div class="col py-3">
+
+      <h2>Getting Started <small class="text-muted">just the basics</small></h2>
+
+      <hr class="my-4">
+      <a name="about"></a>
+      <h4 class="mb-3">About CASE</h4>
+      <p>Cyber-investigation Analysis Standard Expression (CASE) is a community-developed specification language, which is intended to serve the
+        needs of the broadest possible range of cyber-investigation domains, including digital forensic science, incident response, counter-terrorism,
+        criminal justice, forensic intelligence and situational awareness.</p>
+      <p>The primary motivation for CASE is interoperability - to advance the exchange of cyber-investigation information between tools and
+        organizations. CASE aligns with and extends the Unified Cyber Ontology (UCO), constraining or renaming components as appropriate. CASE is
+        specified at a semantic level and supports various serializations, but the default serialization for CASE is JSON-LD (LD here not to be
+        confused with DL as in OWL-DL).</p>
+
+      <p>Use cases include:
+        <ul>
+          <li>Exchanging a large and diverse set of cyber-investigation information in standardized form while avoiding duplication</li>
+          <li>Interoperability between systems and tools, allowing for automation, normalization, combination, and correlation</li>
+          <li>Maintaining provenance at all phases of cyber-investigation lifecycles, including chain of custody</li>
+          <li>Enhancing tool testing and validation of their results</li>
+          <li>Controlling access to privileged, proprietary, and personal information (via data markings)</li>
+          <li>Support for custom or non-standardized structures (enabling tools containing these to still use and share information)</li>
+          <li>Providing structure to enhance intelligent analysis (e.g., pattern recognition, machine learning, visualization)</li>
+        </ul>
+      </p>
+      <p>The project roadmap, updated quarterly as progress is made, is viewable <a href="/resources/roadmap.html">here</a>.</p>
+
+      <hr class="my-4">
+
+      <a name="nav"></a>
+      <h4 class="mb-3">Site Navigation</h4>
+
+      <a name="website"></a>
+      <h5 class="ml-4">Websites & Email</h5>
+      <ul class="ml-4">
+        <li><a href="/">https://caseontology.org</a> - official website of the CASE Ontology and Community</li>
+        <li><a href="https://github.com/casework/" target="_blank">https://github.com/casework/</a> - official GitHub Organization</li>
+        <li><a href="/contribute.html">Contacts & Emails</a></li>
+      </ul>
+
+      <a name="framework"></a>
+      <h5 class="ml-4">Framework Tools</h5>
+      <ul class="ml-4">
+        <li><a href="https://github.com/casework/CASE-API-Python" target="_blank">Python API</a> - use for adoption</li>
+        <li><a href="https://github.com/casework/RDFDiff" target=_blank">RDFDiff</a> - use to compare glossary terms between CASE and custom data models (must be ingestible into Python rdflib)</li>
+      </ul>
+
+      <a name="mappings"></a>
+      <h5 class="ml-4">Mappings</h5>
+      <ul class="ml-4">
+        <li>Examples at <a href="https://github.com/casework/CASE#examples-in-this-repository" target="_blank">CASE GitHub</a></li>
+        <li><a href="https://github.com/casework/CASE-Mappings" target="_blank">All Public Tools</a></li>
+        <li>All Private Tools - contact CASE Governance Committee</li>
+      </ul>
+
+      <a name="integrations"></a>
+      <h5 class="ml-4">Proof-of-Concept Tool Integrations</h5>
+      <ul class="ml-4">
+        <li><a href="https://github.com/casework/CASE-Implementation-Plaso" target="_blank">Plaso</a> (not currently ontology-compliant)</li>
+        <li><a href="https://github.com/casework/CASE-Implementation-Volatility" target="_blank">Volatility</a> (not currently ontology-compliant)</li>
+      </ul>
+
+      <a name="tools"></a>
+      <h5 class="ml-4">Ontological Exploration Tools</h5>
+      <ul class="ml-4">
+        <li><a href="https://protege.stanford.edu/" target="_blank">Protégé</a> - graph visualizations, Javadoc generation, etc.</li>
+        <li><a href="https://github.com/lambdamusic/Ontospy" target="_blank">Ontospy</a> - CLI interface for stepping through tree visualizations of ontologies</li>
+        <li><a href="https://github.com/cetic/ORS" target="_blank">CETIC</a> (CASE <a href="/community/members.html">Community Member</a>) - POC that is using CASE as a template for testing an ontology repository service</li>
+      </ul>
+
+      <hr class="my-4">
+
+      <a name="scope"></a>
+      <h4 class="mb-3">Scope</h4>
+      <p>It is unnecessary to know everything about the ontology if focused on domain-specific ontology refinement, or mapping/adoption
+        concerning a specific tool. Determine your scope below and then read the pertinent guide to further understand the details,
+        organization, and workflow of participating in the CASE community under that role.</p>
+
+      <p>If not familiar with ontologies, the <a href="https://en.wikipedia.org/wiki/Ontology_components" target="_blank">Ontology Components</a> Wikipedia page,
+         <a href="http://www.w3.org/TR/owl2-primer" target="_blank">OWL2 primer</a>, and
+        <a href="https://protegewiki.stanford.edu/wiki/Ontology101" target="_blank">Ontology 101</a> document will help create a conceptual
+        foundation that will enable better communication with the community/teams and clarify the connected parts present between the
+        ontology's specification (structure/design), it's content (vocabulary, encoded in Turtle or other formats), and the Python API
+        (usage of the defined vocabulary to create validated objects for import/export into JSON-LD).</p>
+
+      <p>Request to join the CASE Community by visiting the <a href="/community/membership.html">Membership Application</a> page.
+        At your request, you will be added to the respective Github Teams, Mailing Lists and additional resources.</p>
+
+      <h5 class="mb-3 ml-4">Roles</h5>
+      <a name="ontologists"></a>
+      <div class="card mb-4 mx-5">
+        <h5 class="card-header">Ontologists</h5>
+        <div class="card-body">
+          <h6 class="card-title">Responsibilities:</h6>
+          <p class="card-text">
+            <ul>
+              <li>Have a deep understanding of the goals of CASE and how representing information differently best achieves them</li>
+              <li>Collaborate with individuals/organizations who have domain-specific knowledge to draft proposals</li>
+              <li>Create and review Github issues to propose ontology changes to the objects/properties in the Natural Language
+                Glossary based on gaps, ambiguities, and improvements noted by Mappers. To learn more about proposals and voting, please see
+                the <a href="/resources/bylaws.html">Community Bylaws</a>.
+              </li>
+            </ul>
+          </p>
+        </div>
+        <div class="card-footer">
+          <button type="button" class="btn btn-outline-primary">Ontology Guide
+            <span class="fa fa-chevron-circle-right fa-fw"></span>
+            <span class="badge badge-pill badge-warning">coming soon</span>
+          </button>
+        </div>
+      </div>
+
+      <a name="mappers"></a>
+      <div class="card mb-4 mx-5">
+        <h5 class="card-header">Mappers</h5>
+        <div class="card-body">
+          <h6 class="card-title">Responsibilities:</h6>
+          <p class="card-text">
+            <ul>
+              <li>Have an understanding of which CASE objects should be used to represent which types of information and when unsure consult Ontologists</li>
+              <li>Collaborate with Adopters to note inadequacies for Ontologists to review</li>
+              <li>Map internal/proprietary objects from Adopters' tools to the correct CASE objects (while guiding namespace usage)</li>
+              <li>Create Github issues for inadequacies so that CASE community discussion can occur (and continue until possible options are identified for representing the data, then a proposal is put forth by the Ontologists team)</li>
+            </ul>
+          </p>
+        </div>
+        <div class="card-footer">
+          <button type="button" class="btn btn-outline-primary">Mappers Guide
+            <span class="fa fa-chevron-circle-right fa-fw"></span>
+            <span class="badge badge-pill badge-warning">coming soon</span>
+          </button>
+        </div>
+      </div>
+
+      <a name="adopters"></a>
+      <div class="card mb-4 mx-5">
+        <h5 class="card-header">Adopters</h5>
+        <div class="card-body">
+          <h6 class="card-title">Responsibilities:</h6>
+          <p class="card-text">
+            <ul>
+              <li>Have an understanding of their use cases</li>
+              <li>Collaborate with Mappers to map objects in their tools to CASE objects</li>
+              <li>Integrate the CASE API into their tool</li>
+              <li>Create Github issues for bugs in the CASE API and supporting tools, or that are tool-specific</li>
+              <li>Participate in discussions on Github issues concerning data representation as CASE community members</li>
+              <li>If a member of your organization is contributing to CASE ontology development because of domain-specific
+                knowledge they should do this via emailing cyberinvestigationexpress@gmail.com to join the Ontologists team,
+                or discuss one-on-one so that Ontologists and Mappers can shepherd the concept through (only Mappers or Ontologists
+                should make Github issues for something not tool-specific)</li>
+            </ul>
+          </p>
+        </div>
+        <div class="card-footer">
+          <button type="button" class="btn btn-outline-primary">Adopters Guide
+            <span class="fa fa-chevron-circle-right fa-fw"></span>
+            <span class="badge badge-pill badge-warning">coming soon</span>
+          </button>
+        </div>
+      </div>
+
+      <a name="discussors"></a>
+      <div class="card mb-4 mx-5">
+        <h5 class="card-header">Discussors</h5>
+        <div class="card-body">
+          <h6 class="card-title">Responsibilities:</h6>
+          <p class="card-text">
+            <ul>
+              <li>Core/active members should have read the above for understanding roles and workflow organization.
+                However, to simply add your two-cents to ontology evolution please visit the <a href="https://github.com/casework/CASE/issues" target="_blank">Issues</a> tab and
+                filter on the <code>Community-FeedbackNeeded</code> and <code>Community-Vote</code> labels (all labels can be found <a href="https://github.com/casework/CASE/labels" target="_blank">here</a>)</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+
+      <hr class="my-4">
+
+      <a name="extras"></a>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card mb-5 mb-lg-0">
+            <div class="card-body">
+              <h5 class="card-title text-muted text-uppercase text-center">see CASE in action</h5>
+              <h6 class="card-price text-center">Examples</h6>
+              <hr>
+              <a href="/ontology/examples.html" class="btn btn-block btn-primary text-uppercase">Go Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card mb-5 mb-lg-0">
+            <div class="card-body">
+              <h5 class="card-title text-muted text-uppercase text-center">contribute, report issues, ask a question</h5>
+              <h6 class="card-price text-center">Contact</h6>
+              <hr>
+              <a href="/contribute.html" class="btn btn-block btn-primary text-uppercase">Go Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card mb-5 mb-lg-0">
+            <div class="card-body">
+              <h5 class="card-title text-muted text-uppercase text-center">learn more about community officials</h5>
+              <h6 class="card-price text-center">Governance</h6>
+              <hr>
+              <a href="/community/governance.html" class="btn btn-block btn-primary text-uppercase">Go Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card mb-5 mb-lg-0">
+            <div class="card-body">
+              <h5 class="card-title text-muted text-uppercase text-center">legal use of CASE</h5>
+              <h6 class="card-price text-center">Licensing</h6>
+              <hr>
+              <a href="" class="btn btn-block btn-primary text-uppercase"><span class="badge badge-pill badge-warning">coming soon</span>
+</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Main Col END -->
+
+</div>
+<!-- body-row END -->
