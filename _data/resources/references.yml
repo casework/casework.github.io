@@ -1,0 +1,16 @@
+- title: Representing Mobile Devices and SIM Cards using CASE/UCO
+  desc: This document describes the approach, and associated property bundles, account types, and address types to represent Mobile Devices and SIM Cards using CASE.
+  date: 2018-03-08
+  url: Representing Mobile Devices using CASE UCO 8Mar2018.pdf
+- title: Representing File and File System information using CASE/UCO
+  desc: This document describes the design decisions for representing information that is contained within a file or file system, and associated metadata.
+  date: 2017-09-14
+  url: Representing Files & File Systems using CASE UCO 14Sept2017.pdf
+- title: Representing Recoverability of Unallocated Files using CASE/UCO
+  desc: This document describes the design decisions for representing information pertaining to recoverability of unallocated (deleted) files.
+  date: 2018-01-31
+  url: Representing Recoverability of Unallocated Files using CASE UCO 31Jan2018.pdf
+- title: Representing Accounts using CASE/UCO
+  desc: This document describes the design decisions for representing Account related information.
+  date: 2017-09-14
+  url: Representing Accounts using UCO CASE 14Sept2017.pdf

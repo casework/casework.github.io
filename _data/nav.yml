@@ -46,6 +46,8 @@
       link: /resources/roadmap.html
     - name: Publications
       link: /resources/publications.html
+    - name: Reference Material
+      link: /resources/references.html
     - name: Ontology Versioning
       link: /resources/versioning.html
 - name: Contribute
