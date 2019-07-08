@@ -53,7 +53,7 @@
 - name: EVIDENCE2eCodex
   filter: dev
   img: evidence2ec.png
-  url:
+  url: https://evidence2e-codex.eu/
 - name: FireEye
   filter: dev
   img: fireeye.png
