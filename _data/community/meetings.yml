@@ -143,7 +143,7 @@
   agenda-points:
     bullet1: CASE Treasurer Announcement
     bullet2: Review Ontology Committee Charter Updates
-    bullet3: CSAE Community Membership Application Review
+    bullet3: CASE Community Membership Application Review
     bullet4: Domain name identified - caseontology.org selected by vote
 - title: Governance Committee Virtual Meeting
   date: 2019-02-28
@@ -176,3 +176,15 @@
     bullet1: Membership Requests and Appointments
     bullet2: CASE Workshop Agenda
     bullet3: UCO Community SOP Status
+- title: Governance Committee Virtual Meeting
+  date: 2019-09-26
+  type: Governance
+  materials:
+    notes: https://drive.google.com/open?id=1URBolIpk4o7iYHWGWjWshVdur5Z60qzj
+  agenda-points:
+    bullet1: CASE Treasurer Updates
+    bullet2: Around the Table - CASE Directors
+    bullet3: Membership requests
+    bullet4: CASE Adoption Committee Charter by MITRE
+    bullet5: Ontology Committee & UCO Updates
+    bullet6: Annual Election Prep
