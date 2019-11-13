@@ -11,19 +11,19 @@
   submenuitems:
     - name: Introduction
       link: /ontology/intro.html
-    - name: Guides
-      link: /ontology/guides.html
+    # - name: Guides
+    #   link: /ontology/guides.html
     - name: Examples
       link: /ontology/examples.html
-    - name: SPACE
-    - name: Latest Specification
-      link: /ontology/spec.html
+    # - name: SPACE
+    # - name: Latest Specification
+    #   link: /ontology/spec.html
 - name: Community
   submenuitems:
     - name: Governance Committee
       link: /community/governance.html
-    - name: Ontology Committee
-      link: /community/ontology.html
+    # - name: Ontology Committee
+    #   link: /community/ontology.html
     - name: Members
       link: /community/members.html
     - name: Meetings
