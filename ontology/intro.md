@@ -4,7 +4,11 @@ jumbo_desc: What is CASE and where is it used?
 ---
 
 ### Exchange cyber-investigation information in standardized form
-CASE is designed to support the widest possible range of information useful for cyber-investigations, including traces extracted from digital sources, evidence handling details, and actions on or within the data. For large data files such as forensic duplicates of hard drives or collected network traffic, CASE references rather than stores the large file and describes how to extract specific information.
+Cyber-investigation Analysis Standard Expression (CASE) supports cyber-investigations in any context, including criminal, corporate and intelligence. In cyber-investigations, the primary observable object being analyzed is called a Trace, which is characterized by its associated Property Bundles.
+
+CASE uses Property Bundles to represent various attributes of the associated Trace, including data sources (mobile devices, storage media, memory) and well-known digital objects such as files and folders, messages (email, chat), documents (PDF, Word), multimedia (pictures, video, audio) and logs (browser history, events).
+
+CASE is an extension of the Unified Cyber Ontology (UCO), which defines classes of cyber objects (e.g., items, tools, people, places), the relations to other cyber objects, provenance of items and actions taken in an action life-cycle. The CASE domain of discourse is focused on "investigation" concentrated on observable Traces and their associated Property Bundles, whereas the UCO serves as an ontological foundation for modeling the broader cyber-domain, treating observable cyber-items and their associated facets more generally.
 
 ##### Implementation examples
 The [EVIDENCE2eCODEX](https://evidence2e-codex.eu) effort is working on transferring information in CASE format between European countries over the secure eCODEX infrastructure. FireEye is implementing CASE/UCO as part of their internal cyber-investigation ecosystem. Government organizations are using CASE to represent and exchange cyber-investigation in joint operations.
