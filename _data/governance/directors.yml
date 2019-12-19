@@ -2,14 +2,14 @@
   image: casey.jpg
   name: Eoghan Casey
   subhead: University of Lausanne
-  bio: Eoghan Casey is professor of Digital Forensic Science and Investigation in the School of Criminal
-    Sciences at the University of Lausanne, and is a partner in Digital Forensics Solutions. He has extensive experience working in
-    digital forensic laboratories in the public and private sectors, and he has analyzed many types of digital evidence to support
-    complex cases.  He has consulted with many attorneys, agencies, and police departments on a wide range of digital investigations,
-    and he has helped organizations investigate and recover from severe security breaches. He has helped develop new capabilities for
-    extracting and analyzing digital evidence, including smartphones and networks. He has delivered expert testimony in civil and
-    criminal matters in the United States, Canada, and international tribunals, and has submitted expert reports and prepared trial
-    exhibits for computer forensic and cyber-crime cases.
+  bio: Eoghan Casey is professor of Digital Forensic Science and Investigation in the School of Criminal Sciences at the University of Lausanne,
+    and is a partner in Digital Forensics Solutions. He has extensive experience working in digital forensic laboratories in the public and
+    private sectors, and he has analyzed many types of digital evidence to support complex cases. He has consulted globally with many attorneys,
+    agencies, and police departments on a wide range of digital investigations, and he has helped organizations investigate and recover from severe
+    security breaches, including network intrusions with international scope. He has helped develop new capabilities for extracting and analyzing
+    digital evidence, including smartphones and networks. He has delivered expert testimony in civil and criminal matters in the United States,
+    Canada, and international tribunals, and has submitted expert reports and prepared trial exhibits for computer forensic and cyber-crime cases.
+    He is also an active member of the Digital/Multimedia Scientific Area Committee (DMSAC) of the NIST Organization for Scientific Area Committees (OSAC).
 - title: CASE Deputy Director
   image: griffith.jpg
   name: Ryan Griffith
@@ -24,19 +24,18 @@
   image: beek.jpg
   name: Harm van Beek
   subhead: Netherlands Forensic Institute
-  bio: Harm van Beek is a Forensic Scientist at the Netherlands Forensic Institute (NFI). His work consists of performing examinations
-    in criminal cases and conducting scientific research in the digital forensic field. Harm is one of the founders of the forensic
-    investigation, innovation and knowledge sharing platform Hansken. Futhermore, he is program manager of the Digital Forensics innovation
-    program of the NFI. Harm obtained his Ph.D. degree in formal methods (computer science) at the Eindhoven University of Technology.
-    Before joining the NFI, he was founder and CTO of ISAAC, a company dedicated to developing middleware and software for the Internet.
-    Harm has co-authored several CASE publications and presented CASE on multiple occasions.
+  bio: Harm van Beek is an experienced Forensic Scientist at the Netherlands Forensic Institute (NFI). His work consists of performing examinations
+    in criminal cases and conducting scientific research in the digital forensic field. Harm is one of the founders of the forensic investigation,
+    innovation and knowledge sharing platform Hansken. Harm obtained his Ph.D. degree in formal methods (computer science) at the Eindhoven University
+    of Technology. Before joining the NFI, he was founder and CTO of ISAAC, a company dedicated to developing middleware and software for the Internet.
 - title: For-profit Class Director
   image: hyde.jpg
   name: Jessica Hyde
   subhead: Magnet Forensics
-  bio: Jessica Hyde is an experienced forensic examiner in both the commercial and government sectors. Jessica has 14 years’ technical
-    experience. She holds an MS in Computer Forensics from George Mason University, where she is currently an Adjunct Professor teaching
-    Mobile Forensics. Her previous roles include Sr. Mobile Exploitation Analyst for Basis Technology and Senior at EY. Jessica is also a
+  bio: Jessica Hyde is an experienced forensic examiner in both the commercial and government sectors. She is currently the Director of Forensics
+    at Magnet Forensics and an Adjunct Professor teaching Mobile Forensics in the graduate programs at both Champlain College and George Mason
+    University, where she achieved an MS in Computer Forensics. Her previous roles included performing forensic examinations as a Sr. Mobile
+    Exploitation Analyst for Basis Technology, Senior at EY, and Senior Electrical Engineer at American Systems. Jessica is also proud to be a
     veteran of the United States Marine Corps.
 - title: Non-profit Class Director
   image: brown.jpg

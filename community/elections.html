@@ -1,0 +1,17 @@
+---
+title: 2020 Governance Committee Director Nominations
+jumbo_desc: Candidates nominated for serving the CASE Community Governance Committee
+---
+    <div class="row text-center">
+      {% for director in site.data.governance.elections %}
+        <div class="col-lg-4">
+          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+            <h4>{{ director.title }}</h4>
+            <img class="img-fluid rounded-sm mb-3" src="/assets/img/governance/{{ director.image }}" alt="">
+            <h5>{{ director.name }}</h5>
+            <h6 class="text-black-50">{{ director.subhead }}</h6>
+            <p class="font-weight-light mb-5 text-justify">{{ director.bio }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
