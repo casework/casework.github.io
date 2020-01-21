@@ -3,14 +3,14 @@
   name: Eoghan Casey
   subhead: University of Lausanne
   bio: Eoghan Casey is professor of Digital Forensic Science and Investigation in the School of Criminal Sciences at the University of Lausanne,
-    and is a partner in Digital Forensics Solutions. He has extensive experience working in digital forensic laboratories in the public and
-    private sectors, and he has analyzed many types of digital evidence to support complex cases. He has consulted globally with many attorneys,
-    agencies, and police departments on a wide range of digital investigations, and he has helped organizations investigate and recover from severe
-    security breaches, including network intrusions with international scope. He has helped develop new capabilities for extracting and analyzing
-    digital evidence, including smartphones and networks. He has delivered expert testimony in civil and criminal matters in the United States,
-    Canada, and international tribunals, and has submitted expert reports and prepared trial exhibits for computer forensic and cyber-crime cases.
-    He is also an active member of the Digital/Multimedia Scientific Area Committee (DMSAC) of the NIST Organization for Scientific Area Committees (OSAC).
-- title: CASE Deputy Director
+    and is a partner in Digital Forensics Solutions. He has extensive experience working in digital forensic laboratories in the public and private sectors,
+    and he has analyzed many types of digital evidence to support complex cases. He has consulted globally with many attorneys, agencies, and police
+    departments on a wide range of digital investigations, and he has helped organizations investigate and recover from severe security breaches, including
+    network intrusions with international scope. He has helped develop new capabilities for extracting and analyzing digital evidence, including smartphones
+    and networks. He has delivered expert testimony in civil and criminal matters in the United States, Canada, and international tribunals, and has
+    submitted expert reports and prepared trial exhibits for computer forensic and cyber-crime cases. He is also an active member of the Digital/Multimedia
+    Scientific Area Committee (DMSAC) of the NIST Organization for Scientific Area Committees (OSAC).
+- title: Government Class Director
   image: griffith.jpg
   name: Ryan Griffith
   subhead: DoD Cyber Crime Center
@@ -18,7 +18,7 @@
     Throughout his tenure with DC3 he has served as a validator, developer, and researcher of digital forensics technologies, served as the
     lead mobile forensics exploitation engineer, lead technologist, and the Cyber Innovation Group Chair. Current work focuses on leading
     research and development initatives for mobile and IoT exploitation and promoting CASE adoption across the DoD. Ryan has co-authored several
-    CASE publications and presented on the subject matter at numerous conferences and workshops. <br /><br />Ryan was elected Goverment Class
+    CASE publications and presented on the subject matter at numerous conferences and workshops.<br /><br />Ryan was elected Goverment Class
     Director and appointed Deputy Director of the Governance Committee by the CASE Presiding Director.
 - title: CASE Technical Director
   image: beek.jpg
@@ -32,11 +32,10 @@
   image: hyde.jpg
   name: Jessica Hyde
   subhead: Magnet Forensics
-  bio: Jessica Hyde is an experienced forensic examiner in both the commercial and government sectors. She is currently the Director of Forensics
-    at Magnet Forensics and an Adjunct Professor teaching Mobile Forensics in the graduate programs at both Champlain College and George Mason
-    University, where she achieved an MS in Computer Forensics. Her previous roles included performing forensic examinations as a Sr. Mobile
-    Exploitation Analyst for Basis Technology, Senior at EY, and Senior Electrical Engineer at American Systems. Jessica is also proud to be a
-    veteran of the United States Marine Corps.
+  bio: Jessica Hyde is an experienced forensic examiner in both the commercial and government sectors. She is currently the Director of Forensics at
+    Magnet Forensics and an Adjunct Professor teaching Mobile Forensics in the graduate programs at both Champlain College and George Mason University,
+    where she achieved an MS in Computer Forensics. Her previous roles included performing forensic examinations as a Sr. Mobile Exploitation Analyst for
+    Basis Technology, Senior at EY, and Senior Electrical Engineer at American Systems. Jessica is also proud to be a veteran of the United States Marine Corps.
 - title: Non-profit Class Director
   image: brown.jpg
   name: Rich Brown
@@ -53,11 +52,12 @@
     25 years as the Chief of Intelligence Management. Richard Brown holds a Graduate Degree from
     Fairleigh Dickinson University with a concentration in Computer Forensics and Network Security.
 - title: Academia Class Director
-  image: lee.jpg
-  name: Sangjin Lee
-  subhead: Korea University
-  bio: Sangjin Lee is a professor of Information Security Graduate School at the Korea University and an expert of digital forensics in Korea.
-    He has been running the Digital Forensic Research Center since 2008. He also collaborates with research institutes and investigation agencies
-    in the field of digital forensics. He is interested in developing a data processing standard for an automation of digital forensic investigation
-    and its forensic framework based on it. Moreover, he is researching for an effective and legitimate process of digital evidence collection and
-    analysis on the computer crime and the incident response.
+  image: blank.jpg
+  name: Christopher Hargreaves
+  subhead: University of Oxford
+  bio: Christopher Hargreaves has a BSc in Computer Science from the University of Bristol, an MSc in Information Security and Computer Crime from University of South Wales,
+    and a PhD in Digital Forensics from Cranfield University. He is currently a lecturer on the Software Engineering Programme, teaching on the MSc in Software
+    and Systems Security. Previously, before starting at Oxford, Chris founded a digital forensics R&D consultancy which he ran for three years, and continues to
+    operate on a part-time basis. Prior to that Chris was a lecturer at Cranfield University (Cranfield Forensics Institute), for seven years and was course director
+    for their MSc in Digital Forensics. Chris is on the editorial board for the journal of Digital Investigation, and on the technical programme committee for several
+    international digital forensics conferences.

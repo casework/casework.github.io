@@ -20,8 +20,8 @@
     #   link: /ontology/spec.html
 - name: Community
   submenuitems:
-    - name: 2020 Governance Committee Elections
-      link: /community/elections.html
+    # - name: 2020 Governance Committee Elections
+    #   link: /community/elections.html
     - name: Governance Committee
       link: /community/governance.html
     # - name: Ontology Committee
