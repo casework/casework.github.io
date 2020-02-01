@@ -13,6 +13,6 @@ var membershipData = {
   "HR": 1, // Croatia
   "IE": 1, // Ireland
   "IL": 1, // Israel
-  "IT": 1, // Italy
+  "IT": 2, // Italy
   "TW": 1, // Taiwan
   };
