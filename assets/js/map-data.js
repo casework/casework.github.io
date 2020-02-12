@@ -1,5 +1,5 @@
 var membershipData = {
-  "US": 26, // United States
+  "US": 27, // United States
   "KR": 7, // South Korea
   "GB": 6, // United Kingdom
   "SE": 4, // Sweden
@@ -15,4 +15,5 @@ var membershipData = {
   "IL": 1, // Israel
   "IT": 2, // Italy
   "TW": 1, // Taiwan
+  "UA": 1, // Ukraine
   };
