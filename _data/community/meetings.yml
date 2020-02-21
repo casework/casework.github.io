@@ -145,6 +145,14 @@
     bullet2: Review Ontology Committee Charter Updates
     bullet3: CASE Community Membership Application Review
     bullet4: Domain name identified - caseontology.org selected by vote
+- title: Ontology Committee Virtual Meeting
+  date: 2019-02-14
+  type: Ontology
+  agenda-points:
+    bullet1: Alex Nelson appointed as Chair of the Ontology Committee
+    bullet2: Ontology Committee Charter is awaiting Governance Committee's final approval
+    bullet3: CASE and UCO working to outline the alignment of both ontology efforts
+    bullet4: Reviewed the Ontology Committee Operations Guide for suggestions/input
 - title: Governance Committee Virtual Meeting
   date: 2019-02-28
   type: Governance
@@ -156,6 +164,15 @@
     bullet3: Membership Requests
     bullet4: Privacy Policy Update
     bullet5: Changes to Bylaws
+- title: Ontology Committee Virtual Meeting
+  date: 2019-02-28
+  type: Ontology
+  agenda-points:
+    bullet1: Governance Committee still making final adjustments to the Ontology Committee Charter
+    bullet2: UCO is working to update its syntax but will not restructure UCO's ontology
+    bullet3: UCO and CASE communities working on defining a statement that reflects CASE's formal inheritance of UCO
+    bullet4: Operations Guide still going through the review process
+    bullet5: "'CASE standard' is the case.ttl file and mappings/adoption/implementation will need to publish a reference to the .ttl version used"
 - title: Governance Committee Virtual Meeting
   date: 2019-03-28
   type: Governance
@@ -167,6 +184,32 @@
     bullet3: Website Establishment and Github Migration Update
     bullet4: UCO Community SOP
     bullet5: Advisory Board Discussion
+- title: Ontology Committee Virtual Meeting
+  date: 2019-03-28
+  type: Ontology
+  agenda-points:
+    bullet1: "Discussed 'Demarcating line' between UCO and CASE. UCO is general domain and CASE is specific to investigative vocabulary"
+    bullet2: Discussed agenda for DFRWS-EU Workshop and The June Workshop
+    bullet3: Decided that CASE needs to establish basic illustrative, demonstrative, and normative implementation examples for new community members
+    bullet4: "New representation of a few concepts: mobile orientation (SIM card), chat messages, custom objects/attributes, cloud-based traces, etc."
+    bullet5: Discussed current hindrances for updating the case.ttl
+- title: Ontology Committee Virtual Meeting
+  date: 2019-04-30
+  type: Ontology
+  agenda-points:
+    bullet1: FRWS-EU Workshop was a success, questions were written up and submitted to the Ontology Committee Chair
+    bullet2: "Discussed the 'Status of Work Items' spreadsheet"
+    bullet3: Discussed Trello card archiving and other possibilities
+    bullet4: Discussed the steps required to formally accept the Ontology Committee Operations Guide
+    bullet5: "Change Proposal: 'Store CASE in RDF/XML' was introduced"
+- title: Ontology Committee Virtual Meeting
+  date: 2019-05-21
+  type: Ontology
+  agenda-points:
+    bullet1: "Discussed the desired outcome of The June Workshop: define a level of formality to achieve CASE and interoperability within other communities (i.e. STIX, ATT&CK, CVE, etc.)"
+    bullet2: "Discussed 'Store CASE in RDF/XML' Change Proposal. Developer decided to leave CASE in TTL and would convert to RDF/XML as needed"
+    bullet3: Update RDF/XML Change Proposal to reflect normalization of the Turtle content
+    bullet4: Still working/discussing CASE Namespace and CASE Resource Overview topics
 - title: Governance Committee Virtual Meeting
   date: 2019-06-06
   type: Governance
@@ -176,6 +219,29 @@
     bullet1: Membership Requests and Appointments
     bullet2: CASE Workshop Agenda
     bullet3: UCO Community SOP Status
+- title: Ontology Committee Virtual Meeting
+  date: 2019-06-18
+  type: Ontology
+  agenda-points:
+    bullet1: Covered logistics and agenda for The June Workshop
+- title: Ontology Committee Virtual Meeting
+  date: 2019-08-01
+  type: Ontology
+  agenda-points:
+    bullet1: UCO released v0.3.0 in July
+    bullet2: Discussed JIRA for Sprint management
+    bullet3: CASE Adoption Committee Charter sent for review by Governance Committee
+    bullet4: Aim to have a Change Proposal on basing the CASE RDF namespace on caseontology.org in voting state by October meeting
+    bullet5: Established a working document to address CASE's concept coverage (MVP)
+    bullet6: Began work on confirming concept coverage for some MVP concepts
+- title: Ontology Committee Virtual Meeting
+  date: 2019-09-19
+  type: Ontology
+  agenda-points:
+    bullet1: Committee feedback approved the move from Trello to JIRA
+    bullet2: Change Proposal for CASE namespace was voted to proceed to development
+    bullet3: "Reviewed requirements for three additional Change Proposals: 'Ontology normalization procedure,' 'CASE’s ontology files need to be separated by namespace,' and 'Different types of file system objects'"
+    bullet4: "Discussed concept coverage (MVP) reporting and concept item: Chain of Custody"
 - title: Governance Committee Virtual Meeting
   date: 2019-09-26
   type: Governance
