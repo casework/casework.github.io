@@ -3,10 +3,13 @@
 - name: Releases
   submenuitems:
     - name: Latest Release
-      link: /ontology/releases/0.2.0/
-    - name: SPACE
+      link: /ontology/releases/0.1.0/
     - name: Archived Releases
       link: /ontology/releases/archive/
+    - name: SPACE
+    - name: Under Development
+      link: /ontology/releases/0.2.0/
+
 - name: Ontology
   submenuitems:
     - name: Introduction

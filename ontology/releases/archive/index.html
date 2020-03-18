@@ -7,13 +7,16 @@ custom_js: releases
   <thead>
     <tr>
       <th>Release</th>
-      <th>Date Added</th>
+      <th>Date</th>
+      <th>Description</th>
     </tr>
   </thead>
   <tbody>
     {% for item in site.data.ontology.releases %}
       <tr>
-        <td><a href="/ontology/releases/{{ item.link }}">{{ item.title }}</a></td><td>{{ item.date }}</td>
+        <td><a href="/ontology/releases/{{ item.title }}/">CASE {{ item.title }}</a></td>
+        <td>{{ item.date }}</td>
+        <td>{{ item.desc }}</td>
       </tr>
     {% endfor %}
   </tbody>

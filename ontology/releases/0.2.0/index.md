@@ -1,14 +1,14 @@
 ---
-title: 0.1.0 Release
+title: 0.2.0 Release
 layout: releases
 custom_css: releases
 ---
 ## {{ page.title }}
 
-###### Date: 2017-01-13
+###### Date: *TBD*
 
 #### Release Notes
-Initial (“prototype”) release of the CASE ontology. Included concepts copied from UCO rather than imported.
+Changes in this release include:
 
 #### Ontology File(s)
 [GitHub](https://github.com/casework/CASE/tree/case-post-v0.1-formalization-to-uco)
