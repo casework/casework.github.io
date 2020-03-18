@@ -11,4 +11,4 @@ custom_css: releases
 Initial (“prototype”) release of the CASE ontology. Included concepts copied from UCO rather than imported.
 
 #### Ontology File(s)
-[GitHub](https://github.com/casework/CASE/tree/case-post-v0.1-formalization-to-uco)
+[GitHub]()
