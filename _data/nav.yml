@@ -3,7 +3,7 @@
 - name: Releases
   submenuitems:
     - name: Latest Release
-      link: /ontology/releases/0.1.0/
+      link: /ontology/releases/0.2.0/
     - name: SPACE
     - name: Archived Releases
       link: /ontology/releases/archive/
@@ -13,8 +13,12 @@
       link: /ontology/intro.html
     # - name: Guides
     #   link: /ontology/guides.html
-    - name: Examples
+    - name: SPACE
+    - header: Examples
+    - name: Investigation
       link: /ontology/examples.html
+    - name: View More
+      link: /ontology/gallery.html
     # - name: SPACE
     # - name: Latest Specification
     #   link: /ontology/spec.html
