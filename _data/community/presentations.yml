@@ -1,0 +1,50 @@
+# Variables Accepted
+# date: format must be YYYY-MM-DD
+# type: Presentation, Workshop
+# materials: slides, recording, notes
+
+- title: International Conference on Digital Forensics and Cyber Crime (ICDF2C) 2018
+  date: 2018-09-11
+  type: Presentation
+  materials:
+    slides: https://drive.google.com/open?id=1ZISz_oTzwKpM5sH74AWLVW8FjHneZgCK
+- title: American Academy of Forensic Sciences (AAFS) 2019
+  date: 2019-02-21
+  type: Presentation
+  materials:
+    slides: https://drive.google.com/open?id=1RfNxiDLDX2bc9sCmiStv3ybNY_b8GKnJ
+- title: Digital Forensics Research Workshop (DFRWS) EU 2018
+  date: 2018-03-02
+  type: Workshop
+  materials:
+    slides: https://drive.google.com/open?id=1jcp9tXidIOzAmzQo6-tzwabfz9hB6ztY
+- title: MITRE Hosted CASE Workshop
+  date: 2018-07-28
+  type: Workshop
+  materials:
+    slides: https://drive.google.com/open?id=1RQitb65xPmjyUIRJjncvlibesAr76nJl
+- title: Digital Forensics Research Workshop (DFRWS) EU 2019 - ITTIG, CETIC
+  date: 2019-04-24
+  type: Workshop
+  materials:
+    slides: https://drive.google.com/open?id=15oXGIqz1LNN2_ZVr38L6HwfNHwXsEGMb
+- title: Digital Forensics Research Workshop (DFRWS) EU 2019 - MITRE
+  date: 2019-04-24
+  type: Workshop
+  materials:
+    slides: https://drive.google.com/open?id=18x5uet3SUvqG1MLkwfHvP51NBD_0Kqrn
+- title: National Cybersecurity Center of Excellence (NCCoE) Hosted CASE Workshop
+  date: 2019-06-25
+  type: Workshop
+  materials:
+    slides: https://drive.google.com/open?id=1r1BD3MGK9-b2C6ZRQH8-tQfN2VWU3ZHf
+- title: Digital Forensics Research Workshop (DFRWS) USA 2019 - Poster
+  date: 2019-07-15
+  type: Workshop
+  materials:
+    slides: https://drive.google.com/open?id=1X0qSugXuIkDv6TSbZPmbLolVZLFC0nCl
+- title: Digital Forensics Research Workshop (DFRWS) USA 2019 - Workshop
+  date: 2019-07-15
+  type: Workshop
+  materials:
+    slides: https://drive.google.com/open?id=109SYxU3u9ePiCK8d1ZFg6wmswRxfXqNH

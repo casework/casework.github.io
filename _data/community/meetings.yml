@@ -50,6 +50,7 @@
   date: 2018-02-28
   type: Community
   materials:
+    slides: https://drive.google.com/open?id=1LfrDo6rCi7fH5AKR1TqBzGeJjlhmazfa
     recording: https://caseuco.adobeconnect.com/p46asf7ci1vc/
   agenda-points:
     bullet1: Voting on proposed updates to CASE/UCO
@@ -70,6 +71,7 @@
   date: 2018-04-25
   type: Community
   materials:
+    slides: https://drive.google.com/open?id=1j2QWLsx2zPLwClp4ZtMf0ARvZxzNlxBk
     recording: https://caseuco.adobeconnect.com/p5unsly0vc5r/
   agenda-points:
     bullet1: Voting on proposed updates to CASE/UCO
@@ -77,9 +79,20 @@
     bullet3: CASE workshop recap
     bullet4: CASE roadmap
 - title: CASE Community Virtual Meeting
+  date: 2018-05-30
+  type: Community
+  materials:
+    slides: https://drive.google.com/open?id=1Kndm7pbhujkCY4FJA2ClCwd8GrvzlL3d
+  agenda-points:
+    bullet1: Proposal reminders
+    bullet2: CASE licensing
+    bullet3: Request for community members to run RDFDiff
+    bullet4: Adoption of CASE Python API into other languages
+- title: CASE Community Virtual Meeting
   date: 2018-07-25
   type: Community
   materials:
+    slides: https://drive.google.com/open?id=1gL0EUhNIv57nijLepmr9W6WFcvy3bVgf
     recording: https://caseuco.adobeconnect.com/prumef063or3/
   agenda-points:
     bullet1: Usage convention for InvestigativeAction
@@ -90,6 +103,7 @@
   date: 2018-08-29
   type: Community
   materials:
+    slides: https://drive.google.com/open?id=1yTB7kHK1C-aoWmOfZejPwYe1OkkZD1fd
     recording: https://caseuco.adobeconnect.com/pqhpquvob6cm/
   agenda-points:
     bullet1: JSON examples and documentation
@@ -100,6 +114,7 @@
   date: 2018-09-26
   type: Community
   materials:
+    slides: https://drive.google.com/open?id=1fcrPJRBVFtiC6cMdrJhnZFyEHA_AjeFM
     recording: https://caseuco.adobeconnect.com/pz9ucfayt4dc/
   agenda-points:
     bullet1: Community roadmap updates
@@ -114,6 +129,17 @@
     bullet1: CASE community interactions
     bullet2: Final review of bylaws
     bullet3: Voting on governance structure
+- title: CASE Community Virtual Meeting
+  date: 2018-11-28
+  type: Community
+  materials:
+    slides: https://drive.google.com/open?id=1blXTnIx4dcYEp3RLFRoR8Sj1Cacv_QSz
+  agenda-points:
+    bullet1: Bylaws Acceptance Update
+    bullet2: Community Director Nominations Update
+    bullet3: Community Roadmap
+    bullet4: Getting ready for CASE Ontology Committee
+    bullet5: EVIDENCE2-eCODEX Meeting Outbrief
 - title: CASE Adoption Workshop for Mobile Forensic Tool Developers
   date: 2018-12-06
   type: Community
