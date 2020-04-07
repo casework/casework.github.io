@@ -18,3 +18,7 @@
   desc: Change label "propertyBundle" (CASE v. 0.1.0) to "hasPropertyBundle" in CASE v. 0.2.0; entails change to IRI
   date: 2020-04-01
   url: CASE Change Proposal 8.zip
+- title: Style Guide for Documentation of the CASE Ontology, Version 1.0
+  desc: This presentation describes the completed CASE Style Guide for Ontology Documentation v1.0.
+  date: 2020-04-07
+  url: CASE Style Guide v1.0 2020-01-14.pdf
