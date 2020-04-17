@@ -1,0 +1,51 @@
+---
+title: Presentations
+jumbo_desc: Conference Presenations and Workshops
+custom_js:
+- presentations
+#- pagination
+custom_css:
+- presentations
+#- pagination
+---
+<div class="mb-5">
+  <button class="btn btn-default filter-button" data-filter="all">All</button>
+  <button class="btn btn-default filter-button" data-filter="Workshop">Workshops</button>
+  <button class="btn btn-default filter-button" data-filter="Presentation">Presentations</button>
+</div>
+<div id="page">
+{% assign presentations_sorted = site.data.community.presentations | sort: 'date' | reverse %}
+{% for item in presentations_sorted %}
+  <div class="card bg-light mb-3 filter {{ item.type }}">
+    <div class="card-header d-flex">
+      <span><i class="fas
+        {% if item.type == "Workshop" %}fa-people-carry
+        {% elsif item.type == "Presentation" %}fa-share-alt
+        {% else %}fa-gavel
+        {% endif %}
+        "></i> {{ item.type }}</span>
+      <span class="ml-auto">
+        {% for material in item.materials %}
+          <a data-toggle="tooltip" title="{{ material[0] }}" class="card-link" target="_blank" href="{{ material[1] }}"><i class="fas
+            {% if material[0] == "slides" %}fa-desktop
+            {% elsif material[0] == "recording" %}fa-video
+            {% else %}fa-sticky-note
+            {% endif %}
+            fa-lg"></i></a>
+        {% endfor %}
+      </span>
+  </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ item.title }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{ item.date | date_to_string }}</h6>
+      <p class="card-text">
+        <ul class="small">
+          {% for point in item.agenda-points %}
+            <li>{{ point[1] }}</li>
+          {% endfor %}
+        </ul>
+      </p>
+    </div>
+  </div>
+{% endfor %}
+</div>
