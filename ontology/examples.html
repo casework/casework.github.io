@@ -82,6 +82,7 @@ custom_js:
         beginning of Chain of Custody. The output of this InvestigativeAction is the seized object and an associated provenance record.</p>
       <h6>Examples of an InvestigativeAction &amp; ProvenanceRecord Objects</h6>
 {% highlight json %}
+[
 {
   "@id":"investigative-action1-uuid",
   "@type":"InvestigativeAction",
@@ -152,7 +153,8 @@ custom_js:
       "value":"d0:33:11:13:e7:a2"
     }
   ]
-},
+}
+]
 {% endhighlight %}
       <p class="pb-3">All CASE objects are inserted within the associated Investigation, wrapped in a CASE Bundle.</p>
     </div>
@@ -162,6 +164,7 @@ custom_js:
           <em><strong>InvestigativeAction</strong></em> and associated Tool using CASE.</p>
       <h6>Example of an InvestigativeAction</h6>
 {% highlight json %}
+[
 {
   "@id":"219189B6-356C-4D53-A844-F0031E74F156",
   "@type":"InvestigativeAction",
@@ -244,7 +247,8 @@ custom_js:
       "sizeInBytes":9080500
     }
   ]
-},
+}
+]
 {% endhighlight %}
       <p class="pb-3">[placeholder for dc3dd wrapper]</p>
     </div>
@@ -267,6 +271,7 @@ custom_js:
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
           <h6 class="mt-3">Example of a Filesystem Trace</h6>
 {% highlight json %}
+[
 {
   "@type":"Trace",
   "@id":"suspect-device-mmssms-uuid",
@@ -310,11 +315,13 @@ custom_js:
     }
   ]
 }
+]
 {% endhighlight %}
         </div>
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
           <h6 class="mt-3">Example of a Mobile Device Trace</h6>
 {% highlight json %}
+[
 {
   "@id":"sms_message1",
   "@type":"Trace",
@@ -346,11 +353,13 @@ custom_js:
     }
   ]
 }
+]
 {% endhighlight %}
         </div>
         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
           <h6 class="mt-3">Example of a Network Traffic Trace</h6>
 {% highlight json %}
+[
 {
   "@type":"Trace",
   "@id":"network-connection1-uuid",
@@ -370,6 +379,7 @@ custom_js:
     }
   ]
 }
+]
 {% endhighlight %}
         </div>
       </div>
