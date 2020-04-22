@@ -20,7 +20,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Standard Expression (CASE) Ontology.
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://www.caseontology.org" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  casework
+github_username: casework
 
 # Build settings
 markdown: kramdown
@@ -31,8 +31,7 @@ plugins:
   - jekyll-feed
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "pages"
     values:
@@ -48,6 +47,11 @@ defaults:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# customer excludes
+exclude:
+  - contribute.md
+  - readme.md
 
 # Google Analytics
 google_analytics: UA-158161373-1
