@@ -13,7 +13,7 @@ custom_js:
 <div id="smartwizard">
   <ul>
       <li><a href="#step-0">Step 0<br /><small>Starting a Cyber-investigation</small></a></li>
-      <li><a href="#step-1">Step 1<br /><small>Evidence Seizure & Chain of Custody</small></a></li>
+      <li><a href="#step-1">Step 1<br /><small>Evidence Seizure &amp; Chain of Custody</small></a></li>
       <li><a href="#step-2">Step 2<br /><small>Evidence Acquisition</small></a></li>
       <li><a href="#step-3">Step 3<br /><small>Evidence Extraction</small></a></li>
   </ul>
@@ -23,7 +23,7 @@ custom_js:
       <h3 class="pt-3">Starting a Cyber-investigation</h3>
       <p class="mb-3">When an investigation is initiated, the description and authorization are represented using a CASE
         Investigation object. Any information related to a cyber-investigation must be wrapped within a CASE bundle.</p>
-      <h6>Examples of an Authorization & Investigation Objects</h6>
+      <h6>Examples of an Authorization &amp; Investigation Objects</h6>
 {% highlight json %}
 {
   "__CASE__":"ASGARD_2019_00162",
@@ -77,10 +77,10 @@ custom_js:
       <p class="pb-3">An Investigation can contain any CASE object, including InvestigativeActions and Traces.</p>
     </div>
     <div id="step-1" class="">
-      <h3 class="pt-3">Evidence Seizure & Chain of Custody</h3>
+      <h3 class="pt-3">Evidence Seizure &amp; Chain of Custody</h3>
       <p class="mb-3">When a device is first touched, this is represented using an InvestigativeAction with an empty input to indicate that this is the
         beginning of Chain of Custody. The output of this InvestigativeAction is the seized object and an associated provenance record.</p>
-      <h6>Examples of an InvestigativeAction & ProvenanceRecord Objects</h6>
+      <h6>Examples of an InvestigativeAction &amp; ProvenanceRecord Objects</h6>
 {% highlight json %}
 {
   "@id":"investigative-action1-uuid",
