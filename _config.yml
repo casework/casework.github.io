@@ -52,6 +52,7 @@ defaults:
 exclude:
   - contribute.md
   - readme.md
+  - vendor/bundle/
 
 # Google Analytics
 google_analytics: UA-158161373-1
