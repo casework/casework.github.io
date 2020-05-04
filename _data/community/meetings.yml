@@ -280,3 +280,61 @@
     bullet4: CASE Adoption Committee Charter by MITRE
     bullet5: Ontology Committee & UCO Updates
     bullet6: Annual Election Prep
+- title: Governance Committee Virtual Meeting
+  date: 2019-11-20
+  type: Governance
+  materials:
+    notes: https://drive.google.com/open?id=11192pzT1m46VdictLuLyXfdKRkmNAtUl
+  agenda-points:
+    bullet1: Status 2020 Governance Nominations
+    bullet2: UCO Community completed UCO SOP
+    bullet3: GC Director Updates
+    bullet4: OC - biggest action is to produce CASE welcome package
+    bullet5: CASE Website updates
+- title: Governance Committee Virtual Meeting
+  date: 2019-12-18
+  type: Governance
+  materials:
+    notes: https://drive.google.com/open?id=1ZNVn6IMzc50IrDBPd6vr0Lggnjd02tFq
+  agenda-points:
+    bullet1: CASE OC Chair defining CASE MVP concepts
+    bullet2: Ten new members added to the community
+    bullet3: UCO Community ratified SOP
+    bullet4: GC to vote on adoption of OC charter annual update
+- title: Governance Committee Virtual Meeting
+  date: 2020-01-31
+  type: Governance
+  materials:
+    notes: https://drive.google.com/open?id=11EaIQLWFHxbHjlki4KujzHck59gQu00r
+  agenda-points:
+    bullet1: New members added to the community
+    bullet2: Adoption Committee Charter requires additional updates before voting
+    bullet3: Poll created for CASE memebers attending AAFS
+- title: Governance Committee Virtual Meeting
+  date: 2020-02-25
+  type: Governance
+  materials:
+    notes: https://drive.google.com/open?id=1w7QNYXrBaB00GEGHzLvzlhXCWk73f0wu
+  agenda-points:
+    bullet1: CASE talk for Myrtle Beach Techno Security was accepted
+    bullet2: DC3 and UNH working together to build machanism to exchange digital forensic artifacts
+    bullet3: UCO Community will be working through backlog of Github issues
+    bullet4: UCO Community will be working through existing change proposals
+- title: Governance Committee Virtual Meeting
+  date: 2020-03-26
+  type: Governance
+  materials:
+    notes: https://drive.google.com/open?id=12X8jsNPI5fQSI09fkUAb9m1Qy7QKwVCG
+  agenda-points:
+    bullet1: Updates to CASE website added by MITRE team (past meeting minutes and workshop presentations)
+    bullet2: Slack community created to provide syncronous or asyncronous communications
+    bullet3: Techno Myrtle Beach conference is still on schedule, however the schedule has not been released
+    bullet4: OC is in the process of generating the 17 CASE MVP use cases. 11/17 use cases are in draft form
+- title: Adoption Committee Virtual Meeting
+  date: 2020-04-22
+  type: Adoption
+  agenda-points:
+    bullet1: Purpose and hierarchy of the Adoption Committee
+    bullet2: Around the room introductions
+    bullet3: Meeting frequency determination (bi-weekly initially)
+    bullet4: Eoghan discusses crossover case challenge

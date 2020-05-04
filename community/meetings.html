@@ -1,6 +1,6 @@
 ---
 title: Meetings
-jumbo_desc: General Community, Governance, and Ontology Meetings
+jumbo_desc: General Community, Governance, Ontology, and Adoption Meetings
 custom_js:
 - meetings
 #- pagination
@@ -13,6 +13,7 @@ custom_css:
   <button class="btn btn-default filter-button" data-filter="Community">Community</button>
   <button class="btn btn-default filter-button" data-filter="Ontology">Ontology</button>
   <button class="btn btn-default filter-button" data-filter="Governance">Governance</button>
+  <button class="btn btn-default filter-button" data-filter="Adoption">Adoption</button>
 </div>
 <div id="page">
 {% assign meetings_sorted = site.data.community.meetings | sort: 'date' | reverse %}
@@ -22,6 +23,7 @@ custom_css:
       <span><i class="fas
         {% if item.type == "Community" %}fa-people-carry
         {% elsif item.type == "Ontology" %}fa-share-alt
+        {% elsif item.type == "Adoption" %}fa-handshake
         {% else %}fa-gavel
         {% endif %}
         "></i> {{ item.type }}</span>
