@@ -280,6 +280,15 @@
     bullet4: CASE Adoption Committee Charter by MITRE
     bullet5: Ontology Committee & UCO Updates
     bullet6: Annual Election Prep
+- title: Ontology Committee Virtual Meeting
+  date: 2019-10-10
+  type: Ontology
+  agenda-points:
+    bullet1: UCO is working to create a new CASE turtle file
+    bullet2: Established voting procedure for OC voting matters (need at least 3 classes to vote the affirmative)
+    bullet3: Opened the Operations Guide for comment collection
+    bullet4: Held Requirements Review for CDR-1, “CASE representation of Confidence”
+    bullet5: Confluence page was created to track all the needed concepts
 - title: Governance Committee Virtual Meeting
   date: 2019-11-20
   type: Governance
@@ -291,6 +300,25 @@
     bullet3: GC Director Updates
     bullet4: OC - biggest action is to produce CASE welcome package
     bullet5: CASE Website updates
+- title: Ontology Committee Virtual Meeting
+  date: 2019-11-14
+  type: Ontology
+  agenda-points:
+    bullet1: Governance Committee wants to start sending a “Welcome Package” to new CASE members to provide materials/information
+    bullet2: Shared development procedures between CASE and UCO were implemented to standardize workflow mechanics between the two ontologies
+    bullet3: Introduced the “MVP Coverage” workflow to track MVP progress
+    bullet4: Voted on and passed the “Annual CASE Ontology Committee Charter Review” and “Adding ‘present’ to the voting quorum definition in the by-laws”
+    bullet5: 'Voted three Change Proposals into Solutions Development. Those CPs included\: “CASE’s ontology files need to be separated by namespace,” “Ontology normalization procedure,” and “Different types of file system objects”'
+- title: Ontology Committee Virtual Meeting
+  date: 2019-12-12
+  type: Ontology
+  agenda-points:
+    bullet1: Adoption Committee Charter has been put forward for a vote
+    bullet2: Change Proposals and Concept Development Requests were moved over to Confluence
+    bullet3: CASE and UCO Shared Development Practices were posted to the CASEOntology.org website
+    bullet4: Discussed Change Proposal 5, “Qualitative Confidence”
+    bullet5: Discussed the possibility of validating instance data using a shape language
+    bullet6: Demonstrated the CASE MVP Workflow for MVP development
 - title: Governance Committee Virtual Meeting
   date: 2019-12-18
   type: Governance
@@ -301,6 +329,15 @@
     bullet2: Ten new members added to the community
     bullet3: UCO Community ratified SOP
     bullet4: GC to vote on adoption of OC charter annual update
+- title: Ontology Committee Virtual Meeting
+  date: 2020-01-14
+  type: Ontology
+  agenda-points:
+    bullet1: 'Governance held nomination process for Class Representation: one change – Dr. Christopher Hargreaves took over Academia Chair in place of Dr. Sangjin Lee '
+    bullet2: Alex Nelson discussed portions of his research that bolster the storage forensic concepts in CASE
+    bullet3: UCO developed a change control process similar to CASE’s and transitioned CP-5 to UCO
+    bullet4: Three narratives, “UrgentEvidence,” “IR,” and “RejectedEvidence,” were voted into MVP
+    bullet5: 'Held Requirements Review for two Change Proposals: “The CASE Ontology README needs to link to its style guidance” and “The CASE examples need to live in a repository that tracks the ontology”'
 - title: Governance Committee Virtual Meeting
   date: 2020-01-31
   type: Governance
@@ -310,6 +347,14 @@
     bullet1: New members added to the community
     bullet2: Adoption Committee Charter requires additional updates before voting
     bullet3: Poll created for CASE memebers attending AAFS
+- title: Ontology Committee Virtual Meeting
+  date: 2020-02-11
+  type: Ontology
+  agenda-points:
+    bullet1: Proposed shifting CASE’s scope to focus on the provenance of digital evidence in an investigative standard (device or data source acts as source of digital evidence)
+    bullet2: Illustrated JSON-LD’s use of “Binding Rules” to map content of an ontology model to the LD context
+    bullet3: Reviewed requirements for Change Proposal-7, “The CASE examples need to live in a repository that tracks the ontology”
+    bullet4: Held Solutions Review for Change Proposal-8, “Rename ‘propertyBundle’ label to ‘hasPropertyBundle’ to adhere to best practices in the Style Guidance”
 - title: Governance Committee Virtual Meeting
   date: 2020-02-25
   type: Governance
@@ -320,6 +365,14 @@
     bullet2: DC3 and UNH working together to build machanism to exchange digital forensic artifacts
     bullet3: UCO Community will be working through backlog of Github issues
     bullet4: UCO Community will be working through existing change proposals
+- title: Ontology Committee Virtual Meeting
+  date: 2020-03-19
+  type: Ontology
+  agenda-points:
+    bullet1: Provided updates on upcoming CASE presentations due to the Covid-19 pandemic
+    bullet2: 'Voted two Change Proposals into Solutions Development: “The CASE ontology README needs to link to its style guidance” and “The CASE examples need to live in a repository that tracks the ontology”'
+    bullet3: Demoed the new “Examples Gallery” on the CASEOntology.org website
+    bullet4: 'Introduced two Topic Narratives for Committee Review: “Narrative-MultipleBrowsers” and “Narrative-Phishing”'
 - title: Governance Committee Virtual Meeting
   date: 2020-03-26
   type: Governance
