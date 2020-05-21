@@ -2,7 +2,7 @@
 title: CASE Community Bylaws
 jumbo_desc: Cyber-investigation Analysis Standard Expression (CASE) Open Source Community Bylaws
 ---
-###### [Draft Bylaws](https://drive.google.com/open?id=1NFFGqeh3Qmv5VhXG0Y8kaAJ9_PXW_1KL). Send feedback to the [Governance Commitee](mailto:case-governance@googlegroups.com?subject=Draft%20Community%20Bylaws%20Feedback) by: 20 JUNE 2020. 
+###### [Draft Bylaws](https://drive.google.com/open?id=1NFFGqeh3Qmv5VhXG0Y8kaAJ9_PXW_1KL). Send feedback to the [Governance Commitee](mailto:case@caseontology.org?subject=[Governance]%20Draft%20Community%20Bylaws%20Feedback) by: 20 JUNE 2020. 
 
 
 ###### Date of Last Revision: 22 JANUARY 2019
