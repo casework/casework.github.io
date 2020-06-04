@@ -488,7 +488,21 @@ custom_js:
                     "@id": ":source-host-uuid"
                 },
                 "uco-observable:sourcePort": 52960,
-                "uco-observable:protocols": "TCP, NETBIOSSESSIONSERVICE",
+                "uco-observable:protocols": {
+                    "@type": "uco-types:ControlledDictionary",
+                    "uco-types:entry": [
+                        {
+                            "@type": "uco-types:ControlledDictionaryEntry",
+                            "uco-types:key": "Transport Layer",
+                            "uco-types:value": "TCP",
+                        },
+                        {
+                            "@type": "uco-types:ControlledDictionaryEntry",
+                            "uco-types:key": "Session Layer",
+                            "uco-types:value": "NETBIOSSESSIONSERVICE ",
+                        }
+                    ]
+                },
                 "connectionState": "APSF"
             }
         ]
