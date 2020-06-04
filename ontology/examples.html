@@ -332,6 +332,7 @@ custom_js:
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
           <h6 class="mt-3">Example of a Filesystem Trace</h6>
+          <p>Note that the file size in the <code>File</code> property bundle is greater than the size in the <code>ContentData</code> property bundle.  This highlights the context-sensitive difference in purpose of <code>sizeInBytes</code>.  In <code>File</code>, the size represents the file system's record of the file's size.  In <code>ContentData</code>, the size represents the measurable size of extracted or extractable file content.  The latter can be less than the file system reports due to, for instance, a faulty storage device.</p>
 {% highlight json %}
 [
     {
