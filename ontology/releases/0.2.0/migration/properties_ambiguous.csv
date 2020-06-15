@@ -1,0 +1,16 @@
+source_property,destination_property,destination_type
+createdTime,uco-core:createdTime,xsd:dateTime
+createdTime,uco-observable:createdTime,xsd:dateTime
+endTime,uco-action:endTime,xsd:dateTime
+endTime,uco-core:endTime,xsd:dateTime
+key,uco-observable:encryptionKey
+key,uco-observable:key
+key,uco-types:key
+location,uco-action:location
+location,uco-observable:location
+object,uco-action:object
+object,uco-core:object
+startTime,uco-action:startTime,xsd:dateTime
+startTime,uco-core:startTime,xsd:dateTime
+version,uco-observable:version
+version,uco-tool:version

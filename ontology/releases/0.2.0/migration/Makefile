@@ -16,11 +16,22 @@ SHELL := /bin/bash
 top_srcdir := $(shell cd ../../../.. ; pwd)
 
 all: \
-  concepts_ambiguous.tsv \
-  concepts.tsv \
-  kindOfRelationship_enumerants.tsv \
-  properties_ambiguous.tsv \
-  properties.tsv
+  concepts_ambiguous.csv \
+  concepts.csv \
+  kindOfRelationship_enumerants.csv \
+  properties_ambiguous.csv \
+  properties.csv
+
+.PRECIOUS: \
+  %.csv \
+  %.tsv
+
+%.csv: \
+  %.tsv
+	cat $< \
+	  | tr '\t' ',' \
+	    > _$@
+	mv _$@ $@
 
 %.diff: \
   %.tsv
@@ -47,4 +58,4 @@ check: \
 	rm *.diff
 
 clean:
-	@rm -f *.diff *.tsv
+	@rm -f *.csv *.diff *.tsv
