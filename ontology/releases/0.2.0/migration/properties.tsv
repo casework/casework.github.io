@@ -1,3 +1,4 @@
+source_property	destination_property	destination_type
 IEMI	uco-observable:IEMI
 MSISDN	uco-observable:MSISDN
 accessAction
