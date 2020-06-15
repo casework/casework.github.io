@@ -48,7 +48,10 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
 # customer excludes
+  - Makefile
   - contribute.md
+  - ontology/releases/0.2.0/migration/.gitignore
+  - ontology/releases/0.2.0/migration/Makefile
   - readme.md
 
 # Google Analytics
