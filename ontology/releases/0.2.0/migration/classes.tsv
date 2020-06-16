@@ -1,4 +1,4 @@
-source_concept	destination_concept
+source_class	destination_class
 Account	uco-observable:Account
 AccountAuthentication	uco-observable:AccountAuthentication
 Action	uco-action:Action

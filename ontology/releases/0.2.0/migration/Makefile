@@ -16,8 +16,8 @@ SHELL := /bin/bash
 top_srcdir := $(shell cd ../../../.. ; pwd)
 
 all: \
-  concepts_ambiguous.csv \
-  concepts.csv \
+  classes_ambiguous.csv \
+  classes.csv \
   kindOfRelationship_enumerants.csv \
   properties_ambiguous.csv \
   properties.csv
@@ -50,8 +50,8 @@ all: \
 # Confirm that the TSV files in this directory match the files used to power the Jekyll-generated page.
 # The .diff files should not need be retained.  If any are found after calling 'make check', they report a problem.
 check: \
-  concepts_ambiguous.diff \
-  concepts.diff \
+  classes_ambiguous.diff \
+  classes.diff \
   kindOfRelationship_enumerants.diff \
   properties_ambiguous.diff \
   properties.diff

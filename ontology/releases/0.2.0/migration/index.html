@@ -9,8 +9,8 @@ title: Migration guide
 
 <ul>
   <li><a href="#prefixes">Prefixes</a></li>
-  <li><a href="#concepts">Concepts</a> (<a href="concepts.csv">CSV</a>, <a href="concepts.tsv">TSV</a>)</li>
-  <li><a href="#concepts_ambiguous">Ambiguous Concepts</a> (<a href="concepts_ambiguous.csv">CSV</a>, <a href="concepts_ambiguous.tsv">TSV</a>)</li>
+  <li><a href="#classes">Classes</a> (<a href="classes.csv">CSV</a>, <a href="classes.tsv">TSV</a>)</li>
+  <li><a href="#classes_ambiguous">Ambiguous Classes</a> (<a href="classes_ambiguous.csv">CSV</a>, <a href="classes_ambiguous.tsv">TSV</a>)</li>
   <li><a href="#properties">Properties</a> (<a href="properties.csv">CSV</a>, <a href="properties.tsv">TSV</a>)</li>
   <li><a href="#properties_ambiguous">Ambiguous Properties</a> (<a href="properties_ambiguous.csv">CSV</a>, <a href="properties_ambiguous.tsv">TSV</a>)</li>
   <li><a href="#kindOfRelationship_enumerants">kindOfRelationship enumerants</a> (<a href="kindOfRelationship_enumerants.csv">CSV</a>, <a href="kindOfRelationship_enumerants.tsv">TSV</a>)</li>
@@ -76,14 +76,14 @@ title: Migration guide
   </tbody>
 </table>
 
-<h3 id="concepts">Concepts</h3>
+<h3 id="classes">Classes</h3>
 
-<p>The first column is the spelling of the CASE 0.1 concepts, without prefixes because the original example files had omitted prefixes.  The second column is the prefixed concept released since CASE 0.1.</p>
+<p>The first column is the spelling of the CASE 0.1 classes, without prefixes because the original example files had omitted prefixes.  The second column is the prefixed class released since CASE 0.1.</p>
 
-<p>These migration steps are also available in machine-readable form at <a href="concepts.csv">concepts.csv</a> or <a href="concepts.tsv">concepts.tsv</a>.</p>
+<p>These migration steps are also available in machine-readable form at <a href="classes.csv">classes.csv</a> or <a href="classes.tsv">classes.tsv</a>.</p>
 
-<table id="migration-0.2-concepts" class="table table-hover">
-  <caption>CASE prototype concepts and what concepts they became in CASE 0.2.0.  An empty second column indicates the concept does not appear in CASE 0.2.0 or its imported ontologies.</caption>
+<table id="migration-0.2-classes" class="table table-hover">
+  <caption>CASE prototype classes and what classes they became in CASE 0.2.0.  An empty second column indicates the class does not appear in CASE 0.2.0 or its imported ontologies.</caption>
   <thead>
     <tr>
       <th>Class</th>
@@ -91,23 +91,23 @@ title: Migration guide
     </tr>
   </thead>
   <tbody>
-    {% for item in site.data.ontology.migration_0_2_0.concepts %}
+    {% for item in site.data.ontology.migration_0_2_0.classes %}
       <tr>
-        <td><code>{{ item.source_concept }}</code></td>
-        <td>{% if item.destination_concept %}<code>{{ item.destination_concept }}</code>{% endif %}</td>
+        <td><code>{{ item.source_class }}</code></td>
+        <td>{% if item.destination_class %}<code>{{ item.destination_class }}</code>{% endif %}</td>
       </tr>
     {% endfor %}
   </tbody>
 </table>
 
-<h3 id="concepts_ambiguous">Ambiguous Concepts</h3>
+<h3 id="classes_ambiguous">Ambiguous Classes</h3>
 
-<p>Some concepts require other contextual information to determine what the destination concept should be.  For example, with the prototype concept <code>Relationship</code>, the <code>kindOfRelationship</code> property's used enumerant will indicate whether the CASE 0.2.0 concept is a <code>uco-core:Relationship</code> or a <code>uco-observable:CyberRelationship</code>.</p>
+<p>Some classes require other contextual information to determine what the destination class should be.  For example, with the prototype class <code>Relationship</code>, the <code>kindOfRelationship</code> property's used enumerant will indicate whether the CASE 0.2.0 class is a <code>uco-core:Relationship</code> or a <code>uco-observable:CyberRelationship</code>.</p>
 
-<p>These migration steps are also available in machine-readable form at <a href="concepts_ambiguous.csv">concepts_ambiguous.csv</a> or <a href="concepts_ambiguous.tsv">concepts_ambiguous.tsv</a>.</p>
+<p>These migration steps are also available in machine-readable form at <a href="classes_ambiguous.csv">classes_ambiguous.csv</a> or <a href="classes_ambiguous.tsv">classes_ambiguous.tsv</a>.</p>
 
-<table id="migration-0.2-concepts_ambiguous" class="table table-hover">
-  <caption>CASE prototype concepts and what concepts they became in CASE 0.2.0.</caption>
+<table id="migration-0.2-classes_ambiguous" class="table table-hover">
+  <caption>CASE prototype classes and what classes they became in CASE 0.2.0.</caption>
   <thead>
     <tr>
       <th>Class</th>
@@ -115,10 +115,10 @@ title: Migration guide
     </tr>
   </thead>
   <tbody>
-    {% for item in site.data.ontology.migration_0_2_0.concepts_ambiguous %}
+    {% for item in site.data.ontology.migration_0_2_0.classes_ambiguous %}
       <tr>
-        <td><code>{{ item.source_concept }}</code></td>
-        <td>{% if item.destination_concept %}<code>{{ item.destination_concept }}</code>{% endif %}</td>
+        <td><code>{{ item.source_class }}</code></td>
+        <td>{% if item.destination_class %}<code>{{ item.destination_class }}</code>{% endif %}</td>
       </tr>
     {% endfor %}
   </tbody>
@@ -126,14 +126,14 @@ title: Migration guide
 
 <h3 id="properties">Properties</h3>
 
-<p>This table shows how to migrate properties, much like the above tables on migrating concepts.  An empty second column indicates the property does not appear in CASE 0.2.0 or its imported ontologies.</p>
+<p>This table shows how to migrate properties, much like the above tables on migrating classes.  An empty second column indicates the property does not appear in CASE 0.2.0 or its imported ontologies.</p>
 
 <p>For properties that refer to data literals (versus referring to objects), the literal's type needs to be assigned as well.  The third column in this table shows the required literal type.  If the third column is empty, the default of <code>xsd:string</code> or <code>xsd:integer</code> should be used, which as a default RDF behavior typically requires no extra work on the programmer's behalf.  (There is no similar literal-type designation column for properties of the prototype because sample data using the prototype did not type literals.)</p>
 
 <p>These migration steps are also available in machine-readable form at <a href="properties.csv">properties.csv</a> or <a href="properties.tsv">properties.tsv</a>.</p>
 
 <table id="migration-0.2-properties" class="table table-hover">
-  <caption>CASE prototype properties and what properties they became in CASE 0.2.0.  An empty second column indicates the concept does not appear in CASE 0.2.0 or its imported ontologies.</caption>
+  <caption>CASE prototype properties and what properties they became in CASE 0.2.0.  An empty second column indicates the property does not appear in CASE 0.2.0 or its imported ontologies.</caption>
   <thead>
     <tr>
       <th>Property</th>
@@ -159,7 +159,7 @@ title: Migration guide
 <p>These migration steps are also available in machine-readable form at <a href="properties_ambiguous.csv">properties_ambiguous.csv</a> or <a href="properties_ambiguous.tsv">properties_ambiguous.tsv</a>.</p>
 
 <table id="migration-0.2-properties_ambiguous" class="table table-hover">
-  <caption>CASE prototype properties and what properties they became in CASE 0.2.0.  An empty second column indicates the concept does not appear in CASE 0.2.0 or its imported ontologies.</caption>
+  <caption>CASE prototype properties and what properties they became in CASE 0.2.0.  An empty second column indicates the property does not appear in CASE 0.2.0 or its imported ontologies.</caption>
   <thead>
     <tr>
       <th>Property</th>
@@ -180,7 +180,7 @@ title: Migration guide
 
 <h3 id="kindOfRelationship_enumerants">kindOfRelationship Enumerants</h3>
 
-<p>The prototype used a single <code>Relationship</code> concept to relate objects to one another.  In CASE 0.2.0, the prototype's <code>Relationship</code> will be replaced with either a <code>uco-core:Relationship</code> or <code>uco-observable:CyberRelationship</code>.  These two relationship classes use different sets of enumerants, identified by the enumerant's type.  This table assists with not only migrating the enumerant, but determining which type of relationship class the prototype <code>Relationship</code> should become.</p>
+<p>The prototype used a single <code>Relationship</code> class to relate objects to one another.  In CASE 0.2.0, the prototype's <code>Relationship</code> will be replaced with either a <code>uco-core:Relationship</code> or <code>uco-observable:CyberRelationship</code>.  These two relationship classes use different sets of enumerants, identified by the enumerant's type.  This table assists with not only migrating the enumerant, but determining which type of relationship class the prototype <code>Relationship</code> should become.</p>
 
 <p>These migration steps are also available in machine-readable form at <a href="kindOfRelationship_enumerants.csv">kindOfRelationship_enumerants.csv</a> or <a href="kindOfRelationship_enumerants.tsv">kindOfRelationship_enumerants.tsv</a>.</p>
 
