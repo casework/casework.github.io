@@ -22,3 +22,7 @@
   desc: This presentation contains a brief overview of the purpose, structure, and content of the official style guide for creating documentation of the CASE Ontology.
   date: 2020-04-07
   url: CASE Style Guide v1.0 2020-01-14.pdf
+- title: Change Proposal 3
+  desc: Adoption of rdf-toolkit for CASE normalization process
+  date: 2020-06-15
+  url: CASE Change Proposal 3.zip
