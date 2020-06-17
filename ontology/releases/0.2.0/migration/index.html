@@ -78,12 +78,12 @@ title: Migration guide
 
 <h3 id="classes">Classes</h3>
 
-<p>The first column is the spelling of the CASE 0.1 classes, without prefixes because the original example files had omitted prefixes.  The second column is the prefixed class released since CASE 0.1.</p>
+<p>The first column is the spelling of the CASE 0.1 class name, without prefixes because the original example files omitted prefixes.  The second column is the prefixed class name in the release targeted by this migration guide.</p>
 
 <p>These migration steps are also available in machine-readable form at <a href="classes.csv">classes.csv</a> or <a href="classes.tsv">classes.tsv</a>.</p>
 
 <table id="migration-0.2-classes" class="table table-hover">
-  <caption>CASE prototype classes and what classes they became in CASE 0.2.0.  An empty second column indicates the class does not appear in CASE 0.2.0 or its imported ontologies.</caption>
+  <caption>CASE prototype classes and what classes they became in CASE 0.2.0.  An empty second column indicates the class name does not appear in CASE 0.2.0 or its imported ontologies.</caption>
   <thead>
     <tr>
       <th>Class</th>
@@ -102,7 +102,7 @@ title: Migration guide
 
 <h3 id="classes_ambiguous">Ambiguous Classes</h3>
 
-<p>Some classes require other contextual information to determine what the destination class should be.  For example, with the prototype class <code>Relationship</code>, the <code>kindOfRelationship</code> property's used enumerant will indicate whether the CASE 0.2.0 class is a <code>uco-core:Relationship</code> or a <code>uco-observable:CyberRelationship</code>.</p>
+<p>Some prototype classes require other contextual information to determine what the destination class name should be.  For example, with the prototype class <code>Relationship</code>, the <code>kindOfRelationship</code> property's used enumerant will indicate whether the CASE 0.2.0 class is a <code>uco-core:Relationship</code> or a <code>uco-observable:CyberRelationship</code>.</p>
 
 <p>These migration steps are also available in machine-readable form at <a href="classes_ambiguous.csv">classes_ambiguous.csv</a> or <a href="classes_ambiguous.tsv">classes_ambiguous.tsv</a>.</p>
 
