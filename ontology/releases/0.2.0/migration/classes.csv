@@ -9,6 +9,7 @@ Authorization,uco-investigation:Authorization
 BirthInformation,uco-identity:BirthInformation
 BluetoothAddress,uco-observable:BluetoothAddress
 Bundle,uco-core:Bundle
+Compression,uco-observable:CompressedStream
 ComputerSpecification,uco-observable:ComputerSpecification
 ConfigurationSetting,uco-tool:ConfigurationSettingType
 ContentData,uco-observable:ContentData

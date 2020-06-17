@@ -1,6 +1,8 @@
 source_property,destination_property,destination_type
 createdTime,uco-core:createdTime,xsd:dateTime
 createdTime,uco-observable:createdTime,xsd:dateTime
+data,uco-observable:WindowsRegistryValue
+data,uco-observable:dataPayload
 endTime,uco-action:endTime,xsd:dateTime
 endTime,uco-core:endTime,xsd:dateTime
 key,uco-observable:encryptionKey
