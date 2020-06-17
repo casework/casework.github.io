@@ -19,6 +19,7 @@ byteOrder	uco-observable:byteOrder
 callType	uco-observable:callType
 clockSetting	uco-observable:clockSetting
 columnName	uco-observable:columnName
+compressionMethod	uco-observable:compressionMethod
 configurationSetting	uco-tool:configurationSettings
 connectionState
 content	uco-core:object
