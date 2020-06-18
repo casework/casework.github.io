@@ -1,0 +1,10 @@
+source_enumerant,destination_enumerant,destination_type
+associated-account
+contained-within,Contained_Within,uco-observable:CyberItemRelationshipEnum
+decoded-from
+decompressed-from
+decrypted-from
+forensic_image_of
+has-account
+has-fragment
+stored-on
