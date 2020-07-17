@@ -22,20 +22,6 @@ all:
 	$(MAKE) \
 	  --directory ontology/releases/0.2.0/migration
 
-check:
-	$(MAKE) \
-	  --directory ontology/releases/0.2.0/migration \
-	  check
-
-clean:
-	@rm -f \
-	  .venv.done.log
-	@rm -rf \
-	  venv
-	@$(MAKE) \
-	  --directory ontology/releases/0.2.0/migration \
-	  clean
-
 .venv.done.log: \
   requirements.txt
 	rm -rf venv
@@ -50,3 +36,17 @@ clean:
 	  pip install \
 	    -r requirements.txt
 	touch $@
+
+check:
+	$(MAKE) \
+	  --directory ontology/releases/0.2.0/migration \
+	  check
+
+clean:
+	@rm -f \
+	  .venv.done.log
+	@rm -rf \
+	  venv
+	@$(MAKE) \
+	  --directory ontology/releases/0.2.0/migration \
+	  clean
