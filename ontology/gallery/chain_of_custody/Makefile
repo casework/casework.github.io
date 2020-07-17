@@ -28,7 +28,7 @@ check: \
 	rm *.diff
 
 clean:
-	@rm *.diff
+	@rm -f *.diff
 	@touch urgent_evidence.json
 
 urgent_evidence.html: \
