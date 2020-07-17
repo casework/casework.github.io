@@ -1,0 +1,7 @@
+{
+    "@context": {
+        "": "http://example.org/kb/"
+    },
+    "@graph": [
+    ]
+}
