@@ -18,9 +18,16 @@ ifeq ($(VIRTUALENV),)
 $(error virtualenv not found)
 endif
 
-all:
+all: \
+  .venv.done.log
 	$(MAKE) \
 	  --directory ontology/releases/0.2.0/migration
+	$(MAKE) \
+	  --directory ontology/gallery/chain_of_custody
+
+.PHONY: \
+  check-migration-0.2.0 \
+  check-urgent_evidence
 
 .venv.done.log: \
   requirements.txt
@@ -37,9 +44,19 @@ all:
 	    -r requirements.txt
 	touch $@
 
-check:
+check: \
+  check-migration-0.2.0 \
+  check-urgent_evidence
+
+check-migration-0.2.0:
 	$(MAKE) \
 	  --directory ontology/releases/0.2.0/migration \
+	  check
+
+check-urgent_evidence: \
+  .venv.done.log
+	$(MAKE) \
+	  --directory ontology/gallery/chain_of_custody \
 	  check
 
 clean:
@@ -47,6 +64,9 @@ clean:
 	  .venv.done.log
 	@rm -rf \
 	  venv
+	@$(MAKE) \
+	  --directory ontology/gallery/chain_of_custody \
+	  clean
 	@$(MAKE) \
 	  --directory ontology/releases/0.2.0/migration \
 	  clean
