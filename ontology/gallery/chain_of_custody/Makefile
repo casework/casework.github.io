@@ -19,8 +19,24 @@ all: \
   urgent_evidence.html
 
 # The unit test of this directory is:
-# Not yet defined.
+# Confirm that the generated, and website-served, urgent_evidence.html page is exactly what is tracked in version control after regenerating.
+# The .diff files should not need be retained.  If any are found after calling 'make check', they report a problem.
 check: \
-  urgent_evidence.html
+  urgent_evidence.html.diff
+	test -e urgent_evidence.html.diff
+	test ! -s urgent_evidence.html.diff
+	rm *.diff
 
 clean:
+	@rm *.diff
+	@touch urgent_evidence.json
+
+urgent_evidence.html: \
+  urgent_evidence.json
+	touch $@
+
+urgent_evidence.html.diff: \
+  urgent_evidence.html
+	test 1 -eq $$(git ls-tree HEAD urgent_evidence.html | wc -l)  # Confirm file is git-tracked.
+	git diff urgent_evidence.html > _$@
+	mv _$@ $@
