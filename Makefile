@@ -13,6 +13,11 @@
 
 SHELL := /bin/bash
 
+VIRTUALENV ?= $(shell which virtualenv-3 2>/dev/null || which virtualenv-3.8 2>/dev/null || which virtualenv-3.7 2>/dev/null || which virtualenv-3.6 2>/dev/null || which virtualenv)
+ifeq ($(VIRTUALENV),)
+$(error virtualenv not found)
+endif
+
 all:
 	$(MAKE) \
 	  --directory ontology/releases/0.2.0/migration
@@ -23,6 +28,25 @@ check:
 	  check
 
 clean:
+	@rm -f \
+	  .venv.done.log
+	@rm -rf \
+	  venv
 	@$(MAKE) \
 	  --directory ontology/releases/0.2.0/migration \
 	  clean
+
+.venv.done.log: \
+  requirements.txt
+	rm -rf venv
+	$(VIRTUALENV) \
+	  --python=python3 \
+	  venv
+	source venv/bin/activate ; \
+	  pip install \
+	    --upgrade \
+	    pip
+	source venv/bin/activate ; \
+	  pip install \
+	    -r requirements.txt
+	touch $@
