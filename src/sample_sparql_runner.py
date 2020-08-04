@@ -69,7 +69,7 @@ def main():
 
     # https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_html.html
     df = pd.DataFrame(records, columns=variables)
-    html = df.to_html()
+    html = df.to_html(classes=("table",))
 
     with open(args.out_html, "w") as out_fh:
         out_fh.write(html)
