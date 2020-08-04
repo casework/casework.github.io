@@ -20,7 +20,7 @@ all: \
 
 # The unit test of this directory is:
 # Confirm that the generated, and website-served, urgent_evidence.html page is exactly what is tracked in version control after regenerating.
-# The .diff files should not need be retained.  If any are found after calling 'make check', they report a problem.
+# The .diff files should not be retained.  If any are found after calling 'make check', they illustrate a problem.
 check: \
   urgent_evidence.html.diff
 	test -e urgent_evidence.html.diff
