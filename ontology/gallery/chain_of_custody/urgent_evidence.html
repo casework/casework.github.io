@@ -99,13 +99,16 @@ SELECT ?lEndTime ?lDescription
 WHERE
 {
   ?nAction
-    a uco-action:Action ;
     uco-action:actionReferences [
       a uco-action:ActionReferences ;
       uco-action:endTime ?lEndTime ;
     ] ;
     uco-core:description ?lDescription ;
     .
+
+  { ?nAction a uco-action:Action . }
+  UNION
+  { ?nAction a uco-investigation:InvestigativeAction . }
 }
 ORDER BY ?lEndTime
 {% endhighlight %}
@@ -135,41 +138,51 @@ ORDER BY ?lEndTime
     </tr>
     <tr>
       <th>3</th>
+      <td>2019-01-01T14:15+00:00</td>
+      <td>Sealed Exhibit Photographed</td>
+    </tr>
+    <tr>
+      <th>4</th>
       <td>2019-01-01T14:20+00:00</td>
       <td>Exhibit Unsealed</td>
     </tr>
     <tr>
-      <th>4</th>
+      <th>5</th>
+      <td>2019-01-01T14:21+00:00</td>
+      <td>Unsealed Exhibit Photographed</td>
+    </tr>
+    <tr>
+      <th>6</th>
       <td>2019-01-01T14:25+00:00</td>
       <td>Exhibit Connected to Kiosk &amp; process started</td>
     </tr>
     <tr>
-      <th>5</th>
+      <th>7</th>
       <td>2019-01-01T14:55+00:00</td>
       <td>Exhibit Disconnected from Kiosk</td>
     </tr>
     <tr>
-      <th>6</th>
+      <th>8</th>
       <td>2019-01-01T15:00+00:00</td>
       <td>Exhibit Resealed</td>
     </tr>
     <tr>
-      <th>7</th>
+      <th>9</th>
       <td>2019-01-01T15:05+00:00</td>
       <td>Report DVD Generated as associated exhibit</td>
     </tr>
     <tr>
-      <th>8</th>
+      <th>10</th>
       <td>2019-01-01T15:10+00:00</td>
       <td>DVD Report sealed</td>
     </tr>
     <tr>
-      <th>9</th>
+      <th>11</th>
       <td>2019-01-01T15:15+00:00</td>
       <td>Witness statement generated</td>
     </tr>
     <tr>
-      <th>10</th>
+      <th>12</th>
       <td>2019-01-01T15:20+00:00</td>
       <td>Sealed Exhibit handed the OIC &amp; Transfer documentation signed</td>
     </tr>
