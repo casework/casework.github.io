@@ -3,6 +3,7 @@ title: Reference Material
 jumbo_desc: Reference documents detailing early CASE design and usage decisions
 custom_js: downloads
 ---
+
 <table id="downloads" class="table table-hover">
   <thead>
     <tr>
@@ -13,9 +14,11 @@ custom_js: downloads
   </thead>
   <tbody>
     {% for item in site.data.resources.references %}
-      <tr>
-        <td><a href="/resources/references/{{ item.url }}">{{ item.title }}</a></td><td>{{ item.desc }}</td><td>{{ item.date }}</td>
-      </tr>
+    <tr>
+      <td><a href="{{ item.url }}" target="_blank">{{ item.title }}</a></td>
+      <td>{{ item.desc }}</td>
+      <td>{{ item.date }}</td>
+    </tr>
     {% endfor %}
   </tbody>
 </table>
