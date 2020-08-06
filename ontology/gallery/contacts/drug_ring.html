@@ -1,0 +1,45 @@
+---
+<!-- layout: blank -->
+title: Drug Ring
+jumbo_desc: CASE Sub-topic of Contacts
+---
+
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Introduction</h2>
+        <p>Mobile device forensics allows for investigators to obtain digital evidence and personal data from the user's cellular device. Data can be obtained through logical extraction in which live data can include call and text logs and contact lists. Moreover, investigators can look to recover information from physical sources, including external memory devices such as subscriber identification module (SIM) cards. The SIM card separates personal information (contacts and network settings) from the device. Its file system consists of a root directory file that is subdivided into directory and elementary files (DF and EF) that hold binary data.</p>
+        <p>Proper acquisition, examination, and analysis of the SIM card allow investigators access to the user's SMS messages and phone book contacts.</p>
+        <h2>Narrative</h2>
+        <p>Washington County Law Enforcement has seized the mobile device of a low-level narcotics dealer. The department wants to identify individuals that the dealer has been in contact with and other movers that may be in the area. Firstly, the investigator ensures that the device is preserved in its original state and cuts off connection to all wireless networks. Using a write blocking device, he creates an exact sector-level duplicate. Software imaging tool ACME Mobile Device Imager is used to duplicate the device's primary storage, recording a SHA-256 hash. The original device is retained for analysis.</p>
+        <p>Following seizure and acquisition, the investigator begins a logical analysis by extracting live data of the dealer's contacts. The process of his logical extraction is as follows:</p>
+        <ol type="1">
+          <li>The investigator uses ACME Mobile Device Analyzer, which sends a series of commands to the device. Data collected from the phone's memory is sent back to the investigator's workstation.</li>
+          <li>A ".amdareport" file is created and displays a summary of the report.</li>
+          <li>The investigator selects the "Contacts" tab of the report and documents the name, phone number, and location where the contacts are stored.
+            <ol type="a">
+              <li>He notes that the contacts are stored on the SIM card.</li>
+            </ol>
+          </li>
+          <li>The dealer had removed his email client prior to seizure of the device. The investigator removes the ActiveSync connection to remove Microsoft Exchange from the phone which un-syncs contacts.</li>
+            <ol type="a">
+              <li>The device is imaged again after this step.</li>
+            </ol>
+          </li>
+          <li>Conducting an analysis of the Exchange email client reveals that contacts (phone numbers and emails) were not disturbed by deleting the email client.</li>
+        </ol>
+        <p>Next, he begins his analysis of SMS messages sent from the dealer's device and the phone contact list. He looks for signs of tampering by analyzing the duplicated image. To undergo SIM card forensics and analysis of the dealer's contacts, the investigator follows this process:</p>
+        <ol type="1">
+          <li>To ensure that evidence is preserved, the investigator removes the SIM card from the phone and inserts it into his connected SIM Card Clone Device.
+            <ol type="a">
+              <li>After running the tool, he clones the SIM card and copies relevant data to his workstation.</li>
+              <li>He uses hashing to check the integrity of the data.</li>
+            </ol>
+          </li>
+          <li>He again uses mobile forensic tool ACME Mobile Device Imager to access the Fixed dialing numbers (FDN) EF to obtain contact numbers and names.
+            <ol type="a">
+              <li>He also uses the tools to retrieve deleted SMS messages and contacts from the device.</li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+    </div>
