@@ -1,0 +1,31 @@
+---
+<!-- layout: blank -->
+title: IP Theft/Video Leak
+jumbo_desc: CASE Sub-topic of Video
+---
+
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Introduction</h2>
+        <p>This narrative presents a situation in which video evidence needs to be transferred between different tools and organizations for analysis. It highlights CASE's interoperability and ability to maintain provenance.</p>
+        <h2>Narrative</h2>
+        <p>A company has private videos of trade secrets posted on the internet with format-internal metadata missing. The videos contain their proprietary manufacturing methods for a product on the factory floor. After an investigation is held, a suspect is found to be a disgruntled former employee and their personal device is seized as a possible point of exfiltration. The following steps are taken to secure and analyze the video evidence:
+        <ol type="1">
+          <li>An investigator initiates a cyber investigation, assigning a case name and their authorization.</li>
+          <li>The seized device is analyzed and is found to have thousands of short videos from messaging application artifacts and other personal use that are not likely to be relevant to the case.</li>
+          <li>All the found videos are extracted from the seized mobile device, saving the following information:
+            <ol type="a">
+              <li>Mobile device type
+              <li>Filename
+              <li>Hash value
+              <li>Associated Provenance Record</li>
+            </ol>
+          </li>
+          <li>The investigator zips the files up and records the time/date along with the hash and sends them to a contractor to perform analysis in order to find the video files containing the evidence.</li>
+          <li>The contractor suggests to a company representative that a video classifier trained on the factory floor would be able to recognize relevant video content with lesser turnaround time and expense than manual review. Receiving authorization, the contractor visits the company and gathers training data from the factory floor in question.</li>
+          <li>The contractor trains a classifier using the data gathered to identify videos that may contain the stolen trade secret data. (The output being the video filename, along with the times containing the data.)</li>
+          <li>The contractor then provides the files to the classifier tool, receiving content match scores for all videos. The contractor finds a threshold of 70 out of 100 in the tool's proprietary scoring system identifies posted and not-posted videos from the factory floor.</li>
+          <li>The output of the classifier for videos the contractor manually confirms relevant is then sent back to the investigators, who now have direct evidence of the stolen trade secrets.</li>
+        </ol>
+      </div>
+    </div>
