@@ -1,0 +1,23 @@
+---
+<!-- layout: blank -->
+title: Insider Threat
+jumbo_desc: CASE Sub-topic of File System
+---
+
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Introduction</h2>
+        <p>File system forensics are an integral part of an investigation as it serves as a foundation to an examiner’s verification and validation process. A file system is the structure in which files are named and stored for retrieval. Directories consist of data stored in folders and contain multiple folders. File system structures such as File Association Tables (FAT), Extended File System (EXT), and New Technology File System (NTFS) allow investigators insight into deleted files and file metadata.</p>
+        <h2>Narrative</h2>
+        <p>DevSecurity Inc. suspects an attacker has breached their IT environment as reported by their intrusion detection system. An IT Security Administrator later discovers the company has an insider threat who has injected malware into their IT environment. He engages a digital forensic practitioner to preserve and analyze the suspected insider's workstations for investigation. The steps taken during the investigation are detailed below:
+        <ol type="1">
+          <li>After securing the system, the digital forensic practitioner acquires forensic copies of all data from the storage media in the affected workstations for investigation.</li>
+          <li>She computes SHA-256 hash values of the forensic copies for integrity verification purposes.</li>
+          <li>She begins her search for files that have been removed from the File Allocation Table and Master File Table. Extracting the data is done through file carving where she uses ACME File Carver's file structure-based carving to examine the internal layout of a file and its elements: header, footer, identifier strings, and size information.</li>
+          <li>She uses Autopsy to perform further analysis of the file system. File system forensic analysis allows the digital forensic practitioner to recover date-time stamps that were altered by malware.</li>
+          <li>The administrator uses ACME File System Analyzer to search for .RAR file extensions and headers to reveal files that were aggregated for information.</li>
+          <li>She conducts a timeline analysis to cross reference date-time stamps of malware-related files against Prefetch files.</li>
+          <li>Attack vectors and data stolen from file systems are documented.</li>
+        </ol>
+      </div>
+    </div>
