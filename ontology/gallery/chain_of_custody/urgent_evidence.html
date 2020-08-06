@@ -99,6 +99,7 @@ SELECT ?lEndTime ?lDescription
 WHERE
 {
   ?nAction
+    a uco-investigation:InvestigativeAction ;
     uco-action:actionReferences [
       a uco-action:ActionReferences ;
       uco-action:endTime ?lEndTime ;
@@ -106,9 +107,6 @@ WHERE
     uco-core:description ?lDescription ;
     .
 
-  { ?nAction a uco-action:Action . }
-  UNION
-  { ?nAction a uco-investigation:InvestigativeAction . }
 }
 ORDER BY ?lEndTime
 {% endhighlight %}
