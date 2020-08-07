@@ -1,0 +1,20 @@
+---
+<!-- layout: blank -->
+title: Distribution
+jumbo_desc: CASE Sub-topic of Installed Apps
+---
+
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Introduction</h2>
+        <p>When examining systems, knowing what installed programs or apps is a crucial step in the investigative process. Application install lists allow for forensic tools to quickly determine which app parsers to run on a system to extract artifacts such as call history, text messages, etc. Applications installed on a system can be discovered from several difference sources depending on the operating system being examined. Many operating systems also either keep a log of uninstalled programs or leave traces of previously installed programs. This can be imperative for timelining or determining if data is being hidden or has attempted to be destroyed.</p>
+        <h2>Narrative</h2>
+        <p>An investigator is given a disk image of an iOS cell phone as well as a Windows 10 computer seized from a suspected drug dealer. A list of installed applications needs to be pulled from the devices to determine other buyer and sellers and how they communicate with one another. Knowledge of a list of applications installed on the devices can also be used during interrogation in order to illicit more information from the suspect. ACME forensics tool is used on the Windows 10 image to dump a list of applications. The tool searches through both Windows Registry as well as the Windows 10 AppRepository. The tool produce application install directories, app installation time and number of application launches (Prefetch). ACME forensics tool then processes the iOS image by looking through the tables in the applicationState.db (SQL). Uninstalled applications were also detected by ACME tool by examining the MobileInstallation/UninstalledApplications.plist file (noting bundleID and timestamp). By diving deeper into prefetch on windows and MACB (modified, accessed, changed, born date) on iOS a timeline can be built showing how many times and when applications were installed and launched on a device. After comparing all software installed and uninstalled on the Windows and iOS, one application (Whatsapp) stood out as being on both at some point. Based on this application in common between the devices, this application is prioritized, and databases are extracted from the ChatStorage.sqlite file that contains all chat history across the suspects accounts.</p>
+	<h3>References</h3>
+        <ul>
+          <li><a href="https://www.sciencedirect.com/topics/computer-science/installed-program">https://www.sciencedirect.com/topics/computer-science/installed-program</a></li>
+          <li><a href="https://www.group-ib.com/blog/whatsapp_forensic_artifacts">https://www.group-ib.com/blog/whatsapp_forensic_artifacts</a></li>
+          <li><a href="https://boncaldoforensics.wordpress.com/2018/10/07/all-installed-apps-artifact-windows-10-forensics/">https://boncaldoforensics.wordpress.com/2018/10/07/all-installed-apps-artifact-windows-10-forensics/</a></li>
+        </ul>
+      </div>
+    </div>
