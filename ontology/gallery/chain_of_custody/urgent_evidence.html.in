@@ -95,97 +95,10 @@ jumbo_desc: CASE Sub-topic of Chain of Custody
           <div class="card-body">
             <p class="card-text">According to the CASE report, what is the timeline of all of the recorded actions? (<a href="urgent_evidence-query-action_timeline.sparql">SPARQL source</a>)</p>
 {% highlight sparql %}
-SELECT ?lEndTime ?lDescription
-WHERE
-{
-  ?nAction
-    a uco-investigation:InvestigativeAction ;
-    uco-action:actionReferences [
-      a uco-action:ActionReferences ;
-      uco-action:endTime ?lEndTime ;
-    ] ;
-    uco-core:description ?lDescription ;
-    .
-
-}
-ORDER BY ?lEndTime
+@QUERY_ACTION_TIMELINE_SPARQL@
 {% endhighlight %}
-<table border="1" class="dataframe table table-bordered table-condensed">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>?lEndTime</th>
-      <th>?lDescription</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2019-01-01T14:00+00:00</td>
-      <td>Exhibit submitted for Kiosk examination</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2019-01-01T14:05+00:00</td>
-      <td>Exhibit seal checks (passed) &amp; Exhibit receipted in lab</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2019-01-01T14:05:30+00:00</td>
-      <td>Exhibit assigned to Kiosk technician</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2019-01-01T14:15+00:00</td>
-      <td>Sealed Exhibit Photographed</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2019-01-01T14:20+00:00</td>
-      <td>Exhibit Unsealed</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2019-01-01T14:21+00:00</td>
-      <td>Unsealed Exhibit Photographed</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>2019-01-01T14:25+00:00</td>
-      <td>Exhibit Connected to Kiosk &amp; process started</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>2019-01-01T14:55+00:00</td>
-      <td>Exhibit Disconnected from Kiosk</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>2019-01-01T15:00+00:00</td>
-      <td>Exhibit Resealed</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>2019-01-01T15:05+00:00</td>
-      <td>Report DVD Generated as associated exhibit</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>2019-01-01T15:10+00:00</td>
-      <td>DVD Report sealed</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>2019-01-01T15:15+00:00</td>
-      <td>Witness statement generated</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>2019-01-01T15:20+00:00</td>
-      <td>Sealed Exhibit handed the OIC &amp; Transfer documentation signed</td>
-    </tr>
-  </tbody>
-</table>
+@QUERY_ACTION_TIMELINE_HTML@
+
           </div>
         </div>
       </div>

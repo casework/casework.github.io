@@ -51,6 +51,8 @@ exclude:
   - .venv.done.log
   - Makefile
   - contribute.md
+  - ontology/gallery/chain_of_custody/.gitignore
+  - ontology/gallery/chain_of_custody/urgent_evidence.html.in
   - ontology/releases/0.2.0/migration/.gitignore
   - ontology/releases/0.2.0/migration/Makefile
   - readme.md

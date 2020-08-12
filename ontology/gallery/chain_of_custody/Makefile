@@ -20,7 +20,7 @@ all: \
 
 # The unit test of this directory is:
 # Confirm that the generated, and website-served, urgent_evidence.html page is exactly what is tracked in version control after regenerating.
-# The .diff files should not need be retained.  If any are found after calling 'make check', they report a problem.
+# The .diff files should not be retained.  If any are found after calling 'make check', they illustrate a problem.
 check: \
   urgent_evidence.html.diff
 	test -e urgent_evidence.html.diff
@@ -32,11 +32,40 @@ clean:
 	@touch urgent_evidence.json
 
 urgent_evidence.html: \
-  urgent_evidence.json
-	touch $@
+  urgent_evidence.html.in \
+  urgent_evidence-query-action_timeline.html
+	cp \
+	  urgent_evidence.html.in \
+	  _$@
+	sed \
+	  -e '/@QUERY_ACTION_TIMELINE_SPARQL@/r urgent_evidence-query-action_timeline.sparql' \
+	  -e '/@QUERY_ACTION_TIMELINE_SPARQL@/d' \
+	  _$@ \
+	  > __$@
+	mv __$@ _$@
+	sed \
+	  -e '/@QUERY_ACTION_TIMELINE_HTML@/r urgent_evidence-query-action_timeline.html' \
+	  -e '/@QUERY_ACTION_TIMELINE_HTML@/d' \
+	  _$@ \
+	  > __$@
+	mv __$@ _$@
+	mv _$@ $@
 
 urgent_evidence.html.diff: \
   urgent_evidence.html
 	test 1 -eq $$(git ls-tree HEAD urgent_evidence.html | wc -l)  # Confirm file is git-tracked.
 	git diff urgent_evidence.html > _$@
+	mv _$@ $@
+
+urgent_evidence-query-%.html: \
+  urgent_evidence-query-%.sparql \
+  $(top_srcdir)/.venv.done.log \
+  $(top_srcdir)/src/sample_sparql_runner.py \
+  urgent_evidence.json
+	source $(top_srcdir)/venv/bin/activate ; \
+	  python3 $(top_srcdir)/src/sample_sparql_runner.py \
+	    --debug \
+	    urgent_evidence.json \
+	    $< \
+	    _$@
 	mv _$@ $@
