@@ -30,3 +30,35 @@
   desc: Move CASE JSON Examples into own Git Repository
   date: 2020-07-29
   url: https://drive.google.com/file/d/1DiLxBTQYt0FQSdjn3mX6RabhqK9QbiDo/view
+- title: Change Proposal 12
+  desc: Remove generated documentation of CASE 0.1
+  date: 2020-08-12
+  url: https://drive.google.com/file/d/1LE2P12w66TjIFVah567gyKbYWYkZziP5/view
+- title: Change Proposal 13
+  desc: Update ontology README to reflect website and Jira
+  date: 2020-08-12
+  url: https://drive.google.com/file/d/1fJoDjMjfbaXw0BWKKZ_9mK-gZzoJpgFS/view
+- title: Change Proposal 6
+  desc: Linking Style Guidance with GitHub README
+  date: 2020-08-12
+  url: https://drive.google.com/file/d/1jlCFCuL4BDojJOsIzR8asJjf-lAp8uLd/view
+- title: Change Proposal 4
+  desc: Replace prototype case.ttl file with namespace-separated Turtle files
+  date: 2020-08-12
+  url: https://drive.google.com/file/d/1CE9sfrc-czegRX15Q5xeqaffAfAH06ov/view
+- title: Change Proposal 2
+  desc: Defining the CASE Namespace
+  date: 2020-08-12
+  url: https://drive.google.com/file/d/1_J3994JiPA5PMIHfno9x-NeXKaHFVCrJ/view
+- title: Change Proposal 10
+  desc: Resolve naming inconsistency and associated equivalent class complexity
+  date: 2020-08-12
+  url: https://drive.google.com/file/d/1lut9Km0rYp2Iaftz7m0f4u50R4YD60F6/view
+- title: Change Proposal 9
+  desc: Adoption of Investigation namespace from UCO into CASE
+  date: 2020-08-12
+  url: https://drive.google.com/file/d/1TNL7NtkSy4Veo1eObJGCmMGvmmxqeCJB/view
+- title: Change Proposal 11
+  desc: Define format for ontology repository's ChangeLog
+  date: 2020-08-12
+  url: https://drive.google.com/file/d/1zWjQ_uhhVxEjkqS2mrcabT4tNh8s0JQx/view
