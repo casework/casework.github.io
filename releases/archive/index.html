@@ -12,9 +12,9 @@ custom_js: releases
     </tr>
   </thead>
   <tbody>
-    {% for item in site.data.ontology.releases %}
+    {% for item in site.data.releases.releases %}
       <tr>
-        <td><a href="/ontology/releases/{{ item.title }}/">CASE {{ item.title }}</a></td>
+        <td><a href="/releases/{{ item.title }}/">CASE {{ item.title }}</a></td>
         <td>{{ item.date }}</td>
         <td>{{ item.desc }}</td>
       </tr>

@@ -13,7 +13,7 @@
 
 SHELL := /bin/bash
 
-top_srcdir := $(shell cd ../../../.. ; pwd)
+top_srcdir := $(shell cd ../../.. ; pwd)
 
 all: \
   classes_ambiguous.csv \
@@ -37,12 +37,12 @@ all: \
   %.tsv
 	diff \
 	  $< \
-	  $(top_srcdir)/_data/ontology/migration_0_2_0/$< \
+	  $(top_srcdir)/_data/releases/migration_0_2_0/$< \
 	  > _$@
 	mv _$@ $@
 
 %.tsv: \
-  $(top_srcdir)/_data/ontology/migration_0_2_0/%.tsv
+  $(top_srcdir)/_data/releases/migration_0_2_0/%.tsv
 	cp $< _$@
 	mv _$@ $@
 

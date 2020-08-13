@@ -15,14 +15,14 @@ SHELL := /bin/bash
 
 all:
 	$(MAKE) \
-	  --directory ontology/releases/0.2.0/migration
+	  --directory releases/0.2.0/migration
 
 check:
 	$(MAKE) \
-	  --directory ontology/releases/0.2.0/migration \
+	  --directory releases/0.2.0/migration \
 	  check
 
 clean:
 	@$(MAKE) \
-	  --directory ontology/releases/0.2.0/migration \
+	  --directory releases/0.2.0/migration \
 	  clean
