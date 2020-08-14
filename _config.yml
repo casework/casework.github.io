@@ -51,8 +51,8 @@ exclude:
   - CONTRIBUTE.md
   - Makefile
   - README.md
-  - ontology/releases/0.2.0/migration/.gitignore
-  - ontology/releases/0.2.0/migration/Makefile
+  - releases/0.2.0/migration/.gitignore
+  - releases/0.2.0/migration/Makefile
 
 # Google Analytics
 google_analytics: UA-158161373-1
