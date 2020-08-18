@@ -56,7 +56,7 @@ from,uco-observable:from
 givenName,uco-identity:givenName
 gpuFamily,uco-observable:gpuFamily
 hash,uco-observable:hash
-hashMethod,uco-types:hashMethod,uco-core:HashNameEnum
+hashMethod,uco-types:hashMethod,uco-vocabulary:HashNameVocab
 hashValue,uco-types:hashValue,xsd:hexBinary
 instrument,uco-action:instrument
 isActive,uco-observable:isActive
