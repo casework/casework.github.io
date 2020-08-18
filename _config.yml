@@ -49,13 +49,14 @@ exclude:
   - vendor/ruby/
 # customer excludes
   - .venv.done.log
+  - CONTRIBUTE.md
   - Makefile
-  - contribute.md
-  - ontology/gallery/chain_of_custody/.gitignore
-  - ontology/gallery/chain_of_custody/urgent_evidence.html.in
-  - ontology/releases/0.2.0/migration/.gitignore
-  - ontology/releases/0.2.0/migration/Makefile
-  - readme.md
+  - README.md
+  - examples/urgent_evidence/.gitignore
+  - examples/urgent_evidence/Makefile
+  - examples/urgent_evidence/index.html.in
+  - releases/0.2.0/migration/.gitignore
+  - releases/0.2.0/migration/Makefile
   - requirements.txt
   - src/
   - venv/

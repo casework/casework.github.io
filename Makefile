@@ -21,9 +21,9 @@ endif
 all: \
   .venv.done.log
 	$(MAKE) \
-	  --directory ontology/releases/0.2.0/migration
+	  --directory releases/0.2.0/migration
 	$(MAKE) \
-	  --directory ontology/gallery/chain_of_custody
+	  --directory examples/urgent_evidence
 
 .PHONY: \
   check-migration-0.2.0 \
@@ -50,13 +50,13 @@ check: \
 
 check-migration-0.2.0:
 	$(MAKE) \
-	  --directory ontology/releases/0.2.0/migration \
+	  --directory releases/0.2.0/migration \
 	  check
 
 check-urgent_evidence: \
   .venv.done.log
 	$(MAKE) \
-	  --directory ontology/gallery/chain_of_custody \
+	  --directory examples/urgent_evidence \
 	  check
 
 clean:
@@ -65,8 +65,8 @@ clean:
 	@rm -rf \
 	  venv
 	@$(MAKE) \
-	  --directory ontology/gallery/chain_of_custody \
+	  --directory examples/urgent_evidence \
 	  clean
 	@$(MAKE) \
-	  --directory ontology/releases/0.2.0/migration \
+	  --directory releases/0.2.0/migration \
 	  clean

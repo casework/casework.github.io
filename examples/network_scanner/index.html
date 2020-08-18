@@ -1,0 +1,24 @@
+---
+<!-- layout: blank -->
+title: Network Scanner
+jumbo_desc: CASE Sub-topic of Network
+---
+
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Introduction</h2>
+        <p>Cyber attacks by nature leave a network trail behind, which investigators can follow to pin down the source of the attack. Network traffic packets contains a great deal of metadata such as IP addresses, payload data, DNS information, and protocol information. Information sharing is essential in this area as awareness can mitigate and even prevent similar incidents from occurring again.</p>
+        <h2>Narrative</h2>
+        <p>A Network Incident Response Analyst working in a security operations center receives an alert from their ticketing system for unusual network activity. Upon looking at the network logs for the host at the time of the alert, they notice that multiple connections were being made from a single IP address to numerous systems in the subnet. Almost immediately the analyst thought this could be the result of an nmap scan.</p>
+        <p>The first step of analysis was to identify where the source of the activity came from. After taking note of the IP address, the analyst does some research on the address to see where it may have originated from. After reviewing some internally sourced indicators related to the IP address, the analyst was pointed to one of their company's partnership information sharing sites with more detailed information on the IP. Further indicators pointed to a recent botnet attack against many major corporations with phishing emails as the primary attack vector. In addition, the attacks were also specifically targeting vulnerable web servers as an entry point to the network.</p>
+        <p>Pivoting off the phishing emails, the analyst searched for SMTP traffic from the IP address in the network logs and any traces of the IP address in the proxy logs. There was a plethora of SMTP traffic and to the analyst's dismay they found a couple of hits in the proxy logs. Taking a look at the domain that the IP resolved to, the analyst searched the email logs for emails that contained the domain as a link. Hundreds of emails were found from various email addresses with a foreign top level domain. Fortunately there were only a handful of users who had clicked on the link. Luckily the traffic was unencrypted, and after looking at pcap files for those web sessions, it was determined that no data was entered into the malicious site.</p>
+        <p>In order to bolster cyber awareness in the community, the analyst gathered the following data to add to share with the company's information sharing partners:</p>
+        <ul>
+          <li>IP Addresses related to the attack</li>
+          <li>Domain names from links contained in emails</li>
+          <li>Email addresses of the attackers</li>
+          <li>Network activity witnessed (e.g. nmap scans)</li>
+        </ul>
+        <p>By adding to the pre-existing database of knowledge for this attack, future attacks can be prevented by quarantining email addresses, sinkholing domain names, and restricting access to IP addresses by blocking them at the firewall.</p>
+      </div>
+    </div>

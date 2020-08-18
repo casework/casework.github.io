@@ -1,28 +1,64 @@
 - title: Representing Mobile Devices and SIM Cards using CASE/UCO
   desc: This document describes the approach, and associated property bundles, account types, and address types to represent Mobile Devices and SIM Cards using CASE.
   date: 2018-03-08
-  url: Representing Mobile Devices using CASE UCO 8Mar2018.pdf
+  url: /resources/references/Representing Mobile Devices using CASE UCO 8Mar2018.pdf
 - title: Representing File and File System information using CASE/UCO
   desc: This document describes the design decisions for representing information that is contained within a file or file system, and associated metadata.
   date: 2017-09-14
-  url: Representing Files & File Systems using CASE UCO 14Sept2017.pdf
+  url: /resources/references/Representing Files & File Systems using CASE UCO 14Sept2017.pdf
 - title: Representing Recoverability of Unallocated Files using CASE/UCO
   desc: This document describes the design decisions for representing information pertaining to recoverability of unallocated (deleted) files.
   date: 2018-01-31
-  url: Representing Recoverability of Unallocated Files using CASE UCO 31Jan2018.pdf
+  url: /resources/references/Representing Recoverability of Unallocated Files using CASE UCO 31Jan2018.pdf
 - title: Representing Accounts using CASE/UCO
   desc: This document describes the design decisions for representing Account related information.
   date: 2017-09-14
-  url: Representing Accounts using UCO CASE 14Sept2017.pdf
+  url: /resources/references/Representing Accounts using UCO CASE 14Sept2017.pdf
 - title: Change Proposal 8
   desc: Change label "propertyBundle" (CASE v. 0.1.0) to "hasPropertyBundle" in CASE v. 0.2.0; entails change to IRI
   date: 2020-04-01
-  url: CASE Change Proposal 8.zip
+  url: /resources/references/CASE Change Proposal 8.zip
 - title: Style Guide for Documentation of the CASE Ontology, Version 1.0
   desc: This presentation contains a brief overview of the purpose, structure, and content of the official style guide for creating documentation of the CASE Ontology.
   date: 2020-04-07
-  url: CASE Style Guide v1.0 2020-01-14.pdf
+  url: /resources/references/CASE Style Guide v1.0 2020-01-14.pdf
 - title: Change Proposal 3
   desc: Adoption of rdf-toolkit for CASE normalization process
   date: 2020-06-15
-  url: CASE Change Proposal 3.zip
+  url: /resources/references/CASE Change Proposal 3.zip
+- title: Change Proposal 7
+  desc: Move CASE JSON Examples into own Git Repository
+  date: 2020-07-29
+  url: https://drive.google.com/file/d/1DiLxBTQYt0FQSdjn3mX6RabhqK9QbiDo/view
+- title: Change Proposal 12
+  desc: Remove generated documentation of CASE 0.1
+  date: 2020-08-12
+  url: https://drive.google.com/file/d/1LE2P12w66TjIFVah567gyKbYWYkZziP5/view
+- title: Change Proposal 13
+  desc: Update ontology README to reflect website and Jira
+  date: 2020-08-12
+  url: https://drive.google.com/file/d/1fJoDjMjfbaXw0BWKKZ_9mK-gZzoJpgFS/view
+- title: Change Proposal 6
+  desc: Linking Style Guidance with GitHub README
+  date: 2020-08-12
+  url: https://drive.google.com/file/d/1jlCFCuL4BDojJOsIzR8asJjf-lAp8uLd/view
+- title: Change Proposal 4
+  desc: Replace prototype case.ttl file with namespace-separated Turtle files
+  date: 2020-08-12
+  url: https://drive.google.com/file/d/1CE9sfrc-czegRX15Q5xeqaffAfAH06ov/view
+- title: Change Proposal 2
+  desc: Defining the CASE Namespace
+  date: 2020-08-12
+  url: https://drive.google.com/file/d/1_J3994JiPA5PMIHfno9x-NeXKaHFVCrJ/view
+- title: Change Proposal 10
+  desc: Resolve naming inconsistency and associated equivalent class complexity
+  date: 2020-08-12
+  url: https://drive.google.com/file/d/1lut9Km0rYp2Iaftz7m0f4u50R4YD60F6/view
+- title: Change Proposal 9
+  desc: Adoption of Investigation namespace from UCO into CASE
+  date: 2020-08-12
+  url: https://drive.google.com/file/d/1TNL7NtkSy4Veo1eObJGCmMGvmmxqeCJB/view
+- title: Change Proposal 11
+  desc: Define format for ontology repository's ChangeLog
+  date: 2020-08-12
+  url: https://drive.google.com/file/d/1zWjQ_uhhVxEjkqS2mrcabT4tNh8s0JQx/view

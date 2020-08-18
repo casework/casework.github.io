@@ -3,12 +3,12 @@
 - name: Releases
   submenuitems:
     - name: Latest Release
-      link: /ontology/releases/0.1.0/
+      link: /releases/0.1.0/
     - name: Archived Releases
-      link: /ontology/releases/archive/
+      link: /releases/archive/
     - name: SPACE
     - name: Under Development
-      link: /ontology/releases/0.2.0/
+      link: /releases/0.2.0/
 
 - name: Ontology
   submenuitems:
@@ -19,9 +19,9 @@
     - name: SPACE
     - header: Examples
     - name: Investigation
-      link: /ontology/examples.html
+      link: /examples/asgard/
     - name: View More
-      link: /ontology/gallery.html
+      link: /examples/gallery.html
     # - name: SPACE
     # - name: Latest Specification
     #   link: /ontology/spec.html

@@ -1,0 +1,28 @@
+---
+<!-- layout: blank -->
+title: Phishing
+jumbo_desc: CASE Sub-topic of Email
+---
+
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Introduction</h2>
+        <p>When investigating email fraud, phishing emails serve as a main source of evidence. Phishing is the use of emails to lure the recipient into divulging sensitive information to an invalid source. Illegitimate links often lead to Ransomware that results in the compromise of individual and organizational information.</p>
+        <p>The list of digital forensic professional’s action items can include determining the server system’s relationship to adjacent email collaboration tools, examining sender/receiver attribution, and email header analysis.</p>
+        <h2>Narrative</h2>
+        <p>The head of TechAnalytics Corp. East Coast division has received a suspicious message in his corporate email. The name of the sender is a current vendor, but the email domain is incorrect. The message informs him that his accounts have expired, and he needs to verify his identity for new credentials. It also contains an unfamiliar attachment. He suspects this is a spear phishing attempt.</p>
+        <p>After the phishing email has been suspected and forwarded to the Anti-Phishing Working Group and reported to FTC, the digital forensic investigator works to acquire data for analysis. To investigate the email(s), he identifies, collects and categorizes evidence – which includes filtering for keywords, event time stamps, and emails from the suspected sender. He collects server and network logs and investigates the email software used by the sender. Attachments in the email are investigated for viruses and malware. He conducts an email header analysis and an investigation of account activity to determine additional source information and develop a timeline.</p>
+        <ol type="1">
+          <li>Phishing attempt has been identified and reported.</li>
+          <li>The digital investigator performs data acquisition on the Outlook accounta. He requests a tailored acquisition from the email provider and obtains an export of the phishing email and other known accounts the phisher has used.</li>
+          <li>The investigator analyzes the metadata in the email header and email. He documents findings from the sender’s email address, message initiation protocol, Message ID, and sender’s IP address. He documents that the path along which the message has traversed has been spoofed.</li>
+          <li>The investigator extracts the email box and server logs from internal mail servers to investigate logs against the date/time stamp indicated on the message. The investigator traces the IP address of the computer making the email transaction.</li>
+          <li>The ISP does not maintain sufficient logs. The investigator pulls logs from network devices (switches, routers, and firewalls) to further examine the source of the phishing email.</li>
+          <li>He investigates the MIME content and documents the sender’s email preferences recognized from the attached documents. He documents the revealed PST file names, usernames, and MAC address.</li>
+          <li>Looking at the Received header field and software handling the email client side, the investigator identifies applications and versions used to send the email.  Following the completion of his findings, he receives word that the head of TechAnalytics Corp. West Coast has also received a suspicious email from what seems like a known vendor.  The CASE data is exported to the analyst conducting the investigation on the East Coast.</li>
+          <li>The West coast analyst follows a similar procedure. She looks at the Received-SPF of both emails and confirms that both emails are using the same email service and the lack of an ID number indicates spoofing on both.</li>
+          <li>She checks the Message ID to refer to the genuine time of the email and version of the message to confirm spoofing.</li>
+          <li>She uses ACME EmailAnalyzer to analyze the header of the email to track the source of the email using the tool’s built-in location database. She copies and pastes the header of the email into ACME and starts the tool. The summary report obtained from the tool confirms the information and ISP documented by the East Coast investigator, as well as identifies domain registration details and the number of emails and associated timestamps that have been sent from that address.</li>
+        </ol>
+      </div>
+    </div>
