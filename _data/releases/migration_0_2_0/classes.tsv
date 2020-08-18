@@ -37,7 +37,7 @@ OperatingSystem	uco-observable:OperatingSystem
 PathRelation	uco-observable:PathRelation
 PhoneAccount	uco-observable:PhoneAccount
 PhoneCall	uco-observable:PhoneCall
-PropertyBundle	case-core:PropertyBundle
+PropertyBundle	uco-core:Facet
 ProvenanceRecord	uco-investigation:ProvenanceRecord
 RasterPicture	uco-observable:RasterPicture
 SQLiteBlob	uco-observable:SQLiteBlob
@@ -45,6 +45,6 @@ SimpleAddress	uco-location:SimpleAddress
 SimpleName	uco-identity:SimpleName
 Tool	uco-tool:Tool
 ToolConfiguration	uco-tool:ToolConfigurationType
-Trace	case-core:Trace
+Trace	uco-observable:CyberItem
 WiFiAddress	uco-observable:WifiAddress
 iPhoneDevice
