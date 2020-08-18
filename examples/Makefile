@@ -14,41 +14,25 @@
 SHELL := /bin/bash
 
 all: \
-  all-examples \
-  all-releases
+  all-asgard
 
-all-examples:
+all-asgard:
 	$(MAKE) \
-	  --directory examples
-
-all-releases:
-	$(MAKE) \
-	  --directory releases/0.2.0/migration
+	  --directory asgard
 
 .PHONY: \
-  all-examples \
-  all-releases \
-  check-examples \
-  check-releases
+  all-asgard \
+  check-asgard
 
 check: \
-  check-examples \
-  check-releases
+  check-asgard
 
-check-examples:
+check-asgard:
 	$(MAKE) \
-	  --directory examples \
-	  check
-
-check-releases:
-	$(MAKE) \
-	  --directory releases/0.2.0/migration \
+	  --directory asgard \
 	  check
 
 clean:
 	@$(MAKE) \
-	  --directory releases/0.2.0/migration \
-	  clean
-	@$(MAKE) \
-	  --directory examples \
+	  --directory asgard \
 	  clean

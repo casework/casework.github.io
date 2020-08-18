@@ -1,0 +1,57 @@
+{
+    "__CASE__": "ASGARD_2019_00162",
+    "@context": {
+        "": "http://example.org/kb#",
+        "@vocab": "http://example.org/ontology/local#",
+        "case-core": "https://caseontology.org/ontology/case/core#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "uco-action": "https://unifiedcyberontology.org/ontology/uco/action#",
+        "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
+        "uco-investigation": "https://unifiedcyberontology.org/ontology/uco/investigation#",
+        "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
+        "uco-tool": "https://unifiedcyberontology.org/ontology/uco/tool#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@id": ":bundle-5715FCF3-6BC8-4996-8F7F-FDF289F31649",
+    "@type": "uco-core:Bundle",
+    "uco-core:description": "Initial evidence seizure in cross border investigation into disruption of public transportation service",
+    "uco-core:object": [
+        {
+            "@id": ":authorization-79D6AB60-D679-49CE-9573-7176DFEEB7C3",
+            "@type": "uco-investigation:Authorization",
+            "case-core:hasPropertyBundle": [
+                {
+                    "@type": "uco-investigation:Authorization",
+                    "uco-investigation:authorizationType": "Odin_Decree",
+                    "uco-investigation:authorizationIdentifier": "Decree_2019_00013",
+                    "authorizationAuthority": {
+                        "@id": ":530646A9-4290-4C02-B0B3-FD2EC363834A"
+                    },
+                    "authorizationIssuedDate": "20190330"
+                }
+            ]
+        },
+        {
+            "@id": ":investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7",
+            "@type": "uco-investigation:Investigation",
+            "uco-core:name": "ASGARD_2018_00162",
+            "uco-investigation:focus": "Denial of Service (Bifrost Bridge)",
+            "uco-core:description": "An unknown person caused public disturbance and physical damage to property in Asgard, resulting in denial of service of public transportation (Bifrost Bridge).",
+            "uco-core:object": [
+                {
+                    "@id": ":86F2E76A-434D-4D3F-9147-CD0CABCCA074"
+                },
+                {
+                    "@id": ":E9AA4F26-D187-4F32-A602-86A6DF4B8528"
+                },
+                {
+                    "@id": ":530646A9-4290-4C02-B0B3-FD2EC363834A"
+                },
+                {
+                    "@id": ":B1C22D51-4A3F-4353-84FB-E210B5EFDA48"
+                }
+            ]
+        }
+    ]
+}

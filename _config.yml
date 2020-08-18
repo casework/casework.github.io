@@ -51,6 +51,10 @@ exclude:
   - CONTRIBUTE.md
   - Makefile
   - README.md
+  - examples/asgard/Makefile
+  - examples/asgard/asgard_*.json
+  - examples/asgard/asgard_json.py
+  - examples/asgard/index.html.in
   - releases/0.2.0/migration/.gitignore
   - releases/0.2.0/migration/Makefile
 

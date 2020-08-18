@@ -1,0 +1,55 @@
+[
+    {
+        "@id": ":sms_message1",
+        "@type": "case-core:Trace",
+        "case-core:hasPropertyBundle": [
+            {
+                "@type": "uco-observable:Message",
+                "uco-observable:application": {
+                    "@id": ":sms_application1"
+                },
+                "uco-observable:messageText": "Yo dude! This is my new number.",
+                "uco-observable:from": {
+                    "@id": ":phone_account3"
+                },
+                "uco-observable:to": [
+                    {
+                        "@id": ":phone_account1"
+                    }
+                ],
+                "uco-observable:sentTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2010-01-15T17:59:43.25Z"
+                }
+            }
+        ]
+    },
+    {
+        "@id": ":phone_call1",
+        "@type": "case-core:Trace",
+        "case-core:hasPropertyBundle": [
+            {
+                "@type": "uco-observable:PhoneCall",
+                "uco-observable:callType": "mobile",
+                "uco-observable:startTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2010-01-15T17:59:43.25Z"
+                },
+                "uco-observable:endTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2010-01-15T18:30:41.25Z"
+                },
+                "uco-observable:from": {
+                    "@id": ":phone_account1"
+                },
+                "uco-observable:to": {
+                    "@id": ":phone_account2"
+                },
+                "uco-observable:duration": {
+                    "@type": "xsd:long",
+                    "@value": 1862
+                }
+            }
+        ]
+    }
+]
