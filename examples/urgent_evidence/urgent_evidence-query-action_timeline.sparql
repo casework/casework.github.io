@@ -2,7 +2,7 @@ SELECT ?lEndTime ?lDescription
 WHERE
 {
   ?nAction
-    a uco-investigation:InvestigativeAction ;
+    a case-investigation:InvestigativeAction ;
     uco-action:actionReferences [
       a uco-action:ActionReferences ;
       uco-action:endTime ?lEndTime ;
