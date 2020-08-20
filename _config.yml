@@ -48,11 +48,16 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
 # customer excludes
+  - .venv.done.log
   - CONTRIBUTE.md
   - Makefile
   - README.md
+  - examples/.gitignore
+  - examples/Makefile
   - releases/0.2.0/migration/.gitignore
   - releases/0.2.0/migration/Makefile
+  - requirements.txt
+  - venv/
 
 # Google Analytics
 google_analytics: UA-158161373-1
