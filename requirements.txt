@@ -1,2 +1,4 @@
+SPARQLWrapper
+pandas
 rdflib-jsonld
 requests
