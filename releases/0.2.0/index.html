@@ -1,0 +1,100 @@
+---
+title: 0.2.0 Release
+layout: releases
+custom_css: releases
+---
+
+<h1>{{ page.title }}</h1>
+
+<p><em>Date: 2020-08-20</em></p>
+
+<h2>Ontology File(s)</h2>
+
+<p><a href="https://github.com/casework/CASE/releases/tag/0.2.0">GitHub</a></p>
+
+<h2>Migration guidance</h2>
+
+<p>A guide to migration from CASE 0.1.0 is <a href="migration/">here</a>.</p>
+
+<h2>Release Notes</h2>
+
+<h3>Focus</h3>
+
+<p>CASE version 0.2.0 is focused on moving past the CASE prototype implementation that backed initial research, implementations, and example data.  CASE has established its ontological distinction in its relationship with the <a href="https://github.com/ucoProject/UCO/">Unified Cyber Ontology</a> (UCO).</p>
+
+<p>Work leading to version 0.2.0 was on establishing committee governance and development workflows, updating example data, and resolving fundamental conceptual relationship matters.  The CASE ontology files have reduced in size significantly from the prototype implementation.  The prototype had copied many concepts from UCO.  CASE now imports UCO to provide the same access to those concepts without redundant and potentially confusing implementation.</p>
+
+<h3>Changes</h3>
+
+<p><em>(These are changes to ontologies, classes or properties in the preexisting ontology.)</em></p>
+
+<p>Throughout this section, many of the notes are tied to Change Proposals.  These proposals are available on the CASE's <a href="/resources/references.html">Reference Material page</a>.</p>
+
+<h4>Development Changes</h4>
+
+<p><em>(These are changes to ontology development practice, and are not necessarily changes to ontology data.)</em></p>
+
+<ul>
+  <li>Development of the CASE ontology now follows Gitflow, with some further specifications made in the CASE and UCO Shared Development Practices document, available at the <a href="/resources/downloads.html">CASE Downloads page</a>.
+    <ul>
+      <li>Development progress between releases is summarized in the <code>ChangeLog</code> file of the "develop" branch:<br />
+        <a href="https://github.com/casework/CASE/blob/develop/ChangeLog">https://github.com/casework/CASE/blob/develop/ChangeLog</a><br />
+        <em>(Change Proposal 11)</em>
+      </li>
+    </ul>
+  </li>
+  <li>Issue tracking is now done in the CASE Community's Jira instance.<br />
+    <em>(Change Proposal 13)</em>
+    <ul>
+      <li>Issues may still be reported using the Github Issues tracker, but work on them might not be scheduled until they are tracked in the Jira backlog.</li>
+    </ul>
+  </li>
+  <li>CASE has published an ontology style guidance document, to which the ontology now adheres.<br />
+    <em>(Change Proposals 6, 8)</em>
+  </li>
+  <li>CASE ontology files now have a normalized form, specified in the ontology repository's <a href="https://github.com/casework/CASE/blob/develop/NORMALIZING.md"><code>NORMALIZING.md</code></a>.<br />
+    <em>(Change Proposal 3)</em>
+  </li>
+  <li>CASE 0.2.0 imports <a href="https://github.com/ucoProject/UCO/releases/tag/0.4.0">UCO 0.4.0</a>.</li>
+</ul>
+
+<h4>Breaking Changes</h4>
+
+<p><em>(These are changes to ontologies, classes or properties in the preexisting ontology that make the new release non-backward-compatible.)</em></p>
+
+<ul>
+  <li>The prototype case.ttl file has been removed.  To assist with early adopters who built software against that prototype, CASE has provided a <a href="migration/">migration guide</a>.<br />
+    <em>(Change Proposal 4)</em>
+  </li>
+  <li>The namespace for the CASE ontology has changed, from <code>http://case.example.org/core</code> to <code>https://caseontology.org/ontology/case/case</code>.<br />
+    <em>(Change Proposal 2)</em>
+    <ul>
+      <li>UCO and CASE now have a similar IRI structure, including use of sub-ontologies implemented as independently importable namespaces.</li>
+    </ul>
+  </li>
+  <li>CASE now provides the Investigation sub-ontology, with the IRI <code>https://caseontology.org/ontology/case/investigation</code>.  Enumerations supporting this sub-ontology are in the vocabulary sub-ontology, with the IRI <code>https://caseontology.org/ontology/case/vocabulary</code>.  These files were imported without revision, aside from minimal IRI string substitution, from <a href="https://github.com/ucoProject/UCO/releases/tag/0.4.0">UCO 0.4.0</a>.<br />
+    <em>(Change Proposal 9)</em>
+  </li>
+  <li>Three CASE concepts used in the prototype and early research literature, the classes <code>Trace</code> and <code>PropertyBundle</code> and the property <code>propertyBundle</code>, are no longer in use.  These concepts were synonymic with concepts in UCO, and several attempts to implement "<code>Trace</code> means <code>CyberItem</code>," etc., proved to result in significant adoption complications.  In their stead, the concepts <code>uco-observable:CyberItem</code>, <code>uco-core:Facet</code>, and <code>uco-core:facets</code> should be used.<br />
+    <em>(Change Proposal 10)</em>
+    <ul>
+      <li>Note that as part of discussing this change with UCO, UCO recognized that there are good reasons to change some of these concept names as well, and has change proposals either approved or in discussion to implement these changes.  CASE 0.3.0 will be adopting an upcoming UCO version with these changes.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4>Other Changes</h4>
+
+<ul>
+  <li>The <a href="/examples/asgard/">"Asgard" example</a> on the CASE website has been updated to use CASE 0.2.0 and UCO 0.4.0.</li>
+  <li>Examples that resided in the ontology's Git repository have now moved to their own repository:<br />
+  <a href="https://github.com/casework/CASE-Examples/">https://github.com/casework/CASE-Examples/</a><br />
+    <em>(Change Proposal 7)</em>
+    <ul>
+      <li>Note that some examples are still undergoing migration.</li>
+    </ul>
+  </li>
+  <li>Documentation generated from the prototype <code>case.ttl</code> file has been removed, as has the initial documentation generation mechanism.  A different mechanism for generating documentation is being planned for posting to the CASE website.<br />
+    <em>(Change Proposal 12)</em>
+  </li>
+</ul>
