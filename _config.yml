@@ -52,7 +52,8 @@ exclude:
   - CONTRIBUTE.md
   - Makefile
   - README.md
-  - examples/urgent_evidence/.gitignore
+  - examples/.gitignore
+  - examples/Makefile
   - examples/urgent_evidence/Makefile
   - examples/urgent_evidence/index.html.in
   - releases/0.2.0/migration/.gitignore
