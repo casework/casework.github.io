@@ -15,8 +15,32 @@ SHELL := /bin/bash
 
 top_srcdir := ..
 
-all:
+all: \
+  all-urgent_evidence
 
-check:
+.PHONY: \
+  all-urgent_evidence \
+  check-urgent_evidence \
+  clean-urgent_evidence
 
-clean:
+all-urgent_evidence: \
+  $(top_srcdir)/.venv.done.log
+	$(MAKE) \
+	  --directory urgent_evidence
+
+check: \
+  check-urgent_evidence
+
+check-urgent_evidence: \
+  $(top_srcdir)/.venv.done.log
+	$(MAKE) \
+	  --directory urgent_evidence \
+	  check
+
+clean: \
+  clean-urgent_evidence
+
+clean-urgent_evidence:
+	@$(MAKE) \
+	  --directory urgent_evidence \
+	  clean
