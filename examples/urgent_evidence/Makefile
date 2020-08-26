@@ -24,7 +24,8 @@ all: \
 check: \
   index.html.diff
 	test -e index.html.diff
-	test ! -s index.html.diff
+	test ! -s index.html.diff \
+	  || (echo "ERROR:examples/urgent_evidence/Makefile:The file index.html is out of sync with its source files, index.html.in, urgent_evidence.json, and/or the .sparql files.  Please regenerate index.html by running 'make' and committing the update." >&2 ; exit 1)
 	rm *.diff
 
 clean:
