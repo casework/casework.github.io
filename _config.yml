@@ -54,6 +54,8 @@ exclude:
   - README.md
   - examples/.gitignore
   - examples/Makefile
+  - examples/urgent_evidence/Makefile
+  - examples/urgent_evidence/index.html.in
   - releases/0.2.0/migration/.gitignore
   - releases/0.2.0/migration/Makefile
   - requirements.txt

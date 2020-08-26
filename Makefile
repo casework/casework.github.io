@@ -34,6 +34,8 @@ all-examples: \
 all-migration-0.2.0:
 	$(MAKE) \
 	  --directory releases/0.2.0/migration
+	$(MAKE) \
+	  --directory examples/urgent_evidence
 
 .PHONY: \
   all-examples \
