@@ -13,9 +13,13 @@
 
 SHELL := /bin/bash
 
-VIRTUALENV ?= $(shell which virtualenv-3 2>/dev/null || which virtualenv-3.8 2>/dev/null || which virtualenv-3.7 2>/dev/null || which virtualenv-3.6 2>/dev/null || which virtualenv)
-ifeq ($(VIRTUALENV),)
-$(error virtualenv not found)
+# This search pattern for Python 3 prioritizes the system-default
+# spelling of 'python3' last.  This is done to accommodate local
+# development: at the time of this writing, the built-in system python3
+# on macOS does not have virtualenv installed by default.
+PYTHON3 ?= $(shell which python3.8 2>/dev/null || which python3.7 2>/dev/null || which python3.6 2>dev/null || which python3 2>/dev/null)
+ifeq ($(PYTHON3),)
+$(error python3 not found)
 endif
 
 all: \
@@ -40,8 +44,8 @@ all-migration-0.2.0:
 .venv.done.log: \
   requirements.txt
 	rm -rf venv
-	$(VIRTUALENV) \
-	  --python=python3 \
+	$(PYTHON3) -m virtualenv \
+	  --python=$(PYTHON3) \
 	  venv
 	source venv/bin/activate ; \
 	  pip install \
