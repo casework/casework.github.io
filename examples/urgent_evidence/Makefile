@@ -65,7 +65,6 @@ urgent_evidence-query-%.html: \
   urgent_evidence.json
 	source $(top_srcdir)/venv/bin/activate ; \
 	  python3 $(top_srcdir)/src/sample_sparql_runner.py \
-	    --debug \
 	    urgent_evidence.json \
 	    $< \
 	    _$@
