@@ -17,6 +17,7 @@ DataRange	uco-observable:DataRange
 Device	uco-observable:Device
 DigitalAccount	uco-observable:DigitalAccount
 DiskPartition	uco-observable:DiskPartition
+DomainName	uco-observable:DomainName
 EXIF	uco-observable:EXIF
 EmailAccount	uco-observable:EmailAccount
 EmailAddress	uco-observable:EmailAddress
@@ -25,6 +26,7 @@ Encryption	uco-observable:EncryptedStream
 File	uco-observable:File
 Fragment	uco-observable:Fragment
 Hash	uco-types:Hash
+IPv4Address	uco-observable:IPv4Address
 Identity	uco-identity:Identity
 Investigation	uco-investigation:Investigation
 InvestigativeAction	uco-investigation:InvestigativeAction
