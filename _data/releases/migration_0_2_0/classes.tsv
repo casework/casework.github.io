@@ -4,7 +4,9 @@ AccountAuthentication	uco-observable:AccountAuthentication
 Action	uco-action:Action
 ActionReferences	uco-action:ActionReferences
 Annotation	uco-core:Annotation
+Application	uco-observable:Application
 ApplicationAccount	uco-observable:ApplicationAccount
+Attachment	uco-observable:Attachment
 Authorization	uco-investigation:Authorization
 BirthInformation	uco-identity:BirthInformation
 BluetoothAddress	uco-observable:BluetoothAddress
@@ -33,6 +35,7 @@ InvestigativeAction	uco-investigation:InvestigativeAction
 LatLongCoordinates	uco-location:LatLongCoordinates
 Location	uco-location:Location
 Message	uco-observable:Message
+MessageThread	uco-observable:MessageThread
 MobileDevice	uco-observable:MobileDevice
 NetworkConnection	uco-observable:NetworkConnection
 OperatingSystem	uco-observable:OperatingSystem
