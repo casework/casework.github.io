@@ -1,12 +1,19 @@
 source_property,destination_property,destination_type
-IEMI,uco-observable:IEMI
+Carrier,uco-observable:carrier
+ICCID,uco-observable:ICCID
+IMEI,uco-observable:IMEI
+IMSI,uco-observable:IMSI
 MSISDN,uco-observable:MSISDN
+SIMForm,uco-observable:SIMForm
+SIMType,uco-observable:SIMType
 accessAction
 accessedAction
 accessedTime,uco-observable:accessedTime,xsd:dateTime
 accountIdentifier,uco-observable:accountIdentifier
 accountIssuer,uco-observable:accountIssuer
 accountLogin,uco-observable:accountLogin
+accountType,uco-observable:accountType,uco-vocabulary:AccountTypeVocab
+address,uco-observable:addressValue
 application,uco-observable:application
 applicationIdentifier,uco-observable:applicationIdentifier
 authorizationType,uco-investigation:authorizationType
@@ -68,6 +75,7 @@ itemName,uco-tool:itemName
 itemValue,uco-tool:itemValue
 iv,uco-observable:encryptionIV
 isDirectional,uco-core:isDirectional
+keypadUnlockCode,uco-observable:keypadUnlockCode
 kindOfRelationship,uco-core:kindOfRelationship
 lastLoginTime,uco-observable:lastLoginTime,xsd:dateTime
 latitude,uco-location:latitude,xsd:decimal
@@ -85,6 +93,7 @@ modifiedTime,uco-observable:modifiedTime,xsd:dateTime
 name,uco-core:name
 numberOfLaunches,uco-observable:numberOfLaunches
 operatingSystem,uco-observable:operatingSystem
+ownerName
 partIndex,uco-observable:partitionID
 participant,uco-observable:participant
 password,uco-observable:password
@@ -118,6 +127,7 @@ street,uco-location:street
 tableName,uco-observable:tableName
 tag,uco-core:tag
 target,uco-core:target
+timezoneSetting
 toolType,uco-tool:toolType
 totalRam,uco-observable:totalRam,xsd:long
 to,uco-observable:to

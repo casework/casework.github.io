@@ -36,6 +36,7 @@ LatLongCoordinates	uco-location:LatLongCoordinates
 Location	uco-location:Location
 Message	uco-observable:Message
 MessageThread	uco-observable:MessageThread
+MobileAccount	uco-observable:MobileAccount
 MobileDevice	uco-observable:MobileDevice
 NetworkConnection	uco-observable:NetworkConnection
 OperatingSystem	uco-observable:OperatingSystem
@@ -45,6 +46,7 @@ PhoneCall	uco-observable:PhoneCall
 PropertyBundle	uco-core:Facet
 ProvenanceRecord	uco-investigation:ProvenanceRecord
 RasterPicture	uco-observable:RasterPicture
+SIMCard	uco-observable:SIMCard
 SQLiteBlob	uco-observable:SQLiteBlob
 SimpleAddress	uco-location:SimpleAddress
 SimpleName	uco-identity:SimpleName
