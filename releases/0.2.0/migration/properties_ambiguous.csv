@@ -3,8 +3,14 @@ createdTime,uco-core:createdTime,xsd:dateTime
 createdTime,uco-observable:createdTime,xsd:dateTime
 data,uco-observable:WindowsRegistryValue
 data,uco-observable:dataPayload
+emailAddress,uco-observable:emailAddress
+emailAddress,uco-observable:value
 endTime,uco-action:endTime,xsd:dateTime
 endTime,uco-core:endTime,xsd:dateTime
+firstName,uco-identity:givenName
+firstName,uco-observable:firstName
+familyName,uco-identity:familyName
+familyName,uco-observable:lastName
 key,uco-observable:encryptionKey
 key,uco-observable:key
 key,uco-types:key

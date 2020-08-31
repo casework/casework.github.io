@@ -14,6 +14,7 @@ Bundle,uco-core:Bundle
 Compression,uco-observable:CompressedStream
 ComputerSpecification,uco-observable:ComputerSpecification
 ConfigurationSetting,uco-tool:ConfigurationSettingType
+Contact,uco-observable:Contact
 ContentData,uco-observable:ContentData
 DataRange,uco-observable:DataRange
 Device,uco-observable:Device

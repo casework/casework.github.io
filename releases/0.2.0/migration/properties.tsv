@@ -30,6 +30,7 @@ columnName	uco-observable:columnName
 compressionMethod	uco-observable:compressionMethod
 configurationSetting	uco-tool:configurationSettings
 connectionState
+contactName	uco-observable:contactName
 content	uco-core:object
 country	uco-location:country
 createAction
@@ -45,7 +46,6 @@ displayName	uco-observable:displayName
 display_name	uco-observable:displayName
 dst	uco-observable:dst
 duration	uco-observable:duration	xsd:long
-emailAddress	uco-observable:value
 encodingMethod	uco-observable:encodingMethod
 encryptionMethod	uco-observable:encryptionMethod
 encryptionMode	uco-observable:encryptionMode
@@ -54,7 +54,6 @@ environment	uco-action:environment
 exhibitNumber	uco-investigation:exhibitNumber
 exifData	uco-observable:exifData
 extension	uco-observable:extension
-familyName	uco-identity:familyName
 fileName	uco-observable:fileName
 filePath	uco-observable:filePath
 fileSystemType	uco-observable:fileSystemType
@@ -70,11 +69,11 @@ hashValue	uco-types:hashValue	xsd:hexBinary
 identifier
 instrument	uco-action:instrument
 isActive	uco-observable:isActive
+isDirectional	uco-core:isDirectional
 isDirectory	uco-observable:isDirectory
 itemName	uco-tool:itemName
 itemValue	uco-tool:itemValue
 iv	uco-observable:encryptionIV
-isDirectional	uco-core:isDirectional
 keypadUnlockCode	uco-observable:keypadUnlockCode
 kindOfRelationship	uco-core:kindOfRelationship
 lastLoginTime	uco-observable:lastLoginTime	xsd:dateTime
