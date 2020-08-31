@@ -1,5 +1,11 @@
 source_enumerant,destination_enumerant,destination_type
+Attachment_Of
+Has_Account
+Has_Device
+Has_Role
+Located_At
 associated-account
+attachment-of
 contained-within,Contained_Within,uco-vocabulary:CyberItemRelationshipVocab
 decoded-from
 decompressed-from
