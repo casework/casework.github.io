@@ -1,8 +1,8 @@
 [
     {
         "@id": ":sms_message1",
-        "@type": "case-core:Trace",
-        "case-core:hasPropertyBundle": [
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
             {
                 "@type": "uco-observable:Message",
                 "uco-observable:application": {
@@ -26,8 +26,8 @@
     },
     {
         "@id": ":phone_call1",
-        "@type": "case-core:Trace",
-        "case-core:hasPropertyBundle": [
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
             {
                 "@type": "uco-observable:PhoneCall",
                 "uco-observable:callType": "mobile",

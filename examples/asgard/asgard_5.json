@@ -1,8 +1,8 @@
 [
     {
         "@id": ":network-connection1-uuid",
-        "@type": "case-core:Trace",
-        "case-core:hasPropertyBundle": [
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
             {
                 "@type": "uco-observable:NetworkConnection",
                 "uco-observable:startTime": {

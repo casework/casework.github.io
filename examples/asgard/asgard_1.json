@@ -1,13 +1,13 @@
 [
     {
         "@id": ":investigative-action1-uuid",
-        "@type": "uco-investigation:InvestigativeAction",
+        "@type": "case-investigation:InvestigativeAction",
         "uco-core:name": "preserved",
         "uco-action:startTime": {
             "@type": "xsd:dateTime",
             "@value": "2019-03-30T22:36:24.35Z"
         },
-        "case-core:hasPropertyBundle": [
+        "uco-core:facets": [
             {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:instrument": {
@@ -33,9 +33,9 @@
     },
     {
         "@id": ":provenance-record1-uuid",
-        "@type": "uco-investigation:ProvenanceRecord",
+        "@type": "case-investigation:ProvenanceRecord",
         "uco-core:description": "Suspect device found near Bifrost Bridge after disruption",
-        "uco-investigation:exhibitNumber": "AsgardPD-20190330-001A",
+        "case-investigation:exhibitNumber": "AsgardPD-20190330-001A",
         "uco-core:object": [
             {
                 "@id": ":suspect-device-uuid"
@@ -44,8 +44,8 @@
     },
     {
         "@id": ":suspect-device-uuid",
-        "@type": "case-core:Trace",
-        "case-core:hasPropertyBundle": [
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
             {
                 "@type": "uco-observable:Device",
                 "uco-observable:manufacturer": "Apple",

@@ -1,8 +1,8 @@
 [
     {
         "@id": ":suspect-device-mmssms-uuid",
-        "@type": "case-core:Trace",
-        "case-core:hasPropertyBundle": [
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
             {
                 "@type": "uco-observable:File",
                 "uco-observable:createdTime": {
@@ -28,7 +28,7 @@
                     {
                         "@type": "uco-types:Hash",
                         "uco-types:hashMethod": {
-                            "@type": "uco-core:HashNameEnum",
+                            "@type": "uco-vocabulary:HashNameVocab",
                             "@value": "SHA256"
                         },
                         "uco-types:hashValue": {
@@ -55,8 +55,8 @@
             "@type": "uco-observable:CyberItemRelationshipEnum",
             "@value": "Contained_Within"
         },
-        "uco-observable:isDirectional": true,
-        "case-core:hasPropertyBundle": [
+        "uco-core:isDirectional": true,
+        "uco-core:facets": [
             {
                 "@type": "uco-observable:PathRelation",
                 "uco-observable:path": "/mobile/sms.db"

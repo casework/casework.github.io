@@ -1,7 +1,7 @@
 [
     {
         "@id": ":219189B6-356C-4D53-A844-F0031E74F156",
-        "@type": "uco-investigation:InvestigativeAction",
+        "@type": "case-investigation:InvestigativeAction",
         "uco-core:name": "acquired",
         "uco-core:description": "Suspect device physical acquisition",
         "uco-action:startTime": {
@@ -12,7 +12,7 @@
             "@type": "xsd:dateTime",
             "@value": "2019-03-30T22:47:32Z"
         },
-        "case-core:hasPropertyBundle": [
+        "uco-core:facets": [
             {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:instrument": {
@@ -56,7 +56,7 @@
         "uco-tool:toolType": "Extraction",
         "uco-tool:creator": "Harald",
         "uco-tool:version": "1.2.0",
-        "case-core:hasPropertyBundle": [
+        "uco-core:facets": [
             {
                 "@type": "uco-tool:ToolConfigurationType",
                 "uco-tool:configurationSettings": [
@@ -76,8 +76,8 @@
     },
     {
         "@id": ":suspect-mobiledevice-forensicduplicate-uuid",
-        "@type": "case-core:Trace",
-        "case-core:hasPropertyBundle": [
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
             {
                 "@type": "uco-observable:File",
                 "uco-observable:createdTime": {
@@ -99,7 +99,7 @@
                     {
                         "@type": "uco-types:Hash",
                         "uco-types:hashMethod": {
-                            "@type": "uco-core:HashNameEnum",
+                            "@type": "uco-vocabulary:HashNameVocab",
                             "@value": "SHA256"
                         },
                         "uco-types:hashValue": {
