@@ -21,10 +21,12 @@ SELECT ?x ?y ?z
 WHERE
 { ... }
 
+The word "DISTINCT" will also be cut from the query, if present.
+
 Should a more complex query be necessary, an outer, wrapping SELECT query would let this script continue to function.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 import os
 import logging
@@ -43,7 +45,7 @@ def main():
     # Build columns list from SELECT line.
     query_text_lines = query_text.split("\n")
     select_line = [line for line in query_text_lines if line.startswith("SELECT ")][0]
-    variables = select_line.replace("SELECT ", "").split(" ")
+    variables = select_line.replace(" DISTINCT", "").replace("SELECT ", "").split(" ")
 
     graph = rdflib.Graph()
     graph.parse(args.in_graph, format="json-ld")
