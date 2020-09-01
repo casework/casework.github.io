@@ -31,14 +31,15 @@ custom_js:
     "@context": {
         "": "http://example.org/kb#",
         "@vocab": "http://example.org/ontology/local#",
-        "case-core": "https://caseontology.org/ontology/case/core#",
+        "case-investigation": "https://caseontology.org/ontology/case/investigation#",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "uco-action": "https://unifiedcyberontology.org/ontology/uco/action#",
         "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
-        "uco-investigation": "https://unifiedcyberontology.org/ontology/uco/investigation#",
         "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
         "uco-tool": "https://unifiedcyberontology.org/ontology/uco/tool#",
+        "uco-types": "https://unifiedcyberontology.org/ontology/uco/types#",
+        "uco-vocabulary": "https://unifiedcyberontology.org/ontology/uco/vocabulary#",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@id": ":bundle-5715FCF3-6BC8-4996-8F7F-FDF289F31649",
@@ -47,12 +48,12 @@ custom_js:
     "uco-core:object": [
         {
             "@id": ":authorization-79D6AB60-D679-49CE-9573-7176DFEEB7C3",
-            "@type": "uco-investigation:Authorization",
-            "case-core:hasPropertyBundle": [
+            "@type": "case-investigation:Authorization",
+            "uco-core:facets": [
                 {
-                    "@type": "uco-investigation:Authorization",
-                    "uco-investigation:authorizationType": "Odin_Decree",
-                    "uco-investigation:authorizationIdentifier": "Decree_2019_00013",
+                    "@type": "case-investigation:Authorization",
+                    "case-investigation:authorizationType": "Odin_Decree",
+                    "case-investigation:authorizationIdentifier": "Decree_2019_00013",
                     "authorizationAuthority": {
                         "@id": ":530646A9-4290-4C02-B0B3-FD2EC363834A"
                     },
@@ -62,9 +63,9 @@ custom_js:
         },
         {
             "@id": ":investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7",
-            "@type": "uco-investigation:Investigation",
+            "@type": "case-investigation:Investigation",
             "uco-core:name": "ASGARD_2018_00162",
-            "uco-investigation:focus": "Denial of Service (Bifrost Bridge)",
+            "case-investigation:focus": "Denial of Service (Bifrost Bridge)",
             "uco-core:description": "An unknown person caused public disturbance and physical damage to property in Asgard, resulting in denial of service of public transportation (Bifrost Bridge).",
             "uco-core:object": [
                 {
@@ -95,13 +96,13 @@ custom_js:
 [
     {
         "@id": ":investigative-action1-uuid",
-        "@type": "uco-investigation:InvestigativeAction",
+        "@type": "case-investigation:InvestigativeAction",
         "uco-core:name": "preserved",
         "uco-action:startTime": {
             "@type": "xsd:dateTime",
             "@value": "2019-03-30T22:36:24.35Z"
         },
-        "case-core:hasPropertyBundle": [
+        "uco-core:facets": [
             {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:instrument": {
@@ -127,9 +128,9 @@ custom_js:
     },
     {
         "@id": ":provenance-record1-uuid",
-        "@type": "uco-investigation:ProvenanceRecord",
+        "@type": "case-investigation:ProvenanceRecord",
         "uco-core:description": "Suspect device found near Bifrost Bridge after disruption",
-        "uco-investigation:exhibitNumber": "AsgardPD-20190330-001A",
+        "case-investigation:exhibitNumber": "AsgardPD-20190330-001A",
         "uco-core:object": [
             {
                 "@id": ":suspect-device-uuid"
@@ -138,8 +139,8 @@ custom_js:
     },
     {
         "@id": ":suspect-device-uuid",
-        "@type": "case-core:Trace",
-        "case-core:hasPropertyBundle": [
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
             {
                 "@type": "uco-observable:Device",
                 "uco-observable:manufacturer": "Apple",
@@ -197,7 +198,7 @@ custom_js:
 [
     {
         "@id": ":219189B6-356C-4D53-A844-F0031E74F156",
-        "@type": "uco-investigation:InvestigativeAction",
+        "@type": "case-investigation:InvestigativeAction",
         "uco-core:name": "acquired",
         "uco-core:description": "Suspect device physical acquisition",
         "uco-action:startTime": {
@@ -208,7 +209,7 @@ custom_js:
             "@type": "xsd:dateTime",
             "@value": "2019-03-30T22:47:32Z"
         },
-        "case-core:hasPropertyBundle": [
+        "uco-core:facets": [
             {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:instrument": {
@@ -252,7 +253,7 @@ custom_js:
         "uco-tool:toolType": "Extraction",
         "uco-tool:creator": "Harald",
         "uco-tool:version": "1.2.0",
-        "case-core:hasPropertyBundle": [
+        "uco-core:facets": [
             {
                 "@type": "uco-tool:ToolConfigurationType",
                 "uco-tool:configurationSettings": [
@@ -272,8 +273,8 @@ custom_js:
     },
     {
         "@id": ":suspect-mobiledevice-forensicduplicate-uuid",
-        "@type": "case-core:Trace",
-        "case-core:hasPropertyBundle": [
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
             {
                 "@type": "uco-observable:File",
                 "uco-observable:createdTime": {
@@ -295,7 +296,7 @@ custom_js:
                     {
                         "@type": "uco-types:Hash",
                         "uco-types:hashMethod": {
-                            "@type": "uco-core:HashNameEnum",
+                            "@type": "uco-vocabulary:HashNameVocab",
                             "@value": "SHA256"
                         },
                         "uco-types:hashValue": {
@@ -338,8 +339,8 @@ custom_js:
 [
     {
         "@id": ":suspect-device-mmssms-uuid",
-        "@type": "case-core:Trace",
-        "case-core:hasPropertyBundle": [
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
             {
                 "@type": "uco-observable:File",
                 "uco-observable:createdTime": {
@@ -365,7 +366,7 @@ custom_js:
                     {
                         "@type": "uco-types:Hash",
                         "uco-types:hashMethod": {
-                            "@type": "uco-core:HashNameEnum",
+                            "@type": "uco-vocabulary:HashNameVocab",
                             "@value": "SHA256"
                         },
                         "uco-types:hashValue": {
@@ -392,8 +393,8 @@ custom_js:
             "@type": "uco-observable:CyberItemRelationshipEnum",
             "@value": "Contained_Within"
         },
-        "uco-observable:isDirectional": true,
-        "case-core:hasPropertyBundle": [
+        "uco-core:isDirectional": true,
+        "uco-core:facets": [
             {
                 "@type": "uco-observable:PathRelation",
                 "uco-observable:path": "/mobile/sms.db"
@@ -409,8 +410,8 @@ custom_js:
 [
     {
         "@id": ":sms_message1",
-        "@type": "case-core:Trace",
-        "case-core:hasPropertyBundle": [
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
             {
                 "@type": "uco-observable:Message",
                 "uco-observable:application": {
@@ -434,8 +435,8 @@ custom_js:
     },
     {
         "@id": ":phone_call1",
-        "@type": "case-core:Trace",
-        "case-core:hasPropertyBundle": [
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
             {
                 "@type": "uco-observable:PhoneCall",
                 "uco-observable:callType": "mobile",
@@ -469,8 +470,8 @@ custom_js:
 [
     {
         "@id": ":network-connection1-uuid",
-        "@type": "case-core:Trace",
-        "case-core:hasPropertyBundle": [
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
             {
                 "@type": "uco-observable:NetworkConnection",
                 "uco-observable:startTime": {

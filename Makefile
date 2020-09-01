@@ -13,39 +13,72 @@
 
 SHELL := /bin/bash
 
+# This search pattern for Python 3 prioritizes the system-default
+# spelling of 'python3' last.  This is done to accommodate local
+# development: at the time of this writing, the built-in system python3
+# on macOS does not have virtualenv installed by default.
+PYTHON3 ?= $(shell which python3.8 2>/dev/null || which python3.7 2>/dev/null || which python3.6 2>dev/null || which python3 2>/dev/null)
+ifeq ($(PYTHON3),)
+$(error python3 not found)
+endif
+
 all: \
   all-examples \
-  all-releases
-
-all-examples:
-	$(MAKE) \
-	  --directory examples
-
-all-releases:
-	$(MAKE) \
-	  --directory releases/0.2.0/migration
+  all-migration-0.2.0
 
 .PHONY: \
   all-examples \
-  all-releases \
+  all-migration-0.2.0 \
   check-examples \
-  check-releases
+  check-migration-0.2.0
+
+.venv.done.log: \
+  requirements.txt
+	rm -rf venv
+	$(PYTHON3) -m virtualenv \
+	  --python=$(PYTHON3) \
+	  venv
+	source venv/bin/activate ; \
+	  pip install \
+	    --upgrade \
+	    pip
+	source venv/bin/activate ; \
+	  pip install \
+	    -r requirements.txt
+	touch $@
+
+all-examples: \
+  .venv.done.log
+	$(MAKE) \
+	  --directory examples
+
+all-migration-0.2.0:
+	$(MAKE) \
+	  --directory releases/0.2.0/migration
 
 check: \
   check-examples \
-  check-releases
+  check-migration-0.2.0
 
-check-examples:
+check-examples: \
+  .venv.done.log
 	$(MAKE) \
 	  --directory examples \
 	  check
 
-check-releases:
+check-migration-0.2.0:
 	$(MAKE) \
 	  --directory releases/0.2.0/migration \
 	  check
 
 clean:
+	@rm -f \
+	  .venv.done.log
+	@rm -rf \
+	  venv
+	@$(MAKE) \
+	  --directory examples \
+	  clean
 	@$(MAKE) \
 	  --directory releases/0.2.0/migration \
 	  clean

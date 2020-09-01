@@ -1,0 +1,251 @@
+{
+    "@context": {
+        "": "http://example.org/kb/",
+        "case-investigation": "https://caseontology.org/ontology/case/investigation#",
+        "drafting": "http://example.org/ontology/drafting#",
+        "uco-action": "https://unifiedcyberontology.org/ontology/uco/action#",
+        "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
+        "uco-location": "https://unifiedcyberontology.org/ontology/uco/location#"
+    },
+    "@graph": [
+        {
+            "@id": ":action-uuid-1",
+            "@type": "case-investigation:InvestigativeAction",
+            "uco-core:description": "Exhibit submitted for Kiosk examination",
+            "uco-action:actionReferences": {
+                "@type": "uco-action:ActionReferences",
+                "uco-action:endTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2019-01-01T14:00+00:00"
+                },
+                "uco-action:location": {
+                    "@id": ":location-uuid-1"
+                }
+            }
+        },
+        {
+            "@id": ":action-uuid-2",
+            "@type": "case-investigation:InvestigativeAction",
+            "uco-action:actionReferences": {
+                "@type": "uco-action:ActionReferences",
+                "uco-action:endTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2019-01-01T14:05+00:00"
+                },
+                "uco-action:location": {
+                    "@id": ":location-uuid-1"
+                }
+            },
+            "uco-core:description": "Exhibit seal checks (passed) & Exhibit receipted in lab"
+        },
+        {
+            "@id": ":action-uuid-3",
+            "@type": "case-investigation:InvestigativeAction",
+            "uco-action:actionReferences": {
+                "@type": "uco-action:ActionReferences",
+                "uco-action:endTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2019-01-01T14:05:30+00:00"
+                },
+                "uco-action:location": {
+                    "@id": ":location-uuid-1"
+                }
+            },
+            "uco-core:description": "Exhibit assigned to Kiosk technician"
+        },
+        {
+            "@id": ":action-uuid-4",
+            "@type": "case-investigation:InvestigativeAction",
+            "uco-action:actionReferences": {
+                "@type": "uco-action:ActionReferences",
+                "uco-action:endTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2019-01-01T14:15+00:00"
+                },
+                "uco-action:location": {
+                    "@id": ":location-uuid-3"
+                }
+            },
+            "uco-core:description": "Sealed Exhibit Photographed"
+        },
+        {
+            "@id": ":action-uuid-5",
+            "@type": "case-investigation:InvestigativeAction",
+            "uco-action:actionReferences": {
+                "@type": "uco-action:ActionReferences",
+                "uco-action:endTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2019-01-01T14:20+00:00"
+                }
+                },
+                "uco-action:location": {
+                    "@id": ":location-uuid-3"
+            },
+            "uco-core:description": "Exhibit Unsealed"
+        },
+        {
+            "@id": ":action-uuid-6",
+            "@type": "case-investigation:InvestigativeAction",
+            "uco-action:actionReferences": {
+                "@type": "uco-action:ActionReferences",
+                "uco-action:endTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2019-01-01T14:21+00:00"
+                },
+                "uco-action:location": {
+                    "@id": ":location-uuid-3"
+                }
+            },
+            "uco-core:description": "Unsealed Exhibit Photographed"
+        },
+        {
+            "@id": ":action-uuid-7",
+            "@type": "case-investigation:InvestigativeAction",
+            "uco-action:actionReferences": {
+                "@type": "uco-action:ActionReferences",
+                "uco-action:endTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2019-01-01T14:25+00:00"
+                },
+                "uco-action:location": {
+                    "@id": ":location-uuid-3"
+                }
+            },
+            "uco-core:description": "Exhibit Connected to Kiosk & process started"
+        },
+        {
+            "@id": ":action-uuid-8",
+            "@type": "case-investigation:InvestigativeAction",
+            "uco-action:actionReferences": {
+                "@type": "uco-action:ActionReferences",
+                "uco-action:endTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2019-01-01T14:55+00:00"
+                },
+                "uco-action:location": {
+                    "@id": ":location-uuid-3"
+                }
+            },
+            "uco-core:description": "Exhibit Disconnected from Kiosk"
+        },
+        {
+            "@id": ":action-uuid-9",
+            "@type": "case-investigation:InvestigativeAction",
+            "uco-action:actionReferences": {
+                "@type": "uco-action:ActionReferences",
+                "uco-action:endTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2019-01-01T15:00+00:00"
+                },
+                "uco-action:location": {
+                    "@id": ":location-uuid-3"
+                }
+            },
+            "uco-core:description": "Exhibit Resealed"
+        },
+        {
+            "@id": ":action-uuid-10",
+            "@type": "case-investigation:InvestigativeAction",
+            "uco-action:actionReferences": {
+                "@type": "uco-action:ActionReferences",
+                "uco-action:endTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2019-01-01T15:05+00:00"
+                },
+                "uco-action:location": {
+                    "@id": ":location-uuid-3"
+                }
+            },
+            "uco-core:description": "Report DVD Generated as associated exhibit"
+        },
+        {
+            "@id": ":action-uuid-11",
+            "@type": "case-investigation:InvestigativeAction",
+            "uco-action:actionReferences": {
+                "@type": "uco-action:ActionReferences",
+                "uco-action:endTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2019-01-01T15:10+00:00"
+                },
+                "uco-action:location": {
+                    "@id": ":location-uuid-3"
+                }
+            },
+            "uco-core:description": "DVD Report sealed"
+        },
+        {
+            "@id": ":action-uuid-12",
+            "@type": "case-investigation:InvestigativeAction",
+            "uco-action:actionReferences": {
+                "@type": "uco-action:ActionReferences",
+                "uco-action:endTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2019-01-01T15:15+00:00"
+                },
+                "uco-action:location": {
+                    "@id": ":location-uuid-3"
+                }
+            },
+            "uco-core:description": "Witness statement completed"
+        },
+        {
+            "@id": ":action-uuid-13",
+            "@type": "case-investigation:InvestigativeAction",
+            "uco-action:actionReferences": {
+                "@type": "uco-action:ActionReferences",
+                "uco-action:endTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2019-01-01T15:20+00:00"
+                },
+                "uco-action:location": {
+                    "@id": ":location-uuid-4"
+                }
+            },
+            "uco-core:description": "Sealed Exhibit handed the OIC & Transfer documentation signed"
+        },
+        {
+            "@id": ":location-uuid-1",
+            "@type": "uco-location:Location",
+            "uco-core:description": "(Room 1-001) Police station intake lab",
+            "uco-core:facets": {
+                "@type": "uco-location:SimpleAddress",
+                "drafting:roomId": "1-001",
+                "uco-location:country": "United Kingdom",
+                "uco-location:locality": "London"
+            }
+        },
+        {
+            "@id": ":location-uuid-2",
+            "@type": "uco-location:Location",
+            "uco-core:description": "(Room B-001) Police station evidence vault",
+            "uco-core:facets": {
+                "@type": "uco-location:SimpleAddress",
+                "drafting:roomId": "B-001",
+                "uco-location:country": "United Kingdom",
+                "uco-location:locality": "London"
+            }
+        },
+        {
+            "@id": ":location-uuid-3",
+            "@type": "uco-location:Location",
+            "uco-core:description": "(Room 2-013) Police station evidence processing lab",
+            "uco-core:facets": {
+                "@type": "uco-location:SimpleAddress",
+                "drafting:roomId": "2-013",
+                "uco-location:country": "United Kingdom",
+                "uco-location:locality": "London"
+            }
+        },
+        {
+            "@id": ":location-uuid-4",
+            "@type": "uco-location:Location",
+            "uco-core:description": "(Room 3-022) Desk of Officer Hudson",
+            "uco-core:facets": {
+                "@type": "uco-location:SimpleAddress",
+                "drafting:roomId": "3-022",
+                "uco-location:country": "United Kingdom",
+                "uco-location:locality": "London"
+            }
+        }
+    ]
+}

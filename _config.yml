@@ -48,15 +48,23 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
 # customer excludes
+  - .venv.done.log
   - CONTRIBUTE.md
   - Makefile
   - README.md
+  - examples/.gitignore
+  - examples/Makefile
   - examples/asgard/Makefile
   - examples/asgard/asgard_*.json
   - examples/asgard/asgard_json.py
   - examples/asgard/index.html.in
+  - examples/urgent_evidence/Makefile
+  - examples/urgent_evidence/index.html.in
   - releases/0.2.0/migration/.gitignore
   - releases/0.2.0/migration/Makefile
+  - requirements.txt
+  - src/
+  - venv/
 
 # Google Analytics
 google_analytics: UA-158161373-1

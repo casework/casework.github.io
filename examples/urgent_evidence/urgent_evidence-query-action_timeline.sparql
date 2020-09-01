@@ -1,0 +1,14 @@
+SELECT ?lEndTime ?lDescription
+WHERE
+{
+  ?nAction
+    a case-investigation:InvestigativeAction ;
+    uco-action:actionReferences [
+      a uco-action:ActionReferences ;
+      uco-action:endTime ?lEndTime ;
+    ] ;
+    uco-core:description ?lDescription ;
+    .
+
+}
+ORDER BY ?lEndTime

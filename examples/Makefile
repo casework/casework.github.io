@@ -13,26 +13,54 @@
 
 SHELL := /bin/bash
 
+top_srcdir := ..
+
 all: \
-  all-asgard
+  all-asgard \
+  all-urgent_evidence
+
+.PHONY: \
+  all-asgard \
+  all-urgent_evidence \
+  check-asgard \
+  check-urgent_evidence \
+  clean-asgard \
+  clean-urgent_evidence
 
 all-asgard:
 	$(MAKE) \
 	  --directory asgard
 
-.PHONY: \
-  all-asgard \
-  check-asgard
+all-urgent_evidence: \
+  $(top_srcdir)/.venv.done.log
+	$(MAKE) \
+	  --directory urgent_evidence
 
 check: \
-  check-asgard
+  check-asgard \
+  check-urgent_evidence
 
 check-asgard:
 	$(MAKE) \
 	  --directory asgard \
 	  check
 
-clean:
+check-urgent_evidence: \
+  $(top_srcdir)/.venv.done.log
+	$(MAKE) \
+	  --directory urgent_evidence \
+	  check
+
+clean: \
+  clean-asgard \
+  clean-urgent_evidence
+
+clean-asgard:
 	@$(MAKE) \
 	  --directory asgard \
+	  clean
+
+clean-urgent_evidence:
+	@$(MAKE) \
+	  --directory urgent_evidence \
 	  clean

@@ -3,12 +3,12 @@
 - name: Releases
   submenuitems:
     - name: Latest Release
-      link: /releases/0.1.0/
+      link: /releases/0.2.0/
     - name: Archived Releases
       link: /releases/archive/
     - name: SPACE
     - name: Under Development
-      link: /releases/0.2.0/
+      link: /releases/0.3.0/
 
 - name: Ontology
   submenuitems:
@@ -61,5 +61,5 @@
       link: /resources/references.html
     - name: Ontology Versioning
       link: /resources/versioning.html
-- name: Contribute
-  link: /contribute.html
+- name: Contact
+  link: /contact.html
