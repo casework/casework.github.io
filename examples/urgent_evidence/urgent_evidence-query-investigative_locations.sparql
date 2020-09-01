@@ -1,0 +1,22 @@
+SELECT DISTINCT ?nLocation ?lRoomId ?lDescription
+WHERE
+{
+  ?nAction
+    a case-investigation:InvestigativeAction ;
+    uco-action:actionReferences [
+      a uco-action:ActionReferences ;
+      uco-action:location ?nLocation ;
+    ] ;
+    .
+
+  ?nLocation
+    a uco-location:Location ;
+    uco-core:description ?lDescription ;
+    uco-core:facets [
+      a uco-location:SimpleAddress ;
+      drafting:roomId ?lRoomId ;
+    ]
+    .
+
+}
+ORDER BY ?nLocation
