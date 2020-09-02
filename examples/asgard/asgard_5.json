@@ -1,0 +1,43 @@
+[
+    {
+        "@id": ":network-connection1-uuid",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:NetworkConnection",
+                "uco-observable:startTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2009-04-03T02:29:25.6256260Z"
+                },
+                "uco-observable:endTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2009-04-03T02:29:25.6365510Z"
+                },
+                "uco-observable:dst": {
+                    "@id": ":destination-host-uuid"
+                },
+                "uco-observable:destinationPort": 139,
+                "uco-observable:src": {
+                    "@id": ":source-host-uuid"
+                },
+                "uco-observable:sourcePort": 52960,
+                "uco-observable:protocols": {
+                    "@type": "uco-types:ControlledDictionary",
+                    "uco-types:entry": [
+                        {
+                            "@type": "uco-types:ControlledDictionaryEntry",
+                            "uco-types:key": "Transport Layer",
+                            "uco-types:value": "TCP"
+                        },
+                        {
+                            "@type": "uco-types:ControlledDictionaryEntry",
+                            "uco-types:key": "Session Layer",
+                            "uco-types:value": "NETBIOSSESSIONSERVICE "
+                        }
+                    ]
+                },
+                "connectionState": "APSF"
+            }
+        ]
+    }
+]

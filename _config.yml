@@ -54,6 +54,10 @@ exclude:
   - README.md
   - examples/.gitignore
   - examples/Makefile
+  - examples/asgard/Makefile
+  - examples/asgard/asgard_*.json
+  - examples/asgard/asgard_json.py
+  - examples/asgard/index.html.in
   - examples/urgent_evidence/Makefile
   - examples/urgent_evidence/index.html.in
   - releases/0.2.0/migration/.gitignore

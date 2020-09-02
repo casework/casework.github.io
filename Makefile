@@ -26,17 +26,6 @@ all: \
   all-examples \
   all-migration-0.2.0
 
-all-examples: \
-  .venv.done.log
-	$(MAKE) \
-	  --directory examples
-
-all-migration-0.2.0:
-	$(MAKE) \
-	  --directory releases/0.2.0/migration
-	$(MAKE) \
-	  --directory examples/urgent_evidence
-
 .PHONY: \
   all-examples \
   all-migration-0.2.0 \
@@ -57,6 +46,15 @@ all-migration-0.2.0:
 	  pip install \
 	    -r requirements.txt
 	touch $@
+
+all-examples: \
+  .venv.done.log
+	$(MAKE) \
+	  --directory examples
+
+all-migration-0.2.0:
+	$(MAKE) \
+	  --directory releases/0.2.0/migration
 
 check: \
   check-examples \
@@ -83,4 +81,7 @@ clean:
 	  clean
 	@$(MAKE) \
 	  --directory releases/0.2.0/migration \
+	  clean
+	@$(MAKE) \
+	  --directory examples \
 	  clean
