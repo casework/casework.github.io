@@ -1,0 +1,49 @@
+---
+<!-- layout: blank -->
+title: Cheating on State Test
+jumbo_desc: CASE Sub-topic of Documents
+---
+
+    <div class="row">
+      <div class="col-xs-12">
+      <h2>Narrative</h2>
+        <p>On 13 April 2020 at approximately 1:30 PM EST, Ms. Kristina Johnson, a high school math teacher in Anne Arundel County, Maryland school district observed a student, Suzie Smith, used their phone to take a picture of a paper document located on Ms. Johnson’s desk. The document in question contains the test questions and answers to a standardized state test. This document contains two markings that indicate the handling requirements for the document:</p>
+        <ol type="1">
+          <li>Confidential: State of Maryland Board of Education Use Only, and</li>
+	  <li>Proprietary Information – © 2020 Maryland Testing, Inc</li>
+	</ol>
+	<p>Passing the test is a requirement for high school graduation. The teacher reported this to the school’s principal who in turn reported it to the school’s law enforcement resource officer and the State’s Superintendent of the Board of Education. The State Board of Education notified the vendor Maryland Testing. The school’s resource officer interviewed the student who denied taking the picture. The school’s resource officer requested the student provide the officer with access to the phone. The student refused to provide consent to the officer. The student’s parents and legal owners of the phone also refused to provide consent to the resource officer to access the student’s phone. The school resource officer took a picture of the student’s phone and recorded the model, and serial number of the phone to an affidavit form. The serial number of the phone recorded in the affidavit is R58H346RDEL.</p>
+	<p>The school district and county police decided to not pursue any legal action. However, the vendor Maryland Testing’s lawyer filed a civil complaint in county court against the student’s parents seeking damages. Maryland Testing’s lawyer also sent the student’s parents a preservation request for documents, emails, pictures, and text messages on the student’s phone that are related to the case. The court accepted the civil lawsuit and pretrial activities occur, including digital forensics and e-discovery. The judge orders the parents council to turn over the phone to the council representing Maryland Testing. The student and parents did not provide any password to the phone. The council representing Maryland Testing takes a deposition from the teacher and from the school’s resource officer about the incident.</p>
+	<p>The phone is a Galaxy S7 model phone with serial number is R58H346RDEL.</p>
+	<p>Maryland Testing hires another company named Digital Forensics Maryland, Inc to examine this phone.</p>
+	<p>Digital Forensics Maryland employs both a Digital Forensics Examiner and an e-Discovery analyst for this case. They both read the original preservation request and acceptance of the factual evidence if discovered. The Digital Forensics Examiner observes that the phone is locked and uses a popular tool to successfully brute force the password and collect a forensic image of the phone’s file system and memory. The Digital Forensics Examiner provides the forensic image to the e-Discovery analyst. The e-Discovery analyst imports and processes the forensic images with a popular analysis product. The product automatically parses out common user file types: images, videos, text messages, emails, and office documents. The tool also analyses the memory capture. The product also indexes the content of all files in allocated space, and recovered file portions from unallocated space within the drive. The product presents timeline analysis for files that the e-Discovery analyst is interested in.</p>
+	<p>The e-Discovery analyst runs a series of key word searches on the indexed file contents. The keywords are: test, exam, standardized test, Maryland Testing, grades, cheat, steal, and answers</p>
+	<p>Nothing related to the theft of the standardized test questions and answers was recovered from the keyword searches. The e-Discovery analyst then runs a time-bound query for images with file creation dates starting on 13 April 2020 and extending to the day the phone was given to the legal counsel representing Maryland Testing, Inc.</p>
+	<p>This time-bound query resulted in the presentation of five image files in total. There were four selfies of the student and another image showing what appears to be the image of the standardized test questions and answers. These image files are located in the file path “/DCIM/03142020”. The file in question is named 05.jpg and is located in the same directory.</p>
+	<p>To be sure, the legal counsel representing Maryland Testing, Inc requested a review of the file 05.jpg by Ms. Johnson to be sure that this was the same document that was on her desk the day the incident occurred. Mr. Johnson concurred that it was.</p>
+	<p>The e-Discovery analyst was able to find that the student had shared the original image to three of her friends via Snapchat. Subsequent analysis of those three other students’ phones revealed that two of the students collected a screenshot of the Snapchat message containing the 05.jpg. The Snapchat cache data (located at /data/com.snapchat.android/) collected from each of the phones correlated the time sent and received from the source phone to the receiving phones. The e-Discovery analyst also discovered that Suzie Smith’s phone had a PDF creation application called Foxit PDF Creator installed on it the day of the incident – 13 April 2020.</p>
+	<p>The Digital Forensic Examiner also determined that there was only one single user account on Suzie Smith’s phone. The user account is named “SuzeeeeS”. Further forensic examination revealed that the image 05.jpg was created in /DCIM/03142020 on 13 April 2020 at 1:28 PM EST by the account “SuzeeeeS”.</p>
+	<p>The Digital Forensics Examiner determined through additional analysis that Foxit PDF Creator imported the image, performed optical character recognition on it, and then saved the discovered text to a PDF file. Foxit PDF Creator kept a log of the name of the file (05.jpg), the source file path (/DCIM/03142020/05.jpg), and the created PDF file name and location at “/foxit/8ju59x48.pdf”. Further forensic examination of showed that the same PDF file (8ju59x48.pdf ) was emailed as an attachment by account suz152004@gmail.com through a mapped account on the native Android email application to cheatersgetpaid@yahoo.com. Email log analysis revealed that user “SuzeeeS” sent the email on 13 April 2020 at 7:35 PM EST. The email was titled “maryland math test – pay me”. The email contained instructions to pay via “Cash App” from Square.</p>
+	<p><b>Here are a couple of other thoughts on document forensics not incorporated into the narrative above.</p></b>
+	<p>Digital Investigators are going to be interested in the area of document discovery and analysis:</p>
+	<ol type="1">
+          <li>File creation and last accessed metadata correlated against system time. Be aware of timestomping artifacts that show this file metadata was deleted or replaced.</li>
+          <li>Need to determine UUIDs of users on the system to determine which user creates and updates a file.</li>
+          <li>Documents may contain other embedded documents. Documents may also contain macro code that provides the user with additional functionality.</li>
+          <li>A document may be signed with a digital signatures, a written signature copied into the document, a signature block, or initials within the filename of the file.</li>
+          <li>Specific software needed to read, edit, and present document file types. Sometimes documents are very old and require software to be acquired from an application repository.</li>
+          <li>File permissions are important.</li>
+          <li>Review spool files to see if/when a document has been printed in the recent past</li>
+          <li>Look for documents that have been copied to another location in the file system – need to infer this from file access times and hash correlation.</li>
+          <li>Have documents been burned to a disk or USB drive that was mounted to the filesystem?</li>
+          <li>Analyze exif data on all image documents, or on embedded images within documents if it exists.</li>
+          <li>Memory analysis may reveal if the document was being presented on the screen to the user.</li>
+          <li>Documents could be hidden, compressed (zip, tar), steganography can be employed to hide content within a document. It’s possible to create a text file and then create another text file and then embed the second text file within the first text file. At a glance, this would appear as one file.</li>
+          <li>Hiding files with different file extensions – save as .dll instead of .docx – check the file magic on each file.</li>
+          <li>Very important to find traces of documents in unallocated filesystem. Make sure there are no hidden partitions on the disk.</li>
+          <li>Digital Forensic Examiner can use file carving tool to identify documents in unallocated space and reconstruction tools to view documents that are partially overwritten.</li>
+          <li>Document could be password protected.</li>
+          <li>PDF files that are not OCRd may not be indexed in popular forensic analysis tools.</li>
+        </ol>
+      </div>
+    </div>
