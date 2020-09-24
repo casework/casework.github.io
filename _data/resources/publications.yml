@@ -53,3 +53,10 @@
   source_url: https://www.sciencedirect.com/science/article/pii/S1742287618303839
   date: 2018-11-28
   url: https://www.sciencedirect.com/science/article/pii/S1742287618303839
+- title: Standardization of file recovery classification and authentication
+  desc: In digital forensic investigations, the notions of "recovered content" versus "deleted content" can be more specifically expressed as various degrees of recoverability.
+  type: Publication
+  source: Digital Investigation Journal
+  source_url: https://www.journals.elsevier.com/digital-investigation
+  date: 2019-07-20
+  url: https://doi.org/10.1016/j.diin.2019.06.004
