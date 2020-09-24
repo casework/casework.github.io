@@ -9,13 +9,14 @@
     - name: SPACE
     - name: Under Development
       link: /releases/0.3.0/
-
 - name: Ontology
   submenuitems:
     - name: Introduction
       link: /ontology/intro.html
     # - name: Guides
     #   link: /ontology/guides.html
+    - name: Versioning
+      link: /ontology/versioning.html
     - name: SPACE
     - header: Examples
     - name: Investigation
@@ -44,22 +45,22 @@
       link: /community/membership.html
 - name: Resources
   submenuitems:
-    - header: Library
     - name: Bylaws
       link: /resources/bylaws.html
     - name: Code of Conduct
       link: /resources/coc.html
-    - name: Downloads
-      link: /resources/downloads.html
-    - name: SPACE
-    - header: Documentation
     - name: Roadmap
       link: /resources/roadmap.html
+    - name: SPACE
+    - header: Libraries
+    - name: Downloads
+      link: /resources/downloads.html
     - name: Publications
       link: /resources/publications.html
     - name: Reference Material
       link: /resources/references.html
-    - name: Ontology Versioning
-      link: /resources/versioning.html
+    - name: Media
+      link: /resources/media.html
+
 - name: Contact
   link: /contact.html

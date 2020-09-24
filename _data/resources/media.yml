@@ -1,0 +1,10 @@
+# Variables Accepted
+# date: format must be YYYY-MM-DD
+# type: Demo, Presentation
+# youtubeID: end of url to video
+
+- title: Jinja Templating Demo
+  desc: A quick demo of mappings using jinja templating.
+  date: 2020-09-17
+  type: Demo
+  youtubeID: o4pwm54VXXY

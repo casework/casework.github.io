@@ -1,46 +1,45 @@
-  .fa-sticky-note {
-    color: #ffc107;
-  }
+.fa-sticky-note {
+  color: #ffc107;
+}
 
-  .fa-video {
-    color: #28a745;
-  }
+.fa-video,
+.fa-film {
+  color: #28a745;
+}
 
-  .fa-people-carry {
-    color: #007bff;
-  }
+.fa-people-carry,
+.fa-chalkboard-teacher {
+  color: #007bff;
+}
 
-  .fa-share-alt {
-    color: #28a745;
-  }
+.fa-share-alt {
+  color: #28a745;
+}
 
-  .fa-gavel {
-    color: #dc3545;
-  }
+.fa-gavel,
+.fa-play {
+  color: #dc3545;
+}
 
-  .fa-handshake {
-    color: #8e44ad;
-  }
+.fa-handshake {
+  color: #8e44ad;
+}
 
-  .filter-button
-  {
-      border: 1px solid #000000;
-      outline: none;
-      padding: 10px 16px;
-      background-color: white;
-      cursor: pointer;
-      border-radius: 0px;
-  }
-  .filter-button:hover
-  {
-      border: 1px solid #007bff;
-      background-color: white;
-      cursor: pointer;
-      color: #007bff;
-
-  }
-  .filter-button:active
-  {
-      background-color: #007bff;
-      color: white;
-  }
+.filter-button {
+  border: 1px solid #000000;
+  outline: none;
+  padding: 10px 16px;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 0px;
+}
+.filter-button:hover {
+  border: 1px solid #007bff;
+  background-color: white;
+  cursor: pointer;
+  color: #007bff;
+}
+.filter-button:active {
+  background-color: #007bff;
+  color: white;
+}

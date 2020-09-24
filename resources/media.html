@@ -1,0 +1,43 @@
+---
+title: Media
+jumbo_desc: Instructional video and demonstrations
+custom_js:
+- presentations
+#- pagination
+custom_css:
+- presentations
+- media
+#- pagination
+---
+<div class="mb-5">
+  <button class="btn btn-default filter-button" data-filter="all">All</button>
+  <button class="btn btn-default filter-button" data-filter="Demo">Demo</button>
+  <button class="btn btn-default filter-button" data-filter="Presentation">Presentation</button>
+</div>
+<div id="page">
+  <div class="row">
+{% assign presentations_sorted = site.data.resources.media | sort: 'date' | reverse %}
+{% for item in presentations_sorted %}
+    <div class="col-sm-12 col-lg-6 py-2 filter {{ item.type }}">
+        <div class="card h-100">
+            {% include youtube.html id=item.youtubeID %}
+            <div class="card-body">
+                <h5 class="card-title">{{ item.title }}</h5>
+                <p class="card-text">{{ item.desc }}</p>
+            </div>
+            <div class="card-footer d-flex">
+              <small class="text-muted">Posted {{ item.date | date_to_string }}</small>
+              <span class="ml-auto">
+                <i data-toggle="tooltip" title="{{ item.type }}" class="fas
+                  {% if item.type == "Demo" %}fa-chalkboard-teacher
+                  {% elsif item.type == "Presentation" %}fa-video
+                  {% else %}fa-play
+                  {% endif %}
+                  "></i>
+              </span>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+  </div>
+</div>
