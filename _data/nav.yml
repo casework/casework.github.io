@@ -51,6 +51,8 @@
       link: /resources/coc.html
     - name: Roadmap
       link: /resources/roadmap.html
+    - name: GitHub Repos
+      link: /resources/github_repos.html
     - name: SPACE
     - header: Libraries
     - name: Downloads
