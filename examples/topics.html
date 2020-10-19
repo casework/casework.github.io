@@ -1,0 +1,87 @@
+---
+<!-- layout: releases -->
+title: Topics
+jumbo_desc: Investigative topic support in CASE
+---
+
+    <p>The <a href="gallery.html">CASE narrative examples gallery</a> illustrates snippets of CASE data that would appear in cyber investigations, using narratives to provide a cohesive demonstration.  The concepts used in those illustrations can be grouped into various topics of investigative relevance.</p>
+    <ol>
+      <li><a href="#chain_of_custody">Chain of Custody</a></li>
+      <li><a href="#email">Email</a></li>
+      <li><a href="#audio">Audio</a></li>
+      <li><a href="#video">Video</a></li>
+    </ol>
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <div class="well">
+          <h3 id="chain_of_custody">Chain of Custody</h3>
+          <p>The Chain of Custody is crucial in investigations as it helps establish and maintain integrity of the evidence throughout various stages (i.e. seizure, transfer, analysis, etc.). Due to the increasing reliance of digital media in our every-day tasks, digital components are becoming more prominent in investigations. CASE seeks to represent that cyber aspect of a Chain of Custody. Those aspects that can be represented in CASE are properties of a device (manufacturer, model, serial number, storage size, etc.), tools used to acquire and/or analyze the device, and the context of data pertaining to the device.</p>
+          <h4>Concepts and illustrations</h4>
+          <table class="table table-bordered table-condensed">
+            <caption>Supporting concepts for Chain of Custody</caption>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>IRI</th>
+                <th>Illustrations</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Investigative action</td>
+                <td><a href="https://caseontology.org/ontology/case/investigation#InvestigativeAction"><code>case-investigation:InvestigativeAction</code></a></td>
+                <td>
+                  <ul>
+                    <li><a href="urgent_evidence/#queries">Urgent Evidence queries</a>
+                      <ul>
+                        <li><a href="urgent_evidence/#query-action_timeline">Action timeline</a></li>
+                        <li><a href="urgent_evidence/#query-investigative_locations">Investigative Locations</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="https://github.com/casework/CASE-Examples/search?q=case-investigation%3AInvestigativeAction">Usage in CASE-Examples</a>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>Provenance record</td>
+                <td><a href="https://caseontology.org/ontology/case/investigation#ProvenanceRecord"><code>case-investigation:ProvenanceRecord</code></a></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <div class="well">
+          <h3 id="email">Email</h3>
+          <p>Email forensics pertains to gathering evidence from a mail server or an individual's email account to investigate cases such as phishing/whaling campaigns, blackmail/threats, corporate espionage, and others.</p>
+          <h4>Concepts and illustrations</h4>
+          <p><a class="btn btn-primary" href="phishing/">Phishing</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <div class="well">
+          <h3 id="audio">Audio</h3>
+          <p>When gathering evidence from an audio device, a forensic analayst could perform audio enhancement, audio authentication, and/or a forensic transcription.</p>
+          <h4>Concepts and illustrations</h4>
+          <p><a class="btn btn-primary" href="voice_comparison/">Voice Comparison</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <div class="well">
+          <h3 id="video">Video</h3>
+          <p>Video forensics are typically performed on recording devices, such as: surveillance cameras, DVRs/NVRs, and cell phones. Analysis types include image comparison, image authentication, motion tracking, and others.</p>
+          <h4>Concepts and illustrations</h4>
+          <p><a class="btn btn-primary" href="ip_theft_video_leak/">IP Theft/Video Leak</a></p>
+        </div>
+      </div>
+    </div>
