@@ -90,7 +90,7 @@ jumbo_desc: CASE Sub-topic of Chain of Custody
         <p><em>Note: The above chain of custody details (i.e. unseal, photograph, connect to forensic tool, image, process, disconnect from forensic tool, reseal) are effectively identical to the chain of custody typically used within the laboratory environment.</em></p>
 
         <h2>Illustrative Data and Queries</h2>
-        <p>The queries in this section, and their computed results, are backed by the data in <a href="urgent_evidence.json">urgent_evidence.json</a>.</p>
+        <p>The queries in this section, and their computed results, are backed by the data in <a href="urgent_evidence.json">urgent_evidence.json</a> and <a href="urgent_evidence-local_ontology.ttl">urgent_evidence-local_ontology.ttl</a>.</p>
         <p>Events, locations, tools, and people represented in this and other CASE narratives are presented, and at many times created, for illustration purposes only and do not necessarily represent real events, locations, tools, or people.</p>
 
         <div class="card">
@@ -120,6 +120,19 @@ jumbo_desc: CASE Sub-topic of Chain of Custody
               <li class="card-text">The evidence vault&mdash;room B-001&mdash;is not among these locations.  The urgency of the processing caused that room to be bypassed.</li>
               <li class="card-text">The witness statement is produced by the analyzing officer, following <a href="https://www.cps.gov.uk/legal-guidance/admitting-evidence-under-sections-9-and-10-criminal-justice-act-1967">UK Crown Prosecution Service Guidance</a>.  (Were this a civil case, <a href="https://www.justice.gov.uk/courts/procedure-rules/civil/standard-directions/general/witness-statements">UK Ministry of Justice Guidance</a> would have been followed instead.)  The officer's signed statement describes the officer's experience, role, and training, and describes and accompanies the chain of custody and analysis results up through the kiosk's processing conclusion in the evidence processing lab.</li>
             </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <h5 class="card-header">Investigative personae</h5>
+          <div class="card-body">
+            <p class="card-text">According to the provenance chain, who was involved in handling this evidence? (<a href="urgent_evidence-query-investigative_personae.sparql">SPARQL source</a>)</p>
+            <p class="card-text">The evidence exhibit number is <code>EXH-20190101-7</code>.</p>
+{% highlight sparql %}
+@QUERY_INVESTIGATIVE_PERSONAE_SPARQL@
+{% endhighlight %}
+@QUERY_INVESTIGATIVE_PERSONAE_HTML@
+
           </div>
         </div>
 
