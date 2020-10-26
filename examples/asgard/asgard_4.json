@@ -1,20 +1,20 @@
 [
     {
-        "@id": ":sms_message1",
+        "@id": "kb:sms_message1",
         "@type": "uco-observable:CyberItem",
         "uco-core:facets": [
             {
                 "@type": "uco-observable:Message",
                 "uco-observable:application": {
-                    "@id": ":sms_application1"
+                    "@id": "kb:sms_application1"
                 },
                 "uco-observable:messageText": "Yo dude! This is my new number.",
                 "uco-observable:from": {
-                    "@id": ":phone_account3"
+                    "@id": "kb:phone_account3"
                 },
                 "uco-observable:to": [
                     {
-                        "@id": ":phone_account1"
+                        "@id": "kb:phone_account1"
                     }
                 ],
                 "uco-observable:sentTime": {
@@ -25,7 +25,7 @@
         ]
     },
     {
-        "@id": ":phone_call1",
+        "@id": "kb:phone_call1",
         "@type": "uco-observable:CyberItem",
         "uco-core:facets": [
             {
@@ -40,10 +40,10 @@
                     "@value": "2010-01-15T18:30:41.25Z"
                 },
                 "uco-observable:from": {
-                    "@id": ":phone_account1"
+                    "@id": "kb:phone_account1"
                 },
                 "uco-observable:to": {
-                    "@id": ":phone_account2"
+                    "@id": "kb:phone_account2"
                 },
                 "uco-observable:duration": {
                     "@type": "xsd:long",

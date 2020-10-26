@@ -1,7 +1,7 @@
 {
     "__CASE__": "ASGARD_2019_00162",
     "@context": {
-        "": "http://example.org/kb#",
+        "kb": "http://example.org/kb#",
         "@vocab": "http://example.org/ontology/local#",
         "case-investigation": "https://caseontology.org/ontology/case/investigation#",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -14,12 +14,12 @@
         "uco-vocabulary": "https://unifiedcyberontology.org/ontology/uco/vocabulary#",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
-    "@id": ":bundle-5715FCF3-6BC8-4996-8F7F-FDF289F31649",
+    "@id": "kb:bundle-5715FCF3-6BC8-4996-8F7F-FDF289F31649",
     "@type": "uco-core:Bundle",
     "uco-core:description": "Initial evidence seizure in cross border investigation into disruption of public transportation service",
     "uco-core:object": [
         {
-            "@id": ":authorization-79D6AB60-D679-49CE-9573-7176DFEEB7C3",
+            "@id": "kb:authorization-79D6AB60-D679-49CE-9573-7176DFEEB7C3",
             "@type": "case-investigation:Authorization",
             "uco-core:facets": [
                 {
@@ -27,35 +27,35 @@
                     "case-investigation:authorizationType": "Odin_Decree",
                     "case-investigation:authorizationIdentifier": "Decree_2019_00013",
                     "authorizationAuthority": {
-                        "@id": ":530646A9-4290-4C02-B0B3-FD2EC363834A"
+                        "@id": "kb:530646A9-4290-4C02-B0B3-FD2EC363834A"
                     },
                     "authorizationIssuedDate": "20190330"
                 }
             ]
         },
         {
-            "@id": ":investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7",
+            "@id": "kb:investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7",
             "@type": "case-investigation:Investigation",
             "uco-core:name": "ASGARD_2018_00162",
             "case-investigation:focus": "Denial of Service (Bifrost Bridge)",
             "uco-core:description": "An unknown person caused public disturbance and physical damage to property in Asgard, resulting in denial of service of public transportation (Bifrost Bridge).",
             "uco-core:object": [
                 {
-                    "@id": ":86F2E76A-434D-4D3F-9147-CD0CABCCA074"
+                    "@id": "kb:86F2E76A-434D-4D3F-9147-CD0CABCCA074"
                 },
                 {
-                    "@id": ":E9AA4F26-D187-4F32-A602-86A6DF4B8528"
+                    "@id": "kb:E9AA4F26-D187-4F32-A602-86A6DF4B8528"
                 },
                 {
-                    "@id": ":530646A9-4290-4C02-B0B3-FD2EC363834A"
+                    "@id": "kb:530646A9-4290-4C02-B0B3-FD2EC363834A"
                 },
                 {
-                    "@id": ":B1C22D51-4A3F-4353-84FB-E210B5EFDA48"
+                    "@id": "kb:B1C22D51-4A3F-4353-84FB-E210B5EFDA48"
                 }
             ]
         },
         {
-            "@id": ":investigative-action1-uuid",
+            "@id": "kb:investigative-action1-uuid",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "preserved",
             "uco-action:startTime": {
@@ -66,39 +66,39 @@
                 {
                     "@type": "uco-action:ActionReferences",
                     "uco-action:instrument": {
-                        "@id": ":odin-decree13-uuid"
+                        "@id": "kb:odin-decree13-uuid"
                     },
                     "uco-action:location": {
-                        "@id": ":asgard-bifrost-uuid"
+                        "@id": "kb:asgard-bifrost-uuid"
                     },
                     "uco-action:performer": {
-                        "@id": ":investigator2-uuid"
+                        "@id": "kb:investigator2-uuid"
                     },
                     "uco-action:object": [],
                     "uco-action:result": [
                         {
-                            "@id": ":provenance-record1-uuid"
+                            "@id": "kb:provenance-record1-uuid"
                         },
                         {
-                            "@id": ":suspect-device-uuid"
+                            "@id": "kb:suspect-device-uuid"
                         }
                     ]
                 }
             ]
         },
         {
-            "@id": ":provenance-record1-uuid",
+            "@id": "kb:provenance-record1-uuid",
             "@type": "case-investigation:ProvenanceRecord",
             "uco-core:description": "Suspect device found near Bifrost Bridge after disruption",
             "case-investigation:exhibitNumber": "AsgardPD-20190330-001A",
             "uco-core:object": [
                 {
-                    "@id": ":suspect-device-uuid"
+                    "@id": "kb:suspect-device-uuid"
                 }
             ]
         },
         {
-            "@id": ":suspect-device-uuid",
+            "@id": "kb:suspect-device-uuid",
             "@type": "uco-observable:CyberItem",
             "uco-core:facets": [
                 {
@@ -146,7 +146,7 @@
             ]
         },
         {
-            "@id": ":219189B6-356C-4D53-A844-F0031E74F156",
+            "@id": "kb:219189B6-356C-4D53-A844-F0031E74F156",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "acquired",
             "uco-core:description": "Suspect device physical acquisition",
@@ -162,41 +162,41 @@
                 {
                     "@type": "uco-action:ActionReferences",
                     "uco-action:instrument": {
-                        "@id": ":tool-embeddedextractor1-uid"
+                        "@id": "kb:tool-embeddedextractor1-uid"
                     },
                     "uco-action:location": {
-                        "@id": ":309BC178-1836-47B7-AA15-94EA3A2C7401"
+                        "@id": "kb:309BC178-1836-47B7-AA15-94EA3A2C7401"
                     },
                     "uco-action:performer": {
-                        "@id": ":E9AA4F26-D187-4F32-A602-86A6DF4B8528"
+                        "@id": "kb:E9AA4F26-D187-4F32-A602-86A6DF4B8528"
                     },
                     "uco-action:object": [
                         {
-                            "@id": ":suspect-device-uuid"
+                            "@id": "kb:suspect-device-uuid"
                         }
                     ],
                     "uco-action:result": [
                         {
-                            "@id": ":90F73123-DB7E-41E5-B6CA-493B96E4B89F"
+                            "@id": "kb:90F73123-DB7E-41E5-B6CA-493B96E4B89F"
                         },
                         {
-                            "@id": ":97C74753-FCEB-49C8-A611-7A70EF46AB5D"
+                            "@id": "kb:97C74753-FCEB-49C8-A611-7A70EF46AB5D"
                         },
                         {
-                            "@id": ":EBAB06EE-7522-42D6-96EA-E3121D67E393"
+                            "@id": "kb:EBAB06EE-7522-42D6-96EA-E3121D67E393"
                         },
                         {
-                            "@id": ":48C0F0E8-9A63-45EE-99BF-23CC354C3252"
+                            "@id": "kb:48C0F0E8-9A63-45EE-99BF-23CC354C3252"
                         },
                         {
-                            "@id": ":B2A7B20E-8307-40CF-ABAF-9733ABBF4335"
+                            "@id": "kb:B2A7B20E-8307-40CF-ABAF-9733ABBF4335"
                         }
                     ]
                 }
             ]
         },
         {
-            "@id": ":tool-embeddedextractor1-uid",
+            "@id": "kb:tool-embeddedextractor1-uid",
             "@type": "uco-tool:Tool",
             "uco-core:name": "Embedded Device Extrator",
             "uco-tool:toolType": "Extraction",
@@ -221,7 +221,7 @@
             ]
         },
         {
-            "@id": ":suspect-mobiledevice-forensicduplicate-uuid",
+            "@id": "kb:suspect-mobiledevice-forensicduplicate-uuid",
             "@type": "uco-observable:CyberItem",
             "uco-core:facets": [
                 {
@@ -262,7 +262,7 @@
             ]
         },
         {
-            "@id": ":suspect-device-mmssms-uuid",
+            "@id": "kb:suspect-device-mmssms-uuid",
             "@type": "uco-observable:CyberItem",
             "uco-core:facets": [
                 {
@@ -303,14 +303,14 @@
             ]
         },
         {
-            "@id": ":trace-relationship3-uuid",
+            "@id": "kb:trace-relationship3-uuid",
             "@type": "uco-observable:CyberRelationship",
             "uco-core:source": {
-                "@id": ":suspect-device-mmssms-uuid"
+                "@id": "kb:suspect-device-mmssms-uuid"
             },
             "uco-core:target": [
                 {
-                    "@id": ":suspect-image-filesystem-uuid"
+                    "@id": "kb:suspect-image-filesystem-uuid"
                 }
             ],
             "uco-core:kindOfRelationship": {
@@ -326,21 +326,21 @@
             ]
         },
         {
-            "@id": ":sms_message1",
+            "@id": "kb:sms_message1",
             "@type": "uco-observable:CyberItem",
             "uco-core:facets": [
                 {
                     "@type": "uco-observable:Message",
                     "uco-observable:application": {
-                        "@id": ":sms_application1"
+                        "@id": "kb:sms_application1"
                     },
                     "uco-observable:messageText": "Yo dude! This is my new number.",
                     "uco-observable:from": {
-                        "@id": ":phone_account3"
+                        "@id": "kb:phone_account3"
                     },
                     "uco-observable:to": [
                         {
-                            "@id": ":phone_account1"
+                            "@id": "kb:phone_account1"
                         }
                     ],
                     "uco-observable:sentTime": {
@@ -351,7 +351,7 @@
             ]
         },
         {
-            "@id": ":phone_call1",
+            "@id": "kb:phone_call1",
             "@type": "uco-observable:CyberItem",
             "uco-core:facets": [
                 {
@@ -366,10 +366,10 @@
                         "@value": "2010-01-15T18:30:41.25Z"
                     },
                     "uco-observable:from": {
-                        "@id": ":phone_account1"
+                        "@id": "kb:phone_account1"
                     },
                     "uco-observable:to": {
-                        "@id": ":phone_account2"
+                        "@id": "kb:phone_account2"
                     },
                     "uco-observable:duration": {
                         "@type": "xsd:long",
@@ -379,7 +379,7 @@
             ]
         },
         {
-            "@id": ":network-connection1-uuid",
+            "@id": "kb:network-connection1-uuid",
             "@type": "uco-observable:CyberItem",
             "uco-core:facets": [
                 {
@@ -393,11 +393,11 @@
                         "@value": "2009-04-03T02:29:25.6365510Z"
                     },
                     "uco-observable:dst": {
-                        "@id": ":destination-host-uuid"
+                        "@id": "kb:destination-host-uuid"
                     },
                     "uco-observable:destinationPort": 139,
                     "uco-observable:src": {
-                        "@id": ":source-host-uuid"
+                        "@id": "kb:source-host-uuid"
                     },
                     "uco-observable:sourcePort": 52960,
                     "uco-observable:protocols": {

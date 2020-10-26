@@ -1,6 +1,6 @@
 [
     {
-        "@id": ":network-connection1-uuid",
+        "@id": "kb:network-connection1-uuid",
         "@type": "uco-observable:CyberItem",
         "uco-core:facets": [
             {
@@ -14,11 +14,11 @@
                     "@value": "2009-04-03T02:29:25.6365510Z"
                 },
                 "uco-observable:dst": {
-                    "@id": ":destination-host-uuid"
+                    "@id": "kb:destination-host-uuid"
                 },
                 "uco-observable:destinationPort": 139,
                 "uco-observable:src": {
-                    "@id": ":source-host-uuid"
+                    "@id": "kb:source-host-uuid"
                 },
                 "uco-observable:sourcePort": 52960,
                 "uco-observable:protocols": {

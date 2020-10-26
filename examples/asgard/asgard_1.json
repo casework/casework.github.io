@@ -1,6 +1,6 @@
 [
     {
-        "@id": ":investigative-action1-uuid",
+        "@id": "kb:investigative-action1-uuid",
         "@type": "case-investigation:InvestigativeAction",
         "uco-core:name": "preserved",
         "uco-action:startTime": {
@@ -11,39 +11,39 @@
             {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:instrument": {
-                    "@id": ":odin-decree13-uuid"
+                    "@id": "kb:odin-decree13-uuid"
                 },
                 "uco-action:location": {
-                    "@id": ":asgard-bifrost-uuid"
+                    "@id": "kb:asgard-bifrost-uuid"
                 },
                 "uco-action:performer": {
-                    "@id": ":investigator2-uuid"
+                    "@id": "kb:investigator2-uuid"
                 },
                 "uco-action:object": [],
                 "uco-action:result": [
                     {
-                        "@id": ":provenance-record1-uuid"
+                        "@id": "kb:provenance-record1-uuid"
                     },
                     {
-                        "@id": ":suspect-device-uuid"
+                        "@id": "kb:suspect-device-uuid"
                     }
                 ]
             }
         ]
     },
     {
-        "@id": ":provenance-record1-uuid",
+        "@id": "kb:provenance-record1-uuid",
         "@type": "case-investigation:ProvenanceRecord",
         "uco-core:description": "Suspect device found near Bifrost Bridge after disruption",
         "case-investigation:exhibitNumber": "AsgardPD-20190330-001A",
         "uco-core:object": [
             {
-                "@id": ":suspect-device-uuid"
+                "@id": "kb:suspect-device-uuid"
             }
         ]
     },
     {
-        "@id": ":suspect-device-uuid",
+        "@id": "kb:suspect-device-uuid",
         "@type": "uco-observable:CyberItem",
         "uco-core:facets": [
             {

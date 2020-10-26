@@ -1,6 +1,6 @@
 [
     {
-        "@id": ":219189B6-356C-4D53-A844-F0031E74F156",
+        "@id": "kb:219189B6-356C-4D53-A844-F0031E74F156",
         "@type": "case-investigation:InvestigativeAction",
         "uco-core:name": "acquired",
         "uco-core:description": "Suspect device physical acquisition",
@@ -16,41 +16,41 @@
             {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:instrument": {
-                    "@id": ":tool-embeddedextractor1-uid"
+                    "@id": "kb:tool-embeddedextractor1-uid"
                 },
                 "uco-action:location": {
-                    "@id": ":309BC178-1836-47B7-AA15-94EA3A2C7401"
+                    "@id": "kb:309BC178-1836-47B7-AA15-94EA3A2C7401"
                 },
                 "uco-action:performer": {
-                    "@id": ":E9AA4F26-D187-4F32-A602-86A6DF4B8528"
+                    "@id": "kb:E9AA4F26-D187-4F32-A602-86A6DF4B8528"
                 },
                 "uco-action:object": [
                     {
-                        "@id": ":suspect-device-uuid"
+                        "@id": "kb:suspect-device-uuid"
                     }
                 ],
                 "uco-action:result": [
                     {
-                        "@id": ":90F73123-DB7E-41E5-B6CA-493B96E4B89F"
+                        "@id": "kb:90F73123-DB7E-41E5-B6CA-493B96E4B89F"
                     },
                     {
-                        "@id": ":97C74753-FCEB-49C8-A611-7A70EF46AB5D"
+                        "@id": "kb:97C74753-FCEB-49C8-A611-7A70EF46AB5D"
                     },
                     {
-                        "@id": ":EBAB06EE-7522-42D6-96EA-E3121D67E393"
+                        "@id": "kb:EBAB06EE-7522-42D6-96EA-E3121D67E393"
                     },
                     {
-                        "@id": ":48C0F0E8-9A63-45EE-99BF-23CC354C3252"
+                        "@id": "kb:48C0F0E8-9A63-45EE-99BF-23CC354C3252"
                     },
                     {
-                        "@id": ":B2A7B20E-8307-40CF-ABAF-9733ABBF4335"
+                        "@id": "kb:B2A7B20E-8307-40CF-ABAF-9733ABBF4335"
                     }
                 ]
             }
         ]
     },
     {
-        "@id": ":tool-embeddedextractor1-uid",
+        "@id": "kb:tool-embeddedextractor1-uid",
         "@type": "uco-tool:Tool",
         "uco-core:name": "Embedded Device Extrator",
         "uco-tool:toolType": "Extraction",
@@ -75,7 +75,7 @@
         ]
     },
     {
-        "@id": ":suspect-mobiledevice-forensicduplicate-uuid",
+        "@id": "kb:suspect-mobiledevice-forensicduplicate-uuid",
         "@type": "uco-observable:CyberItem",
         "uco-core:facets": [
             {
