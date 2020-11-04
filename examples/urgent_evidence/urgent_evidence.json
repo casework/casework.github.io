@@ -8,14 +8,16 @@
         "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
         "uco-identity": "https://unifiedcyberontology.org/ontology/uco/identity#",
         "uco-location": "https://unifiedcyberontology.org/ontology/uco/location#",
-        "uco-role": "https://unifiedcyberontology.org/ontology/uco/role#"
+        "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
+        "uco-role": "https://unifiedcyberontology.org/ontology/uco/role#",
+        "uco-types": "https://unifiedcyberontology.org/ontology/uco/types#"
     },
     "@graph": [
         {
             "@id": "kb:action-uuid-1",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:description": "Exhibit submitted for Kiosk examination",
-            "uco-action:actionReferences": {
+            "uco-core:facets": {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
@@ -41,7 +43,7 @@
             "@id": "kb:action-uuid-2",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "transferred",
-            "uco-action:actionReferences": {
+            "uco-core:facets": {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
@@ -76,7 +78,7 @@
             "@id": "kb:action-uuid-3",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "assigned",
-            "uco-action:actionReferences": {
+            "uco-core:facets": {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
@@ -94,7 +96,7 @@
                     },
                     {
                         "@id": "kb:subject-device-uuid-1"
-                    },
+                    }
                 ],
                 "uco-action:result": [
                     {
@@ -111,7 +113,7 @@
             "@id": "kb:action-uuid-4",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "photographed",
-            "uco-action:actionReferences": {
+            "uco-core:facets": {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
@@ -129,7 +131,7 @@
                     },
                     {
                         "@id": "kb:subject-device-uuid-1"
-                    },
+                    }
                 ],
                 "uco-action:result": [
                     {
@@ -151,7 +153,7 @@
         {
             "@id": "kb:action-uuid-5",
             "@type": "case-investigation:InvestigativeAction",
-            "uco-action:actionReferences": {
+            "uco-core:facets": {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
@@ -170,7 +172,7 @@
             "@id": "kb:action-uuid-6",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "photographed",
-            "uco-action:actionReferences": {
+            "uco-core:facets": {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
@@ -188,7 +190,7 @@
                     },
                     {
                         "@id": "kb:subject-device-uuid-1"
-                    },
+                    }
                 ],
                 "uco-action:result": [
                     {
@@ -211,7 +213,7 @@
             "@id": "kb:action-uuid-7",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "processed",
-            "uco-action:actionReferences": {
+            "uco-core:facets": {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:startTime": {
                     "@type": "xsd:dateTime",
@@ -229,14 +231,14 @@
                 },
                 "uco-action:performer": {
                     "@id": "kb:officer-uuid-3"
-                }
+                },
                 "uco-action:object": [
                     {
                         "@id": "kb:provenance-record-uuid-1"
                     },
                     {
                         "@id": "kb:subject-device-uuid-1"
-                    },
+                    }
                 ],
                 "uco-action:result": [
                     {
@@ -252,7 +254,7 @@
         {
             "@id": "kb:action-uuid-8",
             "@type": "case-investigation:InvestigativeAction",
-            "uco-action:actionReferences": {
+            "uco-core:facets": {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
@@ -270,7 +272,7 @@
         {
             "@id": "kb:action-uuid-9",
             "@type": "case-investigation:InvestigativeAction",
-            "uco-action:actionReferences": {
+            "uco-core:facets": {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
@@ -289,7 +291,7 @@
             "@id": "kb:action-uuid-10",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "burned",
-            "uco-action:actionReferences": {
+            "uco-core:facets": {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
@@ -334,7 +336,7 @@
             ]
         },
         {
-            "@id": "relationship-uuid-1",
+            "@id": "kb:relationship-uuid-1",
             "@type": "uco-core:Relationship",
             "uco-core:source": "kb:file-uuid-2",
             "uco-core:target": {
@@ -355,7 +357,7 @@
         {
             "@id": "kb:action-uuid-11",
             "@type": "case-investigation:InvestigativeAction",
-            "uco-action:actionReferences": {
+            "uco-core:facets": {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
@@ -373,7 +375,7 @@
         {
             "@id": "kb:action-uuid-12",
             "@type": "case-investigation:InvestigativeAction",
-            "uco-action:actionReferences": {
+            "uco-core:facets": {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
@@ -408,16 +410,17 @@
             "@id": "kb:file-uuid-1",
             "@type": "uco-observable:CyberItem",
             "uco-core:description": "Intake Form",
-            "uco-core:facets": {
-                "@type": "uco-observable:File",
-                "uco-observable:fileName": "/investigation468/documentation/EXH-20190101-7-IntakeForm.pdf",
-                "uco-observable:isDirectory": false,
-                "uco-observable:sizeInBytes": {
+            "uco-core:facets": [
+                {
+                    "@type": "uco-observable:File",
+                    "uco-observable:fileName": "/investigation468/documentation/EXH-20190101-7-IntakeForm.pdf",
+                    "uco-observable:isDirectory": false,
+                    "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
                         "@value": 165646
                     }
-            },
-               {
+                },
+                {
                     "@type": "uco-observable:ContentData",
                     "uco-observable:hash": [
                         {
@@ -433,21 +436,23 @@
                         }
                     ]
                 }
+            ]
         },
         {
             "@id": "kb:file-uuid-2",
             "@type": "uco-observable:CyberItem",
             "uco-core:description": "Kiosk report",
-            "uco-core:facets": [ {
-                "@type": "uco-observable:File",
-                "uco-observable:fileName": "/investigation468/results/EXH-20190101-7-KioskReport.pdf",
-                "uco-observable:isDirectory": false,
-                "uco-observable:sizeInBytes": {
+            "uco-core:facets": [
+                {
+                    "@type": "uco-observable:File",
+                    "uco-observable:fileName": "/investigation468/results/EXH-20190101-7-KioskReport.pdf",
+                    "uco-observable:isDirectory": false,
+                    "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
                         "@value": 5787906
                     }
-            },
-               {
+                },
+                {
                     "@type": "uco-observable:ContentData",
                     "uco-observable:hash": [
                         {
@@ -463,21 +468,23 @@
                         }
                     ]
                 }
+            ]
         },
         {
             "@id": "kb:file-uuid-3",
             "@type": "uco-observable:CyberItem",
             "uco-core:description": "Witness statement",
-            "uco-core:facets": [ {
-                "@type": "uco-observable:File",
-                "uco-observable:fileName": "/investigation468/documentation/EXH-20190101-7-WitnessStatement.pdf",
-                "uco-observable:isDirectory": false,
-                "uco-observable:sizeInBytes": {
+            "uco-core:facets": [
+                {
+                    "@type": "uco-observable:File",
+                    "uco-observable:fileName": "/investigation468/documentation/EXH-20190101-7-WitnessStatement.pdf",
+                    "uco-observable:isDirectory": false,
+                    "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
                         "@value": 135625
                     }
-            },
-               {
+                },
+                {
                     "@type": "uco-observable:ContentData",
                     "uco-observable:hash": [
                         {
@@ -493,12 +500,13 @@
                         }
                     ]
                 }
+            ]
         },
         {
             "@id": "kb:action-uuid-13",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "transferred",
-            "uco-action:actionReferences": {
+            "uco-core:facets": {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
@@ -510,7 +518,7 @@
                 "uco-action:performer": [
                     {
                         "@id": "kb:officer-uuid-3"
-                    },
+                    }
                 ],
                 "uco-action:object": [
                     {
@@ -518,7 +526,7 @@
                     },
                     {
                         "@id": "kb:subject-device-uuid-1"
-                    },
+                    }
                 ],
                 "uco-action:result": [
                     {
@@ -602,8 +610,12 @@
         {
             "@id": "kb:provenance-record-uuid-1",
             "@type": "case-investigation:ProvenanceRecord",
-            "case-investigation:exhibitTransferrer": "officer-uuid-1",
-            "case-investigation:exhibitRecipient": " officer-uuid-2",
+            "drafting:exhibitTransferrer": {
+                "@id": "kb:officer-uuid-1"
+            },
+            "drafting:exhibitRecipient": {
+                "@id": "kb:officer-uuid-2"
+            },
             "case-investigation:exhibitNumber": "EXH-20190101-7",
             "uco-core:object": {
                 "@id": "kb:subject-device-uuid-1"
@@ -617,10 +629,15 @@
                 "@id": "kb:evidenceintake-form-uuid"
             }
         },
+        {
             "@id": "kb:provenance-record-uuid-3",
             "@type": "case-investigation:ProvenanceRecord",
-            "case-investigation:exhibitTransferrer": "officer-uuid-2",
-            "case-investigation:exhibitRecipient": " officer-uuid-3",
+            "drafting:exhibitTransferrer": {
+                "@id": "kb:officer-uuid-2"
+            },
+            "drafting:exhibitRecipient": {
+                "@id": "kb:officer-uuid-3"
+            },
             "case-investigation:exhibitNumber": "EXH-20190101-7",
             "uco-core:object": {
                 "@id": "kb:subject-device-uuid-1"
@@ -631,30 +648,32 @@
             "@type": "case-investigation:ProvenanceRecord",
             "case-investigation:exhibitNumber": "EXH-20190101-7-SealedPhotos",
             "uco-core:object": [
-            {
-                "@id": "kb:subject-device-photograph-uuid-1"
-            },
-            {
-                "@id": "kb:subject-device-photograph-uuid-2"
-            },
-            {
-                "@id": "kb:subject-device-photograph-uuid-3"
-            }
+                {
+                    "@id": "kb:subject-device-photograph-uuid-1"
+                },
+                {
+                    "@id": "kb:subject-device-photograph-uuid-2"
+                },
+                {
+                    "@id": "kb:subject-device-photograph-uuid-3"
+                }
+            ]
         },
         {
             "@id": "kb:provenance-record-uuid-5",
             "@type": "case-investigation:ProvenanceRecord",
             "case-investigation:exhibitNumber": "EXH-20190101-7-UnsealedPhotos",
             "uco-core:object": [
-            {
-                "@id": "kb:subject-device-photograph-uuid-4"
-            },
-            {
-                "@id": "kb:subject-device-photograph-uuid-5"
-            },
-            {
-                "@id": "kb:subject-device-photograph-uuid-6"
-            }
+                {
+                    "@id": "kb:subject-device-photograph-uuid-4"
+                },
+                {
+                    "@id": "kb:subject-device-photograph-uuid-5"
+                },
+                {
+                    "@id": "kb:subject-device-photograph-uuid-6"
+                }
+            ]
         },
         {
             "@id": "kb:provenance-record-uuid-6",
@@ -675,8 +694,12 @@
         {
             "@id": "kb:provenance-record-uuid-8",
             "@type": "case-investigation:ProvenanceRecord",
-            "case-investigation:exhibitTransferrer": "officer-uuid-3",
-            "case-investigation:exhibitRecipient": " officer-uuid-1",
+            "drafting:exhibitTransferrer": {
+                "@id": "kb:officer-uuid-3"
+            },
+            "drafting:exhibitRecipient": {
+                "@id": "kb:officer-uuid-1"
+            },
             "case-investigation:exhibitNumber": "EXH-20190101-7",
             "uco-core:object": {
                 "@id": "kb:subject-device-uuid-1"
