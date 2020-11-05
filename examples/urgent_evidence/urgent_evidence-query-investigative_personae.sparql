@@ -8,13 +8,13 @@ WHERE
     case-investigation:exhibitNumber "EXH-20190101-7" ;
     uco-core:object ?nExhibitDevice ;
     .
-  
+
   # Then, look up the people that produced other provenance records for this device.
   ?nInvestigativeAction
     a case-investigation:InvestigativeAction ;
     uco-action:actionReferences ?nActionReferences ;
     .
-    
+
   ?nActionReferences
     a uco-action:ActionReferences ;
     uco-action:performer ?nPerformer ;
