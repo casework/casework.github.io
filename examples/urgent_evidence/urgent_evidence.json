@@ -256,7 +256,7 @@
                 "@type": "uco-action:ActionReferences",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
-                    "@value": "2019-01-01T14:55+00:00"
+                    "@value": "2019-01-01T14:55:45+00:00"
                 },
                 "uco-action:location": {
                     "@id": "kb:location-uuid-3"
