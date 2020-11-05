@@ -51,6 +51,8 @@
       link: /resources/coc.html
     - name: Roadmap
       link: /resources/roadmap.html
+    - name: GitHub Policies
+      link: /resources/github_policies.html
     - name: GitHub Repos
       link: /resources/github_repos.html
     - name: SPACE

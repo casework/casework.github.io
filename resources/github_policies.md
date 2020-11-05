@@ -1,5 +1,5 @@
 ---
-title: GitHub Repos
+title: GitHub Policies
 jumbo_desc:
 ---
 
