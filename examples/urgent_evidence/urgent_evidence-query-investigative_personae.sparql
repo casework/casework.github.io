@@ -12,7 +12,7 @@ WHERE
   # Then, look up the people that produced other provenance records for this device.
   ?nInvestigativeAction
     a case-investigation:InvestigativeAction ;
-    uco-action:actionReferences ?nActionReferences ;
+    uco-core:facets ?nActionReferences ;
     .
 
   ?nActionReferences
