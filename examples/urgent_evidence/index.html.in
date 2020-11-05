@@ -123,5 +123,18 @@ jumbo_desc: CASE Sub-topic of Chain of Custody
           </div>
         </div>
 
+        <div class="card">
+          <h5 class="card-header">Investigative personae</h5>
+          <div class="card-body">
+            <p class="card-text">According to the provenance chain, who was involved in handling this evidence? (<a href="urgent_evidence-query-investigative_personae.sparql">SPARQL source</a>)</p>
+            <p class="card-text">The evidence exhibit number is <code>EXH-20190101-7</code>.</p>
+{% highlight sparql %}
+@QUERY_INVESTIGATIVE_PERSONAE_SPARQL@
+{% endhighlight %}
+@QUERY_INVESTIGATIVE_PERSONAE_HTML@
+
+          </div>
+        </div>
+
       </div>
     </div>

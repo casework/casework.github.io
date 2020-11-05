@@ -35,7 +35,8 @@ clean:
 index.html: \
   index.html.in \
   urgent_evidence-query-action_timeline.html \
-  urgent_evidence-query-investigative_locations.html
+  urgent_evidence-query-investigative_locations.html \
+  urgent_evidence-query-investigative_personae.html
 	cp \
 	  index.html.in \
 	  _$@
@@ -60,6 +61,18 @@ index.html: \
 	sed \
 	  -e '/@QUERY_INVESTIGATIVE_LOCATIONS_HTML@/r urgent_evidence-query-investigative_locations.html' \
 	  -e '/@QUERY_INVESTIGATIVE_LOCATIONS_HTML@/d' \
+	  _$@ \
+	  > __$@
+	mv __$@ _$@
+	sed \
+	  -e '/@QUERY_INVESTIGATIVE_PERSONAE_SPARQL@/r urgent_evidence-query-investigative_personae.sparql' \
+	  -e '/@QUERY_INVESTIGATIVE_PERSONAE_SPARQL@/d' \
+	  _$@ \
+	  > __$@
+	mv __$@ _$@
+	sed \
+	  -e '/@QUERY_INVESTIGATIVE_PERSONAE_HTML@/r urgent_evidence-query-investigative_personae.html' \
+	  -e '/@QUERY_INVESTIGATIVE_PERSONAE_HTML@/d' \
 	  _$@ \
 	  > __$@
 	mv __$@ _$@

@@ -1,14 +1,22 @@
-SELECT ?lEndTime ?lDescription
+SELECT ?lStartTime ?lEndTime ?lDescription
 WHERE
 {
   ?nAction
     a case-investigation:InvestigativeAction ;
-    uco-action:actionReferences [
-      a uco-action:ActionReferences ;
-      uco-action:endTime ?lEndTime ;
-    ] ;
+    uco-core:facets ?nActionReferences ;
     uco-core:description ?lDescription ;
     .
 
+  ?nActionReferences
+    a uco-action:ActionReferences ;
+    uco-action:endTime ?lEndTime ;
+    .
+
+  OPTIONAL
+  {
+    ?nActionReferences
+      uco-action:startTime ?lStartTime ;
+      .
+  }
 }
 ORDER BY ?lEndTime

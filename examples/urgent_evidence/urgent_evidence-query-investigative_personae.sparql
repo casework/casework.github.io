@@ -1,0 +1,41 @@
+SELECT DISTINCT ?lLastName
+WHERE
+{
+  # Many actions involve the exhibit's device.
+  # Look up the exhibit-device based on its exhibit number.
+  ?nOriginalProvenanceRecord
+    a case-investigation:ProvenanceRecord ;
+    case-investigation:exhibitNumber "EXH-20190101-7" ;
+    uco-core:object ?nExhibitDevice ;
+    .
+
+  # Then, look up the people that produced other provenance records for this device.
+  ?nInvestigativeAction
+    a case-investigation:InvestigativeAction ;
+    uco-core:facets ?nActionReferences ;
+    .
+
+  ?nActionReferences
+    a uco-action:ActionReferences ;
+    uco-action:performer ?nPerformer ;
+    uco-action:result ?nActionProvenanceRecord ;
+    .
+
+  # This query component ties the provenance records together
+  # by object-reference to the device.
+  ?nActionProvenanceRecord
+    a case-investigation:ProvenanceRecord ;
+    uco-core:object ?nExhibitDevice ;
+    .
+
+  ?nPerformer
+    a uco-identity:Identity ;
+    uco-core:facets ?nSimpleName ;
+    .
+
+  ?nSimpleName
+    a uco-identity:SimpleName ;
+    uco-identity:familyName ?lLastName ;
+    .
+}
+ORDER BY ?lLastName
