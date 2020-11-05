@@ -90,7 +90,7 @@ jumbo_desc: CASE Sub-topic of Chain of Custody
         <p><em>Note: The above chain of custody details (i.e. unseal, photograph, connect to forensic tool, image, process, disconnect from forensic tool, reseal) are effectively identical to the chain of custody typically used within the laboratory environment.</em></p>
 
         <h2>Illustrative Data and Queries</h2>
-        <p>The queries in this section, and their computed results, are backed by the data in <a href="urgent_evidence.json">urgent_evidence.json</a> and <a href="urgent_evidence-local_ontology.ttl">urgent_evidence-local_ontology.ttl</a>.</p>
+        <p>The queries in this section, and their computed results, are backed by the data in <a href="urgent_evidence.json">urgent_evidence.json</a>.</p>
         <p>Events, locations, tools, and people represented in this and other CASE narratives are presented, and at many times created, for illustration purposes only and do not necessarily represent real events, locations, tools, or people.</p>
 
         <div class="card">
