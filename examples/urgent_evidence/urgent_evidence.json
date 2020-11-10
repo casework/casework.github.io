@@ -325,7 +325,7 @@
             "@type": "uco-observable:CyberItem",
             "uco-core:facets": [
                 {
-                    "@type": "uco-observable:Device",
+                    "@type": "uco-observable:DeviceFacet",
                     "uco-observable:manufacturer": "Generic",
                     "uco-observable:deviceType": "DVD",
                     "uco-observable:model": "XYZ",
@@ -347,7 +347,7 @@
             "uco-core:isDirectional": true,
             "uco-core:facets": [
                 {
-                    "@type": "uco-observable:PathRelation",
+                    "@type": "uco-observable:PathRelationFacet",
                     "uco-observable:path": "/investigation468/results/EXH-20190101-7-KioskReport.pdf"
                 }
             ]
@@ -410,7 +410,7 @@
             "uco-core:description": "Intake Form",
             "uco-core:facets": [
                 {
-                    "@type": "uco-observable:File",
+                    "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "/investigation468/documentation/EXH-20190101-7-IntakeForm.pdf",
                     "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": {
@@ -419,7 +419,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:ContentData",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -442,7 +442,7 @@
             "uco-core:description": "Kiosk report",
             "uco-core:facets": [
                 {
-                    "@type": "uco-observable:File",
+                    "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "/investigation468/results/EXH-20190101-7-KioskReport.pdf",
                     "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": {
@@ -451,7 +451,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:ContentData",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -474,7 +474,7 @@
             "uco-core:description": "Witness statement",
             "uco-core:facets": [
                 {
-                    "@type": "uco-observable:File",
+                    "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "/investigation468/documentation/EXH-20190101-7-WitnessStatement.pdf",
                     "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": {
@@ -483,7 +483,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:ContentData",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
