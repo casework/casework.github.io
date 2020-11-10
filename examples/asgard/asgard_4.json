@@ -4,7 +4,7 @@
         "@type": "uco-observable:CyberItem",
         "uco-core:facets": [
             {
-                "@type": "uco-observable:Message",
+                "@type": "uco-observable:MessageFacet",
                 "uco-observable:application": {
                     "@id": "kb:sms_application1"
                 },
@@ -29,7 +29,7 @@
         "@type": "uco-observable:CyberItem",
         "uco-core:facets": [
             {
-                "@type": "uco-observable:PhoneCall",
+                "@type": "uco-observable:PhoneCallFacet",
                 "uco-observable:callType": "mobile",
                 "uco-observable:startTime": {
                     "@type": "xsd:dateTime",
