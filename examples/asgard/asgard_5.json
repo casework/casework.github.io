@@ -32,7 +32,7 @@
                         {
                             "@type": "uco-types:ControlledDictionaryEntry",
                             "uco-types:key": "Session Layer",
-                            "uco-types:value": "NETBIOSSESSIONSERVICE "
+                            "uco-types:value": "NETBIOSSESSIONSERVICE"
                         }
                     ]
                 },
