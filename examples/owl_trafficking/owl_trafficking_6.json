@@ -28,10 +28,10 @@
     {
         "@id": "kb:primaryuser-email-cb34b068-324b-4162-a9e5-6c96879b061c",
         "@type": "uco-observable:CyberRelationship",
-        "source": {
+        "uco-core:source": {
             "@id": "kb:primaryuser-d28a3fad-10a1-459c-9a1a-6aa07a04e76f"
         },
-        "target": {
+        "uco-core:target": {
             "@id": "kb:facebook-90652808-7341-40d3-9285-774d865ad3f9"
         },
         "uco-core:kindOfRelationship": {
@@ -81,7 +81,7 @@
     },
     {
         "@id": "kb:associated-account-phonenumber-0307a497-f1fb-4af4-9877-90c56ee76fba",
-        "@type": "uco-core:CyberRelationship",
+        "@type": "uco-observable:CyberRelationship",
         "uco-core:source": {
             "@id": "kb:90652808-7341-40d3-9285-774d865ad3f9"
         },
@@ -124,7 +124,7 @@
         "uco-core:facets": [
             {
                 "@type": "uco-identity:Organization",
-                "orgName": "Facebook"
+                "drafting:orgName": "Facebook"
             }
         ]
     },
@@ -134,7 +134,7 @@
         "uco-core:facets": [
             {
                 "@type": "uco-observable:Application",
-                "appName": "Facebook"
+                "drafting:appName": "Facebook"
             }
         ]
     }

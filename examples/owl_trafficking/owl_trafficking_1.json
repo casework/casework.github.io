@@ -9,14 +9,14 @@
         "uco-core:facets": [
             {
                 "@type": "uco-tool:ToolConfigurationType",
-                "uco-tool:configurationSetting": [
+                "uco-tool:configurationSettings": [
                     {
                         "@type": "uco-tool:ConfigurationSettingType",
                         "uco-tool:itemName": "DeviceInfoConnectionType",
                         "uco-tool:itemValue": "Cable No. 10"
                     },
                     {
-                        "@type": "uco-tool:ConfigurationSettingType ",
+                        "@type": "uco-tool:ConfigurationSettingType",
                         "uco-tool:itemName": "ExtractionType",
                         "uco-tool:itemValue": "Physical"
                     }
@@ -26,7 +26,7 @@
     },
     {
         "@id": "kb:investigative-action-4d3778d9-8376-4277-9852-8e6bf926a5d1",
-        "@type": "uco-investigation:InvestigativeAction",
+        "@type": "case-investigation:InvestigativeAction",
         "uco-core:name": "extracted",
         "uco-core:startTime": {
             "@type": "xsd:dateTime",

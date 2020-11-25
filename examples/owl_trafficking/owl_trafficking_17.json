@@ -17,7 +17,7 @@
                 "uco-observable:to": [
                     "kb:externalaccount-8976b508-80e5-4442-af1c-637d3b09240e"
                 ],
-                "uco-NOT_EXISTS:allocationStatus": "allocated",
+                "drafting:allocationStatus": "allocated",
                 "uco-observable:messageType": "incoming"
             }
         ]

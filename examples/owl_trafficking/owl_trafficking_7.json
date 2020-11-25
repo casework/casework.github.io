@@ -5,7 +5,7 @@
         "uco-core:source": {
             "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53"
         },
-        "uco-target": {
+        "uco-core:target": {
             "@id": "kb:accountsxml-16805dff-05f9-4cba-9266-d5fa712f3d8f"
         },
         "uco-core:kindOfRelationship": {
@@ -50,7 +50,7 @@
         "uco-core:source": {
             "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53"
         },
-        "uco-target": {
+        "uco-core:target": {
             "@id": "kb:accountsdb-99995dff-05f9-4cba-9266-d5fa712f9999"
         },
         "uco-core:kindOfRelationship": {

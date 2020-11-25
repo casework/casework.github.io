@@ -9,7 +9,7 @@
                 "uco-observable:IMSI": {
                     "@id": "kb:mobileaccount-4b3cdcbd-6a31-462f-be9b-1ca2944c8876"
                 },
-                "uco-observable:carrier": "AT&amp;T"
+                "uco-observable:carrier": "AT&T"
             }
         ]
     },
@@ -53,8 +53,8 @@
                 "uco-observable:rangeSize": "__NOT_PROVIDED"
             },
             {
-                "@type": "uco-NOT_EXISTS:TableRelation",
-                "uco-NOT_EXISTS:tablename": "siminfo"
+                "@type": "drafting:TableRelation",
+                "drafting:tableName": "siminfo"
             }
         ]
     }

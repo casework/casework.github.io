@@ -43,6 +43,7 @@ jumbo_desc: CASE Narrative on Trafficking
     "@context": {
         "@vocab": "http://example.org/ontology/local#",
         "case-investigation": "https://caseontology.org/ontology/case/investigation#",
+        "drafting": "http://example.org/ontology/drafting#",
         "kb": "http://example.org/kb/",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -59,14 +60,14 @@ jumbo_desc: CASE Narrative on Trafficking
     "@graph": [
         {
             "@id": "kb:bundle-5715fcf3-6bc8-4996-8f7f-fdf289f31649",
-            "@type": "uco-case:Bundle",
+            "@type": "uco-core:Bundle",
             "uco-core:description": "Evidence in illegal trafficking of owls",
             "uco-core:object": [
                 {
                     "@id": "kb:investigation-555e5fbb-ba09-449d-af77-8a210d016fd7",
-                    "@type": "uco-investigation:Investigation",
+                    "@type": "case-investigation:Investigation",
                     "uco-core:name": "OWL_2017_0206001",
-                    "uco-core:focus": "Illegal trafficking (owls)",
+                    "case-investigation:focus": "Illegal trafficking (owls)",
                     "uco-core:description": "The subject mcavoy was arrested on suspicion of illegal trafficking of owls. His computer and smartphone were preserved as evidence.",
                     "uco-core:object": [
                         "(list of uuids)"
@@ -94,14 +95,14 @@ jumbo_desc: CASE Narrative on Trafficking
         "uco-core:facets": [
             {
                 "@type": "uco-tool:ToolConfigurationType",
-                "uco-tool:configurationSetting": [
+                "uco-tool:configurationSettings": [
                     {
                         "@type": "uco-tool:ConfigurationSettingType",
                         "uco-tool:itemName": "DeviceInfoConnectionType",
                         "uco-tool:itemValue": "Cable No. 10"
                     },
                     {
-                        "@type": "uco-tool:ConfigurationSettingType ",
+                        "@type": "uco-tool:ConfigurationSettingType",
                         "uco-tool:itemName": "ExtractionType",
                         "uco-tool:itemValue": "Physical"
                     }
@@ -111,7 +112,7 @@ jumbo_desc: CASE Narrative on Trafficking
     },
     {
         "@id": "kb:investigative-action-4d3778d9-8376-4277-9852-8e6bf926a5d1",
-        "@type": "uco-investigation:InvestigativeAction",
+        "@type": "case-investigation:InvestigativeAction",
         "uco-core:name": "extracted",
         "uco-core:startTime": {
             "@type": "xsd:dateTime",
@@ -166,7 +167,7 @@ jumbo_desc: CASE Narrative on Trafficking
 [
     {
         "@id": "kb:provenance-record-b84dc6ca-6187-4fc3-b5f1-c15142b103a8",
-        "@type": "uco-investigation:ProvenanceRecord",
+        "@type": "case-investigation:ProvenanceRecord",
         "case-investigation:exhibitNumber": "MD1",
         "uco-core:description": "Forensic duplicate of smartphone used by subject",
         "uco-core:object": [
@@ -188,7 +189,7 @@ jumbo_desc: CASE Narrative on Trafficking
                 "uco-observable:extension": "raw",
                 "uco-observable:fileName": "LGE Nexus 5 Full Image.raw",
                 "uco-observable:fileSystemType": "NTFS",
-                "uco-observable:filePath": " C:\\Users\\cvance\\Desktop\\Owl Scenario - Full\\LGE Nexus 5 Full Image.raw",
+                "uco-observable:filePath": "C:\\Users\\cvance\\Desktop\\Owl Scenario - Full\\LGE Nexus 5 Full Image.raw",
                 "uco-observable:isDirectory": false,
                 "uco-observable:sizeInBytes": 31268536320
             },
@@ -196,7 +197,7 @@ jumbo_desc: CASE Narrative on Trafficking
                 "@type": "uco-observable:ContentData",
                 "uco-observable:hash": [
                     {
-                        "@type": "uco-observable:Hash",
+                        "@type": "uco-types:Hash",
                         "uco-types:hashMethod": {
                             "@type": "uco-vocabulary:HashNameVocab",
                             "@value": "MD5"
@@ -207,14 +208,14 @@ jumbo_desc: CASE Narrative on Trafficking
                         }
                     },
                     {
-                        "@type": "uco-observable:Hash",
+                        "@type": "uco-types:Hash",
                         "uco-types:hashMethod": {
                             "@type": "uco-vocabulary:HashNameVocab",
                             "@value": "SHA1"
                         },
                         "uco-types:hashValue": {
                             "@type": "xsd:hexBinary",
-                            "@value": "5506912AAC41534DC5AF12B51059D5880737AB5E "
+                            "@value": "5506912AAC41534DC5AF12B51059D5880737AB5E"
                         }
                     }
                 ]
@@ -239,30 +240,33 @@ jumbo_desc: CASE Narrative on Trafficking
                 "uco-observable:manufacturer": "LGE",
                 "uco-observable:model": "Nexus 5",
                 "uco-observable:serialNumber": "08ebf545d00af782",
-                "uco-NOT_EXISTS:brand": "Google",
-                "uco-NOT_EXISTS:name": "hammerhead",
-                "uco-NOT_EXISTS:encryptionEnabled": false
+                "drafting:brand": "Google",
+                "drafting:name": "hammerhead",
+                "drafting:encryptionEnabled": false
             },
             {
-                "@type": "AndroidDevice",
-                "uco-NOT_EXISTS:androidID": "64cce130286b31b3",
-                "uco-NOT_EXISTS:androidFingerprint": "lge\u2026"
+                "@type": "drafting:AndroidDevice",
+                "drafting:androidID": "64cce130286b31b3",
+                "drafting:androidFingerprint": "lge\u2026"
             },
             {
-                "@type": "uco-NOT_EXISTS:BootLoader",
-                "uco-NOT_EXISTS:label": "HHZ20h",
-                "uco-NOT_EXISTS:buildIdentifier": "M4B30Z",
-                "uco-NOT_EXISTS:buildDate": "2016-11-03T20:03:42.00Z"
+                "@type": "drafting:BootLoader",
+                "drafting:label": "HHZ20h",
+                "drafting:buildIdentifier": "M4B30Z",
+                "drafting:buildDate": "2016-11-03T20:03:42.00Z"
             },
             {
                 "@type": "uco-observable:MobileDevice",
                 "uco-observable:bluetoothDeviceName": "Nexus5",
-                "deviceActivationTime": "2017-02-01T14:31:30.00Z",
-                "uco-NOT_EXISTS:advertisingID": "48500120-c9c5-402e-a6bc-04e2f92ae259",
-                "uco-NOT_EXISTS:locationsServicesEnabled": true,
+                "drafting:deviceActivationTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-01T14:31:30.00Z"
+                },
+                "drafting:advertisingID": "48500120-c9c5-402e-a6bc-04e2f92ae259",
+                "drafting:locationsServicesEnabled": true,
                 "uco-observable:keypadUnlockCode": "NULL",
                 "uco-observable:IMEI": "352584062438806",
-                "clockSetting": "2017-02-06T20:51:09.35Z",
+                "uco-observable:clockSetting": "2017-02-06T20:51:09.35Z",
                 "uco-observable:storageCapacityInBytes": {
                     "@type": "xsd:long",
                     "@value": 31268536320
@@ -275,12 +279,12 @@ jumbo_desc: CASE Narrative on Trafficking
                 "uco-observable:version": "6.0.1"
             },
             {
-                "@type": "uco-observable:WiFiAddress",
-                "value": "34:4d:f7:54:20:bb"
+                "@type": "uco-observable:WifiAddress",
+                "uco-observable:value": "34:4d:f7:54:20:bb"
             },
             {
                 "@type": "uco-observable:BluetoothAddress",
-                "value": "88:c9:d0:03:04:49"
+                "uco-observable:value": "88:c9:d0:03:04:49"
             },
             {
                 "@type": "uco-observable:MobileAccount",
@@ -298,10 +302,10 @@ jumbo_desc: CASE Narrative on Trafficking
     {
         "@id": "kb:simcard1-relationship-a1dbff0e-974b-4295-b035-e1bc3271945d",
         "@type": "uco-observable:CyberRelationship",
-        "source": {
+        "uco-core:source": {
             "@id": "kb:simcard-24d20c80-f035-40ae-88dd-fc66f70180f6"
         },
-        "target": {
+        "uco-core:target": {
             "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168"
         },
         "uco-core:kindOfRelationship": {
@@ -334,7 +338,7 @@ jumbo_desc: CASE Narrative on Trafficking
                 "uco-observable:IMSI": {
                     "@id": "kb:mobileaccount-4b3cdcbd-6a31-462f-be9b-1ca2944c8876"
                 },
-                "uco-observable:carrier": "AT&amp;T"
+                "uco-observable:carrier": "AT&T"
             }
         ]
     },
@@ -378,8 +382,8 @@ jumbo_desc: CASE Narrative on Trafficking
                 "uco-observable:rangeSize": "__NOT_PROVIDED"
             },
             {
-                "@type": "uco-NOT_EXISTS:TableRelation",
-                "uco-NOT_EXISTS:tablename": "siminfo"
+                "@type": "drafting:TableRelation",
+                "drafting:tableName": "siminfo"
             }
         ]
     }
@@ -421,10 +425,10 @@ jumbo_desc: CASE Narrative on Trafficking
     {
         "@id": "kb:primaryuser-email-cb34b068-324b-4162-a9e5-6c96879b061c",
         "@type": "uco-observable:CyberRelationship",
-        "source": {
+        "uco-core:source": {
             "@id": "kb:primaryuser-d28a3fad-10a1-459c-9a1a-6aa07a04e76f"
         },
-        "target": {
+        "uco-core:target": {
             "@id": "kb:facebook-90652808-7341-40d3-9285-774d865ad3f9"
         },
         "uco-core:kindOfRelationship": {
@@ -474,7 +478,7 @@ jumbo_desc: CASE Narrative on Trafficking
     },
     {
         "@id": "kb:associated-account-phonenumber-0307a497-f1fb-4af4-9877-90c56ee76fba",
-        "@type": "uco-core:CyberRelationship",
+        "@type": "uco-observable:CyberRelationship",
         "uco-core:source": {
             "@id": "kb:90652808-7341-40d3-9285-774d865ad3f9"
         },
@@ -517,7 +521,7 @@ jumbo_desc: CASE Narrative on Trafficking
         "uco-core:facets": [
             {
                 "@type": "uco-identity:Organization",
-                "orgName": "Facebook"
+                "drafting:orgName": "Facebook"
             }
         ]
     },
@@ -527,7 +531,7 @@ jumbo_desc: CASE Narrative on Trafficking
         "uco-core:facets": [
             {
                 "@type": "uco-observable:Application",
-                "appName": "Facebook"
+                "drafting:appName": "Facebook"
             }
         ]
     }
@@ -543,7 +547,7 @@ jumbo_desc: CASE Narrative on Trafficking
         "uco-core:source": {
             "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53"
         },
-        "uco-target": {
+        "uco-core:target": {
             "@id": "kb:accountsxml-16805dff-05f9-4cba-9266-d5fa712f3d8f"
         },
         "uco-core:kindOfRelationship": {
@@ -588,7 +592,7 @@ jumbo_desc: CASE Narrative on Trafficking
         "uco-core:source": {
             "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53"
         },
-        "uco-target": {
+        "uco-core:target": {
             "@id": "kb:accountsdb-99995dff-05f9-4cba-9266-d5fa712f9999"
         },
         "uco-core:kindOfRelationship": {
@@ -686,7 +690,7 @@ jumbo_desc: CASE Narrative on Trafficking
         "uco-core:source": {
             "@id": "kb:textapp-90652808-7341-40d3-9285-774d865ad3f9"
         },
-        "uco-target": {
+        "uco-core:target": {
             "@id": "kb:textapplogcat-16805dff-05f9-4cba-9266-d5fa712f3d8f"
         },
         "uco-core:kindOfRelationship": {
@@ -843,7 +847,7 @@ jumbo_desc: CASE Narrative on Trafficking
                 "@type": "uco-observable:File",
                 "uco-observable:fileName": "download.jpg",
                 "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/media/0/Download/download.jpg",
-                "uco-NOT_EXISTS:fileLocalPath": "files/image/download.jpg",
+                "drafting:fileLocalPath": "files/image/download.jpg",
                 "uco-observable:extension": ".jpg",
                 "uco-observable:isDirectory": false,
                 "uco-observable:allocationStatus": "allocated",
@@ -904,7 +908,7 @@ jumbo_desc: CASE Narrative on Trafficking
                 "@type": "uco-observable:File",
                 "uco-observable:fileName": "IMG_20170203_121618.jpg",
                 "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/media/0/DCIM/Camera/IMG_20170203_121618.jpg",
-                "uco-NOT_EXISTS:fileLocalPath": "files/image/IMG_20170203_121618.jpg",
+                "drafting:fileLocalPath": "files/image/IMG_20170203_121618.jpg",
                 "uco-observable:extension": ".jpg",
                 "uco-observable:isDirectory": true,
                 "uco-observable:allocationStatus": "unallocated",
@@ -935,10 +939,10 @@ jumbo_desc: CASE Narrative on Trafficking
                 }
             },
             {
-                "@type": "uco-NOT_EXISTS:UnallocatedRecoverability",
-                "uco-NOT_EXISTS:nameStatus": "recoverable",
-                "uco-NOT_EXISTS:metadataStatus": "recoverable",
-                "uco-NOT_EXISTS:contentStatus": "unrecoverable"
+                "@type": "drafting:UnallocatedRecoverability",
+                "drafting:nameStatus": "recoverable",
+                "drafting:metadataStatus": "recoverable",
+                "drafting:contentStatus": "unrecoverable"
             }
         ]
     }
@@ -964,7 +968,7 @@ jumbo_desc: CASE Narrative on Trafficking
                     "@value": "2017-02-01T00:41:15.00Z"
                 },
                 "uco-observable:messageText": "Sarah, the delivery is today 7 tonight the confirmation will come later through pidgin",
-                "uco-NOT_EXISTS:allocationStatus": "unallocated",
+                "drafting:allocationStatus": "unallocated",
                 "uco-observable:from": "kb:9999237a-6d7f-4e96-bbef-6eb4c0a69999",
                 "uco-observable:to": [
                     "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1"
@@ -1008,7 +1012,7 @@ jumbo_desc: CASE Narrative on Trafficking
             "@type": "uco-vocabulary:CyberItemRelationshipVocab",
             "@value": "Contained_Within"
         },
-        "uco-observable:isDirectional": true,
+        "uco-core:isDirectional": true,
         "uco-core:facets": [
             {
                 "@type": "uco-observable:DataRange",
@@ -1016,8 +1020,8 @@ jumbo_desc: CASE Narrative on Trafficking
                 "uco-observable:rangeSize": "96"
             },
             {
-                "@type": "uco-NOT_EXISTS:TableRelation",
-                "uco-NOSTEXISTS:tableName": "sms"
+                "@type": "drafting:TableRelation",
+                "drafting:tableName": "sms"
             }
         ]
     }
@@ -1045,7 +1049,7 @@ jumbo_desc: CASE Narrative on Trafficking
                 "uco-observable:to": [
                     "kb:externalaccount-8976b508-80e5-4442-af1c-637d3b09240e"
                 ],
-                "uco-NOT_EXISTS:allocationStatus": "allocated",
+                "drafting:allocationStatus": "allocated",
                 "uco-observable:messageType": "incoming"
             }
         ]
@@ -1060,29 +1064,29 @@ jumbo_desc: CASE Narrative on Trafficking
 {% highlight json %}
 [
     {
-        "@id": "kb:39ff4987-8ae5-47e3-8369-dbd0d5f79398",
+        "@id": "kb:url-history-39ff4987-8ae5-47e3-8369-dbd0d5f79398",
         "@type": "uco-observable:CyberItem",
         "uco-core:facets": [
             {
-                "@type": "uco-observable:URLHistory",
-                "uco-observable:browserInformation": "https://example.org/kb/software--5d96df90-d9e1-423c-b8db-c2327812ab38",
-                "uco-observable:urlHistoryEntry": [
+                "@type": "drafting:URLHistory",
+                "drafting:browserInformation": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38",
+                "drafting:urlHistoryEntry": [
                     {
-                        "uco-observable:firstVisit": {
+                        "drafting:firstVisit": {
                             "@type": "xsd:dateTime",
                             "@value": "2017-01-25T02:20:22.00Z"
                         },
-                        "uco-observable:lastVisit": {
+                        "drafting:lastVisit": {
                             "@type": "xsd:dateTime",
                             "@value": "2017-01-25T02:20:22.00Z"
                         },
-                        "uco-observable:expiration": "NULL",
-                        "uco-observable:userProfile": "https://example.org/kb/profile--account-uuid",
-                        "uco-observable:url": "https://example.org/kb/url--39ff4987-8ae5-47e3-8369-dbd0d5f79398",
-                        "uco-observable:referrerUrl": "NULL",
-                        "uco-observable:pageTitle": "Where can you find baby owls for sale? Are owls legal to keep as pets? - Quora",
+                        "drafting:expiration": "NULL",
+                        "drafting:userProfile": "kb:profile-account-857c7f17-2f6b-4618-aeca-50d79fa69b97",
+                        "uco-observable:url": "kb:url-b7906534-0483-4cf4-979c-5351916602ed",
+                        "drafting:referrerUrl": "NULL",
+                        "drafting:pageTitle": "Where can you find baby owls for sale? Are owls legal to keep as pets? - Quora",
                         "uco-observable:visitCount": 2,
-                        "uco-observable:manuallyEnteredCount": 0,
+                        "drafting:manuallyEnteredCount": 0,
                         "uco-observable:keywordSearchTerm": null
                     }
                 ]
@@ -1090,7 +1094,7 @@ jumbo_desc: CASE Narrative on Trafficking
         ]
     },
     {
-        "@id": "https://example.org/kb/url--39ff4987-8ae5-47e3-8369-dbd0d5f79398",
+        "@id": "kb:url-b7906534-0483-4cf4-979c-5351916602ed",
         "@type": "uco-observable:CyberItem",
         "uco-core:facets": [
             {
@@ -1110,7 +1114,7 @@ jumbo_desc: CASE Narrative on Trafficking
                 "@type": "uco-observable:File",
                 "uco-observable:fileName": "History",
                 "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/data/com.android.chrome/app_chrome/Default/History",
-                "uco-NOT_EXISTS:fileLocalPath": "files/Database/History",
+                "drafting:fileLocalPath": "files/Database/History",
                 "uco-observable:extension": "NULL",
                 "uco-observable:isDirectory": false,
                 "uco-observable:sizeInBytes": "176128",
@@ -1147,7 +1151,7 @@ jumbo_desc: CASE Narrative on Trafficking
         "@id": "kb:2af6fcf3-91d3-4457-9333-abab67f8fb91",
         "@type": "uco-observable:CyberRelationship",
         "uco-core:source": {
-            "@id": "kb:39ff4987-8ae5-47e3-8369-dbd0d5f79398"
+            "@id": "kb:url-history-39ff4987-8ae5-47e3-8369-dbd0d5f79398"
         },
         "uco-core:target": {
             "@id": "kb:bfe049a6-fa3f-4bf6-9c37-9b09cc6afe6b"
@@ -1164,8 +1168,8 @@ jumbo_desc: CASE Narrative on Trafficking
                 "uco-observable:rangeSize": "176"
             },
             {
-                "@type": "uco-NOT_EXISTS:TableRelation",
-                "uco-NOT_EXISTS:tableName": "urls"
+                "@type": "drafting:TableRelation",
+                "drafting:tableName": "urls"
             }
         ]
     }

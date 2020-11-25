@@ -2,10 +2,10 @@
     {
         "@id": "kb:simcard1-relationship-a1dbff0e-974b-4295-b035-e1bc3271945d",
         "@type": "uco-observable:CyberRelationship",
-        "source": {
+        "uco-core:source": {
             "@id": "kb:simcard-24d20c80-f035-40ae-88dd-fc66f70180f6"
         },
-        "target": {
+        "uco-core:target": {
             "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168"
         },
         "uco-core:kindOfRelationship": {

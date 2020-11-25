@@ -32,7 +32,7 @@
         "uco-core:source": {
             "@id": "kb:textapp-90652808-7341-40d3-9285-774d865ad3f9"
         },
-        "uco-target": {
+        "uco-core:target": {
             "@id": "kb:textapplogcat-16805dff-05f9-4cba-9266-d5fa712f3d8f"
         },
         "uco-core:kindOfRelationship": {

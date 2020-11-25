@@ -11,7 +11,7 @@
                 "@type": "uco-observable:File",
                 "uco-observable:fileName": "download.jpg",
                 "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/media/0/Download/download.jpg",
-                "uco-NOT_EXISTS:fileLocalPath": "files/image/download.jpg",
+                "drafting:fileLocalPath": "files/image/download.jpg",
                 "uco-observable:extension": ".jpg",
                 "uco-observable:isDirectory": false,
                 "uco-observable:allocationStatus": "allocated",

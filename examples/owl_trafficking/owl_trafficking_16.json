@@ -12,7 +12,7 @@
             "@type": "uco-vocabulary:CyberItemRelationshipVocab",
             "@value": "Contained_Within"
         },
-        "uco-observable:isDirectional": true,
+        "uco-core:isDirectional": true,
         "uco-core:facets": [
             {
                 "@type": "uco-observable:DataRange",
@@ -20,8 +20,8 @@
                 "uco-observable:rangeSize": "96"
             },
             {
-                "@type": "uco-NOT_EXISTS:TableRelation",
-                "uco-NOSTEXISTS:tableName": "sms"
+                "@type": "drafting:TableRelation",
+                "drafting:tableName": "sms"
             }
         ]
     }

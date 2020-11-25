@@ -7,7 +7,7 @@
                 "@type": "uco-observable:File",
                 "uco-observable:fileName": "IMG_20170203_121618.jpg",
                 "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/media/0/DCIM/Camera/IMG_20170203_121618.jpg",
-                "uco-NOT_EXISTS:fileLocalPath": "files/image/IMG_20170203_121618.jpg",
+                "drafting:fileLocalPath": "files/image/IMG_20170203_121618.jpg",
                 "uco-observable:extension": ".jpg",
                 "uco-observable:isDirectory": true,
                 "uco-observable:allocationStatus": "unallocated",
@@ -38,10 +38,10 @@
                 }
             },
             {
-                "@type": "uco-NOT_EXISTS:UnallocatedRecoverability",
-                "uco-NOT_EXISTS:nameStatus": "recoverable",
-                "uco-NOT_EXISTS:metadataStatus": "recoverable",
-                "uco-NOT_EXISTS:contentStatus": "unrecoverable"
+                "@type": "drafting:UnallocatedRecoverability",
+                "drafting:nameStatus": "recoverable",
+                "drafting:metadataStatus": "recoverable",
+                "drafting:contentStatus": "unrecoverable"
             }
         ]
     }
