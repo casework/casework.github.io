@@ -7,7 +7,9 @@ jumbo_desc: CASE Narrative on Trafficking
 <h2>Owl CASE</h2>
 
 <p>This investigative scenario emulates illegal activities involving trafficking of vulnerable victims, and download and exchange of related pictures. This document represents information from a Windows 10 computer and Android 6.0 smartphone using CASE.</p>
-<p style="text-indent: 4em;"><em>Dataset generation</em>: Dataset was created by students at Marshall University</p>
+<p style="text-indent: 4em;"><em>Dataset generation</em>: Dataset was created by students at Marshall University.</p>
+
+<p>The JSON-LD data on this page are available combined in the file <a href="owl_trafficking.json">owl_trafficking.json</a>.</p>
 
 <h3>Disclaimers</h3>
 

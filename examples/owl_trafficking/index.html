@@ -7,7 +7,9 @@ jumbo_desc: CASE Narrative on Trafficking
 <h2>Owl CASE</h2>
 
 <p>This investigative scenario emulates illegal activities involving trafficking of vulnerable victims, and download and exchange of related pictures. This document represents information from a Windows 10 computer and Android 6.0 smartphone using CASE.</p>
-<p style="text-indent: 4em;"><em>Dataset generation</em>: Dataset was created by students at Marshall University</p>
+<p style="text-indent: 4em;"><em>Dataset generation</em>: Dataset was created by students at Marshall University.</p>
+
+<p>The JSON-LD data on this page are available combined in the file <a href="owl_trafficking.json">owl_trafficking.json</a>.</p>
 
 <h3>Disclaimers</h3>
 
@@ -54,18 +56,22 @@ jumbo_desc: CASE Narrative on Trafficking
         "uco-vocabulary": "https://unifiedcyberontology.org/ontology/uco/vocabulary#",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
-    "@id": ":bundle-5715FCF3-6BC8-4996-8F7F-FDF289F31649",
-    "@type": "uco-case:Bundle",
-    "uco-core:description": "Evidence in illegal trafficking of owls",
-    "uco-core:object": [
+    "@graph": [
         {
-            "@id": "kb:investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7",
-            "@type": "uco-investigation:Investigation",
-            "uco-core:name": "OWL_2017_0206001",
-            "uco-core:focus": "Illegal trafficking (owls)",
-            "uco-core:description": "The subject mcavoy was arrested on suspicion of illegal trafficking of owls. His computer and smartphone were preserved as evidence.",
+            "@id": "kb:bundle-5715fcf3-6bc8-4996-8f7f-fdf289f31649",
+            "@type": "uco-case:Bundle",
+            "uco-core:description": "Evidence in illegal trafficking of owls",
             "uco-core:object": [
-                "(list of uuids)"
+                {
+                    "@id": "kb:investigation-555e5fbb-ba09-449d-af77-8a210d016fd7",
+                    "@type": "uco-investigation:Investigation",
+                    "uco-core:name": "OWL_2017_0206001",
+                    "uco-core:focus": "Illegal trafficking (owls)",
+                    "uco-core:description": "The subject mcavoy was arrested on suspicion of illegal trafficking of owls. His computer and smartphone were preserved as evidence.",
+                    "uco-core:object": [
+                        "(list of uuids)"
+                    ]
+                }
             ]
         }
     ]
@@ -288,29 +294,31 @@ jumbo_desc: CASE Narrative on Trafficking
 <h4>B) SIM Cards</h4>
 <p>The current SIM card ICCID is <code>89014104279201697299</code>, as listed in the <code>siminfo</code> table of the <code>data/com.android.providers.telephony/databases/telephony.db</code> database, as well as in the <code>contacts2.db</code> database (<code>calls</code> table). Note: Observe IMSI traces in <code>system/netpolicy.xml</code> file.</p>
 {% highlight json %}
-{
-    "@id": "kb:simcard1-relationship-a1dbff0e-974b-4295-b035-e1bc3271945d",
-    "@type": "uco-observable:CyberRelationship",
-    "source": {
-        "@id": "kb:simcard-24d20c80-f035-40ae-88dd-fc66f70180f6"
-    },
-    "target": {
-        "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168"
-    },
-    "uco-core:kindOfRelationship": {
-        "@type": "uco-vocabulary:CyberItemRelationshipVocab",
-        "@value": "Contained_Within"
-    },
-    "uco-core:startTime": {
-        "@type": "xsd:datetime",
-        "@value": "2017-00-00T12:34:56Z"
-    },
-    "uco-core:endTime": {
-        "@type": "xsd:dateTime",
-        "@value": "2017-02-06T20:00:00.00Z"
-    },
-    "uco-core:isDirectional": true
-}
+[
+    {
+        "@id": "kb:simcard1-relationship-a1dbff0e-974b-4295-b035-e1bc3271945d",
+        "@type": "uco-observable:CyberRelationship",
+        "source": {
+            "@id": "kb:simcard-24d20c80-f035-40ae-88dd-fc66f70180f6"
+        },
+        "target": {
+            "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168"
+        },
+        "uco-core:kindOfRelationship": {
+            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@value": "Contained_Within"
+        },
+        "uco-core:startTime": {
+            "@type": "xsd:datetime",
+            "@value": "2017-00-00T12:34:56Z"
+        },
+        "uco-core:endTime": {
+            "@type": "xsd:dateTime",
+            "@value": "2017-02-06T20:00:00.00Z"
+        },
+        "uco-core:isDirectional": true
+    }
+]
 {% endhighlight %}
 
 <h5>CASE Representation of SIM Card Properties</h5>
