@@ -19,9 +19,30 @@ all: \
   index.html
 
 # Tests:
+# * Confirm JSON portions of example are not changed when run through json.tool.
 # * Confirm the Git-committed version of index.html matches the file generated from index.html.in and the JSON pieces.
 # The .diff files should not be retained.  If any are found after calling 'make check', they illustrate a problem.
 check: \
+  owl_trafficking_0.json.diff \
+  owl_trafficking_1.json.diff \
+  owl_trafficking_2.json.diff \
+  owl_trafficking_3.json.diff \
+  owl_trafficking_4.json.diff \
+  owl_trafficking_5.json.diff \
+  owl_trafficking_6.json.diff \
+  owl_trafficking_7.json.diff \
+  owl_trafficking_8.json.diff \
+  owl_trafficking_9.json.diff \
+  owl_trafficking_10.json.diff \
+  owl_trafficking_11.json.diff \
+  owl_trafficking_12.json.diff \
+  owl_trafficking_13.json.diff \
+  owl_trafficking_14.json.diff \
+  owl_trafficking_15.json.diff \
+  owl_trafficking_16.json.diff \
+  owl_trafficking_17.json.diff \
+  owl_trafficking_18.json.diff \
+  owl_trafficking_19.json.diff \
   index.html.diff
 	rm -f $^
 

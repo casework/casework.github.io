@@ -1,31 +1,33 @@
 {
-  "@context":{
-    "kb": "http://example.org/kb/",
-    "@vocab": "http://example.org/ontology/local#",
-    "case-investigation": "https://caseontology.org/ontology/case/investigation#",
-    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "uco-action": "https://unifiedcyberontology.org/ontology/uco/action#",
-    "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
-    "uco-identity": "https://unifiedcyberontology.org/ontology/uco/identity#",
-    "uco-location": "https://unifiedcyberontology.org/ontology/uco/location#",
-    "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
-    "uco-tool": "https://unifiedcyberontology.org/ontology/uco/tool#",
-    "uco-types": "https://unifiedcyberontology.org/ontology/uco/types#",
-    "uco-vocabulary": "https://unifiedcyberontology.org/ontology/uco/vocabulary#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#"  
-  },
-  "@id":":bundle-5715FCF3-6BC8-4996-8F7F-FDF289F31649",
-  "@type":"uco-case:Bundle",
-  "uco-core:description":"Evidence in illegal trafficking of owls",
-  "uco-core:object":[
-    {
-      "@id":"kb:investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7",
-      "@type":"uco-investigation:Investigation",
-      "uco-core:name":"OWL_2017_0206001",
-      "uco-core:focus":"Illegal trafficking (owls)",
-      "uco-core:description":"The subject mcavoy was arrested on suspicion of illegal trafficking of owls. His computer and smartphone were preserved as evidence.",
-      "uco-core:object":[list of uuids ]
-    }
-  ]
+    "@context": {
+        "@vocab": "http://example.org/ontology/local#",
+        "case-investigation": "https://caseontology.org/ontology/case/investigation#",
+        "kb": "http://example.org/kb/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "uco-action": "https://unifiedcyberontology.org/ontology/uco/action#",
+        "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
+        "uco-identity": "https://unifiedcyberontology.org/ontology/uco/identity#",
+        "uco-location": "https://unifiedcyberontology.org/ontology/uco/location#",
+        "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
+        "uco-tool": "https://unifiedcyberontology.org/ontology/uco/tool#",
+        "uco-types": "https://unifiedcyberontology.org/ontology/uco/types#",
+        "uco-vocabulary": "https://unifiedcyberontology.org/ontology/uco/vocabulary#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@id": ":bundle-5715FCF3-6BC8-4996-8F7F-FDF289F31649",
+    "@type": "uco-case:Bundle",
+    "uco-core:description": "Evidence in illegal trafficking of owls",
+    "uco-core:object": [
+        {
+            "@id": "kb:investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7",
+            "@type": "uco-investigation:Investigation",
+            "uco-core:name": "OWL_2017_0206001",
+            "uco-core:focus": "Illegal trafficking (owls)",
+            "uco-core:description": "The subject mcavoy was arrested on suspicion of illegal trafficking of owls. His computer and smartphone were preserved as evidence.",
+            "uco-core:object": [
+                "(list of uuids)"
+            ]
+        }
+    ]
 }
