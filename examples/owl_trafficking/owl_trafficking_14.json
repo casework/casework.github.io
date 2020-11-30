@@ -1,0 +1,48 @@
+[
+    {
+        "@id": "kb:downloaded-directory-9999dae3-2bca-4ccb-97fd-9919192e9999",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:File",
+                "uco-observable:fileName": "IMG_20170203_121618.jpg",
+                "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/media/0/DCIM/Camera/IMG_20170203_121618.jpg",
+                "drafting:fileLocalPath": "files/image/IMG_20170203_121618.jpg",
+                "uco-observable:extension": ".jpg",
+                "uco-observable:isDirectory": true,
+                "uco-observable:allocationStatus": "unallocated",
+                "uco-observable:sizeInBytes": 4096,
+                "uco-observable:createdTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-03T17:22:30.00Z"
+                },
+                "uco-observable:modifiedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-03T17:22:30.00Z"
+                },
+                "uco-observable:accessedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-03T17:22:30.00Z"
+                }
+            },
+            {
+                "@type": "uco-observable:ExtInode",
+                "uco-observable:extInodeID": 1351746,
+                "uco-observable:extSGID": 1023,
+                "uco-observable:extSUID": 1023,
+                "uco-observable:extHardLinkCount": 1,
+                "uco-observable:extPermissions": 755,
+                "uco-observable:extInodeChangeTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-03T17:22:30.00Z"
+                }
+            },
+            {
+                "@type": "drafting:UnallocatedRecoverability",
+                "drafting:nameStatus": "recoverable",
+                "drafting:metadataStatus": "recoverable",
+                "drafting:contentStatus": "unrecoverable"
+            }
+        ]
+    }
+]

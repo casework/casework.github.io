@@ -1,0 +1,52 @@
+[
+    {
+        "@id": "kb:filesystem-e2a02b5a-7e7e-489f-ab43-3ffadab4ac82",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:DiskPartition",
+                "uco-observable:diskPartitionType": "GPT",
+                "uco-observable:partitionID": "31",
+                "uco-observable:partitionOffset": {
+                    "@type": "xsd:long",
+                    "@value": 2032140288
+                },
+                "uco-observable:partitionLength": {
+                    "@type": "xsd:long",
+                    "@value": 29236373504
+                }
+            },
+            {
+                "@type": "uco-observable:FileSystem",
+                "uco-observable:fileSystemType": "EXT4"
+            },
+            {
+                "@type": "uco-observable:ContentData",
+                "uco-observable:hash": [
+                    {
+                        "@type": "uco-types:Hash",
+                        "uco-types:hashMethod": {
+                            "@type": "uco-vocabulary:HashNameVocab",
+                            "@value": "MD5"
+                        },
+                        "uco-types:hashValue": {
+                            "@type": "xsd:hexBinary",
+                            "@value": "dcd09547af64f6362400adb68f87032c"
+                        }
+                    },
+                    {
+                        "@type": "uco-types:Hash",
+                        "uco-types:hashMethod": {
+                            "@type": "uco-vocabulary:HashNameVocab",
+                            "@value": "SHA256"
+                        },
+                        "uco-types:hashValue": {
+                            "@type": "xsd:hexBinary",
+                            "@value": "08b1a2961b341411702c36e86adb143603abbf95"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]

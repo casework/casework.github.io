@@ -1,0 +1,59 @@
+[
+    {
+        "@id": "kb:downloaded-file-3961dae3-2bca-4ccb-97fd-9919192e81db",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:tag": [
+            "Picture",
+            "Owl"
+        ],
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:File",
+                "uco-observable:fileName": "download.jpg",
+                "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/media/0/Download/download.jpg",
+                "drafting:fileLocalPath": "files/image/download.jpg",
+                "uco-observable:extension": ".jpg",
+                "uco-observable:isDirectory": false,
+                "uco-observable:allocationStatus": "allocated",
+                "uco-observable:sizeInBytes": 10704,
+                "uco-observable:createdTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-03T17:19:26.00Z"
+                },
+                "uco-observable:modifiedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-03T17:19:26.00Z"
+                },
+                "uco-observable:accessedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-03T17:19:26.00Z"
+                }
+            },
+            {
+                "@type": "uco-observable:ExtInode",
+                "uco-observable:extInodeID": 1344287,
+                "uco-observable:extSGID": 1023,
+                "uco-observable:extSUID": 1023,
+                "uco-observable:extHardLinkCount": 1,
+                "uco-observable:extPermissions": 664,
+                "uco-observable:extInodeChangeTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-03T17:19:26.00Z"
+                }
+            },
+            {
+                "@type": "uco-observable:ContentData",
+                "uco-observable:hash": [
+                    {
+                        "@type": "uco-types:Hash",
+                        "uco-types:hashMethod": {
+                            "@type": "uco-vocabulary:HashNameVocab",
+                            "@value": "MD5"
+                        },
+                        "uco-types:hashValue": "70e5be834b3ba41b853f281a5c59a93b"
+                    }
+                ]
+            }
+        ]
+    }
+]

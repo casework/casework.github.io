@@ -1,0 +1,23 @@
+[
+    {
+        "@id": "kb:filesystem-relationship-f64f857e-6c87-417f-9166-5aaaed8a6fd2",
+        "@type": "uco-observable:CyberRelationship",
+        "uco-core:source": {
+            "@id": "kb:downloaded-file-3961dae3-2bca-4ccb-97fd-9919192e81db"
+        },
+        "uco-core:target": {
+            "@id": "kb:filesystem-e2a02b5a-7e7e-489f-ab43-3ffadab4ac82"
+        },
+        "uco-core:kindOfRelationship": {
+            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@value": "Contained_Within"
+        },
+        "uco-core:isDirectional": true,
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:PathRelation",
+                "uco-observable:path": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/media/0/Download/download.jpg"
+            }
+        ]
+    }
+]

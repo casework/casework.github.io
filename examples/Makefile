@@ -17,19 +17,27 @@ top_srcdir := ..
 
 all: \
   all-asgard \
+  all-owl_trafficking \
   all-urgent_evidence
 
 .PHONY: \
   all-asgard \
+  all-owl_trafficking \
   all-urgent_evidence \
   check-asgard \
+  check-owl_trafficking \
   check-urgent_evidence \
   clean-asgard \
+  clean-owl_trafficking \
   clean-urgent_evidence
 
 all-asgard:
 	$(MAKE) \
 	  --directory asgard
+
+all-owl_trafficking:
+	$(MAKE) \
+	  --directory owl_trafficking
 
 all-urgent_evidence: \
   $(top_srcdir)/.venv.done.log
@@ -38,11 +46,17 @@ all-urgent_evidence: \
 
 check: \
   check-asgard \
+  check-owl_trafficking \
   check-urgent_evidence
 
 check-asgard:
 	$(MAKE) \
 	  --directory asgard \
+	  check
+
+check-owl_trafficking:
+	$(MAKE) \
+	  --directory owl_trafficking \
 	  check
 
 check-urgent_evidence: \
@@ -53,11 +67,17 @@ check-urgent_evidence: \
 
 clean: \
   clean-asgard \
+  clean-owl_trafficking \
   clean-urgent_evidence
 
 clean-asgard:
 	@$(MAKE) \
 	  --directory asgard \
+	  clean
+
+clean-owl_trafficking:
+	@$(MAKE) \
+	  --directory owl_trafficking \
 	  clean
 
 clean-urgent_evidence:

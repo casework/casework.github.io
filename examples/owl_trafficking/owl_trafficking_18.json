@@ -1,0 +1,112 @@
+[
+    {
+        "@id": "kb:url-history-39ff4987-8ae5-47e3-8369-dbd0d5f79398",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "drafting:URLHistory",
+                "drafting:browserInformation": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38",
+                "drafting:urlHistoryEntry": [
+                    {
+                        "drafting:firstVisit": {
+                            "@type": "xsd:dateTime",
+                            "@value": "2017-01-25T02:20:22.00Z"
+                        },
+                        "drafting:lastVisit": {
+                            "@type": "xsd:dateTime",
+                            "@value": "2017-01-25T02:20:22.00Z"
+                        },
+                        "drafting:expiration": "NULL",
+                        "drafting:userProfile": "kb:profile-account-857c7f17-2f6b-4618-aeca-50d79fa69b97",
+                        "uco-observable:url": "kb:url-b7906534-0483-4cf4-979c-5351916602ed",
+                        "drafting:referrerUrl": "NULL",
+                        "drafting:pageTitle": "Where can you find baby owls for sale? Are owls legal to keep as pets? - Quora",
+                        "uco-observable:visitCount": 2,
+                        "drafting:manuallyEnteredCount": 0,
+                        "uco-observable:keywordSearchTerm": null
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "@id": "kb:url-b7906534-0483-4cf4-979c-5351916602ed",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:URL",
+                "uco-observable:fullValue": "https://www.quora.com/Where-can-you-find-baby-owls-for-sale-Are-owls-legal-to-keep-as-pets"
+            }
+        ]
+    },
+    {
+        "@id": "kb:bfe049a6-fa3f-4bf6-9c37-9b09cc6afe6b",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:tag": [
+            "Database"
+        ],
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:File",
+                "uco-observable:fileName": "History",
+                "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/data/com.android.chrome/app_chrome/Default/History",
+                "drafting:fileLocalPath": "files/Database/History",
+                "uco-observable:extension": "NULL",
+                "uco-observable:isDirectory": false,
+                "uco-observable:sizeInBytes": "176128",
+                "uco-observable:createdTime": "2017-01-25T01:10:45.00Z",
+                "uco-observable:modifiedTime": "2017-02-03T17:22:29.00Z",
+                "uco-observable:accessedTime": "2017-01-25T01:10:45.00Z"
+            },
+            {
+                "@type": "uco-observable:ExtInode",
+                "uco-observable:extInodeID": 1483050,
+                "uco-observable:extSGID": 10034,
+                "uco-observable:extSUID": 10034,
+                "uco-observable:extInodeChangeTime": "2017-02-03T17:22:29.00Z"
+            },
+            {
+                "@type": "uco-observable:ContentData",
+                "uco-observable:hash": [
+                    {
+                        "@type": "uco-types:Hash",
+                        "uco-types:hashMethod": {
+                            "@type": "uco-vocabulary:HashNameVocab",
+                            "@value": "MD5"
+                        },
+                        "uco-types:hashValue": {
+                            "@type": "xsd:hexBinary",
+                            "@value": "42ecb5615ad2778968c295c0a1b0837b"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "@id": "kb:2af6fcf3-91d3-4457-9333-abab67f8fb91",
+        "@type": "uco-observable:CyberRelationship",
+        "uco-core:source": {
+            "@id": "kb:url-history-39ff4987-8ae5-47e3-8369-dbd0d5f79398"
+        },
+        "uco-core:target": {
+            "@id": "kb:bfe049a6-fa3f-4bf6-9c37-9b09cc6afe6b"
+        },
+        "uco-core:isDirectional": true,
+        "uco-core:kindOfRelationship": {
+            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@value": "Contained_Within"
+        },
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:DataRange",
+                "uco-observable:rangeOffset": 100832,
+                "uco-observable:rangeSize": "176"
+            },
+            {
+                "@type": "drafting:TableRelation",
+                "drafting:tableName": "urls"
+            }
+        ]
+    }
+]
