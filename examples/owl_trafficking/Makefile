@@ -15,6 +15,8 @@ SHELL := /bin/bash
 
 PYTHON3 ?= $(shell which python3)
 
+top_srcdir := $(shell cd ../.. ; pwd)
+
 all: \
   index.html \
   owl_trafficking.json
@@ -80,7 +82,8 @@ index.html: \
   owl_trafficking_16.json \
   owl_trafficking_17.json \
   owl_trafficking_18.json \
-  owl_trafficking_19.json
+  owl_trafficking_19.json \
+  owl_trafficking-query-imaging_action.html
 	rm -f $@_
 	sed \
 	  -f owl_trafficking.sed \
@@ -139,6 +142,12 @@ owl_trafficking.sed:
 	  echo "/@OWL_TRAFFICKING_$${x}__JSON@/r owl_trafficking_$${x}.json" ; \
 	  echo "/@OWL_TRAFFICKING_$${x}__JSON@/d" ; \
 	done > _$@
+	for x in IMAGING_ACTION ; do \
+	  echo "/@QUERY_$${x}_SPARQL@/r owl_trafficking-query-$$(echo $${x} | tr '[:upper:]' '[:lower:]').sparql" ; \
+	  echo "/@QUERY_$${x}_SPARQL@/d" ; \
+	  echo "/@QUERY_$${x}_HTML@/r owl_trafficking-query-$$(echo $${x} | tr '[:upper:]' '[:lower:]').html" ; \
+	  echo "/@QUERY_$${x}_HTML@/d" ; \
+	done >> _$@
 	mv _$@ $@
 
 owl_trafficking_%.json.diff: \
@@ -148,4 +157,16 @@ owl_trafficking_%.json.diff: \
 	  <($(PYTHON3) -m json.tool $<) \
 	  > _$@ \
 	  || (echo "ERROR:examples/owl_trafficking/Makefile:The file '$<' has not had its whitespace normalized with json.tool.  Please run 'python3 -m json.tool $<' to adjust the file's whitespace." >&2 ; exit 1)
+	mv _$@ $@
+
+owl_trafficking-query-%.html: \
+  owl_trafficking-query-%.sparql \
+  $(top_srcdir)/.venv.done.log \
+  $(top_srcdir)/src/sample_sparql_runner.py \
+  owl_trafficking.json
+	source $(top_srcdir)/venv/bin/activate \
+	  && python3 $(top_srcdir)/src/sample_sparql_runner.py \
+	    owl_trafficking.json \
+	    $< \
+	    _$@
 	mv _$@ $@

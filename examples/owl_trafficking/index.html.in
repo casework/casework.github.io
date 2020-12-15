@@ -50,6 +50,18 @@ jumbo_desc: CASE Narrative on Trafficking
 @OWL_TRAFFICKING_1__JSON@
 {% endhighlight %}
 
+<div class="card">
+  <h5 class="card-header" id="query-imaging_action">Query - imaging action</h5>
+  <div class="card-body">
+    <p class="card-text">For the seized device, exhibit number <code>SD1</code>, when was it imaged?  Who imaged it?  What tool and tool version did they use?  What is the name of the resulting image file? (<a href="urgent_evidence-query-investigative_personae.sparql">SPARQL source</a>)</p>
+{% highlight sparql %}
+@QUERY_IMAGING_ACTION_SPARQL@
+{% endhighlight %}
+@QUERY_IMAGING_ACTION_HTML@
+
+  </div>
+</div>
+
 <h3>EVIDENCE INTEGRITY</h3>
 <p>The integrity of digital evidence is verified by comparing the hash value(s) of the working copy with the documented hash value(s) computed when the data was originally extracted.</p>
 

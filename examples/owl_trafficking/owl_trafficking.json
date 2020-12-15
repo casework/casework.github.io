@@ -106,6 +106,25 @@
             ]
         },
         {
+            "@id": "kb:investigator-09fb01ce-999e-4521-bd3f-f7be69a63a43",
+            "@type": "uco-identity:Identity",
+            "uco-core:facets": {
+                "@type": "uco-identity:SimpleName",
+                "uco-identity:familyName": "Hoel"
+            }
+        },
+        {
+            "@id": "kb:provenance-record-9bd9c456-5965-4782-8285-5fee34c8ddd2",
+            "@type": "case-investigation:ProvenanceRecord",
+            "case-investigation:exhibitNumber": "SD1",
+            "uco-core:description": "Smartphone used by subject",
+            "uco-core:object": [
+                {
+                    "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168"
+                }
+            ]
+        },
+        {
             "@id": "kb:provenance-record-b84dc6ca-6187-4fc3-b5f1-c15142b103a8",
             "@type": "case-investigation:ProvenanceRecord",
             "case-investigation:exhibitNumber": "MD1",

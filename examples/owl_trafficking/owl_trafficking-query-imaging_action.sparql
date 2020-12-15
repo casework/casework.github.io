@@ -1,0 +1,58 @@
+SELECT ?lDeviceExhibitNumber ?lImagingEndTime ?lOfficerName ?lToolName ?lToolVersion ?lImageFileName
+WHERE {
+  ?nImagingAction
+    a case-investigation:InvestigativeAction ;
+    uco-action:endTime ?lImagingEndTime ;
+    uco-core:facets ?nImagingActionReferences ;
+    .
+
+  ?nImagingActionReferences
+    a uco-action:ActionReferences ;
+    uco-action:instrument ?nImagingTool ;
+    uco-action:object ?nSubjectDeviceProvenanceRecord ;
+    uco-action:object ?nSubjectDevice ;
+    uco-action:performer ?nImagingPerformer ;
+    uco-action:result ?nImageFile ;
+    .
+
+  ?nSubjectDevice
+    a uco-observable:CyberItem ;
+    uco-core:facets ?nSubjectDeviceFacet ;
+    .
+
+  ?nSubjectDeviceFacet
+    a uco-observable:Device ;
+    .
+
+  ?nSubjectDeviceProvenanceRecord
+    a case-investigation:ProvenanceRecord ;
+    case-investigation:exhibitNumber ?lDeviceExhibitNumber ;
+    uco-core:object ?nSubjectDevice ;
+    .
+
+  ?nImagingPerformer
+    a uco-identity:Identity ;
+    uco-core:facets ?nImagingPerformerIdentityFacet ;
+    .
+
+  ?nImagingPerformerIdentityFacet
+    a uco-identity:SimpleName ;
+    uco-identity:familyName ?lOfficerName ;
+    .
+
+  ?nImagingTool
+    a uco-tool:Tool ;
+    uco-core:name ?lToolName ;
+    uco-tool:version ?lToolVersion ;
+    .
+
+  ?nImageFile
+    a uco-observable:CyberItem ;
+    uco-core:facets ?nImageFileFacet ;
+    .
+
+  ?nImageFileFacet
+    a uco-observable:File ;
+    uco-observable:fileName ?lImageFileName ;
+    .
+}

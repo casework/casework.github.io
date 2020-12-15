@@ -159,12 +159,122 @@ jumbo_desc: CASE Narrative on Trafficking
 ]
 {% endhighlight %}
 
+<div class="card">
+  <h5 class="card-header" id="query-imaging_action">Query - imaging action</h5>
+  <div class="card-body">
+    <p class="card-text">For the seized device, exhibit number <code>SD1</code>, when was it imaged?  Who imaged it?  What tool and tool version did they use?  What is the name of the resulting image file? (<a href="urgent_evidence-query-investigative_personae.sparql">SPARQL source</a>)</p>
+{% highlight sparql %}
+SELECT ?lDeviceExhibitNumber ?lImagingEndTime ?lOfficerName ?lToolName ?lToolVersion ?lImageFileName
+WHERE {
+  ?nImagingAction
+    a case-investigation:InvestigativeAction ;
+    uco-action:endTime ?lImagingEndTime ;
+    uco-core:facets ?nImagingActionReferences ;
+    .
+
+  ?nImagingActionReferences
+    a uco-action:ActionReferences ;
+    uco-action:instrument ?nImagingTool ;
+    uco-action:object ?nSubjectDeviceProvenanceRecord ;
+    uco-action:object ?nSubjectDevice ;
+    uco-action:performer ?nImagingPerformer ;
+    uco-action:result ?nImageFile ;
+    .
+
+  ?nSubjectDevice
+    a uco-observable:CyberItem ;
+    uco-core:facets ?nSubjectDeviceFacet ;
+    .
+
+  ?nSubjectDeviceFacet
+    a uco-observable:Device ;
+    .
+
+  ?nSubjectDeviceProvenanceRecord
+    a case-investigation:ProvenanceRecord ;
+    case-investigation:exhibitNumber ?lDeviceExhibitNumber ;
+    uco-core:object ?nSubjectDevice ;
+    .
+
+  ?nImagingPerformer
+    a uco-identity:Identity ;
+    uco-core:facets ?nImagingPerformerIdentityFacet ;
+    .
+
+  ?nImagingPerformerIdentityFacet
+    a uco-identity:SimpleName ;
+    uco-identity:familyName ?lOfficerName ;
+    .
+
+  ?nImagingTool
+    a uco-tool:Tool ;
+    uco-core:name ?lToolName ;
+    uco-tool:version ?lToolVersion ;
+    .
+
+  ?nImageFile
+    a uco-observable:CyberItem ;
+    uco-core:facets ?nImageFileFacet ;
+    .
+
+  ?nImageFileFacet
+    a uco-observable:File ;
+    uco-observable:fileName ?lImageFileName ;
+    .
+}
+{% endhighlight %}
+<table border="1" class="dataframe table table-bordered table-condensed">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>?lDeviceExhibitNumber</th>
+      <th>?lImagingEndTime</th>
+      <th>?lOfficerName</th>
+      <th>?lToolName</th>
+      <th>?lToolVersion</th>
+      <th>?lImageFileName</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>SD1</td>
+      <td>2017-02-06 22:13:08+00:00</td>
+      <td>Hoel</td>
+      <td>Magnet ACQUIRE</td>
+      <td>2.0.0.5412</td>
+      <td>LGE Nexus 5 Full Image.raw</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</div>
+
 <h3>EVIDENCE INTEGRITY</h3>
 <p>The integrity of digital evidence is verified by comparing the hash value(s) of the working copy with the documented hash value(s) computed when the data was originally extracted.</p>
 
 <h4>CASE Representation of Evidence Integrity Details</h4>
 {% highlight json %}
 [
+    {
+        "@id": "kb:investigator-09fb01ce-999e-4521-bd3f-f7be69a63a43",
+        "@type": "uco-identity:Identity",
+        "uco-core:facets": {
+            "@type": "uco-identity:SimpleName",
+            "uco-identity:familyName": "Hoel"
+        }
+    },
+    {
+        "@id": "kb:provenance-record-9bd9c456-5965-4782-8285-5fee34c8ddd2",
+        "@type": "case-investigation:ProvenanceRecord",
+        "case-investigation:exhibitNumber": "SD1",
+        "uco-core:description": "Smartphone used by subject",
+        "uco-core:object": [
+            {
+                "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168"
+            }
+        ]
+    },
     {
         "@id": "kb:provenance-record-b84dc6ca-6187-4fc3-b5f1-c15142b103a8",
         "@type": "case-investigation:ProvenanceRecord",
