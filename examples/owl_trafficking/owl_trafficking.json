@@ -63,11 +63,11 @@
             "@id": "kb:investigative-action-4d3778d9-8376-4277-9852-8e6bf926a5d1",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "extracted",
-            "uco-core:startTime": {
+            "uco-action:startTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2017-02-06T20:51:09.00Z"
             },
-            "uco-core:endTime": {
+            "uco-action:endTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2017-02-06T22:13:08.00Z"
             },
@@ -102,6 +102,25 @@
                             "@id": "kb:f3fd304e-ef6c-4cbd-94cb-425880f82748"
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "@id": "kb:investigator-09fb01ce-999e-4521-bd3f-f7be69a63a43",
+            "@type": "uco-identity:Identity",
+            "uco-core:facets": {
+                "@type": "uco-identity:SimpleName",
+                "uco-identity:familyName": "Hoel"
+            }
+        },
+        {
+            "@id": "kb:provenance-record-9bd9c456-5965-4782-8285-5fee34c8ddd2",
+            "@type": "case-investigation:ProvenanceRecord",
+            "case-investigation:exhibitNumber": "SD1",
+            "uco-core:description": "Smartphone used by subject",
+            "uco-core:object": [
+                {
+                    "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168"
                 }
             ]
         },
