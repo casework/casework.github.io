@@ -1,0 +1,118 @@
+SELECT ?lExhibitNumber ?lFileName ?lModifiedTime ?lHashValue
+WHERE {
+
+  # This query uses sub-queries to prevent unnecessary joins.
+  # The first sub-query identifies for which graph nodes we will retrieve
+  # annotating properties.
+
+  # The files being returned are photographs that were created as the
+  # results of investigative actions, and are recorded in the generated
+  # provenance records.
+  # Retrieve the exhibit devices' nodes and the file objects' nodes.
+
+  {
+    SELECT ?nExhibitDevice ?nPictureFile
+    WHERE {
+      ?nPictureFile
+        a uco-observable:CyberItem ;
+        uco-core:facets ?nRasterPictureFacet ;
+        .
+
+      ?nInvestigativeAction
+        a case-investigation:InvestigativeAction ;
+        uco-core:facets ?nActionReferencesFacet ;
+        .
+
+      ?nActionReferencesFacet
+        a uco-action:ActionReferences ;
+        uco-action:instrument kb:camera-uuid-1 ;
+        uco-action:object ?nExhibitDevice ;
+        uco-action:result ?nPictureFile ;
+        uco-action:result ?nProvenanceRecord ;
+        .
+
+      kb:camera-uuid-1
+        a uco-tool:AnalyticTool ;
+        .
+
+      # The provenance record confirms the picture file was recorded in
+      # the provenance chain.
+
+      ?nProvenanceRecord
+        a case-investigation:ProvenanceRecord ;
+        uco-core:object ?nPictureFile ;
+        .
+
+      # The raster picture facet distinguishes these files as picture
+      # files.
+
+      ?nRasterPictureFacet
+        a uco-observable:RasterPicture ;
+        .
+
+      # Because provenance records are input to some actions, confirm
+      # that the exhibit device node has a Device facet, to prevent
+      # accidentally returning provenance records in this inner query's
+      # results.
+      # (These two blocks retrieving the facet can cause a Cartesian
+      # product if not run in a sub-, or at this point sub-sub-, query.)
+
+      {
+        SELECT ?nExhibitDevice
+        WHERE {
+          ?nExhibitDevice
+            a uco-observable:CyberItem ;
+            uco-core:facets ?nDeviceFacet ;
+            .
+
+          ?nDeviceFacet
+            a uco-observable:Device ;
+            .
+        }
+      }  # Ends sub-query: SELECT ?nExhibitDevice
+    }
+  }  # Ends sub-query: SELECT ?nExhibitDevice ?nPictureFile
+
+  # The first returned property for the outer query is the label of the
+  # subject device, which must be retrieved by one of the provenance
+  # records that is not a result of taking the pictures.
+  # This is run in a SELECT DISTINCT sub-query because multiple
+  # provenance records of the subject device attach the exhibit number
+  # redundantly.
+  {
+    SELECT DISTINCT ?nExhibitDevice ?lExhibitNumber
+    WHERE {
+      ?nLabellingProvenanceRecord
+        a case-investigation:ProvenanceRecord ;
+        case-investigation:exhibitNumber ?lExhibitNumber ;
+        uco-core:object ?nExhibitDevice ;
+        .
+    }
+  }
+
+  # The other properties being returned are characteristics of the
+  # files.  Retrieve those properties once the sub-query has returned
+  # which files.
+
+  ?nPictureFile
+    uco-core:facets ?nContentDataFacet ;
+    uco-core:facets ?nFileFacet ;
+    .
+
+  ?nContentDataFacet
+    a uco-observable:ContentData ;
+    uco-observable:hash ?nHash ;
+    .
+
+  ?nHash
+    uco-types:hashValue ?lHashValue ;
+    .
+
+  ?nFileFacet
+    a uco-observable:File ;
+    uco-observable:fileName ?lFileName ;
+    uco-observable:modifiedTime ?lModifiedTime ;
+    .
+
+}
+ORDER BY ?lExhibitNumber ?lFileName

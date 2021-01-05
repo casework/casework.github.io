@@ -27,6 +27,8 @@ check: \
 	test ! -s index.html.diff \
 	  || (echo "ERROR:examples/urgent_evidence/Makefile:The file index.html is out of sync with its source files, index.html.in, urgent_evidence.json, and/or the .sparql files.  Please regenerate index.html by running 'make' and committing the update." >&2 ; exit 1)
 	rm *.diff
+	source $(top_srcdir)/venv/bin/activate \
+	  && pytest
 
 clean:
 	@rm -f *.diff
@@ -35,6 +37,7 @@ clean:
 index.html: \
   index.html.in \
   urgent_evidence-query-action_timeline.html \
+  urgent_evidence-query-exhibit_photos.html \
   urgent_evidence-query-investigative_locations.html \
   urgent_evidence-query-investigative_personae.html
 	cp \
@@ -73,6 +76,18 @@ index.html: \
 	sed \
 	  -e '/@QUERY_INVESTIGATIVE_PERSONAE_HTML@/r urgent_evidence-query-investigative_personae.html' \
 	  -e '/@QUERY_INVESTIGATIVE_PERSONAE_HTML@/d' \
+	  _$@ \
+	  > __$@
+	mv __$@ _$@
+	sed \
+	  -e '/@QUERY_EXHIBIT_PHOTOS_SPARQL@/r urgent_evidence-query-exhibit_photos.sparql' \
+	  -e '/@QUERY_EXHIBIT_PHOTOS_SPARQL@/d' \
+	  _$@ \
+	  > __$@
+	mv __$@ _$@
+	sed \
+	  -e '/@QUERY_EXHIBIT_PHOTOS_HTML@/r urgent_evidence-query-exhibit_photos.html' \
+	  -e '/@QUERY_EXHIBIT_PHOTOS_HTML@/d' \
 	  _$@ \
 	  > __$@
 	mv __$@ _$@
