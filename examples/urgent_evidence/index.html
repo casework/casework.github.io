@@ -354,5 +354,191 @@ ORDER BY ?lLastName
           </div>
         </div>
 
+        <div class="card">
+          <h5 class="card-header">Photographs of exhibits</h5>
+          <div class="card-body">
+            <p class="card-text">What photographs were taken of the exhibit and sub-exhibits? (<a href="urgent_evidence-query-exhibit_photos.sparql">SPARQL source</a>)</p>
+{% highlight sparql %}
+SELECT ?lExhibitNumber ?lFileName ?lModifiedTime ?lHashValue
+WHERE {
+
+  # This query uses sub-queries to prevent unnecessary joins.
+  # The first sub-query identifies for which graph nodes we will retrieve
+  # annotating properties.
+
+  # The files being returned are photographs that were created as the
+  # results of investigative actions, and are recorded in the generated
+  # provenance records.
+  # Retrieve the exhibit devices' nodes and the file objects' nodes.
+
+  {
+    SELECT ?nExhibitDevice ?nPictureFile
+    WHERE {
+      ?nPictureFile
+        a uco-observable:CyberItem ;
+        uco-core:facets ?nRasterPictureFacet ;
+        .
+
+      ?nInvestigativeAction
+        a case-investigation:InvestigativeAction ;
+        uco-core:facets ?nActionReferencesFacet ;
+        .
+
+      ?nActionReferencesFacet
+        a uco-action:ActionReferences ;
+        uco-action:instrument kb:camera-uuid-1 ;
+        uco-action:object ?nExhibitDevice ;
+        uco-action:result ?nPictureFile ;
+        uco-action:result ?nProvenanceRecord ;
+        .
+
+      kb:camera-uuid-1
+        a uco-tool:AnalyticTool ;
+        .
+
+      # The provenance record confirms the picture file was recorded in
+      # the provenance chain.
+
+      ?nProvenanceRecord
+        a case-investigation:ProvenanceRecord ;
+        uco-core:object ?nPictureFile ;
+        .
+
+      # The raster picture facet distinguishes these files as picture
+      # files.
+
+      ?nRasterPictureFacet
+        a uco-observable:RasterPicture ;
+        .
+
+      # Because provenance records are input to some actions, confirm
+      # that the exhibit device node has a Device facet, to prevent
+      # accidentally returning provenance records in this inner query's
+      # results.
+      # (These two blocks retrieving the facet can cause a Cartesian
+      # product if not run in a sub-, or at this point sub-sub-, query.)
+
+      {
+        SELECT ?nExhibitDevice
+        WHERE {
+          ?nExhibitDevice
+            a uco-observable:CyberItem ;
+            uco-core:facets ?nDeviceFacet ;
+            .
+
+          ?nDeviceFacet
+            a uco-observable:Device ;
+            .
+        }
+      }  # Ends sub-query: SELECT ?nExhibitDevice
+    }
+  }  # Ends sub-query: SELECT ?nExhibitDevice ?nPictureFile
+
+  # The first returned property for the outer query is the label of the
+  # subject device, which must be retrieved by one of the provenance
+  # records that is not a result of taking the pictures.
+  # This is run in a SELECT DISTINCT sub-query because multiple
+  # provenance records of the subject device attach the exhibit number
+  # redundantly.
+  {
+    SELECT DISTINCT ?nExhibitDevice ?lExhibitNumber
+    WHERE {
+      ?nLabellingProvenanceRecord
+        a case-investigation:ProvenanceRecord ;
+        case-investigation:exhibitNumber ?lExhibitNumber ;
+        uco-core:object ?nExhibitDevice ;
+        .
+    }
+  }
+
+  # The other properties being returned are characteristics of the
+  # files.  Retrieve those properties once the sub-query has returned
+  # which files.
+
+  ?nPictureFile
+    uco-core:facets ?nContentDataFacet ;
+    uco-core:facets ?nFileFacet ;
+    .
+
+  ?nContentDataFacet
+    a uco-observable:ContentData ;
+    uco-observable:hash ?nHash ;
+    .
+
+  ?nHash
+    uco-types:hashValue ?lHashValue ;
+    .
+
+  ?nFileFacet
+    a uco-observable:File ;
+    uco-observable:fileName ?lFileName ;
+    uco-observable:modifiedTime ?lModifiedTime ;
+    .
+
+}
+ORDER BY ?lExhibitNumber ?lFileName
+{% endhighlight %}
+<table border="1" class="dataframe table table-bordered table-condensed">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>?lExhibitNumber</th>
+      <th>?lFileName</th>
+      <th>?lModifiedTime</th>
+      <th>?lHashValue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>EXH-20190101-7</td>
+      <td>IMG_4829.jpg</td>
+      <td>2019-01-01T14:14:07+00:00</td>
+      <td>6ba5b138057cca4e737a86083cf28426093f218efbef64967863a6c83138fe89</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>EXH-20190101-7</td>
+      <td>IMG_4830.jpg</td>
+      <td>2019-01-01T14:14:30+00:00</td>
+      <td>cadc54f42a9d01ecb5ecdc3a9a4824c73301d6ce9857eaa73fc28317ccd5d40f</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>EXH-20190101-7</td>
+      <td>IMG_4831.jpg</td>
+      <td>2019-01-01T14:15:00+00:00</td>
+      <td>ee3657ad73c09098312e71a31ca7ac468c1fb1b998b5d6647ad471dcc89c4141</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>EXH-20190101-7</td>
+      <td>IMG_4832.jpg</td>
+      <td>2019-01-01T14:20:07+00:00</td>
+      <td>132bfadcc46addedcafcd84653f1a56007eba2f27bfcb15824536cda65a49c9a</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>EXH-20190101-7</td>
+      <td>IMG_4833.jpg</td>
+      <td>2019-01-01T14:20:32+00:00</td>
+      <td>1929ec6c6186f43860da7c77c0c65d1b8543a5543572261a1b71084e7bf80a0e</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>EXH-20190101-7</td>
+      <td>IMG_4834.jpg</td>
+      <td>2019-01-01T14:21:00+00:00</td>
+      <td>fc0819ed4dcb2af9c85a041a0da11ea6a146dec0b108c09f5e0d41e8ea3bb041</td>
+    </tr>
+  </tbody>
+</table>
+            <p class="card-text">Of note:</p>
+            <ul>
+              <li class="card-text">This query hard-codes knowledge of the device used to photograph the evidence, <code>kb:camera-uuid-1</code>, to avoid confusing pictures taken of evidence with pictures extracted from evidence.  A change to UCO is under consideration to enable this query to function based on a tool class, without needing to hard code the camera's identifier.</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
