@@ -257,25 +257,7 @@
                     }
                 ]
             },
-            "uco-core:description": "Exhibit Connected to Kiosk & process started"
-        },
-        {
-            "@id": "kb:action-uuid-8",
-            "@type": "case-investigation:InvestigativeAction",
-            "uco-core:facets": {
-                "@type": "uco-action:ActionReferences",
-                "uco-action:endTime": {
-                    "@type": "xsd:dateTime",
-                    "@value": "2019-01-01T14:55:45+00:00"
-                },
-                "uco-action:location": {
-                    "@id": "kb:location-uuid-3"
-                },
-                "uco-action:performer": {
-                    "@id": "kb:officer-uuid-3"
-                }
-            },
-            "uco-core:description": "Exhibit Disconnected from Kiosk"
+            "uco-core:description": "Exhibit Connected to Kiosk & process started; exhibit disconnected at conclusion"
         },
         {
             "@id": "kb:action-uuid-9",
