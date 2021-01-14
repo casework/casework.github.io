@@ -636,7 +636,7 @@
             "@type": "case-investigation:ProvenanceRecord",
             "case-investigation:exhibitNumber": "EXH-20190101-7-IntakeForm",
             "uco-core:object": {
-                "@id": "kb:evidenceintake-form-uuid"
+                "@id": "kb:file-uuid-1"
             }
         },
         {
