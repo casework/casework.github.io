@@ -100,9 +100,6 @@
                 "uco-action:result": [
                     {
                         "@id": "kb:provenance-record-uuid-3"
-                    },
-                    {
-                        "@id": "kb:subject-device-uuid-1"
                     }
                 ]
             },
@@ -129,7 +126,7 @@
                 },
                 "uco-action:object": [
                     {
-                        "@id": "kb:provenance-record-uuid-1"
+                        "@id": "kb:provenance-record-uuid-3"
                     },
                     {
                         "@id": "kb:subject-device-uuid-1"
@@ -191,7 +188,7 @@
                 },
                 "uco-action:object": [
                     {
-                        "@id": "kb:provenance-record-uuid-1"
+                        "@id": "kb:provenance-record-uuid-3"
                     },
                     {
                         "@id": "kb:subject-device-uuid-1"
@@ -239,7 +236,7 @@
                 },
                 "uco-action:object": [
                     {
-                        "@id": "kb:provenance-record-uuid-1"
+                        "@id": "kb:provenance-record-uuid-3"
                     },
                     {
                         "@id": "kb:subject-device-uuid-1"
@@ -512,7 +509,7 @@
                 ],
                 "uco-action:object": [
                     {
-                        "@id": "kb:provenance-record-uuid-1"
+                        "@id": "kb:provenance-record-uuid-3"
                     },
                     {
                         "@id": "kb:subject-device-uuid-1"
@@ -521,9 +518,6 @@
                 "uco-action:result": [
                     {
                         "@id": "kb:provenance-record-uuid-8"
-                    },
-                    {
-                        "@id": "kb:subject-device-uuid-1"
                     }
                 ]
             },
