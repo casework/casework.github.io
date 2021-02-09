@@ -99,7 +99,7 @@
         },
         {
             "@id": "kb:suspect-device-uuid",
-            "@type": "uco-observable:CyberItem",
+            "@type": "uco-observable:ObservableObject",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DeviceFacet",
@@ -222,7 +222,7 @@
         },
         {
             "@id": "kb:suspect-mobiledevice-forensicduplicate-uuid",
-            "@type": "uco-observable:CyberItem",
+            "@type": "uco-observable:ObservableObject",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:FileFacet",
@@ -263,7 +263,7 @@
         },
         {
             "@id": "kb:suspect-device-mmssms-uuid",
-            "@type": "uco-observable:CyberItem",
+            "@type": "uco-observable:ObservableObject",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:FileFacet",
@@ -304,7 +304,7 @@
         },
         {
             "@id": "kb:trace-relationship3-uuid",
-            "@type": "uco-observable:CyberRelationship",
+            "@type": "uco-observable:ObservableRelationship",
             "uco-core:source": {
                 "@id": "kb:suspect-device-mmssms-uuid"
             },
@@ -314,7 +314,7 @@
                 }
             ],
             "uco-core:kindOfRelationship": {
-                "@type": "uco-observable:CyberItemRelationshipEnum",
+                "@type": "uco-observable:ObservableObjectRelationshipEnum",
                 "@value": "Contained_Within"
             },
             "uco-core:isDirectional": true,
@@ -327,7 +327,7 @@
         },
         {
             "@id": "kb:sms_message1",
-            "@type": "uco-observable:CyberItem",
+            "@type": "uco-observable:ObservableObject",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:MessageFacet",
@@ -352,7 +352,7 @@
         },
         {
             "@id": "kb:phone_call1",
-            "@type": "uco-observable:CyberItem",
+            "@type": "uco-observable:ObservableObject",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:PhoneCallFacet",
@@ -380,7 +380,7 @@
         },
         {
             "@id": "kb:network-connection1-uuid",
-            "@type": "uco-observable:CyberItem",
+            "@type": "uco-observable:ObservableObject",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:NetworkConnectionFacet",

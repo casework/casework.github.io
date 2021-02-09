@@ -11,7 +11,7 @@
     },
     {
         "@id": "kb:cameralocation-relationship-uuid",
-        "@type": "uco-observable:CyberRelationship",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
             "@id": "kb:latlong-8667ec82-8c21-11e9-934e-0c4de9c21b53"
         },
@@ -19,7 +19,7 @@
             "@id": "kb:camera-xml-uuid"
         },
         "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
             "@value": "Contained_Within"
         },
         "uco-core:isDirectional": true

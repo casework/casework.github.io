@@ -76,7 +76,7 @@
     },
     {
         "@id": "kb:suspect-mobiledevice-forensicduplicate-uuid",
-        "@type": "uco-observable:CyberItem",
+        "@type": "uco-observable:ObservableObject",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:FileFacet",

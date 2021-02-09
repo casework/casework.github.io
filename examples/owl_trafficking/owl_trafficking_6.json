@@ -12,7 +12,7 @@
     },
     {
         "@id": "kb:primaryuser-faceboook-cb34b068-324b-4162-a9e5-6c96879b061c",
-        "@type": "uco-observable:CyberRelationship",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
             "@id": "kb:primaryuser-d28a3fad-10a1-459c-9a1a-6aa07a04e76f"
         },
@@ -20,14 +20,14 @@
             "@id": "kb:email-account-99d72bac-8c21-11e9-8902-0c4de9c21b53"
         },
         "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
             "@value": "Has_Account"
         },
         "uco-core:isDirectional": true
     },
     {
         "@id": "kb:primaryuser-email-cb34b068-324b-4162-a9e5-6c96879b061c",
-        "@type": "uco-observable:CyberRelationship",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
             "@id": "kb:primaryuser-d28a3fad-10a1-459c-9a1a-6aa07a04e76f"
         },
@@ -35,14 +35,14 @@
             "@id": "kb:facebook-90652808-7341-40d3-9285-774d865ad3f9"
         },
         "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
             "@value": "Has_Account"
         },
         "uco-core:isDirectional": true
     },
     {
         "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53",
-        "@type": "uco-observable:CyberItem",
+        "@type": "uco-observable:ObservableObject",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:EmailAddressFacet",
@@ -52,7 +52,7 @@
     },
     {
         "@id": "kb:email-account-99d72bac-8c21-11e9-8902-0c4de9c21b53",
-        "@type": "uco-observable:CyberItem",
+        "@type": "uco-observable:ObservableObject",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:EmailAccountFacet",
@@ -66,7 +66,7 @@
     },
     {
         "@id": "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1",
-        "@type": "uco-observable:CyberItem",
+        "@type": "uco-observable:ObservableObject",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:AccountFacet",
@@ -81,7 +81,7 @@
     },
     {
         "@id": "kb:associated-account-phonenumber-0307a497-f1fb-4af4-9877-90c56ee76fba",
-        "@type": "uco-observable:CyberRelationship",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
             "@id": "kb:90652808-7341-40d3-9285-774d865ad3f9"
         },
@@ -89,14 +89,14 @@
             "@id": "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1"
         },
         "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
             "@value": "Associated_Account"
         },
         "uco-core:isDirectional": true
     },
     {
         "@id": "kb:facebook-90652808-7341-40d3-9285-774d865ad3f9",
-        "@type": "uco-observable:CyberItem",
+        "@type": "uco-observable:ObservableObject",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:AccountFacet",
@@ -130,7 +130,7 @@
     },
     {
         "@id": "kb:application-facebook-25e8018f-49be-4898-bb1d-731e387e9eb7",
-        "@type": "uco-observable:CyberItem",
+        "@type": "uco-observable:ObservableObject",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:ApplicationFacet",

@@ -311,7 +311,7 @@
         },
         {
             "@id": "kb:dvd-uuid-1",
-            "@type": "uco-observable:CyberItem",
+            "@type": "uco-observable:ObservableObject",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DeviceFacet",
@@ -330,7 +330,7 @@
                 "@id": "kb:dvd-uuid-1"
             },
             "uco-core:kindOfRelationship": {
-                "@type": "uco-observable:CyberItemRelationshipEnum",
+                "@type": "uco-observable:ObservableObjectRelationshipEnum",
                 "@value": "Contained_Within"
             },
             "uco-core:isDirectional": true,
@@ -395,7 +395,7 @@
         },
         {
             "@id": "kb:file-uuid-1",
-            "@type": "uco-observable:CyberItem",
+            "@type": "uco-observable:ObservableObject",
             "uco-core:description": "Intake Form",
             "uco-core:hasFacet": [
                 {
@@ -427,7 +427,7 @@
         },
         {
             "@id": "kb:file-uuid-2",
-            "@type": "uco-observable:CyberItem",
+            "@type": "uco-observable:ObservableObject",
             "uco-core:description": "Kiosk report",
             "uco-core:hasFacet": [
                 {
@@ -459,7 +459,7 @@
         },
         {
             "@id": "kb:file-uuid-3",
-            "@type": "uco-observable:CyberItem",
+            "@type": "uco-observable:ObservableObject",
             "uco-core:description": "Witness statement",
             "uco-core:hasFacet": [
                 {
@@ -526,7 +526,7 @@
         {
             "@id": "kb:camera-uuid-1",
             "@type": [
-                "uco-observable:CyberItem",
+                "uco-observable:ObservableObject",
                 "uco-tool:AnalyticTool"
             ],
             "uco-core:hasFacet": [
@@ -716,7 +716,7 @@
         },
         {
             "@id": "kb:subject-device-photograph-uuid-1",
-            "@type": "uco-observable:CyberItem",
+            "@type": "uco-observable:ObservableObject",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ContentDataFacet",
@@ -800,7 +800,7 @@
         },
         {
             "@id": "kb:subject-device-photograph-uuid-2",
-            "@type": "uco-observable:CyberItem",
+            "@type": "uco-observable:ObservableObject",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ContentDataFacet",
@@ -884,7 +884,7 @@
         },
         {
             "@id": "kb:subject-device-photograph-uuid-3",
-            "@type": "uco-observable:CyberItem",
+            "@type": "uco-observable:ObservableObject",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ContentDataFacet",
@@ -968,7 +968,7 @@
         },
         {
             "@id": "kb:subject-device-photograph-uuid-4",
-            "@type": "uco-observable:CyberItem",
+            "@type": "uco-observable:ObservableObject",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ContentDataFacet",
@@ -1052,7 +1052,7 @@
         },
         {
             "@id": "kb:subject-device-photograph-uuid-5",
-            "@type": "uco-observable:CyberItem",
+            "@type": "uco-observable:ObservableObject",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ContentDataFacet",
@@ -1136,7 +1136,7 @@
         },
         {
             "@id": "kb:subject-device-photograph-uuid-6",
-            "@type": "uco-observable:CyberItem",
+            "@type": "uco-observable:ObservableObject",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ContentDataFacet",
@@ -1220,7 +1220,7 @@
         },
         {
             "@id": "kb:extracted-file-uuid-1",
-            "@type": "uco-observable:CyberItem",
+            "@type": "uco-observable:ObservableObject",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ContentDataFacet",
@@ -1299,7 +1299,7 @@
         },
         {
             "@id": "kb:subject-device-uuid-1",
-            "@type": "uco-observable:CyberItem",
+            "@type": "uco-observable:ObservableObject",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DeviceFacet"

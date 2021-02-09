@@ -1,7 +1,7 @@
 [
     {
         "@id": "kb:suspect-device-mmssms-uuid",
-        "@type": "uco-observable:CyberItem",
+        "@type": "uco-observable:ObservableObject",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:FileFacet",
@@ -42,7 +42,7 @@
     },
     {
         "@id": "kb:trace-relationship3-uuid",
-        "@type": "uco-observable:CyberRelationship",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
             "@id": "kb:suspect-device-mmssms-uuid"
         },
@@ -52,7 +52,7 @@
             }
         ],
         "uco-core:kindOfRelationship": {
-            "@type": "uco-observable:CyberItemRelationshipEnum",
+            "@type": "uco-observable:ObservableObjectRelationshipEnum",
             "@value": "Contained_Within"
         },
         "uco-core:isDirectional": true,

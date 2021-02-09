@@ -14,7 +14,7 @@ WHERE {
     SELECT ?nExhibitDevice ?nPictureFile
     WHERE {
       ?nPictureFile
-        a uco-observable:CyberItem ;
+        a uco-observable:ObservableObject ;
         uco-core:hasFacet ?nRasterPictureFacet ;
         .
 
@@ -61,7 +61,7 @@ WHERE {
         SELECT ?nExhibitDevice
         WHERE {
           ?nExhibitDevice
-            a uco-observable:CyberItem ;
+            a uco-observable:ObservableObject ;
             uco-core:hasFacet ?nDeviceFacet ;
             .
 

@@ -1,7 +1,7 @@
 [
     {
         "@id": "kb:textapp-90652808-7341-40d3-9285-774d865ad3f9",
-        "@type": "uco-observable:CyberItem",
+        "@type": "uco-observable:ObservableObject",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:AccountFacet",
@@ -28,7 +28,7 @@
     },
     {
         "@id": "kb:LoginData-c316c405-9326-4f28-9b8d-44a3bb9e7283",
-        "@type": "uco-observable:CyberRelationship",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
             "@id": "kb:textapp-90652808-7341-40d3-9285-774d865ad3f9"
         },
@@ -36,7 +36,7 @@
             "@id": "kb:textapplogcat-16805dff-05f9-4cba-9266-d5fa712f3d8f"
         },
         "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
             "@value": "Contained_Within"
         },
         "uco-core:isDirectional": true,

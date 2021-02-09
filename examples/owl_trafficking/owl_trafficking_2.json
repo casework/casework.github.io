@@ -31,7 +31,7 @@
     },
     {
         "@id": "kb:f3fd304e-ef6c-4cbd-94cb-425880f82748",
-        "@type": "uco-observable:CyberItem",
+        "@type": "uco-observable:ObservableObject",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:FileFacet",

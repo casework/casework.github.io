@@ -1,7 +1,7 @@
 [
     {
         "@id": "kb:simcard-24d20c80-f035-40ae-88dd-fc66f70180f6",
-        "@type": "uco-observable:CyberItem",
+        "@type": "uco-observable:ObservableObject",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:SIMCardFacet",
@@ -15,7 +15,7 @@
     },
     {
         "@id": "kb:mobileaccount-4b3cdcbd-6a31-462f-be9b-1ca2944c8876",
-        "@type": "uco-observable:CyberItem",
+        "@type": "uco-observable:ObservableObject",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:AccountFacet",
@@ -34,7 +34,7 @@
     },
     {
         "@id": "kb:sim-telephony-relationship-f7dfe5f0-e95a-4d0a-9d0e-8ed416e69587",
-        "@type": "uco-observable:CyberRelationship",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
             "@id": "kb:simcard-24d20c80-f035-40ae-88dd-fc66f70180f6"
         },
@@ -42,7 +42,7 @@
             "@id": "kb:telephony-cd52c3b8-7759-40b7-ae10-dfc90a35f644"
         },
         "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
             "@value": "Contained_Within"
         },
         "uco-core:isDirectional": "True",
