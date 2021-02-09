@@ -1,7 +1,7 @@
 [
     {
         "@id": "kb:network-connection1-uuid",
-        "@type": "uco-observable:CyberItem",
+        "@type": "uco-observable:ObservableObject",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:NetworkConnectionFacet",

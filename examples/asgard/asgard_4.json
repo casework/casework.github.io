@@ -1,7 +1,7 @@
 [
     {
         "@id": "kb:sms_message1",
-        "@type": "uco-observable:CyberItem",
+        "@type": "uco-observable:ObservableObject",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:MessageFacet",
@@ -26,7 +26,7 @@
     },
     {
         "@id": "kb:phone_call1",
-        "@type": "uco-observable:CyberItem",
+        "@type": "uco-observable:ObservableObject",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:PhoneCallFacet",

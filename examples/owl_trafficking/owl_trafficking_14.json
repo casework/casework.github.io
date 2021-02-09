@@ -1,7 +1,7 @@
 [
     {
         "@id": "kb:downloaded-directory-9999dae3-2bca-4ccb-97fd-9919192e9999",
-        "@type": "uco-observable:CyberItem",
+        "@type": "uco-observable:ObservableObject",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:FileFacet",

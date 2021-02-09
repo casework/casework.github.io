@@ -16,7 +16,7 @@ WHERE {
     .
 
   ?nSubjectDevice
-    a uco-observable:CyberItem ;
+    a uco-observable:ObservableObject ;
     uco-core:hasFacet ?nSubjectDeviceFacet ;
     .
 
@@ -47,7 +47,7 @@ WHERE {
     .
 
   ?nImageFile
-    a uco-observable:CyberItem ;
+    a uco-observable:ObservableObject ;
     uco-core:hasFacet ?nImageFileFacet ;
     .
 
