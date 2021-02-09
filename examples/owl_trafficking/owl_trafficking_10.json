@@ -1,0 +1,27 @@
+[
+    {
+        "@id": "kb:partition-87d669fc-8ab9-47c6-a66d-af09d73361d5",
+        "@type": "uco-observable:CyberRelationship",
+        "uco-core:source": {
+            "@id": "kb:userdata-partition-d94cd1b5-5cf7-4642-8927-5ebea573d68e"
+        },
+        "uco-core:target": {
+            "@id": "kb:f3fd304e-ef6c-4cbd-94cb-425880f82748"
+        },
+        "uco-core:kindOfRelationship": {
+            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@value": "Contained_Within"
+        },
+        "uco-core:isDirectional": true,
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:DataRange",
+                "uco-observable:rangeOffset": 2032140288,
+                "uco-observable:rangeSize": {
+                    "@type": "xsd:long",
+                    "@value": 29236373504
+                }
+            }
+        ]
+    }
+]

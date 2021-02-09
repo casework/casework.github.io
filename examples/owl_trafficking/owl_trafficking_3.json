@@ -1,0 +1,63 @@
+[
+    {
+        "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:Device",
+                "uco-observable:manufacturer": "LGE",
+                "uco-observable:model": "Nexus 5",
+                "uco-observable:serialNumber": "08ebf545d00af782",
+                "drafting:brand": "Google",
+                "drafting:name": "hammerhead",
+                "drafting:encryptionEnabled": false
+            },
+            {
+                "@type": "drafting:AndroidDevice",
+                "drafting:androidID": "64cce130286b31b3",
+                "drafting:androidFingerprint": "lge\u2026"
+            },
+            {
+                "@type": "drafting:BootLoader",
+                "drafting:label": "HHZ20h",
+                "drafting:buildIdentifier": "M4B30Z",
+                "drafting:buildDate": "2016-11-03T20:03:42.00Z"
+            },
+            {
+                "@type": "uco-observable:MobileDevice",
+                "uco-observable:bluetoothDeviceName": "Nexus5",
+                "drafting:deviceActivationTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-01T14:31:30.00Z"
+                },
+                "drafting:advertisingID": "48500120-c9c5-402e-a6bc-04e2f92ae259",
+                "drafting:locationsServicesEnabled": true,
+                "uco-observable:keypadUnlockCode": "NULL",
+                "uco-observable:IMEI": "352584062438806",
+                "uco-observable:clockSetting": "2017-02-06T20:51:09.35Z",
+                "uco-observable:storageCapacityInBytes": {
+                    "@type": "xsd:long",
+                    "@value": 31268536320
+                }
+            },
+            {
+                "@type": "uco-observable:OperatingSystem",
+                "uco-core:name": "Android",
+                "uco-observable:manufacturer": "LGE",
+                "uco-observable:version": "6.0.1"
+            },
+            {
+                "@type": "uco-observable:WifiAddress",
+                "uco-observable:value": "34:4d:f7:54:20:bb"
+            },
+            {
+                "@type": "uco-observable:BluetoothAddress",
+                "uco-observable:value": "88:c9:d0:03:04:49"
+            },
+            {
+                "@type": "uco-observable:MobileAccount",
+                "uco-observable:MSISDN": "+13046388446"
+            }
+        ]
+    }
+]

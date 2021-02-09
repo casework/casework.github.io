@@ -1,0 +1,27 @@
+[
+    {
+        "@id": "kb:latlong-8667ec82-8c21-11e9-934e-0c4de9c21b53",
+        "@type": "uco-location:Location",
+        "uco-core:facets": {
+            "@type": "uco-location:LatLongCoordinates",
+            "uco-location:latitude": 38.423756,
+            "uco-location:longitude": -82.43619,
+            "uco-location:altitude": null
+        }
+    },
+    {
+        "@id": "kb:cameralocation-relationship-uuid",
+        "@type": "uco-observable:CyberRelationship",
+        "uco-core:source": {
+            "@id": "kb:latlong-8667ec82-8c21-11e9-934e-0c4de9c21b53"
+        },
+        "uco-core:target": {
+            "@id": "kb:camera-xml-uuid"
+        },
+        "uco-core:kindOfRelationship": {
+            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@value": "Contained_Within"
+        },
+        "uco-core:isDirectional": true
+    }
+]

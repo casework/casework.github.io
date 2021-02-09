@@ -1203,17 +1203,9 @@ representative from a company whose principal business activity is offering digi
 
 investigation services. 
 
-#### 1. The Technical Director shall appoint no more than two voting members who have the 
-
-same employer. 
-
 iv. There is no limit to the number of Adoption Committee members that the Technical 
 
 Director may appoint. 
-
-#### 1. The Technical Director may appoint technical contributors as non-voting (i.e., 
-
-advisory) committee members. 
 
 vii. The Technical Director may change the status of an Adoption Committee member 
 

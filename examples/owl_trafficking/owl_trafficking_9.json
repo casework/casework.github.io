@@ -1,0 +1,51 @@
+[
+    {
+        "@id": "kb:textapp-90652808-7341-40d3-9285-774d865ad3f9",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:Account",
+                "uco-observable:accountIssuer": {
+                    "@id": "kb:organization-textapp-cc44c2ae-bdd3-4df8-9ca3-1f58d682d62b"
+                },
+                "uco-observable:accountIdentifier": "mcavoy287",
+                "uco-observable:isActive": true
+            },
+            {
+                "@type": "uco-observable:DigitalAccount",
+                "uco-observable:displayName": "NULL",
+                "uco-observable:accountLogin": "mcavoy287",
+                "uco-observable:firstLoginTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-01-30T19:00:31Z"
+                }
+            },
+            {
+                "@type": "uco-observable:AccountAuthentication",
+                "uco-observable:password": "huntington*32"
+            }
+        ]
+    },
+    {
+        "@id": "kb:LoginData-c316c405-9326-4f28-9b8d-44a3bb9e7283",
+        "@type": "uco-observable:CyberRelationship",
+        "uco-core:source": {
+            "@id": "kb:textapp-90652808-7341-40d3-9285-774d865ad3f9"
+        },
+        "uco-core:target": {
+            "@id": "kb:textapplogcat-16805dff-05f9-4cba-9266-d5fa712f3d8f"
+        },
+        "uco-core:kindOfRelationship": {
+            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@value": "Contained_Within"
+        },
+        "uco-core:isDirectional": true,
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:DataRange",
+                "uco-observable:rangeOffset": 2704,
+                "uco-observable:rangeSize": 9
+            }
+        ]
+    }
+]

@@ -1,0 +1,61 @@
+[
+    {
+        "@id": "kb:simcard-24d20c80-f035-40ae-88dd-fc66f70180f6",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:SIMCard",
+                "uco-observable:ICCID": "89014104279201697299",
+                "uco-observable:IMSI": {
+                    "@id": "kb:mobileaccount-4b3cdcbd-6a31-462f-be9b-1ca2944c8876"
+                },
+                "uco-observable:carrier": "AT&T"
+            }
+        ]
+    },
+    {
+        "@id": "kb:mobileaccount-4b3cdcbd-6a31-462f-be9b-1ca2944c8876",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:Account",
+                "uco-observable:accountType": {
+                    "@type": "uco-vocabulary:AccountTypeVocab",
+                    "@value": "phone"
+                },
+                "uco-observable:isActive": true
+            },
+            {
+                "@type": "uco-observable:MobileAccount",
+                "uco-observable:MSISDN": "+13046388446",
+                "uco-observable:IMSI": "310410920169729"
+            }
+        ]
+    },
+    {
+        "@id": "kb:sim-telephony-relationship-f7dfe5f0-e95a-4d0a-9d0e-8ed416e69587",
+        "@type": "uco-observable:CyberRelationship",
+        "uco-core:source": {
+            "@id": "kb:simcard-24d20c80-f035-40ae-88dd-fc66f70180f6"
+        },
+        "uco-core:target": {
+            "@id": "kb:telephony-cd52c3b8-7759-40b7-ae10-dfc90a35f644"
+        },
+        "uco-core:kindOfRelationship": {
+            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@value": "Contained_Within"
+        },
+        "uco-core:isDirectional": "True",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:DataRange",
+                "uco-observable:rangeOffset": "13751",
+                "uco-observable:rangeSize": "__NOT_PROVIDED"
+            },
+            {
+                "@type": "drafting:TableRelation",
+                "drafting:tableName": "siminfo"
+            }
+        ]
+    }
+]

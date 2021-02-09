@@ -136,5 +136,21 @@ jumbo_desc: CASE Sub-topic of Chain of Custody
           </div>
         </div>
 
+        <div class="card">
+          <h5 class="card-header">Photographs of exhibits</h5>
+          <div class="card-body">
+            <p class="card-text">What photographs were taken of the exhibit and sub-exhibits? (<a href="urgent_evidence-query-exhibit_photos.sparql">SPARQL source</a>)</p>
+{% highlight sparql %}
+@QUERY_EXHIBIT_PHOTOS_SPARQL@
+{% endhighlight %}
+@QUERY_EXHIBIT_PHOTOS_HTML@
+
+            <p class="card-text">Of note:</p>
+            <ul>
+              <li class="card-text">This query hard-codes knowledge of the device used to photograph the evidence, <code>kb:camera-uuid-1</code>, to avoid confusing pictures taken of evidence with pictures extracted from evidence.  A change to UCO is under consideration to enable this query to function based on a tool class, without needing to hard code the camera's identifier.</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>

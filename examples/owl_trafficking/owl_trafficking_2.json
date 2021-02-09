@@ -1,0 +1,78 @@
+[
+    {
+        "@id": "kb:investigator-09fb01ce-999e-4521-bd3f-f7be69a63a43",
+        "@type": "uco-identity:Identity",
+        "uco-core:facets": {
+            "@type": "uco-identity:SimpleName",
+            "uco-identity:familyName": "Hoel"
+        }
+    },
+    {
+        "@id": "kb:provenance-record-9bd9c456-5965-4782-8285-5fee34c8ddd2",
+        "@type": "case-investigation:ProvenanceRecord",
+        "case-investigation:exhibitNumber": "SD1",
+        "uco-core:description": "Smartphone used by subject",
+        "uco-core:object": [
+            {
+                "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168"
+            }
+        ]
+    },
+    {
+        "@id": "kb:provenance-record-b84dc6ca-6187-4fc3-b5f1-c15142b103a8",
+        "@type": "case-investigation:ProvenanceRecord",
+        "case-investigation:exhibitNumber": "MD1",
+        "uco-core:description": "Forensic duplicate of smartphone used by subject",
+        "uco-core:object": [
+            {
+                "@id": "kb:f3fd304e-ef6c-4cbd-94cb-425880f82748"
+            }
+        ]
+    },
+    {
+        "@id": "kb:f3fd304e-ef6c-4cbd-94cb-425880f82748",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:File",
+                "uco-observable:createdTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-06T20:51:09.00Z"
+                },
+                "uco-observable:extension": "raw",
+                "uco-observable:fileName": "LGE Nexus 5 Full Image.raw",
+                "uco-observable:fileSystemType": "NTFS",
+                "uco-observable:filePath": "C:\\Users\\cvance\\Desktop\\Owl Scenario - Full\\LGE Nexus 5 Full Image.raw",
+                "uco-observable:isDirectory": false,
+                "uco-observable:sizeInBytes": 31268536320
+            },
+            {
+                "@type": "uco-observable:ContentData",
+                "uco-observable:hash": [
+                    {
+                        "@type": "uco-types:Hash",
+                        "uco-types:hashMethod": {
+                            "@type": "uco-vocabulary:HashNameVocab",
+                            "@value": "MD5"
+                        },
+                        "uco-types:hashValue": {
+                            "@type": "xsd:hexBinary",
+                            "@value": "B334843A07A9E16494EEBDF3079E6BC6"
+                        }
+                    },
+                    {
+                        "@type": "uco-types:Hash",
+                        "uco-types:hashMethod": {
+                            "@type": "uco-vocabulary:HashNameVocab",
+                            "@value": "SHA1"
+                        },
+                        "uco-types:hashValue": {
+                            "@type": "xsd:hexBinary",
+                            "@value": "5506912AAC41534DC5AF12B51059D5880737AB5E"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]

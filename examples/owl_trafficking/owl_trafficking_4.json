@@ -1,0 +1,25 @@
+[
+    {
+        "@id": "kb:simcard1-relationship-a1dbff0e-974b-4295-b035-e1bc3271945d",
+        "@type": "uco-observable:CyberRelationship",
+        "uco-core:source": {
+            "@id": "kb:simcard-24d20c80-f035-40ae-88dd-fc66f70180f6"
+        },
+        "uco-core:target": {
+            "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168"
+        },
+        "uco-core:kindOfRelationship": {
+            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@value": "Contained_Within"
+        },
+        "uco-core:startTime": {
+            "@type": "xsd:datetime",
+            "@value": "2017-00-00T12:34:56Z"
+        },
+        "uco-core:endTime": {
+            "@type": "xsd:dateTime",
+            "@value": "2017-02-06T20:00:00.00Z"
+        },
+        "uco-core:isDirectional": true
+    }
+]

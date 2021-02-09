@@ -1,0 +1,39 @@
+[
+    {
+        "@id": "kb:sms-message-2c032220-8c21-11e9-9c99-0c4de9c21b53",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:Message",
+                "uco-observable:application": {
+                    "@id": "kb:message-9999898c-0178-4534-8107-caea0a0f9999"
+                },
+                "uco-observable:sentTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-01T00:41:15.00Z"
+                },
+                "uco-observable:messageText": "Sarah, the delivery is today 7 tonight the confirmation will come later through pidgin",
+                "drafting:allocationStatus": "unallocated",
+                "uco-observable:from": "kb:9999237a-6d7f-4e96-bbef-6eb4c0a69999",
+                "uco-observable:to": [
+                    "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1"
+                ]
+            }
+        ]
+    },
+    {
+        "@id": "kb:9999237a-6d7f-4e96-bbef-6eb4c0a69999",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:Account",
+                "uco-observable:accountIssuer": "ATT",
+                "uco-observable:isActive": true
+            },
+            {
+                "@type": "uco-observable:PhoneAccount",
+                "uco-observable:phoneNumber": "+13045184333"
+            }
+        ]
+    }
+]

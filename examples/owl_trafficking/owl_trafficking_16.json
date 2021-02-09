@@ -1,0 +1,28 @@
+[
+    {
+        "@id": "kb:message-database-relationship-uuid",
+        "@type": "uco-observable:CyberRelationship",
+        "uco-core:source": {
+            "@id": "kb:sms-message-2c032220-8c21-11e9-9c99-0c4de9c21b53"
+        },
+        "uco-core:target": {
+            "@id": "kb:mmssmsdb-journalfile-uuid"
+        },
+        "uco-core:kindOfRelationship": {
+            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@value": "Contained_Within"
+        },
+        "uco-core:isDirectional": true,
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:DataRange",
+                "uco-observable:rangeOffset": "2560",
+                "uco-observable:rangeSize": "96"
+            },
+            {
+                "@type": "drafting:TableRelation",
+                "drafting:tableName": "sms"
+            }
+        ]
+    }
+]

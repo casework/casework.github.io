@@ -1,0 +1,1320 @@
+---
+<!-- layout: releases -->
+title: Owl Trafficking
+jumbo_desc: CASE Narrative on Trafficking
+---
+
+<h2>Owl CASE</h2>
+
+<p>This investigative scenario emulates illegal activities involving trafficking of vulnerable victims, and download and exchange of related pictures. This document represents information from a Windows 10 computer and Android 6.0 smartphone using CASE.</p>
+<p style="text-indent: 4em;"><em>Dataset generation</em>: Dataset was created by students at Marshall University.</p>
+
+<p>The JSON-LD data on this page are available combined in the file <a href="owl_trafficking.json">owl_trafficking.json</a>.</p>
+
+<h3>Disclaimers</h3>
+
+<p>Participation by contributors in the creation of the documentation of mentioned software is not intended to imply a recommendation or endorsement by the United States Government nor any of the contributors' employers, nor is it intended to imply that any specific software is necessarily the best available for the purpose.</p>
+
+<p>Events, locations, tools, and people represented in this and other CASE narratives are presented, and at many times created, for illustration purposes only and do not necessarily represent real events, locations, tools, or people.</p>
+
+
+<h3>Background</h3>
+
+<p>In a jurisdiction where owls are illegal to trade and buy, two individuals are suspected of illegally trading owls.  A computer and smartphone are collected as evidence and forensic examination is performed to determine whether the user is attempting to purchase owls illegally.</p>
+
+<h3>Mandate</h3>
+
+<p>The prosecutor in this case has requested digital forensic analysis of the digital evidence for the following information:</p>
+<ol type="a">
+  <li>The name and virtual identifier(s) of the primary user</li>
+  <li>Possible accomplices the subject communicated with during the period(s) of interest</li>
+  <li>Pictures of owls with associated context and classifications</li>
+  <li>Evidence of purchasing an owl, or intent to purchase owls</li>
+  <li>Pertinent location information, including any arranged meetings to exchange owls</li>
+  <li>Visual reconstruction of the most pertinent elements and entities (people and objects)</li>
+</ol>
+
+<h3>EVIDENCE PROVENANCE AND INTEGRITY</h3>
+<p>The initial step of the digital forensic analysis is to assess the provenance and integrity of the digital evidence and to examine device characteristics and identifiers. The overall CASE bundle provides context for the digital evidence.</p>
+
+<h4>CASE Representation of Investigation</h4>
+{% highlight json %}
+{
+    "@context": {
+        "@vocab": "http://example.org/ontology/local#",
+        "case-investigation": "https://caseontology.org/ontology/case/investigation#",
+        "drafting": "http://example.org/ontology/drafting#",
+        "kb": "http://example.org/kb/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "uco-action": "https://unifiedcyberontology.org/ontology/uco/action#",
+        "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
+        "uco-identity": "https://unifiedcyberontology.org/ontology/uco/identity#",
+        "uco-location": "https://unifiedcyberontology.org/ontology/uco/location#",
+        "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
+        "uco-tool": "https://unifiedcyberontology.org/ontology/uco/tool#",
+        "uco-types": "https://unifiedcyberontology.org/ontology/uco/types#",
+        "uco-vocabulary": "https://unifiedcyberontology.org/ontology/uco/vocabulary#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:bundle-5715fcf3-6bc8-4996-8f7f-fdf289f31649",
+            "@type": "uco-core:Bundle",
+            "uco-core:description": "Evidence in illegal trafficking of owls",
+            "uco-core:object": [
+                {
+                    "@id": "kb:investigation-555e5fbb-ba09-449d-af77-8a210d016fd7",
+                    "@type": "case-investigation:Investigation",
+                    "uco-core:name": "OWL_2017_0206001",
+                    "case-investigation:focus": "Illegal trafficking (owls)",
+                    "uco-core:description": "The subject mcavoy was arrested on suspicion of illegal trafficking of owls. His computer and smartphone were preserved as evidence.",
+                    "uco-core:object": [
+                        "(list of uuids)"
+                    ]
+                }
+            ]
+        }
+    ]
+}
+{% endhighlight %}
+
+<h3>INVESTIGATIVE ACTIONS</h3>
+<p>The provenance information provides an audit trail of forensic acquisition of data sources for traceability purposes. Which organization and/or individual generated the report using which tool, with general information about the investigation and evidential item entered by the user. The Android smartphone was retrieved and preserved as evidence on 6 February 2017 (physical extraction).</p>
+
+<h4>CASE Representation of Forensic Data Acquisition</h4>
+{% highlight json %}
+[
+    {
+        "@id": "kb:magnet-acquire2005412-83715215-c5fc-4231-99ff-29a3c51cb5f1",
+        "@type": "uco-tool:Tool",
+        "uco-core:name": "Magnet ACQUIRE",
+        "uco-tool:toolType": "Extraction",
+        "uco-tool:creator": "Magnet",
+        "uco-tool:version": "2.0.0.5412",
+        "uco-core:facets": [
+            {
+                "@type": "uco-tool:ToolConfigurationType",
+                "uco-tool:configurationSettings": [
+                    {
+                        "@type": "uco-tool:ConfigurationSettingType",
+                        "uco-tool:itemName": "DeviceInfoConnectionType",
+                        "uco-tool:itemValue": "Cable No. 10"
+                    },
+                    {
+                        "@type": "uco-tool:ConfigurationSettingType",
+                        "uco-tool:itemName": "ExtractionType",
+                        "uco-tool:itemValue": "Physical"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "@id": "kb:investigative-action-4d3778d9-8376-4277-9852-8e6bf926a5d1",
+        "@type": "case-investigation:InvestigativeAction",
+        "uco-core:name": "extracted",
+        "uco-action:startTime": {
+            "@type": "xsd:dateTime",
+            "@value": "2017-02-06T20:51:09.00Z"
+        },
+        "uco-action:endTime": {
+            "@type": "xsd:dateTime",
+            "@value": "2017-02-06T22:13:08.00Z"
+        },
+        "uco-core:facets": [
+            {
+                "@type": "uco-action:ActionReferences",
+                "uco-action:location": {
+                    "@id": "kb:lab-c44e4679-26e3-4585-aaa1-86110db936f8"
+                },
+                "uco-action:performer": {
+                    "@id": "kb:investigator-09fb01ce-999e-4521-bd3f-f7be69a63a43"
+                },
+                "uco-action:instrument": {
+                    "@id": "kb:magnet-acquire2005412-83715215-c5fc-4231-99ff-29a3c51cb5f1"
+                },
+                "uco-action:environment": {
+                    "@id": "kb:forensic-computer-2132063b-7753-4b51-b146-827e9a1d5037"
+                },
+                "uco-action:object": [
+                    {
+                        "@id": "kb:provenance-record-9bd9c456-5965-4782-8285-5fee34c8ddd2"
+                    },
+                    {
+                        "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168"
+                    }
+                ],
+                "uco-action:result": [
+                    {
+                        "@id": "kb:provenance-record2-37826ad6-9edc-493b-b130-c3378622263a"
+                    },
+                    {
+                        "@id": "kb:f3fd304e-ef6c-4cbd-94cb-425880f82748"
+                    }
+                ]
+            }
+        ]
+    }
+]
+{% endhighlight %}
+
+<div class="card">
+  <h5 class="card-header" id="query-imaging_action">Query - imaging action</h5>
+  <div class="card-body">
+    <p class="card-text">For the seized device, exhibit number <code>SD1</code>, when was it imaged?  Who imaged it?  What tool and tool version did they use?  What is the name of the resulting image file? (<a href="urgent_evidence-query-investigative_personae.sparql">SPARQL source</a>)</p>
+{% highlight sparql %}
+SELECT ?lDeviceExhibitNumber ?lImagingEndTime ?lOfficerName ?lToolName ?lToolVersion ?lImageFileName
+WHERE {
+  ?nImagingAction
+    a case-investigation:InvestigativeAction ;
+    uco-action:endTime ?lImagingEndTime ;
+    uco-core:facets ?nImagingActionReferences ;
+    .
+
+  ?nImagingActionReferences
+    a uco-action:ActionReferences ;
+    uco-action:instrument ?nImagingTool ;
+    uco-action:object ?nSubjectDeviceProvenanceRecord ;
+    uco-action:object ?nSubjectDevice ;
+    uco-action:performer ?nImagingPerformer ;
+    uco-action:result ?nImageFile ;
+    .
+
+  ?nSubjectDevice
+    a uco-observable:CyberItem ;
+    uco-core:facets ?nSubjectDeviceFacet ;
+    .
+
+  ?nSubjectDeviceFacet
+    a uco-observable:Device ;
+    .
+
+  ?nSubjectDeviceProvenanceRecord
+    a case-investigation:ProvenanceRecord ;
+    case-investigation:exhibitNumber ?lDeviceExhibitNumber ;
+    uco-core:object ?nSubjectDevice ;
+    .
+
+  ?nImagingPerformer
+    a uco-identity:Identity ;
+    uco-core:facets ?nImagingPerformerIdentityFacet ;
+    .
+
+  ?nImagingPerformerIdentityFacet
+    a uco-identity:SimpleName ;
+    uco-identity:familyName ?lOfficerName ;
+    .
+
+  ?nImagingTool
+    a uco-tool:Tool ;
+    uco-core:name ?lToolName ;
+    uco-tool:version ?lToolVersion ;
+    .
+
+  ?nImageFile
+    a uco-observable:CyberItem ;
+    uco-core:facets ?nImageFileFacet ;
+    .
+
+  ?nImageFileFacet
+    a uco-observable:File ;
+    uco-observable:fileName ?lImageFileName ;
+    .
+}
+{% endhighlight %}
+<table border="1" class="dataframe table table-bordered table-condensed">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>?lDeviceExhibitNumber</th>
+      <th>?lImagingEndTime</th>
+      <th>?lOfficerName</th>
+      <th>?lToolName</th>
+      <th>?lToolVersion</th>
+      <th>?lImageFileName</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>SD1</td>
+      <td>2017-02-06 22:13:08+00:00</td>
+      <td>Hoel</td>
+      <td>Magnet ACQUIRE</td>
+      <td>2.0.0.5412</td>
+      <td>LGE Nexus 5 Full Image.raw</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</div>
+
+<h3>EVIDENCE INTEGRITY</h3>
+<p>The integrity of digital evidence is verified by comparing the hash value(s) of the working copy with the documented hash value(s) computed when the data was originally extracted.</p>
+
+<h4>CASE Representation of Evidence Integrity Details</h4>
+{% highlight json %}
+[
+    {
+        "@id": "kb:investigator-09fb01ce-999e-4521-bd3f-f7be69a63a43",
+        "@type": "uco-identity:Identity",
+        "uco-core:facets": {
+            "@type": "uco-identity:SimpleName",
+            "uco-identity:familyName": "Hoel"
+        }
+    },
+    {
+        "@id": "kb:provenance-record-9bd9c456-5965-4782-8285-5fee34c8ddd2",
+        "@type": "case-investigation:ProvenanceRecord",
+        "case-investigation:exhibitNumber": "SD1",
+        "uco-core:description": "Smartphone used by subject",
+        "uco-core:object": [
+            {
+                "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168"
+            }
+        ]
+    },
+    {
+        "@id": "kb:provenance-record-b84dc6ca-6187-4fc3-b5f1-c15142b103a8",
+        "@type": "case-investigation:ProvenanceRecord",
+        "case-investigation:exhibitNumber": "MD1",
+        "uco-core:description": "Forensic duplicate of smartphone used by subject",
+        "uco-core:object": [
+            {
+                "@id": "kb:f3fd304e-ef6c-4cbd-94cb-425880f82748"
+            }
+        ]
+    },
+    {
+        "@id": "kb:f3fd304e-ef6c-4cbd-94cb-425880f82748",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:File",
+                "uco-observable:createdTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-06T20:51:09.00Z"
+                },
+                "uco-observable:extension": "raw",
+                "uco-observable:fileName": "LGE Nexus 5 Full Image.raw",
+                "uco-observable:fileSystemType": "NTFS",
+                "uco-observable:filePath": "C:\\Users\\cvance\\Desktop\\Owl Scenario - Full\\LGE Nexus 5 Full Image.raw",
+                "uco-observable:isDirectory": false,
+                "uco-observable:sizeInBytes": 31268536320
+            },
+            {
+                "@type": "uco-observable:ContentData",
+                "uco-observable:hash": [
+                    {
+                        "@type": "uco-types:Hash",
+                        "uco-types:hashMethod": {
+                            "@type": "uco-vocabulary:HashNameVocab",
+                            "@value": "MD5"
+                        },
+                        "uco-types:hashValue": {
+                            "@type": "xsd:hexBinary",
+                            "@value": "B334843A07A9E16494EEBDF3079E6BC6"
+                        }
+                    },
+                    {
+                        "@type": "uco-types:Hash",
+                        "uco-types:hashMethod": {
+                            "@type": "uco-vocabulary:HashNameVocab",
+                            "@value": "SHA1"
+                        },
+                        "uco-types:hashValue": {
+                            "@type": "xsd:hexBinary",
+                            "@value": "5506912AAC41534DC5AF12B51059D5880737AB5E"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
+{% endhighlight %}
+
+<h3>ACQUIRED DEVICE SUMMARY</h3>
+<p>The details of the smartphone and its contents.</p>
+<h4>A) Device</h4>
+<h5>CASE Representation of Android Device Properties</h5>
+{% highlight json %}
+[
+    {
+        "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:Device",
+                "uco-observable:manufacturer": "LGE",
+                "uco-observable:model": "Nexus 5",
+                "uco-observable:serialNumber": "08ebf545d00af782",
+                "drafting:brand": "Google",
+                "drafting:name": "hammerhead",
+                "drafting:encryptionEnabled": false
+            },
+            {
+                "@type": "drafting:AndroidDevice",
+                "drafting:androidID": "64cce130286b31b3",
+                "drafting:androidFingerprint": "lge\u2026"
+            },
+            {
+                "@type": "drafting:BootLoader",
+                "drafting:label": "HHZ20h",
+                "drafting:buildIdentifier": "M4B30Z",
+                "drafting:buildDate": "2016-11-03T20:03:42.00Z"
+            },
+            {
+                "@type": "uco-observable:MobileDevice",
+                "uco-observable:bluetoothDeviceName": "Nexus5",
+                "drafting:deviceActivationTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-01T14:31:30.00Z"
+                },
+                "drafting:advertisingID": "48500120-c9c5-402e-a6bc-04e2f92ae259",
+                "drafting:locationsServicesEnabled": true,
+                "uco-observable:keypadUnlockCode": "NULL",
+                "uco-observable:IMEI": "352584062438806",
+                "uco-observable:clockSetting": "2017-02-06T20:51:09.35Z",
+                "uco-observable:storageCapacityInBytes": {
+                    "@type": "xsd:long",
+                    "@value": 31268536320
+                }
+            },
+            {
+                "@type": "uco-observable:OperatingSystem",
+                "uco-core:name": "Android",
+                "uco-observable:manufacturer": "LGE",
+                "uco-observable:version": "6.0.1"
+            },
+            {
+                "@type": "uco-observable:WifiAddress",
+                "uco-observable:value": "34:4d:f7:54:20:bb"
+            },
+            {
+                "@type": "uco-observable:BluetoothAddress",
+                "uco-observable:value": "88:c9:d0:03:04:49"
+            },
+            {
+                "@type": "uco-observable:MobileAccount",
+                "uco-observable:MSISDN": "+13046388446"
+            }
+        ]
+    }
+]
+{% endhighlight %}
+
+<h4>B) SIM Cards</h4>
+<p>The current SIM card ICCID is <code>89014104279201697299</code>, as listed in the <code>siminfo</code> table of the <code>data/com.android.providers.telephony/databases/telephony.db</code> database, as well as in the <code>contacts2.db</code> database (<code>calls</code> table). Note: Observe IMSI traces in <code>system/netpolicy.xml</code> file.</p>
+{% highlight json %}
+[
+    {
+        "@id": "kb:simcard1-relationship-a1dbff0e-974b-4295-b035-e1bc3271945d",
+        "@type": "uco-observable:CyberRelationship",
+        "uco-core:source": {
+            "@id": "kb:simcard-24d20c80-f035-40ae-88dd-fc66f70180f6"
+        },
+        "uco-core:target": {
+            "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168"
+        },
+        "uco-core:kindOfRelationship": {
+            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@value": "Contained_Within"
+        },
+        "uco-core:startTime": {
+            "@type": "xsd:datetime",
+            "@value": "2017-00-00T12:34:56Z"
+        },
+        "uco-core:endTime": {
+            "@type": "xsd:dateTime",
+            "@value": "2017-02-06T20:00:00.00Z"
+        },
+        "uco-core:isDirectional": true
+    }
+]
+{% endhighlight %}
+
+<h5>CASE Representation of SIM Card Properties</h5>
+{% highlight json %}
+[
+    {
+        "@id": "kb:simcard-24d20c80-f035-40ae-88dd-fc66f70180f6",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:SIMCard",
+                "uco-observable:ICCID": "89014104279201697299",
+                "uco-observable:IMSI": {
+                    "@id": "kb:mobileaccount-4b3cdcbd-6a31-462f-be9b-1ca2944c8876"
+                },
+                "uco-observable:carrier": "AT&T"
+            }
+        ]
+    },
+    {
+        "@id": "kb:mobileaccount-4b3cdcbd-6a31-462f-be9b-1ca2944c8876",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:Account",
+                "uco-observable:accountType": {
+                    "@type": "uco-vocabulary:AccountTypeVocab",
+                    "@value": "phone"
+                },
+                "uco-observable:isActive": true
+            },
+            {
+                "@type": "uco-observable:MobileAccount",
+                "uco-observable:MSISDN": "+13046388446",
+                "uco-observable:IMSI": "310410920169729"
+            }
+        ]
+    },
+    {
+        "@id": "kb:sim-telephony-relationship-f7dfe5f0-e95a-4d0a-9d0e-8ed416e69587",
+        "@type": "uco-observable:CyberRelationship",
+        "uco-core:source": {
+            "@id": "kb:simcard-24d20c80-f035-40ae-88dd-fc66f70180f6"
+        },
+        "uco-core:target": {
+            "@id": "kb:telephony-cd52c3b8-7759-40b7-ae10-dfc90a35f644"
+        },
+        "uco-core:kindOfRelationship": {
+            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@value": "Contained_Within"
+        },
+        "uco-core:isDirectional": "True",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:DataRange",
+                "uco-observable:rangeOffset": "13751",
+                "uco-observable:rangeSize": "__NOT_PROVIDED"
+            },
+            {
+                "@type": "drafting:TableRelation",
+                "drafting:tableName": "siminfo"
+            }
+        ]
+    }
+]
+{% endhighlight %}
+
+<h4>C) Virtual Identities</h4>
+<p>The name and email address of the primary user of the device were obtained:</p>
+<p>Sarah Mcavoy, mcavoys87@gmail.com, with a phone number +13046388446 associated with a Facebook account.</p>
+<h5>CASE Representation of Users and Accounts</h5>
+{% highlight json %}
+[
+    {
+        "@id": "kb:primaryuser-d28a3fad-10a1-459c-9a1a-6aa07a04e76f",
+        "@type": "uco-identity:Identity",
+        "uco-core:facets": [
+            {
+                "@type": "uco-identity:SimpleName",
+                "uco-identity:givenName": "Sarah",
+                "uco-identity:familyName": "McAvoy"
+            }
+        ]
+    },
+    {
+        "@id": "kb:primaryuser-faceboook-cb34b068-324b-4162-a9e5-6c96879b061c",
+        "@type": "uco-observable:CyberRelationship",
+        "uco-core:source": {
+            "@id": "kb:primaryuser-d28a3fad-10a1-459c-9a1a-6aa07a04e76f"
+        },
+        "uco-core:target": {
+            "@id": "kb:email-account-99d72bac-8c21-11e9-8902-0c4de9c21b53"
+        },
+        "uco-core:kindOfRelationship": {
+            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@value": "Has_Account"
+        },
+        "uco-core:isDirectional": true
+    },
+    {
+        "@id": "kb:primaryuser-email-cb34b068-324b-4162-a9e5-6c96879b061c",
+        "@type": "uco-observable:CyberRelationship",
+        "uco-core:source": {
+            "@id": "kb:primaryuser-d28a3fad-10a1-459c-9a1a-6aa07a04e76f"
+        },
+        "uco-core:target": {
+            "@id": "kb:facebook-90652808-7341-40d3-9285-774d865ad3f9"
+        },
+        "uco-core:kindOfRelationship": {
+            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@value": "Has_Account"
+        },
+        "uco-core:isDirectional": true
+    },
+    {
+        "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:EmailAddress",
+                "uco-observable:value": "mcavoys87@gmail.com"
+            }
+        ]
+    },
+    {
+        "@id": "kb:email-account-99d72bac-8c21-11e9-8902-0c4de9c21b53",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:EmailAccount",
+                "uco-observable:emailAddress": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53"
+            },
+            {
+                "@type": "uco-observable:AccountAuthentication",
+                "uco-observable:password": "louisville!21"
+            }
+        ]
+    },
+    {
+        "@id": "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:Account",
+                "uco-observable:accountIssuer": "ATT",
+                "uco-observable:isActive": true
+            },
+            {
+                "@type": "uco-observable:PhoneAccount",
+                "uco-observable:phoneNumber": "+19014449108"
+            }
+        ]
+    },
+    {
+        "@id": "kb:associated-account-phonenumber-0307a497-f1fb-4af4-9877-90c56ee76fba",
+        "@type": "uco-observable:CyberRelationship",
+        "uco-core:source": {
+            "@id": "kb:90652808-7341-40d3-9285-774d865ad3f9"
+        },
+        "uco-core:target": {
+            "@id": "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1"
+        },
+        "uco-core:kindOfRelationship": {
+            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@value": "Associated_Account"
+        },
+        "uco-core:isDirectional": true
+    },
+    {
+        "@id": "kb:facebook-90652808-7341-40d3-9285-774d865ad3f9",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:Account",
+                "uco-observable:accountIssuer": {
+                    "@id": "kb:organization-facebook-fcb0d2ee-e681-4314-98c3-47fb2541aae9"
+                },
+                "uco-observable:accountIdentifier": "100015073810863",
+                "uco-observable:isActive": true
+            },
+            {
+                "@type": "uco-observable:ApplicationAccount",
+                "uco-observable:application": {
+                    "@id": "kb:application-facebook-25e8018f-49be-4898-bb1d-731e387e9eb7"
+                }
+            },
+            {
+                "@type": "uco-observable:DigitalAccount",
+                "uco-observable:displayName": "????"
+            }
+        ]
+    },
+    {
+        "@id": "kb:organization-facebook-fcb0d2ee-e681-4314-98c3-47fb2541aae9",
+        "@type": "uco-identity:Identity",
+        "uco-core:facets": [
+            {
+                "@type": "uco-identity:Organization",
+                "drafting:orgName": "Facebook"
+            }
+        ]
+    },
+    {
+        "@id": "kb:application-facebook-25e8018f-49be-4898-bb1d-731e387e9eb7",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:Application",
+                "drafting:appName": "Facebook"
+            }
+        ]
+    }
+]
+{% endhighlight %}
+
+<p>Files that contain each <code>ObservableObject</code> can be represented using CASE and the <code>Relationship</code> object:</p>
+{% highlight json %}
+[
+    {
+        "@id": "kb:accounts-9999c405-9326-4f28-9b8d-44a3bb9e9999",
+        "@type": "uco-observable:CyberRelationship",
+        "uco-core:source": {
+            "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53"
+        },
+        "uco-core:target": {
+            "@id": "kb:accountsxml-16805dff-05f9-4cba-9266-d5fa712f3d8f"
+        },
+        "uco-core:kindOfRelationship": {
+            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@value": "Contained_Within"
+        },
+        "uco-core:isDirectional": true,
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:DataRange",
+                "uco-observable:rangeOffset": 352,
+                "uco-observable:rangeSize": 20
+            }
+        ]
+    },
+    {
+        "@id": "kb:accountsxml-16805dff-05f9-4cba-9266-d5fa712f3d8f",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:File",
+                "uco-observable:fileName": "accounts.xml",
+                "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/data/com.google.android.gms/shared_prefs/accounts.xml",
+                "uco-observable:extension": ".xml",
+                "uco-observable:isDirectory": false,
+                "uco-observable:allocationStatus": "allocated",
+                "uco-observable:sizeInBytes": 891,
+                "uco-observable:createdTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-01T03:12:19.00Z"
+                },
+                "uco-observable:modifiedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-01T03:12:19.00Z"
+                }
+            }
+        ]
+    },
+    {
+        "@id": "kb:accounts-9999999-9326-4f28-9b8d-44a3b9999999",
+        "@type": "uco-observable:CyberRelationship",
+        "uco-core:source": {
+            "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53"
+        },
+        "uco-core:target": {
+            "@id": "kb:accountsdb-99995dff-05f9-4cba-9266-d5fa712f9999"
+        },
+        "uco-core:kindOfRelationship": {
+            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@value": "Contained_Within"
+        },
+        "uco-core:isDirectional": true,
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:DataRange",
+                "uco-observable:rangeOffset": 16272,
+                "uco-observable:rangeSize": 20
+            }
+        ]
+    },
+    {
+        "@id": "kb:accountsdb-99995dff-05f9-4cba-9266-d5fa712f9999",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:File",
+                "uco-observable:fileName": "accounts.db",
+                "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/system/users/0/accounts.db",
+                "uco-observable:extension": ".db",
+                "uco-observable:isDirectory": false,
+                "uco-observable:allocationStatus": "allocated",
+                "uco-observable:sizeInBytes": 159744,
+                "uco-observable:createdTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-06T21:03:08.00Z"
+                },
+                "uco-observable:modifiedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-06T21:03:08.00Z"
+                }
+            }
+        ]
+    }
+]
+{% endhighlight %}
+
+<p>A Skype account "<code>live:mcavoys87</code>" in the file <code>/data/com.skype.raider/files/shared.xml</code>.</p>
+{% highlight json %}
+[
+    {
+        "@id": "kb:skype-99992808-7341-40d3-9285-774d865a9999",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:Account",
+                "uco-observable:accountIssuer": {
+                    "@id": "kb:organization-skypeapp-cc44c2ae-bdd3-4df8-9ca3-1f58d682d62b"
+                },
+                "uco-observable:accountIdentifier": "mcavoys87",
+                "uco-observable:isActive": true
+            }
+        ]
+    }
+]
+{% endhighlight %}
+
+<p>In addition, a text.app account was extracted from the <code>/media/0/Android/data/com.enflick.android.TextNow/cache/log_logcat.txt</code> file.</p>
+{% highlight json %}
+[
+    {
+        "@id": "kb:textapp-90652808-7341-40d3-9285-774d865ad3f9",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:Account",
+                "uco-observable:accountIssuer": {
+                    "@id": "kb:organization-textapp-cc44c2ae-bdd3-4df8-9ca3-1f58d682d62b"
+                },
+                "uco-observable:accountIdentifier": "mcavoy287",
+                "uco-observable:isActive": true
+            },
+            {
+                "@type": "uco-observable:DigitalAccount",
+                "uco-observable:displayName": "NULL",
+                "uco-observable:accountLogin": "mcavoy287",
+                "uco-observable:firstLoginTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-01-30T19:00:31Z"
+                }
+            },
+            {
+                "@type": "uco-observable:AccountAuthentication",
+                "uco-observable:password": "huntington*32"
+            }
+        ]
+    },
+    {
+        "@id": "kb:LoginData-c316c405-9326-4f28-9b8d-44a3bb9e7283",
+        "@type": "uco-observable:CyberRelationship",
+        "uco-core:source": {
+            "@id": "kb:textapp-90652808-7341-40d3-9285-774d865ad3f9"
+        },
+        "uco-core:target": {
+            "@id": "kb:textapplogcat-16805dff-05f9-4cba-9266-d5fa712f3d8f"
+        },
+        "uco-core:kindOfRelationship": {
+            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@value": "Contained_Within"
+        },
+        "uco-core:isDirectional": true,
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:DataRange",
+                "uco-observable:rangeOffset": 2704,
+                "uco-observable:rangeSize": 9
+            }
+        ]
+    }
+]
+{% endhighlight %}
+
+<h3>OBSERVABLE OBJECTS</h3>
+<p>Representing extracted cyber-investigation information while maintaining the chain of evidence for provenance and traceability purposes.</p>
+
+<h4>CASE Representation of Partition within Forensic Duplicate</h4>
+<p>(Values obtained using Autopsy)</p>
+{% highlight json %}
+[
+    {
+        "@id": "kb:partition-87d669fc-8ab9-47c6-a66d-af09d73361d5",
+        "@type": "uco-observable:CyberRelationship",
+        "uco-core:source": {
+            "@id": "kb:userdata-partition-d94cd1b5-5cf7-4642-8927-5ebea573d68e"
+        },
+        "uco-core:target": {
+            "@id": "kb:f3fd304e-ef6c-4cbd-94cb-425880f82748"
+        },
+        "uco-core:kindOfRelationship": {
+            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@value": "Contained_Within"
+        },
+        "uco-core:isDirectional": true,
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:DataRange",
+                "uco-observable:rangeOffset": 2032140288,
+                "uco-observable:rangeSize": {
+                    "@type": "xsd:long",
+                    "@value": 29236373504
+                }
+            }
+        ]
+    }
+]
+{% endhighlight %}
+
+<h4>A) File System</h4>
+<p>The location of the file system within the forensic duplicate, to maintain the provenance and traceability of extracted results.</p>
+<h5>CASE Representation of File System within the UserData Partition</h5>
+<p>(Values obtained using Autopsy)</p>
+{% highlight json %}
+[
+    {
+        "@id": "kb:filesystem-e2a02b5a-7e7e-489f-ab43-3ffadab4ac82",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:DiskPartition",
+                "uco-observable:diskPartitionType": "GPT",
+                "uco-observable:partitionID": "31",
+                "uco-observable:partitionOffset": {
+                    "@type": "xsd:long",
+                    "@value": 2032140288
+                },
+                "uco-observable:partitionLength": {
+                    "@type": "xsd:long",
+                    "@value": 29236373504
+                }
+            },
+            {
+                "@type": "uco-observable:FileSystem",
+                "uco-observable:fileSystemType": "EXT4"
+            },
+            {
+                "@type": "uco-observable:ContentData",
+                "uco-observable:hash": [
+                    {
+                        "@type": "uco-types:Hash",
+                        "uco-types:hashMethod": {
+                            "@type": "uco-vocabulary:HashNameVocab",
+                            "@value": "MD5"
+                        },
+                        "uco-types:hashValue": {
+                            "@type": "xsd:hexBinary",
+                            "@value": "dcd09547af64f6362400adb68f87032c"
+                        }
+                    },
+                    {
+                        "@type": "uco-types:Hash",
+                        "uco-types:hashMethod": {
+                            "@type": "uco-vocabulary:HashNameVocab",
+                            "@value": "SHA256"
+                        },
+                        "uco-types:hashValue": {
+                            "@type": "xsd:hexBinary",
+                            "@value": "08b1a2961b341411702c36e86adb143603abbf95"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
+{% endhighlight %}
+
+<h4>B) File in File System</h4>
+<h5>CASE Representation</h5>
+{% highlight json %}
+[
+    {
+        "@id": "kb:filesystem-relationship-f64f857e-6c87-417f-9166-5aaaed8a6fd2",
+        "@type": "uco-observable:CyberRelationship",
+        "uco-core:source": {
+            "@id": "kb:downloaded-file-3961dae3-2bca-4ccb-97fd-9919192e81db"
+        },
+        "uco-core:target": {
+            "@id": "kb:filesystem-e2a02b5a-7e7e-489f-ab43-3ffadab4ac82"
+        },
+        "uco-core:kindOfRelationship": {
+            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@value": "Contained_Within"
+        },
+        "uco-core:isDirectional": true,
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:PathRelation",
+                "uco-observable:path": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/media/0/Download/download.jpg"
+            }
+        ]
+    }
+]
+{% endhighlight %}
+
+<h4>C) File</h4>
+<h5>CASE Representation</h5>
+{% highlight json %}
+[
+    {
+        "@id": "kb:downloaded-file-3961dae3-2bca-4ccb-97fd-9919192e81db",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:tag": [
+            "Picture",
+            "Owl"
+        ],
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:File",
+                "uco-observable:fileName": "download.jpg",
+                "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/media/0/Download/download.jpg",
+                "drafting:fileLocalPath": "files/image/download.jpg",
+                "uco-observable:extension": ".jpg",
+                "uco-observable:isDirectory": false,
+                "uco-observable:allocationStatus": "allocated",
+                "uco-observable:sizeInBytes": 10704,
+                "uco-observable:createdTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-03T17:19:26.00Z"
+                },
+                "uco-observable:modifiedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-03T17:19:26.00Z"
+                },
+                "uco-observable:accessedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-03T17:19:26.00Z"
+                }
+            },
+            {
+                "@type": "uco-observable:ExtInode",
+                "uco-observable:extInodeID": 1344287,
+                "uco-observable:extSGID": 1023,
+                "uco-observable:extSUID": 1023,
+                "uco-observable:extHardLinkCount": 1,
+                "uco-observable:extPermissions": 664,
+                "uco-observable:extInodeChangeTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-03T17:19:26.00Z"
+                }
+            },
+            {
+                "@type": "uco-observable:ContentData",
+                "uco-observable:hash": [
+                    {
+                        "@type": "uco-types:Hash",
+                        "uco-types:hashMethod": {
+                            "@type": "uco-vocabulary:HashNameVocab",
+                            "@value": "MD5"
+                        },
+                        "uco-types:hashValue": "70e5be834b3ba41b853f281a5c59a93b"
+                    }
+                ]
+            }
+        ]
+    }
+]
+{% endhighlight %}
+<p>Note: EXIF metadata is represented using properties specified in the standard (<a href="https://www.exif.org/Exif2-2.PDF">https://www.exif.org/Exif2-2.PDF</a>).
+
+<h4>D) Deleted File/Directory</h4>
+<h5>CASE Representation</h5>
+{% highlight json %}
+[
+    {
+        "@id": "kb:downloaded-directory-9999dae3-2bca-4ccb-97fd-9919192e9999",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:File",
+                "uco-observable:fileName": "IMG_20170203_121618.jpg",
+                "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/media/0/DCIM/Camera/IMG_20170203_121618.jpg",
+                "drafting:fileLocalPath": "files/image/IMG_20170203_121618.jpg",
+                "uco-observable:extension": ".jpg",
+                "uco-observable:isDirectory": true,
+                "uco-observable:allocationStatus": "unallocated",
+                "uco-observable:sizeInBytes": 4096,
+                "uco-observable:createdTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-03T17:22:30.00Z"
+                },
+                "uco-observable:modifiedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-03T17:22:30.00Z"
+                },
+                "uco-observable:accessedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-03T17:22:30.00Z"
+                }
+            },
+            {
+                "@type": "uco-observable:ExtInode",
+                "uco-observable:extInodeID": 1351746,
+                "uco-observable:extSGID": 1023,
+                "uco-observable:extSUID": 1023,
+                "uco-observable:extHardLinkCount": 1,
+                "uco-observable:extPermissions": 755,
+                "uco-observable:extInodeChangeTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-03T17:22:30.00Z"
+                }
+            },
+            {
+                "@type": "drafting:UnallocatedRecoverability",
+                "drafting:nameStatus": "recoverable",
+                "drafting:metadataStatus": "recoverable",
+                "drafting:contentStatus": "unrecoverable"
+            }
+        ]
+    }
+]
+{% endhighlight %}
+
+<h4>E) Messages</h4>
+<p>The user contacts another user who can provide an owl in exchange for cash.  An owl is decided upon, and an exchange is scheduled.  After the exchange, a communication message is sent confirming the owl purchase has been completed.</p>
+<h5>CASE Representation of Text Message</h5>
+{% highlight json %}
+[
+    {
+        "@id": "kb:sms-message-2c032220-8c21-11e9-9c99-0c4de9c21b53",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:Message",
+                "uco-observable:application": {
+                    "@id": "kb:message-9999898c-0178-4534-8107-caea0a0f9999"
+                },
+                "uco-observable:sentTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-01T00:41:15.00Z"
+                },
+                "uco-observable:messageText": "Sarah, the delivery is today 7 tonight the confirmation will come later through pidgin",
+                "drafting:allocationStatus": "unallocated",
+                "uco-observable:from": "kb:9999237a-6d7f-4e96-bbef-6eb4c0a69999",
+                "uco-observable:to": [
+                    "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1"
+                ]
+            }
+        ]
+    },
+    {
+        "@id": "kb:9999237a-6d7f-4e96-bbef-6eb4c0a69999",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:Account",
+                "uco-observable:accountIssuer": "ATT",
+                "uco-observable:isActive": true
+            },
+            {
+                "@type": "uco-observable:PhoneAccount",
+                "uco-observable:phoneNumber": "+13045184333"
+            }
+        ]
+    }
+]
+{% endhighlight %}
+
+<h5>CASE Representation of Message within database container</h5>
+<p>NOTE: SMS message is contained in the file <code>/data/com.android.providers.telephony/databases/mmssms.db-journal</code> (offset=2560, table=sms).</p>
+<p>[see proposed relationship object]</p>
+{% highlight json %}
+[
+    {
+        "@id": "kb:message-database-relationship-uuid",
+        "@type": "uco-observable:CyberRelationship",
+        "uco-core:source": {
+            "@id": "kb:sms-message-2c032220-8c21-11e9-9c99-0c4de9c21b53"
+        },
+        "uco-core:target": {
+            "@id": "kb:mmssmsdb-journalfile-uuid"
+        },
+        "uco-core:kindOfRelationship": {
+            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@value": "Contained_Within"
+        },
+        "uco-core:isDirectional": true,
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:DataRange",
+                "uco-observable:rangeOffset": "2560",
+                "uco-observable:rangeSize": "96"
+            },
+            {
+                "@type": "drafting:TableRelation",
+                "drafting:tableName": "sms"
+            }
+        ]
+    }
+]
+{% endhighlight %}
+
+<h5>CASE Representation of Skype Message</h5>
+{% highlight json %}
+[
+    {
+        "@id": "kb:skypemsg-eafca388-f926-4d48-864d-1bfdd3a2ba7f",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:Message",
+                "uco-observable:messageText": "Hey Matt thanks for the hook up",
+                "uco-observable:application": {
+                    "@id": "kb:skypeapp-a6b73e78-00da-11eb-a396-acde48001122"
+                },
+                "uco-observable:sentTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-01-30T19:15:25.00Z"
+                },
+                "uco-observable:from": "kb:skype-99992808-7341-40d3-9285-774d865a9999",
+                "uco-observable:to": [
+                    "kb:externalaccount-8976b508-80e5-4442-af1c-637d3b09240e"
+                ],
+                "drafting:allocationStatus": "allocated",
+                "uco-observable:messageType": "incoming"
+            }
+        ]
+    }
+]
+{% endhighlight %}
+
+<!--[TODO: Add Account object for recipient]-->
+
+<h4>F) URL History</h4>
+<h5>CASE Representation</h5>
+{% highlight json %}
+[
+    {
+        "@id": "kb:url-history-39ff4987-8ae5-47e3-8369-dbd0d5f79398",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "drafting:URLHistory",
+                "drafting:browserInformation": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38",
+                "drafting:urlHistoryEntry": [
+                    {
+                        "drafting:firstVisit": {
+                            "@type": "xsd:dateTime",
+                            "@value": "2017-01-25T02:20:22.00Z"
+                        },
+                        "drafting:lastVisit": {
+                            "@type": "xsd:dateTime",
+                            "@value": "2017-01-25T02:20:22.00Z"
+                        },
+                        "drafting:expiration": "NULL",
+                        "drafting:userProfile": "kb:profile-account-857c7f17-2f6b-4618-aeca-50d79fa69b97",
+                        "uco-observable:url": "kb:url-b7906534-0483-4cf4-979c-5351916602ed",
+                        "drafting:referrerUrl": "NULL",
+                        "drafting:pageTitle": "Where can you find baby owls for sale? Are owls legal to keep as pets? - Quora",
+                        "uco-observable:visitCount": 2,
+                        "drafting:manuallyEnteredCount": 0,
+                        "uco-observable:keywordSearchTerm": null
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "@id": "kb:url-b7906534-0483-4cf4-979c-5351916602ed",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:URL",
+                "uco-observable:fullValue": "https://www.quora.com/Where-can-you-find-baby-owls-for-sale-Are-owls-legal-to-keep-as-pets"
+            }
+        ]
+    },
+    {
+        "@id": "kb:bfe049a6-fa3f-4bf6-9c37-9b09cc6afe6b",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:tag": [
+            "Database"
+        ],
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:File",
+                "uco-observable:fileName": "History",
+                "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/data/com.android.chrome/app_chrome/Default/History",
+                "drafting:fileLocalPath": "files/Database/History",
+                "uco-observable:extension": "NULL",
+                "uco-observable:isDirectory": false,
+                "uco-observable:sizeInBytes": "176128",
+                "uco-observable:createdTime": "2017-01-25T01:10:45.00Z",
+                "uco-observable:modifiedTime": "2017-02-03T17:22:29.00Z",
+                "uco-observable:accessedTime": "2017-01-25T01:10:45.00Z"
+            },
+            {
+                "@type": "uco-observable:ExtInode",
+                "uco-observable:extInodeID": 1483050,
+                "uco-observable:extSGID": 10034,
+                "uco-observable:extSUID": 10034,
+                "uco-observable:extInodeChangeTime": "2017-02-03T17:22:29.00Z"
+            },
+            {
+                "@type": "uco-observable:ContentData",
+                "uco-observable:hash": [
+                    {
+                        "@type": "uco-types:Hash",
+                        "uco-types:hashMethod": {
+                            "@type": "uco-vocabulary:HashNameVocab",
+                            "@value": "MD5"
+                        },
+                        "uco-types:hashValue": {
+                            "@type": "xsd:hexBinary",
+                            "@value": "42ecb5615ad2778968c295c0a1b0837b"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "@id": "kb:2af6fcf3-91d3-4457-9333-abab67f8fb91",
+        "@type": "uco-observable:CyberRelationship",
+        "uco-core:source": {
+            "@id": "kb:url-history-39ff4987-8ae5-47e3-8369-dbd0d5f79398"
+        },
+        "uco-core:target": {
+            "@id": "kb:bfe049a6-fa3f-4bf6-9c37-9b09cc6afe6b"
+        },
+        "uco-core:isDirectional": true,
+        "uco-core:kindOfRelationship": {
+            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@value": "Contained_Within"
+        },
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:DataRange",
+                "uco-observable:rangeOffset": 100832,
+                "uco-observable:rangeSize": "176"
+            },
+            {
+                "@type": "drafting:TableRelation",
+                "drafting:tableName": "urls"
+            }
+        ]
+    }
+]
+{% endhighlight %}
+
+<h4>G) Location</h4>
+<p>Geolocation coordinates found in file <code>/data/com.google.android.apps.maps/shared_prefs/camera.xml</code>.</p>
+<h5>CASE Representation</h5>
+{% highlight json %}
+[
+    {
+        "@id": "kb:latlong-8667ec82-8c21-11e9-934e-0c4de9c21b53",
+        "@type": "uco-location:Location",
+        "uco-core:facets": {
+            "@type": "uco-location:LatLongCoordinates",
+            "uco-location:latitude": 38.423756,
+            "uco-location:longitude": -82.43619,
+            "uco-location:altitude": null
+        }
+    },
+    {
+        "@id": "kb:cameralocation-relationship-uuid",
+        "@type": "uco-observable:CyberRelationship",
+        "uco-core:source": {
+            "@id": "kb:latlong-8667ec82-8c21-11e9-934e-0c4de9c21b53"
+        },
+        "uco-core:target": {
+            "@id": "kb:camera-xml-uuid"
+        },
+        "uco-core:kindOfRelationship": {
+            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@value": "Contained_Within"
+        },
+        "uco-core:isDirectional": true
+    }
+]
+{% endhighlight %}

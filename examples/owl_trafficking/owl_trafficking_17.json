@@ -1,0 +1,25 @@
+[
+    {
+        "@id": "kb:skypemsg-eafca388-f926-4d48-864d-1bfdd3a2ba7f",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:Message",
+                "uco-observable:messageText": "Hey Matt thanks for the hook up",
+                "uco-observable:application": {
+                    "@id": "kb:skypeapp-a6b73e78-00da-11eb-a396-acde48001122"
+                },
+                "uco-observable:sentTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-01-30T19:15:25.00Z"
+                },
+                "uco-observable:from": "kb:skype-99992808-7341-40d3-9285-774d865a9999",
+                "uco-observable:to": [
+                    "kb:externalaccount-8976b508-80e5-4442-af1c-637d3b09240e"
+                ],
+                "drafting:allocationStatus": "allocated",
+                "uco-observable:messageType": "incoming"
+            }
+        ]
+    }
+]

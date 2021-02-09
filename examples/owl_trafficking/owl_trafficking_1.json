@@ -1,0 +1,73 @@
+[
+    {
+        "@id": "kb:magnet-acquire2005412-83715215-c5fc-4231-99ff-29a3c51cb5f1",
+        "@type": "uco-tool:Tool",
+        "uco-core:name": "Magnet ACQUIRE",
+        "uco-tool:toolType": "Extraction",
+        "uco-tool:creator": "Magnet",
+        "uco-tool:version": "2.0.0.5412",
+        "uco-core:facets": [
+            {
+                "@type": "uco-tool:ToolConfigurationType",
+                "uco-tool:configurationSettings": [
+                    {
+                        "@type": "uco-tool:ConfigurationSettingType",
+                        "uco-tool:itemName": "DeviceInfoConnectionType",
+                        "uco-tool:itemValue": "Cable No. 10"
+                    },
+                    {
+                        "@type": "uco-tool:ConfigurationSettingType",
+                        "uco-tool:itemName": "ExtractionType",
+                        "uco-tool:itemValue": "Physical"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "@id": "kb:investigative-action-4d3778d9-8376-4277-9852-8e6bf926a5d1",
+        "@type": "case-investigation:InvestigativeAction",
+        "uco-core:name": "extracted",
+        "uco-action:startTime": {
+            "@type": "xsd:dateTime",
+            "@value": "2017-02-06T20:51:09.00Z"
+        },
+        "uco-action:endTime": {
+            "@type": "xsd:dateTime",
+            "@value": "2017-02-06T22:13:08.00Z"
+        },
+        "uco-core:facets": [
+            {
+                "@type": "uco-action:ActionReferences",
+                "uco-action:location": {
+                    "@id": "kb:lab-c44e4679-26e3-4585-aaa1-86110db936f8"
+                },
+                "uco-action:performer": {
+                    "@id": "kb:investigator-09fb01ce-999e-4521-bd3f-f7be69a63a43"
+                },
+                "uco-action:instrument": {
+                    "@id": "kb:magnet-acquire2005412-83715215-c5fc-4231-99ff-29a3c51cb5f1"
+                },
+                "uco-action:environment": {
+                    "@id": "kb:forensic-computer-2132063b-7753-4b51-b146-827e9a1d5037"
+                },
+                "uco-action:object": [
+                    {
+                        "@id": "kb:provenance-record-9bd9c456-5965-4782-8285-5fee34c8ddd2"
+                    },
+                    {
+                        "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168"
+                    }
+                ],
+                "uco-action:result": [
+                    {
+                        "@id": "kb:provenance-record2-37826ad6-9edc-493b-b130-c3378622263a"
+                    },
+                    {
+                        "@id": "kb:f3fd304e-ef6c-4cbd-94cb-425880f82748"
+                    }
+                ]
+            }
+        ]
+    }
+]
