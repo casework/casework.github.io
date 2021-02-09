@@ -2,7 +2,7 @@
     {
         "@id": "kb:url-history-39ff4987-8ae5-47e3-8369-dbd0d5f79398",
         "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "drafting:URLHistory",
                 "drafting:browserInformation": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38",
@@ -32,7 +32,7 @@
     {
         "@id": "kb:url-b7906534-0483-4cf4-979c-5351916602ed",
         "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:URL",
                 "uco-observable:fullValue": "https://www.quora.com/Where-can-you-find-baby-owls-for-sale-Are-owls-legal-to-keep-as-pets"
@@ -45,7 +45,7 @@
         "uco-core:tag": [
             "Database"
         ],
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:File",
                 "uco-observable:fileName": "History",
@@ -97,7 +97,7 @@
             "@type": "uco-vocabulary:CyberItemRelationshipVocab",
             "@value": "Contained_Within"
         },
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DataRange",
                 "uco-observable:rangeOffset": 100832,

@@ -2,7 +2,7 @@
     {
         "@id": "kb:primaryuser-d28a3fad-10a1-459c-9a1a-6aa07a04e76f",
         "@type": "uco-identity:Identity",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-identity:SimpleName",
                 "uco-identity:givenName": "Sarah",
@@ -43,7 +43,7 @@
     {
         "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53",
         "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:EmailAddress",
                 "uco-observable:value": "mcavoys87@gmail.com"
@@ -53,7 +53,7 @@
     {
         "@id": "kb:email-account-99d72bac-8c21-11e9-8902-0c4de9c21b53",
         "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:EmailAccount",
                 "uco-observable:emailAddress": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53"
@@ -67,7 +67,7 @@
     {
         "@id": "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1",
         "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:Account",
                 "uco-observable:accountIssuer": "ATT",
@@ -97,7 +97,7 @@
     {
         "@id": "kb:facebook-90652808-7341-40d3-9285-774d865ad3f9",
         "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:Account",
                 "uco-observable:accountIssuer": {
@@ -121,7 +121,7 @@
     {
         "@id": "kb:organization-facebook-fcb0d2ee-e681-4314-98c3-47fb2541aae9",
         "@type": "uco-identity:Identity",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-identity:Organization",
                 "drafting:orgName": "Facebook"
@@ -131,7 +131,7 @@
     {
         "@id": "kb:application-facebook-25e8018f-49be-4898-bb1d-731e387e9eb7",
         "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:Application",
                 "drafting:appName": "Facebook"

@@ -103,7 +103,7 @@ WHERE
 {
   ?nAction
     a case-investigation:InvestigativeAction ;
-    uco-core:facets ?nActionReferences ;
+    uco-core:hasFacet ?nActionReferences ;
     uco-core:description ?lDescription ;
     .
 
@@ -218,7 +218,7 @@ WHERE
 {
   ?nAction
     a case-investigation:InvestigativeAction ;
-    uco-core:facets [
+    uco-core:hasFacet [
       a uco-action:ActionReferences ;
       uco-action:location ?nLocation ;
     ] ;
@@ -227,7 +227,7 @@ WHERE
   ?nLocation
     a uco-location:Location ;
     uco-core:description ?lDescription ;
-    uco-core:facets [
+    uco-core:hasFacet [
       a uco-location:SimpleAddress ;
       drafting:roomId ?lRoomId ;
     ]
@@ -295,7 +295,7 @@ WHERE
   # Then, look up the people that produced other provenance records for this device.
   ?nInvestigativeAction
     a case-investigation:InvestigativeAction ;
-    uco-core:facets ?nActionReferences ;
+    uco-core:hasFacet ?nActionReferences ;
     .
 
   ?nActionReferences
@@ -313,7 +313,7 @@ WHERE
 
   ?nPerformer
     a uco-identity:Identity ;
-    uco-core:facets ?nSimpleName ;
+    uco-core:hasFacet ?nSimpleName ;
     .
 
   ?nSimpleName
@@ -370,12 +370,12 @@ WHERE {
     WHERE {
       ?nPictureFile
         a uco-observable:CyberItem ;
-        uco-core:facets ?nRasterPictureFacet ;
+        uco-core:hasFacet ?nRasterPictureFacet ;
         .
 
       ?nInvestigativeAction
         a case-investigation:InvestigativeAction ;
-        uco-core:facets ?nActionReferencesFacet ;
+        uco-core:hasFacet ?nActionReferencesFacet ;
         .
 
       ?nActionReferencesFacet
@@ -417,7 +417,7 @@ WHERE {
         WHERE {
           ?nExhibitDevice
             a uco-observable:CyberItem ;
-            uco-core:facets ?nDeviceFacet ;
+            uco-core:hasFacet ?nDeviceFacet ;
             .
 
           ?nDeviceFacet
@@ -450,8 +450,8 @@ WHERE {
   # which files.
 
   ?nPictureFile
-    uco-core:facets ?nContentDataFacet ;
-    uco-core:facets ?nFileFacet ;
+    uco-core:hasFacet ?nContentDataFacet ;
+    uco-core:hasFacet ?nFileFacet ;
     .
 
   ?nContentDataFacet

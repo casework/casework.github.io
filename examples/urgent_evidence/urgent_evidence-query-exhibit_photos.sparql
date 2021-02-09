@@ -15,12 +15,12 @@ WHERE {
     WHERE {
       ?nPictureFile
         a uco-observable:CyberItem ;
-        uco-core:facets ?nRasterPictureFacet ;
+        uco-core:hasFacet ?nRasterPictureFacet ;
         .
 
       ?nInvestigativeAction
         a case-investigation:InvestigativeAction ;
-        uco-core:facets ?nActionReferencesFacet ;
+        uco-core:hasFacet ?nActionReferencesFacet ;
         .
 
       ?nActionReferencesFacet
@@ -62,7 +62,7 @@ WHERE {
         WHERE {
           ?nExhibitDevice
             a uco-observable:CyberItem ;
-            uco-core:facets ?nDeviceFacet ;
+            uco-core:hasFacet ?nDeviceFacet ;
             .
 
           ?nDeviceFacet
@@ -95,8 +95,8 @@ WHERE {
   # which files.
 
   ?nPictureFile
-    uco-core:facets ?nContentDataFacet ;
-    uco-core:facets ?nFileFacet ;
+    uco-core:hasFacet ?nContentDataFacet ;
+    uco-core:hasFacet ?nFileFacet ;
     .
 
   ?nContentDataFacet

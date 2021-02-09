@@ -3,7 +3,7 @@ WHERE
 {
   ?nAction
     a case-investigation:InvestigativeAction ;
-    uco-core:facets ?nActionReferences ;
+    uco-core:hasFacet ?nActionReferences ;
     uco-core:description ?lDescription ;
     .
 

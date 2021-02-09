@@ -2,7 +2,7 @@
     {
         "@id": "kb:skype-99992808-7341-40d3-9285-774d865a9999",
         "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:Account",
                 "uco-observable:accountIssuer": {

@@ -3,7 +3,7 @@ WHERE {
   ?nImagingAction
     a case-investigation:InvestigativeAction ;
     uco-action:endTime ?lImagingEndTime ;
-    uco-core:facets ?nImagingActionReferences ;
+    uco-core:hasFacet ?nImagingActionReferences ;
     .
 
   ?nImagingActionReferences
@@ -17,7 +17,7 @@ WHERE {
 
   ?nSubjectDevice
     a uco-observable:CyberItem ;
-    uco-core:facets ?nSubjectDeviceFacet ;
+    uco-core:hasFacet ?nSubjectDeviceFacet ;
     .
 
   ?nSubjectDeviceFacet
@@ -32,7 +32,7 @@ WHERE {
 
   ?nImagingPerformer
     a uco-identity:Identity ;
-    uco-core:facets ?nImagingPerformerIdentityFacet ;
+    uco-core:hasFacet ?nImagingPerformerIdentityFacet ;
     .
 
   ?nImagingPerformerIdentityFacet
@@ -48,7 +48,7 @@ WHERE {
 
   ?nImageFile
     a uco-observable:CyberItem ;
-    uco-core:facets ?nImageFileFacet ;
+    uco-core:hasFacet ?nImageFileFacet ;
     .
 
   ?nImageFileFacet

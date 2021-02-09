@@ -12,7 +12,7 @@ WHERE
   # Then, look up the people that produced other provenance records for this device.
   ?nInvestigativeAction
     a case-investigation:InvestigativeAction ;
-    uco-core:facets ?nActionReferences ;
+    uco-core:hasFacet ?nActionReferences ;
     .
 
   ?nActionReferences
@@ -30,7 +30,7 @@ WHERE
 
   ?nPerformer
     a uco-identity:Identity ;
-    uco-core:facets ?nSimpleName ;
+    uco-core:hasFacet ?nSimpleName ;
     .
 
   ?nSimpleName

@@ -21,7 +21,7 @@
         {
             "@id": "kb:authorization-79D6AB60-D679-49CE-9573-7176DFEEB7C3",
             "@type": "case-investigation:Authorization",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "case-investigation:Authorization",
                     "case-investigation:authorizationType": "Odin_Decree",

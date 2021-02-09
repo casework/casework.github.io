@@ -7,7 +7,7 @@
             "@type": "xsd:dateTime",
             "@value": "2019-03-30T22:36:24.35Z"
         },
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:instrument": {
@@ -45,7 +45,7 @@
     {
         "@id": "kb:suspect-device-uuid",
         "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DeviceFacet",
                 "uco-observable:manufacturer": "Apple",

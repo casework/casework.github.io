@@ -2,7 +2,7 @@
     {
         "@id": "kb:sms_message1",
         "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:MessageFacet",
                 "uco-observable:application": {
@@ -27,7 +27,7 @@
     {
         "@id": "kb:phone_call1",
         "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:PhoneCallFacet",
                 "uco-observable:callType": "mobile",

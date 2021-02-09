@@ -2,7 +2,7 @@
     {
         "@id": "kb:skypemsg-eafca388-f926-4d48-864d-1bfdd3a2ba7f",
         "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:Message",
                 "uco-observable:messageText": "Hey Matt thanks for the hook up",

@@ -6,7 +6,7 @@
             "Picture",
             "Owl"
         ],
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:File",
                 "uco-observable:fileName": "download.jpg",

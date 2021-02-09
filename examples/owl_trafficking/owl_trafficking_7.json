@@ -13,7 +13,7 @@
             "@value": "Contained_Within"
         },
         "uco-core:isDirectional": true,
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DataRange",
                 "uco-observable:rangeOffset": 352,
@@ -24,7 +24,7 @@
     {
         "@id": "kb:accountsxml-16805dff-05f9-4cba-9266-d5fa712f3d8f",
         "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:File",
                 "uco-observable:fileName": "accounts.xml",
@@ -58,7 +58,7 @@
             "@value": "Contained_Within"
         },
         "uco-core:isDirectional": true,
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DataRange",
                 "uco-observable:rangeOffset": 16272,
@@ -69,7 +69,7 @@
     {
         "@id": "kb:accountsdb-99995dff-05f9-4cba-9266-d5fa712f9999",
         "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:File",
                 "uco-observable:fileName": "accounts.db",

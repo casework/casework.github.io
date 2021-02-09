@@ -2,7 +2,7 @@
     {
         "@id": "kb:simcard-24d20c80-f035-40ae-88dd-fc66f70180f6",
         "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:SIMCard",
                 "uco-observable:ICCID": "89014104279201697299",
@@ -16,7 +16,7 @@
     {
         "@id": "kb:mobileaccount-4b3cdcbd-6a31-462f-be9b-1ca2944c8876",
         "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:Account",
                 "uco-observable:accountType": {
@@ -46,7 +46,7 @@
             "@value": "Contained_Within"
         },
         "uco-core:isDirectional": "True",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DataRange",
                 "uco-observable:rangeOffset": "13751",
