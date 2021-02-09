@@ -45,7 +45,7 @@
         "@type": "uco-observable:CyberItem",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:EmailAddress",
+                "@type": "uco-observable:EmailAddressFacet",
                 "uco-observable:value": "mcavoys87@gmail.com"
             }
         ]
@@ -55,11 +55,11 @@
         "@type": "uco-observable:CyberItem",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:EmailAccount",
+                "@type": "uco-observable:EmailAccountFacet",
                 "uco-observable:emailAddress": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53"
             },
             {
-                "@type": "uco-observable:AccountAuthentication",
+                "@type": "uco-observable:AccountAuthenticationFacet",
                 "uco-observable:password": "louisville!21"
             }
         ]
@@ -69,12 +69,12 @@
         "@type": "uco-observable:CyberItem",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:Account",
+                "@type": "uco-observable:AccountFacet",
                 "uco-observable:accountIssuer": "ATT",
                 "uco-observable:isActive": true
             },
             {
-                "@type": "uco-observable:PhoneAccount",
+                "@type": "uco-observable:PhoneAccountFacet",
                 "uco-observable:phoneNumber": "+19014449108"
             }
         ]
@@ -99,7 +99,7 @@
         "@type": "uco-observable:CyberItem",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:Account",
+                "@type": "uco-observable:AccountFacet",
                 "uco-observable:accountIssuer": {
                     "@id": "kb:organization-facebook-fcb0d2ee-e681-4314-98c3-47fb2541aae9"
                 },
@@ -107,13 +107,13 @@
                 "uco-observable:isActive": true
             },
             {
-                "@type": "uco-observable:ApplicationAccount",
+                "@type": "uco-observable:ApplicationAccountFacet",
                 "uco-observable:application": {
                     "@id": "kb:application-facebook-25e8018f-49be-4898-bb1d-731e387e9eb7"
                 }
             },
             {
-                "@type": "uco-observable:DigitalAccount",
+                "@type": "uco-observable:DigitalAccountFacet",
                 "uco-observable:displayName": "????"
             }
         ]
@@ -133,7 +133,7 @@
         "@type": "uco-observable:CyberItem",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:Application",
+                "@type": "uco-observable:ApplicationFacet",
                 "drafting:appName": "Facebook"
             }
         ]

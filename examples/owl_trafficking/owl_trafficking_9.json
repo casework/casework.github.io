@@ -4,7 +4,7 @@
         "@type": "uco-observable:CyberItem",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:Account",
+                "@type": "uco-observable:AccountFacet",
                 "uco-observable:accountIssuer": {
                     "@id": "kb:organization-textapp-cc44c2ae-bdd3-4df8-9ca3-1f58d682d62b"
                 },
@@ -12,7 +12,7 @@
                 "uco-observable:isActive": true
             },
             {
-                "@type": "uco-observable:DigitalAccount",
+                "@type": "uco-observable:DigitalAccountFacet",
                 "uco-observable:displayName": "NULL",
                 "uco-observable:accountLogin": "mcavoy287",
                 "uco-observable:firstLoginTime": {
@@ -21,7 +21,7 @@
                 }
             },
             {
-                "@type": "uco-observable:AccountAuthentication",
+                "@type": "uco-observable:AccountAuthenticationFacet",
                 "uco-observable:password": "huntington*32"
             }
         ]
@@ -42,7 +42,7 @@
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:DataRange",
+                "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 2704,
                 "uco-observable:rangeSize": 9
             }

@@ -15,7 +15,7 @@
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:DataRange",
+                "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": "2560",
                 "uco-observable:rangeSize": "96"
             },

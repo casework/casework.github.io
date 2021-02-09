@@ -4,7 +4,7 @@
         "@type": "uco-observable:CyberItem",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:DiskPartition",
+                "@type": "uco-observable:DiskPartitionFacet",
                 "uco-observable:diskPartitionType": "GPT",
                 "uco-observable:partitionID": "31",
                 "uco-observable:partitionOffset": {
@@ -17,11 +17,11 @@
                 }
             },
             {
-                "@type": "uco-observable:FileSystem",
+                "@type": "uco-observable:FileSystemFacet",
                 "uco-observable:fileSystemType": "EXT4"
             },
             {
-                "@type": "uco-observable:ContentData",
+                "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:hash": [
                     {
                         "@type": "uco-types:Hash",

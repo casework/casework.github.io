@@ -8,7 +8,7 @@
         ],
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:File",
+                "@type": "uco-observable:FileFacet",
                 "uco-observable:fileName": "download.jpg",
                 "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/media/0/Download/download.jpg",
                 "drafting:fileLocalPath": "files/image/download.jpg",
@@ -30,7 +30,7 @@
                 }
             },
             {
-                "@type": "uco-observable:ExtInode",
+                "@type": "uco-observable:ExtInodeFacet",
                 "uco-observable:extInodeID": 1344287,
                 "uco-observable:extSGID": 1023,
                 "uco-observable:extSUID": 1023,
@@ -42,7 +42,7 @@
                 }
             },
             {
-                "@type": "uco-observable:ContentData",
+                "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:hash": [
                     {
                         "@type": "uco-types:Hash",
