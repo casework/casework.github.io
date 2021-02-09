@@ -34,7 +34,7 @@
         "@type": "uco-observable:CyberItem",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:URL",
+                "@type": "uco-observable:URLFacet",
                 "uco-observable:fullValue": "https://www.quora.com/Where-can-you-find-baby-owls-for-sale-Are-owls-legal-to-keep-as-pets"
             }
         ]
@@ -47,7 +47,7 @@
         ],
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:File",
+                "@type": "uco-observable:FileFacet",
                 "uco-observable:fileName": "History",
                 "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/data/com.android.chrome/app_chrome/Default/History",
                 "drafting:fileLocalPath": "files/Database/History",
@@ -59,14 +59,14 @@
                 "uco-observable:accessedTime": "2017-01-25T01:10:45.00Z"
             },
             {
-                "@type": "uco-observable:ExtInode",
+                "@type": "uco-observable:ExtInodeFacet",
                 "uco-observable:extInodeID": 1483050,
                 "uco-observable:extSGID": 10034,
                 "uco-observable:extSUID": 10034,
                 "uco-observable:extInodeChangeTime": "2017-02-03T17:22:29.00Z"
             },
             {
-                "@type": "uco-observable:ContentData",
+                "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:hash": [
                     {
                         "@type": "uco-types:Hash",
@@ -99,7 +99,7 @@
         },
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:DataRange",
+                "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 100832,
                 "uco-observable:rangeSize": "176"
             },

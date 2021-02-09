@@ -4,7 +4,7 @@
         "@type": "uco-observable:CyberItem",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:Message",
+                "@type": "uco-observable:MessageFacet",
                 "uco-observable:messageText": "Hey Matt thanks for the hook up",
                 "uco-observable:application": {
                     "@id": "kb:skypeapp-a6b73e78-00da-11eb-a396-acde48001122"

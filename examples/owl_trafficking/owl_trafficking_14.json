@@ -4,7 +4,7 @@
         "@type": "uco-observable:CyberItem",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:File",
+                "@type": "uco-observable:FileFacet",
                 "uco-observable:fileName": "IMG_20170203_121618.jpg",
                 "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/media/0/DCIM/Camera/IMG_20170203_121618.jpg",
                 "drafting:fileLocalPath": "files/image/IMG_20170203_121618.jpg",
@@ -26,7 +26,7 @@
                 }
             },
             {
-                "@type": "uco-observable:ExtInode",
+                "@type": "uco-observable:ExtInodeFacet",
                 "uco-observable:extInodeID": 1351746,
                 "uco-observable:extSGID": 1023,
                 "uco-observable:extSUID": 1023,

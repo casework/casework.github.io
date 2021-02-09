@@ -21,7 +21,7 @@ WHERE {
     .
 
   ?nSubjectDeviceFacet
-    a uco-observable:Device ;
+    a uco-observable:DeviceFacet ;
     .
 
   ?nSubjectDeviceProvenanceRecord
@@ -52,7 +52,7 @@ WHERE {
     .
 
   ?nImageFileFacet
-    a uco-observable:File ;
+    a uco-observable:FileFacet ;
     uco-observable:fileName ?lImageFileName ;
     .
 }

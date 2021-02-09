@@ -531,7 +531,7 @@
             ],
             "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:Device",
+                    "@type": "uco-observable:DeviceFacet",
                     "uco-observable:manufacturer": "Canon",
                     "uco-observable:model": "PowerShot SX540"
                 }
@@ -719,7 +719,7 @@
             "@type": "uco-observable:CyberItem",
             "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:ContentData",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
@@ -740,7 +740,7 @@
                     ]
                 },
                 {
-                    "@type": "uco-observable:EXIF",
+                    "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
                         "@type": "uco-types:ControlledDictionary",
                             "uco-types:entry": [
@@ -778,7 +778,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:File",
+                    "@type": "uco-observable:FileFacet",
                     "uco-observable:extension": "jpg",
                     "uco-observable:fileName": "IMG_4829.jpg",
                     "uco-observable:modifiedTime": {
@@ -791,7 +791,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:RasterPicture",
+                    "@type": "uco-observable:RasterPictureFacet",
                     "uco-observable:pictureType": "jpg",
                     "uco-observable:pictureHeight": 6000,
                     "uco-observable:pictureWidth": 4000
@@ -803,7 +803,7 @@
             "@type": "uco-observable:CyberItem",
             "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:ContentData",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
@@ -824,7 +824,7 @@
                     ]
                 },
                 {
-                    "@type": "uco-observable:EXIF",
+                    "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
                         "@type": "uco-types:ControlledDictionary",
                             "uco-types:entry": [
@@ -862,7 +862,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:File",
+                    "@type": "uco-observable:FileFacet",
                     "uco-observable:extension": "jpg",
                     "uco-observable:fileName": "IMG_4830.jpg",
                     "uco-observable:modifiedTime": {
@@ -875,7 +875,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:RasterPicture",
+                    "@type": "uco-observable:RasterPictureFacet",
                     "uco-observable:pictureType": "jpg",
                     "uco-observable:pictureHeight": 6000,
                     "uco-observable:pictureWidth": 4000
@@ -887,7 +887,7 @@
             "@type": "uco-observable:CyberItem",
             "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:ContentData",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
@@ -908,7 +908,7 @@
                     ]
                 },
                 {
-                    "@type": "uco-observable:EXIF",
+                    "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
                         "@type": "uco-types:ControlledDictionary",
                             "uco-types:entry": [
@@ -946,7 +946,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:File",
+                    "@type": "uco-observable:FileFacet",
                     "uco-observable:extension": "jpg",
                     "uco-observable:fileName": "IMG_4831.jpg",
                     "uco-observable:modifiedTime": {
@@ -959,7 +959,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:RasterPicture",
+                    "@type": "uco-observable:RasterPictureFacet",
                     "uco-observable:pictureType": "jpg",
                     "uco-observable:pictureHeight": 6000,
                     "uco-observable:pictureWidth": 4000
@@ -971,7 +971,7 @@
             "@type": "uco-observable:CyberItem",
             "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:ContentData",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
@@ -992,7 +992,7 @@
                     ]
                 },
                 {
-                    "@type": "uco-observable:EXIF",
+                    "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
                         "@type": "uco-types:ControlledDictionary",
                             "uco-types:entry": [
@@ -1030,7 +1030,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:File",
+                    "@type": "uco-observable:FileFacet",
                     "uco-observable:extension": "jpg",
                     "uco-observable:fileName": "IMG_4832.jpg",
                     "uco-observable:modifiedTime": {
@@ -1043,7 +1043,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:RasterPicture",
+                    "@type": "uco-observable:RasterPictureFacet",
                     "uco-observable:pictureType": "jpg",
                     "uco-observable:pictureHeight": 6000,
                     "uco-observable:pictureWidth": 4000
@@ -1055,7 +1055,7 @@
             "@type": "uco-observable:CyberItem",
             "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:ContentData",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
@@ -1076,7 +1076,7 @@
                     ]
                 },
                 {
-                    "@type": "uco-observable:EXIF",
+                    "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
                         "@type": "uco-types:ControlledDictionary",
                             "uco-types:entry": [
@@ -1114,7 +1114,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:File",
+                    "@type": "uco-observable:FileFacet",
                     "uco-observable:extension": "jpg",
                     "uco-observable:fileName": "IMG_4833.jpg",
                     "uco-observable:modifiedTime": {
@@ -1127,7 +1127,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:RasterPicture",
+                    "@type": "uco-observable:RasterPictureFacet",
                     "uco-observable:pictureType": "jpg",
                     "uco-observable:pictureHeight": 6000,
                     "uco-observable:pictureWidth": 4000
@@ -1139,7 +1139,7 @@
             "@type": "uco-observable:CyberItem",
             "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:ContentData",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
@@ -1160,7 +1160,7 @@
                     ]
                 },
                 {
-                    "@type": "uco-observable:EXIF",
+                    "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
                         "@type": "uco-types:ControlledDictionary",
                             "uco-types:entry": [
@@ -1198,7 +1198,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:File",
+                    "@type": "uco-observable:FileFacet",
                     "uco-observable:extension": "jpg",
                     "uco-observable:fileName": "IMG_4834.jpg",
                     "uco-observable:modifiedTime": {
@@ -1211,7 +1211,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:RasterPicture",
+                    "@type": "uco-observable:RasterPictureFacet",
                     "uco-observable:pictureType": "jpg",
                     "uco-observable:pictureHeight": 6000,
                     "uco-observable:pictureWidth": 4000
@@ -1223,7 +1223,7 @@
             "@type": "uco-observable:CyberItem",
             "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:ContentData",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
@@ -1244,7 +1244,7 @@
                     ]
                 },
                 {
-                    "@type": "uco-observable:EXIF",
+                    "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
                         "@type": "uco-types:ControlledDictionary",
                             "uco-types:entry": [
@@ -1277,7 +1277,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:File",
+                    "@type": "uco-observable:FileFacet",
                     "uco-observable:extension": "jpg",
                     "uco-observable:fileName": "IMG_1863.jpg",
                     "uco-observable:modifiedTime": {
@@ -1290,7 +1290,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:RasterPicture",
+                    "@type": "uco-observable:RasterPictureFacet",
                     "uco-observable:pictureType": "jpg",
                     "uco-observable:pictureHeight": 3264,
                     "uco-observable:pictureWidth": 2448
@@ -1302,7 +1302,7 @@
             "@type": "uco-observable:CyberItem",
             "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:Device"
+                    "@type": "uco-observable:DeviceFacet"
                 }
             ]
         }

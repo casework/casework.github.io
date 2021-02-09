@@ -15,7 +15,7 @@
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:DataRange",
+                "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 352,
                 "uco-observable:rangeSize": 20
             }
@@ -26,7 +26,7 @@
         "@type": "uco-observable:CyberItem",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:File",
+                "@type": "uco-observable:FileFacet",
                 "uco-observable:fileName": "accounts.xml",
                 "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/data/com.google.android.gms/shared_prefs/accounts.xml",
                 "uco-observable:extension": ".xml",
@@ -60,7 +60,7 @@
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:DataRange",
+                "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 16272,
                 "uco-observable:rangeSize": 20
             }
@@ -71,7 +71,7 @@
         "@type": "uco-observable:CyberItem",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:File",
+                "@type": "uco-observable:FileFacet",
                 "uco-observable:fileName": "accounts.db",
                 "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/system/users/0/accounts.db",
                 "uco-observable:extension": ".db",

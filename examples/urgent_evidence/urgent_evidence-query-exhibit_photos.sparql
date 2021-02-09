@@ -47,7 +47,7 @@ WHERE {
       # files.
 
       ?nRasterPictureFacet
-        a uco-observable:RasterPicture ;
+        a uco-observable:RasterPictureFacet ;
         .
 
       # Because provenance records are input to some actions, confirm
@@ -66,7 +66,7 @@ WHERE {
             .
 
           ?nDeviceFacet
-            a uco-observable:Device ;
+            a uco-observable:DeviceFacet ;
             .
         }
       }  # Ends sub-query: SELECT ?nExhibitDevice
@@ -100,7 +100,7 @@ WHERE {
     .
 
   ?nContentDataFacet
-    a uco-observable:ContentData ;
+    a uco-observable:ContentDataFacet ;
     uco-observable:hash ?nHash ;
     .
 
@@ -109,7 +109,7 @@ WHERE {
     .
 
   ?nFileFacet
-    a uco-observable:File ;
+    a uco-observable:FileFacet ;
     uco-observable:fileName ?lFileName ;
     uco-observable:modifiedTime ?lModifiedTime ;
     .
