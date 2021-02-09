@@ -6,7 +6,7 @@
         "uco-tool:toolType": "Extraction",
         "uco-tool:creator": "Magnet",
         "uco-tool:version": "2.0.0.5412",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-tool:ToolConfigurationType",
                 "uco-tool:configurationSettings": [
@@ -36,7 +36,7 @@
             "@type": "xsd:dateTime",
             "@value": "2017-02-06T22:13:08.00Z"
         },
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:location": {

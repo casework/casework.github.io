@@ -2,7 +2,7 @@
     {
         "@id": "kb:filesystem-e2a02b5a-7e7e-489f-ab43-3ffadab4ac82",
         "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DiskPartition",
                 "uco-observable:diskPartitionType": "GPT",

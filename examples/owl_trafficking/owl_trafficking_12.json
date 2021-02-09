@@ -13,7 +13,7 @@
             "@value": "Contained_Within"
         },
         "uco-core:isDirectional": true,
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:PathRelation",
                 "uco-observable:path": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/media/0/Download/download.jpg"

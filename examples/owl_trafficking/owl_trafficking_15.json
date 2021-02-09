@@ -2,7 +2,7 @@
     {
         "@id": "kb:sms-message-2c032220-8c21-11e9-9c99-0c4de9c21b53",
         "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:Message",
                 "uco-observable:application": {
@@ -24,7 +24,7 @@
     {
         "@id": "kb:9999237a-6d7f-4e96-bbef-6eb4c0a69999",
         "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:Account",
                 "uco-observable:accountIssuer": "ATT",

@@ -2,7 +2,7 @@
     {
         "@id": "kb:textapp-90652808-7341-40d3-9285-774d865ad3f9",
         "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:Account",
                 "uco-observable:accountIssuer": {
@@ -40,7 +40,7 @@
             "@value": "Contained_Within"
         },
         "uco-core:isDirectional": true,
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DataRange",
                 "uco-observable:rangeOffset": 2704,

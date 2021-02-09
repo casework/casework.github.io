@@ -13,7 +13,7 @@
             "@value": "Contained_Within"
         },
         "uco-core:isDirectional": true,
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DataRange",
                 "uco-observable:rangeOffset": "2560",

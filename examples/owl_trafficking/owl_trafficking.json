@@ -41,7 +41,7 @@
             "uco-tool:toolType": "Extraction",
             "uco-tool:creator": "Magnet",
             "uco-tool:version": "2.0.0.5412",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-tool:ToolConfigurationType",
                     "uco-tool:configurationSettings": [
@@ -71,7 +71,7 @@
                 "@type": "xsd:dateTime",
                 "@value": "2017-02-06T22:13:08.00Z"
             },
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-action:ActionReferences",
                     "uco-action:location": {
@@ -108,7 +108,7 @@
         {
             "@id": "kb:investigator-09fb01ce-999e-4521-bd3f-f7be69a63a43",
             "@type": "uco-identity:Identity",
-            "uco-core:facets": {
+            "uco-core:hasFacet": {
                 "@type": "uco-identity:SimpleName",
                 "uco-identity:familyName": "Hoel"
             }
@@ -138,7 +138,7 @@
         {
             "@id": "kb:f3fd304e-ef6c-4cbd-94cb-425880f82748",
             "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:File",
                     "uco-observable:createdTime": {
@@ -184,7 +184,7 @@
         {
             "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168",
             "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:Device",
                     "uco-observable:manufacturer": "LGE",
@@ -268,7 +268,7 @@
         {
             "@id": "kb:simcard-24d20c80-f035-40ae-88dd-fc66f70180f6",
             "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:SIMCard",
                     "uco-observable:ICCID": "89014104279201697299",
@@ -282,7 +282,7 @@
         {
             "@id": "kb:mobileaccount-4b3cdcbd-6a31-462f-be9b-1ca2944c8876",
             "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:Account",
                     "uco-observable:accountType": {
@@ -312,7 +312,7 @@
                 "@value": "Contained_Within"
             },
             "uco-core:isDirectional": "True",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DataRange",
                     "uco-observable:rangeOffset": "13751",
@@ -327,7 +327,7 @@
         {
             "@id": "kb:primaryuser-d28a3fad-10a1-459c-9a1a-6aa07a04e76f",
             "@type": "uco-identity:Identity",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-identity:SimpleName",
                     "uco-identity:givenName": "Sarah",
@@ -368,7 +368,7 @@
         {
             "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53",
             "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:EmailAddress",
                     "uco-observable:value": "mcavoys87@gmail.com"
@@ -378,7 +378,7 @@
         {
             "@id": "kb:email-account-99d72bac-8c21-11e9-8902-0c4de9c21b53",
             "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:EmailAccount",
                     "uco-observable:emailAddress": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53"
@@ -392,7 +392,7 @@
         {
             "@id": "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1",
             "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:Account",
                     "uco-observable:accountIssuer": "ATT",
@@ -422,7 +422,7 @@
         {
             "@id": "kb:facebook-90652808-7341-40d3-9285-774d865ad3f9",
             "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:Account",
                     "uco-observable:accountIssuer": {
@@ -446,7 +446,7 @@
         {
             "@id": "kb:organization-facebook-fcb0d2ee-e681-4314-98c3-47fb2541aae9",
             "@type": "uco-identity:Identity",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-identity:Organization",
                     "drafting:orgName": "Facebook"
@@ -456,7 +456,7 @@
         {
             "@id": "kb:application-facebook-25e8018f-49be-4898-bb1d-731e387e9eb7",
             "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:Application",
                     "drafting:appName": "Facebook"
@@ -477,7 +477,7 @@
                 "@value": "Contained_Within"
             },
             "uco-core:isDirectional": true,
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DataRange",
                     "uco-observable:rangeOffset": 352,
@@ -488,7 +488,7 @@
         {
             "@id": "kb:accountsxml-16805dff-05f9-4cba-9266-d5fa712f3d8f",
             "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:File",
                     "uco-observable:fileName": "accounts.xml",
@@ -522,7 +522,7 @@
                 "@value": "Contained_Within"
             },
             "uco-core:isDirectional": true,
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DataRange",
                     "uco-observable:rangeOffset": 16272,
@@ -533,7 +533,7 @@
         {
             "@id": "kb:accountsdb-99995dff-05f9-4cba-9266-d5fa712f9999",
             "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:File",
                     "uco-observable:fileName": "accounts.db",
@@ -556,7 +556,7 @@
         {
             "@id": "kb:skype-99992808-7341-40d3-9285-774d865a9999",
             "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:Account",
                     "uco-observable:accountIssuer": {
@@ -570,7 +570,7 @@
         {
             "@id": "kb:textapp-90652808-7341-40d3-9285-774d865ad3f9",
             "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:Account",
                     "uco-observable:accountIssuer": {
@@ -608,7 +608,7 @@
                 "@value": "Contained_Within"
             },
             "uco-core:isDirectional": true,
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DataRange",
                     "uco-observable:rangeOffset": 2704,
@@ -630,7 +630,7 @@
                 "@value": "Contained_Within"
             },
             "uco-core:isDirectional": true,
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DataRange",
                     "uco-observable:rangeOffset": 2032140288,
@@ -644,7 +644,7 @@
         {
             "@id": "kb:filesystem-e2a02b5a-7e7e-489f-ab43-3ffadab4ac82",
             "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DiskPartition",
                     "uco-observable:diskPartitionType": "GPT",
@@ -705,7 +705,7 @@
                 "@value": "Contained_Within"
             },
             "uco-core:isDirectional": true,
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:PathRelation",
                     "uco-observable:path": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/media/0/Download/download.jpg"
@@ -719,7 +719,7 @@
                 "Picture",
                 "Owl"
             ],
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:File",
                     "uco-observable:fileName": "download.jpg",
@@ -772,7 +772,7 @@
         {
             "@id": "kb:downloaded-directory-9999dae3-2bca-4ccb-97fd-9919192e9999",
             "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:File",
                     "uco-observable:fileName": "IMG_20170203_121618.jpg",
@@ -818,7 +818,7 @@
         {
             "@id": "kb:sms-message-2c032220-8c21-11e9-9c99-0c4de9c21b53",
             "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:Message",
                     "uco-observable:application": {
@@ -840,7 +840,7 @@
         {
             "@id": "kb:9999237a-6d7f-4e96-bbef-6eb4c0a69999",
             "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:Account",
                     "uco-observable:accountIssuer": "ATT",
@@ -866,7 +866,7 @@
                 "@value": "Contained_Within"
             },
             "uco-core:isDirectional": true,
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DataRange",
                     "uco-observable:rangeOffset": "2560",
@@ -881,7 +881,7 @@
         {
             "@id": "kb:skypemsg-eafca388-f926-4d48-864d-1bfdd3a2ba7f",
             "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:Message",
                     "uco-observable:messageText": "Hey Matt thanks for the hook up",
@@ -904,7 +904,7 @@
         {
             "@id": "kb:url-history-39ff4987-8ae5-47e3-8369-dbd0d5f79398",
             "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "drafting:URLHistory",
                     "drafting:browserInformation": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38",
@@ -934,7 +934,7 @@
         {
             "@id": "kb:url-b7906534-0483-4cf4-979c-5351916602ed",
             "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:URL",
                     "uco-observable:fullValue": "https://www.quora.com/Where-can-you-find-baby-owls-for-sale-Are-owls-legal-to-keep-as-pets"
@@ -947,7 +947,7 @@
             "uco-core:tag": [
                 "Database"
             ],
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:File",
                     "uco-observable:fileName": "History",
@@ -999,7 +999,7 @@
                 "@type": "uco-vocabulary:CyberItemRelationshipVocab",
                 "@value": "Contained_Within"
             },
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DataRange",
                     "uco-observable:rangeOffset": 100832,
@@ -1014,7 +1014,7 @@
         {
             "@id": "kb:latlong-8667ec82-8c21-11e9-934e-0c4de9c21b53",
             "@type": "uco-location:Location",
-            "uco-core:facets": {
+            "uco-core:hasFacet": {
                 "@type": "uco-location:LatLongCoordinates",
                 "uco-location:latitude": 38.423756,
                 "uco-location:longitude": -82.43619,

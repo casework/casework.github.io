@@ -2,7 +2,7 @@
     {
         "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168",
         "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:Device",
                 "uco-observable:manufacturer": "LGE",
