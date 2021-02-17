@@ -101,7 +101,29 @@ RDF is a flexible language, providing many ways to represent the same data.  Exa
   <dd>(<em>E.g. <code>kb:cyber-relationship-aaaa9b36-0126-42aa-9cc6-1e81ca31111</code></em>)</dd>
 </dl>
 
-<p>UUIDs will be accompanied by an <code>@type</code> dictionary key when creating a new node, while the <code>@type</code> field is typically missing when used as an object reference within a triple/JSON-LD value.  This is because the <code>@type</code> JSON dictionary key implements the RDF type designation. <em>E.g.</em> this JSON-LD:</p>
+<p>The <q>name of CASE concept</q> portion is some rendering of the <code>@type</code> of the node.  This portion of the identifier is provided from community members' experience working with graph data and UUID-based node identifiers.  For instance, an analyst querying for objects in a CASE bundle could be presented with these results to a query <q>What CASE objects are in this bundle:</q></p>
+
+<ul>
+  <li><code>kb:4eda8e3d-f047-4fc4-90a6-6d99ebced1a8</code></li>
+  <li><code>kb:590e30b2-232a-4883-84da-2a45361eb57a</code></li>
+  <li><code>kb:762b9a42-596a-4c70-a43b-c3f57f90cf93</code></li>
+  <li><code>kb:9da7064c-9442-449f-96ea-f6e20fbcac43</code></li>
+  <li><code>kb:f1e888a4-7a9d-42d9-af5e-01144ceda3ef</code></li>
+</ul>
+
+<p>Or, the analyst could be presented with these results:</p>
+
+<ul>
+  <li><code>kb:malware-f1e888a4-7a9d-42d9-af5e-01144ceda3ef</code></li>
+  <li><code>kb:person-762b9a42-596a-4c70-a43b-c3f57f90cf93</code></li>
+  <li><code>kb:person-9da7064c-9442-449f-96ea-f6e20fbcac43</code></li>
+  <li><code>kb:picture-590e30b2-232a-4883-84da-2a45361eb57a</code></li>
+  <li><code>kb:relationship-4eda8e3d-f047-4fc4-90a6-6d99ebced1a8</code></li>
+</ul>
+
+<p>This practice is only meant to provide an informal hint to the type of the node, and carries no programmatically-derivable significance.</p>
+
+<p><code>@id</code>'s will be accompanied by an <code>@type</code> dictionary key when creating a new node, while the <code>@type</code> field is typically missing when used as an object reference within a triple/JSON-LD value.  This is because the <code>@type</code> JSON dictionary key implements the RDF type designation. <em>E.g.</em> this JSON-LD:</p>
 
 {% highlight json %}
 {
