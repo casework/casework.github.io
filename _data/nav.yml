@@ -55,6 +55,8 @@
       link: /resources/github_policies.html
     - name: GitHub Repos
       link: /resources/github_repos.html
+    - name: Data Guidance
+      link: /resources/instance_data.html
     - name: FAQ
       link: /resources/faq.html
     - name: SPACE
