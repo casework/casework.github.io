@@ -380,15 +380,30 @@ WHERE {
 
       ?nActionReferencesFacet
         a uco-action:ActionReferences ;
-        uco-action:instrument kb:camera-uuid-1 ;
+        uco-action:instrument ?nCameraDevice ;
         uco-action:object ?nExhibitDevice ;
         uco-action:result ?nPictureFile ;
         uco-action:result ?nProvenanceRecord ;
         .
 
-      kb:camera-uuid-1
-        a uco-tool:AnalyticTool ;
-        .
+      # To avoid confusing pictures taken of evidence with pictures
+      # extracted from evidence, identify the investigator's camera by
+      # merit of it being an analytic tool.
+      {
+        SELECT ?nCameraDevice
+        WHERE {
+          ?nCameraDevice
+            a uco-observable:CyberItem ;
+            a uco-tool:AnalyticTool ;
+            uco-core:facets ?nCameraDeviceDeviceFacet ;
+            .
+
+          ?nCameraDeviceDeviceFacet
+            a uco-observable:Device ;
+            uco-observable:deviceType "camera" ;
+            .
+        }
+      }  # Ends sub-query: SELECT ?nCameraDevice
 
       # The provenance record confirms the picture file was recorded in
       # the provenance chain.
@@ -417,10 +432,10 @@ WHERE {
         WHERE {
           ?nExhibitDevice
             a uco-observable:CyberItem ;
-            uco-core:facets ?nDeviceFacet ;
+            uco-core:facets ?nExhibitDeviceDeviceFacet ;
             .
 
-          ?nDeviceFacet
+          ?nExhibitDeviceDeviceFacet
             a uco-observable:Device ;
             .
         }
@@ -527,10 +542,6 @@ ORDER BY ?lExhibitNumber ?lFileName
     </tr>
   </tbody>
 </table>
-            <p class="card-text">Of note:</p>
-            <ul>
-              <li class="card-text">This query hard-codes knowledge of the device used to photograph the evidence, <code>kb:camera-uuid-1</code>, to avoid confusing pictures taken of evidence with pictures extracted from evidence.  A change to UCO is under consideration to enable this query to function based on a tool class, without needing to hard code the camera's identifier.</li>
-            </ul>
           </div>
         </div>
 
