@@ -26,13 +26,16 @@ The word "DISTINCT" will also be cut from the query, if present.
 Should a more complex query be necessary, an outer, wrapping SELECT query would let this script continue to function.
 """
 
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 
+import binascii
 import os
 import logging
 
 import pandas as pd
 import rdflib.plugins.sparql
+
+NS_XSD_HEXBINARY = rdflib.XSD.hexBinary
 
 _logger = logging.getLogger(os.path.basename(__file__))
 
@@ -60,7 +63,15 @@ def main():
         tally = row_no + 1
         record = []
         for (column_no, column) in enumerate(row):
-            column_value = "" if column is None else column.toPython()
+            if column is None:
+                column_value = ""
+            elif isinstance(column, rdflib.term.Literal) and column.datatype == NS_XSD_HEXBINARY:
+                # Use hexlify to convert xsd:hexBinary to ASCII.
+                # The render to ASCII is in support of this script rendering results for website viewing.
+                # .decode() is because hexlify returns bytes.
+                column_value = binascii.hexlify(column.toPython()).decode()
+            else:
+                column_value = column.toPython()
             if row_no == 0:
                 _logger.debug("row[0]column[%d] = %r." % (column_no, column_value))
             record.append(column_value)
