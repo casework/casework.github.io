@@ -35,7 +35,7 @@ import logging
 import pandas as pd
 import rdflib.plugins.sparql
 
-NS_XSD_HEXBINARY = rdflib.XSD.hexBinary
+NS_XSD = rdflib.XSD
 
 _logger = logging.getLogger(os.path.basename(__file__))
 
@@ -65,7 +65,7 @@ def main():
         for (column_no, column) in enumerate(row):
             if column is None:
                 column_value = ""
-            elif isinstance(column, rdflib.term.Literal) and column.datatype == NS_XSD_HEXBINARY:
+            elif isinstance(column, rdflib.term.Literal) and column.datatype == NS_XSD.hexBinary:
                 # Use hexlify to convert xsd:hexBinary to ASCII.
                 # The render to ASCII is in support of this script rendering results for website viewing.
                 # .decode() is because hexlify returns bytes.
