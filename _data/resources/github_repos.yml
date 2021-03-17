@@ -1,9 +1,17 @@
+- title: CASE-Implementation-PyPI-Pillow
+  status: Planning
+  type: Implementation
+  url: https://github.com/casework/CASE-Implementation-PyPI-Pillow
+- title: CASE-Implementation-ExifTool
+  status: Beta
+  type: Implementation
+  url: https://github.com/casework/CASE-Implementation-ExifTool
 - title: CASE-Implementation-GNU-Time
-  status: Alpha
+  status: Beta
   type: Implementation
   url: https://github.com/casework/CASE-Implementation-GNU-Time
 - title: CASE-Implementation-Bespoke-Filesystems
-  status: Alpha
+  status: Planning
   type: Implementation
   url: https://github.com/casework/CASE-Implementation-Bespoke-Filesystems
 - title: CASE-Implementation-UFED-XML
