@@ -1,0 +1,145 @@
+---
+title: Instance Data Guidance
+---
+
+<p>CASE provides an ontology to the community.  The ontology is written using RDF as its base language, using the OWL2 vocabulary to define classes, properties and relationships.  This RDF is serialized in the Turtle syntax.</p>
+
+<p>CASE instance data is also written using RDF as its base language.  Instance data is serialized in the JSON-LD syntax instead of Turtle, to support CASE producers and consumers that work day-to-day in JSON instead of graph engines.  (Data can be converted between JSON-LD, Turtle, and other RDF formats with readily available tooling.)</p>
+
+<p>This document provides CASE community guidance and practices with designing instance data.</p>
+
+
+<h2>Node identifier format</h2>
+
+<p>RDF graphs have <em>nodes</em>, which are linkable data; <em>literals</em>, which are data that can be linked to but can only be annotated with a limited set of primitive types; and <em>edges</em>, which link nodes to either other nodes or to literals.</p>
+
+<p>Nodes and edges are namespaced identifiers, typically seen in instance data in an abbreviated <q>Prefix</q> format: <code>prefix:identifier</code>.  A context definition in the graph will provide the expanded form of this abbreviation.  For an instance data node identifier, the namespace will typically represent a knowledge base, <em>e.g.</em> <code>kb:identifier</code> would be defined as expanding to <code>http://example.org/kb/identifier</code>.  This can be seen in JSON-LD in a context dictionary:
+
+{% highlight json %}
+{
+  "@context": {
+    ...
+    "kb": "http://example.org/kb/",
+    ...
+  },
+  "@graph": [
+    {
+      "@id": "kb:node1",
+      ...
+    }
+  ]
+}
+{% endhighlight %}
+
+<p>That JSON-LD snippet can be written equivalently to an RDF engine as:</p>
+
+{% highlight json %}
+{
+  "@graph": [
+    {
+      "@id": "http://example.org/kb/node1",
+      ...
+    }
+  ]
+}
+{% endhighlight %}
+
+RDF is a flexible language, providing many ways to represent the same data.  Example instance data the CASE community provides follow a few conventions for the benefit of interoperability among CASE community members.
+
+
+<h2>Node identifier prefixes</h2>
+
+
+<h3>URN vs. HTTP(S)</h3>
+
+<p>RDF identifiers must be IRIs.  An IRI can follow one of several schemes, including URN, HTTP, or HTTPS.  Which scheme to use is up to the consumer, but CASE examples use one particular prefix, <code>http://example.org/kb/</code>, for a few different reasons:</p>
+
+<ul>
+  <li><p>Early in example data drafting, CASE based its knowledge base URL on a special-case URN designated for usage in examples, <code>urn:example:</code>.  Unfortunately, a graph technology the community used was unable to handle the <code>urn:</code> scheme in specifically JSON-LD.  That technology has since posted a bugfix correction, but we provide this historic note as a reminder to CASE producers to test instance data among the use case scenarios of their expected consumers.</p></li>
+  <li><p>The domain <code>example.org</code> is defined in <a href="https://tools.ietf.org/html/rfc6761#section-6.5">IETF 6761 Section 6.5</a> to be a non-resolving domain.  Graph engines might include data retrieval capabilities for IRIs encountered in their graphs as users navigate data; but, they are expected to be aware that processing <code>http://example.org</code> should not result in a network retrieval (whether in their own hard-coded logic, or in lower-level DNS resolution).  Though, note that the prohibitions on resolving <code>example.org</code> from IETF 6761 are worded as <q>SHOULD NOTs,</q> with only DNS Registrars assigned a <q>MUST NOT</q> prohibition on registration.</p></li>
+</ul>
+
+
+<h3>Hash vs. slash</h3>
+
+<p>Namespace prefixes in RDF typically end in with the <q>Hash or slash?</q> decision: Should the identifier end with a <code>#</code> character to represent an HTML within-page anchor point, or with a / character to represent an independent page at the end of an IRI?</p>
+
+<p>CASE examples end their knowledge base prefix with a slash character, based on the assumption that a knowledge base navigator might be supporting multiple elementary types of clients: Graph engines, which might make programmatic requests of the IRI; and web browsers, for users wanting to view HTTP renders of the IRI.  IRIs that end in hash might cause an expectation that a knowledge base provide a <q>dump</q> of all node identifiers to a web browser, and rely on the browser to skip into the middle of the page.</p>
+
+<p>Note that CASE and UCO ontology files follow the <code>#</code> pattern, because even the largest ontology files between CASE and UCO have a concise memory footprint, on the order of kilobytes.  In contrast, a knowledge base will likely hit millions of node identifiers early in its usage for any case analysis.</p>
+
+
+<h3>Blank prefix avoidance</h3>
+
+<p>CASE examples use the prefix <code>kb:</code> for instance data, <em>e.g.</em> <code>kb:node1</code>.  Early in example data drafting, a blank prefix was used, <em>e.g.</em> <code>:node1</code>.  This is allowed in most RDF syntaxes, but JSON-LD requires prefixes not be blank (per <a href="https://www.w3.org/TR/json-ld/#terms">JSON-LD 1.1, Section 9.1</a>), because some JSON processing technologies are not able to handle the empty string as a dictionary key.</p>
+
+
+<h2>Node identifier suffixes</h2>
+
+
+<h3>Background on UUIDs</h3>
+
+<p>There are 5 versions of UUID currently:</p>
+
+<ul>
+  <li>v1 and v2 potentially leak personally identifiable information (PII)</li>
+  <li>v4 is controlled by random number generator</li>
+  <li>v3 (md5) and v5 (sha1) are built via hashing controlled input data</li>
+</ul>
+
+<p>Wikipedia provides a further description of <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier#Versions">UUID versions</a>.</p>
+
+
+<h3>Guidance for using UUIDs in CASE JSON-LD</h3>
+
+<p>An RDF triple consists of a subject, predicate, and object, where the subject is a node, and the object may be a node or literal value. For all non-blank nodes in CASE RDF graphs, UUIDs should be generated as the trailing part of the identifier. (Blank nodes are nodes that do not have an explicit identifier.) CASE does not specify a version for adopters because of different pros/cons for the versions. The recommendation for end-users is to use v3/v5 for use cases where repeatable identifiers are desired, <em>i.e.</em> the same input will result in the same UUID.  (This is helpful for, say, documentation example serializations generated by software.)  Version 4 is recommended for use cases where every node created should have a unique UUID.</p>
+
+<p>The JSON-LD produced via CASE (examples on <a href="https://caseontology.org/">caseontology.org</a> and <a href="https://github.com/casework/CASE-Examples">GitHub</a>) use one of these above versions in the following manner:</p>
+
+<dl>
+  <dt><code>kb:name-of-CASE-concept-generated-UUID</code></dt>
+  <dd>(<em>E.g. <code>kb:cyber-relationship-aaaa9b36-0126-42aa-9cc6-1e81ca31111</code></em>)</dd>
+</dl>
+
+<p>The <q>name of CASE concept</q> portion is some rendering of the <code>@type</code> of the node.  This portion of the identifier is provided from community members' experience working with graph data and UUID-based node identifiers.  For instance, an analyst querying for objects in a CASE bundle could be presented with these results to a query <q>What CASE objects are in this bundle:</q></p>
+
+<ul>
+  <li><code>kb:4eda8e3d-f047-4fc4-90a6-6d99ebced1a8</code></li>
+  <li><code>kb:590e30b2-232a-4883-84da-2a45361eb57a</code></li>
+  <li><code>kb:762b9a42-596a-4c70-a43b-c3f57f90cf93</code></li>
+  <li><code>kb:9da7064c-9442-449f-96ea-f6e20fbcac43</code></li>
+  <li><code>kb:f1e888a4-7a9d-42d9-af5e-01144ceda3ef</code></li>
+</ul>
+
+<p>Or, the analyst could be presented with these results:</p>
+
+<ul>
+  <li><code>kb:malware-f1e888a4-7a9d-42d9-af5e-01144ceda3ef</code></li>
+  <li><code>kb:person-762b9a42-596a-4c70-a43b-c3f57f90cf93</code></li>
+  <li><code>kb:person-9da7064c-9442-449f-96ea-f6e20fbcac43</code></li>
+  <li><code>kb:picture-590e30b2-232a-4883-84da-2a45361eb57a</code></li>
+  <li><code>kb:relationship-4eda8e3d-f047-4fc4-90a6-6d99ebced1a8</code></li>
+</ul>
+
+<p>This practice is only meant to provide an informal hint to the type of the node, and carries no programmatically-derivable significance.</p>
+
+<p><code>@id</code>'s will be accompanied by an <code>@type</code> dictionary key when creating a new node, while the <code>@type</code> field is typically missing when used as an object reference within a triple/JSON-LD value.  This is because the <code>@type</code> JSON dictionary key implements the RDF type designation. <em>E.g.</em> this JSON-LD:</p>
+
+{% highlight json %}
+{
+  "@id": "kb:someclass-d903683d-c6e1-4ba8-a6cf-cc39006a58e0",
+  "@type": "uco-core:UcoObject"
+}
+{% endhighlight %}
+
+<p>is semantically equivalent to this in Turtle:</p>
+
+{% highlight turtle %}
+kb:someclass-d903683d-c6e1-4ba8-a6cf-cc39006a58e0 rdfs:type uco-core:UcoObject .
+{% endhighlight %}
+
+<p>Most Turtle serializations would present that with <code>rdfs:type</code> shortened to <code>a</code>:</p>
+
+{% highlight turtle %}
+kb:someclass-d903683d-c6e1-4ba8-a6cf-cc39006a58e0 a uco-core:UcoObject .
+{% endhighlight %}

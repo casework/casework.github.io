@@ -2,6 +2,7 @@ questions:
  - category: General
    questions:
     - question: "Does CASE require hex data be entered uppercase or lowercase?"
+      title: "CASE hex data"
       answer: >
         While CASE and UCO haven’t yet put in a stance on this, it's worth noting that the XML Schema source of basic RDF types does weigh in on this with the more stringent [hexBinaryCanonical](https://www.w3.org/TR/xmlschema11-2/#f-hexBinaryCanonical): Uppercase.
 
@@ -10,6 +11,7 @@ questions:
  - category: JSON
    questions:
     - question: "What are the possible “versions” (or “methods”) to find an object reference?"
+      title: "CASE object by reference"
       answer: >
         There are several forms, influenced by `ObjectProperty` cardinality and namespace prefixes.
 

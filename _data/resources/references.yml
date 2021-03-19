@@ -62,3 +62,19 @@
   desc: Define format for ontology repository's ChangeLog
   date: 2020-08-12
   url: https://drive.google.com/file/d/1zWjQ_uhhVxEjkqS2mrcabT4tNh8s0JQx/view
+- title: Change Proposal 16
+  desc: Establish unit tests and Continuous Integration for ontology repository
+  date: 2021-03-16
+  url: https://drive.google.com/file/d/1622v5k7fXo2fjDs_EzfhbTyvWIjDBZv-/view
+- title: Change Proposal 25
+  desc: Define and use prefixes for imported concepts
+  date: 2021-03-16
+  url: https://drive.google.com/file/d/1HUeY8AHxsnukP0sFOvsPQZRuyNbqcf6n/view
+- title: Change Proposal 15
+  desc: Remove intermediate role classes
+  date: 2021-03-16
+  url: https://drive.google.com/file/d/1PLcPA3TSDqt7wX84SYlezC1thK_Sznrc/view
+- title: Change Proposal 18
+  desc: Remove intermediate role classes
+  date: 2021-03-17
+  url: https://drive.google.com/file/d/1AmVX6x2ZORr2-h2OIXug2PiptYaHcvuh/view

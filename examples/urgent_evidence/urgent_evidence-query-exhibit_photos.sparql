@@ -25,15 +25,30 @@ WHERE {
 
       ?nActionReferencesFacet
         a uco-action:ActionReferences ;
-        uco-action:instrument kb:camera-uuid-1 ;
+        uco-action:instrument ?nCameraDevice ;
         uco-action:object ?nExhibitDevice ;
         uco-action:result ?nPictureFile ;
         uco-action:result ?nProvenanceRecord ;
         .
 
-      kb:camera-uuid-1
-        a uco-tool:AnalyticTool ;
-        .
+      # To avoid confusing pictures taken of evidence with pictures
+      # extracted from evidence, identify the investigator's camera by
+      # merit of it being an analytic tool.
+      {
+        SELECT ?nCameraDevice
+        WHERE {
+          ?nCameraDevice
+            a uco-observable:ObservableObject ;
+            a uco-tool:AnalyticTool ;
+            uco-core:hasFacet ?nCameraDeviceDeviceFacet ;
+            .
+
+          ?nCameraDeviceDeviceFacet
+            a uco-observable:DeviceFacet ;
+            uco-observable:deviceType "camera" ;
+            .
+        }
+      }  # Ends sub-query: SELECT ?nCameraDevice
 
       # The provenance record confirms the picture file was recorded in
       # the provenance chain.
@@ -62,10 +77,10 @@ WHERE {
         WHERE {
           ?nExhibitDevice
             a uco-observable:ObservableObject ;
-            uco-core:hasFacet ?nDeviceFacet ;
+            uco-core:hasFacet ?nExhibitDeviceDeviceFacet ;
             .
 
-          ?nDeviceFacet
+          ?nExhibitDeviceDeviceFacet
             a uco-observable:DeviceFacet ;
             .
         }
