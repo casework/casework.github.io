@@ -1,7 +1,7 @@
-# baseURI: https://caseontology.org/ontology/case/case
-# imports: https://caseontology.org/ontology/case/investigation
-# imports: https://caseontology.org/ontology/case/vocabulary
-# imports: https://unifiedcyberontology.org/ontology/uco/uco
+# baseURI: http://dev.caseontology.org/ontology/case/case/0.2.1
+# imports: http://dev.caseontology.org/ontology/case/investigation/0.2.1
+# imports: http://dev.caseontology.org/ontology/case/vocabulary/0.2.1
+# imports: http://dev.caseontology.org/ontology/uco/uco/0.4.1
 
 @base <https://caseontology.org/ontology/testing_versioned_iris_case/case> .
 @prefix dct: <http://purl.org/dc/terms/> .
