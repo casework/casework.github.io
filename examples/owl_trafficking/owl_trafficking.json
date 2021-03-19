@@ -43,7 +43,7 @@
             "uco-tool:version": "2.0.0.5412",
             "uco-core:hasFacet": [
                 {
-                    "@type": "uco-tool:ToolConfigurationType",
+                    "@type": "uco-tool:ToolConfigurationTypeFacet",
                     "uco-tool:configurationSettings": [
                         {
                             "@type": "uco-tool:ConfigurationSettingType",
@@ -73,7 +73,7 @@
             },
             "uco-core:hasFacet": [
                 {
-                    "@type": "uco-action:ActionReferences",
+                    "@type": "uco-action:ActionReferencesFacet",
                     "uco-action:location": {
                         "@id": "kb:lab-c44e4679-26e3-4585-aaa1-86110db936f8"
                     },
@@ -109,7 +109,7 @@
             "@id": "kb:investigator-09fb01ce-999e-4521-bd3f-f7be69a63a43",
             "@type": "uco-identity:Identity",
             "uco-core:hasFacet": {
-                "@type": "uco-identity:SimpleName",
+                "@type": "uco-identity:SimpleNameFacet",
                 "uco-identity:familyName": "Hoel"
             }
         },
@@ -329,7 +329,7 @@
             "@type": "uco-identity:Identity",
             "uco-core:hasFacet": [
                 {
-                    "@type": "uco-identity:SimpleName",
+                    "@type": "uco-identity:SimpleNameFacet",
                     "uco-identity:givenName": "Sarah",
                     "uco-identity:familyName": "McAvoy"
                 }
@@ -1015,7 +1015,7 @@
             "@id": "kb:latlong-8667ec82-8c21-11e9-934e-0c4de9c21b53",
             "@type": "uco-location:Location",
             "uco-core:hasFacet": {
-                "@type": "uco-location:LatLongCoordinates",
+                "@type": "uco-location:LatLongCoordinatesFacet",
                 "uco-location:latitude": 38.423756,
                 "uco-location:longitude": -82.43619,
                 "uco-location:altitude": null

@@ -108,7 +108,7 @@ WHERE
     .
 
   ?nActionReferences
-    a uco-action:ActionReferences ;
+    a uco-action:ActionReferencesFacet ;
     uco-action:endTime ?lEndTime ;
     .
 
@@ -219,7 +219,7 @@ WHERE
   ?nAction
     a case-investigation:InvestigativeAction ;
     uco-core:hasFacet [
-      a uco-action:ActionReferences ;
+      a uco-action:ActionReferencesFacet ;
       uco-action:location ?nLocation ;
     ] ;
     .
@@ -228,7 +228,7 @@ WHERE
     a uco-location:Location ;
     uco-core:description ?lDescription ;
     uco-core:hasFacet [
-      a uco-location:SimpleAddress ;
+      a uco-location:SimpleAddressFacet ;
       drafting:roomId ?lRoomId ;
     ]
     .
@@ -299,7 +299,7 @@ WHERE
     .
 
   ?nActionReferences
-    a uco-action:ActionReferences ;
+    a uco-action:ActionReferencesFacet ;
     uco-action:performer ?nPerformer ;
     uco-action:result ?nActionProvenanceRecord ;
     .
@@ -317,7 +317,7 @@ WHERE
     .
 
   ?nSimpleName
-    a uco-identity:SimpleName ;
+    a uco-identity:SimpleNameFacet ;
     uco-identity:familyName ?lLastName ;
     .
 }
@@ -379,7 +379,7 @@ WHERE {
         .
 
       ?nActionReferencesFacet
-        a uco-action:ActionReferences ;
+        a uco-action:ActionReferencesFacet ;
         uco-action:instrument ?nCameraDevice ;
         uco-action:object ?nExhibitDevice ;
         uco-action:result ?nPictureFile ;

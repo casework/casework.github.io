@@ -8,7 +8,7 @@ WHERE
     .
 
   ?nActionReferences
-    a uco-action:ActionReferences ;
+    a uco-action:ActionReferencesFacet ;
     uco-action:endTime ?lEndTime ;
     .
 
