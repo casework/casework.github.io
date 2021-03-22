@@ -1,5 +1,5 @@
 ---
-title: 0.3.0 Release
+title: 0.4.0 Release
 layout: releases
 custom_css: releases
 ---
@@ -14,6 +14,6 @@ custom_css: releases
 
 #### Migration guidance
 
-A guide to migration from CASE 0.2.0 will be provided.
+A guide to migration from CASE 0.3.0 will be provided.
 
 #### Release Notes
