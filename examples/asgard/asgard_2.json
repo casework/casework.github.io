@@ -12,7 +12,7 @@
             "@type": "xsd:dateTime",
             "@value": "2019-03-30T22:47:32Z"
         },
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:instrument": {
@@ -56,7 +56,7 @@
         "uco-tool:toolType": "Extraction",
         "uco-tool:creator": "Harald",
         "uco-tool:version": "1.2.0",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-tool:ToolConfigurationType",
                 "uco-tool:configurationSettings": [
@@ -76,10 +76,10 @@
     },
     {
         "@id": "kb:suspect-mobiledevice-forensicduplicate-uuid",
-        "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:File",
+                "@type": "uco-observable:FileFacet",
                 "uco-observable:createdTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2019-03-30T22:12:19.32Z"
@@ -94,7 +94,7 @@
                 }
             },
             {
-                "@type": "uco-observable:ContentData",
+                "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:hash": [
                     {
                         "@type": "uco-types:Hash",

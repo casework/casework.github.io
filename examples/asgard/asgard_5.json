@@ -1,10 +1,10 @@
 [
     {
         "@id": "kb:network-connection1-uuid",
-        "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:NetworkConnection",
+                "@type": "uco-observable:NetworkConnectionFacet",
                 "uco-observable:startTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2009-04-03T02:29:25.6256260Z"

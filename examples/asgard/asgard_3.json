@@ -1,10 +1,10 @@
 [
     {
         "@id": "kb:suspect-device-mmssms-uuid",
-        "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:File",
+                "@type": "uco-observable:FileFacet",
                 "uco-observable:createdTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2019-03-30T08:12:19.32Z"
@@ -18,7 +18,7 @@
                 }
             },
             {
-                "@type": "uco-observable:ContentData",
+                "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:sizeInBytes": {
                     "@type": "xsd:long",
                     "@value": 122925
@@ -42,7 +42,7 @@
     },
     {
         "@id": "kb:trace-relationship3-uuid",
-        "@type": "uco-observable:CyberRelationship",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
             "@id": "kb:suspect-device-mmssms-uuid"
         },
@@ -52,13 +52,13 @@
             }
         ],
         "uco-core:kindOfRelationship": {
-            "@type": "uco-observable:CyberItemRelationshipEnum",
+            "@type": "uco-observable:ObservableObjectRelationshipEnum",
             "@value": "Contained_Within"
         },
         "uco-core:isDirectional": true,
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:PathRelation",
+                "@type": "uco-observable:PathRelationFacet",
                 "uco-observable:path": "/mobile/sms.db"
             }
         ]

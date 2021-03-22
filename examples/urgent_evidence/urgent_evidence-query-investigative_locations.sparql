@@ -3,7 +3,7 @@ WHERE
 {
   ?nAction
     a case-investigation:InvestigativeAction ;
-    uco-core:facets [
+    uco-core:hasFacet [
       a uco-action:ActionReferences ;
       uco-action:location ?nLocation ;
     ] ;
@@ -12,7 +12,7 @@ WHERE
   ?nLocation
     a uco-location:Location ;
     uco-core:description ?lDescription ;
-    uco-core:facets [
+    uco-core:hasFacet [
       a uco-location:SimpleAddress ;
       drafting:roomId ?lRoomId ;
     ]

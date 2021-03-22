@@ -17,7 +17,7 @@
             "@id": "kb:action-uuid-1",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:description": "Exhibit submitted for Kiosk examination",
-            "uco-core:facets": {
+            "uco-core:hasFacet": {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
@@ -43,7 +43,7 @@
             "@id": "kb:action-uuid-2",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "transferred",
-            "uco-core:facets": {
+            "uco-core:hasFacet": {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
@@ -78,7 +78,7 @@
             "@id": "kb:action-uuid-3",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "assigned",
-            "uco-core:facets": {
+            "uco-core:hasFacet": {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
@@ -110,7 +110,7 @@
             "@id": "kb:action-uuid-4",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "photographed",
-            "uco-core:facets": {
+            "uco-core:hasFacet": {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
@@ -153,7 +153,7 @@
         {
             "@id": "kb:action-uuid-5",
             "@type": "case-investigation:InvestigativeAction",
-            "uco-core:facets": {
+            "uco-core:hasFacet": {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
@@ -172,7 +172,7 @@
             "@id": "kb:action-uuid-6",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "photographed",
-            "uco-core:facets": {
+            "uco-core:hasFacet": {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
@@ -216,7 +216,7 @@
             "@id": "kb:action-uuid-7",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "processed",
-            "uco-core:facets": {
+            "uco-core:hasFacet": {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:startTime": {
                     "@type": "xsd:dateTime",
@@ -260,7 +260,7 @@
         {
             "@id": "kb:action-uuid-9",
             "@type": "case-investigation:InvestigativeAction",
-            "uco-core:facets": {
+            "uco-core:hasFacet": {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
@@ -279,7 +279,7 @@
             "@id": "kb:action-uuid-10",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "burned",
-            "uco-core:facets": {
+            "uco-core:hasFacet": {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
@@ -312,10 +312,10 @@
         },
         {
             "@id": "kb:dvd-uuid-1",
-            "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "@type": "uco-observable:ObservableObject",
+            "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:Device",
+                    "@type": "uco-observable:DeviceFacet",
                     "uco-observable:manufacturer": "Generic",
                     "uco-observable:deviceType": "DVD",
                     "uco-observable:model": "XYZ",
@@ -331,13 +331,13 @@
                 "@id": "kb:dvd-uuid-1"
             },
             "uco-core:kindOfRelationship": {
-                "@type": "uco-observable:CyberItemRelationshipEnum",
+                "@type": "uco-observable:ObservableObjectRelationshipEnum",
                 "@value": "Contained_Within"
             },
             "uco-core:isDirectional": true,
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:PathRelation",
+                    "@type": "uco-observable:PathRelationFacet",
                     "uco-observable:path": "/investigation468/results/EXH-20190101-7-KioskReport.pdf"
                 }
             ]
@@ -345,7 +345,7 @@
         {
             "@id": "kb:action-uuid-11",
             "@type": "case-investigation:InvestigativeAction",
-            "uco-core:facets": {
+            "uco-core:hasFacet": {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
@@ -363,7 +363,7 @@
         {
             "@id": "kb:action-uuid-12",
             "@type": "case-investigation:InvestigativeAction",
-            "uco-core:facets": {
+            "uco-core:hasFacet": {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
@@ -396,11 +396,11 @@
         },
         {
             "@id": "kb:file-uuid-1",
-            "@type": "uco-observable:CyberItem",
+            "@type": "uco-observable:ObservableObject",
             "uco-core:description": "Intake Form",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:File",
+                    "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "/investigation468/documentation/EXH-20190101-7-IntakeForm.pdf",
                     "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": {
@@ -409,7 +409,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:ContentData",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -428,11 +428,11 @@
         },
         {
             "@id": "kb:file-uuid-2",
-            "@type": "uco-observable:CyberItem",
+            "@type": "uco-observable:ObservableObject",
             "uco-core:description": "Kiosk report",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:File",
+                    "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "/investigation468/results/EXH-20190101-7-KioskReport.pdf",
                     "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": {
@@ -441,7 +441,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:ContentData",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -460,11 +460,11 @@
         },
         {
             "@id": "kb:file-uuid-3",
-            "@type": "uco-observable:CyberItem",
+            "@type": "uco-observable:ObservableObject",
             "uco-core:description": "Witness statement",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:File",
+                    "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "/investigation468/documentation/EXH-20190101-7-WitnessStatement.pdf",
                     "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": {
@@ -473,7 +473,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:ContentData",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -494,7 +494,7 @@
             "@id": "kb:action-uuid-13",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "transferred",
-            "uco-core:facets": {
+            "uco-core:hasFacet": {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
@@ -527,12 +527,12 @@
         {
             "@id": "kb:camera-uuid-1",
             "@type": [
-                "uco-observable:CyberItem",
+                "uco-observable:ObservableObject",
                 "uco-tool:AnalyticTool"
             ],
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:Device",
+                    "@type": "uco-observable:DeviceFacet",
                     "uco-observable:deviceType": "camera",
                     "uco-observable:manufacturer": "Canon",
                     "uco-observable:model": "PowerShot SX540"
@@ -549,7 +549,7 @@
             "@id": "kb:location-uuid-1",
             "@type": "uco-location:Location",
             "uco-core:description": "(Room 1-001) Police station intake lab",
-            "uco-core:facets": {
+            "uco-core:hasFacet": {
                 "@type": "uco-location:SimpleAddress",
                 "drafting:roomId": "1-001",
                 "uco-location:country": "United Kingdom",
@@ -560,7 +560,7 @@
             "@id": "kb:location-uuid-2",
             "@type": "uco-location:Location",
             "uco-core:description": "(Room B-001) Police station evidence vault",
-            "uco-core:facets": {
+            "uco-core:hasFacet": {
                 "@type": "uco-location:SimpleAddress",
                 "drafting:roomId": "B-001",
                 "uco-location:country": "United Kingdom",
@@ -571,7 +571,7 @@
             "@id": "kb:location-uuid-3",
             "@type": "uco-location:Location",
             "uco-core:description": "(Room 2-013) Police station evidence processing lab",
-            "uco-core:facets": {
+            "uco-core:hasFacet": {
                 "@type": "uco-location:SimpleAddress",
                 "drafting:roomId": "2-013",
                 "uco-location:country": "United Kingdom",
@@ -582,7 +582,7 @@
             "@id": "kb:location-uuid-4",
             "@type": "uco-location:Location",
             "uco-core:description": "(Room 3-022) Desk of Officer Hudson",
-            "uco-core:facets": {
+            "uco-core:hasFacet": {
                 "@type": "uco-location:SimpleAddress",
                 "drafting:roomId": "3-022",
                 "uco-location:country": "United Kingdom",
@@ -592,7 +592,7 @@
         {
             "@id": "kb:officer-uuid-1",
             "@type": "uco-identity:Identity",
-            "uco-core:facets": {
+            "uco-core:hasFacet": {
                 "@type": "uco-identity:SimpleName",
                 "uco-identity:familyName": "Hudson"
             }
@@ -600,7 +600,7 @@
         {
             "@id": "kb:officer-uuid-2",
             "@type": "uco-identity:Identity",
-            "uco-core:facets": {
+            "uco-core:hasFacet": {
                 "@type": "uco-identity:SimpleName",
                 "uco-identity:familyName": "Smith"
             }
@@ -608,7 +608,7 @@
         {
             "@id": "kb:officer-uuid-3",
             "@type": "uco-identity:Identity",
-            "uco-core:facets": {
+            "uco-core:hasFacet": {
                 "@type": "uco-identity:SimpleName",
                 "uco-identity:familyName": "Walker"
             }
@@ -718,10 +718,10 @@
         },
         {
             "@id": "kb:subject-device-photograph-uuid-1",
-            "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "@type": "uco-observable:ObservableObject",
+            "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:ContentData",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
@@ -742,7 +742,7 @@
                     ]
                 },
                 {
-                    "@type": "uco-observable:EXIF",
+                    "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
                         "@type": "uco-types:ControlledDictionary",
                             "uco-types:entry": [
@@ -780,7 +780,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:File",
+                    "@type": "uco-observable:FileFacet",
                     "uco-observable:extension": "jpg",
                     "uco-observable:fileName": "IMG_4829.jpg",
                     "uco-observable:modifiedTime": {
@@ -793,7 +793,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:RasterPicture",
+                    "@type": "uco-observable:RasterPictureFacet",
                     "uco-observable:pictureType": "jpg",
                     "uco-observable:pictureHeight": 6000,
                     "uco-observable:pictureWidth": 4000
@@ -802,10 +802,10 @@
         },
         {
             "@id": "kb:subject-device-photograph-uuid-2",
-            "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "@type": "uco-observable:ObservableObject",
+            "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:ContentData",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
@@ -826,7 +826,7 @@
                     ]
                 },
                 {
-                    "@type": "uco-observable:EXIF",
+                    "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
                         "@type": "uco-types:ControlledDictionary",
                             "uco-types:entry": [
@@ -864,7 +864,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:File",
+                    "@type": "uco-observable:FileFacet",
                     "uco-observable:extension": "jpg",
                     "uco-observable:fileName": "IMG_4830.jpg",
                     "uco-observable:modifiedTime": {
@@ -877,7 +877,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:RasterPicture",
+                    "@type": "uco-observable:RasterPictureFacet",
                     "uco-observable:pictureType": "jpg",
                     "uco-observable:pictureHeight": 6000,
                     "uco-observable:pictureWidth": 4000
@@ -886,10 +886,10 @@
         },
         {
             "@id": "kb:subject-device-photograph-uuid-3",
-            "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "@type": "uco-observable:ObservableObject",
+            "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:ContentData",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
@@ -910,7 +910,7 @@
                     ]
                 },
                 {
-                    "@type": "uco-observable:EXIF",
+                    "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
                         "@type": "uco-types:ControlledDictionary",
                             "uco-types:entry": [
@@ -948,7 +948,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:File",
+                    "@type": "uco-observable:FileFacet",
                     "uco-observable:extension": "jpg",
                     "uco-observable:fileName": "IMG_4831.jpg",
                     "uco-observable:modifiedTime": {
@@ -961,7 +961,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:RasterPicture",
+                    "@type": "uco-observable:RasterPictureFacet",
                     "uco-observable:pictureType": "jpg",
                     "uco-observable:pictureHeight": 6000,
                     "uco-observable:pictureWidth": 4000
@@ -970,10 +970,10 @@
         },
         {
             "@id": "kb:subject-device-photograph-uuid-4",
-            "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "@type": "uco-observable:ObservableObject",
+            "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:ContentData",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
@@ -994,7 +994,7 @@
                     ]
                 },
                 {
-                    "@type": "uco-observable:EXIF",
+                    "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
                         "@type": "uco-types:ControlledDictionary",
                             "uco-types:entry": [
@@ -1032,7 +1032,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:File",
+                    "@type": "uco-observable:FileFacet",
                     "uco-observable:extension": "jpg",
                     "uco-observable:fileName": "IMG_4832.jpg",
                     "uco-observable:modifiedTime": {
@@ -1045,7 +1045,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:RasterPicture",
+                    "@type": "uco-observable:RasterPictureFacet",
                     "uco-observable:pictureType": "jpg",
                     "uco-observable:pictureHeight": 6000,
                     "uco-observable:pictureWidth": 4000
@@ -1054,10 +1054,10 @@
         },
         {
             "@id": "kb:subject-device-photograph-uuid-5",
-            "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "@type": "uco-observable:ObservableObject",
+            "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:ContentData",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
@@ -1078,7 +1078,7 @@
                     ]
                 },
                 {
-                    "@type": "uco-observable:EXIF",
+                    "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
                         "@type": "uco-types:ControlledDictionary",
                             "uco-types:entry": [
@@ -1116,7 +1116,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:File",
+                    "@type": "uco-observable:FileFacet",
                     "uco-observable:extension": "jpg",
                     "uco-observable:fileName": "IMG_4833.jpg",
                     "uco-observable:modifiedTime": {
@@ -1129,7 +1129,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:RasterPicture",
+                    "@type": "uco-observable:RasterPictureFacet",
                     "uco-observable:pictureType": "jpg",
                     "uco-observable:pictureHeight": 6000,
                     "uco-observable:pictureWidth": 4000
@@ -1138,10 +1138,10 @@
         },
         {
             "@id": "kb:subject-device-photograph-uuid-6",
-            "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "@type": "uco-observable:ObservableObject",
+            "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:ContentData",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
@@ -1162,7 +1162,7 @@
                     ]
                 },
                 {
-                    "@type": "uco-observable:EXIF",
+                    "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
                         "@type": "uco-types:ControlledDictionary",
                             "uco-types:entry": [
@@ -1200,7 +1200,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:File",
+                    "@type": "uco-observable:FileFacet",
                     "uco-observable:extension": "jpg",
                     "uco-observable:fileName": "IMG_4834.jpg",
                     "uco-observable:modifiedTime": {
@@ -1213,7 +1213,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:RasterPicture",
+                    "@type": "uco-observable:RasterPictureFacet",
                     "uco-observable:pictureType": "jpg",
                     "uco-observable:pictureHeight": 6000,
                     "uco-observable:pictureWidth": 4000
@@ -1222,10 +1222,10 @@
         },
         {
             "@id": "kb:extracted-file-uuid-1",
-            "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "@type": "uco-observable:ObservableObject",
+            "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:ContentData",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
                     "uco-observable:sizeInBytes": {
                         "@type": "xsd:long",
@@ -1246,7 +1246,7 @@
                     ]
                 },
                 {
-                    "@type": "uco-observable:EXIF",
+                    "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
                         "@type": "uco-types:ControlledDictionary",
                             "uco-types:entry": [
@@ -1279,7 +1279,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:File",
+                    "@type": "uco-observable:FileFacet",
                     "uco-observable:extension": "jpg",
                     "uco-observable:fileName": "IMG_1863.jpg",
                     "uco-observable:modifiedTime": {
@@ -1292,7 +1292,7 @@
                     }
                 },
                 {
-                    "@type": "uco-observable:RasterPicture",
+                    "@type": "uco-observable:RasterPictureFacet",
                     "uco-observable:pictureType": "jpg",
                     "uco-observable:pictureHeight": 3264,
                     "uco-observable:pictureWidth": 2448
@@ -1301,10 +1301,10 @@
         },
         {
             "@id": "kb:subject-device-uuid-1",
-            "@type": "uco-observable:CyberItem",
-            "uco-core:facets": [
+            "@type": "uco-observable:ObservableObject",
+            "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:Device"
+                    "@type": "uco-observable:DeviceFacet"
                 }
             ]
         }

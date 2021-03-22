@@ -49,7 +49,7 @@ custom_js:
         {
             "@id": "kb:authorization-79D6AB60-D679-49CE-9573-7176DFEEB7C3",
             "@type": "case-investigation:Authorization",
-            "uco-core:facets": [
+            "uco-core:hasFacet": [
                 {
                     "@type": "case-investigation:Authorization",
                     "case-investigation:authorizationType": "Odin_Decree",
@@ -102,7 +102,7 @@ custom_js:
             "@type": "xsd:dateTime",
             "@value": "2019-03-30T22:36:24.35Z"
         },
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:instrument": {
@@ -139,17 +139,17 @@ custom_js:
     },
     {
         "@id": "kb:suspect-device-uuid",
-        "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:Device",
+                "@type": "uco-observable:DeviceFacet",
                 "uco-observable:manufacturer": "Apple",
                 "uco-observable:deviceType": "iPhone",
                 "uco-observable:model": "MG552",
                 "uco-observable:serialNumber": "F18Q4LGRG5MD"
             },
             {
-                "@type": "uco-observable:MobileDevice",
+                "@type": "uco-observable:MobileDeviceFacet",
                 "uco-observable:keypadUnlockCode": "123789",
                 "uco-observable:IMEI": "359305065690067",
                 "uco-observable:MSISDN": "1239275339",
@@ -170,17 +170,17 @@ custom_js:
                 "ownerName": "Loki iPhone"
             },
             {
-                "@type": "uco-observable:OperatingSystem",
+                "@type": "uco-observable:OperatingSystemFacet",
                 "uco-core:name": "iOS",
                 "uco-observable:manufacturer": "Apple",
                 "uco-observable:version": "10.3"
             },
             {
-                "@type": "uco-observable:WifiAddress",
+                "@type": "uco-observable:WifiAddressFacet",
                 "uco-observable:addressValue": "d0:33:11:13:e7:a1"
             },
             {
-                "@type": "uco-observable:BluetoothAddress",
+                "@type": "uco-observable:BluetoothAddressFacet",
                 "uco-observable:addressValue": "d0:33:11:13:e7:a2"
             }
         ]
@@ -209,7 +209,7 @@ custom_js:
             "@type": "xsd:dateTime",
             "@value": "2019-03-30T22:47:32Z"
         },
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-action:ActionReferences",
                 "uco-action:instrument": {
@@ -253,7 +253,7 @@ custom_js:
         "uco-tool:toolType": "Extraction",
         "uco-tool:creator": "Harald",
         "uco-tool:version": "1.2.0",
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
                 "@type": "uco-tool:ToolConfigurationType",
                 "uco-tool:configurationSettings": [
@@ -273,10 +273,10 @@ custom_js:
     },
     {
         "@id": "kb:suspect-mobiledevice-forensicduplicate-uuid",
-        "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:File",
+                "@type": "uco-observable:FileFacet",
                 "uco-observable:createdTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2019-03-30T22:12:19.32Z"
@@ -291,7 +291,7 @@ custom_js:
                 }
             },
             {
-                "@type": "uco-observable:ContentData",
+                "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:hash": [
                     {
                         "@type": "uco-types:Hash",
@@ -339,10 +339,10 @@ custom_js:
 [
     {
         "@id": "kb:suspect-device-mmssms-uuid",
-        "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:File",
+                "@type": "uco-observable:FileFacet",
                 "uco-observable:createdTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2019-03-30T08:12:19.32Z"
@@ -356,7 +356,7 @@ custom_js:
                 }
             },
             {
-                "@type": "uco-observable:ContentData",
+                "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:sizeInBytes": {
                     "@type": "xsd:long",
                     "@value": 122925
@@ -380,7 +380,7 @@ custom_js:
     },
     {
         "@id": "kb:trace-relationship3-uuid",
-        "@type": "uco-observable:CyberRelationship",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
             "@id": "kb:suspect-device-mmssms-uuid"
         },
@@ -390,13 +390,13 @@ custom_js:
             }
         ],
         "uco-core:kindOfRelationship": {
-            "@type": "uco-observable:CyberItemRelationshipEnum",
+            "@type": "uco-observable:ObservableObjectRelationshipEnum",
             "@value": "Contained_Within"
         },
         "uco-core:isDirectional": true,
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:PathRelation",
+                "@type": "uco-observable:PathRelationFacet",
                 "uco-observable:path": "/mobile/sms.db"
             }
         ]
@@ -410,10 +410,10 @@ custom_js:
 [
     {
         "@id": "kb:sms_message1",
-        "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:Message",
+                "@type": "uco-observable:MessageFacet",
                 "uco-observable:application": {
                     "@id": "kb:sms_application1"
                 },
@@ -435,10 +435,10 @@ custom_js:
     },
     {
         "@id": "kb:phone_call1",
-        "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:PhoneCall",
+                "@type": "uco-observable:PhoneCallFacet",
                 "uco-observable:callType": "mobile",
                 "uco-observable:startTime": {
                     "@type": "xsd:dateTime",
@@ -470,10 +470,10 @@ custom_js:
 [
     {
         "@id": "kb:network-connection1-uuid",
-        "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:NetworkConnection",
+                "@type": "uco-observable:NetworkConnectionFacet",
                 "uco-observable:startTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2009-04-03T02:29:25.6256260Z"

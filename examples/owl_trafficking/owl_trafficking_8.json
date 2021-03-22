@@ -1,10 +1,10 @@
 [
     {
         "@id": "kb:skype-99992808-7341-40d3-9285-774d865a9999",
-        "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:Account",
+                "@type": "uco-observable:AccountFacet",
                 "uco-observable:accountIssuer": {
                     "@id": "kb:organization-skypeapp-cc44c2ae-bdd3-4df8-9ca3-1f58d682d62b"
                 },

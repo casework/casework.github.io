@@ -1,7 +1,7 @@
 [
     {
         "@id": "kb:accounts-9999c405-9326-4f28-9b8d-44a3bb9e9999",
-        "@type": "uco-observable:CyberRelationship",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
             "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53"
         },
@@ -9,13 +9,13 @@
             "@id": "kb:accountsxml-16805dff-05f9-4cba-9266-d5fa712f3d8f"
         },
         "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
             "@value": "Contained_Within"
         },
         "uco-core:isDirectional": true,
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:DataRange",
+                "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 352,
                 "uco-observable:rangeSize": 20
             }
@@ -23,10 +23,10 @@
     },
     {
         "@id": "kb:accountsxml-16805dff-05f9-4cba-9266-d5fa712f3d8f",
-        "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:File",
+                "@type": "uco-observable:FileFacet",
                 "uco-observable:fileName": "accounts.xml",
                 "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/data/com.google.android.gms/shared_prefs/accounts.xml",
                 "uco-observable:extension": ".xml",
@@ -46,7 +46,7 @@
     },
     {
         "@id": "kb:accounts-9999999-9326-4f28-9b8d-44a3b9999999",
-        "@type": "uco-observable:CyberRelationship",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
             "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53"
         },
@@ -54,13 +54,13 @@
             "@id": "kb:accountsdb-99995dff-05f9-4cba-9266-d5fa712f9999"
         },
         "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
             "@value": "Contained_Within"
         },
         "uco-core:isDirectional": true,
-        "uco-core:facets": [
+        "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:DataRange",
+                "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 16272,
                 "uco-observable:rangeSize": 20
             }
@@ -68,10 +68,10 @@
     },
     {
         "@id": "kb:accountsdb-99995dff-05f9-4cba-9266-d5fa712f9999",
-        "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:File",
+                "@type": "uco-observable:FileFacet",
                 "uco-observable:fileName": "accounts.db",
                 "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/system/users/0/accounts.db",
                 "uco-observable:extension": ".db",

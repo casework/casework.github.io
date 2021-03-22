@@ -14,13 +14,13 @@ WHERE {
     SELECT ?nExhibitDevice ?nPictureFile
     WHERE {
       ?nPictureFile
-        a uco-observable:CyberItem ;
-        uco-core:facets ?nRasterPictureFacet ;
+        a uco-observable:ObservableObject ;
+        uco-core:hasFacet ?nRasterPictureFacet ;
         .
 
       ?nInvestigativeAction
         a case-investigation:InvestigativeAction ;
-        uco-core:facets ?nActionReferencesFacet ;
+        uco-core:hasFacet ?nActionReferencesFacet ;
         .
 
       ?nActionReferencesFacet
@@ -38,13 +38,13 @@ WHERE {
         SELECT ?nCameraDevice
         WHERE {
           ?nCameraDevice
-            a uco-observable:CyberItem ;
+            a uco-observable:ObservableObject ;
             a uco-tool:AnalyticTool ;
-            uco-core:facets ?nCameraDeviceDeviceFacet ;
+            uco-core:hasFacet ?nCameraDeviceDeviceFacet ;
             .
 
           ?nCameraDeviceDeviceFacet
-            a uco-observable:Device ;
+            a uco-observable:DeviceFacet ;
             uco-observable:deviceType "camera" ;
             .
         }
@@ -62,7 +62,7 @@ WHERE {
       # files.
 
       ?nRasterPictureFacet
-        a uco-observable:RasterPicture ;
+        a uco-observable:RasterPictureFacet ;
         .
 
       # Because provenance records are input to some actions, confirm
@@ -76,12 +76,12 @@ WHERE {
         SELECT ?nExhibitDevice
         WHERE {
           ?nExhibitDevice
-            a uco-observable:CyberItem ;
-            uco-core:facets ?nExhibitDeviceDeviceFacet ;
+            a uco-observable:ObservableObject ;
+            uco-core:hasFacet ?nExhibitDeviceDeviceFacet ;
             .
 
           ?nExhibitDeviceDeviceFacet
-            a uco-observable:Device ;
+            a uco-observable:DeviceFacet ;
             .
         }
       }  # Ends sub-query: SELECT ?nExhibitDevice
@@ -110,12 +110,12 @@ WHERE {
   # which files.
 
   ?nPictureFile
-    uco-core:facets ?nContentDataFacet ;
-    uco-core:facets ?nFileFacet ;
+    uco-core:hasFacet ?nContentDataFacet ;
+    uco-core:hasFacet ?nFileFacet ;
     .
 
   ?nContentDataFacet
-    a uco-observable:ContentData ;
+    a uco-observable:ContentDataFacet ;
     uco-observable:hash ?nHash ;
     .
 
@@ -124,7 +124,7 @@ WHERE {
     .
 
   ?nFileFacet
-    a uco-observable:File ;
+    a uco-observable:FileFacet ;
     uco-observable:fileName ?lFileName ;
     uco-observable:modifiedTime ?lModifiedTime ;
     .

@@ -1,10 +1,10 @@
 [
     {
         "@id": "kb:sms_message1",
-        "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:Message",
+                "@type": "uco-observable:MessageFacet",
                 "uco-observable:application": {
                     "@id": "kb:sms_application1"
                 },
@@ -26,10 +26,10 @@
     },
     {
         "@id": "kb:phone_call1",
-        "@type": "uco-observable:CyberItem",
-        "uco-core:facets": [
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:PhoneCall",
+                "@type": "uco-observable:PhoneCallFacet",
                 "uco-observable:callType": "mobile",
                 "uco-observable:startTime": {
                     "@type": "xsd:dateTime",
