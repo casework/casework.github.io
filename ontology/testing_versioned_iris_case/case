@@ -1,4 +1,4 @@
-# baseURI: http://dev.caseontology.org/ontology/case/case/0.2.1
+# baseURI: https://caseontology.org/ontology/testing_versioned_iris_case/case
 # imports: http://dev.caseontology.org/ontology/case/investigation/0.2.1
 # imports: http://dev.caseontology.org/ontology/case/vocabulary/0.2.1
 # imports: http://dev.caseontology.org/ontology/uco/uco/0.4.1
