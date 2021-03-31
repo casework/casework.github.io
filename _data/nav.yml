@@ -19,10 +19,8 @@
       link: /ontology/versioning.html
     - name: SPACE
     - header: Examples
-    - name: Investigation
-      link: /examples/asgard/
-    - name: View More
-      link: /examples/gallery.html
+    - name: Gallery
+      link: /examples/
     # - name: SPACE
     # - name: Latest Specification
     #   link: /ontology/spec.html
