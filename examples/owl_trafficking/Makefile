@@ -83,6 +83,7 @@ index.html: \
   owl_trafficking_17.json \
   owl_trafficking_18.json \
   owl_trafficking_19.json \
+  owl_trafficking-query-hash_verification.html \
   owl_trafficking-query-imaging_action.html
 	rm -f $@_
 	sed \
@@ -142,7 +143,7 @@ owl_trafficking.sed:
 	  echo "/@OWL_TRAFFICKING_$${x}__JSON@/r owl_trafficking_$${x}.json" ; \
 	  echo "/@OWL_TRAFFICKING_$${x}__JSON@/d" ; \
 	done > _$@
-	for x in IMAGING_ACTION ; do \
+	for x in IMAGING_ACTION HASH_VERIFICATION ; do \
 	  echo "/@QUERY_$${x}_SPARQL@/r owl_trafficking-query-$$(echo $${x} | tr '[:upper:]' '[:lower:]').sparql" ; \
 	  echo "/@QUERY_$${x}_SPARQL@/d" ; \
 	  echo "/@QUERY_$${x}_HTML@/r owl_trafficking-query-$$(echo $${x} | tr '[:upper:]' '[:lower:]').html" ; \

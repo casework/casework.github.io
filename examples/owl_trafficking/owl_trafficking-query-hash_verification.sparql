@@ -1,0 +1,37 @@
+SELECT ?lEndTime ?lHashMethod ?lHashValue
+WHERE {
+  ?nAction
+    a case-investigation:InvestigativeAction ;
+    uco-action:endTime ?lEndTime ;
+    uco-core:hasFacet ?nActionReferences ;
+    .
+
+  ?nActionReferences
+    a uco-action:ActionReferences ;
+    uco-action:result ?nProvenanceRecord ;
+    uco-action:result ?nDiskImage ;
+    .
+
+  ?nProvenanceRecord
+    a case-investigation:ProvenanceRecord ;
+    case-investigation:exhibitNumber "MD1" ;
+    uco-core:object ?nDiskImage ;
+    .
+
+  ?nDiskImage
+    a uco-observable:ObservableObject ;
+    uco-core:hasFacet ?nContentDataFacet ;
+    .
+
+  ?nContentDataFacet
+    a uco-observable:ContentDataFacet ;
+    uco-observable:hash ?nHash ;
+    .
+
+  ?nHash
+    a uco-types:Hash ;
+    uco-types:hashMethod ?lHashMethod ;
+    uco-types:hashValue ?lHashValue ;
+    .
+}
+ORDER BY ?lHashMethod
