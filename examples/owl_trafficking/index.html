@@ -335,6 +335,76 @@ WHERE {
 ]
 {% endhighlight %}
 
+<div class="card">
+  <h5 class="card-header" id="query-hash_verification">Query - hash verification</h5>
+  <div class="card-body">
+    <p class="card-text">For the duplicate, labeled <code>MD1</code>, of the device <code>SD1</code>, what were its original hashes, and when were they made? (<a href="urgent_evidence-query-hash_verification.sparql">SPARQL source</a>)</p>
+{% highlight sparql %}
+SELECT ?lEndTime ?lHashMethod ?lHashValue
+WHERE {
+  ?nAction
+    a case-investigation:InvestigativeAction ;
+    uco-action:endTime ?lEndTime ;
+    uco-core:hasFacet ?nActionReferences ;
+    .
+
+  ?nActionReferences
+    a uco-action:ActionReferences ;
+    uco-action:result ?nProvenanceRecord ;
+    uco-action:result ?nDiskImage ;
+    .
+
+  ?nProvenanceRecord
+    a case-investigation:ProvenanceRecord ;
+    case-investigation:exhibitNumber "MD1" ;
+    uco-core:object ?nDiskImage ;
+    .
+
+  ?nDiskImage
+    a uco-observable:ObservableObject ;
+    uco-core:hasFacet ?nContentDataFacet ;
+    .
+
+  ?nContentDataFacet
+    a uco-observable:ContentDataFacet ;
+    uco-observable:hash ?nHash ;
+    .
+
+  ?nHash
+    a uco-types:Hash ;
+    uco-types:hashMethod ?lHashMethod ;
+    uco-types:hashValue ?lHashValue ;
+    .
+}
+ORDER BY ?lHashMethod
+{% endhighlight %}
+<table border="1" class="dataframe table table-bordered table-condensed">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>?lEndTime</th>
+      <th>?lHashMethod</th>
+      <th>?lHashValue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2017-02-06 22:13:08+00:00</td>
+      <td>MD5</td>
+      <td>b334843a07a9e16494eebdf3079e6bc6</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2017-02-06 22:13:08+00:00</td>
+      <td>SHA1</td>
+      <td>5506912aac41534dc5af12b51059d5880737ab5e</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</div>
+
 <h3>ACQUIRED DEVICE SUMMARY</h3>
 <p>The details of the smartphone and its contents.</p>
 <h4>A) Device</h4>
