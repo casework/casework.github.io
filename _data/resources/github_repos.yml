@@ -1,3 +1,11 @@
+- title: CASE-Utilities-Python
+  status: Beta
+  type: Utilities
+  url: https://github.com/casework/CASE-Utilities-Python
+- title: CASE-Implementation-PROV-O
+  status: Alpha
+  type: Implementation
+  url: https://github.com/casework/CASE-Implementation-PROV-O
 - title: CASE-Implementation-PyPI-Pillow
   status: Planning
   type: Implementation
