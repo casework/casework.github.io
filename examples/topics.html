@@ -1,0 +1,160 @@
+---
+<!-- layout: releases -->
+title: Topics
+jumbo_desc: Investigative topic support in CASE
+---
+
+    <p>The <a href="/examples/">CASE narrative examples gallery</a> illustrates snippets of CASE data that would appear in cyber investigations, using narratives to provide a cohesive demonstration.  The concepts used in those illustrations can be grouped into various topics of investigative relevance.</p>
+    <p>Other illustrations of concepts are available at the <a href="https://github.com/casework/CASE-Examples">CASE Examples Github repository</a>, and in the output of some of the <a href="/resources/github_repos.html">CASE code bases</a>.  Specific illustrations are linked below.</p>
+    <p>CASE supports other investigative topics beyond what are listed on this page.  The community continues to build this page, cataloguing the competency questions CASE addresses.  If you are interested in helping to document investigative needs, <a href="/contact.html">we welcome your participation</a>.</p>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <div class="well">
+          <h3 id="chain_of_custody">Chain of Custody</h3>
+          <p>The Chain of Custody is crucial in investigations as it helps establish and maintain integrity of the evidence throughout various stages (i.e. seizure, transfer, analysis, etc.). Due to the increasing reliance of digital media in our every-day tasks, digital components are becoming more prominent in investigations. CASE seeks to represent that cyber aspect of a Chain of Custody. Those aspects that can be represented in CASE are properties of a device (manufacturer, model, serial number, storage size, etc.), tools used to acquire and/or analyze the device, and the context of data pertaining to the device.</p>
+          <h4>Concepts and illustrations</h4>
+          <table class="table table-bordered table-condensed">
+            <caption>Supporting concepts for Chain of Custody</caption>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>IRI</th>
+                <th>Illustrations</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Investigative action</td>
+                <td>
+                  <ul>
+                    <li><abbr title="https://caseontology.org/ontology/case/investigation#InvestigativeAction"><code>case-investigation:InvestigativeAction</code></abbr></li>
+                    <li><abbr title="https://unifiedcyberontology.org/ontology/uco/action#location"><code>uco-action:location</code></abbr></li>
+                  </ul>
+                </td>
+                <td>
+                  <p><em>Among <a href="urgent_evidence/#queries">queries</a> in the <a href="urgent_evidence/">Urgent Evidence narrative</a></em></p>
+                  <dl>
+                    <dt><a href="urgent_evidence/#query-action_timeline">Action timeline</a></dt>
+                    <dd>The <code>InvestigativeAction</code> can provide a timeline of the actions taken in an investigation.</dd>
+                    <dt><a href="urgent_evidence/#query-investigative_locations">Investigative Locations</a></dt>
+                    <dd>The <code>InvestigativeAction</code> ties an action location as where evidence was acted upon.</dd>
+                  </dl>
+                  <p><em>See other <a href="https://github.com/casework/CASE-Examples/search?q=InvestigativeAction">usage in CASE-Examples</a></em></p>
+                </td>
+              </tr>
+              <tr>
+                <td>Digital evidence content-integrity records</td>
+                <td>
+                  <ul>
+                    <li><abbr title="https://unifiedcyberontology.org/ontology/uco/action#endTime"><code>uco-action:endTime</code></abbr></li>
+                    <li><abbr title="https://unifiedcyberontology.org/ontology/uco/observable#ImageFacet"><code>uco-observable:ImageFacet</code></abbr></li>
+                    <li><abbr title="https://unifiedcyberontology.org/ontology/uco/types#Hash"><code>uco-types:Hash</code></abbr></li>
+                    <li><abbr title="https://unifiedcyberontology.org/ontology/uco/types#hashMethod"><code>uco-types:hashMethod</code></abbr></li>
+                    <li><abbr title="https://unifiedcyberontology.org/ontology/uco/types#hashValue"><code>uco-types:hashValue</code></abbr></li>
+                  </ul>
+                </td>
+                <td>
+                  <p><em>Among queries in the <a href="owl_trafficking/">Owl Trafficking scenario</a></em></p>
+                  <dl>
+                    <dt><a href="owl_trafficking/#query-hash_verification">Hash verification</a></dt>
+                    <dd>The <code>Hash</code> serves as a record of an <code>Image</code> taken of a device.  The <code>InvestigativeAction</code> provides the time the image file was characterized.</dd>
+                  </dl>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <div class="well">
+          <h3 id="pictures">Pictures</h3>
+          <p>Pictures in investigations have their embedded technical metadata analyzed as well as their depicted contents.</p>
+          <h4>Concepts and illustrations</h4>
+          <table class="table table-bordered table-condensed">
+            <caption>Supporting concepts for Pictures</caption>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>IRI</th>
+                <th>Illustrations</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>EXIF dictionary</td>
+                <td>
+                  <ul>
+                    <li><abbr title="https://unifiedcyberontology.org/ontology/uco/observable#EXIFFacet"><code>uco-observable:EXIFFacet</code></abbr></li>
+                    <li><abbr title="https://unifiedcyberontology.org/ontology/uco/observable#exifData"><code>uco-observable:exifData</code></abbr></li>
+                    <li><abbr title="https://unifiedcyberontology.org/ontology/uco/types#ControlledDictionary"><code>uco-types:ControlledDictionary</code></abbr></li>
+                  </ul>
+                </td>
+                <td>
+                  <p><em>See <a href="https://github.com/casework/CASE-Implementation-ExifTool/blob/main/tests/govdocs1/files/799/987/analysis.json">picture location extraction in the CASE ExifTool implementation</a></em></p>
+                  <p><em>See <a href="https://github.com/casework/CASE-Examples/search?q=EXIFFacet">usage in CASE-Examples</a></em></p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <div class="well">
+          <h3 id="location">Location</h3>
+          <p>Locations in investigations include semantic places and geospatial points.</p>
+          <h4>Concepts and illustrations</h4>
+          <table class="table table-bordered table-condensed">
+            <caption>Supporting concepts for Location</caption>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>IRI</th>
+                <th>Illustrations</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Location as a semantic place</td>
+                <td>
+                  <ul>
+                    <li><abbr title="https://unifiedcyberontology.org/ontology/uco/location#Location"><code>uco-location:Location</code></abbr></li>
+                    <li><abbr title="https://unifiedcyberontology.org/ontology/uco/location#SimpleAddress"><code>uco-location:SimpleAddress</code></abbr></li>
+                  </ul>
+                </td>
+                <td>
+                  <p><em>Among <a href="urgent_evidence/#queries">queries</a> in the <a href="urgent_evidence/">Urgent Evidence narrative</a></em></p>
+                  <dl>
+                    <dt><a href="urgent_evidence/#query-investigative_locations">Investigative Locations</a></dt>
+                    <dd>The <code>InvestigativeAction</code> ties an action location as where evidence was acted upon.</dd>
+                  </dl>
+                  <p><em>See other <a href="https://github.com/casework/CASE-Examples/search?q=SimpleAddress">usage in CASE-Examples</a></em></p>
+                </td>
+              </tr>
+              <tr>
+                <td>Coordinates</td>
+                <td>
+                  <ul>
+                    <li><abbr title="https://unifiedcyberontology.org/ontology/uco/location#Location"><code>uco-location:Location</code></abbr></li>
+                    <li><abbr title="https://unifiedcyberontology.org/ontology/uco/location#LatLongCoordinates"><code>uco-location:LatLongCoordinates</code></abbr></li>
+                    <li><abbr title="https://unifiedcyberontology.org/ontology/uco/location#altitude"><code>uco-location:altitude</code></abbr></li>
+                    <li><abbr title="https://unifiedcyberontology.org/ontology/uco/location#latitude"><code>uco-location:latitude</code></abbr></li>
+                    <li><abbr title="https://unifiedcyberontology.org/ontology/uco/location#longitude"><code>uco-location:longitude</code></abbr></li>
+                  </ul>
+                </td>
+                <td>
+                  <p><em>See <a href="https://github.com/casework/CASE-Implementation-ExifTool/blob/main/tests/govdocs1/files/799/987/analysis.json">picture location extraction in the CASE ExifTool implementation</a></em></p>
+                  <p><em>See other <a href="https://github.com/casework/CASE-Examples/search?q=LatLongCoordinates">usage in CASE-Examples</a></em></p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
