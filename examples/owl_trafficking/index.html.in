@@ -70,6 +70,18 @@ jumbo_desc: CASE Narrative on Trafficking
 @OWL_TRAFFICKING_2__JSON@
 {% endhighlight %}
 
+<div class="card">
+  <h5 class="card-header" id="query-hash_verification">Query - hash verification</h5>
+  <div class="card-body">
+    <p class="card-text">For the duplicate, labeled <code>MD1</code>, of the device <code>SD1</code>, what were its original hashes, and when were they made? (<a href="urgent_evidence-query-hash_verification.sparql">SPARQL source</a>)</p>
+{% highlight sparql %}
+@QUERY_HASH_VERIFICATION_SPARQL@
+{% endhighlight %}
+@QUERY_HASH_VERIFICATION_HTML@
+
+  </div>
+</div>
+
 <h3>ACQUIRED DEVICE SUMMARY</h3>
 <p>The details of the smartphone and its contents.</p>
 <h4>A) Device</h4>
