@@ -1,0 +1,8 @@
+table.table-condensed ul {
+  padding-left: 1em;
+}
+
+/* Keep long prefixed IRIs from wrapping. */
+table.table-condensed li code {
+  white-space: nowrap;
+}
