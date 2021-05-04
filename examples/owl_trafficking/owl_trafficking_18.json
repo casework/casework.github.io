@@ -18,14 +18,14 @@
                             "@type": "xsd:dateTime",
                             "@value": "2017-01-25T02:20:22.00Z"
                         },
-                        "uco-observable:expirationTime": "NULL",
+                        "uco-observable:expirationTime": null,
                         "uco-observable:browserUserProfile": {
                             "@id": "kb:profile-account-857c7f17-2f6b-4618-aeca-50d79fa69b97"
                         },
                         "uco-observable:url": {
                             "@id": "kb:url-b7906534-0483-4cf4-979c-5351916602ed"
                         },
-                        "uco-observable:referrerUrl": "NULL",
+                        "uco-observable:referrerUrl": null,
                         "uco-observable:pageTitle": "Where can you find baby owls for sale? Are owls legal to keep as pets? - Quora",
                         "uco-observable:visitCount": 2,
                         "uco-observable:manuallyEnteredCount": 0,
@@ -57,7 +57,7 @@
                 "uco-observable:fileName": "History",
                 "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/data/com.android.chrome/app_chrome/Default/History",
                 "drafting:fileLocalPath": "files/Database/History",
-                "uco-observable:extension": "NULL",
+                "uco-observable:extension": null,
                 "uco-observable:isDirectory": false,
                 "uco-observable:sizeInBytes": "176128",
                 "uco-observable:createdTime": "2017-01-25T01:10:45.00Z",
