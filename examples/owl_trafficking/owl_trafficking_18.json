@@ -5,7 +5,9 @@
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:URLHistoryFacet",
-                "uco-observable:browserInformation": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38",
+                "uco-observable:browserInformation": {
+                    "@id": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38"
+                },
                 "uco-observable:urlHistoryEntry": [
                     {
                         "uco-observable:firstVisit": {
@@ -17,8 +19,12 @@
                             "@value": "2017-01-25T02:20:22.00Z"
                         },
                         "uco-observable:expirationTime": "NULL",
-                        "uco-observable:browserUserProfile": "kb:profile-account-857c7f17-2f6b-4618-aeca-50d79fa69b97",
-                        "uco-observable:url": "kb:url-b7906534-0483-4cf4-979c-5351916602ed",
+                        "uco-observable:browserUserProfile": {
+                            "@id": "kb:profile-account-857c7f17-2f6b-4618-aeca-50d79fa69b97"
+                        },
+                        "uco-observable:url": {
+                            "@id": "kb:url-b7906534-0483-4cf4-979c-5351916602ed"
+                        },
                         "uco-observable:referrerUrl": "NULL",
                         "uco-observable:pageTitle": "Where can you find baby owls for sale? Are owls legal to keep as pets? - Quora",
                         "uco-observable:visitCount": 2,
