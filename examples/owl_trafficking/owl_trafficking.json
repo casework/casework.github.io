@@ -344,10 +344,7 @@
             "uco-core:target": {
                 "@id": "kb:email-account-99d72bac-8c21-11e9-8902-0c4de9c21b53"
             },
-            "uco-core:kindOfRelationship": {
-                "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-                "@value": "Has_Account"
-            },
+            "uco-core:kindOfRelationship": "Has_Account",
             "uco-core:isDirectional": true
         },
         {
@@ -359,10 +356,7 @@
             "uco-core:target": {
                 "@id": "kb:facebook-90652808-7341-40d3-9285-774d865ad3f9"
             },
-            "uco-core:kindOfRelationship": {
-                "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-                "@value": "Has_Account"
-            },
+            "uco-core:kindOfRelationship": "Has_Account",
             "uco-core:isDirectional": true
         },
         {
@@ -413,10 +407,7 @@
             "uco-core:target": {
                 "@id": "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1"
             },
-            "uco-core:kindOfRelationship": {
-                "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-                "@value": "Associated_Account"
-            },
+            "uco-core:kindOfRelationship": "Associated_Account",
             "uco-core:isDirectional": true
         },
         {
