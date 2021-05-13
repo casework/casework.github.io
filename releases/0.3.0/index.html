@@ -1,0 +1,73 @@
+---
+title: 0.3.0 Release
+layout: releases
+custom_css: releases
+---
+
+<h1>{{ page.title }}</h1>
+
+<p><em>Date: 2021-03-19</em></p>
+
+<h2>Ontology File(s)</h2>
+
+<p><a href="https://github.com/casework/CASE/releases/tag/0.3.0">GitHub</a></p>
+
+<h4>Documentation</h4>
+
+<p><a href="/documentation/index.html">CASE 0.3.0 Documentation</a></p>
+
+<h2>Migration guidance</h2>
+
+<p>A guide to migration from CASE 0.2.0 is <a href="https://github.com/ucoProject/UCO/blob/0.5.0/Release%20Notes.md#breaking-changesthese-are-changes-to-ontologies-classes-or-properties-in-the-preexisting-ontology-that-make-the-new-release-non-backward-compatible">here</a>.</p>
+
+<p>Note that this CASE release contains no CASE ontology changes that would affect instance data.  The one breaking change would affect a querying practice.  However, the UCO version being adopted in this release changed the names of many widely-used concepts, so for migration guidance, it is best to refer to UCO 0.5.0's listing of breaking changes.</p>
+
+<h2>Release Notes</h2>
+
+<h3>Focus</h3>
+
+<p>CASE version 0.3.0 is focused on further development process refining, with initial revisions of modeling concepts in the Investigation namespace. This release of CASE incorporates significant developments done in collaboration with the <a href="https://github.com/ucoProject/UCO/">Unified Cyber Ontology</a> (UCO) <a href="https://github.com/ucoProject/UCO/releases/tag/0.5.0">0.5.0 release</a>.</p>
+
+<h3>Changes</h3>
+
+<p><em>(These are changes to ontologies, classes or properties in the preexisting ontology.)</em></p>
+
+<p>Throughout this section, many of the notes are tied to Change Proposals.  These proposals are available on CASE's <a href="/resources/references.html">Reference Material page</a>.</p>
+
+<h4>Development Changes</h4>
+
+<p><em>(These are changes to ontology development practice, and are not necessarily changes to ontology data.)</em></p>
+
+<ul>
+  <li>CASE now runs a Continuous Integration test suite as part of ontology pull request review.<br />
+    <em>(Change Proposal 16)</em>
+  </li>
+  <li>CASE 0.3.0 imports <a href="https://github.com/ucoProject/UCO/releases/tag/0.5.0">UCO 0.5.0</a>.  This has no impact on ontology data, but example instance data now incorporate new concept names.<br />
+    <em>(Change Proposal 19)</em>
+  </li>
+</ul>
+
+<h4>Breaking Changes</h4>
+
+<p><em>(These are changes to ontologies, classes or properties in the preexisting ontology that make the new release non-backward-compatible.)</em></p>
+
+<ul>
+  <li>Investigation subclasses of <code>uco-role:Role</code> are now direct subclasses of <code>uco-role:Role</code>, instead of subclasses of intermediary <code>uco-role:Role</code> subclasses.  This could impact any users running queries for all subclasses of <code>uco-role:BenevolentRole</code> or <code>uco-role:MaliciousRole</code>.<br />
+    <em>(Change Proposal 15)</em>
+  </li>
+</ul>
+
+<h4>Changes</h4>
+
+<p><em>(These are general changes to the preexisting ontology that are not breaking or range changes.)</em></p>
+
+<ul>
+  <li>Investigation namespace class definitions have been updated or added, following a regular documentation style.<br />
+    <em>(Change proposal 18)</em>
+  </li>
+  <li>
+    All concepts imported in CASE are now encoded with prefixes in the ontology.  This is a syntactic change that so far affects only the Investigation namespace, and does not affect instance data.<br />
+    <em>(Change proposal 25)</em>
+  </li>
+</ul>
+

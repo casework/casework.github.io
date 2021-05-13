@@ -1,4 +1,4 @@
-# baseURI: http://dev.caseontology.org/ontology/case/investigation/0.2.1
+# baseURI: https://caseontology.org/ontology/testing_versioned_iris_case/investigation
 # imports: http://dev.caseontology.org/ontology/case/vocabulary/0.2.1
 # imports: http://dev.caseontology.org/ontology/uco/action/0.4.1
 # imports: http://dev.caseontology.org/ontology/uco/core/0.4.1
@@ -12,6 +12,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix uco-action: <http://dev.caseontology.org/ontology/uco/action/0.4.1#> .
 @prefix uco-core: <http://dev.caseontology.org/ontology/uco/core/0.4.1#> .
+@prefix uco-location: <http://dev.caseontology.org/ontology/uco/location/0.4.1#> .
 @prefix uco-role: <http://dev.caseontology.org/ontology/uco/role/0.4.1#> .
 @prefix vocabulary: <http://dev.caseontology.org/ontology/case/vocabulary/0.2.1#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
