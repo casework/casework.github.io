@@ -60,16 +60,28 @@
                 "uco-observable:extension": null,
                 "uco-observable:isDirectory": false,
                 "uco-observable:sizeInBytes": "176128",
-                "uco-observable:createdTime": "2017-01-25T01:10:45.00Z",
-                "uco-observable:modifiedTime": "2017-02-03T17:22:29.00Z",
-                "uco-observable:accessedTime": "2017-01-25T01:10:45.00Z"
+                "uco-observable:observableCreatedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-01-25T01:10:45.00Z"
+                },
+                "uco-observable:modifiedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-03T17:22:29.00Z"
+                },
+                "uco-observable:accessedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-01-25T01:10:45.00Z"
+                }
             },
             {
                 "@type": "uco-observable:ExtInodeFacet",
                 "uco-observable:extInodeID": 1483050,
                 "uco-observable:extSGID": 10034,
                 "uco-observable:extSUID": 10034,
-                "uco-observable:extInodeChangeTime": "2017-02-03T17:22:29.00Z"
+                "uco-observable:extInodeChangeTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-03T17:22:29.00Z"
+                }
             },
             {
                 "@type": "uco-observable:ContentDataFacet",
