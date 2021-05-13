@@ -7,14 +7,8 @@
                 "@type": "uco-observable:DiskPartitionFacet",
                 "uco-observable:diskPartitionType": "GPT",
                 "uco-observable:partitionID": "31",
-                "uco-observable:partitionOffset": {
-                    "@type": "xsd:long",
-                    "@value": 2032140288
-                },
-                "uco-observable:partitionLength": {
-                    "@type": "xsd:long",
-                    "@value": 29236373504
-                }
+                "uco-observable:partitionOffset": 2032140288,
+                "uco-observable:partitionLength": 29236373504
             },
             {
                 "@type": "uco-observable:FileSystemFacet",

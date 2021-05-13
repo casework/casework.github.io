@@ -404,10 +404,7 @@
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "/investigation468/documentation/EXH-20190101-7-IntakeForm.pdf",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": {
-                        "@type": "xsd:long",
-                        "@value": 165646
-                    }
+                    "uco-observable:sizeInBytes": 165646
                 },
                 {
                     "@type": "uco-observable:ContentDataFacet",
@@ -436,10 +433,7 @@
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "/investigation468/results/EXH-20190101-7-KioskReport.pdf",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": {
-                        "@type": "xsd:long",
-                        "@value": 5787906
-                    }
+                    "uco-observable:sizeInBytes": 5787906
                 },
                 {
                     "@type": "uco-observable:ContentDataFacet",
@@ -468,10 +462,7 @@
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "/investigation468/documentation/EXH-20190101-7-WitnessStatement.pdf",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": {
-                        "@type": "xsd:long",
-                        "@value": 135625
-                    }
+                    "uco-observable:sizeInBytes": 135625
                 },
                 {
                     "@type": "uco-observable:ContentDataFacet",
@@ -724,10 +715,7 @@
                 {
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
-                    "uco-observable:sizeInBytes": {
-                        "@type": "xsd:long",
-                        "@value": 4929041
-                    },
+                    "uco-observable:sizeInBytes": 4929041,
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -788,10 +776,7 @@
                         "@type": "xsd:dateTime",
                         "@value": "2019-01-01T14:14:07+00:00"
                     },
-                    "uco-observable:sizeInBytes": {
-                        "@type": "xsd:long",
-                        "@value": 4929041
-                    }
+                    "uco-observable:sizeInBytes": 4929041
                 },
                 {
                     "@type": "uco-observable:RasterPictureFacet",
@@ -808,10 +793,7 @@
                 {
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
-                    "uco-observable:sizeInBytes": {
-                        "@type": "xsd:long",
-                        "@value": 4491816
-                    },
+                    "uco-observable:sizeInBytes": 4491816,
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -872,10 +854,7 @@
                         "@type": "xsd:dateTime",
                         "@value": "2019-01-01T14:14:30+00:00"
                     },
-                    "uco-observable:sizeInBytes": {
-                        "@type": "xsd:long",
-                        "@value": 4491816
-                    }
+                    "uco-observable:sizeInBytes": 4491816
                 },
                 {
                     "@type": "uco-observable:RasterPictureFacet",
@@ -892,10 +871,7 @@
                 {
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
-                    "uco-observable:sizeInBytes": {
-                        "@type": "xsd:long",
-                        "@value": 3236101
-                    },
+                    "uco-observable:sizeInBytes": 3236101,
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -956,10 +932,7 @@
                         "@type": "xsd:dateTime",
                         "@value": "2019-01-01T14:15:00+00:00"
                     },
-                    "uco-observable:sizeInBytes": {
-                        "@type": "xsd:long",
-                        "@value": 3236101
-                    }
+                    "uco-observable:sizeInBytes": 3236101
                 },
                 {
                     "@type": "uco-observable:RasterPictureFacet",
@@ -976,10 +949,7 @@
                 {
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
-                    "uco-observable:sizeInBytes": {
-                        "@type": "xsd:long",
-                        "@value": 3777924
-                    },
+                    "uco-observable:sizeInBytes": 3777924,
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -1040,10 +1010,7 @@
                         "@type": "xsd:dateTime",
                         "@value": "2019-01-01T14:20:07+00:00"
                     },
-                    "uco-observable:sizeInBytes": {
-                        "@type": "xsd:long",
-                        "@value": 3777924
-                    }
+                    "uco-observable:sizeInBytes": 3777924
                 },
                 {
                     "@type": "uco-observable:RasterPictureFacet",
@@ -1060,10 +1027,7 @@
                 {
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
-                    "uco-observable:sizeInBytes": {
-                        "@type": "xsd:long",
-                        "@value": 5010291
-                    },
+                    "uco-observable:sizeInBytes": 5010291,
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -1124,10 +1088,7 @@
                         "@type": "xsd:dateTime",
                         "@value": "2019-01-01T14:20:32+00:00"
                     },
-                    "uco-observable:sizeInBytes": {
-                        "@type": "xsd:long",
-                        "@value": 5010291
-                    }
+                    "uco-observable:sizeInBytes": 5010291
                 },
                 {
                     "@type": "uco-observable:RasterPictureFacet",
@@ -1144,10 +1105,7 @@
                 {
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
-                    "uco-observable:sizeInBytes": {
-                        "@type": "xsd:long",
-                        "@value": 4565505
-                    },
+                    "uco-observable:sizeInBytes": 4565505,
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -1208,10 +1166,7 @@
                         "@type": "xsd:dateTime",
                         "@value": "2019-01-01T14:21:00+00:00"
                     },
-                    "uco-observable:sizeInBytes": {
-                        "@type": "xsd:long",
-                        "@value": 4565505
-                    }
+                    "uco-observable:sizeInBytes": 4565505
                 },
                 {
                     "@type": "uco-observable:RasterPictureFacet",
@@ -1228,10 +1183,7 @@
                 {
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
-                    "uco-observable:sizeInBytes": {
-                        "@type": "xsd:long",
-                        "@value": 2964571
-                    },
+                    "uco-observable:sizeInBytes": 2964571,
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -1287,10 +1239,7 @@
                         "@type": "xsd:dateTime",
                         "@value": "2018-12-15T12:11:54+00:00"
                     },
-                    "uco-observable:sizeInBytes": {
-                        "@type": "xsd:long",
-                        "@value": 2964571
-                    }
+                    "uco-observable:sizeInBytes": 2964571
                 },
                 {
                     "@type": "uco-observable:RasterPictureFacet",
