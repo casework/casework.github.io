@@ -217,10 +217,7 @@
                     "uco-observable:keypadUnlockCode": "NULL",
                     "uco-observable:IMEI": "352584062438806",
                     "uco-observable:clockSetting": "2017-02-06T20:51:09.35Z",
-                    "uco-observable:storageCapacityInBytes": {
-                        "@type": "xsd:long",
-                        "@value": 31268536320
-                    }
+                    "uco-observable:storageCapacityInBytes": 31268536320
                 },
                 {
                     "@type": "uco-observable:OperatingSystemFacet",
@@ -625,10 +622,7 @@
                 {
                     "@type": "uco-observable:DataRangeFacet",
                     "uco-observable:rangeOffset": 2032140288,
-                    "uco-observable:rangeSize": {
-                        "@type": "xsd:long",
-                        "@value": 29236373504
-                    }
+                    "uco-observable:rangeSize": 29236373504
                 }
             ]
         },
@@ -640,14 +634,8 @@
                     "@type": "uco-observable:DiskPartitionFacet",
                     "uco-observable:diskPartitionType": "GPT",
                     "uco-observable:partitionID": "31",
-                    "uco-observable:partitionOffset": {
-                        "@type": "xsd:long",
-                        "@value": 2032140288
-                    },
-                    "uco-observable:partitionLength": {
-                        "@type": "xsd:long",
-                        "@value": 29236373504
-                    }
+                    "uco-observable:partitionOffset": 2032140288,
+                    "uco-observable:partitionLength": 29236373504
                 },
                 {
                     "@type": "uco-observable:FileSystemFacet",
