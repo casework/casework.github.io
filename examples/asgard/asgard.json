@@ -64,7 +64,7 @@
             },
             "uco-core:hasFacet": [
                 {
-                    "@type": "uco-action:ActionReferences",
+                    "@type": "uco-action:ActionReferencesFacet",
                     "uco-action:instrument": {
                         "@id": "kb:odin-decree13-uuid"
                     },
@@ -157,7 +157,7 @@
             },
             "uco-core:hasFacet": [
                 {
-                    "@type": "uco-action:ActionReferences",
+                    "@type": "uco-action:ActionReferencesFacet",
                     "uco-action:instrument": {
                         "@id": "kb:tool-embeddedextractor1-uid"
                     },
@@ -201,7 +201,7 @@
             "uco-tool:version": "1.2.0",
             "uco-core:hasFacet": [
                 {
-                    "@type": "uco-tool:ToolConfigurationType",
+                    "@type": "uco-tool:ToolConfigurationTypeFacet",
                     "uco-tool:configurationSettings": [
                         {
                             "@type": "uco-tool:ConfigurationSettingType",

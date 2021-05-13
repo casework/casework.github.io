@@ -19,7 +19,7 @@
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:description": "Exhibit submitted for Kiosk examination",
             "uco-core:hasFacet": {
-                "@type": "uco-action:ActionReferences",
+                "@type": "uco-action:ActionReferencesFacet",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2019-01-01T14:00+00:00"
@@ -45,7 +45,7 @@
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "transferred",
             "uco-core:hasFacet": {
-                "@type": "uco-action:ActionReferences",
+                "@type": "uco-action:ActionReferencesFacet",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2019-01-01T14:05+00:00"
@@ -80,7 +80,7 @@
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "assigned",
             "uco-core:hasFacet": {
-                "@type": "uco-action:ActionReferences",
+                "@type": "uco-action:ActionReferencesFacet",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2019-01-01T14:05:30+00:00"
@@ -112,7 +112,7 @@
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "photographed",
             "uco-core:hasFacet": {
-                "@type": "uco-action:ActionReferences",
+                "@type": "uco-action:ActionReferencesFacet",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2019-01-01T14:15+00:00"
@@ -155,7 +155,7 @@
             "@id": "kb:action-uuid-5",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:hasFacet": {
-                "@type": "uco-action:ActionReferences",
+                "@type": "uco-action:ActionReferencesFacet",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2019-01-01T14:20+00:00"
@@ -174,7 +174,7 @@
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "photographed",
             "uco-core:hasFacet": {
-                "@type": "uco-action:ActionReferences",
+                "@type": "uco-action:ActionReferencesFacet",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2019-01-01T14:21+00:00"
@@ -218,7 +218,7 @@
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "processed",
             "uco-core:hasFacet": {
-                "@type": "uco-action:ActionReferences",
+                "@type": "uco-action:ActionReferencesFacet",
                 "uco-action:startTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2019-01-01T14:25+00:00"
@@ -262,7 +262,7 @@
             "@id": "kb:action-uuid-9",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:hasFacet": {
-                "@type": "uco-action:ActionReferences",
+                "@type": "uco-action:ActionReferencesFacet",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2019-01-01T15:00+00:00"
@@ -281,7 +281,7 @@
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "burned",
             "uco-core:hasFacet": {
-                "@type": "uco-action:ActionReferences",
+                "@type": "uco-action:ActionReferencesFacet",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2019-01-01T15:05+00:00"
@@ -347,7 +347,7 @@
             "@id": "kb:action-uuid-11",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:hasFacet": {
-                "@type": "uco-action:ActionReferences",
+                "@type": "uco-action:ActionReferencesFacet",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2019-01-01T15:10+00:00"
@@ -365,7 +365,7 @@
             "@id": "kb:action-uuid-12",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:hasFacet": {
-                "@type": "uco-action:ActionReferences",
+                "@type": "uco-action:ActionReferencesFacet",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2019-01-01T15:15+00:00"
@@ -487,7 +487,7 @@
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "transferred",
             "uco-core:hasFacet": {
-                "@type": "uco-action:ActionReferences",
+                "@type": "uco-action:ActionReferencesFacet",
                 "uco-action:endTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2019-01-01T15:20+00:00"
@@ -542,7 +542,7 @@
             "@type": "uco-location:Location",
             "uco-core:description": "(Room 1-001) Police station intake lab",
             "uco-core:hasFacet": {
-                "@type": "uco-location:SimpleAddress",
+                "@type": "uco-location:SimpleAddressFacet",
                 "drafting:roomId": "1-001",
                 "uco-location:country": "United Kingdom",
                 "uco-location:locality": "London"
@@ -553,7 +553,7 @@
             "@type": "uco-location:Location",
             "uco-core:description": "(Room B-001) Police station evidence vault",
             "uco-core:hasFacet": {
-                "@type": "uco-location:SimpleAddress",
+                "@type": "uco-location:SimpleAddressFacet",
                 "drafting:roomId": "B-001",
                 "uco-location:country": "United Kingdom",
                 "uco-location:locality": "London"
@@ -564,7 +564,7 @@
             "@type": "uco-location:Location",
             "uco-core:description": "(Room 2-013) Police station evidence processing lab",
             "uco-core:hasFacet": {
-                "@type": "uco-location:SimpleAddress",
+                "@type": "uco-location:SimpleAddressFacet",
                 "drafting:roomId": "2-013",
                 "uco-location:country": "United Kingdom",
                 "uco-location:locality": "London"
@@ -575,7 +575,7 @@
             "@type": "uco-location:Location",
             "uco-core:description": "(Room 3-022) Desk of Officer Hudson",
             "uco-core:hasFacet": {
-                "@type": "uco-location:SimpleAddress",
+                "@type": "uco-location:SimpleAddressFacet",
                 "drafting:roomId": "3-022",
                 "uco-location:country": "United Kingdom",
                 "uco-location:locality": "London"
@@ -585,7 +585,7 @@
             "@id": "kb:officer-uuid-1",
             "@type": "uco-identity:Identity",
             "uco-core:hasFacet": {
-                "@type": "uco-identity:SimpleName",
+                "@type": "uco-identity:SimpleNameFacet",
                 "uco-identity:familyName": "Hudson"
             }
         },
@@ -593,7 +593,7 @@
             "@id": "kb:officer-uuid-2",
             "@type": "uco-identity:Identity",
             "uco-core:hasFacet": {
-                "@type": "uco-identity:SimpleName",
+                "@type": "uco-identity:SimpleNameFacet",
                 "uco-identity:familyName": "Smith"
             }
         },
@@ -601,7 +601,7 @@
             "@id": "kb:officer-uuid-3",
             "@type": "uco-identity:Identity",
             "uco-core:hasFacet": {
-                "@type": "uco-identity:SimpleName",
+                "@type": "uco-identity:SimpleNameFacet",
                 "uco-identity:familyName": "Walker"
             }
         },

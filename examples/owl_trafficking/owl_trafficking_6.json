@@ -4,7 +4,7 @@
         "@type": "uco-identity:Identity",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-identity:SimpleName",
+                "@type": "uco-identity:SimpleNameFacet",
                 "uco-identity:givenName": "Sarah",
                 "uco-identity:familyName": "McAvoy"
             }
