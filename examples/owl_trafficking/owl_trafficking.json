@@ -141,7 +141,7 @@
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:FileFacet",
-                    "uco-observable:createdTime": {
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2017-02-06T20:51:09.00Z"
                     },
@@ -485,7 +485,7 @@
                     "uco-observable:isDirectory": false,
                     "uco-observable:allocationStatus": "allocated",
                     "uco-observable:sizeInBytes": 891,
-                    "uco-observable:createdTime": {
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2017-02-01T03:12:19.00Z"
                     },
@@ -530,7 +530,7 @@
                     "uco-observable:isDirectory": false,
                     "uco-observable:allocationStatus": "allocated",
                     "uco-observable:sizeInBytes": 159744,
-                    "uco-observable:createdTime": {
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2017-02-06T21:03:08.00Z"
                     },
@@ -708,7 +708,7 @@
                     "uco-observable:isDirectory": false,
                     "uco-observable:allocationStatus": "allocated",
                     "uco-observable:sizeInBytes": 10704,
-                    "uco-observable:createdTime": {
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2017-02-03T17:19:26.00Z"
                     },
@@ -761,7 +761,7 @@
                     "uco-observable:isDirectory": true,
                     "uco-observable:allocationStatus": "unallocated",
                     "uco-observable:sizeInBytes": 4096,
-                    "uco-observable:createdTime": {
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2017-02-03T17:22:30.00Z"
                     },
@@ -941,16 +941,28 @@
                     "uco-observable:extension": null,
                     "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "176128",
-                    "uco-observable:createdTime": "2017-01-25T01:10:45.00Z",
-                    "uco-observable:modifiedTime": "2017-02-03T17:22:29.00Z",
-                    "uco-observable:accessedTime": "2017-01-25T01:10:45.00Z"
+                    "uco-observable:observableCreatedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2017-01-25T01:10:45.00Z"
+                    },
+                    "uco-observable:modifiedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2017-02-03T17:22:29.00Z"
+                    },
+                    "uco-observable:accessedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2017-01-25T01:10:45.00Z"
+                    }
                 },
                 {
                     "@type": "uco-observable:ExtInodeFacet",
                     "uco-observable:extInodeID": 1483050,
                     "uco-observable:extSGID": 10034,
                     "uco-observable:extSUID": 10034,
-                    "uco-observable:extInodeChangeTime": "2017-02-03T17:22:29.00Z"
+                    "uco-observable:extInodeChangeTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2017-02-03T17:22:29.00Z"
+                    }
                 },
                 {
                     "@type": "uco-observable:ContentDataFacet",
