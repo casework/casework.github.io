@@ -8,7 +8,7 @@
         "uco-tool:version": "2.0.0.5412",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-tool:ToolConfigurationType",
+                "@type": "uco-tool:ToolConfigurationTypeFacet",
                 "uco-tool:configurationSettings": [
                     {
                         "@type": "uco-tool:ConfigurationSettingType",
@@ -38,7 +38,7 @@
         },
         "uco-core:hasFacet": [
             {
-                "@type": "uco-action:ActionReferences",
+                "@type": "uco-action:ActionReferencesFacet",
                 "uco-action:location": {
                     "@id": "kb:lab-c44e4679-26e3-4585-aaa1-86110db936f8"
                 },

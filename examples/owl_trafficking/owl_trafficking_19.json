@@ -3,7 +3,7 @@
         "@id": "kb:latlong-8667ec82-8c21-11e9-934e-0c4de9c21b53",
         "@type": "uco-location:Location",
         "uco-core:hasFacet": {
-            "@type": "uco-location:LatLongCoordinates",
+            "@type": "uco-location:LatLongCoordinatesFacet",
             "uco-location:latitude": 38.423756,
             "uco-location:longitude": -82.43619,
             "uco-location:altitude": null

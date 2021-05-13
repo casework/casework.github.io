@@ -64,7 +64,7 @@
             },
             "uco-core:hasFacet": [
                 {
-                    "@type": "uco-action:ActionReferences",
+                    "@type": "uco-action:ActionReferencesFacet",
                     "uco-action:instrument": {
                         "@id": "kb:odin-decree13-uuid"
                     },
@@ -119,10 +119,7 @@
                         "@type": "xsd:dateTime",
                         "@value": "2018-05-09T07:36:24.35Z"
                     },
-                    "uco-observable:storageCapacityInBytes": {
-                        "@type": "xsd:long",
-                        "@value": 17179869184
-                    }
+                    "uco-observable:storageCapacityInBytes": 17179869184
                 },
                 {
                     "@type": "iPhoneDevice",
@@ -160,7 +157,7 @@
             },
             "uco-core:hasFacet": [
                 {
-                    "@type": "uco-action:ActionReferences",
+                    "@type": "uco-action:ActionReferencesFacet",
                     "uco-action:instrument": {
                         "@id": "kb:tool-embeddedextractor1-uid"
                     },
@@ -204,7 +201,7 @@
             "uco-tool:version": "1.2.0",
             "uco-core:hasFacet": [
                 {
-                    "@type": "uco-tool:ToolConfigurationType",
+                    "@type": "uco-tool:ToolConfigurationTypeFacet",
                     "uco-tool:configurationSettings": [
                         {
                             "@type": "uco-tool:ConfigurationSettingType",
@@ -226,7 +223,7 @@
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:FileFacet",
-                    "uco-observable:createdTime": {
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2019-03-30T22:12:19.32Z"
                     },
@@ -267,24 +264,18 @@
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:FileFacet",
-                    "uco-observable:createdTime": {
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2019-03-30T08:12:19.32Z"
                     },
                     "uco-observable:extension": "db",
                     "uco-observable:fileName": "/mobile/sms.db",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": {
-                        "@type": "xsd:long",
-                        "@value": 142925
-                    }
+                    "uco-observable:sizeInBytes": 142925
                 },
                 {
                     "@type": "uco-observable:ContentDataFacet",
-                    "uco-observable:sizeInBytes": {
-                        "@type": "xsd:long",
-                        "@value": 122925
-                    },
+                    "uco-observable:sizeInBytes": 122925,
                     "uco-observable:magicNumber": "U1FMaXRlIGZvcm1hdCAzAA==",
                     "uco-observable:hash": [
                         {
@@ -371,10 +362,7 @@
                     "uco-observable:to": {
                         "@id": "kb:phone_account2"
                     },
-                    "uco-observable:duration": {
-                        "@type": "xsd:long",
-                        "@value": 1862
-                    }
+                    "uco-observable:duration": 1862
                 }
             ]
         },

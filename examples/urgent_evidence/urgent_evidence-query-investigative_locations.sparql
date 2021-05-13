@@ -4,7 +4,7 @@ WHERE
   ?nAction
     a case-investigation:InvestigativeAction ;
     uco-core:hasFacet [
-      a uco-action:ActionReferences ;
+      a uco-action:ActionReferencesFacet ;
       uco-action:location ?nLocation ;
     ] ;
     .
@@ -13,7 +13,7 @@ WHERE
     a uco-location:Location ;
     uco-core:description ?lDescription ;
     uco-core:hasFacet [
-      a uco-location:SimpleAddress ;
+      a uco-location:SimpleAddressFacet ;
       drafting:roomId ?lRoomId ;
     ]
     .

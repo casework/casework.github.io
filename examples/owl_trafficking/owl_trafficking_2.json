@@ -3,7 +3,7 @@
         "@id": "kb:investigator-09fb01ce-999e-4521-bd3f-f7be69a63a43",
         "@type": "uco-identity:Identity",
         "uco-core:hasFacet": {
-            "@type": "uco-identity:SimpleName",
+            "@type": "uco-identity:SimpleNameFacet",
             "uco-identity:familyName": "Hoel"
         }
     },
@@ -35,7 +35,7 @@
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:FileFacet",
-                "uco-observable:createdTime": {
+                "uco-observable:observableCreatedTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2017-02-06T20:51:09.00Z"
                 },

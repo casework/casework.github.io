@@ -14,7 +14,7 @@
         },
         "uco-core:hasFacet": [
             {
-                "@type": "uco-action:ActionReferences",
+                "@type": "uco-action:ActionReferencesFacet",
                 "uco-action:instrument": {
                     "@id": "kb:tool-embeddedextractor1-uid"
                 },
@@ -58,7 +58,7 @@
         "uco-tool:version": "1.2.0",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-tool:ToolConfigurationType",
+                "@type": "uco-tool:ToolConfigurationTypeFacet",
                 "uco-tool:configurationSettings": [
                     {
                         "@type": "uco-tool:ConfigurationSettingType",
@@ -80,7 +80,7 @@
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:FileFacet",
-                "uco-observable:createdTime": {
+                "uco-observable:observableCreatedTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2019-03-30T22:12:19.32Z"
                 },
