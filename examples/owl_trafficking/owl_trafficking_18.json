@@ -60,7 +60,7 @@
                 "uco-observable:extension": null,
                 "uco-observable:isDirectory": false,
                 "uco-observable:sizeInBytes": "176128",
-                "uco-observable:createdTime": {
+                "uco-observable:observableCreatedTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2017-01-25T01:10:45.00Z"
                 },
