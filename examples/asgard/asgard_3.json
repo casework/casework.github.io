@@ -12,17 +12,11 @@
                 "uco-observable:extension": "db",
                 "uco-observable:fileName": "/mobile/sms.db",
                 "uco-observable:isDirectory": false,
-                "uco-observable:sizeInBytes": {
-                    "@type": "xsd:long",
-                    "@value": 142925
-                }
+                "uco-observable:sizeInBytes": 142925
             },
             {
                 "@type": "uco-observable:ContentDataFacet",
-                "uco-observable:sizeInBytes": {
-                    "@type": "xsd:long",
-                    "@value": 122925
-                },
+                "uco-observable:sizeInBytes": 122925,
                 "uco-observable:magicNumber": "U1FMaXRlIGZvcm1hdCAzAA==",
                 "uco-observable:hash": [
                     {

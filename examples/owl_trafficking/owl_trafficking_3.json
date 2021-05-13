@@ -35,10 +35,7 @@
                 "uco-observable:keypadUnlockCode": "NULL",
                 "uco-observable:IMEI": "352584062438806",
                 "uco-observable:clockSetting": "2017-02-06T20:51:09.35Z",
-                "uco-observable:storageCapacityInBytes": {
-                    "@type": "xsd:long",
-                    "@value": 31268536320
-                }
+                "uco-observable:storageCapacityInBytes": 31268536320
             },
             {
                 "@type": "uco-observable:OperatingSystemFacet",
