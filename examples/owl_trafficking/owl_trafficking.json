@@ -96,7 +96,7 @@
                     ],
                     "uco-action:result": [
                         {
-                            "@id": "kb:provenance-record2-37826ad6-9edc-493b-b130-c3378622263a"
+                            "@id": "kb:provenance-record-b84dc6ca-6187-4fc3-b5f1-c15142b103a8"
                         },
                         {
                             "@id": "kb:f3fd304e-ef6c-4cbd-94cb-425880f82748"
@@ -217,10 +217,7 @@
                     "uco-observable:keypadUnlockCode": "NULL",
                     "uco-observable:IMEI": "352584062438806",
                     "uco-observable:clockSetting": "2017-02-06T20:51:09.35Z",
-                    "uco-observable:storageCapacityInBytes": {
-                        "@type": "xsd:long",
-                        "@value": 31268536320
-                    }
+                    "uco-observable:storageCapacityInBytes": 31268536320
                 },
                 {
                     "@type": "uco-observable:OperatingSystemFacet",
@@ -344,10 +341,7 @@
             "uco-core:target": {
                 "@id": "kb:email-account-99d72bac-8c21-11e9-8902-0c4de9c21b53"
             },
-            "uco-core:kindOfRelationship": {
-                "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-                "@value": "Has_Account"
-            },
+            "uco-core:kindOfRelationship": "Has_Account",
             "uco-core:isDirectional": true
         },
         {
@@ -359,10 +353,7 @@
             "uco-core:target": {
                 "@id": "kb:facebook-90652808-7341-40d3-9285-774d865ad3f9"
             },
-            "uco-core:kindOfRelationship": {
-                "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-                "@value": "Has_Account"
-            },
+            "uco-core:kindOfRelationship": "Has_Account",
             "uco-core:isDirectional": true
         },
         {
@@ -413,10 +404,7 @@
             "uco-core:target": {
                 "@id": "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1"
             },
-            "uco-core:kindOfRelationship": {
-                "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-                "@value": "Associated_Account"
-            },
+            "uco-core:kindOfRelationship": "Associated_Account",
             "uco-core:isDirectional": true
         },
         {
@@ -634,10 +622,7 @@
                 {
                     "@type": "uco-observable:DataRangeFacet",
                     "uco-observable:rangeOffset": 2032140288,
-                    "uco-observable:rangeSize": {
-                        "@type": "xsd:long",
-                        "@value": 29236373504
-                    }
+                    "uco-observable:rangeSize": 29236373504
                 }
             ]
         },
@@ -649,14 +634,8 @@
                     "@type": "uco-observable:DiskPartitionFacet",
                     "uco-observable:diskPartitionType": "GPT",
                     "uco-observable:partitionID": "31",
-                    "uco-observable:partitionOffset": {
-                        "@type": "xsd:long",
-                        "@value": 2032140288
-                    },
-                    "uco-observable:partitionLength": {
-                        "@type": "xsd:long",
-                        "@value": 29236373504
-                    }
+                    "uco-observable:partitionOffset": 2032140288,
+                    "uco-observable:partitionLength": 29236373504
                 },
                 {
                     "@type": "uco-observable:FileSystemFacet",
@@ -906,25 +885,31 @@
             "@type": "uco-observable:ObservableObject",
             "uco-core:hasFacet": [
                 {
-                    "@type": "drafting:URLHistory",
-                    "drafting:browserInformation": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38",
-                    "drafting:urlHistoryEntry": [
+                    "@type": "uco-observable:URLHistoryFacet",
+                    "uco-observable:browserInformation": {
+                        "@id": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38"
+                    },
+                    "uco-observable:urlHistoryEntry": [
                         {
-                            "drafting:firstVisit": {
+                            "uco-observable:firstVisit": {
                                 "@type": "xsd:dateTime",
                                 "@value": "2017-01-25T02:20:22.00Z"
                             },
-                            "drafting:lastVisit": {
+                            "uco-observable:lastVisit": {
                                 "@type": "xsd:dateTime",
                                 "@value": "2017-01-25T02:20:22.00Z"
                             },
-                            "drafting:expiration": "NULL",
-                            "drafting:userProfile": "kb:profile-account-857c7f17-2f6b-4618-aeca-50d79fa69b97",
-                            "uco-observable:url": "kb:url-b7906534-0483-4cf4-979c-5351916602ed",
-                            "drafting:referrerUrl": "NULL",
-                            "drafting:pageTitle": "Where can you find baby owls for sale? Are owls legal to keep as pets? - Quora",
+                            "uco-observable:expirationTime": null,
+                            "uco-observable:browserUserProfile": {
+                                "@id": "kb:profile-account-857c7f17-2f6b-4618-aeca-50d79fa69b97"
+                            },
+                            "uco-observable:url": {
+                                "@id": "kb:url-b7906534-0483-4cf4-979c-5351916602ed"
+                            },
+                            "uco-observable:referrerUrl": null,
+                            "uco-observable:pageTitle": "Where can you find baby owls for sale? Are owls legal to keep as pets? - Quora",
                             "uco-observable:visitCount": 2,
-                            "drafting:manuallyEnteredCount": 0,
+                            "uco-observable:manuallyEnteredCount": 0,
                             "uco-observable:keywordSearchTerm": null
                         }
                     ]
@@ -953,7 +938,7 @@
                     "uco-observable:fileName": "History",
                     "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/data/com.android.chrome/app_chrome/Default/History",
                     "drafting:fileLocalPath": "files/Database/History",
-                    "uco-observable:extension": "NULL",
+                    "uco-observable:extension": null,
                     "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "176128",
                     "uco-observable:createdTime": "2017-01-25T01:10:45.00Z",

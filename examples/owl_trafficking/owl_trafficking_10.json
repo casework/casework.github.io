@@ -17,10 +17,7 @@
             {
                 "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 2032140288,
-                "uco-observable:rangeSize": {
-                    "@type": "xsd:long",
-                    "@value": 29236373504
-                }
+                "uco-observable:rangeSize": 29236373504
             }
         ]
     }
