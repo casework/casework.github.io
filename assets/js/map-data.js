@@ -1,21 +1,24 @@
 var membershipData = {
-  US: 35, // United States
-  GB: 8, // United Kingdom
-  KR: 7, // South Korea
-  IT: 5, // Italy
+  US: 46, // United States
+  GB: 10, // United Kingdom
+  KR: 6, // South Korea
+  IT: 6, // Italy
+  IE: 5, // Ireland
   SE: 4, // Sweden
-  CH: 4, // Switzerland
+  IN: 3, // India
+  CH: 3, // Switzerland
   NL: 3, // Netherlands
   CA: 2, // Canada
-  FR: 2, // France
   DE: 2, // Germany
-  IE: 2, // Ireland
+  TZ: 2, // Tanzania
+  AR: 1, // Argentina
   AU: 1, // Australia
   BE: 1, // Belgium
+  BW: 1, // Botswana
   HR: 1, // Croatia
+  FR: 1, // France
   IL: 1, // Israel
-  RU: 1, // Russia
-  TW: 1, // Taiwan
-  TZ: 1, // Tanzania
-  UA: 1 // Ukraine
+  RU: 1 // Russia
+  //TW: 1, // Taiwan
+  //UA: 1 // Ukraine
 };
