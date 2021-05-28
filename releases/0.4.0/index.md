@@ -58,6 +58,3 @@ Throughout this section, many of the notes are tied to Change Proposals.  These 
   *(Change Proposal 22)* 
 * exhibitNumber does not have a definition
   *(Change Proposal 35)* 
-
-  
-
