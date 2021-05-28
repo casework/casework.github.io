@@ -14,13 +14,15 @@ custom_css: releases
 
 ## Migration guidance
 
-A guide to migration from CASE 0.3.0 will be provided.
+Since release 0.4.0 is only additive to 0.3.0, migration from CASE 0.3.0 does not require alterations to existing data.
 
 ## Release Notes
 
 ### Focus
 
-The focus of this release is on providing an easy way to produce a provenance chain for evidence objects up to and including their moment of emergence in the investigation. This is modeled after the [PROV-O ontology](https://www.w3.org/TR/prov-o/).
+The focus of this release is on:
+* providing an easy way to produce a provenance chain for evidence objects up to and including their moment of emergence in the investigation. This is modeled after the [PROV-O ontology](https://www.w3.org/TR/prov-o/).
+* upgrading to UCO 0.6.0, which includes changes brought forward by the CASE community. See also: https://unifiedcyberontology.org/releases/0.6.0/
 
 ### Changes
 
@@ -47,7 +49,7 @@ Throughout this section, many of the notes are tied to Change Proposals.  These 
 *(These are general changes to the preexisting ontology that are not breaking or range changes.)*
 
 * Revise ontology IRI to be slash-based and drop resource-type
-  *(Change Proposal 34
+  *(Change Proposal 34)*
 * Adopt UCO 0.6.0
   *(Change Proposal 28)* 
 * Add transitive property to report causal chain of a derived object
