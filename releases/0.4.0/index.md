@@ -14,7 +14,7 @@ custom_css: releases
 
 ## Migration guidance
 
-Since release 0.4.0 is only additive to 0.3.0, migration from CASE 0.3.0 does not require alterations to existing data.
+In terms of CASE-namespaced concepts, release 0.4.0 is only additive to 0.3.0.  Hence, migration from CASE 0.3.0 does not require alterations to existing data.  However, one concept in the newly adopted UCO version does not offer an automatic migration path.  `observable:contactName` was removed in UCO 0.6.0.  Data housed in that property should be migrated to either `observable:displayName` or `observable:nickname` as the CASE-producing user or tool finds appropriate.  Other migration guidance for properties upgraded in UCO 0.6.0 can be found via the [UCO 0.6.0 release page](https://unifiedcyberontology.org/releases/0.6.0/).
 
 ## Release Notes
 
@@ -22,7 +22,7 @@ Since release 0.4.0 is only additive to 0.3.0, migration from CASE 0.3.0 does no
 
 The focus of this release is on:
 * providing an easy way to produce a provenance chain for evidence objects up to and including their moment of emergence in the investigation. This is modeled after the [PROV-O ontology](https://www.w3.org/TR/prov-o/).
-* upgrading to UCO 0.6.0, which includes changes brought forward by the CASE community. See also: [https://unifiedcyberontology.org/releases/0.6.0/](https://unifiedcyberontology.org/releases/0.6.0/).
+* upgrading to UCO 0.6.0, which includes changes brought forward by the CASE community.
 
 ### Changes
 
