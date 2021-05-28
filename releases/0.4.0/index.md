@@ -35,7 +35,7 @@ Throughout this section, many of the notes are tied to Change Proposals.  These 
 *(These are changes to ontology development practice, and are not necessarily changes to ontology data.)*
 
 * Revise merge review procedures and ChangeLog format to allow asynchronous change proposal posting
-  *(Change Proposal 27)* 
+  *([Change Proposal 27](https://drive.google.com/file/d/17AUfa4EWe9-Tbv5wT46fM0q5LIWMzuYT/view))* 
 
 #### Breaking Changes
 
@@ -51,10 +51,10 @@ Throughout this section, many of the notes are tied to Change Proposals.  These 
 * Revise ontology IRI to be slash-based and drop resource-type
   *(Change Proposal 34)*
 * Adopt UCO 0.6.0
-  *(Change Proposal 28)* 
+  *([Change Proposal 28](https://drive.google.com/file/d/1UCZzAqKIWzPmOstr7UJedCney2zrB5i1/view))* 
 * Add transitive property to report causal chain of a derived object
-  *(Change Proposal 21)* 
+  *([Change Proposal 21](https://drive.google.com/file/d/1EJnOYgJfDoDZteFsNxxCbxgQqiqVDL_L/view))* 
 * Add rootExhibitNumber property to ProvenanceRecord
-  *(Change Proposal 22)* 
+  *([Change Proposal 22](https://drive.google.com/file/d/1_nWd8IV8pBgXBACE_kFQd-eg3jTH8-Qp/view))* 
 * exhibitNumber does not have a definition
-  *(Change Proposal 35)* 
+  *([Change Proposal 35](https://drive.google.com/file/d/1LbLZnDXZlq-8n92iz55n0fQD46c-pa4w/view))* 
