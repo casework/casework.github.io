@@ -94,3 +94,7 @@
   desc: Adopt UCO 0.6.0
   date: 2021-05-28
   url: https://drive.google.com/file/d/1UCZzAqKIWzPmOstr7UJedCney2zrB5i1/view
+- title: Change Proposal 35
+  desc: Add missing definition for exhibitNumber property in ProvenanceRecord.
+  date: 2021-05-28
+  url: https://drive.google.com/file/d/1LbLZnDXZlq-8n92iz55n0fQD46c-pa4w/view
