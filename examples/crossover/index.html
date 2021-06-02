@@ -1,0 +1,157 @@
+---
+<!-- layout: releases -->
+title: Crossover CASE
+jumbo_desc: Cellebrite XML Report Example
+---
+
+<h2>Crossover CASE</h2>
+
+<p>This document uses CASE to represent digital evidence extracted from an Android device using Cellebrite, with Autopsy to fill in gaps. The physical image and scenario introduction can be downloaded from the following location: <a href="https://drive.switch.ch/index.php/s/GYze8UHvQ1N46Cx">https://drive.switch.ch/index.php/s/GYze8UHvQ1N46Cx</a>.</p>
+
+<!--TODO
+<p>The JSON-LD data on this page are available combined in the file <a href="crossover.json">crossover.json</a>.</p>
+-->
+
+<h3>Disclaimers</h3>
+
+<p>Participation by contributors in the creation of the documentation of mentioned software is not intended to imply a recommendation or endorsement by the United States Government nor any of the contributors' employers, nor is it intended to imply that any specific software is necessarily the best available for the purpose.</p>
+
+<p>Events, locations, tools, and people represented in this and other CASE narratives are presented, and at many times created, for illustration purposes only and do not necessarily represent real events, locations, tools, or people.</p>
+
+
+<h3>Background</h3>
+
+<p>INTERPOL publicized an international request to put under surveillance Mr Ares Lupin on 27.11.2018. One of their informants communicated that this individual was implicated in the acquisition of a weapon of mass destruction. The suspect was spotted in Italy on 01.12.2018 and a surveillance was put in place by the Italian Carabinieri. He escaped their monitoring several times. On 11.12.2018, around 09:00 CET, the suspect was recognized by police at the University of Lausanne and he was put under arrest. The suspect fled and threw his smartphone in a rubbish bin. The suspect was not found again.</p>
+
+<p>The mobile phone was retrieved and preserved as evidence on 11.12.2018 at 09:49 CET (physical extraction) using Cellebrite UFED.</p>
+
+<h3>Mandate</h3>
+
+<!--BOOKMARK ^-->
+<p>The prosecutor in this case has requested digital forensic analysis of the digital evidence for the following information:</p>
+<ol type="a">
+  <li>The name and virtual identifier(s) of the primary user</li>
+  <li>Possible accomplices the subject communicated with during the period(s) of interest</li>
+  <li>Pictures of owls with associated context and classifications</li>
+  <li>Evidence of purchasing an owl, or intent to purchase owls</li>
+  <li>Pertinent location information, including any arranged meetings to exchange owls</li>
+  <li>Visual reconstruction of the most pertinent elements and entities (people and objects)</li>
+</ol>
+<!--BOOKMARK v-->
+
+<h3>EVIDENCE PROVENANCE AND INTEGRITY</h3>
+<p>The initial step of the digital forensic analysis is to assess the provenance and integrity of the digital evidence and to examine device characteristics and identifiers. The overall CASE bundle provides context for the digital evidence.</p>
+
+<h4>CASE Representation of Investigation</h4>
+
+{% highlight json %}
+{
+  "@context":{
+    "@vocab": "http://example.org/ontology/local#",
+    "case-investigation": "https://caseontology.org/ontology/case/investigation#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "kb": "http://example.org/kb/",
+    "uco-action": "https://unifiedcyberontology.org/ontology/uco/action#",
+    "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
+    "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
+    "uco-tool": "https://unifiedcyberontology.org/ontology/uco/tool#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@id": "kb:bundle-5715FCF3-6BC8-4996-8F7F-FDF289F31649",
+  "@type": "uco-core:Bundle",
+  "uco-core:description": "Evidence in cross border investigation into weapon of mass destruction",
+  "uco-core:object": [
+    {
+      "@id": "kb:investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7",
+      "@type": "case-investigation:Investigation",
+      "uco-core:name": "CROSSOVER_2018_12111001",
+      "uco-core:focus": "Weapon of Mass Destruction (Deathly Hallows)",
+      "uco-core:description": "The subject Ares Lupin was arrested on suspicion of acquiring a weapon of mass destruction. The Samsung smartphone he was carrying was preserved as evidence.",
+      "uco-core:object": [list of uuids]
+    }
+  ]
+}
+{% endhighlight %}
+
+<h3>INVESTIGATIVE ACTIONS</h3>
+
+<p>Which organization and/or individual generated the report using which tool, with general information about the investigation and evidential item entered by the user.</p>
+
+<h4>Cellebrite XML Report Generation</h4>
+
+{% highlight xml %}
+  <sourceExtractions>
+    <extractionInfo id="0" name="Physical" prefixName="" isCustomName="False" type="Physical" deviceName="SAMG925F" fullName="Samsung SM-G925F Galaxy S6 Edge" index="0" IsPartialData="False" />
+  </sourceExtractions>
+  <caseInformation>
+    <field name="Case number" isSystem="True" isRequired="False" fieldType="CaseNumber" multipleLines="False">20181211001</field>
+    <field name="Case name" isSystem="True" isRequired="False" fieldType="CaseName" multipleLines="False">Crossover</field>
+    <field name="Evidence number" isSystem="True" isRequired="False" fieldType="EvidenceNumber" multipleLines="False">002</field>
+    <field name="Examiner name" isSystem="True" isRequired="True" fieldType="ExaminerName" multipleLines="False">ESC</field>
+    <field name="Department" isSystem="True" isRequired="False" fieldType="Department" multipleLines="False">ESC</field>
+    <field name="Location" isSystem="True" isRequired="False" fieldType="Location" multipleLines="False">Lausanne</field>
+    <field name="Notes" isSystem="True" isRequired="False" fieldType="Notes" multipleLines="True">Android device used by subject (Lupin)</field>
+  </caseInformation>
+  <metadata section="Additional Fields">
+    <item name="DeviceInfoCreationTime" systemtype="System.String"><![CDATA[12/04/2020 11:32:12]]></item>
+    <item name="UFED_PA_Version" systemtype="System.String"><![CDATA[7.1.0.106]]></item>
+  </metadata>
+{% endhighlight %}
+
+<h5>CASE Representation of Report Generation</h5>
+
+{% highlight json %}
+[
+  {
+  "@id": "kb:cellebrite-pa1-uuid",
+  "@type": "uco-tool:Tool",
+  "uco-tool:name": "Physical Analyser",
+  "uco-tool:toolType": "Analysis",
+  "uco-tool:creator": "Cellebrite",
+  "uco-tool:version": "7.1.0.106",
+  "uco-core:hasFacet": [
+    {
+      "@type": "uco-tool:ToolConfigurationType",
+      "uco-tool:configurationSetting": [
+        {
+          "@type": "uco-tool:ConfigurationSettingType",
+          "uco-tool:itemName": "OutputFormat",
+          "uco-tool:itemValue": "XML"
+        }
+      ]
+    }
+  ]
+},
+{
+	  "@id": "kb:investigative-action2-uuid"
+	  "@type": "case-investigation:InvestigativeAction",
+	  "uco-core:name": "exported",
+	  "uco-core:startTime": {
+        "@type": "xsd:dateTime",
+        "@value": "2020-04-12T11:27:12.00Z"
+  }
+	  "uco-core:endTime": {
+        "@type": "xsd:dateTime",
+        "@value": "2020-04-12T11:32:12.00Z"
+  }
+	  "uco-core:hasFacet": [
+	    {
+	      "@type": "uco-action:ActionReferences",
+	      "uco-action:location": { "@id": "kb:esc-lausanne-uuid" },
+	      "uco-action:performer": { "@id": "kb:investigator1-uuid" },
+	      "uco-action:instrument": { "@id": "kb:cellebrite-pa1-uuid" },
+	      "uco-action:environment": { "@id": "kb:forensic-computer1-uuid"},
+	      "uco-action:object": [
+	         { "@id": "kb:provenance-record3-uuid" },
+		 { "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748" }     
+	      ],
+	      "uco-action:result": [
+	        { "@id": "kb:provenance-record4-uuid" },
+	        { "@id": "kb:cellebritexml-report-uuid" }
+	      ]
+	     }
+	  ]
+  }
+]
+{% endhighlight %}
