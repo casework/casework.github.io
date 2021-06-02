@@ -49,7 +49,7 @@ Throughout this section, many of the notes are tied to Change Proposals.  These 
 *(These are general changes to the preexisting ontology that are not breaking or range changes.)*
 
 * Revise ontology IRI to be slash-based and drop resource-type
-  *(Change Proposal 34)*
+  *([Change Proposal 34](https://drive.google.com/file/d/1J2UeRVeG_CCloTwo9Do628zvWcIpO5GR/view))*
 * Adopt UCO 0.6.0
   *([Change Proposal 28](https://drive.google.com/file/d/1UCZzAqKIWzPmOstr7UJedCney2zrB5i1/view))* 
 * Add transitive property to report causal chain of a derived object
