@@ -24,7 +24,7 @@ WHERE {
         .
 
       ?nActionReferencesFacet
-        a uco-action:ActionReferences ;
+        a uco-action:ActionReferencesFacet ;
         uco-action:instrument ?nCameraDevice ;
         uco-action:object ?nExhibitDevice ;
         uco-action:result ?nPictureFile ;

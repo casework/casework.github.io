@@ -9,7 +9,7 @@
         },
         "uco-core:hasFacet": [
             {
-                "@type": "uco-action:ActionReferences",
+                "@type": "uco-action:ActionReferencesFacet",
                 "uco-action:instrument": {
                     "@id": "kb:odin-decree13-uuid"
                 },
@@ -64,10 +64,7 @@
                     "@type": "xsd:dateTime",
                     "@value": "2018-05-09T07:36:24.35Z"
                 },
-                "uco-observable:storageCapacityInBytes": {
-                    "@type": "xsd:long",
-                    "@value": 17179869184
-                }
+                "uco-observable:storageCapacityInBytes": 17179869184
             },
             {
                 "@type": "iPhoneDevice",

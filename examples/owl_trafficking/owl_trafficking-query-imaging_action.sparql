@@ -7,7 +7,7 @@ WHERE {
     .
 
   ?nImagingActionReferences
-    a uco-action:ActionReferences ;
+    a uco-action:ActionReferencesFacet ;
     uco-action:instrument ?nImagingTool ;
     uco-action:object ?nSubjectDeviceProvenanceRecord ;
     uco-action:object ?nSubjectDevice ;
@@ -36,7 +36,7 @@ WHERE {
     .
 
   ?nImagingPerformerIdentityFacet
-    a uco-identity:SimpleName ;
+    a uco-identity:SimpleNameFacet ;
     uco-identity:familyName ?lOfficerName ;
     .
 
