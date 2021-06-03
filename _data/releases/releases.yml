@@ -7,3 +7,6 @@
 - title: 0.3.0
   date: 2021-03-19
   desc: Adoption of UCO 0.5.0. Added inline documentation, improved ontology release engineering process, and adjusted role modeling.
+- title: 0.4.0
+  date: 2021-06-02
+  desc: Adoption of UCO 0.6.0. Revised CASE IRI structure, and added provenance support properties.
