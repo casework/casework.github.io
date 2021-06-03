@@ -1,7 +1,7 @@
 {
     "@context": {
         "@vocab": "http://example.org/ontology/local#",
-        "case-investigation": "https://caseontology.org/ontology/case/investigation#",
+        "case-investigation": "https://ontology.caseontology.org/case/investigation/",
         "drafting": "http://example.org/ontology/drafting#",
         "kb": "http://example.org/kb/",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",

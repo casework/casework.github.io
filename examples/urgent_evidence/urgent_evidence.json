@@ -1,6 +1,6 @@
 {
     "@context": {
-        "case-investigation": "https://caseontology.org/ontology/case/investigation#",
+        "case-investigation": "https://ontology.caseontology.org/case/investigation/",
         "drafting": "http://example.org/ontology/drafting#",
         "kb": "http://example.org/kb/",
         "uco-action": "https://unifiedcyberontology.org/ontology/uco/action#",
