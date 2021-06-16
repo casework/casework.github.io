@@ -163,11 +163,10 @@ owl_trafficking_%.json.diff: \
 owl_trafficking-query-%.html: \
   owl_trafficking-query-%.sparql \
   $(top_srcdir)/.venv.done.log \
-  $(top_srcdir)/src/sample_sparql_runner.py \
   owl_trafficking.json
 	source $(top_srcdir)/venv/bin/activate \
-	  && python3 $(top_srcdir)/src/sample_sparql_runner.py \
-	    owl_trafficking.json \
+	  && case_sparql_select \
+	    _$@ \
 	    $< \
-	    _$@
+	    owl_trafficking.json
 	mv _$@ $@

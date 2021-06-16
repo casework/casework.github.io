@@ -23,7 +23,6 @@ $(error python3 not found)
 endif
 
 all: \
-  .git_submodule_init.done.log \
   all-examples \
   all-migration-0.2.0
 
@@ -40,6 +39,7 @@ all: \
 	touch $@
 
 .venv.done.log: \
+  .git_submodule_init.done.log \
   requirements.txt
 	rm -rf venv
 	$(PYTHON3) -m virtualenv \
@@ -48,10 +48,14 @@ all: \
 	source venv/bin/activate \
 	  && pip install \
 	    --upgrade \
-	    pip
+	    pip \
+	    setuptools
 	source venv/bin/activate \
 	  && pip install \
-	    -r requirements.txt
+	    dependencies/CASE-Utilities-Python
+	source venv/bin/activate \
+	  && pip install \
+	    --requirement requirements.txt
 	touch $@
 
 all-examples: \

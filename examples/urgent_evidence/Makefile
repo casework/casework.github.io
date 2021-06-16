@@ -102,11 +102,10 @@ index.html.diff: \
 urgent_evidence-query-%.html: \
   urgent_evidence-query-%.sparql \
   $(top_srcdir)/.venv.done.log \
-  $(top_srcdir)/src/sample_sparql_runner.py \
   urgent_evidence.json
 	source $(top_srcdir)/venv/bin/activate \
-	  && python3 $(top_srcdir)/src/sample_sparql_runner.py \
-	    urgent_evidence.json \
+	  && case_sparql_select \
+	    _$@ \
 	    $< \
-	    _$@
+	    urgent_evidence.json
 	mv _$@ $@
