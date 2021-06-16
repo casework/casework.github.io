@@ -45,12 +45,12 @@ all: \
 	$(PYTHON3) -m virtualenv \
 	  --python=$(PYTHON3) \
 	  venv
-	source venv/bin/activate ; \
-	  pip install \
+	source venv/bin/activate \
+	  && pip install \
 	    --upgrade \
 	    pip
-	source venv/bin/activate ; \
-	  pip install \
+	source venv/bin/activate \
+	  && pip install \
 	    -r requirements.txt
 	touch $@
 

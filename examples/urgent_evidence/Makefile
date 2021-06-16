@@ -104,8 +104,8 @@ urgent_evidence-query-%.html: \
   $(top_srcdir)/.venv.done.log \
   $(top_srcdir)/src/sample_sparql_runner.py \
   urgent_evidence.json
-	source $(top_srcdir)/venv/bin/activate ; \
-	  python3 $(top_srcdir)/src/sample_sparql_runner.py \
+	source $(top_srcdir)/venv/bin/activate \
+	  && python3 $(top_srcdir)/src/sample_sparql_runner.py \
 	    urgent_evidence.json \
 	    $< \
 	    _$@
