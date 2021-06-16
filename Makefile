@@ -90,6 +90,3 @@ clean:
 	@$(MAKE) \
 	  --directory releases/0.2.0/migration \
 	  clean
-	@$(MAKE) \
-	  --directory examples \
-	  clean
