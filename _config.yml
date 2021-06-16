@@ -52,6 +52,7 @@ exclude:
   - CONTRIBUTE.md
   - Makefile
   - README.md
+  - dependencies/
   - examples/.gitignore
   - examples/Makefile
   - examples/asgard/Makefile

@@ -23,6 +23,7 @@ $(error python3 not found)
 endif
 
 all: \
+  .git_submodule_init.done.log \
   all-examples \
   all-migration-0.2.0
 
@@ -31,6 +32,12 @@ all: \
   all-migration-0.2.0 \
   check-examples \
   check-migration-0.2.0
+
+.git_submodule_init.done.log: \
+  .gitmodules
+	git submodule init
+	git submodule update
+	touch $@
 
 .venv.done.log: \
   requirements.txt
@@ -73,6 +80,7 @@ check-migration-0.2.0:
 
 clean:
 	@rm -f \
+	  .git_submodule_init.done.log \
 	  .venv.done.log
 	@rm -rf \
 	  venv
