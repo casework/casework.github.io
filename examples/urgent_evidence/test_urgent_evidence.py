@@ -14,15 +14,62 @@
 import logging
 import os
 
+import pytest
 import rdflib.plugins.sparql
 
 _logger = logging.getLogger(os.path.basename(__file__))
 
 graph = rdflib.Graph()
 graph.parse("urgent_evidence.json", format="json-ld")
+graph.parse("urgent_evidence-wasInformedBy.json", format="json-ld")
 
 # Inherit prefixes defined in input context dictionary.
 nsdict = {k:v for (k,v) in graph.namespace_manager.namespaces()}
+
+@pytest.fixture
+def action_iris_all():
+    retval = set()
+    select_query_object = rdflib.plugins.sparql.prepareQuery("""\
+SELECT ?nAction
+WHERE {
+  ?nAction a case-investigation:InvestigativeAction .
+}
+""", initNs=nsdict)
+    for record in graph.query(select_query_object):
+        retval.add(record[0].toPython())
+    assert len(retval) > 0, "Failed to retrieve investigative actions."
+    return retval
+
+def test_actions_to_photo(action_iris_all):
+    action_iris_computed = set()
+    action_iris_ground_truth_positive = {
+      "http://example.org/kb/action-uuid-1",
+      "http://example.org/kb/action-uuid-3",
+      "http://example.org/kb/action-uuid-7"
+    }
+    action_iris_ground_truth_negative = action_iris_all - action_iris_ground_truth_positive
+
+    _logger.debug("len(action_iris_all) = %d.", len(action_iris_all))
+    _logger.debug("len(action_iris_ground_truth_positive) = %d.", len(action_iris_ground_truth_positive))
+    _logger.debug("len(action_iris_ground_truth_negative) = %d.", len(action_iris_ground_truth_negative))
+
+    select_query_text = None
+    with open("urgent_evidence-query-actions_to_artifact.sparql", "r") as in_fh:
+        select_query_text = in_fh.read().strip()
+    _logger.debug("select_query_text = %r." % select_query_text)
+    select_query_object = rdflib.plugins.sparql.prepareQuery(select_query_text, initNs=nsdict)
+    for record in graph.query(select_query_object):
+        (
+          n_deriving_action,
+          l_description
+        ) = record
+        action_iris_computed.add(n_deriving_action.toPython())
+
+    action_iris_true_positive = action_iris_computed & action_iris_ground_truth_positive
+    assert action_iris_ground_truth_positive == action_iris_true_positive
+
+    action_iris_false_positive = action_iris_computed & action_iris_ground_truth_negative
+    assert set() == action_iris_false_positive
 
 def test_exhibit_photos():
     file_names_computed = set()
