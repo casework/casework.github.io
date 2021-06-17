@@ -63,6 +63,21 @@ custom_css: topics
                   </dl>
                 </td>
               </tr>
+              <tr>
+                <td>Evidentiary chains</td>
+                <td>
+                  <ul>
+                    <li><abbr title="https://ontology.caseontology.org/case/investigation#wasInformedBy"><code>case-investigation:wasInformedBy</code></abbr></li>
+                  </ul>
+                </td>
+                <td>
+                  <p><em>Among <a href="urgent_evidence/#queries">queries</a> in the <a href="urgent_evidence/">Urgent Evidence narrative</a></em></p>
+                  <dl>
+                    <dt><a href="urgent_evidence/#query-actions_to_artifact">Actions to artifact</a></dt>
+                    <dd>The <code>InvestigativeAction</code> can link to other actions by communication of results with their <code>ProvenanceRecord</code>s.  The <code>wasInformedBy</code> action-relationship forms a queryable chain from any result back through its actions since initial evidence submission.</dd>
+                  </dl>
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
