@@ -149,7 +149,7 @@ jumbo_desc: CASE Sub-topic of Chain of Custody
         </div>
 
         <div class="card">
-          <h5 class="card-header">Actions to artifact</h5>
+          <h5 class="card-header" id="query-actions_to_artifact">Actions to artifact</h5>
           <div class="card-body">
             <p class="card-text">Among the artifacts extracted from the device, a picture file <code>IMG_1863.jpg</code> was extracted.  Starting at initial evidence submission, what actions were taken to extract that file?</p>
             <p class="card-text">This query inspects the derivation chains of artifacts.  A supplemental graph of a <a href="https://www.w3.org/TR/prov-o/#wasInformedBy">predicate adapted from the W3C PROV Ontology</a> creates a chain of <code>InvestigativeAction</code>s that can be analyzed with a path operator. (SPARQL source for <a href="../src/query-construct-wasInformedBy.sparql"><code>wasInformedBy</code></a>.)</p>
