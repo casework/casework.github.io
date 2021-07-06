@@ -5,12 +5,16 @@ questions:
       title: "CASE hex data"
       answer: >
         While CASE and UCO haven’t yet put in a stance on this, it's worth noting that the XML Schema source of basic RDF types does weigh in on this with the more stringent [hexBinaryCanonical](https://www.w3.org/TR/xmlschema11-2/#f-hexBinaryCanonical): Uppercase.
+        
+        
         We can state as of CASE 0.2.0, there is no requirement either way.
     - question: "Should I use CASE as a data model?"
       title: "CASE data model"
       answer: >
-            You could use CASE as a data model but it is actually an ontology that is designed to be a common language between tools/systems and organizations/countries. As such, the most common approach to using CASE is to map an existing data model to the CASE standard, and then translate to/from the data model to CASE via import/export functions. During this mapping and implementation process, tool developers often find features of CASE that are useful to incorporate into their own data models.
-            Some visualization tools import and render CASE natively, effectively using it as a data model to combine information from various sources into a unified repository to strengthen correlation and analysis. This is a design choice, not a requirement for using CASE.
+        You could use CASE as a data model but it is actually an ontology that is designed to be a common language between tools/systems and organizations/countries. As such, the most common approach to using CASE is to map an existing data model to the CASE standard, and then translate to/from the data model to CASE via import/export functions. During this mapping and implementation process, tool developers often find features of CASE that are useful to incorporate into their own data models.
+        
+        
+        Some visualization tools import and render CASE natively, effectively using it as a data model to combine information from various sources into a unified repository to strengthen correlation and analysis. This is a design choice, not a requirement for using CASE.
     - question: "Does CASE represent all activities in cyber-investigations?"
       title: "CASE represenation of activities in cyber-investigations"
       answer: >
@@ -59,7 +63,11 @@ questions:
       title: "CASE full content for cyber-investigations"
       answer: >
         CASE is not a replacement for digital evidence storage containers or disk image formats. CASE should be treated mostly as metadata, descriptive of other formats. A disk image would be represented in CASE as a `uco-observable:Image` node, and some descriptive annotations about the image format (like whether it’s raw, E01), and about the image files themselves (such as its name and original modification time) would be included in the CASE graph in ImageFacet and FileFacet facets. The total CASE payload for this would be probably under a kilobyte.
+        
+        
         This CASE graph would be sent as a JSON-LD file ahead of, or alongside of, the disk image file, through the communication channel being used in that particular investigation. (While I illustrated a heavily file-centric workflow there, other APIs for communicating CASE data and other payloads could be used interchangeably.)
+        
+        
         Meanwhile, base64 encoding is used in some areas in CASE to denote data snippets. It could be used to represent the entirety of a disk image as an RDF literal - perhaps a SIM card read. But, generally, the use of base64 for this purpose would be a miserable experience for all involved so we that we don't encourage this as a practice, nor would we design anything in the ontology or community tooling to encourage this.
     - question: "Does CASE work with digital evidence storage containers?"
       title: "CASE digital evidence storage containers"
@@ -144,7 +152,11 @@ questions:
       title: "What is Provenance"
       answer: >
         In any cyber-investigation, when producing digital evidence to support decisions, there is a requirement to provide supporting details of provenance: how the evidence was originally obtained and how it was subsequently processed. This will include: the seizing of any devices, how and by whom they were handled; and the use of various tools to extract data from physical and logical sources and then process it to produce the digital evidence.
+        
+
         To ensure all analysis results are traceable to their source(s), CASE keeps track of when, where and who performed which actions and used which tools to perform investigative actions on data sources, and what was the result. Specifically, automatic traceability is integrated into CASE using the `InvestigativeAction` and `ProvenanceRecord` representations.
+        
+
         An `InvestigativeAction` operates on input (device, data, provenance record) and produces an output along with a new `ProvenanceRecord`. An `InvestigativeAction` that operates on an input with multiple available `ProvenanceRecord`s should use the record that is “most recent” or “closest” in the overall process history, not the original record. An `InvestigativeAction` that involves transferring an artifact without any mutation (e.g., transferring from one organization to another with just a relabeling/reassignment of exhibitNumber) should include the artifact as the action inputs (along with the most recent associated `ProvenanceRecord`), but should not include the same artifact as the `InvestigativeAction` outputs, only the new `ProvenanceRecord`. A detailed illustration of Provenance is provided in the Urgent Evidence example.
     - question: "What is a unique identifier (@id) of an object in CASE?"
       title: "@id unique identifier"
@@ -184,7 +196,9 @@ questions:
             }
           }
         },
+
         ```
+
     - question: "What are Roles?"
       title: "What are Roles"
       answer: >
