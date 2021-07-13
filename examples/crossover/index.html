@@ -1,4 +1,4 @@
----
+--
 <!-- layout: releases -->
 title: Crossover CASE
 jumbo_desc: Cellebrite XML Report Example
@@ -31,7 +31,15 @@ jumbo_desc: Cellebrite XML Report Example
 <p>The prosecutor in this case has requested digital forensic analysis of the digital evidence for the following information:</p>
 <ol type="a">
   <li>The name and virtual identifier(s) of the primary user</li>
+  <li>The location of the device during the periods</li>
+   <ul>
+      <li>20-21 November 2018</li>
+      <li>27 November 2018</li>
+      <li>1-9 December 2018</li>
+    </ul>
   <li>Possible accomplices the subject communicated with during the period(s) of interest</li>
+  <li>Any backdating of the clock on the smartphone between November and December 2018?</li>
+  <li>Evidence related to weapons of mass destruction</li>
   <li>Pictures of owls with associated context and classifications</li>
   <li>Evidence of purchasing an owl, or intent to purchase owls</li>
   <li>Pertinent location information, including any arranged meetings to exchange owls</li>
@@ -97,9 +105,9 @@ jumbo_desc: Cellebrite XML Report Example
     <item name="DeviceInfoCreationTime" systemtype="System.String"><![CDATA[12/04/2020 11:32:12]]></item>
     <item name="UFED_PA_Version" systemtype="System.String"><![CDATA[7.1.0.106]]></item>
   </metadata>
-{% endhighlight %}
+  {% endhighlight %}
 
-<h5>CASE Representation of Report Generation</h5>
+<h4>CASE Representation of Report Generation</h4>
 
 {% highlight json %}
 [
@@ -153,5 +161,1548 @@ jumbo_desc: Cellebrite XML Report Example
 	     }
 	  ]
   }
+]
+{% endhighlight %}
+<h3> EVIDENCE EXTRACTION</h3>
+  <p>When a Cellebrite UFED acquisition contains data about the original forensic extraction process, these details will be in the XML section <code>&lt;metadata section="Extraction Data"&gt;</code> which can be represented as an Investigative Action in CASE. </p>
+
+<p>Cellebrite XML</p>
+
+<!--ASK ABOUT THIS -->
+
+{% highlight xml %}
+
+<metadata section="Extraction Data">
+    <item name="DeviceInfoExtractionStartDateTime" sourceExtraction="0" systemtype="System.String"><![CDATA[11.12.2018 09:49(UTC+1)]]></item>
+    <item name="DeviceInfoExtractionEndDateTime" sourceExtraction="0" systemtype="System.String"><![CDATA[11.12.2018 10:54(UTC+1)]]></item>
+    <item name="DeviceInfoUnitIdentifier" sourceExtraction="0" systemtype="System.String"><![CDATA[557488159]]></item>
+    <item name="DeviceInfoUnitVersion" sourceExtraction="0" systemtype="System.String"><![CDATA[7.1.0.751]]></item>
+    <item name="DeviceInfoInternalVersion" sourceExtraction="0" systemtype="System.String"><![CDATA[4.7.7.751]]></item>
+    <item name="DeviceInfoSelectedManufacturer" sourceExtraction="0" systemtype="System.String"><![CDATA[Samsung GSM]]></item>
+    <item name="DeviceInfoSelectedDeviceName" sourceExtraction="0" systemtype="System.String"><![CDATA[SM-G925F Galaxy S6 Edge]]></item>
+    <item name="DeviceInfoConnectionType" sourceExtraction="0" systemtype="System.String"><![CDATA[Cable No. 130]]></item>
+    <item name="ExtractionType" sourceExtraction="0" systemtype="System.String"><![CDATA[Physique]]></item>
+    <item name="ProjectStateExtractionId" sourceExtraction="0" systemtype="System.String"><![CDATA[F3FD304E-EF6C-4CBD-94CB-425880F82748]]></item>
+    <item name="Time zone settings (ID)" sourceExtraction="0" systemtype="System.String"><![CDATA[_Europe/Rome]]></item>
+    <item name="Time zone settings (ID)" systemtype="System.String"><![CDATA[_Europe/Rome]]></item>
+  </metadata>
+
+{% endhighlight % }
+
+<p>CASE Representation of data extraction</p>
+
+{% highlight json %}
+[
+{
+  "@id": "kb:cellebrite-ufed1-uuid",
+  "@type": "uco-tool:Tool",
+  "uco-core:name": "UFED",
+  "uco-tool:toolType": "Extraction",
+  "drafting:toolIdentifier": "557488159",
+  "uco-tool:creator": "Cellebrite",
+  "uco-tool:version": "7.1.0.751",
+  "uco-core:hasFacet":[
+    {
+      "@type": "uco-tool:ToolConfigurationType",
+      "uco-tool:configurationSetting": [
+        {
+          "@type": "uco-tool:ConfigurationSettingType",
+          "uco-tool:itemName": "DeviceInfoConnectionType",
+          "uco-tool:itemValue": "Cable No. 130"
+        },
+        {
+          "@type": "uco-tool:ConfigurationSettingType",
+          "uco-tool:itemName": "ExtractionType",
+          "uco-tool:itemValue": "Physical"
+        }
+      ]
+    }
+  ]
+},
+{
+	  "@id": "kb:investigative-action1-uuid",
+	  "@type": "case-investigation:InvestigativeAction",
+	  "uco-core:name": "extracted",
+	  "uco-core:startTime": {
+        "@type": "xsd:dateTime",
+        "@value": "2018-12-11T08:49:00.00Z"
+      }
+	  "uco-core:endTime": {
+        "@type": "xsd:dateTime",
+        "@value": "2018-12-11T09:54:00.00Z"
+      }
+	  "uco-core:hasFacet": [
+	  {
+	      "@type": "uco-action:ActionReferences",
+	      "uco-action:location": { "@id": "kb:esc-lausanne-uuid" },
+	      "uco-action:performer": { "@id": "kb:investigator1-uuid" },
+	      "uco-action:instrument": { "@id": "kb:cellebrite-ufed1-uuid" },
+	      "uco-action:environment": { "@id": "kb:forensic-computer1-uuid" },
+	      "uco-action:object": [
+	        { "@id": "kb:provenance-record1-uuid"},
+		    { "@id": "kb:samsung-device-uuid"}
+	      ],
+	      "uco-action:result": [
+	        { "@id": "kb:provenance-record2-uuid" },
+	        { "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748" }
+
+	      ]
+	     }
+	  ]
+	  },
+	  {
+	  "@id": "kb:provenance-record13-uuid",
+	  "@type": "case-investigation:ProvenanceRecord",
+	  "uco-cose:description": "Forensic duplicate of mobile device used by Ares Lupin",
+	  "case-investigation:exhibitNumber": "20181211001-002",
+	  "uco-core:object":  [
+	    { "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748" }
+	  ]
+}
+]
+{% endhighlight %}
+
+<p>The role of investigator should be linked to an entity, such as a person and/or organization. This is not represented in the current Cellebrite XML report, and is represented here using CASE.</p>
+
+{% hightlight json %}
+[
+{
+   	"@id": "kb:eoghancasey-uuid",
+   	"@type": "uco-identity:Identity",
+   	"uco-core:hasFacet":[
+   	{
+      		"@type":"uco-identity:SimpleName",
+      		"uco-identityfirstName":"Eoghan",
+      		"uco-identitygivenName":"Casey"
+   		}
+   	   ]
+},
+{
+   		"@id": "kb:investigator1-uuid", 
+   		"@type": "uco-core:Role",
+   		"uco-core:name": "Investigator"
+},
+{
+   		"@id": "kb:investigatorrole-uuid", 
+   		"@type": "uco-core:Relationship",
+   		"uco-core:source": {"@id":" "kb:eoghancasey-uuid" },
+   		"uco-core:target": {"@id":" "kb:investigator1-uuid" },
+   		"uco-core:kindOfRelationship": "Has_Role",
+   		"uco-core:isDirectional": true
+}
+]
+
+{% endhighlight %}
+
+
+<h3>EVIDENCE INTEGRITY</h3>
+<p> The integrity of digital evidence is verified by comparing the hash value(s) of the working copy with the documented hash value(s) computed when the data was originally extracted. In this investigation, the original integrity information was documented using a secure blockchain-based electronic chain of custody ledger.
+
+NOTE: Cellebrite XML does not include hash of original data (values obtained using Autopsy)</p>
+
+<p>CASE Representation of Integrity Details</p>
+
+{% highlight json %}
+[
+  {
+	  "@id": "kb:provenance-record13-uuid",
+
+	  "@type": "case-investigation:ProvenanceRecord",
+	  "uco-core:description": "Forensic duplicate of smartphone used by subject",
+	  "case-investigation:exhibitNumber": "002",
+	  "uco-core:object":  [
+	    { "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748" }
+	  ]
+	  },
+	  {
+	      "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748",
+	      "@type": "uco-observable:ObservableObject",
+	      "uco-core:hasFacet": [
+	        {
+	          "@type": "uco-observable:FileFacet",
+	          "uco-observable:createdTime": {
+	            "@type": "xsd:dateTime",
+	            "@value": "2018-12-11T08:49:00.00Z"
+	          },
+	          "uco-observable:extension": "bin",
+	          "uco-observable:fileName": "LGE Nexus 5 Full Image.raw",
+	          "uco-observable:fileSystemType": "NTFS",
+	          "uco-observable:filePath": "E:\Evidence\UFED Samsung GSM SM-G925F Galaxy S6 Edge 2018_12_11 (002)\Physical Boot Loader (Recommended) 01\blk0_sda.bin",
+	          "uco-observable:isDirectory": false,
+	          "uco-observable:sizeInBytes": 31989956608
+	        },
+	        {
+	      "@type": "uco-observable:ContentDataFacet",
+      "uco-observable:hash": [
+        {
+          "@type": "uco-observable:Hash",
+          "uco-types:hashMethod": {
+            "@type": "uco-vocabulary:HashNameVocab",
+            "@value": "MD5"
+          },
+          "uco-types:hashValue": {
+            "@type": "xsd:hexBinary",
+            "@value": "569D5663179237798264E2669281DCD7"
+          }
+        },
+        {
+          "@type": "uco-observable:Hash",
+          "uco-types:hashMethod": {
+            "@type": "uco-vocabulary:HashNameVocab",
+            "@value": "SHA1"
+          },
+            "uco-types:hashValue": {
+              "@type": "xsd:hexBinary",
+              "@value": "F46EE05CE1A2210501EA512ED9E4C7EC59222CCA"
+            }
+          }
+        }
+      ]
+  }
+]
+{% endhighlight %}
+
+<h3>EVIDENCE INTEGRITY</h3>
+<p>The integrity of digital evidence is verified by comparing the hash value(s) of the working copy with the documented hash value(s) computed when the data was originally extracted. In this investigation, the original integrity information was documented using a secure blockchain-based electronic chain of custody ledger.</p>
+
+<p>NOTE: Cellebrite XML does not include hash of original data (values obtained using Autopsy) </p>
+
+<p>CASE Representation of Integrity Details</p>
+
+{% hightlight json %}
+[
+  {
+	  "@id": "kb:provenance-record13-uuid",
+
+	  "@type": "case-investigation:ProvenanceRecord",
+	  "uco-core:description": "Forensic duplicate of smartphone used by subject",
+	  "case-investigation:exhibitNumber": "002",
+	  "uco-core:object":  [
+	    { "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748" }
+	  ]
+	  },
+	  {
+	      "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748",
+	      "@type": "uco-observable:ObservableObject",
+	      "uco-core:hasFacet": [
+	        {
+	          "@type": "uco-observable:FileFacet",
+	          "uco-observable:createdTime": {
+	            "@type": "xsd:dateTime",
+	            "@value": "2018-12-11T08:49:00.00Z"
+	          },
+	          "uco-observable:extension": "bin",
+	          "uco-observable:fileName": "LGE Nexus 5 Full Image.raw",
+	          "uco-observable:fileSystemType": "NTFS",
+	          "uco-observable:filePath": "E:\Evidence\UFED Samsung GSM SM-G925F Galaxy S6 Edge 2018_12_11 (002)\Physical Boot Loader (Recommended) 01\blk0_sda.bin",
+	          "uco-observable:isDirectory": false,
+	          "uco-observable:sizeInBytes": 31989956608
+	        },
+	        {
+	      "@type": "uco-observable:ContentDataFacet",
+      "uco-observable:hash": [
+        {
+          "@type": "uco-observable:Hash",
+          "uco-types:hashMethod": {
+            "@type": "uco-vocabulary:HashNameVocab",
+            "@value": "MD5"
+          },
+          "uco-types:hashValue": {
+            "@type": "xsd:hexBinary",
+            "@value": "569D5663179237798264E2669281DCD7"
+          }
+        },
+        {
+          "@type": "uco-observable:Hash",
+          "uco-types:hashMethod": {
+            "@type": "uco-vocabulary:HashNameVocab",
+            "@value": "SHA1"
+          },
+            "uco-types:hashValue": {
+              "@type": "xsd:hexBinary",
+              "@value": "F46EE05CE1A2210501EA512ED9E4C7EC59222CCA"
+            }
+          }
+        }
+      ]
+  }
+]
+{% endhighlight json %}
+
+<h4>ACQUIRED DEVICE PROPERTIES</h4>
+<p>Cellebrite displays the following information about the forensic extraction. </p>
+<p> <img src="TODO" alt="" /> </p>
+<!-- Add picture here --> 
+
+<p>Cellebrite XML report representation of these Android Device properties.</p>
+
+{% highlight xml %}
+  <metadata section="Device Info">
+    <item id="ccfd82bd-e2ab-4f78-8b4c-dbf12e79049a" name="DeviceInfoOSVersion" sourceExtraction="0" systemtype="System.String"><![CDATA[6.0.1]]></item>
+    <item id="64f1202a-90ea-4513-8ce2-59b512f024e8" name="DeviceInfoDetectedPhoneVendor" sourceExtraction="0" systemtype="System.String"><![CDATA[samsung]]></item>
+    <item id="5acb61a1-86b9-42bc-9159-654fe884331e" name="DeviceInfoDetectedPhoneModel" sourceExtraction="0" systemtype="System.String"><![CDATA[SM-G925F]]></item>
+    <item id="8a17c10f-dfb3-470e-a7a4-92de56b93731" name="AndroidFingerprint" sourceExtraction="0" systemtype="System.String"><![CDATA[samsung/zeroltexx/zerolte:6.0.1/MMB29K/G925FXXU4DPIL:user/release-keys]]></item>
+    <item id="16b94ed0-09dd-459f-8d41-b595f4f4bccd" name="DeviceInfoAndroidID" sourceExtraction="0" systemtype="System.String"><![CDATA[64cce130286b31b3]]></item>
+    <item id="efb1cca7-66cc-48af-9de2-b8dc745da653" name="DeviceInfoBluetoothDeviceName" sourceExtraction="0" systemtype="System.String"><![CDATA[Galaxy S6 edge]]></item>
+    <item id="f479922d-ac32-4ed0-bc12-9f76ba846775" name="DeviceInfoBluetoothDeviceAddress" sourceExtraction="0" systemtype="System.String"><![CDATA[D8:C4:E9:7C:2E:F8]]></item>
+    <item id="f783f11d-9a8f-4ca5-885b-db6445202693" name="Adresse Mac" sourceExtraction="0" systemtype="System.String"><![CDATA[AC:5F:3E:73:E3:78]]></item>
+    <item id="4508c37f-abd2-42ee-a881-fea59182049b" name="ICCID" sourceExtraction="0" systemtype="System.String"><![CDATA[8931088918010550289]]></item>
+    <item id="a7e57ad3-a8e4-4280-ad1d-43c7e86241b3" name="Hotspot password required" group="Fonction modem" sourceExtraction="0" systemtype="System.String"><![CDATA[qphl8058]]></item>
+    <item id="bc9f46f2-d2f7-40ab-abb0-22cdb2440b7a" name="Heure de la dernière activation" group="Fonction modem" sourceExtraction="0" systemtype="System.String"><![CDATA[02.12.2018 11:59(UTC+0)]]></item>
+    <item id="57da5b4b-4d36-4046-b02b-3e198f68d399" name="Nom du point d'accès" group="Fonction modem" sourceExtraction="0" systemtype="System.String"><![CDATA[AndroidAP]]></item>
+    <item id="3d8b0b8f-5ba1-4f99-a997-5ef45af4ab74" name="Heure d'activation du téléphone" sourceExtraction="0" systemtype="System.String"><![CDATA[10.06.2018 14:31(UTC+0)]]></item>
+    <item id="d4ec458b-da45-47ee-9a71-6d8968b5c5a3" name="Adresse MAC Bluetooth" sourceExtraction="0" systemtype="System.String"><![CDATA[D8:C4:E9:7C:2E:F8]]></item>
+    <item id="07252566-1065-4b60-81f8-847d40dd998d" name="DeviceInfoFactoryNumber" sourceExtraction="0" systemtype="System.String"><![CDATA[RF8H31GS5SF]]></item>
+    <item id="e8da2ffc-262d-4896-b812-be0e905bd10d" name="DeviceInfoTimeZone" sourceExtraction="0" systemtype="System.String"><![CDATA[Europe/Rome]]></item>
+    <item id="56a05424-a7cc-4a62-9778-2a7b5eb0a91c" name="IMEI" sourceExtraction="0" systemtype="System.String"><![CDATA[356420075722843]]></item>
+    <item id="3c5f0bb8-9482-40a0-b475-342e80cb2451" name="DeviceInfoAutomaticTimeZone" sourceExtraction="0" systemtype="System.String"><![CDATA[False]]></item>
+    <item id="00b0fef6-a4a3-481c-9a44-143be89fccdb" name="DeviceInfoMockLocationsAllowed" sourceExtraction="0" systemtype="System.String"><![CDATA[False]]></item>
+    <item id="83c89388-7e6b-4da0-9672-9bef352dc86e" name="DeviceInfoAutomaticTime" sourceExtraction="0" systemtype="System.String"><![CDATA[False]]></item>
+    <item id="9546d2e9-4d10-4446-82a7-5755a2536828" name="DeviceInfoLocationServicesEnabled" sourceExtraction="0" systemtype="System.String"><![CDATA[True]]></item>
+    <item id="c97c3457-5d50-4235-81c8-4caff1f83edd" name="IMSI" sourceExtraction="0" systemtype="System.String"><![CDATA[204080515881398]]></item>
+    <item id="4a6bb5fc-c443-49fb-ba45-053ff32d34fb" name="Advertising Id" sourceExtraction="0" systemtype="System.String"><![CDATA[48500120-c9c5-402e-a6bc-04e2f92ae259]]></item>
+    <item id="1170c281-900c-4c5c-9b27-1e19cf9297f1" name="DeviceInfoCurrentSimCountryIso" sourceExtraction="0" systemtype="System.String"><![CDATA[it]]></item>
+    <item id="40e15e48-cf10-49e9-89fa-be6f14bfdac3" name="DeviceInfoSimChangeOperation" sourceExtraction="0" systemtype="System.String"><![CDATA[3]]></item>
+    <item id="06a6c63e-ee37-4765-af92-720147985b56" name="ICCID" sourceExtraction="0" systemtype="System.String"><![CDATA[89390100002217635543]]></item>
+    <item id="8e8224bc-b2ca-4e33-8612-aab6ea918c02" name="DeviceInfoCurrentSimPhoneNumber" sourceExtraction="0" systemtype="System.String"><![CDATA[3662158453]]></item>
+    <item id="8a6d2085-870d-40ae-8313-2f8a26012f36" name="DeviceInfoCurrentSimOperator" sourceExtraction="0" systemtype="System.String"><![CDATA[22201]]></item>
+    <item id="3a9020ff-faa7-4d38-9beb-a4e334f17027" name="SIM Change Time" sourceExtraction="0" systemtype="System.String"><![CDATA[10.06.2018 14:35(UTC+0)]]></item>
+    <item id="917ac338-fc76-41be-b22c-c891b6c88697" name="DeviceInfoOSType" group="Metadata" sourceExtraction="0" systemtype="System.String"><![CDATA[Android]]></item>
+  </metadata>
+{% endhighlight %}
+
+<p>CASE Representation of Android Device Properties</p>
+
+{% highlight json %}
+  [
+  {
+	  "@id": "kb:samsung-device-uuid",
+	  "@type": "uco-observable:ObservableObject",
+	  "uco-core:hasFacet": [
+	    {
+	      "@type": "uco-observable:DeviceFacet",
+	      "uco-observable:manufacturer": "Samsung",
+	      "uco-observable:model": "SM-G925F",
+	      "uco-observable:serialNumber": "RF8H31GS5SF"
+	    },
+    {
+      "@type": "uco-observable:AndroidDeviceFacet",
+      "uco-observable:androidID": "64cce130286b31b3",
+      "uco-observable:androidFingerprint ": "samsung/zeroltexx/zerolte:6.0.1/MMB29K/G925FXXU4DPIL"
+    },
+	    {
+	      "@type": "uco-observable:MobileDeviceFacet",
+         "uco-observable:bluetoothDeviceName": "Galaxy S6 edge",
+         "uco-observable:deviceActivationTime": "2018-06-10T14:31:30.00Z",
+          "drafting:advertisingID": "48500120-c9c5-402e-a6bc-04e2f92ae259",
+          "drafting:locationsServicesEnabled": true,
+	      "uco-observable:keypadUnlockCode": "__NOT_PROVIDED",
+	      "uco-observable:IMEI": "356420075722843",
+	      "uco-observable:clockSetting": "__NOT_PROVIDED",
+	      "uco-observable:storageCapacityInBytes": "__NOT_PROVIDED"
+	    },
+  {
+      "@type": "uco-observable:OperatingSystemFacet",
+      "uco-observable:name": "Android",
+      "uco-observable:manufacturer": "Samsung",
+      "uco-observable:version": "6.0.1"
+    },
+    {
+      "@type": "uco-observable:WiFiAddressFacet",
+      "uco-observable:value": "AC:5F:3E:73:E3:78"
+    },
+    {
+     "@type": "uco-observable:BluetoothAddressFacet",
+     "uco-observable:value": "D8:C4:E9:7C:2E:F8"
+   }
+
+	  ]
+	 }
+	]
+{% endlight %}
+
+<!-- Go over this -->
+<h3>SIM CARDS</h3>
+<p>Cellebrite XML provides a current SIM phone number of<!-- 3662158453-->  with an associated SIM ICCID of<!-- 89390100002217635543-->  and a “SIM Change Time” as a string “10.06.2018 14:35(UTC+0)”. </p>
+
+<p>Forensic examination of the physical forensic copy using Autopsy finds the source of this information is the “system/SimCard.dat” file. The raw values obtained using Autopsy are listed here, including SIMChangeTime in UNIX timestamp format: </p>
+
+<p> <!--
+CurrentSimSerialNumber=89390100002217635543
+CurrentSimPhoneNumber=3662158453
+SimChangeTime=1528641355649 
+-->  </p>
+
+
+<p>In actuality, the current SIM card ICCID is 8931088918010550289, as listed in the “siminfo” table of the “data/com.android.providers.telephony/databases/telephony.db” database. This SIM card has a different phone number than the one displayed by Cellebrite. The current SIM card was placed in the Samsung device on 2018-11-16T12:34:28Z. </p>
+
+{% highlight json %}
+[
+{
+      "@id": "kb:simcard1-relationship-uuid",
+      "@type": "uco-core:Relationship",
+      "uco-core:source": {"@id": "kb:simcard1-uuid"},
+      "uco-core:target": {"@id": "kb:samsung-device-uuid"},
+      "uco-core:kindOfRelationship": "Contained_Within",
+      "uco-core:startTime": {"@type": "xsd:dateTime", "@value": "2018-11-16T12:34:28Z"},
+      "uco-core:endTime": null,
+      "uco-core:isDirectional": true
+},
+
+{
+      "@id": "kb:simcard3-relationship-uuid",
+      "@type": "uco-core:Relationship",
+      "uco-core:source": {"@id": "kb:simcard1-uuid"},
+      "uco-core:target": {"@id": "kb:samsung-device-uuid"},
+      "uco-core:kindOfRelationship": "Contained_Within",
+      "uco-core:startTime": {
+          "@type": "xsd:dateTime",
+          "@value": "2018-11-16T00:00.00Z"
+      },
+      "uco-core:endTime":  {
+          "@type": "xsd:dateTime",
+          "@value": "2018-12-11T08:40:00.00Z",
+      },
+      "uco-core:isDirectional": true,
+      "uco-core:hasFacet": [
+      {
+         "@type": "uco-core:Confidence",
+         "uco-core:confidence": "95"
+      }
+   ]
+}
+]
+{% endhighlight %}
+
+<p>CASE Representation of SIM Card properties</p>
+
+{% highlight json %}
+
+ [
+   {
+	  "@id": "kb:simcard1-uuid",
+	  "@type": "uco-observable:ObservableObject",
+	  "uco-core:hasFacet": [
+	    {
+	      "@type": "uco-observable:SIMCardFacet",
+	      "uco-observable:ICCID": "89390100002217635543",
+	      "uco-observable:Carrier": "Telcom Italia"
+	    }
+	 ]
+	},
+   {
+	  "@id": "kb:mobileaccount1-uuid",
+	  "@type": "uco-observable:ObservableObject",
+	  "uco-core:hasFacet": [
+	    {
+	      "@type": "uco-observable:AccountFacet",
+	      "uco-observable:accountType": "Phone",
+	      "uco-observable:isActive": "False"
+	    }
+    {
+       "@type": "uco-observable:MobileAccountFacet",
+       "uco-observable:MSISDN": "3662158453"
+    }
+	 ]
+	},
+
+   {
+	  "@id": "kb:simcard2-uuid",
+	  "@type": "uco-observable:ObservableObject",
+	  "uco-core:hasFacet": [
+	    {
+	      "@type": "uco-observable:SIMCard",
+	      "uco-observable:ICCID": "8935302143531284380",
+	      "uco-observable:IMSI": "__NOT_PROVIDED",
+	      "uco-observable:Carrier": "__NOT_PROVIDED"
+	    }
+	 ]
+	},
+   {
+	  "@id": "kb:simcard3-uuid",
+	  "@type": "uco-observable:ObservableObject",
+	  "uco-core:hasFacet": [
+	    {
+	      "@type": "uco-observable:SIMCardFacet",
+	      "uco-observable:ICCID": "8931088918010550289",
+	      "uco-observable:IMSI": "{mobileaccount3-uuid}",
+	      "uco-observable:Carrier": "Lebara"
+	    }
+	 ]
+	},
+   {
+	  "@id": "kb:mobileaccount3-uuid",
+	  "@type": "uco-observable:ObservableObject",
+	  "uco-core:hasFacet": [
+	    {
+	      "@type": "uco-observable:AccountFacet",
+	      "uco-observable:accountType": "Phone",
+	      "uco-observable:isActive": true
+	    }
+    {
+       "@type": "uco-observable:MobileAccountFacet",
+       "uco-observable:MSISDN": "31647934784",
+       "uco-observable:IMSI": "204080515881398"
+    }
+	 ]
+	},
+
+        {
+          "@id": "kb:sim3-telephony-relationship-uuid",
+          "@type":"uco-core:Relationship",
+          "uco-core:source": {"@id": "kb:simcard3-uuid"},
+          "uco-core:target": {"@id": "kb:cd52c3b8-7759-40b7-ae10-dfc90a35f644"},
+          "uco-core:kindOfRelationship": "Contained_Within",
+          "uco-core:isDirectional": true,
+          "uco-core:hasFacet": [
+              { 
+                  "@type":"uco-observable:DataRangeFacet", 
+                  "uco-observable:rangeOffset": 13751‬, ‬‬‬‬‬‬‬‬‬‬‬‬
+                  "uco-observable:rangeSize": null
+              }, 
+                { 
+                    "@type": "drafting:TableRelationFacet", 
+                    "drafting:name":"siminfo" 
+                }
+          ]
+}
+]
+{% endhighlight %}
+
+<p><b>Note:</b> Observe IMSI traces in “system/netpolicy.xml” file </p>
+<h3>VIRTUAL IDENTITIES</h3>
+
+<p>The name and email address of the primary user of the device were obtained:
+
+Ares Lupin, aresthewerewolf@gmail.com, with a phone number +31647934784 associated with a WhatsApp account. </p>
+
+<p><b>Note:</b>The file “system/users/0.xml” contains the name Jessie Pinkman which a previous user of the phone, not the primary user in this case.</p>
+
+<p> Cellebrite XML </p>
+
+{% highlight xml %}
+      <model type="UserAccount" id="7b9ba63c-cc03-4a9d-bfbe-647616613df4" deleted_state="Intact" decoding_confidence="High" isrelated="False" extractionId="0" labels="2">
+        <field name="UserMapping" type="Boolean">
+          <value type="Boolean"><![CDATA[False]]></value>
+        </field>
+        <field name="Name" type="String">
+          <value type="String"><![CDATA[Ares Lupin]]></value>
+        </field>
+        <field name="Username" type="String">
+          <value type="String"><![CDATA[31647934784@s.whatsapp.net]]></value>
+        </field>
+        <field name="Password" type="String">
+          <empty />
+        </field>
+        <field name="ServiceType" type="String">
+          <value type="String"><![CDATA[WhatsApp]]></value>
+        </field>
+        <field name="ServerAddress" type="String">
+          <empty />
+        </field>
+        <multiModelField name="Photos" type="ContactPhoto" />
+        <multiModelField name="Entries" type="ContactEntry">
+          <model type="EmailAddress" id="f9b77e54-952d-46d7-811a-a353fb7e0248" deleted_state="Intact" decoding_confidence="High" isrelated="False" extractionId="0">
+            <field name="UserMapping" type="Boolean">
+              <value type="Boolean"><![CDATA[False]]></value>
+            </field>
+            <field name="Category" type="String">
+              <value type="String"><![CDATA[Google Drive Account]]></value>
+            </field>
+            <field name="Value" type="String">
+              <value type="String"><![CDATA[aresthewerewolf@gmail.com]]></value>
+            </field>
+            <field name="Domain" type="String">
+              <value type="String"><![CDATA[Courrier électronique]]></value>
+            </field>
+          </model>
+{% endhighlight %}
+
+<p> CASE Representation of Users and Accounts</p>
+
+{% highlight json %}
+[
+{
+      "@id": "kb:primaryuser-uuid",
+      "@type": "uco-identity:Identity",
+      "uco-core:hasFacet": [
+        {
+          "@type": "uco-identity:SimpleName",
+          "uco-identity:givenName": "Ares",
+          "uco-identity:familyName": "Lupin"
+        }
+      ]
+    },
+{
+      "@id": "kb:primaryuser-email-uuid",
+      "@type": "uco-core:Relationship",
+      "uco-observable:source": {"@id": "kb:primaryuser-uuid"},
+      "uco-observable:target": {"@id": "kb:EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53"},
+      "uco-observable:kindOfRelationship": "Has_Account",
+      "uco-observable:isDirectional": true
+},
+{
+      "@id": "kb:primaryuser-email-uuid",
+      "@type": "uco-core:Relationship",
+      "uco-core:source": {"@id": "kb:primaryuser-uuid"},
+      "uco-core:target": {"@id": "kb:WhatsApp-90652808-7341-40D3-9285-774D865AD3F9"},
+      "uco-core:kindOfRelationship": "Has_Account",
+      "uco-core:isDirectional": true
+},
+{
+   "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53",
+   "@type": "uco-observable:ObservableObject",
+   "uco-core:hasFacet": [
+       {
+          "@type": "uco-observable:EmailAddressFacet",
+          "uco-observable:value": "aresthewerewolf@gmail.com"
+       }
+   ]
+},
+{
+   "@id": "kb:EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53",
+   "@type": "uco-observable:ObservableObject",
+   "uco-core:hasFacet": [
+     {
+       "@type": "uco-observable:EmailAccountFacet",
+       "uco-observable:emailAddress": {"@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53"}
+     }
+   ]
+},
+{
+   "@id": "kb:C1D3237A-6D7F-4E96-BBEF-6EB4C0A621D1",
+   "@type": "uco-observable:ObservableObject", 
+   "uco-core:hasFacet":[{
+      "@type":"uco-observable:AccountFacet", 
+      "uco-observable:accountIssuer": "Salt", 
+      "uco-observable:isActive": true
+},
+   {
+      "@type": "uco-observable:PhoneAccountFacet", 
+      "uco-observable:phoneNumber": "+31647934784", 
+      "uco-observable:name": "" 
+   }
+  ]
+},
+{
+      "@id": "kb:associated-account-phonenumber1",
+      "@type": "uco-core:Relationship",
+      "uco-core:source": {"@id": "kb:90652808-7341-40D3-9285-774D865AD3F9"},
+      "uco-core:target": {"@id": "kb:C1D3237A-6D7F-4E96-BBEF-6EB4C0A621D1"},
+      "uco-core:kindOfRelationship": "Associated_Account",
+      "uco-core:isDirectional": true
+},
+{
+   "@id": "kb:WhatsApp-90652808-7341-40D3-9285-774D865AD3F9",
+   "@type": "uco-observable:ObservableObject", 
+   "uco-core:hasFacet":[
+   {
+      "@type": "uco-observable:AccountFacet", 
+      "uco-observable:accountIssuer": "organization-whatsapp-uuid", 
+      "uco-observable:accountIdentifier": "31647934784@s.whatsapp.net",
+      "uco-observable:isActive": true
+   },
+   {
+      "@type": "uco-observable:ApplicationAccountFacet", 
+      "uco-observable:application": "kb:application-whatsapp-uuid", 
+   },
+   {
+      "@type": "uco-observable:DigitalAccountFacet", 
+      "uco-observable:displayName": "Ares Lupin" 
+   }
+  ]
+},
+{
+   "@id": "kb:organization-whatsapp-uuid",
+   "@type": "uco-identity:Identity", 
+   "uco-core:hasFacet":[
+   {
+      "@type": "identity:Organization", 
+      "identity:orgName": "WhatsApp", 
+   }
+  ]
+},
+{
+   "@id": "kb:application-whatsapp-uuid",
+   "@type": "uco-observable:ObservableObject", 
+   "uco-core:hasFacet": [
+   {
+      "@type": "Application", 
+      "appName": "WhatsApp", 
+   }
+  ]
+}
+]
+{% endhighlight %}
+
+<p>In addition, a Reddit account was extracted from the Chrome Login Data database, and Cellebrite provides a converted timestamp as a known format.</p>
+
+<p>Cellebrite XML</p>
+{% highlight xml %}
+      </model>
+      <model type="UserAccount" id="714b4394-4ffb-4575-9ac5-1d46ffe01d8b" deleted_state="Intact" decoding_confidence="High" isrelated="False" extractionId="0">
+        <field name="UserMapping" type="Boolean">
+          <value type="Boolean"><![CDATA[False]]></value>
+        </field>
+        <field name="Name" type="String">
+          <empty />
+        </field>
+        <field name="Username" type="String">
+          <value type="String"><![CDATA[aresthewerewolf]]></value>
+        </field>
+        <field name="Password" type="String">
+          <value type="String"><![CDATA[v10j֯�H��x�_�_o�i�]]></value>
+        </field>
+        <field name="ServiceType" type="String">
+          <value type="String"><![CDATA[https://www.reddit.com/]]></value>
+        </field>
+        <field name="ServerAddress" type="String">
+          <empty />
+        </field>
+        <multiModelField name="Photos" type="ContactPhoto" />
+        <multiModelField name="Entries" type="ContactEntry" />
+        <multiField name="Notes" type="String" />
+        <multiModelField name="Addresses" type="StreetAddress" />
+        <multiModelField name="Organizations" type="Organization" />
+        <field name="TimeCreated" type="TimeStamp">
+          <value type="TimeStamp" format="TimeStampKnown">2018-11-26T20:00:31.000+01:00</value>
+        </field>
+        <jumptargets name="">
+          <targetid ismodel="true"><![CDATA[5a97ff43-5f03-4a71-afa3-a8a09ccf2801]]></targetid>
+        </jumptargets>
+      </model>
+{% endhighlight %}
+
+<p>CASE Representation of Reddit account</p>
+
+{% highlight json %}
+[
+{
+   "@id": "kb:Reddit-90652808-7341-40D3-9285-774D865AD3F9",
+   "@type":"uco-observable:ObservableObject", 
+   "uco-core:hasFacet":[
+   {
+      "@type":"uco-observable:AccountFacet", 
+      "uco-observable:accountIssuer": "kb:organization-reddit-uuid", 
+      "uco-observable:accountIdentifier": "aresthewerewolf",
+      "uco-observable:isActive": true
+   },
+   {
+      "@type": "uco-observable:DigitalAccountFacet", 
+      "uco-observable:displayName": "Ares Lupin",
+      "uco-observable:accountLogin": "aresthewerewolf",
+      "uco-observable:firstLoginTime": "2018-11-26T19:00:31Z",
+   }
+   {
+      "@type": "uco-observable:AccountAuthenticationFacet",
+      "uco-observable:password": "v10j֯�H��x�_�_o�i�"
+   },
+  ]
+},
+        {
+          "@id": "kb:LoginDataC316C405-9326-4F28-9B8D-44A3BB9E7283",
+          "@type": "uco-core:Relationship",
+          "uco-core:source": {"@id": "kb:Reddit-90652808-7341-40D3-9285-774D865AD3F9"},
+          "uco-core:target": {"@id": "kb:ChromeLoginData-16805DFF-05F9-4CBA-9266-D5FA712F3D8F"},
+          "uco-core:kindOfRelationship": "Contained_Within",
+          "uco-core:isDirectional": true,
+          "uco-core:hasFacet": [
+              { 
+                  "@type":"uco-observable:DataRangeFacet", 
+                  "uco-observable:rangeOffset": 13751‬, ‬‬‬‬‬‬‬‬‬‬‬
+                  "uco-observable:rangeSize": null
+              }, 
+                { 
+                    "@type": "drafting:TableRelation", 
+                    "drafting:name":"logins" 
+                }
+           ]
+        }
+        ]
+{% endhighlight %}
+
+<h3>LOCATIONS</h3>
+<p>Location details in Longitude & Latitude are represented here. </p>
+<p>Cellebrite XML</p>
+
+{% highlight xml %}
+      <model type="Location" id="83160da6-b92b-4100-9f17-28886ac835ef" deleted_state="Intact" decoding_confidence="High" isrelated="False" extractionId="0">
+        <field name="UserMapping" type="Boolean">
+          <value type="Boolean"><![CDATA[False]]></value>
+        </field>
+        <modelField name="Position" type="Coordinate">
+          <model type="Coordinate" id="05ec2079-bbeb-49f3-b9bc-cf4079f8556f" deleted_state="Unknown" decoding_confidence="High" isrelated="False" extractionId="0">
+            <field name="UserMapping" type="Boolean">
+              <value type="Boolean"><![CDATA[False]]></value>
+            </field>
+            <field name="Longitude" type="Double">
+              <value type="Double"><![CDATA[6.5791666666666666]]></value>
+            </field>
+            <field name="Latitude" type="Double">
+              <value type="Double"><![CDATA[46.537222222222219]]></value>
+            </field>
+            <field name="Elevation" type="Double">
+              <empty />
+            </field>
+            <field name="Comment" type="String">
+              <empty />
+            </field>
+            <field name="PositionAddress" type="String">
+              <empty />
+            </field>
+            <field name="Map" type="String">
+              <empty />
+            </field>
+          </model>
+        </modelField>
+{% endhighlight %}
+
+<p>CASE Representation </p>
+{% highlight json %}
+[
+        {
+            "@id": "kb:LatLong-8667ec82-8c21-11e9-934e-0c4de9c21b53",
+            "@type": "uco-location:Location",
+            "uco-core:hasFacet": {
+                "@type": "uco-location:LatLongCoordinates",
+                "uco-location:latitude": 46.537222222222219,
+                "uco-location:longitude": 6.5791666666666666
+                "uco-location:altitude": null
+            }
+        }
+]
+{% endhighlight %}
+
+<h2> CHAIN OF EVIDENCE SOURCES </h2>
+
+<h2>Partition on Disk Image</h2>
+<p>Cellebrite XML report does not appear to maintain this provenance link between partitions and the forensic duplicate. </p>
+
+<p>CASE Representation <i> (values obtained using Autopsy)</i> </p>
+
+{% highlight json %}
+[
+   {
+   "@id": "kb:partition-uuid",
+   "@type": "uco-core:Relationship",
+   "uco-core:source": {"@id": "kb:userdata-partition-uuid"},
+   "uco-core:target": {"@id": "kb:blk0_sda.bin"},
+   "uco-core:kindOfRelationship": "Contained_Within",
+   "uco-core:isDirectional": true,
+   "uco-core:hasFacet": [
+	{
+         "@type": "uco-observable:DataRange",
+         "uco-observable:rangeOffset": 541196288‬,‬‬‬‬‬‬‬‬‬‬‬‬
+         "uco-observable:rangeSize": 3456630784‬‬‬‬‬‬‬‬‬‬‬‬‬
+	}
+     ]
+   }
+]
+{% endhighlight %}
+<h4>File System</h4>
+<p>Cellebrite XML report does not appear to maintain this provenance link between file system structures and the specific partition.</p>
+
+<p>CASE Representation <i> (values obtained using Autopsy)</i> </p>
+{% highlight json %}
+[
+   {
+   "@id": "kb:filesystem-uuid",
+   "@type": "uco-observable:ObservableObject",
+   "uco-core:hasFacet": [
+    {
+         "@type": "uco-observable:DiskPartitionFacet",
+         "uco-observable:diskPartitionType": "GPT",
+         "uco-observable:partitionID": "06",
+         "uco-observable:partitionOffset": 541196288,
+         "uco-observable:partitionLength": 3456630784
+    },
+	{
+         "@type": "uco-observable:FileSystemFacet",
+         "uco-observable:fileSystemType": "EXT3"
+    },
+    {
+         "@type": "uco-observable:ContentDataFacet",
+         "uco-observable:hash": [
+          {
+          "@type":"uco-types:Hash",
+          "uco-types:hashMethod": {
+            "@type": "uco-vocabulary:HashNameVocab"
+            "@value": "MD5"
+          },
+          "uco-types:hashValue": {
+            "@type": "xsd:hexBinary",
+            "@value": "TBD"
+          }
+         }
+         ]
+       }
+     ]
+  }
+]
+{% endhighlight %}
+
+<h4>File in File System</h4>
+<p>A file within the Android EXT3 file system is represented here.</p>
+<p>CASE Representation</p>
+
+
+{% highlight json %}
+[
+   {
+   "@id": "kb:filesystem-relationship-uuid",
+   "@type": "uco-core:Relationship",
+   "uco-core:source": {"@id": "kb:F7CAD990-6687-4849-89DC-55795675F3F5"},
+   "uco-core:target": {"@id": "kb:filesystem-uuid"},
+   "uco-core:kindOfRelationship": "Contained_Within",
+   "uco-core:isDirectional": true,
+   "uco-core:hasFacet": [
+    {
+      "@type": "uco-observable:PathRelation",
+      "uco-observable:path": "/Root/data/com.google.android.gms/app_dg_cache/B0970DD8CBD5F4763E7C602156284D4DD796AE5D/the.apk"
+    }
+    {
+      "@type": "uco-core:DataRange",
+      "uco-core:rangeOffset": 3121610752,
+      "uco-core:rangeSize": 147871
+    }
+   ]
+   },
+   {
+   "@id": "kb:userdata-partition-uuid",
+   "@type": "uco-observable:ObservableObject",
+   "uco-core:hasFacet": [
+    {
+         "@type": "uco-observable:DiskPartitionFacet",
+         "uco-observable:diskPartitionType": "GPT",
+         "uco-observable:partitionID": "06",
+         "uco-observable:partitionOffset": 63,
+         "uco-observable:partitionLength": 245235063
+    },
+	{
+         "@type": "uco-observable:FileSystem",
+         "uco-observable:fileSystemType": "EXT3"
+    },
+    {
+         "@type": "uco-observable:ContentDataFacet",
+         "uco-observable:sizeInBytes": 245235000,
+         "uco-observable:hash": [
+          {
+          "@type":"uco-types:Hash",
+          "uco-types:hashMethod": {
+            "@type": "uco-vocabulary:HashNameVocab"
+            "@value": "SHA256"
+          },
+          "uco-types:hashValue": {
+            "@type": "xsd:hexBinary",
+            "@value": "0611ea093d19b1c73a5285ff43741dd77f2a8d983c1c71044eb072e44f5dcb0a"
+          }
+         }
+         ]
+       }
+     ]
+  }
+]
+{% endhighlight %}
+
+<h4> File </h4>
+<p>Cellebrite XML </p> 
+
+
+{% highlight xml %}
+    <file fs="USERDATA (ExtX)" fsid="c4b80ed4-a372-4440-9a87-881ed4423c09" path="/Root/media/0/Download/Elder_Wand.png" size="534167" id="88959d0b-b2bb-4a4a-85c8-edd7b2393e02" extractionId="0" deleted="Intact" embedded="false" isrelated="False">
+      <accessInfo>
+        <timestamp name="CreationTime">2018-11-30T09:43:24.000+01:00</timestamp>
+        <timestamp name="ModifyTime">2018-11-30T09:43:25.000+01:00</timestamp>
+        <timestamp name="AccessTime">2018-11-30T09:43:24.000+01:00</timestamp>
+      </accessInfo>
+      <metadata section="File">
+        <item name="Local Path" systemtype="System.String"><![CDATA[files\Image\Elder_Wand.png]]></item>
+        <item name="SHA256" systemtype="System.String"><![CDATA[]]></item>
+        <item name="MD5" systemtype="System.String"><![CDATA[13f1393bfe548620da920fac9865965e]]></item>
+        <item name="Tags" systemtype="System.String"><![CDATA[Image]]></item>
+      </metadata>
+      <metadata section="MetaData">
+        <item name="Inode Number" systemtype="System.String"><![CDATA[0xE3454]]></item>
+        <item name="Owner GID" systemtype="System.String"><![CDATA[0x3FF]]></item>
+        <item name="Owner UID" systemtype="System.String"><![CDATA[0x3FF]]></item>
+        <item name="CoreFileSystemFileSystemNodeFileDataOffsetName" group="CoreFileSystemFileSystemNodeFileOffsetsCategory" systemtype="System.String"><![CDATA[0x2B3A00000]]></item>
+        <item name="CoreFileSystemFileSystemNodeCreationTime" group="CoreFileSystemFileSystemNodeDateTime" systemtype="System.String"><![CDATA[30.11.2018 08:43(UTC+0)]]></item>
+        <item name="CoreFileSystemFileSystemNodeModifyTime" group="CoreFileSystemFileSystemNodeDateTime" systemtype="System.String"><![CDATA[30.11.2018 08:43(UTC+0)]]></item>
+        <item name="CoreFileSystemFileSystemNodeLastAccessTime" group="CoreFileSystemFileSystemNodeDateTime" systemtype="System.String"><![CDATA[30.11.2018 08:43(UTC+0)]]></item>
+        <item name="ReportTemplateFileSize" systemtype="System.String"><![CDATA[534167 Bytes]]></item>
+        <item name="CoreFileSystemFileSystemNodeFileChunks" systemtype="System.String"><![CDATA[1]]></item>
+      </metadata>
+    </file>
+{% endhighlight %}
+
+<p>CASE Representation </p> 
+
+{% highlight json %}
+[
+{
+   "@id": "kb:F7CAD990-6687-4849-89DC-55795675F3F5",
+   "@type": "uco-observable:ObservableObject",
+   "uco-observable:tag": [
+     "Image"
+   ],
+   "uco-core:hasFacet":[
+     {
+      "@type":"uco-observable:FileFacet",
+      "uco-observable:fileName": "the.apk",
+      "uco-observable:filePath": "/Root/media/0/Download/Elder_Wand.png",
+      "drafting:fileLocalPath": "files/image/Elder_Wand.png",
+      "uco-observable:extension":".png",
+      "uco-observable:fileSystemType":"ExtX",
+      "uco-observable:isDirectory": false,
+      "uco-observable:allocationStatus": "allocated",
+      "uco-observable:sizeInBytes":"534167",
+      "uco-observable:createdTime": {"@type": "xsd:dateTime", "@value": "2018-11-30T09:43:24.00Z"},
+      "uco-observable:modifiedTime": {"@type": "xsd:dateTime", "@value": "2018-11-30T09:43:25.00Z"},
+      "uco-observable:accessedTime": {"@type": "xsd:dateTime", "@value": "2018-11-30T09:43:24.00Z"}
+      },
+     {
+      "@type": "uco-observable:ExtInodeFacet",
+      "uco-observable:extInode": 930900‬,‬‬‬‬‬‬‬‬‬‬‬‬‬‬
+      "uco-observable:extSGID": 1023‬,‬‬‬‬‬‬‬‬‬‬‬‬‬‬
+      "uco-observable:extSUID": 1023‬,‬‬‬‬‬‬‬‬‬‬‬‬‬‬
+      "uco-observable:extInodeChangeTime": null
+      },
+      {
+         "@type": "uco-observable:ContentDataFacet",
+         "uco-observable:hash":[
+          {
+          "@type":"uco-types:Hash",
+          "uco-types:hashMethod": {
+            "@type": "uco-vocabulary:HashNameVocab"
+            "@value": "SHA256"
+          },
+          "uco-types:hashValue": {
+            "@type": "xsd:hexBinary",
+            "@value": "13f1393bfe548620da920fac9865965e"
+          }
+         }
+      ] 
+  }
+]
+{% endhighlight %}
+
+<p><b>Note:</b> EXIF metadata is represented using properties specified in the standard </p>
+
+<p>(see AC-126: Publish EXIF utilityTODO ).<!--NEED TO ASK --> </p>
+
+<h4> WhatsApp Message </h4>
+<p>Cellebrite XML </p>
+
+
+{% highlight xml %}
+          <model type="InstantMessage" id="ed5d35d6-6e7c-4099-80f4-1fadfc0ee08c" deleted_state="Intact" decoding_confidence="High" isrelated="False" extractionId="0">
+            <field name="UserMapping" type="Boolean">
+              <value type="Boolean"><![CDATA[False]]></value>
+            </field>
+            <modelField name="From" type="Party">
+              <model type="Party" id="caf581c1-2ba5-4c54-b565-f8b48078b3a6" deleted_state="Unknown" decoding_confidence="High" isrelated="False" extractionId="0">
+                <field name="UserMapping" type="Boolean">
+                  <value type="Boolean"><![CDATA[False]]></value>
+                </field>
+                <field name="Identifier" type="String">
+                  <value type="String"><![CDATA[31647934784@s.whatsapp.net]]></value>
+                </field>
+                <field name="Role" type="PartyRole">
+                  <value type="PartyRole"><![CDATA[From]]></value>
+                </field>
+                <field name="Status" type="PartyStatus">
+                  <value type="PartyStatus"><![CDATA[Unknown]]></value>
+                </field>
+                <field name="Name" type="String">
+                  <value type="String"><![CDATA[Ares Lupin]]></value>
+                </field>
+                <field name="IPAddress" type="String">
+                  <empty />
+                </field>
+                <multiField name="IPAddresses" type="String" />
+                <field name="DateDelivered" type="TimeStamp">
+                  <empty />
+                </field>
+                <field name="DateRead" type="TimeStamp">
+                  <empty />
+                </field>
+                <field name="DatePlayed" type="TimeStamp">
+                  <empty />
+                </field>
+                <field name="Distance" type="Double">
+                  <value type="Double"><![CDATA[0]]></value>
+                </field>
+                <field name="DistanceTimeStamp" type="TimeStamp">
+                  <empty />
+                </field>
+                <field name="IsPhoneOwner" type="Boolean">
+                  <value type="Boolean"><![CDATA[True]]></value>
+                </field>
+              </model>
+            </modelField>
+            <multiModelField name="To" type="Party">
+              <model type="Party" id="3e45662b-0578-445d-bf14-ddbfc8eb2d4b" deleted_state="Intact" decoding_confidence="High" isrelated="False" extractionId="0">
+                <field name="UserMapping" type="Boolean">
+                  <value type="Boolean"><![CDATA[False]]></value>
+                </field>
+                <field name="Identifier" type="String">
+                  <value type="String"><![CDATA[41786909109@s.whatsapp.net]]></value>
+                </field>
+                <field name="Role" type="PartyRole">
+                  <value type="PartyRole"><![CDATA[To]]></value>
+                </field>
+                <field name="Status" type="PartyStatus">
+                  <value type="PartyStatus"><![CDATA[Unknown]]></value>
+                </field>
+                <field name="Name" type="String">
+                  <value type="String"><![CDATA[Wonder]]></value>
+                </field>
+                <field name="IPAddress" type="String">
+                  <empty />
+                </field>
+                <multiField name="IPAddresses" type="String" />
+                <field name="DateDelivered" type="TimeStamp">
+                  <value type="TimeStamp" format="TimeStampKnown">2018-12-04T20:15:58.000+01:00</value>
+                </field>
+                <field name="DateRead" type="TimeStamp">
+                  <value type="TimeStamp" format="TimeStampKnown">2018-12-04T20:16:07.000+01:00</value>
+                </field>
+                <field name="DatePlayed" type="TimeStamp">
+                  <empty />
+                </field>
+                <field name="Distance" type="Double">
+                  <value type="Double"><![CDATA[0]]></value>
+                </field>
+                <field name="DistanceTimeStamp" type="TimeStamp">
+                  <empty />
+                </field>
+                <field name="IsPhoneOwner" type="Boolean">
+                  <value type="Boolean"><![CDATA[False]]></value>
+                </field>
+              </model>
+            </multiModelField>
+            <field name="Subject" type="String">
+              <empty />
+            </field>
+            <field name="Body" type="String">
+              <value type="String"><![CDATA[20 minutes away]]></value>
+            </field>
+            <field name="SourceApplication" type="String">
+              <value type="String"><![CDATA[WhatsApp]]></value>
+            </field>
+            <field name="TimeStamp" type="TimeStamp">
+              <value type="TimeStamp" format="TimeStampKnown">2018-12-04T20:12:56.565+01:00</value>
+            </field>
+            <field name="DateRead" type="TimeStamp">
+              <empty />
+            </field>
+            <field name="DateDelivered" type="TimeStamp">
+              <empty />
+            </field>
+            <modelField name="Attachment" type="Attachment">
+              <empty />
+            </modelField>
+            <multiModelField name="Attachments" type="Attachment" />
+            <modelField name="Position" type="Coordinate">
+              <empty />
+            </modelField>
+            <field name="PositionAddress" type="String">
+              <empty />
+            </field>
+            <field name="Status" type="MessageStatus">
+              <value type="MessageStatus"><![CDATA[Sent]]></value>
+            </field>
+            <multiModelField name="SharedContacts" type="Contact" />
+            <field name="Label" type="Label">
+              <empty />
+            </field>
+            <field name="Platform" type="Platform">
+              <value type="Platform"><![CDATA[Mobile]]></value>
+            </field>
+          </model>
+{% endhighlight %}
+
+<p>CASE Representation of WhatsApp account and message</p>
+
+<p> WhatsApp Application: </p>
+
+{% highlight json %}
+[
+{
+            "@id": "kb:whatsapp-868abc08-8c21-11e9-934e-0c4de9c21b53",
+            "@type": "uco-observable:ObservableObject",
+            "uco-core:hasFacet": [
+                {
+                    "@type": "uco-observable:ApplicationFacet",
+                    "uco-observable:name": "WhatsApp",
+                    "uco-observable:applicationIdentifier": "com.whatsapp",
+                    "uco-observable:version": "2.18.361",
+                    "uco-observable:operatingSystem": "Android"
+                }
+             ]
+        }
+        ]
+{% endhighlight %}
+
+<p> WhatsApp Account </p>
+{% highlight json %}
+[
+{
+		    "@id": "kb:account-90652808-7341-40d3-9285-774d865ad3f9",
+            "@type": "uco-observable:ObservableObject",
+            "uco-core:hasFacet":[
+                {
+                    "@type":"uco-observable:AccountFacet",
+                    "uco-observable:accountIssuer": "whatsapp_org",
+                    "uco-observable:accountIdentifier": "31647934784@s.whatsapp.net",
+                    "uco-observable:isActive": true
+                },
+                {
+                    "@type":"uco-observable:ApplicationAccountFacet",
+                    "uco-observable:application": "kb:whatsapp-868abc08-8c21-11e9-934e-0c4de9c21b53",
+                },
+                {
+                    "@type": "uco-observable:DigitalAccountFacet",
+                    "uco-observable:displayName": "Ares Lupin"
+                }
+           ]
+        }
+]
+{% endhighlight %}
+
+<p> WhatsApp Message: </p>
+
+{% highlight json %}
+[
+        {
+            "@id": "kb:message-ed5d35d6-6e7c-4099-80f4-1fadfc0ee08c",
+            "@type": "uco-observable:ObservableObject",
+            "uco-core:hasFacet": [
+                {
+                    "@type": "uco-observable:MessageFacet",
+                    "uco-observable:messageText": "20 minutes away",
+                    "uco-observable:application": {"@id": "kb:868abc08-8c21-11e9-934e-0c4de9c21b53"},
+                    "uco-observable:sentTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-12-04T19:12:56.00Z"
+                    },
+                    "uco-observable:from": {"@id": "kb:account-90652808-7341-40d3-9285-774d865ad3f9"},
+                    "uco-observable:to": [
+                        {"@id": "kb:account-865734c8-8c21-11e9-934e-0c4de9c21b53"}
+                    ],
+					"uco-observable:messageType": "outgoing"
+
+                }
+            ]
+        }
+        ]
+{% endhighlight %}
+
+<p>Relationship Object (WhatsApp Message Contained_Within File msgstore.db at offset 293822 in messages table) </p>
+{% highlight json %}
+[
+        {
+            "@id": "kb:relationship-c316c405-9326-4f28-9b8d-44a3bb9e7283",
+            "@type": "uco-observable:ObservableRelationship",
+            "uco-core:source": {
+               "@id": "kb:message-ed5d35d6-6e7c-4099-80f4-1fadfc0ee08c"
+            },
+            "uco-core:target": [
+              {
+                "@id": "kb:msgstordb-16805dff-05f9-4cba-9266-d5fa712f3d8f"
+              }
+		     ],
+		    "uco-core:kindOfRelationship": {
+              "@type": "uco-observable:ObservableObjectRelationshipVocab",
+              "@value": "Contained_Within"
+		    },
+		    "uco-observable:isDirectional": true,
+		    "uco-core:hasFacet": [
+             {
+                  "@type":"uco-observable:DataRangeFacet",
+                  "uco-observable:rangeOffset": 293822‬, ‬‬‬‬‬‬‬‬‬‬‬
+                  "uco-observable:rangeSize": 477952
+              },
+              {
+                  "@type": "drafting:TableRelation",
+                  "drafting:path": "messages"
+              }
+           ]
+        }
+]
+{% endhighlight %}
+	
+
+
+
+<p> File msgstore.db </p>
+{% highlight json %}
+[
+    {
+        "@id": "kb:msgstoredb-16805dff-05f9-4cba-9266-d5fa712f3d8f",
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-observable:FileFacet",
+                "uco-observable:createdTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-12-11T08:49:00.00Z"
+                },
+                "uco-observable:fileSystemType": "EXT3",
+                "uco-observable:extension": "db",
+                "uco-observable:fileName": "/data/com.whatsapp/databases/msgstore.db",
+                "uco-observable:isDirectory": false,
+                "uco-observable:sizeInBytes": {
+                    "@type": "xsd:long",
+                    "@value": 327680
+                }
+            },
+            {
+                "@type": "uco-observable:ContentDataFacet",
+                "uco-observable:hash": [
+                    {
+                        "@type": "uco-types:Hash",
+                        "uco-types:hashMethod": {
+                            "@type": "uco-core:HashNameEnum",
+                            "@value": "SHA256"
+                        },
+                        "uco-types:hashValue": {
+                            "@type": "xsd:hexBinary",
+                            "@value": "a13225720074371d56a4f4d5117fbb4953c5b1d316b31f21edcb7ed8fdf66c6e"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
+{% endhighlight %}
+
+<p>Relationship Object (WhatsApp SQLite database file Contained_Within forensic copy of mobile device) </p>
+
+{% highlight json %}
+[
+        {
+            "@id": "kb:relationship-c316c405-9326-4f28-9b8d-44a3bb9e7283",
+            "@type": "uco-observable:ObservableRelationship",
+            "uco-core:source": {
+               "@id": "kb:msgstoredb-16805dff-05f9-4cba-9266-d5fa712f3d8f"
+            },
+            "uco-core:target": [
+              {
+                "@id": "kb:forensiccopy-309bc178-1836-47b7-aa15-94ea3a2c7401"
+              }
+		     ],
+		    "uco-core:kindOfRelationship": {
+              "@type": "uco-observable:ObservableObjectRelationshipEnum",
+              "@value": "Contained_Within"
+		    },
+		    "uco-observable:isDirectional": true,
+		    "uco-core:hasFacet": [
+              {
+                  "@type": "uco-observable:PathRelation",
+                  "uco-observable:path": "/data/com.whatsapp/databases/msgstore.db"
+              }
+           ]
+        }
+]
+{% endhighlight %}
+
+<h4>Email </h4>
+
+<p>CASE Representation </p>
+{% highlight json %}
+[
+        {
+            "@id": "kb:EmailMessage-2c032220-8c21-11e9-9c99-0c4de9c21b53",
+            "@type": "uco-observable:ObservableObject",
+            "uco-core:hasFacet": [
+                {
+                    "@type": "uco-observable:EmailMessageFacet",
+                    "uco-observable:application": {"@id": "kb:Gmail-uuid"},
+                    "uco-observable:sender": {"@id": "kb:EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53"},
+                    "uco-observable:sentTime": {"@type": "xsd:dateTime", "@value": "2018-11-20T21:28:07.00Z"},
+                    "uco-observable:subject": “Re: Bank transfer ?”,
+                    "uco-observable:bodyRaw": "Excellent - we need all the help we can get. Sent from my Samsung Galaxy smartphone",
+                    "uco-observable:fromRef": null,
+                    "uco-observable:toRef": null,
+                    "uco-observable:ccRefs": null,
+                    "uco-observable:bccRefs": null,
+                    "uco-observable:messageID": "CAKBqNfyKo+pvHkJy6kwO82jTbkNA@mail.gmail.com"
+                }
+            ]
+        },
+{
+  "@id": "kb:456a2bac-8c21-11e9-8902-0c4de9c24de5",
+  "@type": "uco-observable:ObservableObject",
+  "uco-core:hasFacet": [
+    {
+      "@type": "uco-observable:EmailAddressFacet",
+      "uco-observable:value": "badquinn3@gmail.com "
+    }
+  ]
+},
+{
+  "@id": "kb:email-account-99d72bac-8c21-11e9-8902-0c4de9c21b53",
+  "@type": "uco-observable:ObservableObject",
+  "uco-core:hasFacet": [
+    {
+      "@type": "uco-observable:AccountFacet OR DigitalAccountFacet?",
+      "uco-observable:displayName": "Harley Quinn"
+    },
+    {
+      "@type": "uco-observable:EmailAccountFacet",
+      "uco-observable:emailAddress": "kb:456a2bac-8c21-11e9-8902-0c4de9c24de5"
+    }
+  ]
+}
+]
+{% endhighlight %}
+
+
+
+<h4>URL History </h4>
+
+<p>Cellebrite XML</p>
+
+
+{% highlight xml %}
+     <model type="VisitedPage" id="39ff4987-8ae5-47e3-8369-dbd0d5f79398" deleted_state="Intact" decoding_confidence="High" isrelated="False" extractionId="0">
+        <field name="UserMapping" type="Boolean">
+          <value type="Boolean"><![CDATA[False]]></value>
+        </field>
+        <field name="Title" type="String">
+          <value type="String"><![CDATA[Friday Magazine | Home]]></value>
+        </field>
+        <field name="Url" type="String">
+          <value type="String"><![CDATA[http://www.friday-magazine.ch/]]></value>
+        </field>
+        <field name="LastVisited" type="TimeStamp">
+          <value type="TimeStamp" format="TimeStampKnown">2018-12-06T19:52:21.000+01:00</value>
+        </field>
+        <field name="VisitCount" type="Int32">
+          <empty />
+        </field>
+        <field name="Source" type="String">
+          <value type="String"><![CDATA[Chrome]]></value>
+        </field>
+        <jumptargets name="">
+          <targetid ismodel="true"><![CDATA[5a97ff43-5f03-4a71-afa3-a8a09ccf2801]]></targetid>
+        </jumptargets>
+      </model>
+{% endhighlight %}
+
+
+
+
+<p>CASE Representation</p>
+
+
+{% highlight json %}
+[
+{
+   "@id": "kb:39ff4987-8ae5-47e3-8369-dbd0d5f79398", 
+   "@type":"uco-observable:ObservableObject", 
+   "uco-core:hasFacet":[
+   {
+    "@type": "uco-observable:URLFacet", 
+    "uco-observable:fullValue": "https://www.friday-magazine.ch/fr/",
+    }
+  ]
+},
+{
+   "@id": "kb:860FC853-9C3F-41FC-B144-8AC80D8F5849", 
+   "@type":"uco-observable:ObservableObject", 
+   "uco-core:hasFacet":[
+   {
+     "@id": "kb:860FC853-9C3F-41FC-B144-8AC80D8F5849-URLHistory", 
+     "@type":"uco-observable:URLHistoryFacet", 
+     "uco-observable:urlHistoryEntry": [
+      { 
+        "uco-observable:firstVisit": {
+            "@type": "xsd:dateTime",
+            "@value": "2018-12-06T18:52:21Z"
+        },
+        "uco-observable:lastVisit": {
+            "@type": "xsd:dateTime",
+            "@value": "2017-01-25T02:20:22.00Z"
+        }, 
+        "uco-observable:expiration": "NULL", 
+        "uco-observable:browserInformation": {"@id": "kb:5d96df90-d9e1-423c-b8db-c2327812ab38"},
+        "uco-observable:browserUserProfile": {"@id": "kb:profile--account-uuid"},
+        "uco-observable:url": {"@id": "kb:39ff4987-8ae5-47e3-8369-dbd0d5f79398"}, 
+        "uco-observable:referrerUrl": {"@id": "kb:14354987-8ae5-47e3-8369-dbd0d5f77489"},
+        "uco-observable:pageTitle": "Friday Magazine | Home",
+        "uco-observable:visitCount": 1,
+        "uco-observable:manuallyEnteredCount": 0,
+     	"drafting:allocationStatus": "allocated",
+        "uco-observable:keywordSearchTerm": NULL
+
+   }
+  ]
+},
+{
+  "@id": "kb:2AF6FCF3-91D3-4457-9333-ABAB67F8FB91",
+  "@type": "uco-observable:ObservableObject",
+  "uco-core:tag": ["Database"],
+  "uco-core:hasFacet": [
+    {
+      "@type": "uco-observable:FileFacet",
+      "uco-observable:fileName": "History",
+      "uco-observable:filePath": "/data/com.android.chrome/app_chrome/Default/History",
+      "drafting:fileLocalPath": "files/Database/History",
+      "uco-observable:extension": "NULL",
+      "uco-observable:isDirectory": false,
+      "uco-observable:sizeInBytes": 122880,
+      "uco-observable:createdTime": {"@type": "xsd:dateTime", "@value": "2018-06-10T16:41:40.00Z"},
+      "uco-observable:modifiedTime": {"@type": "xsd:dateTime", "@value": "2018-12-09T13:58:47.00Z"},
+      "uco-observable:accessedTime": {"@type": "xsd:dateTime", "@value": "2018-06-10T16:41:40.00Z"}
+    },
+    {
+      "@type": "uco-observable:ExtInodeFacet",
+      "uco-observable:extInodeID": ‭‭522962,‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬
+      "uco-observable:extSGID": 10092,
+      ‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬"uco-observable:extSUID": 10092,‬‬‬‬‬‬‬‬‬‬
+      "uco-observable:extInodeChangeTime": "__NOT_PROVIDED"
+    },                                                                  {
+    {
+      "@type": "uco-observable:ContentDataFacet",
+      "uco-observable:hash": [
+        {
+          "@type":"uco-types:Hash",
+          "uco-types:hashMethod": {
+            "@type": "uco-vocabulary:HashNameVocab"
+            "@value": "MD5"
+          },
+          "uco-types:hashValue": {
+            "@type": "xsd:hexBinary",
+            "@value": "7434d3a6c61c2244d6f3a0491c144568"
+          }
+        }
+      ]
+    }
+  ]
+}, 
+{
+  "@id": "kb:9A3FFCF3-91D3-4457-9333-ABAB67F8AB4F",
+  "@type": "uco-observable:CyberRelationship",
+  "uco-core:source": {"@id": "kb:860FC853-9C3F-41FC-B144-8AC80D8F5849-URLHistory"},
+  "uco-core:target": {"@id": "kb:2AF6FCF3-91D3-4457-9333-ABAB67F8FB91"},
+  "uco-core:isDirectional": true,
+  "uco-core:kindOfRelationship": {
+    "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
+    "@value": "Contained_Within"
+  },
+  "uco-core:hasFacet": [
+    {
+      "@type": "uco-observable:DataRangeFacet",
+      "uco-observable:rangeOffset": 22215, "uco-observable:rangeSize": null
+    },
+    {
+      "@type": "drafting:TableRelation",
+      "drafting:tableName": "urls"
+    }
+  ]
+}
 ]
 {% endhighlight %}
