@@ -13,9 +13,13 @@
                     "@type": "xsd:dateTime",
                     "@value": "2017-01-30T19:15:25.00Z"
                 },
-                "uco-observable:from": "kb:skype-99992808-7341-40d3-9285-774d865a9999",
+                "uco-observable:from": {
+                    "@id": "kb:skype-99992808-7341-40d3-9285-774d865a9999"
+                },
                 "uco-observable:to": [
-                    "kb:externalaccount-8976b508-80e5-4442-af1c-637d3b09240e"
+                    {
+                        "@id": "kb:externalaccount-8976b508-80e5-4442-af1c-637d3b09240e"
+                    }
                 ],
                 "drafting:allocationStatus": "allocated",
                 "uco-observable:messageType": "incoming"
