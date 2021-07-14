@@ -809,9 +809,13 @@
                     },
                     "uco-observable:messageText": "Sarah, the delivery is today 7 tonight the confirmation will come later through pidgin",
                     "drafting:allocationStatus": "unallocated",
-                    "uco-observable:from": "kb:9999237a-6d7f-4e96-bbef-6eb4c0a69999",
+                    "uco-observable:from": {
+                        "@id": "kb:9999237a-6d7f-4e96-bbef-6eb4c0a69999"
+                    },
                     "uco-observable:to": [
-                        "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1"
+                        {
+                            "@id": "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1"
+                        }
                     ]
                 }
             ]
@@ -871,9 +875,13 @@
                         "@type": "xsd:dateTime",
                         "@value": "2017-01-30T19:15:25.00Z"
                     },
-                    "uco-observable:from": "kb:skype-99992808-7341-40d3-9285-774d865a9999",
+                    "uco-observable:from": {
+                        "@id": "kb:skype-99992808-7341-40d3-9285-774d865a9999"
+                    },
                     "uco-observable:to": [
-                        "kb:externalaccount-8976b508-80e5-4442-af1c-637d3b09240e"
+                        {
+                            "@id": "kb:externalaccount-8976b508-80e5-4442-af1c-637d3b09240e"
+                        }
                     ],
                     "drafting:allocationStatus": "allocated",
                     "uco-observable:messageType": "incoming"
