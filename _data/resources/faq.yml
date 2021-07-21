@@ -4,7 +4,7 @@ questions:
     - question: "Does CASE require hex data be entered uppercase or lowercase?"
       title: "CASE hex data"
       answer: >
-        While CASE and UCO haven’t yet put in a stance on this, it's worth noting that the XML Schema source of basic RDF types does weigh in on this with the more stringent [hexBinaryCanonical](https://www.w3.org/TR/xmlschema11-2/#f-hexBinaryCanonical): Uppercase.
+        While CASE and UCO have not yet put in a stance on this, it is worth noting that the XML Schema source of basic RDF types does weigh in on this with the more stringent [hexBinaryCanonical](https://www.w3.org/TR/xmlschema11-2/#f-hexBinaryCanonical): Uppercase.
         
         
         We can state as of CASE 0.2.0, there is no requirement either way.
@@ -18,7 +18,7 @@ questions:
     - question: "Does CASE represent all activities in cyber-investigations?"
       title: "CASE represenation of activities in cyber-investigations"
       answer: >
-        The CASE/UCO community works together in an effort to keep pace with evolving types of information in investigations. Currently, CASE data representation includes data sources (mobile devices, storage media, memory), event details (browser history, logs), and well-known digital objects such as files and folders, messages (email, chat), documents (PDF, Word), multimedia (pictures, video, audio). Additional support being developed by the CASE/UCO community includes SQLite databases and Windows artifacts. In addition, by treating addresses, accounts, locations, identities, and other entities as nodes in a graph, CASE represents relationships between objects to support linked data analysis (pivot, enrich) and automated correlation (similarity/repetition detection).
+        CASE is scoped to represent all activities that operate directly on an item of digital evidence. CASE does not represent investigative activities that do not operate directly on an item of digital evidence (e.g., witness interviews).
     - question: "Does CASE represent all types of information in cyber-investigations? "
       title: "CASE represenation of types of information in cyber-investigations"
       answer: >
@@ -59,6 +59,10 @@ questions:
       title: "CASE JSON-LD Required"
       answer: >
         Although JSON-LD is the default serialization format currently used in all examples and tooling, CASE can support any serialization. In addition, some tools' output includes files extracted from data sources in their native format, which can be referenced using CASE but stored separately.
+    - question: "When is it necessary to provide xsd @type and @value for a property in CASE"
+      title: "xsd @type and @value"
+      answer: >
+        An xsd @type and @value are necessary when you need to cast a literal-data value such as hex strings and dateTime strings. This requirement stems from the node types in RDF being either Resources or Literals. By default, if a literal does not have an accompanying @type, it will be considered an xsd:string.
     - question: "Does CASE store the full content of all data in cyber-investigations?"
       title: "CASE full content for cyber-investigations"
       answer: >
@@ -68,7 +72,7 @@ questions:
         This CASE graph would be sent as a JSON-LD file ahead of, or alongside of, the disk image file, through the communication channel being used in that particular investigation. (While I illustrated a heavily file-centric workflow there, other APIs for communicating CASE data and other payloads could be used interchangeably.)
         
         
-        Meanwhile, base64 encoding is used in some areas in CASE to denote data snippets. It could be used to represent the entirety of a disk image as an RDF literal - perhaps a SIM card read. But, generally, the use of base64 for this purpose would be a miserable experience for all involved so we that we don't encourage this as a practice, nor would we design anything in the ontology or community tooling to encourage this.
+        Meanwhile, base64 encoding is used in some areas in CASE to denote data snippets. It could be used to represent the entirety of a disk image as an RDF literal - perhaps a SIM card read. But, generally, the use of base64 for this purpose would be a miserable experience for all involved so we that we do not encourage this as a practice, nor would we design anything in the ontology or community tooling to encourage this.
     - question: "Does CASE work with digital evidence storage containers?"
       title: "CASE digital evidence storage containers"
       answer: >
