@@ -36,6 +36,9 @@ all: \
   .gitmodules
 	git submodule init
 	git submodule update
+	$(MAKE) \
+	  --directory dependencies/CASE \
+	  .git_submodule_init.done.log
 	touch $@
 
 .venv.done.log: \
@@ -49,6 +52,10 @@ all: \
 	    --upgrade \
 	    pip \
 	    setuptools
+	# pySHACL (TODO Temporary)
+	source venv/bin/activate \
+	  && pip install \
+	    $(top_srcdir)/dependencies/pySHACL
 	source venv/bin/activate \
 	  && pip install \
 	    dependencies/CASE-Utilities-Python
