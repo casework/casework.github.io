@@ -1,0 +1,394 @@
+@prefix action: <https://unifiedcyberontology.org/ontology/uco/action#> .
+@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
+@prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
+@prefix location: <https://unifiedcyberontology.org/ontology/uco/location#> .
+@prefix ns1: <http://example.org/ontology/local#> .
+@prefix observable: <https://unifiedcyberontology.org/ontology/uco/observable#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix types: <https://unifiedcyberontology.org/ontology/uco/types#> .
+@prefix vocab: <https://ontology.caseontology.org/case/vocabulary/> .
+@prefix vocabulary1: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode _:N4ebf4aa00b194282ba83a4c29dd3de2f ;
+            sh:resultMessage "Value does not have class core:UcoObject" ;
+            sh:resultPath action:result ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape _:n5a67762d5b1e40ffaf395e3696ec91e2b694 ;
+            sh:value <http://example.org/kb#EBAB06EE-7522-42D6-96EA-E3121D67E393> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode _:Ne00a78ae74654c9cad6b2bf42354fa5b ;
+            sh:resultMessage "Value does not have class core:UcoObject" ;
+            sh:resultPath action:performer ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape _:n5a67762d5b1e40ffaf395e3696ec91e2b690 ;
+            sh:value <http://example.org/kb#investigator2-uuid> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode _:N4ebf4aa00b194282ba83a4c29dd3de2f ;
+            sh:resultMessage "Value does not have class core:UcoObject" ;
+            sh:resultPath action:result ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape _:n5a67762d5b1e40ffaf395e3696ec91e2b694 ;
+            sh:value <http://example.org/kb#48C0F0E8-9A63-45EE-99BF-23CC354C3252> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode [ a observable:ContentDataFacet ;
+                    observable:hash [ a types:Hash ;
+                            types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+                            types:hashValue "7ea081166336119da78ee4bbdbd06840b94efe28988a2bdb0bcf2387a481e283"^^xsd:hexBinary ] ;
+                    observable:sizeInBytes "9080500"^^xsd:long ] ;
+            sh:resultMessage "Value is not Literal with datatype xsd:integer" ;
+            sh:resultPath observable:sizeInBytes ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+            sh:sourceShape [ sh:datatype xsd:integer ;
+                    sh:maxCount 1 ;
+                    sh:nodeKind sh:Literal ;
+                    sh:path observable:sizeInBytes ] ;
+            sh:value "9080500"^^xsd:long ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/kb#trace-relationship3-uuid> ;
+            sh:resultMessage "Value is not Literal with datatype xsd:string" ;
+            sh:resultPath core:kindOfRelationship ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+            sh:sourceShape [ sh:datatype xsd:string ;
+                    sh:maxCount 1 ;
+                    sh:nodeKind sh:Literal ;
+                    sh:path core:kindOfRelationship ] ;
+            sh:value "Contained_Within"^^vocabulary1:ObservableObjectRelationshipVocab ],
+        [ a sh:ValidationResult ;
+            sh:focusNode _:Ne00a78ae74654c9cad6b2bf42354fa5b ;
+            sh:resultMessage "Value does not have class location:Location" ;
+            sh:resultPath action:location ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape _:n5a67762d5b1e40ffaf395e3696ec91e2b695 ;
+            sh:value <http://example.org/kb#asgard-bifrost-uuid> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/kb#authorization-79D6AB60-D679-49CE-9573-7176DFEEB7C3> ;
+            sh:resultMessage "Value does not have class core:Facet" ;
+            sh:resultPath core:hasFacet ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape [ sh:class core:Facet ;
+                    sh:nodeKind sh:BlankNodeOrIRI ;
+                    sh:path core:hasFacet ] ;
+            sh:value [ a investigation:Authorization ;
+                    ns1:authorizationAuthority <http://example.org/kb#530646A9-4290-4C02-B0B3-FD2EC363834A> ;
+                    ns1:authorizationIssuedDate "20190330" ;
+                    investigation:authorizationIdentifier "Decree_2019_00013" ;
+                    investigation:authorizationType "Odin_Decree" ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode _:N4ebf4aa00b194282ba83a4c29dd3de2f ;
+            sh:resultMessage "Value does not have class core:UcoObject" ;
+            sh:resultPath action:result ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape _:n5a67762d5b1e40ffaf395e3696ec91e2b694 ;
+            sh:value <http://example.org/kb#97C74753-FCEB-49C8-A611-7A70EF46AB5D> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode [ a observable:FileFacet ;
+                    observable:extension "dd" ;
+                    observable:fileName "AsgardPD-2019033001-01.dd" ;
+                    observable:filePath "C:/evidence/AsgardPD-2019033001-01.dd" ;
+                    observable:isDirectory false ;
+                    observable:observableCreatedTime "2019-03-30T22:12:19.320000+00:00"^^xsd:dateTime ;
+                    observable:sizeInBytes "160080500"^^xsd:long ] ;
+            sh:resultMessage "Value is not Literal with datatype xsd:integer" ;
+            sh:resultPath observable:sizeInBytes ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+            sh:sourceShape [ rdfs:comment "When used to characterize a file the sizeInBytes property conveys the recorded size of a file in a file system."@en ;
+                    sh:datatype xsd:integer ;
+                    sh:maxCount 1 ;
+                    sh:nodeKind sh:Literal ;
+                    sh:path observable:sizeInBytes ] ;
+            sh:value "160080500"^^xsd:long ],
+        [ a sh:ValidationResult ;
+            sh:focusNode _:N0e79ac789f1d46f0b785cb0526cf60de ;
+            sh:resultMessage "Less than 1 values on [ rdf:type uco-observable:PhoneCallFacet ; uco-observable:callType Literal(\"mobile\") ; uco-observable:duration Literal(\"1862\", datatype=xsd:integer) ; uco-observable:endTime Literal(\"2010-01-15T18:30:41.250000+00:00\" = 2010-01-15 18:30:41.250000+00:00, datatype=xsd:dateTime) ; uco-observable:from kb:phone_account1 ; uco-observable:startTime Literal(\"2010-01-15T17:59:43.250000+00:00\" = 2010-01-15 17:59:43.250000+00:00, datatype=xsd:dateTime) ; uco-observable:to kb:phone_account2 ]->observable:application" ;
+            sh:resultPath observable:application ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:class observable:ObservableObject ;
+                    sh:maxCount 1 ;
+                    sh:minCount 1 ;
+                    sh:nodeKind sh:BlankNodeOrIRI ;
+                    sh:path observable:application ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/kb#trace-relationship3-uuid> ;
+            sh:resultMessage "Value does not have class core:UcoObject" ;
+            sh:resultPath core:target ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape [ sh:class core:UcoObject ;
+                    sh:maxCount 1 ;
+                    sh:minCount 1 ;
+                    sh:nodeKind sh:BlankNodeOrIRI ;
+                    sh:path core:target ] ;
+            sh:value <http://example.org/kb#suspect-image-filesystem-uuid> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode _:N4ebf4aa00b194282ba83a4c29dd3de2f ;
+            sh:resultMessage "Value does not have class location:Location" ;
+            sh:resultPath action:location ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape _:n5a67762d5b1e40ffaf395e3696ec91e2b695 ;
+            sh:value <http://example.org/kb#309BC178-1836-47B7-AA15-94EA3A2C7401> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode _:Ndb0f22ab58154333be4b306802ad2e48 ;
+            sh:resultMessage "Value does not have class observable:ObservableObject" ;
+            sh:resultPath observable:from ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape [ sh:class observable:ObservableObject ;
+                    sh:maxCount 1 ;
+                    sh:nodeKind sh:BlankNodeOrIRI ;
+                    sh:path observable:from ] ;
+            sh:value <http://example.org/kb#phone_account3> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode _:Ndb0f22ab58154333be4b306802ad2e48 ;
+            sh:resultMessage "Value does not have class observable:ObservableObject" ;
+            sh:resultPath observable:application ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape [ sh:class observable:ObservableObject ;
+                    sh:maxCount 1 ;
+                    sh:nodeKind sh:BlankNodeOrIRI ;
+                    sh:path observable:application ] ;
+            sh:value <http://example.org/kb#sms_application1> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode _:Nb9c0a9cd2abb4c5fbfa4ab423404c5df ;
+            sh:resultMessage "Value does not have class observable:ObservableObject" ;
+            sh:resultPath observable:dst ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape [ sh:class observable:ObservableObject ;
+                    sh:nodeKind sh:BlankNodeOrIRI ;
+                    sh:path observable:dst ] ;
+            sh:value <http://example.org/kb#destination-host-uuid> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/kb#authorization-79D6AB60-D679-49CE-9573-7176DFEEB7C3> ;
+            sh:resultMessage "Less than 1 values on kb:authorization-79D6AB60-D679-49CE-9573-7176DFEEB7C3->investigation:authorizationType" ;
+            sh:resultPath investigation:authorizationType ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:datatype xsd:string ;
+                    sh:maxCount 1 ;
+                    sh:minCount 1 ;
+                    sh:nodeKind sh:Literal ;
+                    sh:path investigation:authorizationType ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/kb#investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7> ;
+            sh:resultMessage "Less than 1 values on kb:investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7->investigation:investigationForm" ;
+            sh:resultPath investigation:investigationForm ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:datatype vocab:InvestigationFormVocab ;
+                    sh:maxCount 1 ;
+                    sh:minCount 1 ;
+                    sh:nodeKind sh:Literal ;
+                    sh:path investigation:investigationForm ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode _:N0e79ac789f1d46f0b785cb0526cf60de ;
+            sh:resultMessage "Value does not have class observable:ObservableObject" ;
+            sh:resultPath observable:from ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape [ sh:class observable:ObservableObject ;
+                    sh:maxCount 1 ;
+                    sh:nodeKind sh:BlankNodeOrIRI ;
+                    sh:path observable:from ] ;
+            sh:value <http://example.org/kb#phone_account1> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/kb#investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7> ;
+            sh:resultMessage "Value does not have class core:UcoObject" ;
+            sh:resultPath core:object ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape _:n5a67762d5b1e40ffaf395e3696ec91e2b1683 ;
+            sh:value <http://example.org/kb#B1C22D51-4A3F-4353-84FB-E210B5EFDA48> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode [ a observable:MobileDeviceFacet ;
+                    ns1:localeLanguage "no_AS" ;
+                    observable:IMEI "359305065690067" ;
+                    observable:MSISDN "1239275339" ;
+                    observable:clockSetting "2019-03-30T22:36:24.35Z" ;
+                    observable:keypadUnlockCode "123789" ;
+                    observable:phoneActivationTime "2018-05-09T07:36:24.350000+00:00"^^xsd:dateTime ;
+                    observable:storageCapacityInBytes 17179869184 ] ;
+            sh:resultMessage "Value is not Literal with datatype xsd:dateTime" ;
+            sh:resultPath observable:clockSetting ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+            sh:sourceShape [ sh:datatype xsd:dateTime ;
+                    sh:maxCount 1 ;
+                    sh:nodeKind sh:Literal ;
+                    sh:path observable:clockSetting ] ;
+            sh:value "2019-03-30T22:36:24.35Z" ],
+        [ a sh:ValidationResult ;
+            sh:focusNode _:N4ebf4aa00b194282ba83a4c29dd3de2f ;
+            sh:resultMessage "Value does not have class core:UcoObject" ;
+            sh:resultPath action:result ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape _:n5a67762d5b1e40ffaf395e3696ec91e2b694 ;
+            sh:value <http://example.org/kb#90F73123-DB7E-41E5-B6CA-493B96E4B89F> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode _:N0e79ac789f1d46f0b785cb0526cf60de ;
+            sh:resultMessage "Value does not have class observable:ObservableObject" ;
+            sh:resultPath observable:to ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape [ sh:class observable:ObservableObject ;
+                    sh:maxCount 1 ;
+                    sh:nodeKind sh:BlankNodeOrIRI ;
+                    sh:path observable:to ] ;
+            sh:value <http://example.org/kb#phone_account2> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode _:Nb9c0a9cd2abb4c5fbfa4ab423404c5df ;
+            sh:resultMessage "Value does not have class core:UcoObject" ;
+            sh:resultPath observable:src ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape [ sh:class core:UcoObject ;
+                    sh:nodeKind sh:BlankNodeOrIRI ;
+                    sh:path observable:src ] ;
+            sh:value <http://example.org/kb#source-host-uuid> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/kb#authorization-79D6AB60-D679-49CE-9573-7176DFEEB7C3> ;
+            sh:resultMessage "Less than 1 values on kb:authorization-79D6AB60-D679-49CE-9573-7176DFEEB7C3->investigation:authorizationIdentifier" ;
+            sh:resultPath investigation:authorizationIdentifier ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:datatype xsd:string ;
+                    sh:minCount 1 ;
+                    sh:nodeKind sh:Literal ;
+                    sh:path investigation:authorizationIdentifier ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode _:N4ebf4aa00b194282ba83a4c29dd3de2f ;
+            sh:resultMessage "Value does not have class core:UcoObject" ;
+            sh:resultPath action:result ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape _:n5a67762d5b1e40ffaf395e3696ec91e2b694 ;
+            sh:value <http://example.org/kb#B2A7B20E-8307-40CF-ABAF-9733ABBF4335> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/kb#investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7> ;
+            sh:resultMessage "Value does not have class core:UcoObject" ;
+            sh:resultPath core:object ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape _:n5a67762d5b1e40ffaf395e3696ec91e2b1683 ;
+            sh:value <http://example.org/kb#E9AA4F26-D187-4F32-A602-86A6DF4B8528> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode _:Ne00a78ae74654c9cad6b2bf42354fa5b ;
+            sh:resultMessage "Value does not have class core:UcoObject" ;
+            sh:resultPath action:instrument ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape [ sh:class core:UcoObject ;
+                    sh:nodeKind sh:BlankNodeOrIRI ;
+                    sh:path action:instrument ] ;
+            sh:value <http://example.org/kb#odin-decree13-uuid> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/kb#investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7> ;
+            sh:resultMessage "Value does not have class core:UcoObject" ;
+            sh:resultPath core:object ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape _:n5a67762d5b1e40ffaf395e3696ec91e2b1683 ;
+            sh:value <http://example.org/kb#86F2E76A-434D-4D3F-9147-CD0CABCCA074> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/kb#investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7> ;
+            sh:resultMessage "Value does not have class core:UcoObject" ;
+            sh:resultPath core:object ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape _:n5a67762d5b1e40ffaf395e3696ec91e2b1683 ;
+            sh:value <http://example.org/kb#530646A9-4290-4C02-B0B3-FD2EC363834A> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode _:N4ebf4aa00b194282ba83a4c29dd3de2f ;
+            sh:resultMessage "Value does not have class core:UcoObject" ;
+            sh:resultPath action:performer ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+            sh:sourceShape _:n5a67762d5b1e40ffaf395e3696ec91e2b690 ;
+            sh:value <http://example.org/kb#E9AA4F26-D187-4F32-A602-86A6DF4B8528> ] .
+
+_:N20e62aadbf0c4af097de965a0452e309 a types:ControlledDictionary ;
+    types:entry [ a types:ControlledDictionaryEntry ;
+            types:key "Transport Layer" ;
+            types:value "TCP" ],
+        [ a types:ControlledDictionaryEntry ;
+            types:key "Session Layer" ;
+            types:value "NETBIOSSESSIONSERVICE" ] .
+
+_:Nb9c0a9cd2abb4c5fbfa4ab423404c5df a observable:NetworkConnectionFacet ;
+    ns1:connectionState "APSF" ;
+    observable:destinationPort 139 ;
+    observable:dst <http://example.org/kb#destination-host-uuid> ;
+    observable:endTime "2009-04-03T02:29:25.636551+00:00"^^xsd:dateTime ;
+    observable:protocols _:N20e62aadbf0c4af097de965a0452e309 ;
+    observable:sourcePort 52960 ;
+    observable:src <http://example.org/kb#source-host-uuid> ;
+    observable:startTime "2009-04-03T02:29:25.625626+00:00"^^xsd:dateTime .
+
+_:Ndb0f22ab58154333be4b306802ad2e48 a observable:MessageFacet ;
+    observable:application <http://example.org/kb#sms_application1> ;
+    observable:from <http://example.org/kb#phone_account3> ;
+    observable:messageText "Yo dude! This is my new number." ;
+    observable:sentTime "2010-01-15T17:59:43.250000+00:00"^^xsd:dateTime ;
+    observable:to <http://example.org/kb#phone_account1> .
+
+_:n5a67762d5b1e40ffaf395e3696ec91e2b690 sh:class core:UcoObject ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path action:performer .
+
+_:n5a67762d5b1e40ffaf395e3696ec91e2b695 sh:class location:Location ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path action:location .
+
+_:N0e79ac789f1d46f0b785cb0526cf60de a observable:PhoneCallFacet ;
+    observable:callType "mobile" ;
+    observable:duration 1862 ;
+    observable:endTime "2010-01-15T18:30:41.250000+00:00"^^xsd:dateTime ;
+    observable:from <http://example.org/kb#phone_account1> ;
+    observable:startTime "2010-01-15T17:59:43.250000+00:00"^^xsd:dateTime ;
+    observable:to <http://example.org/kb#phone_account2> .
+
+_:Ne00a78ae74654c9cad6b2bf42354fa5b a action:ActionReferencesFacet ;
+    action:instrument <http://example.org/kb#odin-decree13-uuid> ;
+    action:location <http://example.org/kb#asgard-bifrost-uuid> ;
+    action:performer <http://example.org/kb#investigator2-uuid> ;
+    action:result <http://example.org/kb#provenance-record1-uuid>,
+        <http://example.org/kb#suspect-device-uuid> .
+
+_:n5a67762d5b1e40ffaf395e3696ec91e2b1683 sh:class core:UcoObject ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path core:object .
+
+_:n5a67762d5b1e40ffaf395e3696ec91e2b694 sh:class core:UcoObject ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path action:result .
+
+_:N4ebf4aa00b194282ba83a4c29dd3de2f a action:ActionReferencesFacet ;
+    action:instrument <http://example.org/kb#tool-embeddedextractor1-uid> ;
+    action:location <http://example.org/kb#309BC178-1836-47B7-AA15-94EA3A2C7401> ;
+    action:object <http://example.org/kb#suspect-device-uuid> ;
+    action:performer <http://example.org/kb#E9AA4F26-D187-4F32-A602-86A6DF4B8528> ;
+    action:result <http://example.org/kb#48C0F0E8-9A63-45EE-99BF-23CC354C3252>,
+        <http://example.org/kb#90F73123-DB7E-41E5-B6CA-493B96E4B89F>,
+        <http://example.org/kb#97C74753-FCEB-49C8-A611-7A70EF46AB5D>,
+        <http://example.org/kb#B2A7B20E-8307-40CF-ABAF-9733ABBF4335>,
+        <http://example.org/kb#EBAB06EE-7522-42D6-96EA-E3121D67E393> .
+
