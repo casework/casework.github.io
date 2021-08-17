@@ -327,7 +327,9 @@
         {
             "@id": "kb:relationship-uuid-1",
             "@type": "uco-core:Relationship",
-            "uco-core:source": "kb:file-uuid-2",
+            "uco-core:source": {
+                "@id": "kb:file-uuid-2"
+            },
             "uco-core:target": {
                 "@id": "kb:dvd-uuid-1"
             },

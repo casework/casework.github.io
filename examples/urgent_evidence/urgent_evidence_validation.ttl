@@ -7,14 +7,6 @@
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode <http://example.org/kb/relationship-uuid-1> ;
-            sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
-            sh:resultPath core:source ;
-            sh:resultSeverity sh:Violation ;
-            sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-            sh:sourceShape _:n834107fb6c4645b7884440d65ead81e5b1337 ;
-            sh:value "kb:file-uuid-2" ],
-        [ a sh:ValidationResult ;
             sh:focusNode [ a action:ActionReferencesFacet ;
                     action:endTime "2019-01-01T15:15:00+00:00"^^xsd:dateTime ;
                     action:location <http://example.org/kb/location-uuid-3> ;
@@ -31,14 +23,6 @@
                     sh:nodeKind sh:BlankNodeOrIRI ;
                     sh:path action:result ] ;
             sh:value <http://example.org/kb/provenance-record-uuid-> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <http://example.org/kb/relationship-uuid-1> ;
-            sh:resultMessage "Value does not have class core:UcoObject" ;
-            sh:resultPath core:source ;
-            sh:resultSeverity sh:Violation ;
-            sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-            sh:sourceShape _:n834107fb6c4645b7884440d65ead81e5b1337 ;
-            sh:value "kb:file-uuid-2" ],
         [ a sh:ValidationResult ;
             sh:focusNode [ a action:ActionReferencesFacet ;
                     action:endTime "2019-01-01T15:05:00+00:00"^^xsd:dateTime ;
@@ -67,9 +51,4 @@
                     sh:nodeKind sh:Literal ;
                     sh:path core:kindOfRelationship ] ;
             sh:value "Contained_Within"^^vocabulary1:ObservableObjectRelationshipVocab ] .
-
-_:n834107fb6c4645b7884440d65ead81e5b1337 sh:class core:UcoObject ;
-    sh:minCount 1 ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
-    sh:path core:source .
 
