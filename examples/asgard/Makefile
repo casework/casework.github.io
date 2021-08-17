@@ -42,6 +42,7 @@ all: \
 	    ; rc=$$? ; test 0 -eq $$rc -o 1 -eq $$rc
 	mv _$@ $@
 
+# NOTE: asgard_supplements.json contains data that is left as a standalone file to assist with ontology and example data review.
 asgard.json: \
   asgard_json.py \
   asgard_0.json \
@@ -49,7 +50,8 @@ asgard.json: \
   asgard_2.json \
   asgard_3.json \
   asgard_4.json \
-  asgard_5.json
+  asgard_5.json \
+  asgard_supplements.json
 	rm -f __$@ _$@
 	$(PYTHON3) $^ > __$@
 	$(PYTHON3) -m json.tool __$@ > _$@
