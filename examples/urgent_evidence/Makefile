@@ -18,11 +18,33 @@ top_srcdir := $(shell cd ../.. ; pwd)
 all: \
   index.html
 
+.PRECIOUS: \
+  %_validation.ttl
+
+%_validation.ttl: \
+  %.json \
+  $(top_srcdir)/.venv.done.log \
+  $(top_srcdir)/dependencies/case_monolithic.ttl
+	source $(top_srcdir)/venv/bin/activate \
+	  && pyshacl \
+	    --data-file-format json-ld \
+	    --format turtle \
+	    --inference none \
+	    --ont-file-format turtle \
+	    --ont-graph $(top_srcdir)/dependencies/case_monolithic.ttl \
+	    --shacl $(top_srcdir)/dependencies/case_monolithic.ttl \
+	    --shacl-file-format turtle \
+	    --output _$@ \
+	    $< \
+	    ; rc=$$? ; test 0 -eq $$rc -o 1 -eq $$rc
+	mv _$@ $@
+
 # The unit test of this directory is:
 # Confirm that the generated, and website-served, index.html page is exactly what is tracked in version control after regenerating.
 # The .diff files should not be retained.  If any are found after calling 'make check', they illustrate a problem.
 check: \
-  index.html.diff
+  index.html.diff \
+  urgent_evidence_validation.ttl
 	test -e index.html.diff
 	test ! -s index.html.diff \
 	  || (echo "ERROR:examples/urgent_evidence/Makefile:The file index.html is out of sync with its source files, index.html.in, urgent_evidence.json, and/or the .sparql files.  Please regenerate index.html by running 'make' and committing the update." >&2 ; exit 1)

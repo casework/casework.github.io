@@ -19,12 +19,40 @@ import rdflib.plugins.sparql
 
 _logger = logging.getLogger(os.path.basename(__file__))
 
+NS_SH = rdflib.SH
+
 graph = rdflib.Graph()
 graph.parse("urgent_evidence.json", format="json-ld")
 graph.parse("urgent_evidence-wasInformedBy.json", format="json-ld")
 
 # Inherit prefixes defined in input context dictionary.
 nsdict = {k:v for (k,v) in graph.namespace_manager.namespaces()}
+nsdict["sh"] = NS_SH
+
+def load_validation_graph(
+  filename : str,
+  expected_conformance : bool
+) -> rdflib.Graph:
+    g = rdflib.Graph()
+    g.parse(filename, format="turtle")
+    g.namespace_manager.bind("sh", NS_SH)
+
+    query = rdflib.plugins.sparql.prepareQuery("""\
+SELECT ?lConforms
+WHERE {
+  ?nReport
+    a sh:ValidationReport ;
+    sh:conforms ?lConforms ;
+    .
+}
+""", initNs=nsdict)
+
+    computed_conformance = None
+    for result in g.query(query):
+        (l_conforms,) = result
+        computed_conformance = bool(l_conforms)
+    assert expected_conformance == computed_conformance
+    return g
 
 @pytest.fixture
 def action_iris_all():
@@ -104,3 +132,10 @@ def test_exhibit_photos():
 
     file_names_false_positive = file_names_computed & file_names_ground_truth_negative
     assert set() == file_names_false_positive
+
+def test_urgent_evidence_validation():
+    """
+    Confirm the instance data passes validation.
+    """
+    g = load_validation_graph(os.path.join(os.path.dirname(__file__), "urgent_evidence_validation.ttl"), True)
+    assert isinstance(g, rdflib.Graph)

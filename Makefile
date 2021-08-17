@@ -32,6 +32,12 @@ all: \
   check-examples \
   check-migration-0.2.0
 
+.dependencies.done.log: \
+  .venv.done.log
+	$(MAKE) \
+	  --directory dependencies
+	touch $@
+
 .git_submodule_init.done.log: \
   .gitmodules
 	git submodule init
@@ -55,7 +61,7 @@ all: \
 	# pySHACL (TODO Temporary)
 	source venv/bin/activate \
 	  && pip install \
-	    $(top_srcdir)/dependencies/pySHACL
+	    dependencies/CASE/dependencies/pySHACL
 	source venv/bin/activate \
 	  && pip install \
 	    dependencies/CASE-Utilities-Python
@@ -78,7 +84,7 @@ check: \
   check-migration-0.2.0
 
 check-examples: \
-  .venv.done.log
+  .dependencies.done.log
 	$(MAKE) \
 	  --directory examples \
 	  check

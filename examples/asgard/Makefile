@@ -15,9 +15,32 @@ SHELL := /bin/bash
 
 PYTHON3 ?= $(shell which python3)
 
+top_srcdir := $(shell cd ../.. ; pwd)
+
 all: \
   asgard.json \
   index.html
+
+.PRECIOUS: \
+  %_validation.ttl
+
+%_validation.ttl: \
+  %.json \
+  $(top_srcdir)/.venv.done.log \
+  $(top_srcdir)/dependencies/case_monolithic.ttl
+	source $(top_srcdir)/venv/bin/activate \
+	  && pyshacl \
+	    --data-file-format json-ld \
+	    --format turtle \
+	    --inference none \
+	    --ont-file-format turtle \
+	    --ont-graph $(top_srcdir)/dependencies/case_monolithic.ttl \
+	    --shacl $(top_srcdir)/dependencies/case_monolithic.ttl \
+	    --shacl-file-format turtle \
+	    --output _$@ \
+	    $< \
+	    ; rc=$$? ; test 0 -eq $$rc -o 1 -eq $$rc
+	mv _$@ $@
 
 asgard.json: \
   asgard_json.py \
@@ -58,6 +81,7 @@ asgard_%.json.diff: \
 # * Confirm the Git-committed version of index.html matches the file generated from index.html.in and the JSON pieces.
 # The .diff files should not be retained.  If any are found after calling 'make check', they illustrate a problem.
 check: \
+  check-shacl \
   asgard.json.diff \
   asgard_0.json.diff \
   asgard_1.json.diff \
@@ -67,6 +91,13 @@ check: \
   asgard_5.json.diff \
   index.html.diff
 	rm -f $^
+
+#TODO
+check-shacl: \
+  asgard_validation.ttl
+	source $(top_srcdir)/venv/bin/activate \
+	  && pytest \
+	    --log-level=DEBUG
 
 clean:
 	@rm -f \
