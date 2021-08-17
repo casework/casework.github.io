@@ -388,7 +388,7 @@
                 ],
                 "uco-action:result": [
                     {
-                        "@id": "kb:provenance-record-uuid-?"
+                        "@id": "kb:provenance-record-73f59a8a-1c22-41fe-af50-13e8b6a65de9"
                     },
                     {
                         "@id": "kb:file-uuid-3"
@@ -694,6 +694,13 @@
             "case-investigation:exhibitNumber": "EXH-20190101-7-KioskReportDVD",
             "uco-core:object": {
                 "@id": "kb:dvd-uuid-1"
+            }
+        },
+        {
+            "@id": "kb:provenance-record-73f59a8a-1c22-41fe-af50-13e8b6a65de9",
+            "@type": "case-investigation:ProvenanceRecord",
+            "uco-core:object": {
+                "@id": "kb:file-uuid-3"
             }
         },
         {
