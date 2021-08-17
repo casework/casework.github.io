@@ -4,8 +4,14 @@
         "@type": "uco-location:Location",
         "uco-core:hasFacet": {
             "@type": "uco-location:LatLongCoordinatesFacet",
-            "uco-location:latitude": 38.423756,
-            "uco-location:longitude": -82.43619,
+            "uco-location:latitude": {
+                "@type": "xsd:decimal",
+                "@value": "38.423756"
+            },
+            "uco-location:longitude": {
+                "@type": "xsd:decimal",
+                "@value": "-82.43619"
+            },
             "uco-location:altitude": null
         }
     },
