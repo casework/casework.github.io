@@ -1,4 +1,5 @@
 SPARQLWrapper
 case_utils
 pandas
+pyshacl
 pytest

@@ -58,10 +58,6 @@ all: \
 	    --upgrade \
 	    pip \
 	    setuptools
-	# pySHACL (TODO Temporary)
-	source venv/bin/activate \
-	  && pip install \
-	    dependencies/CASE/dependencies/pySHACL
 	source venv/bin/activate \
 	  && pip install \
 	    dependencies/CASE-Utilities-Python
