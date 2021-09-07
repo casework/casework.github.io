@@ -29,7 +29,7 @@ WHERE
     .
 
   ?nPerformer
-    a uco-identity:Identity ;
+    a uco-identity:Person ;
     uco-core:hasFacet ?nSimpleName ;
     .
 
