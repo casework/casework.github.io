@@ -583,7 +583,7 @@
         },
         {
             "@id": "kb:officer-uuid-1",
-            "@type": "uco-identity:Identity",
+            "@type": "uco-identity:Person",
             "uco-core:hasFacet": {
                 "@type": "uco-identity:SimpleNameFacet",
                 "uco-identity:familyName": "Hudson"
@@ -591,7 +591,7 @@
         },
         {
             "@id": "kb:officer-uuid-2",
-            "@type": "uco-identity:Identity",
+            "@type": "uco-identity:Person",
             "uco-core:hasFacet": {
                 "@type": "uco-identity:SimpleNameFacet",
                 "uco-identity:familyName": "Smith"
@@ -599,7 +599,7 @@
         },
         {
             "@id": "kb:officer-uuid-3",
-            "@type": "uco-identity:Identity",
+            "@type": "uco-identity:Person",
             "uco-core:hasFacet": {
                 "@type": "uco-identity:SimpleNameFacet",
                 "uco-identity:familyName": "Walker"
