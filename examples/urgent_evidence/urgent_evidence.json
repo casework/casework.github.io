@@ -615,6 +615,7 @@
                 "@id": "kb:officer-uuid-2"
             },
             "case-investigation:exhibitNumber": "EXH-20190101-7",
+            "case-investigation:rootExhibitNumber": "EXH-20190101-7",
             "uco-core:object": {
                 "@id": "kb:subject-device-uuid-1"
             }
@@ -623,6 +624,7 @@
             "@id": "kb:provenance-record-uuid-2",
             "@type": "case-investigation:ProvenanceRecord",
             "case-investigation:exhibitNumber": "EXH-20190101-7-IntakeForm",
+            "case-investigation:rootExhibitNumber": "EXH-20190101-7",
             "uco-core:object": {
                 "@id": "kb:file-uuid-1"
             }
@@ -636,7 +638,7 @@
             "drafting:exhibitRecipient": {
                 "@id": "kb:officer-uuid-3"
             },
-            "case-investigation:exhibitNumber": "EXH-20190101-7",
+            "case-investigation:rootExhibitNumber": "EXH-20190101-7",
             "uco-core:object": {
                 "@id": "kb:subject-device-uuid-1"
             }
@@ -645,6 +647,7 @@
             "@id": "kb:provenance-record-uuid-4",
             "@type": "case-investigation:ProvenanceRecord",
             "case-investigation:exhibitNumber": "EXH-20190101-7-SealedPhotos",
+            "case-investigation:rootExhibitNumber": "EXH-20190101-7",
             "uco-core:object": [
                 {
                     "@id": "kb:subject-device-photograph-uuid-1"
@@ -661,6 +664,7 @@
             "@id": "kb:provenance-record-uuid-5",
             "@type": "case-investigation:ProvenanceRecord",
             "case-investigation:exhibitNumber": "EXH-20190101-7-UnsealedPhotos",
+            "case-investigation:rootExhibitNumber": "EXH-20190101-7",
             "uco-core:object": [
                 {
                     "@id": "kb:subject-device-photograph-uuid-4"
@@ -677,6 +681,7 @@
             "@id": "kb:provenance-record-uuid-6",
             "@type": "case-investigation:ProvenanceRecord",
             "case-investigation:exhibitNumber": "EXH-20190101-7-KioskReport",
+            "case-investigation:rootExhibitNumber": "EXH-20190101-7",
             "uco-core:object": [
                 {
                     "@id": "kb:extracted-file-uuid-1"
@@ -690,6 +695,7 @@
             "@id": "kb:provenance-record-uuid-7",
             "@type": "case-investigation:ProvenanceRecord",
             "case-investigation:exhibitNumber": "EXH-20190101-7-KioskReportDVD",
+            "case-investigation:rootExhibitNumber": "EXH-20190101-7",
             "uco-core:object": {
                 "@id": "kb:dvd-uuid-1"
             }
@@ -704,6 +710,7 @@
                 "@id": "kb:officer-uuid-1"
             },
             "case-investigation:exhibitNumber": "EXH-20190101-7",
+            "case-investigation:rootExhibitNumber": "EXH-20190101-7",
             "uco-core:object": {
                 "@id": "kb:subject-device-uuid-1"
             }
