@@ -252,6 +252,9 @@
                         "@id": "kb:extracted-file-uuid-1"
                     },
                     {
+                        "@id": "kb:extracted-file-uuid-2"
+                    },
+                    {
                         "@id": "kb:file-uuid-2"
                     }
                 ]
@@ -1247,6 +1250,79 @@
                         "@value": "2018-12-15T12:11:54+00:00"
                     },
                     "uco-observable:sizeInBytes": 2964571
+                },
+                {
+                    "@type": "uco-observable:RasterPictureFacet",
+                    "uco-observable:pictureType": "jpg",
+                    "uco-observable:pictureHeight": 3264,
+                    "uco-observable:pictureWidth": 2448
+                }
+            ]
+        },
+        {
+            "@id": "kb:extracted-file-uuid-2",
+            "@type": "uco-observable:ObservableObject",
+            "uco-core:hasFacet": [
+                {
+                    "@type": "uco-observable:ContentDataFacet",
+                    "uco-observable:mimeType": "image/jpeg",
+                    "uco-observable:sizeInBytes": 3963541,
+                    "uco-observable:hash": [
+                        {
+                            "@type": "uco-types:Hash",
+                            "uco-types:hashMethod": {
+                                "@type": "uco-vocabulary:HashNameVocab",
+                                "@value": "SHA256"
+                            },
+                            "uco-types:hashValue": {
+                                "@type": "xsd:hexBinary",
+                                "@value": "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73a43362938b9824"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "@type": "uco-observable:EXIFFacet",
+                    "uco-observable:exifData": {
+                        "@type": "uco-types:ControlledDictionary",
+                            "uco-types:entry": [
+                            {
+                                "@type": "uco-types:ControlledDictionaryEntry",
+                                "uco-types:key": "DateTimeDigitized",
+                                "uco-types:value": "2018-12-16 08:18:52"
+                            },
+                            {
+                                "@type": "uco-types:ControlledDictionaryEntry",
+                                "uco-types:key": "Image Height",
+                                "uco-types:value": "2448"
+                            },
+                            {
+                                "@type": "uco-types:ControlledDictionaryEntry",
+                                "uco-types:key": "Image Width",
+                                "uco-types:value": "3264"
+                            },
+                            {
+                                "@type": "uco-types:ControlledDictionaryEntry",
+                                "uco-types:key": "Make",
+                                "uco-types:value": "Apple"
+                            },
+                            {
+                                "@type": "uco-types:ControlledDictionaryEntry",
+                                "uco-types:key": "Model",
+                                "uco-types:value": "iPhone 4S"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "@type": "uco-observable:FileFacet",
+                    "uco-observable:extension": "jpg",
+                    "uco-observable:fileName": "IMG_1864.jpg",
+                    "uco-observable:modifiedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-12-16T08:18:52+00:00"
+                    },
+                    "uco-observable:sizeInBytes": 3963541
                 },
                 {
                     "@type": "uco-observable:RasterPictureFacet",
