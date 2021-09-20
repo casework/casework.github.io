@@ -672,9 +672,44 @@ ORDER BY ?lDerivingActionEndTime
         </div>
 
         <div class="card">
-          <h5 class="card-header" id="query-original_evidence_submission">Original Evidence Submission</h5>
+          <h5 class="card-header" id="query-initial_evidence_submission">Initial Evidence Submission</h5>
           <div class="card-body">
-            <p class="card-text">What object is the initial evidence submission into the <code>ProvenanceRecord</code> chain? (<a href="urgent_evidence-query-original_evidence_submission.sparql">SPARQL source</a>)</p>
+            <p class="card-text">What object is the initial evidence submission into the <code>ProvenanceRecord</code> chain? (<a href="urgent_evidence-query-initial_evidence_submission.sparql">SPARQL source</a>)</p>
+
+{% highlight sparql %}
+SELECT DISTINCT ?nSourceObject
+WHERE
+{
+    # Locate the object by crossing the rootExhibitNumber
+    # with the exhibitNumber, to find the source ProvenanceRecord.
+    ?nProvenanceRecord
+      uco-core:object ?nSourceObject ;
+      case-investigation:rootExhibitNumber ?lExhibitNumber ;
+      case-investigation:exhibitNumber ?lExhibitNumber ;
+      .
+}
+{% endhighlight %}
+<table border="1" class="dataframe table table-bordered table-condensed">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>nSourceObject</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>http://example.org/kb/subject-device-uuid-1</td>
+    </tr>
+  </tbody>
+</table>
+          </div>
+        </div>
+
+        <div class="card">
+          <h5 class="card-header" id="query-automated_exhibit_extraction">Automated Exhibit Extraction</h5>
+          <div class="card-body">
+            <p class="card-text">What is the question we are asking? (<a href="urgent_evidence-query-automated_exhibit_extraction.sparql">SPARQL source</a>)</p>
 
 {% highlight sparql %}
 SELECT DISTINCT ?nSourceObject
