@@ -1,7 +1,7 @@
 [
     {
         "@id": "kb:investigator-09fb01ce-999e-4521-bd3f-f7be69a63a43",
-        "@type": "uco-identity:Identity",
+        "@type": "uco-identity:Person",
         "uco-core:hasFacet": {
             "@type": "uco-identity:SimpleNameFacet",
             "uco-identity:familyName": "Hoel"
