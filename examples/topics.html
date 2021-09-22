@@ -94,7 +94,7 @@ custom_css: topics
                   </dl>
                   <dl>
                     <dt><a href="urgent_evidence/#query-automated_exhibit_extraction">Automated Exhibit Extraction</a></dt>
-                    <dd>An <code>exhibitNumber</code> is a unique identifier assigned to an object in an investigation, and can be used to relate objects across data sets.</dd>
+                    <dd>An object can have multiple steps of processing, analysis, and/or review throughout the course of an investigation.  <code>ProvenanceRecord<code>s carry an <code>exhibitNumber</code> to label a stage of an object's processing, such as when a file of interest might be selected from a larger batch of files---the batch will have a <code>ProvenanceRecord</code> that might or might not have an <code>exhibitNumber</code>, because it might or not need to be referenced later.  A selected file may later have another <code>ProvenanceRecord</code> to allow an <code>exhibitNumber</code> to be associated with it.</dd>
                   </dl>
                 </td>
               </tr>
