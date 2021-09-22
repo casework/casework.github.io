@@ -6,3 +6,4 @@ _site
 .venv.done.log
 venv
 examples/urgent_evidence/__pycache__
+*.swp
