@@ -674,13 +674,13 @@ ORDER BY ?lDerivingActionEndTime
         <div class="card">
           <h5 class="card-header" id="query-initial_evidence_submission">Initial Evidence Submission</h5>
           <div class="card-body">
-            <p class="card-text">What object is the initial evidence submission into the <code>ProvenanceRecord</code> chain? (<a href="urgent_evidence-query-initial_evidence_submission.sparql">SPARQL source</a>)</p>
+            <p class="card-text">What objects were the initial evidence submission(s) into the <code>ProvenanceRecord</code> chain? (<a href="urgent_evidence-query-initial_evidence_submission.sparql">SPARQL source</a>)</p>
 
 {% highlight sparql %}
 SELECT DISTINCT ?nSourceObject
 WHERE
 {
-    # Locate the object by crossing the rootExhibitNumber
+    # Locate the objects by crossing the rootExhibitNumber
     # with the exhibitNumber, to find the source ProvenanceRecord.
     ?nProvenanceRecord
       uco-core:object ?nSourceObject ;
