@@ -690,6 +690,9 @@
                     "@id": "kb:extracted-file-uuid-1"
                 },
                 {
+                    "@id": "kb:extracted-file-uuid-2"
+                },
+                {
                     "@id": "kb:file-uuid-2"
                 }
             ]
