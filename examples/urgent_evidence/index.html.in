@@ -57,6 +57,10 @@ jumbo_desc: CASE Sub-topic of Chain of Custody
                 <td>Exhibit Resealed</td>
               </tr>
               <tr>
+                <td>01/01/2019 15:03</td>
+                <td>Picture selected, via kiosk review screen, from those extracted from exhibit</td>
+              </tr>
+              <tr>
                 <td>01/01/2019 15:05</td>
                 <td>Report DVD Generated as associated exhibit</td>
               </tr>
