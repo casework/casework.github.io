@@ -5,5 +5,5 @@ _site
 .git_submodule_init.done.log
 .venv.done.log
 venv
-examples/urgent_evidence/__pycache__
+__pycache__
 *.swp
