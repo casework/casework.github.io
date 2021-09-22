@@ -170,5 +170,15 @@ jumbo_desc: CASE Sub-topic of Chain of Custody
           </div>
         </div>
 
+        <div class="card">
+          <h5 class="card-header" id="query-initial_evidence_submission">Initial Evidence Submission</h5>
+          <div class="card-body">
+            <p class="card-text">What objects were the initial evidence submission(s) into the <code>ProvenanceRecord</code> chain? (<a href="urgent_evidence-query-initial_evidence_submission.sparql">SPARQL source</a>)</p>
+
+{% highlight sparql %}
+@QUERY_INITIAL_EVIDENCE_SUBMISSION_SPARQL@
+{% endhighlight %}
+@QUERY_INITIAL_EVIDENCE_SUBMISSION_HTML@
+
       </div>
     </div>
