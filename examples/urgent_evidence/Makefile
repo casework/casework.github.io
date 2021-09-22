@@ -39,6 +39,7 @@ index.html: \
   urgent_evidence-query-action_timeline.html \
   urgent_evidence-query-actions_to_artifact.html \
   urgent_evidence-query-exhibit_photos.html \
+  urgent_evidence-query-initial_evidence_submission.html \
   urgent_evidence-query-investigative_locations.html \
   urgent_evidence-query-investigative_personae.html
 	cp \
@@ -95,6 +96,18 @@ index.html: \
 	sed \
 	  -e '/@QUERY_INVESTIGATIVE_PERSONAE_HTML@/r urgent_evidence-query-investigative_personae.html' \
 	  -e '/@QUERY_INVESTIGATIVE_PERSONAE_HTML@/d' \
+	  _$@ \
+	  > __$@
+	mv __$@ _$@
+	sed \
+	  -e '/@QUERY_INITIAL_EVIDENCE_SUBMISSION_SPARQL@/r urgent_evidence-query-initial_evidence_submission.sparql' \
+	  -e '/@QUERY_INITIAL_EVIDENCE_SUBMISSION_SPARQL@/d' \
+	  _$@ \
+	  > __$@
+	mv __$@ _$@
+	sed \
+	  -e '/@QUERY_INITIAL_EVIDENCE_SUBMISSION_HTML@/r urgent_evidence-query-initial_evidence_submission.html' \
+	  -e '/@QUERY_INITIAL_EVIDENCE_SUBMISSION_HTML@/d' \
 	  _$@ \
 	  > __$@
 	mv __$@ _$@
