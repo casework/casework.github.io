@@ -1,0 +1,76 @@
+SELECT DISTINCT ?lFileName ?lReviewStatus
+WHERE {
+  # Use the requested exhibit numbers to identify provenance records
+  # that will contain the files of interest.
+  # The extraction provenance record:
+  ?nExtractionProvenanceRecord
+    a case-investigation:ProvenanceRecord ;
+    case-investigation:exhibitNumber "EXH-20190101-7-KioskReport" ;
+    uco-core:object ?nFile ;
+    .
+  # The selection provenance record:
+  ?nSelectionProvenanceRecord
+    a case-investigation:ProvenanceRecord ;
+    case-investigation:exhibitNumber "EXH-20190101-7-B" ;
+    .
+
+  # Find the selection action via the provenance records being some
+  # input and output.
+  ?nSelectionAction
+    uco-core:hasFacet / uco-action:object ?nExtractionProvenanceRecord ;
+    uco-core:hasFacet / uco-action:result ?nSelectionProvenanceRecord ;
+    .
+
+  # Use duck-typing to filter down to the objects that have a
+  # RasterPictureFacet.
+  ?nFile
+    uco-core:hasFacet / a uco-observable:RasterPictureFacet ;
+    uco-core:hasFacet / uco-observable:fileName ?lFileName ;
+    .
+
+  # Run a sub-query to find each requested status for the extracted
+  # files.
+  # Each will depend on the non-existence of some pattern.
+  {
+    SELECT ?nFile ?lReviewStatus
+    WHERE {
+      # Find the files in the extracted-set that were not inputs to the
+      # selection action.
+      # (This example chooses to represent a picture being displayed to
+      # the reviewer as being the threshold for consideration as an
+      # input to the action.  Other systems may differ.)
+      FILTER NOT EXISTS {
+        ?nSelectionAction
+          uco-core:hasFacet / uco-action:object ?nFile ;
+          .
+      }
+      BIND ("Not displayed" AS ?lReviewStatus)
+    }
+  }
+  UNION
+  {
+    SELECT ?nFile ?lReviewStatus
+    WHERE {
+      ?nSelectionAction
+        uco-core:hasFacet / uco-action:object ?nFile ;
+        .
+      FILTER NOT EXISTS {
+        ?nSelectionProvenanceRecord
+          uco-core:object ?nFile ;
+          .
+      }
+      BIND ("Displayed" AS ?lReviewStatus)
+    }
+  }
+  UNION
+  {
+    SELECT ?nFile ?lReviewStatus
+    WHERE {
+      ?nSelectionProvenanceRecord
+        uco-core:object ?nFile ;
+        .
+      BIND ("Selected" AS ?lReviewStatus)
+    }
+  }
+}
+ORDER BY ?lFileName

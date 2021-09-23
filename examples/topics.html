@@ -78,6 +78,26 @@ custom_css: topics
                   </dl>
                 </td>
               </tr>
+              <tr>
+                <td>Exhibit numbers</td>
+                <td>
+                  <ul>
+                    <li><abbr title="https://ontology.caseontology.org/case/investigation#rootExhibitNumber"><code>case-investigation:rootExhibitNumber</code></abbr></li>
+                    <li><abbr title="https://ontology.caseontology.org/case/investigation#exhibitNumber"><code>case-investigation:exhibitNumber</code></abbr></li>
+                  </ul>
+                </td>
+                <td>
+                  <p><em>Among <a href="urgent_evidence/#queries">queries</a> in the <a href="urgent_evidence/">Urgent Evidence narrative</a></em></p>
+                  <dl>
+                    <dt><a href="urgent_evidence/#query-initial_evidence_submission">Initial Evidence Submission</a></dt>
+                    <dd>The <code>rootExhibitNumber</code> is an identifier assigned to initial submissions into a <code>ProvenanceRecord</code> chain, and can be carried forward by subsequent nodes in the chain to quickly identify from which submission(s) an object was derived.</dd>
+                  </dl>
+                  <dl>
+                    <dt><a href="urgent_evidence/#query-selection_from_automated_exhibit_extraction">Selection from Automated Exhibit Extraction</a></dt>
+                    <dd>An object can have multiple steps of processing, analysis, and/or review throughout the course of an investigation.  <code>ProvenanceRecord<code>s carry an <code>exhibitNumber</code> to label a stage of an object's processing, such as when a file of interest might be selected from a larger batch of files---the batch will have a <code>ProvenanceRecord</code> that might or might not have an <code>exhibitNumber</code>, because it might or not need to be referenced later.  A selected file may later have another <code>ProvenanceRecord</code> to allow an <code>exhibitNumber</code> to be associated with it.</dd>
+                  </dl>
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>

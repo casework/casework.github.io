@@ -39,8 +39,10 @@ index.html: \
   urgent_evidence-query-action_timeline.html \
   urgent_evidence-query-actions_to_artifact.html \
   urgent_evidence-query-exhibit_photos.html \
+  urgent_evidence-query-initial_evidence_submission.html \
   urgent_evidence-query-investigative_locations.html \
-  urgent_evidence-query-investigative_personae.html
+  urgent_evidence-query-investigative_personae.html \
+  urgent_evidence-query-selection_from_automated_exhibit_extraction.html
 	cp \
 	  index.html.in \
 	  _$@
@@ -99,6 +101,18 @@ index.html: \
 	  > __$@
 	mv __$@ _$@
 	sed \
+	  -e '/@QUERY_INITIAL_EVIDENCE_SUBMISSION_SPARQL@/r urgent_evidence-query-initial_evidence_submission.sparql' \
+	  -e '/@QUERY_INITIAL_EVIDENCE_SUBMISSION_SPARQL@/d' \
+	  _$@ \
+	  > __$@
+	mv __$@ _$@
+	sed \
+	  -e '/@QUERY_INITIAL_EVIDENCE_SUBMISSION_HTML@/r urgent_evidence-query-initial_evidence_submission.html' \
+	  -e '/@QUERY_INITIAL_EVIDENCE_SUBMISSION_HTML@/d' \
+	  _$@ \
+	  > __$@
+	mv __$@ _$@
+	sed \
 	  -e '/@QUERY_EXHIBIT_PHOTOS_SPARQL@/r urgent_evidence-query-exhibit_photos.sparql' \
 	  -e '/@QUERY_EXHIBIT_PHOTOS_SPARQL@/d' \
 	  _$@ \
@@ -107,6 +121,19 @@ index.html: \
 	sed \
 	  -e '/@QUERY_EXHIBIT_PHOTOS_HTML@/r urgent_evidence-query-exhibit_photos.html' \
 	  -e '/@QUERY_EXHIBIT_PHOTOS_HTML@/d' \
+	  _$@ \
+	  > __$@
+	mv __$@ _$@
+
+	sed \
+	  -e '/@QUERY_SELECTION_FROM_AUTOMATED_EXHIBIT_EXTRACTION_SPARQL@/r urgent_evidence-query-selection_from_automated_exhibit_extraction.sparql' \
+	  -e '/@QUERY_SELECTION_FROM_AUTOMATED_EXHIBIT_EXTRACTION_SPARQL@/d' \
+	  _$@ \
+	  > __$@
+	mv __$@ _$@
+	sed \
+	  -e '/@QUERY_SELECTION_FROM_AUTOMATED_EXHIBIT_EXTRACTION_HTML@/r urgent_evidence-query-selection_from_automated_exhibit_extraction.html' \
+	  -e '/@QUERY_SELECTION_FROM_AUTOMATED_EXHIBIT_EXTRACTION_HTML@/d' \
 	  _$@ \
 	  > __$@
 	mv __$@ _$@
