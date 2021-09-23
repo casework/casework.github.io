@@ -57,6 +57,10 @@ jumbo_desc: CASE Sub-topic of Chain of Custody
                 <td>Exhibit Resealed</td>
               </tr>
               <tr>
+                <td>01/01/2019 15:03</td>
+                <td>Picture selected, via kiosk review screen, from those extracted from exhibit</td>
+              </tr>
+              <tr>
                 <td>01/01/2019 15:05</td>
                 <td>Report DVD Generated as associated exhibit</td>
               </tr>
@@ -182,23 +186,29 @@ ORDER BY ?lEndTime
     <tr>
       <th>8</th>
       <td></td>
+      <td>2019-01-01 15:03:00+00:00</td>
+      <td>Picture selected, via kiosk review screen, from those extracted from exhibit</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td></td>
       <td>2019-01-01 15:05:00+00:00</td>
       <td>Report DVD Generated as associated exhibit</td>
     </tr>
     <tr>
-      <th>9</th>
+      <th>10</th>
       <td></td>
       <td>2019-01-01 15:10:00+00:00</td>
       <td>DVD Report sealed</td>
     </tr>
     <tr>
-      <th>10</th>
+      <th>11</th>
       <td></td>
       <td>2019-01-01 15:15:00+00:00</td>
       <td>Witness statement completed</td>
     </tr>
     <tr>
-      <th>11</th>
+      <th>12</th>
       <td></td>
       <td>2019-01-01 15:20:00+00:00</td>
       <td>Sealed Exhibit handed the OIC &amp; Transfer documentation signed</td>
@@ -693,7 +703,7 @@ WHERE
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>nSourceObject</th>
+      <th>?nSourceObject</th>
     </tr>
   </thead>
   <tbody>
@@ -703,37 +713,112 @@ WHERE
     </tr>
   </tbody>
 </table>
-          </div>
-        </div>
-
         <div class="card">
-          <h5 class="card-header" id="query-automated_exhibit_extraction">Automated Exhibit Extraction</h5>
+          <h5 class="card-header" id="query-selection_from_automated_exhibit_extraction">Selection from Automated Exhibit Extraction</h5>
           <div class="card-body">
-            <p class="card-text">What is the question we are asking? (<a href="urgent_evidence-query-automated_exhibit_extraction.sparql">SPARQL source</a>)</p>
+            <p class="card-text">Several picture files were extracted by the kiosk, tracked in the internal process-record exhibit <code>EXH-20190101-7-KioskReport</code>.  Some of them were selected by the investigator for presentation in exhibit <code>EXH-20190101-7-B</code>, after visual review of just some of the files.  Which were extracted, displayed, and selected?  (<a href="urgent_evidence-query-selection_from_automated_exhibit_extraction.sparql">SPARQL source</a>)</p>
 
 {% highlight sparql %}
-SELECT DISTINCT ?nSourceObject
-WHERE
-{
-    # Locate the object by crossing the rootExhibitNumber
-    # with the exhibitNumber, to find the source ProvenanceRecord.
-    ?s 
-    uco-core:object ?nSourceObject ;
-    case-investigation:rootExhibitNumber ?lExhibitNumber ;
-    case-investigation:exhibitNumber ?lExhibitNumber ;
+SELECT DISTINCT ?lFileName ?lReviewStatus
+WHERE {
+  # Use the requested exhibit numbers to identify provenance records
+  # that will contain the files of interest.
+  # The extraction provenance record:
+  ?nExtractionProvenanceRecord
+    a case-investigation:ProvenanceRecord ;
+    case-investigation:exhibitNumber "EXH-20190101-7-KioskReport" ;
+    uco-core:object ?nFile ;
+    .
+  # The selection provenance record:
+  ?nSelectionProvenanceRecord
+    a case-investigation:ProvenanceRecord ;
+    case-investigation:exhibitNumber "EXH-20190101-7-B" ;
+    .
+
+  # Find the selection action via the provenance records being some
+  # input and output.
+  ?nSelectionAction
+    uco-core:hasFacet / uco-action:object ?nExtractionProvenanceRecord ;
+    uco-core:hasFacet / uco-action:result ?nSelectionProvenanceRecord ;
+    .
+
+  # Use duck-typing to filter down to the objects that have a
+  # RasterPictureFacet.
+  ?nFile
+    uco-core:hasFacet / a uco-observable:RasterPictureFacet ;
+    uco-core:hasFacet / uco-observable:fileName ?lFileName ;
+    .
+
+  # Run a sub-query to find each requested status for the extracted
+  # files.
+  # Each will depend on the non-existence of some pattern.
+  {
+    SELECT ?nFile ?lReviewStatus
+    WHERE {
+      # Find the files in the extracted-set that were not inputs to the
+      # selection action.
+      # (This example chooses to represent a picture being displayed to
+      # the reviewer as being the threshold for consideration as an
+      # input to the action.  Other systems may differ.)
+      FILTER NOT EXISTS {
+        ?nSelectionAction
+          uco-core:hasFacet / uco-action:object ?nFile ;
+          .
+      }
+      BIND ("Not displayed" AS ?lReviewStatus)
+    }
+  }
+  UNION
+  {
+    SELECT ?nFile ?lReviewStatus
+    WHERE {
+      ?nSelectionAction
+        uco-core:hasFacet / uco-action:object ?nFile ;
+        .
+      FILTER NOT EXISTS {
+        ?nSelectionProvenanceRecord
+          uco-core:object ?nFile ;
+          .
+      }
+      BIND ("Displayed" AS ?lReviewStatus)
+    }
+  }
+  UNION
+  {
+    SELECT ?nFile ?lReviewStatus
+    WHERE {
+      ?nSelectionProvenanceRecord
+        uco-core:object ?nFile ;
+        .
+      BIND ("Selected" AS ?lReviewStatus)
+    }
+  }
 }
+ORDER BY ?lFileName
 {% endhighlight %}
 <table border="1" class="dataframe table table-bordered table-condensed">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>nSourceObject</th>
+      <th>?lFileName</th>
+      <th>?lReviewStatus</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>http://example.org/kb/subject-device-uuid-1</td>
+      <td>IMG_1863.jpg</td>
+      <td>Selected</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>IMG_1864.jpg</td>
+      <td>Displayed</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>IMG_1865.jpg</td>
+      <td>Not displayed</td>
     </tr>
   </tbody>
 </table>
