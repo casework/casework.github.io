@@ -180,5 +180,18 @@ jumbo_desc: CASE Sub-topic of Chain of Custody
 {% endhighlight %}
 @QUERY_INITIAL_EVIDENCE_SUBMISSION_HTML@
 
+        <div class="card">
+          <h5 class="card-header" id="query-selection_from_automated_exhibit_extraction">Selection from Automated Exhibit Extraction</h5>
+          <div class="card-body">
+            <p class="card-text">Several picture files were extracted by the kiosk, tracked in the internal process-record exhibit <code>EXH-20190101-7-KioskReport</code>.  Some of them were selected by the investigator for presentation in exhibit <code>EXH-20190101-7-B</code>, after visual review of just some of the files.  Which were extracted, displayed, and selected?  (<a href="urgent_evidence-query-selection_from_automated_exhibit_extraction.sparql">SPARQL source</a>)</p>
+
+{% highlight sparql %}
+@QUERY_SELECTION_FROM_AUTOMATED_EXHIBIT_EXTRACTION_SPARQL@
+{% endhighlight %}
+@QUERY_SELECTION_FROM_AUTOMATED_EXHIBIT_EXTRACTION_HTML@
+
+          </div>
+        </div>
+
       </div>
     </div>

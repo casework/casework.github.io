@@ -104,3 +104,28 @@ def test_exhibit_photos():
 
     file_names_false_positive = file_names_computed & file_names_ground_truth_negative
     assert set() == file_names_false_positive
+
+def test_photo_selection():
+    file_name_status_computed = set()
+    file_name_status_expected = {
+      ("IMG_1863.jpg", "Selected"),
+      ("IMG_1864.jpg", "Displayed"),
+      ("IMG_1865.jpg", "Not displayed")
+    }
+
+    select_query_text = None
+    with open("urgent_evidence-query-selection_from_automated_exhibit_extraction.sparql", "r") as in_fh:
+        select_query_text = in_fh.read().strip()
+    _logger.debug("select_query_text = %r." % select_query_text)
+    select_query_object = rdflib.plugins.sparql.prepareQuery(select_query_text, initNs=nsdict)
+    for record in graph.query(select_query_object):
+        (
+          l_file_name,
+          l_review_status
+        ) = record
+        file_name_status_computed.add((
+          l_file_name.toPython(),
+          l_review_status.toPython()
+        ))
+
+    assert file_name_status_expected == file_name_status_computed
