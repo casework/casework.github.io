@@ -20,7 +20,16 @@ top_srcdir := $(shell cd ../../.. ; pwd)
 
 example_name := $(shell cd .. ; basename $$PWD)
 
-example_snippets_json := $(wildcard $(example_name)-*.json)
+example_snippets_json := \
+  $(wildcard $(example_name)-*.json) \
+  $(wildcard $(example_name)_base.json)
+
+normalized_example_snippets_json := \
+  $(foreach example_snippet_json,$(example_snippets_json),normalized-$(example_snippet_json))
+check_normalized_example_snippets_json := \
+  check-normalized-$(example_name)_base.json \
+  $(foreach normalized_example_snippet_json,$(normalized_example_snippets_json),check-$(normalized_example_snippet_json))
+
 query_sparql_files := $(wildcard query-*.sparql)
 query_md_files := $(foreach query_sparql_file,$(query_sparql_files),$(subst .sparql,.md,$(query_sparql_file)))
 
@@ -34,11 +43,19 @@ all: \
   generated-$(example_name).json
 
 .PHONY: \
-  normalize \
+  check-normalized-%.json \
   check-validation
 
 check: \
+  $(check_normalized_example_snippets_json) \
   check-validation
+
+check-normalized-%.json: \
+  %.json \
+  normalized-%.json
+	@diff $^ >/dev/null \
+	  || echo "ERROR:JSON snippet not normalized: $<." >&2
+	diff $^
 
 #TODO - This process will be defined after the release of CASE 0.5.0.
 check-validation:
@@ -46,8 +63,8 @@ check-validation:
 clean:
 	@rm -f \
 	  *.sed \
-	  .normalized-* \
 	  generated-* \
+	  normalized-* \
 	  query-*.md
 
 generated-index.html: \
@@ -75,9 +92,12 @@ generated-$(example_name).json: \
 	  > _$@
 	mv _$@ $@
 
-normalize:
-	ls $(example_name)-*.json \
-	  | while read x; do python3 -m json.tool $$x .normalized-$$x && mv .normalized-$$x $$x ; done
+normalized-%.json: \
+  %.json
+	python3 -m json.tool \
+	  $< \
+	  _$@
+	mv _$@ $@
 
 query-%.md: \
   query-%.sparql \

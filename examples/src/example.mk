@@ -20,9 +20,6 @@ top_srcdir := $(shell cd ../.. ; pwd)
 
 all:
 	$(MAKE) \
-	  --directory src \
-	  normalize
-	$(MAKE) \
 	  --directory src
 	cp src/generated-index.html index.html
 	cp src/generated-inference.json inference.json
