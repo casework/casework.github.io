@@ -22,18 +22,18 @@ example_name := $(shell basename $$PWD)
 
 all:
 	$(MAKE) \
-	  --directory src
+	  --directory src \
+	  --file ../src/example-src.mk
 	cp src/generated-index.html index.html
 	cp src/generated-$(example_name).json $(example_name).json
 
 check:
 	$(MAKE) \
 	  --directory src \
+	  --file ../src/example-src.mk \
+	  check \
 	  generated-index.html \
 	  generated-$(example_name).json
-	$(MAKE) \
-	  --directory src \
-	  check
 	diff \
 	  src/generated-$(example_name).json \
 	  $(example_name).json \
@@ -46,4 +46,5 @@ check:
 clean:
 	@$(MAKE) \
 	  --directory src \
+	  --file ../src/example-src.mk \
 	  clean
