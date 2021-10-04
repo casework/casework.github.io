@@ -24,9 +24,9 @@ example_name := $(shell cd .. ; basename $$PWD)
 # expected to be present when concepts under draft are in use.
 drafting_ttl := $(wildcard ../drafting.ttl)
 
+# Guarantee sort order of snippets when glomming into single file.
 example_snippets_json := \
-  $(wildcard $(example_name)-*.json) \
-  $(wildcard $(example_name)_base.json)
+  $(shell find * -maxdepth 0 -name '$(example_name)-*.json' | sort)
 
 normalized_example_snippets_json := \
   $(foreach example_snippet_json,$(example_snippets_json),normalized-$(example_snippet_json))
@@ -55,8 +55,12 @@ all: \
 
 check: \
   $(check_normalized_example_snippets_json) \
-  check-validation
+  check-validation \
+  generated-index.html \
+  generated-$(example_name).json
 
+# Generic test:
+# * Confirm JSON portions of example are not changed when normalized with json.tool.
 check-normalized-%.json: \
   %.json \
   normalized-%.json
@@ -80,6 +84,8 @@ generated-index.html: \
 	sed -f generated-index.sed index.html.in > _$@
 	mv _$@ $@
 
+# Using example from the documentation-generating Makefile at:
+# https://github.com/usnistgov/swid-autotools
 generated-index.sed: \
   $(example_name)_base.json \
   $(generated_index_sed_sources)
@@ -96,7 +102,12 @@ generated-$(example_name).json: \
 	python3 $(example_name)_json.py \
 	  $(example_name)_base.json \
 	  $(example_snippets_json) \
-	  > _$@
+	  > __$@
+	@#Use same normalization procedure when constructing generated file.
+	python3 -m json.tool \
+	  __$@ \
+	  _$@
+	rm __$@
 	mv _$@ $@
 
 normalized-%.json: \

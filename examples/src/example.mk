@@ -18,24 +18,21 @@ SHELL := /bin/bash
 # ${top_srcdir}/examples/${example}/
 top_srcdir := $(shell cd ../.. ; pwd)
 
-examples_srcdir := $(top_srcdir)/examples
-
 example_name := $(shell basename $$PWD)
 
 all:
 	$(MAKE) \
-	  --directory src \
-	  --file $(examples_srcdir)/src/example-src.mk
+	  --directory src
 	cp src/generated-index.html index.html
 	cp src/generated-$(example_name).json $(example_name).json
 
+# Generic tests:
+# * Confirm the Git-committed version of the combined example JSON matches the file generated from the JSON pieces.
+# * Confirm the Git-committed version of index.html matches the file generated from src/index.html.in and the JSON pieces.
 check:
 	$(MAKE) \
 	  --directory src \
-	  --file $(examples_srcdir)/src/example-src.mk \
-	  check \
-	  generated-index.html \
-	  generated-$(example_name).json
+	  check
 	diff \
 	  src/generated-$(example_name).json \
 	  $(example_name).json \
@@ -48,5 +45,4 @@ check:
 clean:
 	@$(MAKE) \
 	  --directory src \
-	  --file $(examples_srcdir)/src/example-src.mk \
 	  clean
