@@ -52,6 +52,7 @@ exclude:
   - CONTRIBUTE.md
   - Makefile
   - README.md
+  - dependencies/
   - examples/.gitignore
   - examples/Makefile
   - examples/asgard/Makefile
@@ -63,7 +64,6 @@ exclude:
   - releases/0.2.0/migration/.gitignore
   - releases/0.2.0/migration/Makefile
   - requirements.txt
-  - src/
   - venv/
 
 # Google Analytics

@@ -1,10 +1,10 @@
 [
     {
         "@id": "kb:primaryuser-d28a3fad-10a1-459c-9a1a-6aa07a04e76f",
-        "@type": "uco-identity:Identity",
+        "@type": "uco-identity:Person",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-identity:SimpleName",
+                "@type": "uco-identity:SimpleNameFacet",
                 "uco-identity:givenName": "Sarah",
                 "uco-identity:familyName": "McAvoy"
             }
@@ -40,7 +40,7 @@
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:EmailAddressFacet",
-                "uco-observable:value": "mcavoys87@gmail.com"
+                "uco-observable:addressValue": "mcavoys87@gmail.com"
             }
         ]
     },
@@ -111,10 +111,10 @@
     },
     {
         "@id": "kb:organization-facebook-fcb0d2ee-e681-4314-98c3-47fb2541aae9",
-        "@type": "uco-identity:Identity",
+        "@type": "uco-identity:Organization",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-identity:Organization",
+                "@type": "uco-identity:OrganizationDetailsFacet",
                 "drafting:orgName": "Facebook"
             }
         ]

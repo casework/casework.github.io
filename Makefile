@@ -17,7 +17,7 @@ SHELL := /bin/bash
 # spelling of 'python3' last.  This is done to accommodate local
 # development: at the time of this writing, the built-in system python3
 # on macOS does not have virtualenv installed by default.
-PYTHON3 ?= $(shell which python3.8 2>/dev/null || which python3.7 2>/dev/null || which python3.6 2>dev/null || which python3 2>/dev/null)
+PYTHON3 ?= $(shell which python3.9 2>/dev/null || which python3.8 2>/dev/null || which python3.7 2>/dev/null || which python3.6 2>/dev/null || which python3 2>/dev/null)
 ifeq ($(PYTHON3),)
 $(error python3 not found)
 endif
@@ -32,19 +32,29 @@ all: \
   check-examples \
   check-migration-0.2.0
 
+.git_submodule_init.done.log: \
+  .gitmodules
+	git submodule init
+	git submodule update
+	touch $@
+
 .venv.done.log: \
+  .git_submodule_init.done.log \
   requirements.txt
 	rm -rf venv
-	$(PYTHON3) -m virtualenv \
-	  --python=$(PYTHON3) \
+	$(PYTHON3) -m venv \
 	  venv
-	source venv/bin/activate ; \
-	  pip install \
+	source venv/bin/activate \
+	  && pip install \
 	    --upgrade \
-	    pip
-	source venv/bin/activate ; \
-	  pip install \
-	    -r requirements.txt
+	    pip \
+	    setuptools
+	source venv/bin/activate \
+	  && pip install \
+	    dependencies/CASE-Utilities-Python
+	source venv/bin/activate \
+	  && pip install \
+	    --requirement requirements.txt
 	touch $@
 
 all-examples: \
@@ -73,6 +83,7 @@ check-migration-0.2.0:
 
 clean:
 	@rm -f \
+	  .git_submodule_init.done.log \
 	  .venv.done.log
 	@rm -rf \
 	  venv
@@ -81,7 +92,4 @@ clean:
 	  clean
 	@$(MAKE) \
 	  --directory releases/0.2.0/migration \
-	  clean
-	@$(MAKE) \
-	  --directory examples \
 	  clean

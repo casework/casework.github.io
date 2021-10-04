@@ -16,7 +16,7 @@
                 "uco-observable:isDirectory": false,
                 "uco-observable:allocationStatus": "allocated",
                 "uco-observable:sizeInBytes": 10704,
-                "uco-observable:createdTime": {
+                "uco-observable:observableCreatedTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2017-02-03T17:19:26.00Z"
                 },

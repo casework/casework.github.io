@@ -78,3 +78,27 @@
   desc: Remove intermediate role classes
   date: 2021-03-17
   url: https://drive.google.com/file/d/1AmVX6x2ZORr2-h2OIXug2PiptYaHcvuh/view
+- title: Change Proposal 21
+  desc: Allow for transitive provenance querying
+  date: 2021-05-28
+  url: https://drive.google.com/file/d/1EJnOYgJfDoDZteFsNxxCbxgQqiqVDL_L/view
+- title: Change Proposal 22
+  desc: Allow to determine quickly the root (first) node in provenance chain
+  date: 2021-05-28
+  url: https://drive.google.com/file/d/1_nWd8IV8pBgXBACE_kFQd-eg3jTH8-Qp/view
+- title: Change Proposal 27
+  desc: Allow asynchronous change proposal posting
+  date: 2021-05-28
+  url: https://drive.google.com/file/d/17AUfa4EWe9-Tbv5wT46fM0q5LIWMzuYT/view
+- title: Change Proposal 28
+  desc: Adopt UCO 0.6.0
+  date: 2021-05-28
+  url: https://drive.google.com/file/d/1UCZzAqKIWzPmOstr7UJedCney2zrB5i1/view
+- title: Change Proposal 35
+  desc: Add missing definition for exhibitNumber property in ProvenanceRecord.
+  date: 2021-05-28
+  url: https://drive.google.com/file/d/1LbLZnDXZlq-8n92iz55n0fQD46c-pa4w/view
+- title: Change Proposal 34
+  desc: Revise CASE IRI structure to support granular resource service
+  date: 2021-06-02
+  url: https://drive.google.com/file/d/1J2UeRVeG_CCloTwo9Do628zvWcIpO5GR/view

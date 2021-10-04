@@ -42,7 +42,7 @@ jumbo_desc: CASE Narrative on Trafficking
 {
     "@context": {
         "@vocab": "http://example.org/ontology/local#",
-        "case-investigation": "https://caseontology.org/ontology/case/investigation#",
+        "case-investigation": "https://ontology.caseontology.org/case/investigation/",
         "drafting": "http://example.org/ontology/drafting#",
         "kb": "http://example.org/kb/",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -94,7 +94,7 @@ jumbo_desc: CASE Narrative on Trafficking
         "uco-tool:version": "2.0.0.5412",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-tool:ToolConfigurationType",
+                "@type": "uco-tool:ToolConfigurationTypeFacet",
                 "uco-tool:configurationSettings": [
                     {
                         "@type": "uco-tool:ConfigurationSettingType",
@@ -124,7 +124,7 @@ jumbo_desc: CASE Narrative on Trafficking
         },
         "uco-core:hasFacet": [
             {
-                "@type": "uco-action:ActionReferences",
+                "@type": "uco-action:ActionReferencesFacet",
                 "uco-action:location": {
                     "@id": "kb:lab-c44e4679-26e3-4585-aaa1-86110db936f8"
                 },
@@ -173,7 +173,7 @@ WHERE {
     .
 
   ?nImagingActionReferences
-    a uco-action:ActionReferences ;
+    a uco-action:ActionReferencesFacet ;
     uco-action:instrument ?nImagingTool ;
     uco-action:object ?nSubjectDeviceProvenanceRecord ;
     uco-action:object ?nSubjectDevice ;
@@ -197,12 +197,12 @@ WHERE {
     .
 
   ?nImagingPerformer
-    a uco-identity:Identity ;
+    a uco-identity:Person ;
     uco-core:hasFacet ?nImagingPerformerIdentityFacet ;
     .
 
   ?nImagingPerformerIdentityFacet
-    a uco-identity:SimpleName ;
+    a uco-identity:SimpleNameFacet ;
     uco-identity:familyName ?lOfficerName ;
     .
 
@@ -258,9 +258,9 @@ WHERE {
 [
     {
         "@id": "kb:investigator-09fb01ce-999e-4521-bd3f-f7be69a63a43",
-        "@type": "uco-identity:Identity",
+        "@type": "uco-identity:Person",
         "uco-core:hasFacet": {
-            "@type": "uco-identity:SimpleName",
+            "@type": "uco-identity:SimpleNameFacet",
             "uco-identity:familyName": "Hoel"
         }
     },
@@ -292,7 +292,7 @@ WHERE {
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:FileFacet",
-                "uco-observable:createdTime": {
+                "uco-observable:observableCreatedTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2017-02-06T20:51:09.00Z"
                 },
@@ -349,7 +349,7 @@ WHERE {
     .
 
   ?nActionReferences
-    a uco-action:ActionReferences ;
+    a uco-action:ActionReferencesFacet ;
     uco-action:result ?nProvenanceRecord ;
     uco-action:result ?nDiskImage ;
     .
@@ -447,10 +447,7 @@ ORDER BY ?lHashMethod
                 "uco-observable:keypadUnlockCode": "NULL",
                 "uco-observable:IMEI": "352584062438806",
                 "uco-observable:clockSetting": "2017-02-06T20:51:09.35Z",
-                "uco-observable:storageCapacityInBytes": {
-                    "@type": "xsd:long",
-                    "@value": 31268536320
-                }
+                "uco-observable:storageCapacityInBytes": 31268536320
             },
             {
                 "@type": "uco-observable:OperatingSystemFacet",
@@ -578,10 +575,10 @@ ORDER BY ?lHashMethod
 [
     {
         "@id": "kb:primaryuser-d28a3fad-10a1-459c-9a1a-6aa07a04e76f",
-        "@type": "uco-identity:Identity",
+        "@type": "uco-identity:Person",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-identity:SimpleName",
+                "@type": "uco-identity:SimpleNameFacet",
                 "uco-identity:givenName": "Sarah",
                 "uco-identity:familyName": "McAvoy"
             }
@@ -617,7 +614,7 @@ ORDER BY ?lHashMethod
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:EmailAddressFacet",
-                "uco-observable:value": "mcavoys87@gmail.com"
+                "uco-observable:addressValue": "mcavoys87@gmail.com"
             }
         ]
     },
@@ -688,10 +685,10 @@ ORDER BY ?lHashMethod
     },
     {
         "@id": "kb:organization-facebook-fcb0d2ee-e681-4314-98c3-47fb2541aae9",
-        "@type": "uco-identity:Identity",
+        "@type": "uco-identity:Organization",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-identity:Organization",
+                "@type": "uco-identity:OrganizationDetailsFacet",
                 "drafting:orgName": "Facebook"
             }
         ]
@@ -746,7 +743,7 @@ ORDER BY ?lHashMethod
                 "uco-observable:isDirectory": false,
                 "uco-observable:allocationStatus": "allocated",
                 "uco-observable:sizeInBytes": 891,
-                "uco-observable:createdTime": {
+                "uco-observable:observableCreatedTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2017-02-01T03:12:19.00Z"
                 },
@@ -791,7 +788,7 @@ ORDER BY ?lHashMethod
                 "uco-observable:isDirectory": false,
                 "uco-observable:allocationStatus": "allocated",
                 "uco-observable:sizeInBytes": 159744,
-                "uco-observable:createdTime": {
+                "uco-observable:observableCreatedTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2017-02-06T21:03:08.00Z"
                 },
@@ -905,10 +902,7 @@ ORDER BY ?lHashMethod
             {
                 "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 2032140288,
-                "uco-observable:rangeSize": {
-                    "@type": "xsd:long",
-                    "@value": 29236373504
-                }
+                "uco-observable:rangeSize": 29236373504
             }
         ]
     }
@@ -929,14 +923,8 @@ ORDER BY ?lHashMethod
                 "@type": "uco-observable:DiskPartitionFacet",
                 "uco-observable:diskPartitionType": "GPT",
                 "uco-observable:partitionID": "31",
-                "uco-observable:partitionOffset": {
-                    "@type": "xsd:long",
-                    "@value": 2032140288
-                },
-                "uco-observable:partitionLength": {
-                    "@type": "xsd:long",
-                    "@value": 29236373504
-                }
+                "uco-observable:partitionOffset": 2032140288,
+                "uco-observable:partitionLength": 29236373504
             },
             {
                 "@type": "uco-observable:FileSystemFacet",
@@ -1023,7 +1011,7 @@ ORDER BY ?lHashMethod
                 "uco-observable:isDirectory": false,
                 "uco-observable:allocationStatus": "allocated",
                 "uco-observable:sizeInBytes": 10704,
-                "uco-observable:createdTime": {
+                "uco-observable:observableCreatedTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2017-02-03T17:19:26.00Z"
                 },
@@ -1084,7 +1072,7 @@ ORDER BY ?lHashMethod
                 "uco-observable:isDirectory": true,
                 "uco-observable:allocationStatus": "unallocated",
                 "uco-observable:sizeInBytes": 4096,
-                "uco-observable:createdTime": {
+                "uco-observable:observableCreatedTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2017-02-03T17:22:30.00Z"
                 },
@@ -1140,9 +1128,13 @@ ORDER BY ?lHashMethod
                 },
                 "uco-observable:messageText": "Sarah, the delivery is today 7 tonight the confirmation will come later through pidgin",
                 "drafting:allocationStatus": "unallocated",
-                "uco-observable:from": "kb:9999237a-6d7f-4e96-bbef-6eb4c0a69999",
+                "uco-observable:from": {
+                    "@id": "kb:9999237a-6d7f-4e96-bbef-6eb4c0a69999"
+                },
                 "uco-observable:to": [
-                    "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1"
+                    {
+                        "@id": "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1"
+                    }
                 ]
             }
         ]
@@ -1216,9 +1208,13 @@ ORDER BY ?lHashMethod
                     "@type": "xsd:dateTime",
                     "@value": "2017-01-30T19:15:25.00Z"
                 },
-                "uco-observable:from": "kb:skype-99992808-7341-40d3-9285-774d865a9999",
+                "uco-observable:from": {
+                    "@id": "kb:skype-99992808-7341-40d3-9285-774d865a9999"
+                },
                 "uco-observable:to": [
-                    "kb:externalaccount-8976b508-80e5-4442-af1c-637d3b09240e"
+                    {
+                        "@id": "kb:externalaccount-8976b508-80e5-4442-af1c-637d3b09240e"
+                    }
                 ],
                 "drafting:allocationStatus": "allocated",
                 "uco-observable:messageType": "incoming"
@@ -1239,25 +1235,31 @@ ORDER BY ?lHashMethod
         "@type": "uco-observable:ObservableObject",
         "uco-core:hasFacet": [
             {
-                "@type": "drafting:URLHistory",
-                "drafting:browserInformation": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38",
-                "drafting:urlHistoryEntry": [
+                "@type": "uco-observable:URLHistoryFacet",
+                "uco-observable:browserInformation": {
+                    "@id": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38"
+                },
+                "uco-observable:urlHistoryEntry": [
                     {
-                        "drafting:firstVisit": {
+                        "uco-observable:firstVisit": {
                             "@type": "xsd:dateTime",
                             "@value": "2017-01-25T02:20:22.00Z"
                         },
-                        "drafting:lastVisit": {
+                        "uco-observable:lastVisit": {
                             "@type": "xsd:dateTime",
                             "@value": "2017-01-25T02:20:22.00Z"
                         },
-                        "drafting:expiration": "NULL",
-                        "drafting:userProfile": "kb:profile-account-857c7f17-2f6b-4618-aeca-50d79fa69b97",
-                        "uco-observable:url": "kb:url-b7906534-0483-4cf4-979c-5351916602ed",
-                        "drafting:referrerUrl": "NULL",
-                        "drafting:pageTitle": "Where can you find baby owls for sale? Are owls legal to keep as pets? - Quora",
+                        "uco-observable:expirationTime": null,
+                        "uco-observable:browserUserProfile": {
+                            "@id": "kb:profile-account-857c7f17-2f6b-4618-aeca-50d79fa69b97"
+                        },
+                        "uco-observable:url": {
+                            "@id": "kb:url-b7906534-0483-4cf4-979c-5351916602ed"
+                        },
+                        "uco-observable:referrerUrl": null,
+                        "uco-observable:pageTitle": "Where can you find baby owls for sale? Are owls legal to keep as pets? - Quora",
                         "uco-observable:visitCount": 2,
-                        "drafting:manuallyEnteredCount": 0,
+                        "uco-observable:manuallyEnteredCount": 0,
                         "uco-observable:keywordSearchTerm": null
                     }
                 ]
@@ -1286,19 +1288,31 @@ ORDER BY ?lHashMethod
                 "uco-observable:fileName": "History",
                 "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/data/com.android.chrome/app_chrome/Default/History",
                 "drafting:fileLocalPath": "files/Database/History",
-                "uco-observable:extension": "NULL",
+                "uco-observable:extension": null,
                 "uco-observable:isDirectory": false,
                 "uco-observable:sizeInBytes": "176128",
-                "uco-observable:createdTime": "2017-01-25T01:10:45.00Z",
-                "uco-observable:modifiedTime": "2017-02-03T17:22:29.00Z",
-                "uco-observable:accessedTime": "2017-01-25T01:10:45.00Z"
+                "uco-observable:observableCreatedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-01-25T01:10:45.00Z"
+                },
+                "uco-observable:modifiedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-03T17:22:29.00Z"
+                },
+                "uco-observable:accessedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-01-25T01:10:45.00Z"
+                }
             },
             {
                 "@type": "uco-observable:ExtInodeFacet",
                 "uco-observable:extInodeID": 1483050,
                 "uco-observable:extSGID": 10034,
                 "uco-observable:extSUID": 10034,
-                "uco-observable:extInodeChangeTime": "2017-02-03T17:22:29.00Z"
+                "uco-observable:extInodeChangeTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-03T17:22:29.00Z"
+                }
             },
             {
                 "@type": "uco-observable:ContentDataFacet",
@@ -1356,7 +1370,7 @@ ORDER BY ?lHashMethod
         "@id": "kb:latlong-8667ec82-8c21-11e9-934e-0c4de9c21b53",
         "@type": "uco-location:Location",
         "uco-core:hasFacet": {
-            "@type": "uco-location:LatLongCoordinates",
+            "@type": "uco-location:LatLongCoordinatesFacet",
             "uco-location:latitude": 38.423756,
             "uco-location:longitude": -82.43619,
             "uco-location:altitude": null

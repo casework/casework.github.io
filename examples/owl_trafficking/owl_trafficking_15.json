@@ -14,9 +14,13 @@
                 },
                 "uco-observable:messageText": "Sarah, the delivery is today 7 tonight the confirmation will come later through pidgin",
                 "drafting:allocationStatus": "unallocated",
-                "uco-observable:from": "kb:9999237a-6d7f-4e96-bbef-6eb4c0a69999",
+                "uco-observable:from": {
+                    "@id": "kb:9999237a-6d7f-4e96-bbef-6eb4c0a69999"
+                },
                 "uco-observable:to": [
-                    "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1"
+                    {
+                        "@id": "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1"
+                    }
                 ]
             }
         ]

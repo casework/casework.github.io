@@ -16,7 +16,7 @@ WHERE
     .
 
   ?nActionReferences
-    a uco-action:ActionReferences ;
+    a uco-action:ActionReferencesFacet ;
     uco-action:performer ?nPerformer ;
     uco-action:result ?nActionProvenanceRecord ;
     .
@@ -29,12 +29,12 @@ WHERE
     .
 
   ?nPerformer
-    a uco-identity:Identity ;
+    a uco-identity:Person ;
     uco-core:hasFacet ?nSimpleName ;
     .
 
   ?nSimpleName
-    a uco-identity:SimpleName ;
+    a uco-identity:SimpleNameFacet ;
     uco-identity:familyName ?lLastName ;
     .
 }

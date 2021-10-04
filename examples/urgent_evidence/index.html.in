@@ -57,6 +57,10 @@ jumbo_desc: CASE Sub-topic of Chain of Custody
                 <td>Exhibit Resealed</td>
               </tr>
               <tr>
+                <td>01/01/2019 15:03</td>
+                <td>Picture selected, via kiosk review screen, from those extracted from exhibit</td>
+              </tr>
+              <tr>
                 <td>01/01/2019 15:05</td>
                 <td>Report DVD Generated as associated exhibit</td>
               </tr>
@@ -144,6 +148,47 @@ jumbo_desc: CASE Sub-topic of Chain of Custody
 @QUERY_EXHIBIT_PHOTOS_SPARQL@
 {% endhighlight %}
 @QUERY_EXHIBIT_PHOTOS_HTML@
+
+          </div>
+        </div>
+
+        <div class="card">
+          <h5 class="card-header" id="query-actions_to_artifact">Actions to artifact</h5>
+          <div class="card-body">
+            <p class="card-text">Among the artifacts extracted from the device, a picture file <code>IMG_1863.jpg</code> was extracted.  Starting at initial evidence submission, what actions were taken to extract that file?</p>
+            <p class="card-text">This query inspects the derivation chains of artifacts.  A supplemental graph of a <a href="https://www.w3.org/TR/prov-o/#wasInformedBy">predicate adapted from the W3C PROV Ontology</a> creates a chain of <code>InvestigativeAction</code>s that can be analyzed with a path operator. (SPARQL source for <a href="../src/query-construct-wasInformedBy.sparql"><code>wasInformedBy</code></a>.)</p>
+
+{% highlight sparql %}
+@QUERY_CONSTRUCT_WASINFORMEDBY_SPARQL@
+{% endhighlight %}
+            <p class="card-text">That graph is then analyzed with the <code>*</code> path operator.  The query uses <code>*</code> instead of <code>+</code> in order to include the action that generated the file as well. (<a href="urgent_evidence-query-actions_to_artifact.sparql">SPARQL source</a>)</p>
+{% highlight sparql %}
+@QUERY_ACTIONS_TO_ARTIFACT_SPARQL@
+{% endhighlight %}
+@QUERY_ACTIONS_TO_ARTIFACT_HTML@
+
+          </div>
+        </div>
+
+        <div class="card">
+          <h5 class="card-header" id="query-initial_evidence_submission">Initial Evidence Submission</h5>
+          <div class="card-body">
+            <p class="card-text">What objects were the initial evidence submission(s) into the <code>ProvenanceRecord</code> chain? (<a href="urgent_evidence-query-initial_evidence_submission.sparql">SPARQL source</a>)</p>
+
+{% highlight sparql %}
+@QUERY_INITIAL_EVIDENCE_SUBMISSION_SPARQL@
+{% endhighlight %}
+@QUERY_INITIAL_EVIDENCE_SUBMISSION_HTML@
+
+        <div class="card">
+          <h5 class="card-header" id="query-selection_from_automated_exhibit_extraction">Selection from Automated Exhibit Extraction</h5>
+          <div class="card-body">
+            <p class="card-text">Several picture files were extracted by the kiosk, tracked in the internal process-record exhibit <code>EXH-20190101-7-KioskReport</code>.  Some of them were selected by the investigator for presentation in exhibit <code>EXH-20190101-7-B</code>, after visual review of just some of the files.  Which were extracted, displayed, and selected?  (<a href="urgent_evidence-query-selection_from_automated_exhibit_extraction.sparql">SPARQL source</a>)</p>
+
+{% highlight sparql %}
+@QUERY_SELECTION_FROM_AUTOMATED_EXHIBIT_EXTRACTION_SPARQL@
+{% endhighlight %}
+@QUERY_SELECTION_FROM_AUTOMATED_EXHIBIT_EXTRACTION_HTML@
 
           </div>
         </div>

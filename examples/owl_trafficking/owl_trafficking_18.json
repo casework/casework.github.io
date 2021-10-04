@@ -4,25 +4,31 @@
         "@type": "uco-observable:ObservableObject",
         "uco-core:hasFacet": [
             {
-                "@type": "drafting:URLHistory",
-                "drafting:browserInformation": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38",
-                "drafting:urlHistoryEntry": [
+                "@type": "uco-observable:URLHistoryFacet",
+                "uco-observable:browserInformation": {
+                    "@id": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38"
+                },
+                "uco-observable:urlHistoryEntry": [
                     {
-                        "drafting:firstVisit": {
+                        "uco-observable:firstVisit": {
                             "@type": "xsd:dateTime",
                             "@value": "2017-01-25T02:20:22.00Z"
                         },
-                        "drafting:lastVisit": {
+                        "uco-observable:lastVisit": {
                             "@type": "xsd:dateTime",
                             "@value": "2017-01-25T02:20:22.00Z"
                         },
-                        "drafting:expiration": "NULL",
-                        "drafting:userProfile": "kb:profile-account-857c7f17-2f6b-4618-aeca-50d79fa69b97",
-                        "uco-observable:url": "kb:url-b7906534-0483-4cf4-979c-5351916602ed",
-                        "drafting:referrerUrl": "NULL",
-                        "drafting:pageTitle": "Where can you find baby owls for sale? Are owls legal to keep as pets? - Quora",
+                        "uco-observable:expirationTime": null,
+                        "uco-observable:browserUserProfile": {
+                            "@id": "kb:profile-account-857c7f17-2f6b-4618-aeca-50d79fa69b97"
+                        },
+                        "uco-observable:url": {
+                            "@id": "kb:url-b7906534-0483-4cf4-979c-5351916602ed"
+                        },
+                        "uco-observable:referrerUrl": null,
+                        "uco-observable:pageTitle": "Where can you find baby owls for sale? Are owls legal to keep as pets? - Quora",
                         "uco-observable:visitCount": 2,
-                        "drafting:manuallyEnteredCount": 0,
+                        "uco-observable:manuallyEnteredCount": 0,
                         "uco-observable:keywordSearchTerm": null
                     }
                 ]
@@ -51,19 +57,31 @@
                 "uco-observable:fileName": "History",
                 "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/data/com.android.chrome/app_chrome/Default/History",
                 "drafting:fileLocalPath": "files/Database/History",
-                "uco-observable:extension": "NULL",
+                "uco-observable:extension": null,
                 "uco-observable:isDirectory": false,
                 "uco-observable:sizeInBytes": "176128",
-                "uco-observable:createdTime": "2017-01-25T01:10:45.00Z",
-                "uco-observable:modifiedTime": "2017-02-03T17:22:29.00Z",
-                "uco-observable:accessedTime": "2017-01-25T01:10:45.00Z"
+                "uco-observable:observableCreatedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-01-25T01:10:45.00Z"
+                },
+                "uco-observable:modifiedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-03T17:22:29.00Z"
+                },
+                "uco-observable:accessedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-01-25T01:10:45.00Z"
+                }
             },
             {
                 "@type": "uco-observable:ExtInodeFacet",
                 "uco-observable:extInodeID": 1483050,
                 "uco-observable:extSGID": 10034,
                 "uco-observable:extSUID": 10034,
-                "uco-observable:extInodeChangeTime": "2017-02-03T17:22:29.00Z"
+                "uco-observable:extInodeChangeTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-03T17:22:29.00Z"
+                }
             },
             {
                 "@type": "uco-observable:ContentDataFacet",

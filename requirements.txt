@@ -1,5 +1,4 @@
 SPARQLWrapper
+case_utils
 pandas
 pytest
-rdflib-jsonld
-requests
