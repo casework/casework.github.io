@@ -18,19 +18,21 @@ SHELL := /bin/bash
 # ${top_srcdir}/examples/${example}/
 top_srcdir := $(shell cd ../.. ; pwd)
 
+examples_srcdir := $(top_srcdir)/examples
+
 example_name := $(shell basename $$PWD)
 
 all:
 	$(MAKE) \
 	  --directory src \
-	  --file ../src/example-src.mk
+	  --file $(examples_srcdir)/src/example-src.mk
 	cp src/generated-index.html index.html
 	cp src/generated-$(example_name).json $(example_name).json
 
 check:
 	$(MAKE) \
 	  --directory src \
-	  --file ../src/example-src.mk \
+	  --file $(examples_srcdir)/src/example-src.mk \
 	  check \
 	  generated-index.html \
 	  generated-$(example_name).json
@@ -46,5 +48,5 @@ check:
 clean:
 	@$(MAKE) \
 	  --directory src \
-	  --file ../src/example-src.mk \
+	  --file $(examples_srcdir)/src/example-src.mk \
 	  clean
