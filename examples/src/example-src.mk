@@ -18,19 +18,20 @@ SHELL := /bin/bash
 # ${top_srcdir}/examples/${example}/src/
 top_srcdir := $(shell cd ../../.. ; pwd)
 
-illustration_name := inference
-illustration_snippets_json := $(wildcard $(illustration_name)-*.json)
+example_name := $(shell cd .. ; basename $$PWD)
+
+example_snippets_json := $(wildcard $(example_name)-*.json)
 query_sparql_files := $(wildcard query-*.sparql)
 query_md_files := $(foreach query_sparql_file,$(query_sparql_files),$(subst .sparql,.md,$(query_sparql_file)))
 
 generated_readme_sed_sources := \
-  $(illustration_snippets_json) \
+  $(example_snippets_json) \
   $(query_md_files) \
   $(query_sparql_files)
 
 all: \
   generated-README.md \
-  generated-$(illustration_name).json
+  generated-$(example_name).json
 
 .PHONY: \
   normalize \
@@ -56,7 +57,7 @@ generated-README.md: \
 	mv _$@ $@
 
 generated-README.sed: \
-  $(illustration_name)_base.json \
+  $(example_name)_base.json \
   $(generated_readme_sed_sources)
 	for x in $^ ; do \
           echo "/@$$(echo $${x} | tr '[:lower:]' '[:upper:]' | tr . _ | tr - _)@/r $${x}" ; \
@@ -64,29 +65,29 @@ generated-README.sed: \
 	done >> _$@
 	mv _$@ $@
 
-generated-$(illustration_name).json: \
-  $(illustration_name)_json.py \
-  $(illustration_name)_base.json \
-  $(illustration_snippets_json)
-	python3 $(illustration_name)_json.py \
-	  $(illustration_name)_base.json \
-	  $(illustration_snippets_json) \
+generated-$(example_name).json: \
+  $(example_name)_json.py \
+  $(example_name)_base.json \
+  $(example_snippets_json)
+	python3 $(example_name)_json.py \
+	  $(example_name)_base.json \
+	  $(example_snippets_json) \
 	  > _$@
 	mv _$@ $@
 
 normalize:
-	ls $(illustration_name)-*.json \
+	ls $(example_name)-*.json \
 	  | while read x; do python3 -m json.tool $$x .normalized-$$x && mv .normalized-$$x $$x ; done
 
 query-%.md: \
   query-%.sparql \
   $(top_srcdir)/.venv.done.log \
   ../drafting.ttl \
-  generated-$(illustration_name).json
+  generated-$(example_name).json
 	source $(top_srcdir)/venv/bin/activate \
 	  && case_sparql_select \
 	    _$@ \
 	    $< \
 	    ../drafting.ttl \
-	    generated-$(illustration_name).json
+	    generated-$(example_name).json
 	mv _$@ $@
