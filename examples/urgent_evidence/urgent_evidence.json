@@ -808,7 +808,7 @@
                     "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
                         "@type": "uco-types:ControlledDictionary",
-                            "uco-types:entry": [
+                        "uco-types:entry": [
                             {
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "DateTimeDigitized",
@@ -886,7 +886,7 @@
                     "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
                         "@type": "uco-types:ControlledDictionary",
-                            "uco-types:entry": [
+                        "uco-types:entry": [
                             {
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "DateTimeDigitized",
@@ -964,7 +964,7 @@
                     "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
                         "@type": "uco-types:ControlledDictionary",
-                            "uco-types:entry": [
+                        "uco-types:entry": [
                             {
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "DateTimeDigitized",
@@ -1042,7 +1042,7 @@
                     "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
                         "@type": "uco-types:ControlledDictionary",
-                            "uco-types:entry": [
+                        "uco-types:entry": [
                             {
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "DateTimeDigitized",
@@ -1120,7 +1120,7 @@
                     "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
                         "@type": "uco-types:ControlledDictionary",
-                            "uco-types:entry": [
+                        "uco-types:entry": [
                             {
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "DateTimeDigitized",
@@ -1198,7 +1198,7 @@
                     "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
                         "@type": "uco-types:ControlledDictionary",
-                            "uco-types:entry": [
+                        "uco-types:entry": [
                             {
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "DateTimeDigitized",
@@ -1276,7 +1276,7 @@
                     "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
                         "@type": "uco-types:ControlledDictionary",
-                            "uco-types:entry": [
+                        "uco-types:entry": [
                             {
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "DateTimeDigitized",
@@ -1349,7 +1349,7 @@
                     "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
                         "@type": "uco-types:ControlledDictionary",
-                            "uco-types:entry": [
+                        "uco-types:entry": [
                             {
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "DateTimeDigitized",
@@ -1422,7 +1422,7 @@
                     "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
                         "@type": "uco-types:ControlledDictionary",
-                            "uco-types:entry": [
+                        "uco-types:entry": [
                             {
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "DateTimeDigitized",
