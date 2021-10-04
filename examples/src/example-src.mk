@@ -24,13 +24,13 @@ example_snippets_json := $(wildcard $(example_name)-*.json)
 query_sparql_files := $(wildcard query-*.sparql)
 query_md_files := $(foreach query_sparql_file,$(query_sparql_files),$(subst .sparql,.md,$(query_sparql_file)))
 
-generated_readme_sed_sources := \
+generated_index_sed_sources := \
   $(example_snippets_json) \
   $(query_md_files) \
   $(query_sparql_files)
 
 all: \
-  generated-README.md \
+  generated-index.html \
   generated-$(example_name).json
 
 .PHONY: \
@@ -50,15 +50,15 @@ clean:
 	  generated-* \
 	  query-*.md
 
-generated-README.md: \
-  README.md.in \
-  generated-README.sed
-	sed -f generated-README.sed README.md.in > _$@
+generated-index.html: \
+  index.html.in \
+  generated-index.sed
+	sed -f generated-index.sed index.html.in > _$@
 	mv _$@ $@
 
-generated-README.sed: \
+generated-index.sed: \
   $(example_name)_base.json \
-  $(generated_readme_sed_sources)
+  $(generated_index_sed_sources)
 	for x in $^ ; do \
           echo "/@$$(echo $${x} | tr '[:lower:]' '[:upper:]' | tr . _ | tr - _)@/r $${x}" ; \
           echo "/@$$(echo $${x} | tr '[:lower:]' '[:upper:]' | tr . _ | tr - _)@/d" ; \

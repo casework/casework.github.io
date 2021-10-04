@@ -24,13 +24,13 @@ all:
 	  normalize
 	$(MAKE) \
 	  --directory src
-	cp src/generated-README.md README.md
+	cp src/generated-index.html index.html
 	cp src/generated-inference.json inference.json
 
 check:
 	$(MAKE) \
 	  --directory src \
-	  generated-README.md \
+	  generated-index.html \
 	  generated-inference.json
 	$(MAKE) \
 	  --directory src \
@@ -40,9 +40,9 @@ check:
 	  inference.json \
 	  || (echo "UPDATE:examples/illustrations/inference/Makefile:The generated inference.json does not match the Git-tracked inference.json.  If the above reported changes look fine, run 'cp src/generated-inference.json inference.json' to get a file ready to commit to Git." >&2 ; exit 1)
 	diff \
-	  src/generated-README.md \
-	  README.md \
-	  || (echo "UPDATE:examples/illustrations/inference/Makefile:The generated README.md does not match the Git-tracked README.md.  If the above reported changes look fine, run 'cp src/generated-README.md README.md' to get a file ready to commit to Git." >&2 ; exit 1)
+	  src/generated-index.html \
+	  index.html \
+	  || (echo "UPDATE:examples/illustrations/inference/Makefile:The generated index.html does not match the Git-tracked index.html.  If the above reported changes look fine, run 'cp src/generated-index.html index.html' to get a file ready to commit to Git." >&2 ; exit 1)
 
 clean:
 	@$(MAKE) \
