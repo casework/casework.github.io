@@ -50,6 +50,9 @@ all: \
   check-normalized-%.json \
   check-validation
 
+.PRECIOUS: \
+  normalized-%.json
+
 check: \
   $(check_normalized_example_snippets_json) \
   check-validation
