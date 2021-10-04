@@ -18,28 +18,30 @@ SHELL := /bin/bash
 # ${top_srcdir}/examples/${example}/
 top_srcdir := $(shell cd ../.. ; pwd)
 
+example_name := $(shell basename $$PWD)
+
 all:
 	$(MAKE) \
 	  --directory src
 	cp src/generated-index.html index.html
-	cp src/generated-inference.json inference.json
+	cp src/generated-$(example_name).json $(example_name).json
 
 check:
 	$(MAKE) \
 	  --directory src \
 	  generated-index.html \
-	  generated-inference.json
+	  generated-$(example_name).json
 	$(MAKE) \
 	  --directory src \
 	  check
 	diff \
-	  src/generated-inference.json \
-	  inference.json \
-	  || (echo "UPDATE:examples/illustrations/inference/Makefile:The generated inference.json does not match the Git-tracked inference.json.  If the above reported changes look fine, run 'cp src/generated-inference.json inference.json' to get a file ready to commit to Git." >&2 ; exit 1)
+	  src/generated-$(example_name).json \
+	  $(example_name).json \
+	  || (echo "UPDATE:examples/$(example_name):The generated $(example_name).json does not match the Git-tracked $(example_name).json.  If the above reported changes look fine, run 'cp src/generated-$(example_name).json $(example_name).json' to get a file ready to commit to Git." >&2 ; exit 1)
 	diff \
 	  src/generated-index.html \
 	  index.html \
-	  || (echo "UPDATE:examples/illustrations/inference/Makefile:The generated index.html does not match the Git-tracked index.html.  If the above reported changes look fine, run 'cp src/generated-index.html index.html' to get a file ready to commit to Git." >&2 ; exit 1)
+	  || (echo "UPDATE:examples/$(example_name):The generated index.html does not match the Git-tracked index.html.  If the above reported changes look fine, run 'cp src/generated-index.html index.html' to get a file ready to commit to Git." >&2 ; exit 1)
 
 clean:
 	@$(MAKE) \
