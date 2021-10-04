@@ -1,4 +1,5 @@
 *.diff
-*-query-*.html
 generated-*
 normalized-*
+query-*.html
+query-*.md
