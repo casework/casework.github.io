@@ -20,6 +20,10 @@ top_srcdir := $(shell cd ../../.. ; pwd)
 
 example_name := $(shell cd .. ; basename $$PWD)
 
+# Use wildcard to "Optionally" depend on drafting.ttl, which is only
+# expected to be present when concepts under draft are in use.
+drafting_ttl := $(wildcard ../drafting.ttl)
+
 example_snippets_json := \
   $(wildcard $(example_name)-*.json) \
   $(wildcard $(example_name)_base.json)
@@ -101,13 +105,13 @@ normalized-%.json: \
 
 query-%.md: \
   query-%.sparql \
+  $(drafting_ttl) \
   $(top_srcdir)/.venv.done.log \
-  ../drafting.ttl \
   generated-$(example_name).json
 	source $(top_srcdir)/venv/bin/activate \
 	  && case_sparql_select \
 	    _$@ \
 	    $< \
-	    ../drafting.ttl \
-	    generated-$(example_name).json
+	    generated-$(example_name).json \
+	    $(drafting_ttl)
 	mv _$@ $@
