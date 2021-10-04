@@ -35,10 +35,12 @@ check_normalized_example_snippets_json := \
   $(foreach normalized_example_snippet_json,$(normalized_example_snippets_json),check-$(normalized_example_snippet_json))
 
 query_sparql_files := $(wildcard query-*.sparql)
+query_html_files := $(foreach query_sparql_file,$(query_sparql_files),$(subst .sparql,.html,$(query_sparql_file)))
 query_md_files := $(foreach query_sparql_file,$(query_sparql_files),$(subst .sparql,.md,$(query_sparql_file)))
 
 generated_index_sed_sources := \
   $(example_snippets_json) \
+  $(query_html_files) \
   $(query_md_files) \
   $(query_sparql_files)
 
@@ -115,6 +117,19 @@ normalized-%.json: \
 	python3 -m json.tool \
 	  $< \
 	  _$@
+	mv _$@ $@
+
+query-%.html: \
+  query-%.sparql \
+  $(drafting_ttl) \
+  $(top_srcdir)/.venv.done.log \
+  generated-$(example_name).json
+	source $(top_srcdir)/venv/bin/activate \
+	  && case_sparql_select \
+	    _$@ \
+	    $< \
+	    generated-$(example_name).json \
+	    $(drafting_ttl)
 	mv _$@ $@
 
 query-%.md: \
