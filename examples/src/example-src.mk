@@ -13,7 +13,10 @@
 
 SHELL := /bin/bash
 
-top_srcdir := $(shell cd ../../../.. ; pwd)
+# Execution context - this Makefile is expected to be executed in the
+# context of one of these directories:
+# ${top_srcdir}/examples/${example}/src/
+top_srcdir := $(shell cd ../../.. ; pwd)
 
 drafting_pkl_sources := $(wildcard ontology/*.ttl)
 

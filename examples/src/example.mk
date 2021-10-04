@@ -13,7 +13,10 @@
 
 SHELL := /bin/bash
 
-top_srcdir := $(shell cd ../../.. ; pwd)
+# Execution context - this Makefile is expected to be executed in the
+# context of one of these directories:
+# ${top_srcdir}/examples/${example}/
+top_srcdir := $(shell cd ../.. ; pwd)
 
 all:
 	$(MAKE) \
