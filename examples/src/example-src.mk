@@ -18,8 +18,6 @@ SHELL := /bin/bash
 # ${top_srcdir}/examples/${example}/src/
 top_srcdir := $(shell cd ../../.. ; pwd)
 
-drafting_pkl_sources := $(wildcard ontology/*.ttl)
-
 illustration_name := inference
 illustration_snippets_json := $(wildcard $(illustration_name)-*.json)
 query_sparql_files := $(wildcard query-*.sparql)
@@ -35,36 +33,21 @@ all: \
   generated-$(illustration_name).json
 
 .PHONY: \
-  normalize
+  normalize \
+  check-validation
 
 check: \
-  check-0.4.0
+  check-validation
 
-check-0.4.0: \
-  drafting.pkl \
-  generated-$(illustration_name).json
-	source $(top_srcdir)/venv/bin/activate \
-	  && validate \
-	    drafting.pkl \
-	    generated-$(illustration_name).json
+#TODO - This process will be defined after the release of CASE 0.5.0.
+check-validation:
 
 clean:
 	@rm -f \
 	  *.sed \
 	  .normalized-* \
-	  drafting.pkl \
 	  generated-* \
 	  query-*.md
-
-drafting.pkl: \
-  $(drafting_pkl_sources) \
-  $(top_srcdir)/.dependencies.done.log
-	source $(top_srcdir)/venv/bin/activate \
-	  && serialize \
-	    -c drafting \
-	    -o _$@ \
-	    ontology
-	mv _$@ $@
 
 generated-README.md: \
   README.md.in \
