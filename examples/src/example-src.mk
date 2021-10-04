@@ -18,6 +18,8 @@ SHELL := /bin/bash
 # ${top_srcdir}/examples/${example}/src/
 top_srcdir := $(shell cd ../../.. ; pwd)
 
+examples_srcdir := $(top_srcdir)/examples
+
 example_name := $(shell cd .. ; basename $$PWD)
 
 # Use wildcard to "Optionally" depend on drafting.ttl, which is only
@@ -38,7 +40,9 @@ query_sparql_files := $(wildcard query-*.sparql)
 query_html_files := $(foreach query_sparql_file,$(query_sparql_files),$(subst .sparql,.html,$(query_sparql_file)))
 query_md_files := $(foreach query_sparql_file,$(query_sparql_files),$(subst .sparql,.md,$(query_sparql_file)))
 
-generated_index_sed_sources := \
+shared_query_sparql_files := $(wildcard $(examples_srcdir)/src/query-*.sparql)
+
+generated_local_index_sed_sources := \
   $(example_snippets_json) \
   $(query_html_files) \
   $(query_md_files) \
@@ -50,6 +54,7 @@ all: \
 
 .PHONY: \
   check-normalized-%.json \
+  check-pytest \
   check-validation
 
 .PRECIOUS: \
@@ -57,6 +62,7 @@ all: \
 
 check: \
   $(check_normalized_example_snippets_json) \
+  check-pytest \
   check-validation \
   generated-index.html \
   generated-$(example_name).json
@@ -69,6 +75,17 @@ check-normalized-%.json: \
 	@diff $^ >/dev/null \
 	  || echo "ERROR:JSON snippet not normalized: $<." >&2
 	diff $^
+
+# Run pytest tests only if any are written.
+# (Pytest exits in an error state if called with no tests found.)
+check-pytest: \
+  generated-$(example_name)-wasInformedBy.json
+	test 0 -eq $$(/bin/ls *_test.py test_*.py | wc -l) \
+	  || ( \
+	    source $(top_srcdir)/venv/bin/activate \
+	      && pytest \
+	        --log-level=DEBUG \
+	  )
 
 #TODO - This process will be defined after the release of CASE 0.5.0.
 check-validation:
@@ -90,16 +107,21 @@ generated-index.html: \
 # https://github.com/usnistgov/swid-autotools
 generated-index.sed: \
   $(example_name)_base.json \
-  $(generated_index_sed_sources)
-	for x in $^ ; do \
+  $(generated_local_index_sed_sources) \
+  $(shared_query_sparql_files)
+	for x in $(example_name)_base.json $(generated_local_index_sed_sources) ; do \
           echo "/@$$(echo $${x} | tr '[:lower:]' '[:upper:]' | tr . _ | tr - _)@/r $${x}" ; \
           echo "/@$$(echo $${x} | tr '[:lower:]' '[:upper:]' | tr . _ | tr - _)@/d" ; \
+	done >> _$@
+	for x in $(shared_query_sparql_files) ; do \
+          echo "/@$$(basename $${x} | tr '[:lower:]' '[:upper:]' | tr . _ | tr - _)@/r $${x}" ; \
+          echo "/@$$(basename $${x} | tr '[:lower:]' '[:upper:]' | tr . _ | tr - _)@/d" ; \
 	done >> _$@
 	mv _$@ $@
 
 generated-$(example_name).json: \
-  $(example_name)_json.py \
   $(example_name)_base.json \
+  $(example_name)_json.py \
   $(example_snippets_json)
 	python3 $(example_name)_json.py \
 	  $(example_name)_base.json \
@@ -112,6 +134,20 @@ generated-$(example_name).json: \
 	rm __$@
 	mv _$@ $@
 
+# Not all examples will require the chain of communication, but some do.
+# It is currently considered acceptable cost to derive this chain for
+# all examples.
+generated-$(example_name)-wasInformedBy.json: \
+  $(examples_srcdir)/src/query-construct-wasInformedBy.sparql \
+  $(top_srcdir)/.venv.done.log \
+  generated-$(example_name).json
+	source $(top_srcdir)/venv/bin/activate \
+	  && case_sparql_construct \
+	    _$@ \
+	    $< \
+	    generated-$(example_name).json
+	mv _$@ $@
+
 normalized-%.json: \
   %.json
 	python3 -m json.tool \
@@ -122,25 +158,29 @@ normalized-%.json: \
 query-%.html: \
   query-%.sparql \
   $(drafting_ttl) \
-  $(top_srcdir)/.venv.done.log \
-  generated-$(example_name).json
+  generated-$(example_name).json \
+  generated-$(example_name)-wasInformedBy.json
 	source $(top_srcdir)/venv/bin/activate \
 	  && case_sparql_select \
+	    --disallow-empty-results \
 	    _$@ \
 	    $< \
 	    generated-$(example_name).json \
+	    generated-$(example_name)-wasInformedBy.json \
 	    $(drafting_ttl)
 	mv _$@ $@
 
 query-%.md: \
   query-%.sparql \
   $(drafting_ttl) \
-  $(top_srcdir)/.venv.done.log \
-  generated-$(example_name).json
+  generated-$(example_name).json \
+  generated-$(example_name)-wasInformedBy.json
 	source $(top_srcdir)/venv/bin/activate \
 	  && case_sparql_select \
+	    --disallow-empty-results \
 	    _$@ \
 	    $< \
 	    generated-$(example_name).json \
+	    generated-$(example_name)-wasInformedBy.json \
 	    $(drafting_ttl)
 	mv _$@ $@
