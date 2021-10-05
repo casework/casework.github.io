@@ -65,6 +65,8 @@ The procedure for adding a new narrative *that will have JSON-LD snippets* follo
 
 * The Makefile in `examples/` needs to have the new narrative added to its build chains.  Copy and paste lines corresponding to any other narrative.  (Note we provide `all`, `check`, and `clean` targets, and also add lines to `.PHONY`.)
 * The new narrative should have a Makefile copied from any sibling narrative-directory, and likewise for the new narrative's `src/` directory.  Note the two Makefiles are written in a bare, "Pass-through" manner to call a more complex shared Makefile.
+* A short Python script should be written to combine the snippets and base JSON files into the combined JSON-LD graph file.  (This step may be handled by a generic program in the future.)  See e.g. the combiners for [Asgard](examples/asgard/src/asgard_json.py) and [Owl Trafficking](examples/owl_trafficking/src/owl_trafficking_json.py).
+
 
 Note that to assure example base functionality, we expect each narrative to have its own JSON-LD passing through Continuous Integration.
 
