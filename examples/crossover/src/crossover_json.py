@@ -32,11 +32,15 @@ def main():
         obj = json.load(in_fh)
     assert isinstance(obj, dict)
 
-    _logger.debug("args.in_json = %r." % args.in_json)
+    _logger.debug("args.in_json = %r.", args.in_json)
     for in_json in args.in_json:
-        _logger.debug("in_json = %r." % in_json)
+        _logger.debug("in_json = %r.", in_json)
         with open(in_json, "r") as in_fh:
-            in_obj = json.load(in_fh)
+            try:
+                in_obj = json.load(in_fh)
+            except:
+                _logger.error("in_json = %r.", in_json)
+                raise
             assert isinstance(in_obj, list)
 
             for item in in_obj:
