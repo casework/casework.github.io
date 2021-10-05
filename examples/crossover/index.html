@@ -51,7 +51,6 @@ jumbo_desc: Cellebrite XML Report Example
   <li>Visual reconstruction of the most pertinent elements and entities (people and objects)</li>
 </ol>
 
-<!--BOOKMARK ^-->
 <h3>EVIDENCE PROVENANCE AND INTEGRITY</h3>
 <p>The initial step of the digital forensic analysis is to assess the provenance and integrity of the digital evidence and to examine device characteristics and identifiers. The overall CASE bundle provides context for the digital evidence.</p>
 
@@ -118,62 +117,82 @@ jumbo_desc: Cellebrite XML Report Example
   </metadata>
   {% endhighlight %}
 
+
 <h4>CASE Representation of Report Generation</h4>
 
 {% highlight json %}
 [
-  {
-  "@id": "kb:cellebrite-pa1-uuid",
-  "@type": "uco-tool:Tool",
-  "uco-tool:name": "Physical Analyser",
-  "uco-tool:toolType": "Analysis",
-  "uco-tool:creator": "Cellebrite",
-  "uco-tool:version": "7.1.0.106",
-  "uco-core:hasFacet": [
     {
-      "@type": "uco-tool:ToolConfigurationType",
-      "uco-tool:configurationSetting": [
-        {
-          "@type": "uco-tool:ConfigurationSettingType",
-          "uco-tool:itemName": "OutputFormat",
-          "uco-tool:itemValue": "XML"
-        }
-      ]
+        "@id": "kb:cellebrite-pa1-uuid",
+        "@type": "uco-tool:Tool",
+        "uco-tool:name": "Physical Analyser",
+        "uco-tool:toolType": "Analysis",
+        "uco-tool:creator": "Cellebrite",
+        "uco-tool:version": "7.1.0.106",
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-tool:ToolConfigurationType",
+                "uco-tool:configurationSetting": [
+                    {
+                        "@type": "uco-tool:ConfigurationSettingType",
+                        "uco-tool:itemName": "OutputFormat",
+                        "uco-tool:itemValue": "XML"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "@id": "kb:investigative-action2-uuid",
+        "@type": "case-investigation:InvestigativeAction",
+        "uco-core:name": "exported",
+        "uco-core:startTime": {
+            "@type": "xsd:dateTime",
+            "@value": "2020-04-12T11:27:12.00Z"
+        },
+        "uco-core:endTime": {
+            "@type": "xsd:dateTime",
+            "@value": "2020-04-12T11:32:12.00Z"
+        },
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-action:ActionReferences",
+                "uco-action:location": {
+                    "@id": "kb:esc-lausanne-uuid"
+                },
+                "uco-action:performer": {
+                    "@id": "kb:investigator1-uuid"
+                },
+                "uco-action:instrument": {
+                    "@id": "kb:cellebrite-pa1-uuid"
+                },
+                "uco-action:environment": {
+                    "@id": "kb:forensic-computer1-uuid"
+                },
+                "uco-action:object": [
+                    {
+                        "@id": "kb:provenance-record3-uuid"
+                    },
+                    {
+                        "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
+                    }
+                ],
+                "uco-action:result": [
+                    {
+                        "@id": "kb:provenance-record4-uuid"
+                    },
+                    {
+                        "@id": "kb:cellebritexml-report-uuid"
+                    }
+                ]
+            }
+        ]
     }
-  ]
-},
-{
-	  "@id": "kb:investigative-action2-uuid"
-	  "@type": "case-investigation:InvestigativeAction",
-	  "uco-core:name": "exported",
-	  "uco-core:startTime": {
-        "@type": "xsd:dateTime",
-        "@value": "2020-04-12T11:27:12.00Z"
-  }
-	  "uco-core:endTime": {
-        "@type": "xsd:dateTime",
-        "@value": "2020-04-12T11:32:12.00Z"
-  }
-	  "uco-core:hasFacet": [
-	    {
-	      "@type": "uco-action:ActionReferences",
-	      "uco-action:location": { "@id": "kb:esc-lausanne-uuid" },
-	      "uco-action:performer": { "@id": "kb:investigator1-uuid" },
-	      "uco-action:instrument": { "@id": "kb:cellebrite-pa1-uuid" },
-	      "uco-action:environment": { "@id": "kb:forensic-computer1-uuid"},
-	      "uco-action:object": [
-	         { "@id": "kb:provenance-record3-uuid" },
-		 { "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748" }     
-	      ],
-	      "uco-action:result": [
-	        { "@id": "kb:provenance-record4-uuid" },
-	        { "@id": "kb:cellebritexml-report-uuid" }
-	      ]
-	     }
-	  ]
-  }
 ]
 {% endhighlight %}
+
+
+<!--BOOKMARK ^-->
 <h3> EVIDENCE EXTRACTION</h3>
   <p>When a Cellebrite UFED acquisition contains data about the original forensic extraction process, these details will be in the XML section <code>&lt;metadata section="Extraction Data"&gt;</code> which can be represented as an Investigative Action in CASE. </p>
 
