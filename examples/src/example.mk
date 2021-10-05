@@ -31,24 +31,32 @@ all:
 	  src/generated-index.html \
 	  index.html \
 	  > /dev/null \
-	  || ( \
-	    export TMPDIR=$$(mktemp -d) \
-	      && cat \
-	        index.html \
-	        > $$TMPDIR/index.html \
-	        && echo "INFO:examples/$(example_name):Edits found in index.html, and about to be overwritten.  Stashing state in temporary file in case they were not meant to be overwritten.  Restore by running: 'mv $$TMPDIR/index.html index.html'." >&2 \
-	  )
+	  || git diff \
+	    --exit-code \
+	    index.html \
+	    > /dev/null \
+	    || ( \
+	      export TMPDIR=$$(mktemp -d) \
+	        && cat \
+	          index.html \
+	          > $$TMPDIR/index.html \
+	          && echo "INFO:examples/$(example_name):Edits found in index.html, and about to be overwritten.  Stashing state in temporary file in case they were not meant to be overwritten.  Restore by running: 'mv $$TMPDIR/index.html index.html'." >&2 \
+	    )
 	@diff \
 	  src/generated-$(example_name).json \
 	  $(example_name).json \
 	  > /dev/null \
-	  || ( \
-	    export TMPDIR=$$(mktemp -d) \
-	      && cat \
-	        $(example_name).json \
-	        > $$TMPDIR/$(example_name).json \
-	        && echo "INFO:examples/$(example_name):Edits found in $(example_name).json, and about to be overwritten.  Stashing state in temporary file in case they were not meant to be overwritten.  Restore by running: 'mv $$TMPDIR/$(example_name).json $(example_name).json'." >&2 \
-	  )
+	  || git diff \
+	    --exit-code \
+	    $(example_name).json \
+	    > /dev/null \
+	    || ( \
+	      export TMPDIR=$$(mktemp -d) \
+	        && cat \
+	          $(example_name).json \
+	          > $$TMPDIR/$(example_name).json \
+	          && echo "INFO:examples/$(example_name):Edits found in $(example_name).json, and about to be overwritten.  Stashing state in temporary file in case they were not meant to be overwritten.  Restore by running: 'mv $$TMPDIR/$(example_name).json $(example_name).json'." >&2 \
+	    )
 	cp src/generated-index.html index.html
 	cp src/generated-$(example_name).json $(example_name).json
 
@@ -62,7 +70,7 @@ check: \
 	  --directory src \
 	  check
 	test 1 -eq $$(git ls-tree HEAD $(example_name).json | wc -l) \
-	  || (echo "ERROR:examples/$(example_name):$(example_name).json is not tracked.  Please run 'git add index.html' and a 'git commit' including index.html." ; exit 1)
+	  || (echo "ERROR:examples/$(example_name):$(example_name).json is not tracked.  Please run 'git add $(example_name.json)' and a 'git commit' including $(example_name.json)." ; exit 1)
 	test 1 -eq $$(git ls-tree HEAD index.html | wc -l) \
 	  || (echo "ERROR:examples/$(example_name):index.html is not tracked.  Please run 'git add index.html' and a 'git commit' including index.html." ; exit 1)
 	git diff \
