@@ -62,7 +62,7 @@ check: \
 	  --directory src \
 	  check
 	test 1 -eq $$(git ls-tree HEAD $(example_name).json | wc -l) \
-	  || (echo "ERROR:examples/$(example_name):$(example_name).json is not tracked.  Please run 'git add index.html' and a 'git commit' including index.html." ; exit 1)
+	  || (echo "ERROR:examples/$(example_name):$(example_name).json is not tracked.  Please run 'git add $(example_name.json)' and a 'git commit' including $(example_name.json)." ; exit 1)
 	test 1 -eq $$(git ls-tree HEAD index.html | wc -l) \
 	  || (echo "ERROR:examples/$(example_name):index.html is not tracked.  Please run 'git add index.html' and a 'git commit' including index.html." ; exit 1)
 	git diff \
