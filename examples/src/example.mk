@@ -20,25 +20,58 @@ top_srcdir := $(shell cd ../.. ; pwd)
 
 example_name := $(shell basename $$PWD)
 
+# The last copy commands in this recipe risk overwriting edits if the
+# user accidentally edited the file that was intended to be generated.
+# The git-diff commands stash edits as patches.
+# The template argument to mktemp (-t) behaves sufficiently for both
+# GNU mktemp and BSD mktemp.
 all:
 	$(MAKE) \
 	  --directory src
+	@diff \
+	  src/generated-index.html \
+	  index.html \
+	  > /dev/null \
+	  || ( \
+	    export TMP=$$(mktemp -t index.html.patch.XXXXXXXX) \
+	      && cat \
+	        index.html \
+	        > $$TMP \
+	        && echo "INFO:examples/$(example_name):Edits found in index.html, and about to be overwritten.  Stashing state in temporary file in case they were not meant to be overwritten.  Restore by running: 'mv $$TMP index.html'." >&2 \
+	  )
+	@diff \
+	  src/generated-$(example_name).json \
+	  $(example_name).json \
+	  > /dev/null \
+	  || ( \
+	    export TMP=$$(mktemp -t $(example_name).json.patch.XXXXXXXX) \
+	      && cat \
+	        $(example_name).json \
+	        > $$TMP \
+	        && echo "INFO:examples/$(example_name):Edits found in $(example_name).json, and about to be overwritten.  Stashing state in temporary file in case they were not meant to be overwritten.  Restore by running: 'mv $$TMP $(example_name).json'." >&2 \
+	  )
 	cp src/generated-index.html index.html
 	cp src/generated-$(example_name).json $(example_name).json
 
 # Generic tests:
 # * Confirm the Git-committed version of the combined example JSON matches the file generated from the JSON pieces.
 # * Confirm the Git-committed version of index.html matches the file generated from src/index.html.in and the JSON pieces.
-check:
+# Note that 'check' entails the 'all' target being run, due to needing to review edited state vs. tracked state.
+check: \
+  all
 	$(MAKE) \
 	  --directory src \
 	  check
-	diff \
-	  src/generated-$(example_name).json \
+	test 1 -eq $$(git ls-tree HEAD $(example_name).json | wc -l) \
+	  || (echo "ERROR:examples/$(example_name):$(example_name).json is not tracked.  Please run 'git add index.html' and a 'git commit' including index.html." ; exit 1)
+	test 1 -eq $$(git ls-tree HEAD index.html | wc -l) \
+	  || (echo "ERROR:examples/$(example_name):index.html is not tracked.  Please run 'git add index.html' and a 'git commit' including index.html." ; exit 1)
+	git diff \
+	  --exit-code \
 	  $(example_name).json \
 	  || (echo "UPDATE:examples/$(example_name):The generated $(example_name).json does not match the Git-tracked $(example_name).json.  If the above reported changes look fine, run 'cp src/generated-$(example_name).json $(example_name).json' to get a file ready to commit to Git." >&2 ; exit 1)
-	diff \
-	  src/generated-index.html \
+	git diff \
+	  --exit-code \
 	  index.html \
 	  || (echo "UPDATE:examples/$(example_name):The generated index.html does not match the Git-tracked index.html.  If the above reported changes look fine, run 'cp src/generated-index.html index.html' to get a file ready to commit to Git." >&2 ; exit 1)
 
