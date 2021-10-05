@@ -26,7 +26,7 @@ custom_js:
         Investigation object. Any information related to a cyber-investigation must be wrapped within a CASE bundle.</p>
       <h6>Examples of an Authorization &amp; Investigation Objects</h6>
 {% highlight json %}
-@ASGARD_0__JSON@
+@ASGARD_BASE_JSON@
 {% endhighlight %}
       <p class="pb-3">An Investigation can contain any CASE object, including InvestigativeActions and Traces.</p>
     </div>
@@ -36,7 +36,7 @@ custom_js:
         beginning of Chain of Custody. The output of this InvestigativeAction is the seized object and an associated provenance record.</p>
       <h6>Examples of an InvestigativeAction &amp; ProvenanceRecord Objects</h6>
 {% highlight json %}
-@ASGARD_1__JSON@
+@ASGARD_1_JSON@
 {% endhighlight %}
       <p class="pb-3">All CASE objects are inserted within the associated Investigation, wrapped in a CASE Bundle.</p>
     </div>
@@ -46,7 +46,7 @@ custom_js:
           <em><strong>InvestigativeAction</strong></em> and associated Tool using CASE.</p>
       <h6>Example of an InvestigativeAction</h6>
 {% highlight json %}
-@ASGARD_2__JSON@
+@ASGARD_2_JSON@
 {% endhighlight %}
       <p class="pb-3">[placeholder for dc3dd wrapper]</p>
     </div>
@@ -70,19 +70,19 @@ custom_js:
           <h6 class="mt-3">Example of a Filesystem Trace</h6>
           <p>Note that the file size in the <code>File</code> property bundle is greater than the size in the <code>ContentData</code> property bundle.  This highlights the context-sensitive difference in purpose of <code>sizeInBytes</code>.  In <code>File</code>, the size represents the file system's record of the file's size.  In <code>ContentData</code>, the size represents the measurable size of extracted or extractable file content.  The latter can be less than the file system reports due to, for instance, a faulty storage device.</p>
 {% highlight json %}
-@ASGARD_3__JSON@
+@ASGARD_3_JSON@
 {% endhighlight %}
         </div>
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
           <h6 class="mt-3">Example of a Mobile Device Trace</h6>
 {% highlight json %}
-@ASGARD_4__JSON@
+@ASGARD_4_JSON@
 {% endhighlight %}
         </div>
         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
           <h6 class="mt-3">Example of a Network Traffic Trace</h6>
 {% highlight json %}
-@ASGARD_5__JSON@
+@ASGARD_5_JSON@
 {% endhighlight %}
         </div>
       </div>
