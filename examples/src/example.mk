@@ -22,9 +22,8 @@ example_name := $(shell basename $$PWD)
 
 # The last copy commands in this recipe risk overwriting edits if the
 # user accidentally edited the file that was intended to be generated.
-# The git-diff commands stash edits as patches.
-# The template argument to mktemp (-t) behaves sufficiently for both
-# GNU mktemp and BSD mktemp.
+# A backup is made in a temporary directory if it looks like a
+# destructive overwrite is about to occur.
 all:
 	$(MAKE) \
 	  --directory src
@@ -33,22 +32,22 @@ all:
 	  index.html \
 	  > /dev/null \
 	  || ( \
-	    export TMP=$$(mktemp -t index.html.XXXXXXXX) \
+	    export TMPDIR=$$(mktemp -d) \
 	      && cat \
 	        index.html \
-	        > $$TMP \
-	        && echo "INFO:examples/$(example_name):Edits found in index.html, and about to be overwritten.  Stashing state in temporary file in case they were not meant to be overwritten.  Restore by running: 'mv $$TMP index.html'." >&2 \
+	        > $$TMPDIR/index.html \
+	        && echo "INFO:examples/$(example_name):Edits found in index.html, and about to be overwritten.  Stashing state in temporary file in case they were not meant to be overwritten.  Restore by running: 'mv $$TMPDIR/index.html index.html'." >&2 \
 	  )
 	@diff \
 	  src/generated-$(example_name).json \
 	  $(example_name).json \
 	  > /dev/null \
 	  || ( \
-	    export TMP=$$(mktemp -t $(example_name).json.XXXXXXXX) \
+	    export TMPDIR=$$(mktemp -d) \
 	      && cat \
 	        $(example_name).json \
-	        > $$TMP \
-	        && echo "INFO:examples/$(example_name):Edits found in $(example_name).json, and about to be overwritten.  Stashing state in temporary file in case they were not meant to be overwritten.  Restore by running: 'mv $$TMP $(example_name).json'." >&2 \
+	        > $$TMPDIR/$(example_name).json \
+	        && echo "INFO:examples/$(example_name):Edits found in $(example_name).json, and about to be overwritten.  Stashing state in temporary file in case they were not meant to be overwritten.  Restore by running: 'mv $$TMPDIR/$(example_name).json $(example_name).json'." >&2 \
 	  )
 	cp src/generated-index.html index.html
 	cp src/generated-$(example_name).json $(example_name).json
