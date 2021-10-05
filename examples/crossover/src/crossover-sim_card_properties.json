@@ -1,0 +1,89 @@
+ [
+   {
+	  "@id": "kb:simcard1-uuid",
+	  "@type": "uco-observable:ObservableObject",
+	  "uco-core:hasFacet": [
+	    {
+	      "@type": "uco-observable:SIMCardFacet",
+	      "uco-observable:ICCID": "89390100002217635543",
+	      "uco-observable:Carrier": "Telcom Italia"
+	    }
+	 ]
+	},
+   {
+	  "@id": "kb:mobileaccount1-uuid",
+	  "@type": "uco-observable:ObservableObject",
+	  "uco-core:hasFacet": [
+	    {
+	      "@type": "uco-observable:AccountFacet",
+	      "uco-observable:accountType": "Phone",
+	      "uco-observable:isActive": "False"
+	    },
+    {
+       "@type": "uco-observable:MobileAccountFacet",
+       "uco-observable:MSISDN": "3662158453"
+    }
+	 ]
+	},
+
+   {
+	  "@id": "kb:simcard2-uuid",
+	  "@type": "uco-observable:ObservableObject",
+	  "uco-core:hasFacet": [
+	    {
+	      "@type": "uco-observable:SIMCard",
+	      "uco-observable:ICCID": "8935302143531284380",
+	      "uco-observable:IMSI": "__NOT_PROVIDED",
+	      "uco-observable:Carrier": "__NOT_PROVIDED"
+	    }
+	 ]
+	},
+   {
+	  "@id": "kb:simcard3-uuid",
+	  "@type": "uco-observable:ObservableObject",
+	  "uco-core:hasFacet": [
+	    {
+	      "@type": "uco-observable:SIMCardFacet",
+	      "uco-observable:ICCID": "8931088918010550289",
+	      "uco-observable:IMSI": "{mobileaccount3-uuid}",
+	      "uco-observable:Carrier": "Lebara"
+	    }
+	 ]
+	},
+   {
+	  "@id": "kb:mobileaccount3-uuid",
+	  "@type": "uco-observable:ObservableObject",
+	  "uco-core:hasFacet": [
+	    {
+	      "@type": "uco-observable:AccountFacet",
+	      "uco-observable:accountType": "Phone",
+	      "uco-observable:isActive": true
+	    },
+    {
+       "@type": "uco-observable:MobileAccountFacet",
+       "uco-observable:MSISDN": "31647934784",
+       "uco-observable:IMSI": "204080515881398"
+    }
+	 ]
+	},
+
+        {
+          "@id": "kb:sim3-telephony-relationship-uuid",
+          "@type":"uco-core:Relationship",
+          "uco-core:source": {"@id": "kb:simcard3-uuid"},
+          "uco-core:target": {"@id": "kb:cd52c3b8-7759-40b7-ae10-dfc90a35f644"},
+          "uco-core:kindOfRelationship": "Contained_Within",
+          "uco-core:isDirectional": true,
+          "uco-core:hasFacet": [
+              { 
+                  "@type":"uco-observable:DataRangeFacet", 
+                  "uco-observable:rangeOffset": 13751,
+                  "uco-observable:rangeSize": null
+              }, 
+                { 
+                    "@type": "drafting:TableRelationFacet", 
+                    "drafting:name":"siminfo" 
+                }
+          ]
+}
+]

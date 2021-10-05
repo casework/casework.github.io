@@ -1,0 +1,45 @@
+[
+        {
+            "@id": "kb:EmailMessage-2c032220-8c21-11e9-9c99-0c4de9c21b53",
+            "@type": "uco-observable:ObservableObject",
+            "uco-core:hasFacet": [
+                {
+                    "@type": "uco-observable:EmailMessageFacet",
+                    "uco-observable:application": {"@id": "kb:Gmail-uuid"},
+                    "uco-observable:sender": {"@id": "kb:EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53"},
+                    "uco-observable:sentTime": {"@type": "xsd:dateTime", "@value": "2018-11-20T21:28:07.00Z"},
+                    "uco-observable:subject": "Re: Bank transfer ?",
+                    "uco-observable:bodyRaw": "Excellent - we need all the help we can get. Sent from my Samsung Galaxy smartphone",
+                    "uco-observable:fromRef": null,
+                    "uco-observable:toRef": null,
+                    "uco-observable:ccRefs": null,
+                    "uco-observable:bccRefs": null,
+                    "uco-observable:messageID": "CAKBqNfyKo+pvHkJy6kwO82jTbkNA@mail.gmail.com"
+                }
+            ]
+        },
+{
+  "@id": "kb:456a2bac-8c21-11e9-8902-0c4de9c24de5",
+  "@type": "uco-observable:ObservableObject",
+  "uco-core:hasFacet": [
+    {
+      "@type": "uco-observable:EmailAddressFacet",
+      "uco-observable:value": "badquinn3@gmail.com "
+    }
+  ]
+},
+{
+  "@id": "kb:email-account-99d72bac-8c21-11e9-8902-0c4de9c21b53",
+  "@type": "uco-observable:ObservableObject",
+  "uco-core:hasFacet": [
+    {
+      "@type": "uco-observable:AccountFacet OR DigitalAccountFacet?",
+      "uco-observable:displayName": "Harley Quinn"
+    },
+    {
+      "@type": "uco-observable:EmailAccountFacet",
+      "uco-observable:emailAddress": "kb:456a2bac-8c21-11e9-8902-0c4de9c24de5"
+    }
+  ]
+}
+]

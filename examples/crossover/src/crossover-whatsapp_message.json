@@ -1,0 +1,23 @@
+[
+        {
+            "@id": "kb:message-ed5d35d6-6e7c-4099-80f4-1fadfc0ee08c",
+            "@type": "uco-observable:ObservableObject",
+            "uco-core:hasFacet": [
+                {
+                    "@type": "uco-observable:MessageFacet",
+                    "uco-observable:messageText": "20 minutes away",
+                    "uco-observable:application": {"@id": "kb:868abc08-8c21-11e9-934e-0c4de9c21b53"},
+                    "uco-observable:sentTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-12-04T19:12:56.00Z"
+                    },
+                    "uco-observable:from": {"@id": "kb:account-90652808-7341-40d3-9285-774d865ad3f9"},
+                    "uco-observable:to": [
+                        {"@id": "kb:account-865734c8-8c21-11e9-934e-0c4de9c21b53"}
+                    ],
+					"uco-observable:messageType": "outgoing"
+
+                }
+            ]
+        }
+        ]

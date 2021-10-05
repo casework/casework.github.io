@@ -1,0 +1,48 @@
+[
+{
+   "@id": "kb:F7CAD990-6687-4849-89DC-55795675F3F5",
+   "@type": "uco-observable:ObservableObject",
+   "uco-observable:tag": [
+     "Image"
+   ],
+   "uco-core:hasFacet":[
+     {
+      "@type":"uco-observable:FileFacet",
+      "uco-observable:fileName": "the.apk",
+      "uco-observable:filePath": "/Root/media/0/Download/Elder_Wand.png",
+      "drafting:fileLocalPath": "files/image/Elder_Wand.png",
+      "uco-observable:extension":".png",
+      "uco-observable:fileSystemType":"ExtX",
+      "uco-observable:isDirectory": false,
+      "uco-observable:allocationStatus": "allocated",
+      "uco-observable:sizeInBytes":"534167",
+      "uco-observable:createdTime": {"@type": "xsd:dateTime", "@value": "2018-11-30T09:43:24.00Z"},
+      "uco-observable:modifiedTime": {"@type": "xsd:dateTime", "@value": "2018-11-30T09:43:25.00Z"},
+      "uco-observable:accessedTime": {"@type": "xsd:dateTime", "@value": "2018-11-30T09:43:24.00Z"}
+      },
+     {
+      "@type": "uco-observable:ExtInodeFacet",
+      "uco-observable:extInode": 930900,
+      "uco-observable:extSGID": 1023,
+      "uco-observable:extSUID": 1023,
+      "uco-observable:extInodeChangeTime": null
+      },
+      {
+         "@type": "uco-observable:ContentDataFacet",
+         "uco-observable:hash":[
+          {
+          "@type":"uco-types:Hash",
+          "uco-types:hashMethod": {
+            "@type": "uco-vocabulary:HashNameVocab",
+            "@value": "SHA256"
+          },
+          "uco-types:hashValue": {
+            "@type": "xsd:hexBinary",
+            "@value": "13f1393bfe548620da920fac9865965e"
+          }
+         }
+      ] 
+  }
+]
+}
+]

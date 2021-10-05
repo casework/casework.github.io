@@ -217,150 +217,27 @@ SimChangeTime=1528641355649<br />
 
 <p>In actuality, the current SIM card ICCID is <samp>8931088918010550289</samp>, as listed in the "<samp>siminfo</samp>" table of the <samp>data/com.android.providers.telephony/databases/telephony.db</samp> database. This SIM card has a different phone number than the one displayed by Cellebrite. The current SIM card was placed in the Samsung device on <samp>2018-11-16T12:34:28Z</samp>.</p>
 
-<!--BOOKMARK ^-->
 {% highlight json %}
-[
-{
-      "@id": "kb:simcard1-relationship-uuid",
-      "@type": "uco-core:Relationship",
-      "uco-core:source": {"@id": "kb:simcard1-uuid"},
-      "uco-core:target": {"@id": "kb:samsung-device-uuid"},
-      "uco-core:kindOfRelationship": "Contained_Within",
-      "uco-core:startTime": {"@type": "xsd:dateTime", "@value": "2018-11-16T12:34:28Z"},
-      "uco-core:endTime": null,
-      "uco-core:isDirectional": true
-},
-
-{
-      "@id": "kb:simcard3-relationship-uuid",
-      "@type": "uco-core:Relationship",
-      "uco-core:source": {"@id": "kb:simcard1-uuid"},
-      "uco-core:target": {"@id": "kb:samsung-device-uuid"},
-      "uco-core:kindOfRelationship": "Contained_Within",
-      "uco-core:startTime": {
-          "@type": "xsd:dateTime",
-          "@value": "2018-11-16T00:00.00Z"
-      },
-      "uco-core:endTime":  {
-          "@type": "xsd:dateTime",
-          "@value": "2018-12-11T08:40:00.00Z",
-      },
-      "uco-core:isDirectional": true,
-      "uco-core:hasFacet": [
-      {
-         "@type": "uco-core:Confidence",
-         "uco-core:confidence": "95"
-      }
-   ]
-}
-]
+@CROSSOVER_SIM_CARD_CONTAINMENTS_JSON@
 {% endhighlight %}
 
-<p>CASE Representation of SIM Card properties</p>
+
+<h4>CASE Representation of SIM Card properties</h4>
 
 {% highlight json %}
-
- [
-   {
-	  "@id": "kb:simcard1-uuid",
-	  "@type": "uco-observable:ObservableObject",
-	  "uco-core:hasFacet": [
-	    {
-	      "@type": "uco-observable:SIMCardFacet",
-	      "uco-observable:ICCID": "89390100002217635543",
-	      "uco-observable:Carrier": "Telcom Italia"
-	    }
-	 ]
-	},
-   {
-	  "@id": "kb:mobileaccount1-uuid",
-	  "@type": "uco-observable:ObservableObject",
-	  "uco-core:hasFacet": [
-	    {
-	      "@type": "uco-observable:AccountFacet",
-	      "uco-observable:accountType": "Phone",
-	      "uco-observable:isActive": "False"
-	    }
-    {
-       "@type": "uco-observable:MobileAccountFacet",
-       "uco-observable:MSISDN": "3662158453"
-    }
-	 ]
-	},
-
-   {
-	  "@id": "kb:simcard2-uuid",
-	  "@type": "uco-observable:ObservableObject",
-	  "uco-core:hasFacet": [
-	    {
-	      "@type": "uco-observable:SIMCard",
-	      "uco-observable:ICCID": "8935302143531284380",
-	      "uco-observable:IMSI": "__NOT_PROVIDED",
-	      "uco-observable:Carrier": "__NOT_PROVIDED"
-	    }
-	 ]
-	},
-   {
-	  "@id": "kb:simcard3-uuid",
-	  "@type": "uco-observable:ObservableObject",
-	  "uco-core:hasFacet": [
-	    {
-	      "@type": "uco-observable:SIMCardFacet",
-	      "uco-observable:ICCID": "8931088918010550289",
-	      "uco-observable:IMSI": "{mobileaccount3-uuid}",
-	      "uco-observable:Carrier": "Lebara"
-	    }
-	 ]
-	},
-   {
-	  "@id": "kb:mobileaccount3-uuid",
-	  "@type": "uco-observable:ObservableObject",
-	  "uco-core:hasFacet": [
-	    {
-	      "@type": "uco-observable:AccountFacet",
-	      "uco-observable:accountType": "Phone",
-	      "uco-observable:isActive": true
-	    }
-    {
-       "@type": "uco-observable:MobileAccountFacet",
-       "uco-observable:MSISDN": "31647934784",
-       "uco-observable:IMSI": "204080515881398"
-    }
-	 ]
-	},
-
-        {
-          "@id": "kb:sim3-telephony-relationship-uuid",
-          "@type":"uco-core:Relationship",
-          "uco-core:source": {"@id": "kb:simcard3-uuid"},
-          "uco-core:target": {"@id": "kb:cd52c3b8-7759-40b7-ae10-dfc90a35f644"},
-          "uco-core:kindOfRelationship": "Contained_Within",
-          "uco-core:isDirectional": true,
-          "uco-core:hasFacet": [
-              { 
-                  "@type":"uco-observable:DataRangeFacet", 
-                  "uco-observable:rangeOffset": 13751‬, ‬‬‬‬‬‬‬‬‬‬‬‬
-                  "uco-observable:rangeSize": null
-              }, 
-                { 
-                    "@type": "drafting:TableRelationFacet", 
-                    "drafting:name":"siminfo" 
-                }
-          ]
-}
-]
+@CROSSOVER_SIM_CARD_PROPERTIES_JSON@
 {% endhighlight %}
 
-<p><b>Note:</b> Observe IMSI traces in “system/netpolicy.xml” file </p>
+<p><b>Note:</b> Observe IMSI traces in "<samp>system/netpolicy.xml</samp>" file.</p>
+
+
 <h3>VIRTUAL IDENTITIES</h3>
 
-<p>The name and email address of the primary user of the device were obtained:
+<p>The name and email address of the primary user of the device were obtained: Ares Lupin, aresthewerewolf@gmail.com, with a phone number +31647934784 associated with a WhatsApp account.</p>
 
-Ares Lupin, aresthewerewolf@gmail.com, with a phone number +31647934784 associated with a WhatsApp account. </p>
+<p><strong>Note:</strong>The file "<samp>system/users/0.xml</samp>" contains the name Jessie Pinkman which is a previous user of the phone, not the primary user in this case.</p>
 
-<p><b>Note:</b>The file “system/users/0.xml” contains the name Jessie Pinkman which a previous user of the phone, not the primary user in this case.</p>
-
-<p> Cellebrite XML </p>
+<h4>Cellebrite XML</h4>
 
 {% highlight xml %}
       <model type="UserAccount" id="7b9ba63c-cc03-4a9d-bfbe-647616613df4" deleted_state="Intact" decoding_confidence="High" isrelated="False" extractionId="0" labels="2">
@@ -400,126 +277,17 @@ Ares Lupin, aresthewerewolf@gmail.com, with a phone number +31647934784 associat
           </model>
 {% endhighlight %}
 
-<p> CASE Representation of Users and Accounts</p>
+<h4>CASE Representation of Users and Accounts</h4>
 
 {% highlight json %}
-[
-{
-      "@id": "kb:primaryuser-uuid",
-      "@type": "uco-identity:Identity",
-      "uco-core:hasFacet": [
-        {
-          "@type": "uco-identity:SimpleName",
-          "uco-identity:givenName": "Ares",
-          "uco-identity:familyName": "Lupin"
-        }
-      ]
-    },
-{
-      "@id": "kb:primaryuser-email-uuid",
-      "@type": "uco-core:Relationship",
-      "uco-observable:source": {"@id": "kb:primaryuser-uuid"},
-      "uco-observable:target": {"@id": "kb:EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53"},
-      "uco-observable:kindOfRelationship": "Has_Account",
-      "uco-observable:isDirectional": true
-},
-{
-      "@id": "kb:primaryuser-email-uuid",
-      "@type": "uco-core:Relationship",
-      "uco-core:source": {"@id": "kb:primaryuser-uuid"},
-      "uco-core:target": {"@id": "kb:WhatsApp-90652808-7341-40D3-9285-774D865AD3F9"},
-      "uco-core:kindOfRelationship": "Has_Account",
-      "uco-core:isDirectional": true
-},
-{
-   "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53",
-   "@type": "uco-observable:ObservableObject",
-   "uco-core:hasFacet": [
-       {
-          "@type": "uco-observable:EmailAddressFacet",
-          "uco-observable:value": "aresthewerewolf@gmail.com"
-       }
-   ]
-},
-{
-   "@id": "kb:EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53",
-   "@type": "uco-observable:ObservableObject",
-   "uco-core:hasFacet": [
-     {
-       "@type": "uco-observable:EmailAccountFacet",
-       "uco-observable:emailAddress": {"@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53"}
-     }
-   ]
-},
-{
-   "@id": "kb:C1D3237A-6D7F-4E96-BBEF-6EB4C0A621D1",
-   "@type": "uco-observable:ObservableObject", 
-   "uco-core:hasFacet":[{
-      "@type":"uco-observable:AccountFacet", 
-      "uco-observable:accountIssuer": "Salt", 
-      "uco-observable:isActive": true
-},
-   {
-      "@type": "uco-observable:PhoneAccountFacet", 
-      "uco-observable:phoneNumber": "+31647934784", 
-      "uco-observable:name": "" 
-   }
-  ]
-},
-{
-      "@id": "kb:associated-account-phonenumber1",
-      "@type": "uco-core:Relationship",
-      "uco-core:source": {"@id": "kb:90652808-7341-40D3-9285-774D865AD3F9"},
-      "uco-core:target": {"@id": "kb:C1D3237A-6D7F-4E96-BBEF-6EB4C0A621D1"},
-      "uco-core:kindOfRelationship": "Associated_Account",
-      "uco-core:isDirectional": true
-},
-{
-   "@id": "kb:WhatsApp-90652808-7341-40D3-9285-774D865AD3F9",
-   "@type": "uco-observable:ObservableObject", 
-   "uco-core:hasFacet":[
-   {
-      "@type": "uco-observable:AccountFacet", 
-      "uco-observable:accountIssuer": "organization-whatsapp-uuid", 
-      "uco-observable:accountIdentifier": "31647934784@s.whatsapp.net",
-      "uco-observable:isActive": true
-   },
-   {
-      "@type": "uco-observable:ApplicationAccountFacet", 
-      "uco-observable:application": "kb:application-whatsapp-uuid", 
-   },
-   {
-      "@type": "uco-observable:DigitalAccountFacet", 
-      "uco-observable:displayName": "Ares Lupin" 
-   }
-  ]
-},
-{
-   "@id": "kb:organization-whatsapp-uuid",
-   "@type": "uco-identity:Identity", 
-   "uco-core:hasFacet":[
-   {
-      "@type": "identity:Organization", 
-      "identity:orgName": "WhatsApp", 
-   }
-  ]
-},
-{
-   "@id": "kb:application-whatsapp-uuid",
-   "@type": "uco-observable:ObservableObject", 
-   "uco-core:hasFacet": [
-   {
-      "@type": "Application", 
-      "appName": "WhatsApp", 
-   }
-  ]
-}
-]
+@CROSSOVER_USERS_AND_ACCOUNTS_JSON@
 {% endhighlight %}
 
 <p>In addition, a Reddit account was extracted from the Chrome Login Data database, and Cellebrite provides a converted timestamp as a known format.</p>
 
-<p>Cellebrite XML</p>
+
+<h4>Cellebrite XML</h4>
+
 {% highlight xml %}
       </model>
       <model type="UserAccount" id="714b4394-4ffb-4575-9ac5-1d46ffe01d8b" deleted_state="Intact" decoding_confidence="High" isrelated="False" extractionId="0">
@@ -555,57 +323,20 @@ Ares Lupin, aresthewerewolf@gmail.com, with a phone number +31647934784 associat
       </model>
 {% endhighlight %}
 
-<p>CASE Representation of Reddit account</p>
+
+<h4>CASE Representation of Reddit account</h4>
 
 {% highlight json %}
-[
-{
-   "@id": "kb:Reddit-90652808-7341-40D3-9285-774D865AD3F9",
-   "@type":"uco-observable:ObservableObject", 
-   "uco-core:hasFacet":[
-   {
-      "@type":"uco-observable:AccountFacet", 
-      "uco-observable:accountIssuer": "kb:organization-reddit-uuid", 
-      "uco-observable:accountIdentifier": "aresthewerewolf",
-      "uco-observable:isActive": true
-   },
-   {
-      "@type": "uco-observable:DigitalAccountFacet", 
-      "uco-observable:displayName": "Ares Lupin",
-      "uco-observable:accountLogin": "aresthewerewolf",
-      "uco-observable:firstLoginTime": "2018-11-26T19:00:31Z",
-   }
-   {
-      "@type": "uco-observable:AccountAuthenticationFacet",
-      "uco-observable:password": "v10j֯�H��x�_�_o�i�"
-   },
-  ]
-},
-        {
-          "@id": "kb:LoginDataC316C405-9326-4F28-9B8D-44A3BB9E7283",
-          "@type": "uco-core:Relationship",
-          "uco-core:source": {"@id": "kb:Reddit-90652808-7341-40D3-9285-774D865AD3F9"},
-          "uco-core:target": {"@id": "kb:ChromeLoginData-16805DFF-05F9-4CBA-9266-D5FA712F3D8F"},
-          "uco-core:kindOfRelationship": "Contained_Within",
-          "uco-core:isDirectional": true,
-          "uco-core:hasFacet": [
-              { 
-                  "@type":"uco-observable:DataRangeFacet", 
-                  "uco-observable:rangeOffset": 13751‬, ‬‬‬‬‬‬‬‬‬‬‬
-                  "uco-observable:rangeSize": null
-              }, 
-                { 
-                    "@type": "drafting:TableRelation", 
-                    "drafting:name":"logins" 
-                }
-           ]
-        }
-        ]
+@CROSSOVER_REDDIT_ACCOUNT_JSON@
 {% endhighlight %}
 
+
 <h3>LOCATIONS</h3>
-<p>Location details in Longitude & Latitude are represented here. </p>
-<p>Cellebrite XML</p>
+
+<p>Location details in Longitude &amp; Latitude are represented here.</p>
+
+
+<h4>Cellebrite XML</h4>
 
 {% highlight xml %}
       <model type="Location" id="83160da6-b92b-4100-9f17-28886ac835ef" deleted_state="Intact" decoding_confidence="High" isrelated="False" extractionId="0">
@@ -639,156 +370,57 @@ Ares Lupin, aresthewerewolf@gmail.com, with a phone number +31647934784 associat
         </modelField>
 {% endhighlight %}
 
-<p>CASE Representation </p>
-{% highlight json %}
-[
-        {
-            "@id": "kb:LatLong-8667ec82-8c21-11e9-934e-0c4de9c21b53",
-            "@type": "uco-location:Location",
-            "uco-core:hasFacet": {
-                "@type": "uco-location:LatLongCoordinates",
-                "uco-location:latitude": 46.537222222222219,
-                "uco-location:longitude": 6.5791666666666666
-                "uco-location:altitude": null
-            }
-        }
-]
-{% endhighlight %}
 
-<h2> CHAIN OF EVIDENCE SOURCES </h2>
-
-<h2>Partition on Disk Image</h2>
-<p>Cellebrite XML report does not appear to maintain this provenance link between partitions and the forensic duplicate. </p>
-
-<p>CASE Representation <i> (values obtained using Autopsy)</i> </p>
+<h4>CASE Representation</h4>
 
 {% highlight json %}
-[
-   {
-   "@id": "kb:partition-uuid",
-   "@type": "uco-core:Relationship",
-   "uco-core:source": {"@id": "kb:userdata-partition-uuid"},
-   "uco-core:target": {"@id": "kb:blk0_sda.bin"},
-   "uco-core:kindOfRelationship": "Contained_Within",
-   "uco-core:isDirectional": true,
-   "uco-core:hasFacet": [
-	{
-         "@type": "uco-observable:DataRange",
-         "uco-observable:rangeOffset": 541196288‬,‬‬‬‬‬‬‬‬‬‬‬‬
-         "uco-observable:rangeSize": 3456630784‬‬‬‬‬‬‬‬‬‬‬‬‬
-	}
-     ]
-   }
-]
+@CROSSOVER_LOCATION_JSON@
 {% endhighlight %}
-<h4>File System</h4>
+
+
+<h2>CHAIN OF EVIDENCE SOURCES</h2>
+
+
+<h3>Partition on Disk Image</h3>
+
+<p>Cellebrite XML report does not appear to maintain this provenance link between partitions and the forensic duplicate.</p>
+
+
+<h4>CASE Representation <em>(values obtained using Autopsy)</em></h4>
+
+{% highlight json %}
+@CROSSOVER_PARTITION_ON_DISK_IMAGE_JSON@
+{% endhighlight %}
+
+
+<h3>File System</h3>
+
 <p>Cellebrite XML report does not appear to maintain this provenance link between file system structures and the specific partition.</p>
 
-<p>CASE Representation <i> (values obtained using Autopsy)</i> </p>
+
+<h4>CASE Representation <em>(values obtained using Autopsy)</em></h4>
+
 {% highlight json %}
-[
-   {
-   "@id": "kb:filesystem-uuid",
-   "@type": "uco-observable:ObservableObject",
-   "uco-core:hasFacet": [
-    {
-         "@type": "uco-observable:DiskPartitionFacet",
-         "uco-observable:diskPartitionType": "GPT",
-         "uco-observable:partitionID": "06",
-         "uco-observable:partitionOffset": 541196288,
-         "uco-observable:partitionLength": 3456630784
-    },
-	{
-         "@type": "uco-observable:FileSystemFacet",
-         "uco-observable:fileSystemType": "EXT3"
-    },
-    {
-         "@type": "uco-observable:ContentDataFacet",
-         "uco-observable:hash": [
-          {
-          "@type":"uco-types:Hash",
-          "uco-types:hashMethod": {
-            "@type": "uco-vocabulary:HashNameVocab"
-            "@value": "MD5"
-          },
-          "uco-types:hashValue": {
-            "@type": "xsd:hexBinary",
-            "@value": "TBD"
-          }
-         }
-         ]
-       }
-     ]
-  }
-]
+@CROSSOVER_FILE_SYSTEM_IN_PARTITION_JSON@
 {% endhighlight %}
 
-<h4>File in File System</h4>
+
+<h3>File in File System</h3>
+
 <p>A file within the Android EXT3 file system is represented here.</p>
-<p>CASE Representation</p>
 
+
+<h4>CASE Representation</h4>
 
 {% highlight json %}
-[
-   {
-   "@id": "kb:filesystem-relationship-uuid",
-   "@type": "uco-core:Relationship",
-   "uco-core:source": {"@id": "kb:F7CAD990-6687-4849-89DC-55795675F3F5"},
-   "uco-core:target": {"@id": "kb:filesystem-uuid"},
-   "uco-core:kindOfRelationship": "Contained_Within",
-   "uco-core:isDirectional": true,
-   "uco-core:hasFacet": [
-    {
-      "@type": "uco-observable:PathRelation",
-      "uco-observable:path": "/Root/data/com.google.android.gms/app_dg_cache/B0970DD8CBD5F4763E7C602156284D4DD796AE5D/the.apk"
-    }
-    {
-      "@type": "uco-core:DataRange",
-      "uco-core:rangeOffset": 3121610752,
-      "uco-core:rangeSize": 147871
-    }
-   ]
-   },
-   {
-   "@id": "kb:userdata-partition-uuid",
-   "@type": "uco-observable:ObservableObject",
-   "uco-core:hasFacet": [
-    {
-         "@type": "uco-observable:DiskPartitionFacet",
-         "uco-observable:diskPartitionType": "GPT",
-         "uco-observable:partitionID": "06",
-         "uco-observable:partitionOffset": 63,
-         "uco-observable:partitionLength": 245235063
-    },
-	{
-         "@type": "uco-observable:FileSystem",
-         "uco-observable:fileSystemType": "EXT3"
-    },
-    {
-         "@type": "uco-observable:ContentDataFacet",
-         "uco-observable:sizeInBytes": 245235000,
-         "uco-observable:hash": [
-          {
-          "@type":"uco-types:Hash",
-          "uco-types:hashMethod": {
-            "@type": "uco-vocabulary:HashNameVocab"
-            "@value": "SHA256"
-          },
-          "uco-types:hashValue": {
-            "@type": "xsd:hexBinary",
-            "@value": "0611ea093d19b1c73a5285ff43741dd77f2a8d983c1c71044eb072e44f5dcb0a"
-          }
-         }
-         ]
-       }
-     ]
-  }
-]
+@CROSSOVER_FILE_IN_FILE_SYSTEM_JSON@
 {% endhighlight %}
 
-<h4> File </h4>
-<p>Cellebrite XML </p> 
 
+<h3>File</h3>
+
+
+<h4>Cellebrite XML</h4> 
 
 {% highlight xml %}
     <file fs="USERDATA (ExtX)" fsid="c4b80ed4-a372-4440-9a87-881ed4423c09" path="/Root/media/0/Download/Elder_Wand.png" size="534167" id="88959d0b-b2bb-4a4a-85c8-edd7b2393e02" extractionId="0" deleted="Intact" embedded="false" isrelated="False">
@@ -817,64 +449,20 @@ Ares Lupin, aresthewerewolf@gmail.com, with a phone number +31647934784 associat
     </file>
 {% endhighlight %}
 
-<p>CASE Representation </p> 
+
+<h4>CASE Representation</h4>
 
 {% highlight json %}
-[
-{
-   "@id": "kb:F7CAD990-6687-4849-89DC-55795675F3F5",
-   "@type": "uco-observable:ObservableObject",
-   "uco-observable:tag": [
-     "Image"
-   ],
-   "uco-core:hasFacet":[
-     {
-      "@type":"uco-observable:FileFacet",
-      "uco-observable:fileName": "the.apk",
-      "uco-observable:filePath": "/Root/media/0/Download/Elder_Wand.png",
-      "drafting:fileLocalPath": "files/image/Elder_Wand.png",
-      "uco-observable:extension":".png",
-      "uco-observable:fileSystemType":"ExtX",
-      "uco-observable:isDirectory": false,
-      "uco-observable:allocationStatus": "allocated",
-      "uco-observable:sizeInBytes":"534167",
-      "uco-observable:createdTime": {"@type": "xsd:dateTime", "@value": "2018-11-30T09:43:24.00Z"},
-      "uco-observable:modifiedTime": {"@type": "xsd:dateTime", "@value": "2018-11-30T09:43:25.00Z"},
-      "uco-observable:accessedTime": {"@type": "xsd:dateTime", "@value": "2018-11-30T09:43:24.00Z"}
-      },
-     {
-      "@type": "uco-observable:ExtInodeFacet",
-      "uco-observable:extInode": 930900‬,‬‬‬‬‬‬‬‬‬‬‬‬‬‬
-      "uco-observable:extSGID": 1023‬,‬‬‬‬‬‬‬‬‬‬‬‬‬‬
-      "uco-observable:extSUID": 1023‬,‬‬‬‬‬‬‬‬‬‬‬‬‬‬
-      "uco-observable:extInodeChangeTime": null
-      },
-      {
-         "@type": "uco-observable:ContentDataFacet",
-         "uco-observable:hash":[
-          {
-          "@type":"uco-types:Hash",
-          "uco-types:hashMethod": {
-            "@type": "uco-vocabulary:HashNameVocab"
-            "@value": "SHA256"
-          },
-          "uco-types:hashValue": {
-            "@type": "xsd:hexBinary",
-            "@value": "13f1393bfe548620da920fac9865965e"
-          }
-         }
-      ] 
-  }
-]
+@CROSSOVER_ELDER_WAND_PNG_JSON@
 {% endhighlight %}
 
-<p><b>Note:</b> EXIF metadata is represented using properties specified in the standard </p>
+<p><strong>Note:</strong> EXIF metadata is represented using properties specified in the standard.  (Further CASE EXIF development is occuring in ticket AC-126.)</p>
 
-<p>(see AC-126: Publish EXIF utilityTODO ).<!--NEED TO ASK --> </p>
 
-<h4> WhatsApp Message </h4>
-<p>Cellebrite XML </p>
+<h3> WhatsApp Message</h3>
 
+
+<h4>Cellebrite XML</h4>
 
 {% highlight xml %}
           <model type="InstantMessage" id="ed5d35d6-6e7c-4099-80f4-1fadfc0ee08c" deleted_state="Intact" decoding_confidence="High" isrelated="False" extractionId="0">
@@ -1004,249 +592,69 @@ Ares Lupin, aresthewerewolf@gmail.com, with a phone number +31647934784 associat
           </model>
 {% endhighlight %}
 
-<p>CASE Representation of WhatsApp account and message</p>
 
-<p> WhatsApp Application: </p>
+<h4>CASE Representation of WhatsApp account and message</h4>
 
-{% highlight json %}
-[
-{
-            "@id": "kb:whatsapp-868abc08-8c21-11e9-934e-0c4de9c21b53",
-            "@type": "uco-observable:ObservableObject",
-            "uco-core:hasFacet": [
-                {
-                    "@type": "uco-observable:ApplicationFacet",
-                    "uco-observable:name": "WhatsApp",
-                    "uco-observable:applicationIdentifier": "com.whatsapp",
-                    "uco-observable:version": "2.18.361",
-                    "uco-observable:operatingSystem": "Android"
-                }
-             ]
-        }
-        ]
-{% endhighlight %}
 
-<p> WhatsApp Account </p>
-{% highlight json %}
-[
-{
-		    "@id": "kb:account-90652808-7341-40d3-9285-774d865ad3f9",
-            "@type": "uco-observable:ObservableObject",
-            "uco-core:hasFacet":[
-                {
-                    "@type":"uco-observable:AccountFacet",
-                    "uco-observable:accountIssuer": "whatsapp_org",
-                    "uco-observable:accountIdentifier": "31647934784@s.whatsapp.net",
-                    "uco-observable:isActive": true
-                },
-                {
-                    "@type":"uco-observable:ApplicationAccountFacet",
-                    "uco-observable:application": "kb:whatsapp-868abc08-8c21-11e9-934e-0c4de9c21b53",
-                },
-                {
-                    "@type": "uco-observable:DigitalAccountFacet",
-                    "uco-observable:displayName": "Ares Lupin"
-                }
-           ]
-        }
-]
-{% endhighlight %}
-
-<p> WhatsApp Message: </p>
+<h5>WhatsApp Application</h5>
 
 {% highlight json %}
-[
-        {
-            "@id": "kb:message-ed5d35d6-6e7c-4099-80f4-1fadfc0ee08c",
-            "@type": "uco-observable:ObservableObject",
-            "uco-core:hasFacet": [
-                {
-                    "@type": "uco-observable:MessageFacet",
-                    "uco-observable:messageText": "20 minutes away",
-                    "uco-observable:application": {"@id": "kb:868abc08-8c21-11e9-934e-0c4de9c21b53"},
-                    "uco-observable:sentTime": {
-                        "@type": "xsd:dateTime",
-                        "@value": "2018-12-04T19:12:56.00Z"
-                    },
-                    "uco-observable:from": {"@id": "kb:account-90652808-7341-40d3-9285-774d865ad3f9"},
-                    "uco-observable:to": [
-                        {"@id": "kb:account-865734c8-8c21-11e9-934e-0c4de9c21b53"}
-                    ],
-					"uco-observable:messageType": "outgoing"
-
-                }
-            ]
-        }
-        ]
-{% endhighlight %}
-
-<p>Relationship Object (WhatsApp Message Contained_Within File msgstore.db at offset 293822 in messages table) </p>
-{% highlight json %}
-[
-        {
-            "@id": "kb:relationship-c316c405-9326-4f28-9b8d-44a3bb9e7283",
-            "@type": "uco-observable:ObservableRelationship",
-            "uco-core:source": {
-               "@id": "kb:message-ed5d35d6-6e7c-4099-80f4-1fadfc0ee08c"
-            },
-            "uco-core:target": [
-              {
-                "@id": "kb:msgstordb-16805dff-05f9-4cba-9266-d5fa712f3d8f"
-              }
-		     ],
-		    "uco-core:kindOfRelationship": {
-              "@type": "uco-observable:ObservableObjectRelationshipVocab",
-              "@value": "Contained_Within"
-		    },
-		    "uco-observable:isDirectional": true,
-		    "uco-core:hasFacet": [
-             {
-                  "@type":"uco-observable:DataRangeFacet",
-                  "uco-observable:rangeOffset": 293822‬, ‬‬‬‬‬‬‬‬‬‬‬
-                  "uco-observable:rangeSize": 477952
-              },
-              {
-                  "@type": "drafting:TableRelation",
-                  "drafting:path": "messages"
-              }
-           ]
-        }
-]
-{% endhighlight %}
-	
-
-
-
-<p> File msgstore.db </p>
-{% highlight json %}
-[
-    {
-        "@id": "kb:msgstoredb-16805dff-05f9-4cba-9266-d5fa712f3d8f",
-        "@type": "uco-observable:ObservableObject",
-        "uco-core:hasFacet": [
-            {
-                "@type": "uco-observable:FileFacet",
-                "uco-observable:createdTime": {
-                    "@type": "xsd:dateTime",
-                    "@value": "2018-12-11T08:49:00.00Z"
-                },
-                "uco-observable:fileSystemType": "EXT3",
-                "uco-observable:extension": "db",
-                "uco-observable:fileName": "/data/com.whatsapp/databases/msgstore.db",
-                "uco-observable:isDirectory": false,
-                "uco-observable:sizeInBytes": {
-                    "@type": "xsd:long",
-                    "@value": 327680
-                }
-            },
-            {
-                "@type": "uco-observable:ContentDataFacet",
-                "uco-observable:hash": [
-                    {
-                        "@type": "uco-types:Hash",
-                        "uco-types:hashMethod": {
-                            "@type": "uco-core:HashNameEnum",
-                            "@value": "SHA256"
-                        },
-                        "uco-types:hashValue": {
-                            "@type": "xsd:hexBinary",
-                            "@value": "a13225720074371d56a4f4d5117fbb4953c5b1d316b31f21edcb7ed8fdf66c6e"
-                        }
-                    }
-                ]
-            }
-        ]
-    }
-]
-{% endhighlight %}
-
-<p>Relationship Object (WhatsApp SQLite database file Contained_Within forensic copy of mobile device) </p>
-
-{% highlight json %}
-[
-        {
-            "@id": "kb:relationship-c316c405-9326-4f28-9b8d-44a3bb9e7283",
-            "@type": "uco-observable:ObservableRelationship",
-            "uco-core:source": {
-               "@id": "kb:msgstoredb-16805dff-05f9-4cba-9266-d5fa712f3d8f"
-            },
-            "uco-core:target": [
-              {
-                "@id": "kb:forensiccopy-309bc178-1836-47b7-aa15-94ea3a2c7401"
-              }
-		     ],
-		    "uco-core:kindOfRelationship": {
-              "@type": "uco-observable:ObservableObjectRelationshipEnum",
-              "@value": "Contained_Within"
-		    },
-		    "uco-observable:isDirectional": true,
-		    "uco-core:hasFacet": [
-              {
-                  "@type": "uco-observable:PathRelation",
-                  "uco-observable:path": "/data/com.whatsapp/databases/msgstore.db"
-              }
-           ]
-        }
-]
-{% endhighlight %}
-
-<h4>Email </h4>
-
-<p>CASE Representation </p>
-{% highlight json %}
-[
-        {
-            "@id": "kb:EmailMessage-2c032220-8c21-11e9-9c99-0c4de9c21b53",
-            "@type": "uco-observable:ObservableObject",
-            "uco-core:hasFacet": [
-                {
-                    "@type": "uco-observable:EmailMessageFacet",
-                    "uco-observable:application": {"@id": "kb:Gmail-uuid"},
-                    "uco-observable:sender": {"@id": "kb:EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53"},
-                    "uco-observable:sentTime": {"@type": "xsd:dateTime", "@value": "2018-11-20T21:28:07.00Z"},
-                    "uco-observable:subject": “Re: Bank transfer ?”,
-                    "uco-observable:bodyRaw": "Excellent - we need all the help we can get. Sent from my Samsung Galaxy smartphone",
-                    "uco-observable:fromRef": null,
-                    "uco-observable:toRef": null,
-                    "uco-observable:ccRefs": null,
-                    "uco-observable:bccRefs": null,
-                    "uco-observable:messageID": "CAKBqNfyKo+pvHkJy6kwO82jTbkNA@mail.gmail.com"
-                }
-            ]
-        },
-{
-  "@id": "kb:456a2bac-8c21-11e9-8902-0c4de9c24de5",
-  "@type": "uco-observable:ObservableObject",
-  "uco-core:hasFacet": [
-    {
-      "@type": "uco-observable:EmailAddressFacet",
-      "uco-observable:value": "badquinn3@gmail.com "
-    }
-  ]
-},
-{
-  "@id": "kb:email-account-99d72bac-8c21-11e9-8902-0c4de9c21b53",
-  "@type": "uco-observable:ObservableObject",
-  "uco-core:hasFacet": [
-    {
-      "@type": "uco-observable:AccountFacet OR DigitalAccountFacet?",
-      "uco-observable:displayName": "Harley Quinn"
-    },
-    {
-      "@type": "uco-observable:EmailAccountFacet",
-      "uco-observable:emailAddress": "kb:456a2bac-8c21-11e9-8902-0c4de9c24de5"
-    }
-  ]
-}
-]
+@CROSSOVER_WHATSAPP_APPLICATION_JSON@
 {% endhighlight %}
 
 
+<h5> WhatsApp Account</h5>
+{% highlight json %}
+@CROSSOVER_WHATSAPP_ACCOUNT_JSON@
+{% endhighlight %}
 
-<h4>URL History </h4>
 
-<p>Cellebrite XML</p>
+<h5>WhatsApp Message</h5>
 
+{% highlight json %}
+@CROSSOVER_WHATSAPP_MESSAGE_JSON@
+{% endhighlight %}
+
+
+<h5>Relationship Object</h5>
+
+<p>The WhatsApp message was contained within the file <samp>msgstore.db</samp> at offset <samp>293822</samp> in the <samp>messages</samp> table.</p>
+
+{% highlight json %}
+@CROSSOVER_WHATSAPP_MESSAGE_FILE_RELATIONSHIP_JSON@
+{% endhighlight %}
+
+
+<h5>File msgstore.db</h5>
+
+{% highlight json %}
+@CROSSOVER_WHATSAPP_FILE_MSGSTORE_DB_JSON@
+{% endhighlight %}
+
+
+<h5>Relationship Object</h5>
+
+<p>The WhatsApp SQLite database file was contained within the forensic copy of the mobile device.</p>
+
+{% highlight json %}
+@CROSSOVER_WHATSAPP_FILE_FORENSIC_COPY_RELATIONSHIP_JSON@
+{% endhighlight %}
+
+
+<h3>Email</h3>
+
+
+<h4>CASE Representation</h4>
+
+{% highlight json %}
+@CROSSOVER_EMAIL_JSON@
+{% endhighlight %}
+
+
+<h3>URL History</h3>
+
+
+<h4>Cellebrite XML</h4>
 
 {% highlight xml %}
      <model type="VisitedPage" id="39ff4987-8ae5-47e3-8369-dbd0d5f79398" deleted_state="Intact" decoding_confidence="High" isrelated="False" extractionId="0">
@@ -1275,117 +683,8 @@ Ares Lupin, aresthewerewolf@gmail.com, with a phone number +31647934784 associat
 {% endhighlight %}
 
 
-
-
-<p>CASE Representation</p>
-
+<h4>CASE Representation</h4>
 
 {% highlight json %}
-[
-{
-   "@id": "kb:39ff4987-8ae5-47e3-8369-dbd0d5f79398", 
-   "@type":"uco-observable:ObservableObject", 
-   "uco-core:hasFacet":[
-   {
-    "@type": "uco-observable:URLFacet", 
-    "uco-observable:fullValue": "https://www.friday-magazine.ch/fr/",
-    }
-  ]
-},
-{
-   "@id": "kb:860FC853-9C3F-41FC-B144-8AC80D8F5849", 
-   "@type":"uco-observable:ObservableObject", 
-   "uco-core:hasFacet":[
-   {
-     "@id": "kb:860FC853-9C3F-41FC-B144-8AC80D8F5849-URLHistory", 
-     "@type":"uco-observable:URLHistoryFacet", 
-     "uco-observable:urlHistoryEntry": [
-      { 
-        "uco-observable:firstVisit": {
-            "@type": "xsd:dateTime",
-            "@value": "2018-12-06T18:52:21Z"
-        },
-        "uco-observable:lastVisit": {
-            "@type": "xsd:dateTime",
-            "@value": "2017-01-25T02:20:22.00Z"
-        }, 
-        "uco-observable:expiration": "NULL", 
-        "uco-observable:browserInformation": {"@id": "kb:5d96df90-d9e1-423c-b8db-c2327812ab38"},
-        "uco-observable:browserUserProfile": {"@id": "kb:profile--account-uuid"},
-        "uco-observable:url": {"@id": "kb:39ff4987-8ae5-47e3-8369-dbd0d5f79398"}, 
-        "uco-observable:referrerUrl": {"@id": "kb:14354987-8ae5-47e3-8369-dbd0d5f77489"},
-        "uco-observable:pageTitle": "Friday Magazine | Home",
-        "uco-observable:visitCount": 1,
-        "uco-observable:manuallyEnteredCount": 0,
-     	"drafting:allocationStatus": "allocated",
-        "uco-observable:keywordSearchTerm": NULL
-
-   }
-  ]
-},
-{
-  "@id": "kb:2AF6FCF3-91D3-4457-9333-ABAB67F8FB91",
-  "@type": "uco-observable:ObservableObject",
-  "uco-core:tag": ["Database"],
-  "uco-core:hasFacet": [
-    {
-      "@type": "uco-observable:FileFacet",
-      "uco-observable:fileName": "History",
-      "uco-observable:filePath": "/data/com.android.chrome/app_chrome/Default/History",
-      "drafting:fileLocalPath": "files/Database/History",
-      "uco-observable:extension": "NULL",
-      "uco-observable:isDirectory": false,
-      "uco-observable:sizeInBytes": 122880,
-      "uco-observable:createdTime": {"@type": "xsd:dateTime", "@value": "2018-06-10T16:41:40.00Z"},
-      "uco-observable:modifiedTime": {"@type": "xsd:dateTime", "@value": "2018-12-09T13:58:47.00Z"},
-      "uco-observable:accessedTime": {"@type": "xsd:dateTime", "@value": "2018-06-10T16:41:40.00Z"}
-    },
-    {
-      "@type": "uco-observable:ExtInodeFacet",
-      "uco-observable:extInodeID": ‭‭522962,‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬
-      "uco-observable:extSGID": 10092,
-      ‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬"uco-observable:extSUID": 10092,‬‬‬‬‬‬‬‬‬‬
-      "uco-observable:extInodeChangeTime": "__NOT_PROVIDED"
-    },                                                                  {
-    {
-      "@type": "uco-observable:ContentDataFacet",
-      "uco-observable:hash": [
-        {
-          "@type":"uco-types:Hash",
-          "uco-types:hashMethod": {
-            "@type": "uco-vocabulary:HashNameVocab"
-            "@value": "MD5"
-          },
-          "uco-types:hashValue": {
-            "@type": "xsd:hexBinary",
-            "@value": "7434d3a6c61c2244d6f3a0491c144568"
-          }
-        }
-      ]
-    }
-  ]
-}, 
-{
-  "@id": "kb:9A3FFCF3-91D3-4457-9333-ABAB67F8AB4F",
-  "@type": "uco-observable:CyberRelationship",
-  "uco-core:source": {"@id": "kb:860FC853-9C3F-41FC-B144-8AC80D8F5849-URLHistory"},
-  "uco-core:target": {"@id": "kb:2AF6FCF3-91D3-4457-9333-ABAB67F8FB91"},
-  "uco-core:isDirectional": true,
-  "uco-core:kindOfRelationship": {
-    "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-    "@value": "Contained_Within"
-  },
-  "uco-core:hasFacet": [
-    {
-      "@type": "uco-observable:DataRangeFacet",
-      "uco-observable:rangeOffset": 22215, "uco-observable:rangeSize": null
-    },
-    {
-      "@type": "drafting:TableRelation",
-      "drafting:tableName": "urls"
-    }
-  ]
-}
-]
+@CROSSOVER_URL_HISTORY_JSON@
 {% endhighlight %}
-<!--BOOKMARK v-->

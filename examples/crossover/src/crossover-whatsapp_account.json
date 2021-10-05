@@ -1,0 +1,22 @@
+[
+{
+		    "@id": "kb:account-90652808-7341-40d3-9285-774d865ad3f9",
+            "@type": "uco-observable:ObservableObject",
+            "uco-core:hasFacet":[
+                {
+                    "@type":"uco-observable:AccountFacet",
+                    "uco-observable:accountIssuer": "whatsapp_org",
+                    "uco-observable:accountIdentifier": "31647934784@s.whatsapp.net",
+                    "uco-observable:isActive": true
+                },
+                {
+                    "@type":"uco-observable:ApplicationAccountFacet",
+                    "uco-observable:application": "kb:whatsapp-868abc08-8c21-11e9-934e-0c4de9c21b53"
+                },
+                {
+                    "@type": "uco-observable:DigitalAccountFacet",
+                    "uco-observable:displayName": "Ares Lupin"
+                }
+           ]
+        }
+]

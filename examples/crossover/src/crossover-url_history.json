@@ -1,0 +1,105 @@
+[
+{
+   "@id": "kb:39ff4987-8ae5-47e3-8369-dbd0d5f79398", 
+   "@type":"uco-observable:ObservableObject", 
+   "uco-core:hasFacet":[
+   {
+    "@type": "uco-observable:URLFacet", 
+    "uco-observable:fullValue": "https://www.friday-magazine.ch/fr/"
+    }
+  ]
+},
+{
+   "@id": "kb:860FC853-9C3F-41FC-B144-8AC80D8F5849", 
+   "@type":"uco-observable:ObservableObject", 
+   "uco-core:hasFacet":[
+   {
+     "@id": "kb:860FC853-9C3F-41FC-B144-8AC80D8F5849-URLHistory", 
+     "@type":"uco-observable:URLHistoryFacet", 
+     "uco-observable:urlHistoryEntry": [
+      { 
+        "uco-observable:firstVisit": {
+            "@type": "xsd:dateTime",
+            "@value": "2018-12-06T18:52:21Z"
+        },
+        "uco-observable:lastVisit": {
+            "@type": "xsd:dateTime",
+            "@value": "2017-01-25T02:20:22.00Z"
+        }, 
+        "uco-observable:expiration": "NULL", 
+        "uco-observable:browserInformation": {"@id": "kb:5d96df90-d9e1-423c-b8db-c2327812ab38"},
+        "uco-observable:browserUserProfile": {"@id": "kb:profile--account-uuid"},
+        "uco-observable:url": {"@id": "kb:39ff4987-8ae5-47e3-8369-dbd0d5f79398"}, 
+        "uco-observable:referrerUrl": {"@id": "kb:14354987-8ae5-47e3-8369-dbd0d5f77489"},
+        "uco-observable:pageTitle": "Friday Magazine | Home",
+        "uco-observable:visitCount": 1,
+        "uco-observable:manuallyEnteredCount": 0,
+     	"drafting:allocationStatus": "allocated",
+        "uco-observable:keywordSearchTerm": null
+   }
+  ]
+},
+{
+  "@id": "kb:2AF6FCF3-91D3-4457-9333-ABAB67F8FB91",
+  "@type": "uco-observable:ObservableObject",
+  "uco-core:tag": ["Database"],
+  "uco-core:hasFacet": [
+    {
+      "@type": "uco-observable:FileFacet",
+      "uco-observable:fileName": "History",
+      "uco-observable:filePath": "/data/com.android.chrome/app_chrome/Default/History",
+      "drafting:fileLocalPath": "files/Database/History",
+      "uco-observable:extension": "NULL",
+      "uco-observable:isDirectory": false,
+      "uco-observable:sizeInBytes": 122880,
+      "uco-observable:createdTime": {"@type": "xsd:dateTime", "@value": "2018-06-10T16:41:40.00Z"},
+      "uco-observable:modifiedTime": {"@type": "xsd:dateTime", "@value": "2018-12-09T13:58:47.00Z"},
+      "uco-observable:accessedTime": {"@type": "xsd:dateTime", "@value": "2018-06-10T16:41:40.00Z"}
+    },
+    {
+      "@type": "uco-observable:ExtInodeFacet",
+      "uco-observable:extInodeID": 522962,
+      "uco-observable:extSGID": 10092,
+      "uco-observable:extSUID": 10092,
+      "uco-observable:extInodeChangeTime": "__NOT_PROVIDED"
+    },                                                                  {
+    {
+      "@type": "uco-observable:ContentDataFacet",
+      "uco-observable:hash": [
+        {
+          "@type":"uco-types:Hash",
+          "uco-types:hashMethod": {
+            "@type": "uco-vocabulary:HashNameVocab",
+            "@value": "MD5"
+          },
+          "uco-types:hashValue": {
+            "@type": "xsd:hexBinary",
+            "@value": "7434d3a6c61c2244d6f3a0491c144568"
+          }
+        }
+      ]
+    }
+  ]
+}, 
+{
+  "@id": "kb:9A3FFCF3-91D3-4457-9333-ABAB67F8AB4F",
+  "@type": "uco-observable:CyberRelationship",
+  "uco-core:source": {"@id": "kb:860FC853-9C3F-41FC-B144-8AC80D8F5849-URLHistory"},
+  "uco-core:target": {"@id": "kb:2AF6FCF3-91D3-4457-9333-ABAB67F8FB91"},
+  "uco-core:isDirectional": true,
+  "uco-core:kindOfRelationship": {
+    "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
+    "@value": "Contained_Within"
+  },
+  "uco-core:hasFacet": [
+    {
+      "@type": "uco-observable:DataRangeFacet",
+      "uco-observable:rangeOffset": 22215, "uco-observable:rangeSize": null
+    },
+    {
+      "@type": "drafting:TableRelation",
+      "drafting:tableName": "urls"
+    }
+  ]
+}
+]
