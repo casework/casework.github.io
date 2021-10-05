@@ -100,7 +100,7 @@ jumbo_desc: Cellebrite XML Report Example
 
 <h3>EVIDENCE EXTRACTION</h3>
 
-<p>When a Cellebrite UFED acquisition contains data about the original forensic extraction process, these details will be in the XML section <code>&lt;metadata section="Extraction Data"&gt;</code> which can be represented as an Investigative Action in CASE.</p>
+<p>When a Cellebrite UFED acquisition contains data about the original forensic extraction process, these details will be in the XML section <samp>&lt;metadata section="Extraction Data"&gt;</samp> which can be represented as an Investigative Action in CASE.</p>
 
 
 <h4>Cellebrite XML</h4>
@@ -202,22 +202,22 @@ jumbo_desc: Cellebrite XML Report Example
 @CROSSOVER_ANDROID_DEVICE_PROPERTIES_JSON@
 {% endhighlight %}
 
-<!--BOOKMARK ^-->
-<!-- Go over this -->
+
 <h3>SIM CARDS</h3>
-<p>Cellebrite XML provides a current SIM phone number of<!-- 3662158453-->  with an associated SIM ICCID of<!-- 89390100002217635543-->  and a “SIM Change Time” as a string “10.06.2018 14:35(UTC+0)”. </p>
 
-<p>Forensic examination of the physical forensic copy using Autopsy finds the source of this information is the “system/SimCard.dat” file. The raw values obtained using Autopsy are listed here, including SIMChangeTime in UNIX timestamp format: </p>
+<p>Cellebrite XML provides a current SIM phone number of <samp>3662158453</samp> with an associated SIM ICCID of <samp>89390100002217635543</samp>  and a "SIM Change Time" as a string <samp>"10.06.2018 14:35(UTC+0)"</samp>.</p>
 
-<p> <!--
-CurrentSimSerialNumber=89390100002217635543
-CurrentSimPhoneNumber=3662158453
-SimChangeTime=1528641355649 
--->  </p>
+<p>Forensic examination of the physical forensic copy using Autopsy finds the source of this information is the <samp>system/SimCard.dat</samp> file. The raw values obtained using Autopsy are listed here, including SIMChangeTime in UNIX timestamp format:</p>
 
+<blockquote><samp>
+CurrentSimSerialNumber=89390100002217635543<br />
+CurrentSimPhoneNumber=3662158453<br />
+SimChangeTime=1528641355649<br />
+</samp></blockquote>
 
-<p>In actuality, the current SIM card ICCID is 8931088918010550289, as listed in the “siminfo” table of the “data/com.android.providers.telephony/databases/telephony.db” database. This SIM card has a different phone number than the one displayed by Cellebrite. The current SIM card was placed in the Samsung device on 2018-11-16T12:34:28Z. </p>
+<p>In actuality, the current SIM card ICCID is <samp>8931088918010550289</samp>, as listed in the "<samp>siminfo</samp>" table of the <samp>data/com.android.providers.telephony/databases/telephony.db</samp> database. This SIM card has a different phone number than the one displayed by Cellebrite. The current SIM card was placed in the Samsung device on <samp>2018-11-16T12:34:28Z</samp>.</p>
 
+<!--BOOKMARK ^-->
 {% highlight json %}
 [
 {
