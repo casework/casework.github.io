@@ -1,0 +1,85 @@
+[
+    {
+        "@id": "kb:cellebrite-ufed1-uuid",
+        "@type": "uco-tool:Tool",
+        "uco-core:name": "UFED",
+        "uco-tool:toolType": "Extraction",
+        "drafting:toolIdentifier": "557488159",
+        "uco-tool:creator": "Cellebrite",
+        "uco-tool:version": "7.1.0.751",
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-tool:ToolConfigurationType",
+                "uco-tool:configurationSetting": [
+                    {
+                        "@type": "uco-tool:ConfigurationSettingType",
+                        "uco-tool:itemName": "DeviceInfoConnectionType",
+                        "uco-tool:itemValue": "Cable No. 130"
+                    },
+                    {
+                        "@type": "uco-tool:ConfigurationSettingType",
+                        "uco-tool:itemName": "ExtractionType",
+                        "uco-tool:itemValue": "Physical"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "@id": "kb:investigative-action1-uuid",
+        "@type": "case-investigation:InvestigativeAction",
+        "uco-core:name": "extracted",
+        "uco-core:startTime": {
+            "@type": "xsd:dateTime",
+            "@value": "2018-12-11T08:49:00.00Z"
+        },
+        "uco-core:endTime": {
+            "@type": "xsd:dateTime",
+            "@value": "2018-12-11T09:54:00.00Z"
+        },
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-action:ActionReferences",
+                "uco-action:location": {
+                    "@id": "kb:esc-lausanne-uuid"
+                },
+                "uco-action:performer": {
+                    "@id": "kb:investigator1-uuid"
+                },
+                "uco-action:instrument": {
+                    "@id": "kb:cellebrite-ufed1-uuid"
+                },
+                "uco-action:environment": {
+                    "@id": "kb:forensic-computer1-uuid"
+                },
+                "uco-action:object": [
+                    {
+                        "@id": "kb:provenance-record1-uuid"
+                    },
+                    {
+                        "@id": "kb:samsung-device-uuid"
+                    }
+                ],
+                "uco-action:result": [
+                    {
+                        "@id": "kb:provenance-record2-uuid"
+                    },
+                    {
+                        "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "@id": "kb:provenance-record13-uuid",
+        "@type": "case-investigation:ProvenanceRecord",
+        "uco-cose:description": "Forensic duplicate of mobile device used by Ares Lupin",
+        "case-investigation:exhibitNumber": "20181211001-002",
+        "uco-core:object": [
+            {
+                "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
+            }
+        ]
+    }
+]
