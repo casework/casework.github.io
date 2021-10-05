@@ -83,7 +83,7 @@ jumbo_desc: Cellebrite XML Report Example
     <item name="DeviceInfoCreationTime" systemtype="System.String"><![CDATA[12/04/2020 11:32:12]]></item>
     <item name="UFED_PA_Version" systemtype="System.String"><![CDATA[7.1.0.106]]></item>
   </metadata>
-  {% endhighlight %}
+{% endhighlight %}
 
 
 <h4>CASE Representation of Report Generation</h4>
