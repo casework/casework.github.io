@@ -123,114 +123,35 @@ jumbo_desc: Cellebrite XML Report Example
 @CROSSOVER_DATA_EXTRACTION_JSON@
 {% endhighlight %}
 
-<!--BOOKMARK ^-->
 <p>The role of investigator should be linked to an entity, such as a person and/or organization. This is not represented in the current Cellebrite XML report, and is represented here using CASE.</p>
 
 {% highlight json %}
-[
-{
-   	"@id": "kb:eoghancasey-uuid",
-   	"@type": "uco-identity:Identity",
-   	"uco-core:hasFacet":[
-   	{
-      		"@type":"uco-identity:SimpleName",
-      		"uco-identityfirstName":"Eoghan",
-      		"uco-identitygivenName":"Casey"
-   		}
-   	   ]
-},
-{
-   		"@id": "kb:investigator1-uuid", 
-   		"@type": "uco-core:Role",
-   		"uco-core:name": "Investigator"
-},
-{
-   		"@id": "kb:investigatorrole-uuid", 
-   		"@type": "uco-core:Relationship",
-   		"uco-core:source": {"@id":" "kb:eoghancasey-uuid" },
-   		"uco-core:target": {"@id":" "kb:investigator1-uuid" },
-   		"uco-core:kindOfRelationship": "Has_Role",
-   		"uco-core:isDirectional": true
-}
-]
-
+@CROSSOVER_INVESTIGATOR_ROLE_JSON@
 {% endhighlight %}
 
 
 <h3>EVIDENCE INTEGRITY</h3>
-<p> The integrity of digital evidence is verified by comparing the hash value(s) of the working copy with the documented hash value(s) computed when the data was originally extracted. In this investigation, the original integrity information was documented using a secure blockchain-based electronic chain of custody ledger.
 
-NOTE: Cellebrite XML does not include hash of original data (values obtained using Autopsy)</p>
-
-<p>CASE Representation of Integrity Details</p>
-
-{% highlight json %}
-[
-  {
-	  "@id": "kb:provenance-record13-uuid",
-
-	  "@type": "case-investigation:ProvenanceRecord",
-	  "uco-core:description": "Forensic duplicate of smartphone used by subject",
-	  "case-investigation:exhibitNumber": "002",
-	  "uco-core:object":  [
-	    { "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748" }
-	  ]
-	  },
-	  {
-	      "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748",
-	      "@type": "uco-observable:ObservableObject",
-	      "uco-core:hasFacet": [
-	        {
-	          "@type": "uco-observable:FileFacet",
-	          "uco-observable:createdTime": {
-	            "@type": "xsd:dateTime",
-	            "@value": "2018-12-11T08:49:00.00Z"
-	          },
-	          "uco-observable:extension": "bin",
-	          "uco-observable:fileName": "LGE Nexus 5 Full Image.raw",
-	          "uco-observable:fileSystemType": "NTFS",
-	          "uco-observable:filePath": "E:\Evidence\UFED Samsung GSM SM-G925F Galaxy S6 Edge 2018_12_11 (002)\Physical Boot Loader (Recommended) 01\blk0_sda.bin",
-	          "uco-observable:isDirectory": false,
-	          "uco-observable:sizeInBytes": 31989956608
-	        },
-	        {
-	      "@type": "uco-observable:ContentDataFacet",
-      "uco-observable:hash": [
-        {
-          "@type": "uco-observable:Hash",
-          "uco-types:hashMethod": {
-            "@type": "uco-vocabulary:HashNameVocab",
-            "@value": "MD5"
-          },
-          "uco-types:hashValue": {
-            "@type": "xsd:hexBinary",
-            "@value": "569D5663179237798264E2669281DCD7"
-          }
-        },
-        {
-          "@type": "uco-observable:Hash",
-          "uco-types:hashMethod": {
-            "@type": "uco-vocabulary:HashNameVocab",
-            "@value": "SHA1"
-          },
-            "uco-types:hashValue": {
-              "@type": "xsd:hexBinary",
-              "@value": "F46EE05CE1A2210501EA512ED9E4C7EC59222CCA"
-            }
-          }
-        }
-      ]
-  }
-]
-{% endhighlight %}
-
-<h3>EVIDENCE INTEGRITY</h3>
 <p>The integrity of digital evidence is verified by comparing the hash value(s) of the working copy with the documented hash value(s) computed when the data was originally extracted. In this investigation, the original integrity information was documented using a secure blockchain-based electronic chain of custody ledger.</p>
 
-<p>NOTE: Cellebrite XML does not include hash of original data (values obtained using Autopsy) </p>
+<p>NOTE: Cellebrite XML does not include hash of original data (values obtained using Autopsy)</p>
 
-<p>CASE Representation of Integrity Details</p>
+<h4>CASE Representation of Integrity Details</h4>
 
+{% highlight json %}
+@CROSSOVER_INTEGRITY_DETAILS_JSON@
+{% endhighlight %}
+
+
+<h3>EVIDENCE INTEGRITY</h3>
+
+<p>The integrity of digital evidence is verified by comparing the hash value(s) of the working copy with the documented hash value(s) computed when the data was originally extracted. In this investigation, the original integrity information was documented using a secure blockchain-based electronic chain of custody ledger.</p>
+
+<p>NOTE: Cellebrite XML does not include hash of original data (values obtained using Autopsy)</p>
+
+<h4>CASE Representation of Integrity Details</h4>
+
+<!--BOOKMARK ^-->
 {% highlight json %}
 [
   {

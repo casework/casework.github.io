@@ -1,0 +1,30 @@
+[
+    {
+        "@id": "kb:eoghancasey-uuid",
+        "@type": "uco-identity:Identity",
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-identity:SimpleName",
+                "uco-identityfirstName": "Eoghan",
+                "uco-identitygivenName": "Casey"
+            }
+        ]
+    },
+    {
+        "@id": "kb:investigator1-uuid",
+        "@type": "uco-core:Role",
+        "uco-core:name": "Investigator"
+    },
+    {
+        "@id": "kb:investigatorrole-uuid",
+        "@type": "uco-core:Relationship",
+        "uco-core:source": {
+            "@id": "kb:eoghancasey-uuid"
+        },
+        "uco-core:target": {
+            "@id": "kb:investigator1-uuid"
+        },
+        "uco-core:kindOfRelationship": "Has_Role",
+        "uco-core:isDirectional": true
+    }
+]
