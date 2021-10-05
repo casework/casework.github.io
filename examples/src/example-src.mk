@@ -80,7 +80,7 @@ check-normalized-%.json: \
 # (Pytest exits in an error state if called with no tests found.)
 check-pytest: \
   generated-$(example_name)-wasInformedBy.json
-	test 0 -eq $$(/bin/ls *_test.py test_*.py | wc -l) \
+	test 0 -eq $$(/bin/ls *_test.py test_*.py 2>/dev/null | wc -l) \
 	  || ( \
 	    source $(top_srcdir)/venv/bin/activate \
 	      && pytest \
