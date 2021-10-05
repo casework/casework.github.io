@@ -53,6 +53,7 @@ The changes will be copied into place when `make` is run again in any directory 
 
 Before posting your patch for a Pull Request, run `make check` from the top directory.  Any generated changes not yet committed will raise a friendly error to encourage you to commit the revisions.
 
+
 #### Adding JSON snippets or queries
 
 Following the name scheme `$(example_name)-*.json` and `query-*.sparql` and the "upper-case, under-score" substitution pattern in `index.html.in` will be sufficient to add a new JSON-LD snippet or SPARQL query.
