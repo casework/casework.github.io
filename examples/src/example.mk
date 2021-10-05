@@ -68,11 +68,11 @@ check: \
 	git diff \
 	  --exit-code \
 	  $(example_name).json \
-	  || (echo "UPDATE:examples/$(example_name):The generated $(example_name).json does not match the Git-tracked $(example_name).json.  If the above reported changes look fine, run 'cp src/generated-$(example_name).json $(example_name).json' to get a file ready to commit to Git." >&2 ; exit 1)
+	  || (echo "UPDATE:examples/$(example_name):The generated $(example_name).json does not match the Git-tracked $(example_name).json.  If the above reported changes look fine, run a 'git commit' including $(example_name).json." >&2 ; exit 1)
 	git diff \
 	  --exit-code \
 	  index.html \
-	  || (echo "UPDATE:examples/$(example_name):The generated index.html does not match the Git-tracked index.html.  If the above reported changes look fine, run 'cp src/generated-index.html index.html' to get a file ready to commit to Git." >&2 ; exit 1)
+	  || (echo "UPDATE:examples/$(example_name):The generated index.html does not match the Git-tracked index.html.  If the above reported changes look fine, run a 'git commit' including index.html." >&2 ; exit 1)
 
 clean:
 	@$(MAKE) \
