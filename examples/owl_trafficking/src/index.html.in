@@ -53,7 +53,7 @@ jumbo_desc: CASE Narrative on Trafficking
 <div class="card">
   <h5 class="card-header" id="query-imaging_action">Query - imaging action</h5>
   <div class="card-body">
-    <p class="card-text">For the seized device, exhibit number <code>SD1</code>, when was it imaged?  Who imaged it?  What tool and tool version did they use?  What is the name of the resulting image file? (<a href="urgent_evidence-query-imaging_action.sparql">SPARQL source</a>)</p>
+    <p class="card-text">For the seized device, exhibit number <code>SD1</code>, when was it imaged?  Who imaged it?  What tool and tool version did they use?  What is the name of the resulting image file? (<a href="src/query-imaging_action.sparql">SPARQL source</a>)</p>
 {% highlight sparql %}
 @QUERY_IMAGING_ACTION_SPARQL@
 {% endhighlight %}
@@ -73,7 +73,7 @@ jumbo_desc: CASE Narrative on Trafficking
 <div class="card">
   <h5 class="card-header" id="query-hash_verification">Query - hash verification</h5>
   <div class="card-body">
-    <p class="card-text">For the duplicate, labeled <code>MD1</code>, of the device <code>SD1</code>, what were its original hashes, and when were they made? (<a href="urgent_evidence-query-hash_verification.sparql">SPARQL source</a>)</p>
+    <p class="card-text">For the duplicate, labeled <code>MD1</code>, of the device <code>SD1</code>, what were its original hashes, and when were they made? (<a href="src/query-hash_verification.sparql">SPARQL source</a>)</p>
 {% highlight sparql %}
 @QUERY_HASH_VERIFICATION_SPARQL@
 {% endhighlight %}
