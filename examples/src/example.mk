@@ -33,7 +33,7 @@ all:
 	  index.html \
 	  > /dev/null \
 	  || ( \
-	    export TMP=$$(mktemp -t index.html.patch.XXXXXXXX) \
+	    export TMP=$$(mktemp -t index.html.XXXXXXXX) \
 	      && cat \
 	        index.html \
 	        > $$TMP \
@@ -44,7 +44,7 @@ all:
 	  $(example_name).json \
 	  > /dev/null \
 	  || ( \
-	    export TMP=$$(mktemp -t $(example_name).json.patch.XXXXXXXX) \
+	    export TMP=$$(mktemp -t $(example_name).json.XXXXXXXX) \
 	      && cat \
 	        $(example_name).json \
 	        > $$TMP \
