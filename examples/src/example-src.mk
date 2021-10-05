@@ -28,7 +28,7 @@ drafting_ttl := $(wildcard ../drafting.ttl)
 
 # Guarantee sort order of snippets when glomming into single file.
 example_snippets_json := \
-  $(shell find * -maxdepth 0 -name '$(example_name)-*.json' | sort)
+  $(shell find * -maxdepth 0 -name '$(example_name)-*.json' | LC_ALL=C sort)
 
 normalized_example_snippets_json := \
   $(foreach example_snippet_json,$(example_snippets_json),normalized-$(example_snippet_json))
