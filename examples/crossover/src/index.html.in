@@ -8,9 +8,8 @@ jumbo_desc: Cellebrite XML Report Example
 
 <p>This document uses CASE to represent digital evidence extracted from an Android device using Cellebrite, with Autopsy to fill in gaps. The physical image and scenario introduction can be downloaded from the following location: <a href="https://drive.switch.ch/index.php/s/0c7BiyQZRKOtMMq">https://drive.switch.ch/index.php/s/0c7BiyQZRKOtMMq</a>.</p>
 
-<!--TODO
 <p>The JSON-LD data on this page are available combined in the file <a href="crossover.json">crossover.json</a>.</p>
--->
+
 
 <h3>Disclaimers</h3>
 
@@ -32,6 +31,7 @@ jumbo_desc: Cellebrite XML Report Example
 
 <p>The mobile phone was retrieved and preserved as evidence on 11 December 2018 at 09:49 CET (physical extraction) using Cellebrite UFED.</p>
 
+
 <h3>Mandate</h3>
 
 <p>The prosecutor in these investigations has requested digital forensic analysis of the digital evidence for the following information:</p>
@@ -51,8 +51,11 @@ jumbo_desc: Cellebrite XML Report Example
   <li>Visual reconstruction of the most pertinent elements and entities (people and objects)</li>
 </ol>
 
+
 <h3>EVIDENCE PROVENANCE AND INTEGRITY</h3>
+
 <p>The initial step of the digital forensic analysis is to assess the provenance and integrity of the digital evidence and to examine device characteristics and identifiers. The overall CASE bundle provides context for the digital evidence.</p>
+
 
 <h4>CASE Representation of Investigation</h4>
 
@@ -60,9 +63,11 @@ jumbo_desc: Cellebrite XML Report Example
 @CROSSOVER_BASE_JSON@
 {% endhighlight %}
 
+
 <h3>INVESTIGATIVE ACTIONS</h3>
 
 <p>Which organization and/or individual generated the report using which tool, with general information about the investigation and evidential item entered by the user.</p>
+
 
 <h4>Cellebrite XML Report Generation</h4>
 
@@ -95,7 +100,8 @@ jumbo_desc: Cellebrite XML Report Example
 
 <h3>EVIDENCE EXTRACTION</h3>
 
-<p>When a Cellebrite UFED acquisition contains data about the original forensic extraction process, these details will be in the XML section <code>&lt;metadata section="Extraction Data"&gt;</code> which can be represented as an Investigative Action in CASE. </p>
+<p>When a Cellebrite UFED acquisition contains data about the original forensic extraction process, these details will be in the XML section <code>&lt;metadata section="Extraction Data"&gt;</code> which can be represented as an Investigative Action in CASE.</p>
+
 
 <h4>Cellebrite XML</h4>
 
@@ -136,6 +142,7 @@ jumbo_desc: Cellebrite XML Report Example
 
 <p>NOTE: Cellebrite XML does not include hash of original data (values obtained using Autopsy)</p>
 
+
 <h4>CASE Representation of Integrity Details</h4>
 
 {% highlight json %}
@@ -143,75 +150,7 @@ jumbo_desc: Cellebrite XML Report Example
 {% endhighlight %}
 
 
-<h3>EVIDENCE INTEGRITY</h3>
-
-<p>The integrity of digital evidence is verified by comparing the hash value(s) of the working copy with the documented hash value(s) computed when the data was originally extracted. In this investigation, the original integrity information was documented using a secure blockchain-based electronic chain of custody ledger.</p>
-
-<p>NOTE: Cellebrite XML does not include hash of original data (values obtained using Autopsy)</p>
-
-<h4>CASE Representation of Integrity Details</h4>
-
 <!--BOOKMARK ^-->
-{% highlight json %}
-[
-  {
-	  "@id": "kb:provenance-record13-uuid",
-
-	  "@type": "case-investigation:ProvenanceRecord",
-	  "uco-core:description": "Forensic duplicate of smartphone used by subject",
-	  "case-investigation:exhibitNumber": "002",
-	  "uco-core:object":  [
-	    { "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748" }
-	  ]
-	  },
-	  {
-	      "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748",
-	      "@type": "uco-observable:ObservableObject",
-	      "uco-core:hasFacet": [
-	        {
-	          "@type": "uco-observable:FileFacet",
-	          "uco-observable:createdTime": {
-	            "@type": "xsd:dateTime",
-	            "@value": "2018-12-11T08:49:00.00Z"
-	          },
-	          "uco-observable:extension": "bin",
-	          "uco-observable:fileName": "LGE Nexus 5 Full Image.raw",
-	          "uco-observable:fileSystemType": "NTFS",
-	          "uco-observable:filePath": "E:\Evidence\UFED Samsung GSM SM-G925F Galaxy S6 Edge 2018_12_11 (002)\Physical Boot Loader (Recommended) 01\blk0_sda.bin",
-	          "uco-observable:isDirectory": false,
-	          "uco-observable:sizeInBytes": 31989956608
-	        },
-	        {
-	      "@type": "uco-observable:ContentDataFacet",
-      "uco-observable:hash": [
-        {
-          "@type": "uco-observable:Hash",
-          "uco-types:hashMethod": {
-            "@type": "uco-vocabulary:HashNameVocab",
-            "@value": "MD5"
-          },
-          "uco-types:hashValue": {
-            "@type": "xsd:hexBinary",
-            "@value": "569D5663179237798264E2669281DCD7"
-          }
-        },
-        {
-          "@type": "uco-observable:Hash",
-          "uco-types:hashMethod": {
-            "@type": "uco-vocabulary:HashNameVocab",
-            "@value": "SHA1"
-          },
-            "uco-types:hashValue": {
-              "@type": "xsd:hexBinary",
-              "@value": "F46EE05CE1A2210501EA512ED9E4C7EC59222CCA"
-            }
-          }
-        }
-      ]
-  }
-]
-{% endhighlight json %}
-
 <h4>ACQUIRED DEVICE PROPERTIES</h4>
 <p>Cellebrite displays the following information about the forensic extraction. </p>
 <p style="text-align: center;"><img src="https://files.caseontology.org/casework.github.io/examples/crossover_wmd/extraction-20181211001-002.png" alt="Screenshot of Cellebrite extraction" /></p>
