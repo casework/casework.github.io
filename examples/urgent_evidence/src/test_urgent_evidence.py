@@ -20,8 +20,8 @@ import rdflib.plugins.sparql
 _logger = logging.getLogger(os.path.basename(__file__))
 
 graph = rdflib.Graph()
-graph.parse("urgent_evidence.json", format="json-ld")
-graph.parse("urgent_evidence-wasInformedBy.json", format="json-ld")
+graph.parse("generated-urgent_evidence.json", format="json-ld")
+graph.parse("generated-urgent_evidence-wasInformedBy.json", format="json-ld")
 
 # Inherit prefixes defined in input context dictionary.
 nsdict = {k:v for (k,v) in graph.namespace_manager.namespaces()}
@@ -54,7 +54,7 @@ def test_actions_to_photo(action_iris_all):
     _logger.debug("len(action_iris_ground_truth_negative) = %d.", len(action_iris_ground_truth_negative))
 
     select_query_text = None
-    with open("urgent_evidence-query-actions_to_artifact.sparql", "r") as in_fh:
+    with open("query-actions_to_artifact.sparql", "r") as in_fh:
         select_query_text = in_fh.read().strip()
     _logger.debug("select_query_text = %r." % select_query_text)
     select_query_object = rdflib.plugins.sparql.prepareQuery(select_query_text, initNs=nsdict)
@@ -86,7 +86,7 @@ def test_exhibit_photos():
     }
 
     select_query_text = None
-    with open("urgent_evidence-query-exhibit_photos.sparql", "r") as in_fh:
+    with open("query-exhibit_photos.sparql", "r") as in_fh:
         select_query_text = in_fh.read().strip()
     _logger.debug("select_query_text = %r." % select_query_text)
     select_query_object = rdflib.plugins.sparql.prepareQuery(select_query_text, initNs=nsdict)
@@ -114,7 +114,7 @@ def test_photo_selection():
     }
 
     select_query_text = None
-    with open("urgent_evidence-query-selection_from_automated_exhibit_extraction.sparql", "r") as in_fh:
+    with open("query-selection_from_automated_exhibit_extraction.sparql", "r") as in_fh:
         select_query_text = in_fh.read().strip()
     _logger.debug("select_query_text = %r." % select_query_text)
     select_query_object = rdflib.plugins.sparql.prepareQuery(select_query_text, initNs=nsdict)

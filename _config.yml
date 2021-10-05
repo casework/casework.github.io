@@ -53,14 +53,16 @@ exclude:
   - Makefile
   - README.md
   - dependencies/
+  - examples/*/Makefile
+  - examples/*/README.md
+  - examples/*/src/*.in
+  - examples/*/src/*.json
+  - examples/*/src/*.py
+  - examples/*/src/Makefile
   - examples/.gitignore
   - examples/Makefile
-  - examples/asgard/Makefile
-  - examples/asgard/asgard_*.json
-  - examples/asgard/asgard_json.py
-  - examples/asgard/index.html.in
-  - examples/urgent_evidence/Makefile
-  - examples/urgent_evidence/index.html.in
+  - examples/README.md
+  - examples/src/*.mk
   - releases/0.2.0/migration/.gitignore
   - releases/0.2.0/migration/Makefile
   - requirements.txt
