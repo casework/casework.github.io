@@ -1,17 +1,21 @@
 [
-   {
-   "@id": "kb:partition-uuid",
-   "@type": "uco-core:Relationship",
-   "uco-core:source": {"@id": "kb:userdata-partition-uuid"},
-   "uco-core:target": {"@id": "kb:blk0_sda.bin"},
-   "uco-core:kindOfRelationship": "Contained_Within",
-   "uco-core:isDirectional": true,
-   "uco-core:hasFacet": [
-	{
-         "@type": "uco-observable:DataRange",
-         "uco-observable:rangeOffset": 541196288,
-         "uco-observable:rangeSize": 3456630784
-	}
-     ]
-   }
+    {
+        "@id": "kb:partition-uuid",
+        "@type": "uco-core:Relationship",
+        "uco-core:source": {
+            "@id": "kb:userdata-partition-uuid"
+        },
+        "uco-core:target": {
+            "@id": "kb:blk0_sda.bin"
+        },
+        "uco-core:kindOfRelationship": "Contained_Within",
+        "uco-core:isDirectional": true,
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-observable:DataRange",
+                "uco-observable:rangeOffset": 541196288,
+                "uco-observable:rangeSize": 3456630784
+            }
+        ]
+    }
 ]

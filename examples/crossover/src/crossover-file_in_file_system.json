@@ -1,55 +1,59 @@
 [
-   {
-   "@id": "kb:filesystem-relationship-uuid",
-   "@type": "uco-core:Relationship",
-   "uco-core:source": {"@id": "kb:F7CAD990-6687-4849-89DC-55795675F3F5"},
-   "uco-core:target": {"@id": "kb:filesystem-uuid"},
-   "uco-core:kindOfRelationship": "Contained_Within",
-   "uco-core:isDirectional": true,
-   "uco-core:hasFacet": [
     {
-      "@type": "uco-observable:PathRelation",
-      "uco-observable:path": "/Root/data/com.google.android.gms/app_dg_cache/B0970DD8CBD5F4763E7C602156284D4DD796AE5D/the.apk"
+        "@id": "kb:filesystem-relationship-uuid",
+        "@type": "uco-core:Relationship",
+        "uco-core:source": {
+            "@id": "kb:F7CAD990-6687-4849-89DC-55795675F3F5"
+        },
+        "uco-core:target": {
+            "@id": "kb:filesystem-uuid"
+        },
+        "uco-core:kindOfRelationship": "Contained_Within",
+        "uco-core:isDirectional": true,
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-observable:PathRelation",
+                "uco-observable:path": "/Root/data/com.google.android.gms/app_dg_cache/B0970DD8CBD5F4763E7C602156284D4DD796AE5D/the.apk"
+            },
+            {
+                "@type": "uco-core:DataRange",
+                "uco-core:rangeOffset": 3121610752,
+                "uco-core:rangeSize": 147871
+            }
+        ]
     },
     {
-      "@type": "uco-core:DataRange",
-      "uco-core:rangeOffset": 3121610752,
-      "uco-core:rangeSize": 147871
+        "@id": "kb:userdata-partition-uuid",
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-observable:DiskPartitionFacet",
+                "uco-observable:diskPartitionType": "GPT",
+                "uco-observable:partitionID": "06",
+                "uco-observable:partitionOffset": 63,
+                "uco-observable:partitionLength": 245235063
+            },
+            {
+                "@type": "uco-observable:FileSystem",
+                "uco-observable:fileSystemType": "EXT3"
+            },
+            {
+                "@type": "uco-observable:ContentDataFacet",
+                "uco-observable:sizeInBytes": 245235000,
+                "uco-observable:hash": [
+                    {
+                        "@type": "uco-types:Hash",
+                        "uco-types:hashMethod": {
+                            "@type": "uco-vocabulary:HashNameVocab",
+                            "@value": "SHA256"
+                        },
+                        "uco-types:hashValue": {
+                            "@type": "xsd:hexBinary",
+                            "@value": "0611ea093d19b1c73a5285ff43741dd77f2a8d983c1c71044eb072e44f5dcb0a"
+                        }
+                    }
+                ]
+            }
+        ]
     }
-   ]
-   },
-   {
-   "@id": "kb:userdata-partition-uuid",
-   "@type": "uco-observable:ObservableObject",
-   "uco-core:hasFacet": [
-    {
-         "@type": "uco-observable:DiskPartitionFacet",
-         "uco-observable:diskPartitionType": "GPT",
-         "uco-observable:partitionID": "06",
-         "uco-observable:partitionOffset": 63,
-         "uco-observable:partitionLength": 245235063
-    },
-	{
-         "@type": "uco-observable:FileSystem",
-         "uco-observable:fileSystemType": "EXT3"
-    },
-    {
-         "@type": "uco-observable:ContentDataFacet",
-         "uco-observable:sizeInBytes": 245235000,
-         "uco-observable:hash": [
-          {
-          "@type":"uco-types:Hash",
-          "uco-types:hashMethod": {
-            "@type": "uco-vocabulary:HashNameVocab",
-            "@value": "SHA256"
-          },
-          "uco-types:hashValue": {
-            "@type": "xsd:hexBinary",
-            "@value": "0611ea093d19b1c73a5285ff43741dd77f2a8d983c1c71044eb072e44f5dcb0a"
-          }
-         }
-         ]
-       }
-     ]
-  }
 ]

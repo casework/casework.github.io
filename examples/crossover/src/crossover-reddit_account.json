@@ -1,43 +1,47 @@
 [
-{
-   "@id": "kb:Reddit-90652808-7341-40D3-9285-774D865AD3F9",
-   "@type":"uco-observable:ObservableObject", 
-   "uco-core:hasFacet":[
-   {
-      "@type":"uco-observable:AccountFacet", 
-      "uco-observable:accountIssuer": "kb:organization-reddit-uuid", 
-      "uco-observable:accountIdentifier": "aresthewerewolf",
-      "uco-observable:isActive": true
-   },
-   {
-      "@type": "uco-observable:DigitalAccountFacet", 
-      "uco-observable:displayName": "Ares Lupin",
-      "uco-observable:accountLogin": "aresthewerewolf",
-      "uco-observable:firstLoginTime": "2018-11-26T19:00:31Z"
-   },
-   {
-      "@type": "uco-observable:AccountAuthenticationFacet",
-      "uco-observable:password": "v10j֯�H��x�_�_o�i�"
-   }
-  ]
-},
-        {
-          "@id": "kb:LoginDataC316C405-9326-4F28-9B8D-44A3BB9E7283",
-          "@type": "uco-core:Relationship",
-          "uco-core:source": {"@id": "kb:Reddit-90652808-7341-40D3-9285-774D865AD3F9"},
-          "uco-core:target": {"@id": "kb:ChromeLoginData-16805DFF-05F9-4CBA-9266-D5FA712F3D8F"},
-          "uco-core:kindOfRelationship": "Contained_Within",
-          "uco-core:isDirectional": true,
-          "uco-core:hasFacet": [
-              { 
-                  "@type":"uco-observable:DataRangeFacet", 
-                  "uco-observable:rangeOffset": 13751,
-                  "uco-observable:rangeSize": null
-              }, 
-                { 
-                    "@type": "drafting:TableRelation", 
-                    "drafting:name":"logins" 
-                }
-           ]
-        }
+    {
+        "@id": "kb:Reddit-90652808-7341-40D3-9285-774D865AD3F9",
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-observable:AccountFacet",
+                "uco-observable:accountIssuer": "kb:organization-reddit-uuid",
+                "uco-observable:accountIdentifier": "aresthewerewolf",
+                "uco-observable:isActive": true
+            },
+            {
+                "@type": "uco-observable:DigitalAccountFacet",
+                "uco-observable:displayName": "Ares Lupin",
+                "uco-observable:accountLogin": "aresthewerewolf",
+                "uco-observable:firstLoginTime": "2018-11-26T19:00:31Z"
+            },
+            {
+                "@type": "uco-observable:AccountAuthenticationFacet",
+                "uco-observable:password": "v10j\u05af\ufffdH\ufffd\ufffdx\ufffd_\ufffd_o\ufffdi\ufffd"
+            }
+        ]
+    },
+    {
+        "@id": "kb:LoginDataC316C405-9326-4F28-9B8D-44A3BB9E7283",
+        "@type": "uco-core:Relationship",
+        "uco-core:source": {
+            "@id": "kb:Reddit-90652808-7341-40D3-9285-774D865AD3F9"
+        },
+        "uco-core:target": {
+            "@id": "kb:ChromeLoginData-16805DFF-05F9-4CBA-9266-D5FA712F3D8F"
+        },
+        "uco-core:kindOfRelationship": "Contained_Within",
+        "uco-core:isDirectional": true,
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-observable:DataRangeFacet",
+                "uco-observable:rangeOffset": 13751,
+                "uco-observable:rangeSize": null
+            },
+            {
+                "@type": "drafting:TableRelation",
+                "drafting:name": "logins"
+            }
+        ]
+    }
 ]

@@ -1,15 +1,15 @@
 [
-{
-            "@id": "kb:whatsapp-868abc08-8c21-11e9-934e-0c4de9c21b53",
-            "@type": "uco-observable:ObservableObject",
-            "uco-core:hasFacet": [
-                {
-                    "@type": "uco-observable:ApplicationFacet",
-                    "uco-observable:name": "WhatsApp",
-                    "uco-observable:applicationIdentifier": "com.whatsapp",
-                    "uco-observable:version": "2.18.361",
-                    "uco-observable:operatingSystem": "Android"
-                }
-             ]
-        }
+    {
+        "@id": "kb:whatsapp-868abc08-8c21-11e9-934e-0c4de9c21b53",
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-observable:ApplicationFacet",
+                "uco-observable:name": "WhatsApp",
+                "uco-observable:applicationIdentifier": "com.whatsapp",
+                "uco-observable:version": "2.18.361",
+                "uco-observable:operatingSystem": "Android"
+            }
         ]
+    }
+]

@@ -1,35 +1,35 @@
 [
-   {
-   "@id": "kb:filesystem-uuid",
-   "@type": "uco-observable:ObservableObject",
-   "uco-core:hasFacet": [
     {
-         "@type": "uco-observable:DiskPartitionFacet",
-         "uco-observable:diskPartitionType": "GPT",
-         "uco-observable:partitionID": "06",
-         "uco-observable:partitionOffset": 541196288,
-         "uco-observable:partitionLength": 3456630784
-    },
-	{
-         "@type": "uco-observable:FileSystemFacet",
-         "uco-observable:fileSystemType": "EXT3"
-    },
-    {
-         "@type": "uco-observable:ContentDataFacet",
-         "uco-observable:hash": [
-          {
-          "@type":"uco-types:Hash",
-          "uco-types:hashMethod": {
-            "@type": "uco-vocabulary:HashNameVocab",
-            "@value": "MD5"
-          },
-          "uco-types:hashValue": {
-            "@type": "xsd:hexBinary",
-            "@value": "TBD"
-          }
-         }
-         ]
-       }
-     ]
-  }
+        "@id": "kb:filesystem-uuid",
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-observable:DiskPartitionFacet",
+                "uco-observable:diskPartitionType": "GPT",
+                "uco-observable:partitionID": "06",
+                "uco-observable:partitionOffset": 541196288,
+                "uco-observable:partitionLength": 3456630784
+            },
+            {
+                "@type": "uco-observable:FileSystemFacet",
+                "uco-observable:fileSystemType": "EXT3"
+            },
+            {
+                "@type": "uco-observable:ContentDataFacet",
+                "uco-observable:hash": [
+                    {
+                        "@type": "uco-types:Hash",
+                        "uco-types:hashMethod": {
+                            "@type": "uco-vocabulary:HashNameVocab",
+                            "@value": "MD5"
+                        },
+                        "uco-types:hashValue": {
+                            "@type": "xsd:hexBinary",
+                            "@value": "TBD"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
 ]
