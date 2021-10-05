@@ -63,14 +63,18 @@ jumbo_desc: Cellebrite XML Report Example
 {
     "@context": {
         "@vocab": "http://example.org/ontology/local#",
-        "case-investigation": "https://caseontology.org/ontology/case/investigation#",
+        "case-investigation": "https://ontology.caseontology.org/case/investigation/",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "kb": "http://example.org/kb/",
         "uco-action": "https://unifiedcyberontology.org/ontology/uco/action#",
         "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
+        "uco-identity": "https://unifiedcyberontology.org/ontology/uco/identity#",
+        "uco-location": "https://unifiedcyberontology.org/ontology/uco/location#",
         "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
+        "uco-role": "https://unifiedcyberontology.org/ontology/uco/role#",
         "uco-tool": "https://unifiedcyberontology.org/ontology/uco/tool#",
+        "uco-types": "https://unifiedcyberontology.org/ontology/uco/types#",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
@@ -83,7 +87,7 @@ jumbo_desc: Cellebrite XML Report Example
                     "@id": "kb:investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7",
                     "@type": "case-investigation:Investigation",
                     "uco-core:name": "CROSSOVER_2018_12111001",
-                    "uco-core:focus": "Weapon of Mass Destruction (Deathly Hallows)",
+                    "case-investigation:focus": "Weapon of Mass Destruction (Deathly Hallows)",
                     "uco-core:description": "The subject Ares Lupin was arrested on suspicion of acquiring a weapon of mass destruction. The Samsung smartphone he was carrying was preserved as evidence.",
                     "uco-core:object": [
                         "list of uuids"
@@ -130,14 +134,14 @@ jumbo_desc: Cellebrite XML Report Example
     {
         "@id": "kb:cellebrite-pa1-uuid",
         "@type": "uco-tool:Tool",
-        "uco-tool:name": "Physical Analyser",
+        "uco-core:name": "Physical Analyser",
         "uco-tool:toolType": "Analysis",
         "uco-tool:creator": "Cellebrite",
         "uco-tool:version": "7.1.0.106",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-tool:ToolConfigurationType",
-                "uco-tool:configurationSetting": [
+                "@type": "uco-tool:ToolConfigurationTypeFacet",
+                "uco-tool:configurationSettings": [
                     {
                         "@type": "uco-tool:ConfigurationSettingType",
                         "uco-tool:itemName": "OutputFormat",
@@ -161,7 +165,7 @@ jumbo_desc: Cellebrite XML Report Example
         },
         "uco-core:hasFacet": [
             {
-                "@type": "uco-action:ActionReferences",
+                "@type": "uco-action:ActionReferencesFacet",
                 "uco-action:location": {
                     "@id": "kb:esc-lausanne-uuid"
                 },
@@ -236,8 +240,8 @@ jumbo_desc: Cellebrite XML Report Example
         "uco-tool:version": "7.1.0.751",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-tool:ToolConfigurationType",
-                "uco-tool:configurationSetting": [
+                "@type": "uco-tool:ToolConfigurationTypeFacet",
+                "uco-tool:configurationSettings": [
                     {
                         "@type": "uco-tool:ConfigurationSettingType",
                         "uco-tool:itemName": "DeviceInfoConnectionType",
@@ -266,7 +270,7 @@ jumbo_desc: Cellebrite XML Report Example
         },
         "uco-core:hasFacet": [
             {
-                "@type": "uco-action:ActionReferences",
+                "@type": "uco-action:ActionReferencesFacet",
                 "uco-action:location": {
                     "@id": "kb:esc-lausanne-uuid"
                 },
@@ -301,7 +305,7 @@ jumbo_desc: Cellebrite XML Report Example
     {
         "@id": "kb:provenance-record13-uuid",
         "@type": "case-investigation:ProvenanceRecord",
-        "uco-cose:description": "Forensic duplicate of mobile device used by Ares Lupin",
+        "uco-core:description": "Forensic duplicate of mobile device used by Ares Lupin",
         "case-investigation:exhibitNumber": "20181211001-002",
         "uco-core:object": [
             {
@@ -321,15 +325,15 @@ jumbo_desc: Cellebrite XML Report Example
         "@type": "uco-identity:Identity",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-identity:SimpleName",
-                "uco-identityfirstName": "Eoghan",
-                "uco-identitygivenName": "Casey"
+                "@type": "uco-identity:SimpleNameFacet",
+                "uco-identity:givenName": "Eoghan",
+                "uco-identity:familyName": "Casey"
             }
         ]
     },
     {
         "@id": "kb:investigator1-uuid",
-        "@type": "uco-core:Role",
+        "@type": "uco-role:Role",
         "uco-core:name": "Investigator"
     },
     {
@@ -374,7 +378,7 @@ jumbo_desc: Cellebrite XML Report Example
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:FileFacet",
-                "uco-observable:createdTime": {
+                "uco-observable:observableCreatedTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2018-12-11T08:49:00.00Z"
                 },
@@ -389,7 +393,7 @@ jumbo_desc: Cellebrite XML Report Example
                 "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:hash": [
                     {
-                        "@type": "uco-observable:Hash",
+                        "@type": "uco-types:Hash",
                         "uco-types:hashMethod": {
                             "@type": "uco-vocabulary:HashNameVocab",
                             "@value": "MD5"
@@ -400,7 +404,7 @@ jumbo_desc: Cellebrite XML Report Example
                         }
                     },
                     {
-                        "@type": "uco-observable:Hash",
+                        "@type": "uco-types:Hash",
                         "uco-types:hashMethod": {
                             "@type": "uco-vocabulary:HashNameVocab",
                             "@value": "SHA1"
@@ -479,14 +483,14 @@ jumbo_desc: Cellebrite XML Report Example
                 "uco-observable:serialNumber": "RF8H31GS5SF"
             },
             {
-                "@type": "uco-observable:AndroidDeviceFacet",
-                "uco-observable:androidID": "64cce130286b31b3",
-                "uco-observable:androidFingerprint ": "samsung/zeroltexx/zerolte:6.0.1/MMB29K/G925FXXU4DPIL"
+                "@type": "drafting:AndroidDeviceFacet",
+                "drafting:androidID": "64cce130286b31b3",
+                "drafting:androidFingerprint": "samsung/zeroltexx/zerolte:6.0.1/MMB29K/G925FXXU4DPIL"
             },
             {
                 "@type": "uco-observable:MobileDeviceFacet",
                 "uco-observable:bluetoothDeviceName": "Galaxy S6 edge",
-                "uco-observable:deviceActivationTime": "2018-06-10T14:31:30.00Z",
+                "drafting:deviceActivationTime": "2018-06-10T14:31:30.00Z",
                 "drafting:advertisingID": "48500120-c9c5-402e-a6bc-04e2f92ae259",
                 "drafting:locationsServicesEnabled": true,
                 "uco-observable:keypadUnlockCode": "__NOT_PROVIDED",
@@ -496,12 +500,12 @@ jumbo_desc: Cellebrite XML Report Example
             },
             {
                 "@type": "uco-observable:OperatingSystemFacet",
-                "uco-observable:name": "Android",
+                "uco-core:name": "Android",
                 "uco-observable:manufacturer": "Samsung",
                 "uco-observable:version": "6.0.1"
             },
             {
-                "@type": "uco-observable:WiFiAddressFacet",
+                "@type": "uco-observable:WifiAddressFacet",
                 "uco-observable:value": "AC:5F:3E:73:E3:78"
             },
             {
@@ -568,7 +572,7 @@ SimChangeTime=1528641355649<br />
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
-                "@type": "uco-core:Confidence",
+                "@type": "uco-core:ConfidenceFacet",
                 "uco-core:confidence": "95"
             }
         ]
@@ -588,7 +592,7 @@ SimChangeTime=1528641355649<br />
             {
                 "@type": "uco-observable:SIMCardFacet",
                 "uco-observable:ICCID": "89390100002217635543",
-                "uco-observable:Carrier": "Telcom Italia"
+                "uco-observable:carrier": "Telcom Italia"
             }
         ]
     },
@@ -615,7 +619,7 @@ SimChangeTime=1528641355649<br />
                 "@type": "uco-observable:SIMCard",
                 "uco-observable:ICCID": "8935302143531284380",
                 "uco-observable:IMSI": "__NOT_PROVIDED",
-                "uco-observable:Carrier": "__NOT_PROVIDED"
+                "uco-observable:carrier": "__NOT_PROVIDED"
             }
         ]
     },
@@ -627,7 +631,7 @@ SimChangeTime=1528641355649<br />
                 "@type": "uco-observable:SIMCardFacet",
                 "uco-observable:ICCID": "8931088918010550289",
                 "uco-observable:IMSI": "{mobileaccount3-uuid}",
-                "uco-observable:Carrier": "Lebara"
+                "uco-observable:carrier": "Lebara"
             }
         ]
     },
@@ -731,7 +735,7 @@ SimChangeTime=1528641355649<br />
         "@type": "uco-identity:Identity",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-identity:SimpleName",
+                "@type": "uco-identity:SimpleNameFacet",
                 "uco-identity:givenName": "Ares",
                 "uco-identity:familyName": "Lupin"
             }
@@ -740,14 +744,14 @@ SimChangeTime=1528641355649<br />
     {
         "@id": "kb:primaryuser-email-uuid",
         "@type": "uco-core:Relationship",
-        "uco-observable:source": {
+        "uco-core:source": {
             "@id": "kb:primaryuser-uuid"
         },
-        "uco-observable:target": {
+        "uco-core:target": {
             "@id": "kb:EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53"
         },
-        "uco-observable:kindOfRelationship": "Has_Account",
-        "uco-observable:isDirectional": true
+        "uco-core:kindOfRelationship": "Has_Account",
+        "uco-core:isDirectional": true
     },
     {
         "@id": "kb:primaryuser-email-uuid",
@@ -795,7 +799,7 @@ SimChangeTime=1528641355649<br />
             {
                 "@type": "uco-observable:PhoneAccountFacet",
                 "uco-observable:phoneNumber": "+31647934784",
-                "uco-observable:name": ""
+                "uco-core:name": ""
             }
         ]
     },
@@ -836,8 +840,8 @@ SimChangeTime=1528641355649<br />
         "@type": "uco-identity:Identity",
         "uco-core:hasFacet": [
             {
-                "@type": "identity:Organization",
-                "identity:orgName": "WhatsApp"
+                "@type": "uco-identity:Organization",
+                "drafting:orgName": "WhatsApp"
             }
         ]
     },
@@ -846,8 +850,8 @@ SimChangeTime=1528641355649<br />
         "@type": "uco-observable:ObservableObject",
         "uco-core:hasFacet": [
             {
-                "@type": "Application",
-                "appName": "WhatsApp"
+                "@type": "drafting:ApplicationFacet",
+                "drafting:appName": "WhatsApp"
             }
         ]
     }
@@ -996,7 +1000,7 @@ SimChangeTime=1528641355649<br />
         "@id": "kb:LatLong-8667ec82-8c21-11e9-934e-0c4de9c21b53",
         "@type": "uco-location:Location",
         "uco-core:hasFacet": {
-            "@type": "uco-location:LatLongCoordinates",
+            "@type": "uco-location:LatLongCoordinatesFacet",
             "uco-location:latitude": 46.53722222222222,
             "uco-location:longitude": 6.579166666666667,
             "uco-location:altitude": null
@@ -1031,7 +1035,7 @@ SimChangeTime=1528641355649<br />
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:DataRange",
+                "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 541196288,
                 "uco-observable:rangeSize": 3456630784
             }
@@ -1109,13 +1113,13 @@ SimChangeTime=1528641355649<br />
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:PathRelation",
+                "@type": "uco-observable:PathRelationFacet",
                 "uco-observable:path": "/Root/data/com.google.android.gms/app_dg_cache/B0970DD8CBD5F4763E7C602156284D4DD796AE5D/the.apk"
             },
             {
-                "@type": "uco-core:DataRange",
-                "uco-core:rangeOffset": 3121610752,
-                "uco-core:rangeSize": 147871
+                "@type": "uco-observable:DataRangeFacet",
+                "uco-observable:rangeOffset": 3121610752,
+                "uco-observable:rangeSize": 147871
             }
         ]
     },
@@ -1197,7 +1201,7 @@ SimChangeTime=1528641355649<br />
     {
         "@id": "kb:F7CAD990-6687-4849-89DC-55795675F3F5",
         "@type": "uco-observable:ObservableObject",
-        "uco-observable:tag": [
+        "uco-core:tag": [
             "Image"
         ],
         "uco-core:hasFacet": [
@@ -1211,7 +1215,7 @@ SimChangeTime=1528641355649<br />
                 "uco-observable:isDirectory": false,
                 "uco-observable:allocationStatus": "allocated",
                 "uco-observable:sizeInBytes": "534167",
-                "uco-observable:createdTime": {
+                "uco-observable:observableCreatedTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2018-11-30T09:43:24.00Z"
                 },
@@ -1226,7 +1230,7 @@ SimChangeTime=1528641355649<br />
             },
             {
                 "@type": "uco-observable:ExtInodeFacet",
-                "uco-observable:extInode": 930900,
+                "uco-observable:extInodeID": 930900,
                 "uco-observable:extSGID": 1023,
                 "uco-observable:extSUID": 1023,
                 "uco-observable:extInodeChangeTime": null
@@ -1402,7 +1406,7 @@ SimChangeTime=1528641355649<br />
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:ApplicationFacet",
-                "uco-observable:name": "WhatsApp",
+                "uco-core:name": "WhatsApp",
                 "uco-observable:applicationIdentifier": "com.whatsapp",
                 "uco-observable:version": "2.18.361",
                 "uco-observable:operatingSystem": "Android"
@@ -1495,7 +1499,7 @@ SimChangeTime=1528641355649<br />
             "@type": "uco-observable:ObservableObjectRelationshipVocab",
             "@value": "Contained_Within"
         },
-        "uco-observable:isDirectional": true,
+        "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DataRangeFacet",
@@ -1522,7 +1526,7 @@ SimChangeTime=1528641355649<br />
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:FileFacet",
-                "uco-observable:createdTime": {
+                "uco-observable:observableCreatedTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2018-12-11T08:49:00.00Z"
                 },
@@ -1578,10 +1582,10 @@ SimChangeTime=1528641355649<br />
             "@type": "uco-observable:ObservableObjectRelationshipEnum",
             "@value": "Contained_Within"
         },
-        "uco-observable:isDirectional": true,
+        "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:PathRelation",
+                "@type": "uco-observable:PathRelationFacet",
                 "uco-observable:path": "/data/com.whatsapp/databases/msgstore.db"
             }
         ]
@@ -1638,7 +1642,7 @@ SimChangeTime=1528641355649<br />
         "@type": "uco-observable:ObservableObject",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:AccountFacet OR DigitalAccountFacet?",
+                "@type": "uco-observable:DigitalAccountFacet",
                 "uco-observable:displayName": "Harley Quinn"
             },
             {
@@ -1714,7 +1718,7 @@ SimChangeTime=1528641355649<br />
                             "@type": "xsd:dateTime",
                             "@value": "2017-01-25T02:20:22.00Z"
                         },
-                        "uco-observable:expiration": "NULL",
+                        "uco-observable:expirationTime": "NULL",
                         "uco-observable:browserInformation": {
                             "@id": "kb:5d96df90-d9e1-423c-b8db-c2327812ab38"
                         },
@@ -1752,7 +1756,7 @@ SimChangeTime=1528641355649<br />
                 "uco-observable:extension": "NULL",
                 "uco-observable:isDirectory": false,
                 "uco-observable:sizeInBytes": 122880,
-                "uco-observable:createdTime": {
+                "uco-observable:observableCreatedTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2018-06-10T16:41:40.00Z"
                 },
@@ -1792,7 +1796,7 @@ SimChangeTime=1528641355649<br />
     },
     {
         "@id": "kb:9A3FFCF3-91D3-4457-9333-ABAB67F8AB4F",
-        "@type": "uco-observable:CyberRelationship",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
             "@id": "kb:860FC853-9C3F-41FC-B144-8AC80D8F5849-URLHistory"
         },
