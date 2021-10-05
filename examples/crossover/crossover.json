@@ -1,0 +1,33 @@
+{
+    "@context": {
+        "@vocab": "http://example.org/ontology/local#",
+        "case-investigation": "https://caseontology.org/ontology/case/investigation#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "kb": "http://example.org/kb/",
+        "uco-action": "https://unifiedcyberontology.org/ontology/uco/action#",
+        "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
+        "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
+        "uco-tool": "https://unifiedcyberontology.org/ontology/uco/tool#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:bundle-5715FCF3-6BC8-4996-8F7F-FDF289F31649",
+            "@type": "uco-core:Bundle",
+            "uco-core:description": "Evidence in cross border investigation into weapon of mass destruction",
+            "uco-core:object": [
+                {
+                    "@id": "kb:investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7",
+                    "@type": "case-investigation:Investigation",
+                    "uco-core:name": "CROSSOVER_2018_12111001",
+                    "uco-core:focus": "Weapon of Mass Destruction (Deathly Hallows)",
+                    "uco-core:description": "The subject Ares Lupin was arrested on suspicion of acquiring a weapon of mass destruction. The Samsung smartphone he was carrying was preserved as evidence.",
+                    "uco-core:object": [
+                        "list of uuids"
+                    ]
+                }
+            ]
+        }
+    ]
+}
