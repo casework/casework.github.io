@@ -10,14 +10,14 @@
                 "uco-observable:serialNumber": "RF8H31GS5SF"
             },
             {
-                "@type": "uco-observable:AndroidDeviceFacet",
-                "uco-observable:androidID": "64cce130286b31b3",
-                "uco-observable:androidFingerprint ": "samsung/zeroltexx/zerolte:6.0.1/MMB29K/G925FXXU4DPIL"
+                "@type": "drafting:AndroidDeviceFacet",
+                "drafting:androidID": "64cce130286b31b3",
+                "drafting:androidFingerprint": "samsung/zeroltexx/zerolte:6.0.1/MMB29K/G925FXXU4DPIL"
             },
             {
                 "@type": "uco-observable:MobileDeviceFacet",
                 "uco-observable:bluetoothDeviceName": "Galaxy S6 edge",
-                "uco-observable:deviceActivationTime": "2018-06-10T14:31:30.00Z",
+                "drafting:deviceActivationTime": "2018-06-10T14:31:30.00Z",
                 "drafting:advertisingID": "48500120-c9c5-402e-a6bc-04e2f92ae259",
                 "drafting:locationsServicesEnabled": true,
                 "uco-observable:keypadUnlockCode": "__NOT_PROVIDED",
@@ -27,12 +27,12 @@
             },
             {
                 "@type": "uco-observable:OperatingSystemFacet",
-                "uco-observable:name": "Android",
+                "uco-core:name": "Android",
                 "uco-observable:manufacturer": "Samsung",
                 "uco-observable:version": "6.0.1"
             },
             {
-                "@type": "uco-observable:WiFiAddressFacet",
+                "@type": "uco-observable:WifiAddressFacet",
                 "uco-observable:value": "AC:5F:3E:73:E3:78"
             },
             {

@@ -2,14 +2,14 @@
     {
         "@id": "kb:cellebrite-pa1-uuid",
         "@type": "uco-tool:Tool",
-        "uco-tool:name": "Physical Analyser",
+        "uco-core:name": "Physical Analyser",
         "uco-tool:toolType": "Analysis",
         "uco-tool:creator": "Cellebrite",
         "uco-tool:version": "7.1.0.106",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-tool:ToolConfigurationType",
-                "uco-tool:configurationSetting": [
+                "@type": "uco-tool:ToolConfigurationTypeFacet",
+                "uco-tool:configurationSettings": [
                     {
                         "@type": "uco-tool:ConfigurationSettingType",
                         "uco-tool:itemName": "OutputFormat",
@@ -33,7 +33,7 @@
         },
         "uco-core:hasFacet": [
             {
-                "@type": "uco-action:ActionReferences",
+                "@type": "uco-action:ActionReferencesFacet",
                 "uco-action:location": {
                     "@id": "kb:esc-lausanne-uuid"
                 },

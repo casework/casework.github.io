@@ -37,7 +37,7 @@
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
-                "@type": "uco-core:Confidence",
+                "@type": "uco-core:ConfidenceFacet",
                 "uco-core:confidence": "95"
             }
         ]

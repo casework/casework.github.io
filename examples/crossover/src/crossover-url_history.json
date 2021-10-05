@@ -26,7 +26,7 @@
                             "@type": "xsd:dateTime",
                             "@value": "2017-01-25T02:20:22.00Z"
                         },
-                        "uco-observable:expiration": "NULL",
+                        "uco-observable:expirationTime": "NULL",
                         "uco-observable:browserInformation": {
                             "@id": "kb:5d96df90-d9e1-423c-b8db-c2327812ab38"
                         },
@@ -64,7 +64,7 @@
                 "uco-observable:extension": "NULL",
                 "uco-observable:isDirectory": false,
                 "uco-observable:sizeInBytes": 122880,
-                "uco-observable:createdTime": {
+                "uco-observable:observableCreatedTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2018-06-10T16:41:40.00Z"
                 },
@@ -104,7 +104,7 @@
     },
     {
         "@id": "kb:9A3FFCF3-91D3-4457-9333-ABAB67F8AB4F",
-        "@type": "uco-observable:CyberRelationship",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
             "@id": "kb:860FC853-9C3F-41FC-B144-8AC80D8F5849-URLHistory"
         },

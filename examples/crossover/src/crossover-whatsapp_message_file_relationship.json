@@ -14,7 +14,7 @@
             "@type": "uco-observable:ObservableObjectRelationshipVocab",
             "@value": "Contained_Within"
         },
-        "uco-observable:isDirectional": true,
+        "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DataRangeFacet",

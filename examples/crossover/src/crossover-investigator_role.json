@@ -4,15 +4,15 @@
         "@type": "uco-identity:Identity",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-identity:SimpleName",
-                "uco-identityfirstName": "Eoghan",
-                "uco-identitygivenName": "Casey"
+                "@type": "uco-identity:SimpleNameFacet",
+                "uco-identity:givenName": "Eoghan",
+                "uco-identity:familyName": "Casey"
             }
         ]
     },
     {
         "@id": "kb:investigator1-uuid",
-        "@type": "uco-core:Role",
+        "@type": "uco-role:Role",
         "uco-core:name": "Investigator"
     },
     {

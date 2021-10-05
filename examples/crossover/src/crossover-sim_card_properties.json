@@ -6,7 +6,7 @@
             {
                 "@type": "uco-observable:SIMCardFacet",
                 "uco-observable:ICCID": "89390100002217635543",
-                "uco-observable:Carrier": "Telcom Italia"
+                "uco-observable:carrier": "Telcom Italia"
             }
         ]
     },
@@ -33,7 +33,7 @@
                 "@type": "uco-observable:SIMCard",
                 "uco-observable:ICCID": "8935302143531284380",
                 "uco-observable:IMSI": "__NOT_PROVIDED",
-                "uco-observable:Carrier": "__NOT_PROVIDED"
+                "uco-observable:carrier": "__NOT_PROVIDED"
             }
         ]
     },
@@ -45,7 +45,7 @@
                 "@type": "uco-observable:SIMCardFacet",
                 "uco-observable:ICCID": "8931088918010550289",
                 "uco-observable:IMSI": "{mobileaccount3-uuid}",
-                "uco-observable:Carrier": "Lebara"
+                "uco-observable:carrier": "Lebara"
             }
         ]
     },

@@ -4,7 +4,7 @@
         "@type": "uco-identity:Identity",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-identity:SimpleName",
+                "@type": "uco-identity:SimpleNameFacet",
                 "uco-identity:givenName": "Ares",
                 "uco-identity:familyName": "Lupin"
             }
@@ -13,14 +13,14 @@
     {
         "@id": "kb:primaryuser-email-uuid",
         "@type": "uco-core:Relationship",
-        "uco-observable:source": {
+        "uco-core:source": {
             "@id": "kb:primaryuser-uuid"
         },
-        "uco-observable:target": {
+        "uco-core:target": {
             "@id": "kb:EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53"
         },
-        "uco-observable:kindOfRelationship": "Has_Account",
-        "uco-observable:isDirectional": true
+        "uco-core:kindOfRelationship": "Has_Account",
+        "uco-core:isDirectional": true
     },
     {
         "@id": "kb:primaryuser-email-uuid",
@@ -68,7 +68,7 @@
             {
                 "@type": "uco-observable:PhoneAccountFacet",
                 "uco-observable:phoneNumber": "+31647934784",
-                "uco-observable:name": ""
+                "uco-core:name": ""
             }
         ]
     },
@@ -109,8 +109,8 @@
         "@type": "uco-identity:Identity",
         "uco-core:hasFacet": [
             {
-                "@type": "identity:Organization",
-                "identity:orgName": "WhatsApp"
+                "@type": "uco-identity:Organization",
+                "drafting:orgName": "WhatsApp"
             }
         ]
     },
@@ -119,8 +119,8 @@
         "@type": "uco-observable:ObservableObject",
         "uco-core:hasFacet": [
             {
-                "@type": "Application",
-                "appName": "WhatsApp"
+                "@type": "drafting:ApplicationFacet",
+                "drafting:appName": "WhatsApp"
             }
         ]
     }

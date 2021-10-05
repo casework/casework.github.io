@@ -9,8 +9,8 @@
         "uco-tool:version": "7.1.0.751",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-tool:ToolConfigurationType",
-                "uco-tool:configurationSetting": [
+                "@type": "uco-tool:ToolConfigurationTypeFacet",
+                "uco-tool:configurationSettings": [
                     {
                         "@type": "uco-tool:ConfigurationSettingType",
                         "uco-tool:itemName": "DeviceInfoConnectionType",
@@ -39,7 +39,7 @@
         },
         "uco-core:hasFacet": [
             {
-                "@type": "uco-action:ActionReferences",
+                "@type": "uco-action:ActionReferencesFacet",
                 "uco-action:location": {
                     "@id": "kb:esc-lausanne-uuid"
                 },
@@ -74,7 +74,7 @@
     {
         "@id": "kb:provenance-record13-uuid",
         "@type": "case-investigation:ProvenanceRecord",
-        "uco-cose:description": "Forensic duplicate of mobile device used by Ares Lupin",
+        "uco-core:description": "Forensic duplicate of mobile device used by Ares Lupin",
         "case-investigation:exhibitNumber": "20181211001-002",
         "uco-core:object": [
             {

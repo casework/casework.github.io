@@ -5,7 +5,7 @@
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:ApplicationFacet",
-                "uco-observable:name": "WhatsApp",
+                "uco-core:name": "WhatsApp",
                 "uco-observable:applicationIdentifier": "com.whatsapp",
                 "uco-observable:version": "2.18.361",
                 "uco-observable:operatingSystem": "Android"

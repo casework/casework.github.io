@@ -12,13 +12,13 @@
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:PathRelation",
+                "@type": "uco-observable:PathRelationFacet",
                 "uco-observable:path": "/Root/data/com.google.android.gms/app_dg_cache/B0970DD8CBD5F4763E7C602156284D4DD796AE5D/the.apk"
             },
             {
-                "@type": "uco-core:DataRange",
-                "uco-core:rangeOffset": 3121610752,
-                "uco-core:rangeSize": 147871
+                "@type": "uco-observable:DataRangeFacet",
+                "uco-observable:rangeOffset": 3121610752,
+                "uco-observable:rangeSize": 147871
             }
         ]
     },
