@@ -420,7 +420,7 @@ SimChangeTime=1528641355649<br />
 <h3>File</h3>
 
 
-<h4>Cellebrite XML</h4> 
+<h4>Cellebrite XML</h4>
 
 {% highlight xml %}
     <file fs="USERDATA (ExtX)" fsid="c4b80ed4-a372-4440-9a87-881ed4423c09" path="/Root/media/0/Download/Elder_Wand.png" size="534167" id="88959d0b-b2bb-4a4a-85c8-edd7b2393e02" extractionId="0" deleted="Intact" embedded="false" isrelated="False">
