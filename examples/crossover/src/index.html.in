@@ -150,11 +150,16 @@ jumbo_desc: Cellebrite XML Report Example
 {% endhighlight %}
 
 
-<!--BOOKMARK ^-->
 <h4>ACQUIRED DEVICE PROPERTIES</h4>
-<p>Cellebrite displays the following information about the forensic extraction. </p>
-<p style="text-align: center;"><img src="https://files.caseontology.org/casework.github.io/examples/crossover_wmd/extraction-20181211001-002.png" alt="Screenshot of Cellebrite extraction" /></p>
 
+<p>Cellebrite displays the following information about the forensic extraction.</p>
+
+<figure style="text-align:center;">
+  <img src="https://files.caseontology.org/casework.github.io/examples/crossover_wmd/extraction-20181211001-002.png" alt="Screenshot of Cellebrite extraction" />
+  <figcaption>"Screenshot of Cellebrite extraction"</figcaption>
+</figure>
+
+<!--BOOKMARK ^-->
 <p>Cellebrite XML report representation of these Android Device properties.</p>
 
 {% highlight xml %}
