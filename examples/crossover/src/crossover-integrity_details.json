@@ -1,0 +1,57 @@
+[
+    {
+        "@id": "kb:provenance-record13-uuid",
+        "@type": "case-investigation:ProvenanceRecord",
+        "uco-core:description": "Forensic duplicate of smartphone used by subject",
+        "case-investigation:exhibitNumber": "002",
+        "uco-core:object": {
+            "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
+        }
+    },
+    {
+        "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748",
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-observable:FileFacet",
+                "uco-observable:observableCreatedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-12-11T08:49:00.00Z"
+                },
+                "uco-observable:extension": "bin",
+                "uco-observable:fileName": "LGE Nexus 5 Full Image.raw",
+                "uco-observable:fileSystemType": "NTFS",
+                "uco-observable:filePath": "E:\\Evidence\\UFED Samsung GSM SM-G925F Galaxy S6 Edge 2018_12_11 (002)\\Physical Boot Loader (Recommended) 01\\blk0_sda.bin",
+                "uco-observable:isDirectory": false,
+                "uco-observable:sizeInBytes": 31989956608
+            },
+            {
+                "@type": "uco-observable:ContentDataFacet",
+                "uco-observable:hash": [
+                    {
+                        "@type": "uco-types:Hash",
+                        "uco-types:hashMethod": {
+                            "@type": "uco-vocabulary:HashNameVocab",
+                            "@value": "MD5"
+                        },
+                        "uco-types:hashValue": {
+                            "@type": "xsd:hexBinary",
+                            "@value": "569D5663179237798264E2669281DCD7"
+                        }
+                    },
+                    {
+                        "@type": "uco-types:Hash",
+                        "uco-types:hashMethod": {
+                            "@type": "uco-vocabulary:HashNameVocab",
+                            "@value": "SHA1"
+                        },
+                        "uco-types:hashValue": {
+                            "@type": "xsd:hexBinary",
+                            "@value": "F46EE05CE1A2210501EA512ED9E4C7EC59222CCA"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
