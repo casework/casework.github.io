@@ -1,9 +1,11 @@
 _site
+.bundle
 .sass-cache
 .jekyll-metadata
 .DS_Store
 .git_submodule_init.done.log
 .venv.done.log
+vendor/bundle
 venv
 __pycache__
 *.swp
