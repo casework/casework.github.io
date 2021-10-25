@@ -1,0 +1,11 @@
+SELECT DISTINCT ?nSourceObject
+WHERE
+{
+    # Locate the objects by crossing the rootExhibitNumber
+    # with the exhibitNumber, to find the source ProvenanceRecord.
+    ?nProvenanceRecord
+      uco-core:object ?nSourceObject ;
+      case-investigation:rootExhibitNumber ?lExhibitNumber ;
+      case-investigation:exhibitNumber ?lExhibitNumber ;
+      .
+}

@@ -1,13 +1,13 @@
 var membershipData = {
-  US: 46, // United States
+  US: 54, // United States
   GB: 10, // United Kingdom
   KR: 6, // South Korea
   IT: 6, // Italy
-  IE: 5, // Ireland
+  NL: 5, // Netherlands
+  IE: 4, // Ireland
   SE: 4, // Sweden
   IN: 3, // India
   CH: 3, // Switzerland
-  NL: 3, // Netherlands
   CA: 2, // Canada
   DE: 2, // Germany
   TZ: 2, // Tanzania
@@ -17,8 +17,10 @@ var membershipData = {
   BW: 1, // Botswana
   HR: 1, // Croatia
   FR: 1, // France
+  GR: 1, // Greece
   IL: 1, // Israel
-  RU: 1 // Russia
+  RU: 1, // Russia
+  ES: 1 // Spain
   //TW: 1, // Taiwan
   //UA: 1 // Ukraine
 };

@@ -20,8 +20,8 @@ import rdflib.plugins.sparql
 _logger = logging.getLogger(os.path.basename(__file__))
 
 graph = rdflib.Graph()
-graph.parse("urgent_evidence.json", format="json-ld")
-graph.parse("urgent_evidence-wasInformedBy.json", format="json-ld")
+graph.parse("generated-urgent_evidence.json", format="json-ld")
+graph.parse("generated-urgent_evidence-wasInformedBy.json", format="json-ld")
 
 # Inherit prefixes defined in input context dictionary.
 nsdict = {k:v for (k,v) in graph.namespace_manager.namespaces()}
@@ -54,7 +54,7 @@ def test_actions_to_photo(action_iris_all):
     _logger.debug("len(action_iris_ground_truth_negative) = %d.", len(action_iris_ground_truth_negative))
 
     select_query_text = None
-    with open("urgent_evidence-query-actions_to_artifact.sparql", "r") as in_fh:
+    with open("query-actions_to_artifact.sparql", "r") as in_fh:
         select_query_text = in_fh.read().strip()
     _logger.debug("select_query_text = %r." % select_query_text)
     select_query_object = rdflib.plugins.sparql.prepareQuery(select_query_text, initNs=nsdict)
@@ -86,7 +86,7 @@ def test_exhibit_photos():
     }
 
     select_query_text = None
-    with open("urgent_evidence-query-exhibit_photos.sparql", "r") as in_fh:
+    with open("query-exhibit_photos.sparql", "r") as in_fh:
         select_query_text = in_fh.read().strip()
     _logger.debug("select_query_text = %r." % select_query_text)
     select_query_object = rdflib.plugins.sparql.prepareQuery(select_query_text, initNs=nsdict)
@@ -104,3 +104,28 @@ def test_exhibit_photos():
 
     file_names_false_positive = file_names_computed & file_names_ground_truth_negative
     assert set() == file_names_false_positive
+
+def test_photo_selection():
+    file_name_status_computed = set()
+    file_name_status_expected = {
+      ("IMG_1863.jpg", "Selected"),
+      ("IMG_1864.jpg", "Displayed"),
+      ("IMG_1865.jpg", "Not displayed")
+    }
+
+    select_query_text = None
+    with open("query-selection_from_automated_exhibit_extraction.sparql", "r") as in_fh:
+        select_query_text = in_fh.read().strip()
+    _logger.debug("select_query_text = %r." % select_query_text)
+    select_query_object = rdflib.plugins.sparql.prepareQuery(select_query_text, initNs=nsdict)
+    for record in graph.query(select_query_object):
+        (
+          l_file_name,
+          l_review_status
+        ) = record
+        file_name_status_computed.add((
+          l_file_name.toPython(),
+          l_review_status.toPython()
+        ))
+
+    assert file_name_status_expected == file_name_status_computed

@@ -4,10 +4,10 @@ questions:
     - question: "Does CASE require hex data be entered uppercase or lowercase?"
       title: "CASE hex data"
       answer: >
-        While CASE and UCO have not yet put in a stance on this, it is worth noting that the XML Schema source of basic RDF types does weigh in on this with the more stringent [hexBinaryCanonical](https://www.w3.org/TR/xmlschema11-2/#f-hexBinaryCanonical): Uppercase.
+        While CASE and UCO haven’t yet put in a stance on this, it's worth noting that the XML Schema source of basic RDF types does weigh in on this with the more stringent [`hexBinaryCanonical`](https://www.w3.org/TR/xmlschema11-2/#f-hexBinaryCanonical): Uppercase.
         
         
-        We can state as of CASE 0.2.0, there is no requirement either way.
+        Since CASE 0.2.0, there has been no requirement either way.  CASE users should confirm whether `hexBinary` casing would affect usage.  One example of this being tested is in a SPARQL engine in Python, in [`test_hexbinary.py`](https://github.com/casework/CASE-Utilities-Python/blob/main/tests/hexbinary/test_hexbinary.py) (part of the [CASE Python Utilities](https://github.com/casework/CASE-Utilities-Python/) test suite).
     - question: "Should I use CASE as a data model?"
       title: "CASE data model"
       answer: >

@@ -5,3 +5,5 @@ _site
 .git_submodule_init.done.log
 .venv.done.log
 venv
+__pycache__
+*.swp
