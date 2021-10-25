@@ -1,0 +1,45 @@
+[
+    {
+        "@id": "kb:simcard1-relationship-uuid",
+        "@type": "uco-core:Relationship",
+        "uco-core:source": {
+            "@id": "kb:simcard1-uuid"
+        },
+        "uco-core:target": {
+            "@id": "kb:samsung-device-uuid"
+        },
+        "uco-core:kindOfRelationship": "Contained_Within",
+        "uco-core:startTime": {
+            "@type": "xsd:dateTime",
+            "@value": "2018-11-16T12:34:28Z"
+        },
+        "uco-core:endTime": null,
+        "uco-core:isDirectional": true
+    },
+    {
+        "@id": "kb:simcard3-relationship-uuid",
+        "@type": "uco-core:Relationship",
+        "uco-core:source": {
+            "@id": "kb:simcard1-uuid"
+        },
+        "uco-core:target": {
+            "@id": "kb:samsung-device-uuid"
+        },
+        "uco-core:kindOfRelationship": "Contained_Within",
+        "uco-core:startTime": {
+            "@type": "xsd:dateTime",
+            "@value": "2018-11-16T00:00.00Z"
+        },
+        "uco-core:endTime": {
+            "@type": "xsd:dateTime",
+            "@value": "2018-12-11T08:40:00.00Z"
+        },
+        "uco-core:isDirectional": true,
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-core:ConfidenceFacet",
+                "uco-core:confidence": "95"
+            }
+        ]
+    }
+]

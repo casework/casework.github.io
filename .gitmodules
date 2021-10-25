@@ -1,0 +1,3 @@
+[submodule "dependencies/CASE-Utilities-Python"]
+	path = dependencies/CASE-Utilities-Python
+	url = https://github.com/casework/CASE-Utilities-Python.git

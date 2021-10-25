@@ -1,0 +1,690 @@
+---
+<!-- layout: releases -->
+title: Crossover CASE
+jumbo_desc: Cellebrite XML Report Example
+---
+
+<h2>Crossover CASE - Cellebrite XML Report Example</h2>
+
+<p>This document uses CASE to represent digital evidence extracted from an Android device using Cellebrite, with Autopsy to fill in gaps. The physical image and scenario introduction can be downloaded from the following location: <a href="https://drive.switch.ch/index.php/s/0c7BiyQZRKOtMMq">https://drive.switch.ch/index.php/s/0c7BiyQZRKOtMMq</a>.</p>
+
+<p>The JSON-LD data on this page are available combined in the file <a href="crossover.json">crossover.json</a>.</p>
+
+
+<h3>Disclaimers</h3>
+
+<p>Participation by contributors in the creation of the documentation of mentioned software is not intended to imply a recommendation or endorsement by the United States Government nor any of the contributors' employers, nor is it intended to imply that any specific software is necessarily the best available for the purpose.</p>
+
+<p>Events, locations, tools, and people represented in this and other CASE narratives are presented, and at many times created, for illustration purposes only and do not necessarily represent real events, locations, tools, or people.</p>
+
+
+<h3>Investigation 1 Background</h3>
+
+<p>On 19 November 2018, at 14:18 (CET), three armed suspects entered a bank (Place de St-François 16, 1003 Lausanne). They blew up the safe and took the money inside. Several people were slightly injured. Witnesses say that the suspects fled northwest toward Place Chaudron in a car. The car was found 40 minutes later near the Lausanne-Blécherette airport. No physical traces were found in the vehicle, except for a USB key. A copy of the USB key was done on site by the investigators. No images were available from the surveillance cameras. Analysis of the bank’s system indicates that they were hacked a few minutes before the heist (19 November 2018 at 14:03 CET).</p>
+
+<p>An IP address was found during the analysis. It was attributed to an apartment on the campus of the University of Lausanne. On 20 November 2018 at 10:00 CET, a search of the apartment led to the arrest of Mr. Joker and the seizure of a computer sitting in the living room. Mr. Joker was questioned and said he knew nothing about the heist. He also said that he lives with Mrs. Quinn. She was not present during the search and was not arrested. He said that she left the house early in the morning.</p>
+
+
+<h3>Investigation 2 Background</h3>
+
+<p>INTERPOL publicized an international request to put under surveillance Mr Ares Lupin on 27 November 2018. One of their informants communicated that this individual was implicated in the acquisition of a weapon of mass destruction. The suspect was spotted in Italy on 1 December 2018 and a surveillance was put in place by the Italian Carabinieri. He escaped their monitoring several times. On 11 December 2018, around 09:00 CET, the suspect was recognized by police at the University of Lausanne and he was put under arrest. The suspect fled and threw his smartphone in a rubbish bin. The suspect was not found again.</p>
+
+<p>The mobile phone was retrieved and preserved as evidence on 11 December 2018 at 09:49 CET (physical extraction) using Cellebrite UFED.</p>
+
+
+<h3>Mandate</h3>
+
+<p>The prosecutor in these investigations has requested digital forensic analysis of the digital evidence for the following information:</p>
+<ol type="1">
+  <li>The name and virtual identifier(s) of the primary users of the Samsung device and computer hard drive.</li>
+  <li>Links between the devices (smartphone, computer, and USB)</li>
+  <li>The location of the Samsung smartphone during the periods
+   <ol type="a">
+      <li>20-21 November 2018</li>
+      <li>27 November 2018</li>
+      <li>1-9 December 2018</li>
+    </ol>
+  </li>
+  <li>Possible accomplices the primary users communicated with</li>
+  <li>Any backdating of the clock on the Samsung smartphone between November and December 2018?</li>
+  <li>Evidence related to robbery and weapons of mass destruction</li>
+  <li>Visual reconstruction of the most pertinent elements and entities (people and objects)</li>
+</ol>
+
+
+<h3>EVIDENCE PROVENANCE AND INTEGRITY</h3>
+
+<p>The initial step of the digital forensic analysis is to assess the provenance and integrity of the digital evidence and to examine device characteristics and identifiers. The overall CASE bundle provides context for the digital evidence.</p>
+
+
+<h4>CASE Representation of Investigation</h4>
+
+{% highlight json %}
+@CROSSOVER_BASE_JSON@
+{% endhighlight %}
+
+
+<h3>INVESTIGATIVE ACTIONS</h3>
+
+<p>Which organization and/or individual generated the report using which tool, with general information about the investigation and evidential item entered by the user.</p>
+
+
+<h4>Cellebrite XML Report Generation</h4>
+
+{% highlight xml %}
+  <sourceExtractions>
+    <extractionInfo id="0" name="Physical" prefixName="" isCustomName="False" type="Physical" deviceName="SAMG925F" fullName="Samsung SM-G925F Galaxy S6 Edge" index="0" IsPartialData="False" />
+  </sourceExtractions>
+  <caseInformation>
+    <field name="Case number" isSystem="True" isRequired="False" fieldType="CaseNumber" multipleLines="False">20181211001</field>
+    <field name="Case name" isSystem="True" isRequired="False" fieldType="CaseName" multipleLines="False">Crossover</field>
+    <field name="Evidence number" isSystem="True" isRequired="False" fieldType="EvidenceNumber" multipleLines="False">002</field>
+    <field name="Examiner name" isSystem="True" isRequired="True" fieldType="ExaminerName" multipleLines="False">ESC</field>
+    <field name="Department" isSystem="True" isRequired="False" fieldType="Department" multipleLines="False">ESC</field>
+    <field name="Location" isSystem="True" isRequired="False" fieldType="Location" multipleLines="False">Lausanne</field>
+    <field name="Notes" isSystem="True" isRequired="False" fieldType="Notes" multipleLines="True">Android device used by subject (Lupin)</field>
+  </caseInformation>
+  <metadata section="Additional Fields">
+    <item name="DeviceInfoCreationTime" systemtype="System.String"><![CDATA[12/04/2020 11:32:12]]></item>
+    <item name="UFED_PA_Version" systemtype="System.String"><![CDATA[7.1.0.106]]></item>
+  </metadata>
+{% endhighlight %}
+
+
+<h4>CASE Representation of Report Generation</h4>
+
+{% highlight json %}
+@CROSSOVER_REPORT_GENERATION_JSON@
+{% endhighlight %}
+
+
+<h3>EVIDENCE EXTRACTION</h3>
+
+<p>When a Cellebrite UFED acquisition contains data about the original forensic extraction process, these details will be in the XML section <samp>&lt;metadata section="Extraction Data"&gt;</samp> which can be represented as an Investigative Action in CASE.</p>
+
+
+<h4>Cellebrite XML</h4>
+
+{% highlight xml %}
+<metadata section="Extraction Data">
+    <item name="DeviceInfoExtractionStartDateTime" sourceExtraction="0" systemtype="System.String"><![CDATA[11.12.2018 09:49(UTC+1)]]></item>
+    <item name="DeviceInfoExtractionEndDateTime" sourceExtraction="0" systemtype="System.String"><![CDATA[11.12.2018 10:54(UTC+1)]]></item>
+    <item name="DeviceInfoUnitIdentifier" sourceExtraction="0" systemtype="System.String"><![CDATA[557488159]]></item>
+    <item name="DeviceInfoUnitVersion" sourceExtraction="0" systemtype="System.String"><![CDATA[7.1.0.751]]></item>
+    <item name="DeviceInfoInternalVersion" sourceExtraction="0" systemtype="System.String"><![CDATA[4.7.7.751]]></item>
+    <item name="DeviceInfoSelectedManufacturer" sourceExtraction="0" systemtype="System.String"><![CDATA[Samsung GSM]]></item>
+    <item name="DeviceInfoSelectedDeviceName" sourceExtraction="0" systemtype="System.String"><![CDATA[SM-G925F Galaxy S6 Edge]]></item>
+    <item name="DeviceInfoConnectionType" sourceExtraction="0" systemtype="System.String"><![CDATA[Cable No. 130]]></item>
+    <item name="ExtractionType" sourceExtraction="0" systemtype="System.String"><![CDATA[Physique]]></item>
+    <item name="ProjectStateExtractionId" sourceExtraction="0" systemtype="System.String"><![CDATA[F3FD304E-EF6C-4CBD-94CB-425880F82748]]></item>
+    <item name="Time zone settings (ID)" sourceExtraction="0" systemtype="System.String"><![CDATA[_Europe/Rome]]></item>
+    <item name="Time zone settings (ID)" systemtype="System.String"><![CDATA[_Europe/Rome]]></item>
+  </metadata>
+{% endhighlight %}
+
+
+<h4>CASE Representation of data extraction</h4>
+
+{% highlight json %}
+@CROSSOVER_DATA_EXTRACTION_JSON@
+{% endhighlight %}
+
+<p>The role of investigator should be linked to an entity, such as a person and/or organization. This is not represented in the current Cellebrite XML report, and is represented here using CASE.</p>
+
+{% highlight json %}
+@CROSSOVER_INVESTIGATOR_ROLE_JSON@
+{% endhighlight %}
+
+
+<h3>EVIDENCE INTEGRITY</h3>
+
+<p>The integrity of digital evidence is verified by comparing the hash value(s) of the working copy with the documented hash value(s) computed when the data was originally extracted. In this investigation, the original integrity information was documented using a secure blockchain-based electronic chain of custody ledger.</p>
+
+<p>NOTE: Cellebrite XML does not include hash of original data (values obtained using Autopsy)</p>
+
+
+<h4>CASE Representation of Integrity Details</h4>
+
+{% highlight json %}
+@CROSSOVER_INTEGRITY_DETAILS_JSON@
+{% endhighlight %}
+
+
+<h3>ACQUIRED DEVICE PROPERTIES</h3>
+
+<p>Cellebrite displays the following information about the forensic extraction.</p>
+
+<figure style="text-align:center;">
+  <img src="https://files.caseontology.org/casework.github.io/examples/crossover_wmd/extraction-20181211001-002.png" alt="Screenshot of Cellebrite extraction" />
+  <figcaption>"Screenshot of Cellebrite extraction"</figcaption>
+</figure>
+
+<h4>Cellebrite XML report representation of these Android Device properties.</h4>
+
+{% highlight xml %}
+  <metadata section="Device Info">
+    <item id="ccfd82bd-e2ab-4f78-8b4c-dbf12e79049a" name="DeviceInfoOSVersion" sourceExtraction="0" systemtype="System.String"><![CDATA[6.0.1]]></item>
+    <item id="64f1202a-90ea-4513-8ce2-59b512f024e8" name="DeviceInfoDetectedPhoneVendor" sourceExtraction="0" systemtype="System.String"><![CDATA[samsung]]></item>
+    <item id="5acb61a1-86b9-42bc-9159-654fe884331e" name="DeviceInfoDetectedPhoneModel" sourceExtraction="0" systemtype="System.String"><![CDATA[SM-G925F]]></item>
+    <item id="8a17c10f-dfb3-470e-a7a4-92de56b93731" name="AndroidFingerprint" sourceExtraction="0" systemtype="System.String"><![CDATA[samsung/zeroltexx/zerolte:6.0.1/MMB29K/G925FXXU4DPIL:user/release-keys]]></item>
+    <item id="16b94ed0-09dd-459f-8d41-b595f4f4bccd" name="DeviceInfoAndroidID" sourceExtraction="0" systemtype="System.String"><![CDATA[64cce130286b31b3]]></item>
+    <item id="efb1cca7-66cc-48af-9de2-b8dc745da653" name="DeviceInfoBluetoothDeviceName" sourceExtraction="0" systemtype="System.String"><![CDATA[Galaxy S6 edge]]></item>
+    <item id="f479922d-ac32-4ed0-bc12-9f76ba846775" name="DeviceInfoBluetoothDeviceAddress" sourceExtraction="0" systemtype="System.String"><![CDATA[D8:C4:E9:7C:2E:F8]]></item>
+    <item id="f783f11d-9a8f-4ca5-885b-db6445202693" name="Adresse Mac" sourceExtraction="0" systemtype="System.String"><![CDATA[AC:5F:3E:73:E3:78]]></item>
+    <item id="4508c37f-abd2-42ee-a881-fea59182049b" name="ICCID" sourceExtraction="0" systemtype="System.String"><![CDATA[8931088918010550289]]></item>
+    <item id="a7e57ad3-a8e4-4280-ad1d-43c7e86241b3" name="Hotspot password required" group="Fonction modem" sourceExtraction="0" systemtype="System.String"><![CDATA[qphl8058]]></item>
+    <item id="bc9f46f2-d2f7-40ab-abb0-22cdb2440b7a" name="Heure de la dernière activation" group="Fonction modem" sourceExtraction="0" systemtype="System.String"><![CDATA[02.12.2018 11:59(UTC+0)]]></item>
+    <item id="57da5b4b-4d36-4046-b02b-3e198f68d399" name="Nom du point d'accès" group="Fonction modem" sourceExtraction="0" systemtype="System.String"><![CDATA[AndroidAP]]></item>
+    <item id="3d8b0b8f-5ba1-4f99-a997-5ef45af4ab74" name="Heure d'activation du téléphone" sourceExtraction="0" systemtype="System.String"><![CDATA[10.06.2018 14:31(UTC+0)]]></item>
+    <item id="d4ec458b-da45-47ee-9a71-6d8968b5c5a3" name="Adresse MAC Bluetooth" sourceExtraction="0" systemtype="System.String"><![CDATA[D8:C4:E9:7C:2E:F8]]></item>
+    <item id="07252566-1065-4b60-81f8-847d40dd998d" name="DeviceInfoFactoryNumber" sourceExtraction="0" systemtype="System.String"><![CDATA[RF8H31GS5SF]]></item>
+    <item id="e8da2ffc-262d-4896-b812-be0e905bd10d" name="DeviceInfoTimeZone" sourceExtraction="0" systemtype="System.String"><![CDATA[Europe/Rome]]></item>
+    <item id="56a05424-a7cc-4a62-9778-2a7b5eb0a91c" name="IMEI" sourceExtraction="0" systemtype="System.String"><![CDATA[356420075722843]]></item>
+    <item id="3c5f0bb8-9482-40a0-b475-342e80cb2451" name="DeviceInfoAutomaticTimeZone" sourceExtraction="0" systemtype="System.String"><![CDATA[False]]></item>
+    <item id="00b0fef6-a4a3-481c-9a44-143be89fccdb" name="DeviceInfoMockLocationsAllowed" sourceExtraction="0" systemtype="System.String"><![CDATA[False]]></item>
+    <item id="83c89388-7e6b-4da0-9672-9bef352dc86e" name="DeviceInfoAutomaticTime" sourceExtraction="0" systemtype="System.String"><![CDATA[False]]></item>
+    <item id="9546d2e9-4d10-4446-82a7-5755a2536828" name="DeviceInfoLocationServicesEnabled" sourceExtraction="0" systemtype="System.String"><![CDATA[True]]></item>
+    <item id="c97c3457-5d50-4235-81c8-4caff1f83edd" name="IMSI" sourceExtraction="0" systemtype="System.String"><![CDATA[204080515881398]]></item>
+    <item id="4a6bb5fc-c443-49fb-ba45-053ff32d34fb" name="Advertising Id" sourceExtraction="0" systemtype="System.String"><![CDATA[48500120-c9c5-402e-a6bc-04e2f92ae259]]></item>
+    <item id="1170c281-900c-4c5c-9b27-1e19cf9297f1" name="DeviceInfoCurrentSimCountryIso" sourceExtraction="0" systemtype="System.String"><![CDATA[it]]></item>
+    <item id="40e15e48-cf10-49e9-89fa-be6f14bfdac3" name="DeviceInfoSimChangeOperation" sourceExtraction="0" systemtype="System.String"><![CDATA[3]]></item>
+    <item id="06a6c63e-ee37-4765-af92-720147985b56" name="ICCID" sourceExtraction="0" systemtype="System.String"><![CDATA[89390100002217635543]]></item>
+    <item id="8e8224bc-b2ca-4e33-8612-aab6ea918c02" name="DeviceInfoCurrentSimPhoneNumber" sourceExtraction="0" systemtype="System.String"><![CDATA[3662158453]]></item>
+    <item id="8a6d2085-870d-40ae-8313-2f8a26012f36" name="DeviceInfoCurrentSimOperator" sourceExtraction="0" systemtype="System.String"><![CDATA[22201]]></item>
+    <item id="3a9020ff-faa7-4d38-9beb-a4e334f17027" name="SIM Change Time" sourceExtraction="0" systemtype="System.String"><![CDATA[10.06.2018 14:35(UTC+0)]]></item>
+    <item id="917ac338-fc76-41be-b22c-c891b6c88697" name="DeviceInfoOSType" group="Metadata" sourceExtraction="0" systemtype="System.String"><![CDATA[Android]]></item>
+  </metadata>
+{% endhighlight %}
+
+<h4>CASE Representation of Android Device Properties</h4>
+
+{% highlight json %}
+@CROSSOVER_ANDROID_DEVICE_PROPERTIES_JSON@
+{% endhighlight %}
+
+
+<h3>SIM CARDS</h3>
+
+<p>Cellebrite XML provides a current SIM phone number of <samp>3662158453</samp> with an associated SIM ICCID of <samp>89390100002217635543</samp>  and a "SIM Change Time" as a string <samp>"10.06.2018 14:35(UTC+0)"</samp>.</p>
+
+<p>Forensic examination of the physical forensic copy using Autopsy finds the source of this information is the <samp>system/SimCard.dat</samp> file. The raw values obtained using Autopsy are listed here, including SIMChangeTime in UNIX timestamp format:</p>
+
+<blockquote><samp>
+CurrentSimSerialNumber=89390100002217635543<br />
+CurrentSimPhoneNumber=3662158453<br />
+SimChangeTime=1528641355649<br />
+</samp></blockquote>
+
+<p>In actuality, the current SIM card ICCID is <samp>8931088918010550289</samp>, as listed in the "<samp>siminfo</samp>" table of the <samp>data/com.android.providers.telephony/databases/telephony.db</samp> database. This SIM card has a different phone number than the one displayed by Cellebrite. The current SIM card was placed in the Samsung device on <samp>2018-11-16T12:34:28Z</samp>.</p>
+
+{% highlight json %}
+@CROSSOVER_SIM_CARD_CONTAINMENTS_JSON@
+{% endhighlight %}
+
+
+<h4>CASE Representation of SIM Card properties</h4>
+
+{% highlight json %}
+@CROSSOVER_SIM_CARD_PROPERTIES_JSON@
+{% endhighlight %}
+
+<p><b>Note:</b> Observe IMSI traces in "<samp>system/netpolicy.xml</samp>" file.</p>
+
+
+<h3>VIRTUAL IDENTITIES</h3>
+
+<p>The name and email address of the primary user of the device were obtained: Ares Lupin, aresthewerewolf@gmail.com, with a phone number +31647934784 associated with a WhatsApp account.</p>
+
+<p><strong>Note:</strong>The file "<samp>system/users/0.xml</samp>" contains the name Jessie Pinkman which is a previous user of the phone, not the primary user in this case.</p>
+
+<h4>Cellebrite XML</h4>
+
+{% highlight xml %}
+      <model type="UserAccount" id="7b9ba63c-cc03-4a9d-bfbe-647616613df4" deleted_state="Intact" decoding_confidence="High" isrelated="False" extractionId="0" labels="2">
+        <field name="UserMapping" type="Boolean">
+          <value type="Boolean"><![CDATA[False]]></value>
+        </field>
+        <field name="Name" type="String">
+          <value type="String"><![CDATA[Ares Lupin]]></value>
+        </field>
+        <field name="Username" type="String">
+          <value type="String"><![CDATA[31647934784@s.whatsapp.net]]></value>
+        </field>
+        <field name="Password" type="String">
+          <empty />
+        </field>
+        <field name="ServiceType" type="String">
+          <value type="String"><![CDATA[WhatsApp]]></value>
+        </field>
+        <field name="ServerAddress" type="String">
+          <empty />
+        </field>
+        <multiModelField name="Photos" type="ContactPhoto" />
+        <multiModelField name="Entries" type="ContactEntry">
+          <model type="EmailAddress" id="f9b77e54-952d-46d7-811a-a353fb7e0248" deleted_state="Intact" decoding_confidence="High" isrelated="False" extractionId="0">
+            <field name="UserMapping" type="Boolean">
+              <value type="Boolean"><![CDATA[False]]></value>
+            </field>
+            <field name="Category" type="String">
+              <value type="String"><![CDATA[Google Drive Account]]></value>
+            </field>
+            <field name="Value" type="String">
+              <value type="String"><![CDATA[aresthewerewolf@gmail.com]]></value>
+            </field>
+            <field name="Domain" type="String">
+              <value type="String"><![CDATA[Courrier électronique]]></value>
+            </field>
+          </model>
+{% endhighlight %}
+
+<h4>CASE Representation of Users and Accounts</h4>
+
+{% highlight json %}
+@CROSSOVER_USERS_AND_ACCOUNTS_JSON@
+{% endhighlight %}
+
+<p>In addition, a Reddit account was extracted from the Chrome Login Data database, and Cellebrite provides a converted timestamp as a known format.</p>
+
+
+<h4>Cellebrite XML</h4>
+
+{% highlight xml %}
+      </model>
+      <model type="UserAccount" id="714b4394-4ffb-4575-9ac5-1d46ffe01d8b" deleted_state="Intact" decoding_confidence="High" isrelated="False" extractionId="0">
+        <field name="UserMapping" type="Boolean">
+          <value type="Boolean"><![CDATA[False]]></value>
+        </field>
+        <field name="Name" type="String">
+          <empty />
+        </field>
+        <field name="Username" type="String">
+          <value type="String"><![CDATA[aresthewerewolf]]></value>
+        </field>
+        <field name="Password" type="String">
+          <value type="String"><![CDATA[v10j֯�H��x�_�_o�i�]]></value>
+        </field>
+        <field name="ServiceType" type="String">
+          <value type="String"><![CDATA[https://www.reddit.com/]]></value>
+        </field>
+        <field name="ServerAddress" type="String">
+          <empty />
+        </field>
+        <multiModelField name="Photos" type="ContactPhoto" />
+        <multiModelField name="Entries" type="ContactEntry" />
+        <multiField name="Notes" type="String" />
+        <multiModelField name="Addresses" type="StreetAddress" />
+        <multiModelField name="Organizations" type="Organization" />
+        <field name="TimeCreated" type="TimeStamp">
+          <value type="TimeStamp" format="TimeStampKnown">2018-11-26T20:00:31.000+01:00</value>
+        </field>
+        <jumptargets name="">
+          <targetid ismodel="true"><![CDATA[5a97ff43-5f03-4a71-afa3-a8a09ccf2801]]></targetid>
+        </jumptargets>
+      </model>
+{% endhighlight %}
+
+
+<h4>CASE Representation of Reddit account</h4>
+
+{% highlight json %}
+@CROSSOVER_REDDIT_ACCOUNT_JSON@
+{% endhighlight %}
+
+
+<h3>LOCATIONS</h3>
+
+<p>Location details in Longitude &amp; Latitude are represented here.</p>
+
+
+<h4>Cellebrite XML</h4>
+
+{% highlight xml %}
+      <model type="Location" id="83160da6-b92b-4100-9f17-28886ac835ef" deleted_state="Intact" decoding_confidence="High" isrelated="False" extractionId="0">
+        <field name="UserMapping" type="Boolean">
+          <value type="Boolean"><![CDATA[False]]></value>
+        </field>
+        <modelField name="Position" type="Coordinate">
+          <model type="Coordinate" id="05ec2079-bbeb-49f3-b9bc-cf4079f8556f" deleted_state="Unknown" decoding_confidence="High" isrelated="False" extractionId="0">
+            <field name="UserMapping" type="Boolean">
+              <value type="Boolean"><![CDATA[False]]></value>
+            </field>
+            <field name="Longitude" type="Double">
+              <value type="Double"><![CDATA[6.5791666666666666]]></value>
+            </field>
+            <field name="Latitude" type="Double">
+              <value type="Double"><![CDATA[46.537222222222219]]></value>
+            </field>
+            <field name="Elevation" type="Double">
+              <empty />
+            </field>
+            <field name="Comment" type="String">
+              <empty />
+            </field>
+            <field name="PositionAddress" type="String">
+              <empty />
+            </field>
+            <field name="Map" type="String">
+              <empty />
+            </field>
+          </model>
+        </modelField>
+{% endhighlight %}
+
+
+<h4>CASE Representation</h4>
+
+{% highlight json %}
+@CROSSOVER_LOCATION_JSON@
+{% endhighlight %}
+
+
+<h2>CHAIN OF EVIDENCE SOURCES</h2>
+
+
+<h3>Partition on Disk Image</h3>
+
+<p>Cellebrite XML report does not appear to maintain this provenance link between partitions and the forensic duplicate.</p>
+
+
+<h4>CASE Representation <em>(values obtained using Autopsy)</em></h4>
+
+{% highlight json %}
+@CROSSOVER_PARTITION_ON_DISK_IMAGE_JSON@
+{% endhighlight %}
+
+
+<h3>File System</h3>
+
+<p>Cellebrite XML report does not appear to maintain this provenance link between file system structures and the specific partition.</p>
+
+
+<h4>CASE Representation <em>(values obtained using Autopsy)</em></h4>
+
+{% highlight json %}
+@CROSSOVER_FILE_SYSTEM_IN_PARTITION_JSON@
+{% endhighlight %}
+
+
+<h3>File in File System</h3>
+
+<p>A file within the Android EXT3 file system is represented here.</p>
+
+
+<h4>CASE Representation</h4>
+
+{% highlight json %}
+@CROSSOVER_FILE_IN_FILE_SYSTEM_JSON@
+{% endhighlight %}
+
+
+<h3>File</h3>
+
+
+<h4>Cellebrite XML</h4>
+
+{% highlight xml %}
+    <file fs="USERDATA (ExtX)" fsid="c4b80ed4-a372-4440-9a87-881ed4423c09" path="/Root/media/0/Download/Elder_Wand.png" size="534167" id="88959d0b-b2bb-4a4a-85c8-edd7b2393e02" extractionId="0" deleted="Intact" embedded="false" isrelated="False">
+      <accessInfo>
+        <timestamp name="CreationTime">2018-11-30T09:43:24.000+01:00</timestamp>
+        <timestamp name="ModifyTime">2018-11-30T09:43:25.000+01:00</timestamp>
+        <timestamp name="AccessTime">2018-11-30T09:43:24.000+01:00</timestamp>
+      </accessInfo>
+      <metadata section="File">
+        <item name="Local Path" systemtype="System.String"><![CDATA[files\Image\Elder_Wand.png]]></item>
+        <item name="SHA256" systemtype="System.String"><![CDATA[]]></item>
+        <item name="MD5" systemtype="System.String"><![CDATA[13f1393bfe548620da920fac9865965e]]></item>
+        <item name="Tags" systemtype="System.String"><![CDATA[Image]]></item>
+      </metadata>
+      <metadata section="MetaData">
+        <item name="Inode Number" systemtype="System.String"><![CDATA[0xE3454]]></item>
+        <item name="Owner GID" systemtype="System.String"><![CDATA[0x3FF]]></item>
+        <item name="Owner UID" systemtype="System.String"><![CDATA[0x3FF]]></item>
+        <item name="CoreFileSystemFileSystemNodeFileDataOffsetName" group="CoreFileSystemFileSystemNodeFileOffsetsCategory" systemtype="System.String"><![CDATA[0x2B3A00000]]></item>
+        <item name="CoreFileSystemFileSystemNodeCreationTime" group="CoreFileSystemFileSystemNodeDateTime" systemtype="System.String"><![CDATA[30.11.2018 08:43(UTC+0)]]></item>
+        <item name="CoreFileSystemFileSystemNodeModifyTime" group="CoreFileSystemFileSystemNodeDateTime" systemtype="System.String"><![CDATA[30.11.2018 08:43(UTC+0)]]></item>
+        <item name="CoreFileSystemFileSystemNodeLastAccessTime" group="CoreFileSystemFileSystemNodeDateTime" systemtype="System.String"><![CDATA[30.11.2018 08:43(UTC+0)]]></item>
+        <item name="ReportTemplateFileSize" systemtype="System.String"><![CDATA[534167 Bytes]]></item>
+        <item name="CoreFileSystemFileSystemNodeFileChunks" systemtype="System.String"><![CDATA[1]]></item>
+      </metadata>
+    </file>
+{% endhighlight %}
+
+
+<h4>CASE Representation</h4>
+
+{% highlight json %}
+@CROSSOVER_ELDER_WAND_PNG_JSON@
+{% endhighlight %}
+
+<p><strong>Note:</strong> EXIF metadata is represented using properties specified in the standard.  (Further CASE EXIF development is occuring in ticket AC-126.)</p>
+
+
+<h3> WhatsApp Message</h3>
+
+
+<h4>Cellebrite XML</h4>
+
+{% highlight xml %}
+          <model type="InstantMessage" id="ed5d35d6-6e7c-4099-80f4-1fadfc0ee08c" deleted_state="Intact" decoding_confidence="High" isrelated="False" extractionId="0">
+            <field name="UserMapping" type="Boolean">
+              <value type="Boolean"><![CDATA[False]]></value>
+            </field>
+            <modelField name="From" type="Party">
+              <model type="Party" id="caf581c1-2ba5-4c54-b565-f8b48078b3a6" deleted_state="Unknown" decoding_confidence="High" isrelated="False" extractionId="0">
+                <field name="UserMapping" type="Boolean">
+                  <value type="Boolean"><![CDATA[False]]></value>
+                </field>
+                <field name="Identifier" type="String">
+                  <value type="String"><![CDATA[31647934784@s.whatsapp.net]]></value>
+                </field>
+                <field name="Role" type="PartyRole">
+                  <value type="PartyRole"><![CDATA[From]]></value>
+                </field>
+                <field name="Status" type="PartyStatus">
+                  <value type="PartyStatus"><![CDATA[Unknown]]></value>
+                </field>
+                <field name="Name" type="String">
+                  <value type="String"><![CDATA[Ares Lupin]]></value>
+                </field>
+                <field name="IPAddress" type="String">
+                  <empty />
+                </field>
+                <multiField name="IPAddresses" type="String" />
+                <field name="DateDelivered" type="TimeStamp">
+                  <empty />
+                </field>
+                <field name="DateRead" type="TimeStamp">
+                  <empty />
+                </field>
+                <field name="DatePlayed" type="TimeStamp">
+                  <empty />
+                </field>
+                <field name="Distance" type="Double">
+                  <value type="Double"><![CDATA[0]]></value>
+                </field>
+                <field name="DistanceTimeStamp" type="TimeStamp">
+                  <empty />
+                </field>
+                <field name="IsPhoneOwner" type="Boolean">
+                  <value type="Boolean"><![CDATA[True]]></value>
+                </field>
+              </model>
+            </modelField>
+            <multiModelField name="To" type="Party">
+              <model type="Party" id="3e45662b-0578-445d-bf14-ddbfc8eb2d4b" deleted_state="Intact" decoding_confidence="High" isrelated="False" extractionId="0">
+                <field name="UserMapping" type="Boolean">
+                  <value type="Boolean"><![CDATA[False]]></value>
+                </field>
+                <field name="Identifier" type="String">
+                  <value type="String"><![CDATA[41786909109@s.whatsapp.net]]></value>
+                </field>
+                <field name="Role" type="PartyRole">
+                  <value type="PartyRole"><![CDATA[To]]></value>
+                </field>
+                <field name="Status" type="PartyStatus">
+                  <value type="PartyStatus"><![CDATA[Unknown]]></value>
+                </field>
+                <field name="Name" type="String">
+                  <value type="String"><![CDATA[Wonder]]></value>
+                </field>
+                <field name="IPAddress" type="String">
+                  <empty />
+                </field>
+                <multiField name="IPAddresses" type="String" />
+                <field name="DateDelivered" type="TimeStamp">
+                  <value type="TimeStamp" format="TimeStampKnown">2018-12-04T20:15:58.000+01:00</value>
+                </field>
+                <field name="DateRead" type="TimeStamp">
+                  <value type="TimeStamp" format="TimeStampKnown">2018-12-04T20:16:07.000+01:00</value>
+                </field>
+                <field name="DatePlayed" type="TimeStamp">
+                  <empty />
+                </field>
+                <field name="Distance" type="Double">
+                  <value type="Double"><![CDATA[0]]></value>
+                </field>
+                <field name="DistanceTimeStamp" type="TimeStamp">
+                  <empty />
+                </field>
+                <field name="IsPhoneOwner" type="Boolean">
+                  <value type="Boolean"><![CDATA[False]]></value>
+                </field>
+              </model>
+            </multiModelField>
+            <field name="Subject" type="String">
+              <empty />
+            </field>
+            <field name="Body" type="String">
+              <value type="String"><![CDATA[20 minutes away]]></value>
+            </field>
+            <field name="SourceApplication" type="String">
+              <value type="String"><![CDATA[WhatsApp]]></value>
+            </field>
+            <field name="TimeStamp" type="TimeStamp">
+              <value type="TimeStamp" format="TimeStampKnown">2018-12-04T20:12:56.565+01:00</value>
+            </field>
+            <field name="DateRead" type="TimeStamp">
+              <empty />
+            </field>
+            <field name="DateDelivered" type="TimeStamp">
+              <empty />
+            </field>
+            <modelField name="Attachment" type="Attachment">
+              <empty />
+            </modelField>
+            <multiModelField name="Attachments" type="Attachment" />
+            <modelField name="Position" type="Coordinate">
+              <empty />
+            </modelField>
+            <field name="PositionAddress" type="String">
+              <empty />
+            </field>
+            <field name="Status" type="MessageStatus">
+              <value type="MessageStatus"><![CDATA[Sent]]></value>
+            </field>
+            <multiModelField name="SharedContacts" type="Contact" />
+            <field name="Label" type="Label">
+              <empty />
+            </field>
+            <field name="Platform" type="Platform">
+              <value type="Platform"><![CDATA[Mobile]]></value>
+            </field>
+          </model>
+{% endhighlight %}
+
+
+<h4>CASE Representation of WhatsApp account and message</h4>
+
+
+<h5>WhatsApp Application</h5>
+
+{% highlight json %}
+@CROSSOVER_WHATSAPP_APPLICATION_JSON@
+{% endhighlight %}
+
+
+<h5> WhatsApp Account</h5>
+{% highlight json %}
+@CROSSOVER_WHATSAPP_ACCOUNT_JSON@
+{% endhighlight %}
+
+
+<h5>WhatsApp Message</h5>
+
+{% highlight json %}
+@CROSSOVER_WHATSAPP_MESSAGE_JSON@
+{% endhighlight %}
+
+
+<h5>Relationship Object</h5>
+
+<p>The WhatsApp message was contained within the file <samp>msgstore.db</samp> at offset <samp>293822</samp> in the <samp>messages</samp> table.</p>
+
+{% highlight json %}
+@CROSSOVER_WHATSAPP_MESSAGE_FILE_RELATIONSHIP_JSON@
+{% endhighlight %}
+
+
+<h5>File msgstore.db</h5>
+
+{% highlight json %}
+@CROSSOVER_WHATSAPP_FILE_MSGSTORE_DB_JSON@
+{% endhighlight %}
+
+
+<h5>Relationship Object</h5>
+
+<p>The WhatsApp SQLite database file was contained within the forensic copy of the mobile device.</p>
+
+{% highlight json %}
+@CROSSOVER_WHATSAPP_FILE_FORENSIC_COPY_RELATIONSHIP_JSON@
+{% endhighlight %}
+
+
+<h3>Email</h3>
+
+
+<h4>CASE Representation</h4>
+
+{% highlight json %}
+@CROSSOVER_EMAIL_JSON@
+{% endhighlight %}
+
+
+<h3>URL History</h3>
+
+
+<h4>Cellebrite XML</h4>
+
+{% highlight xml %}
+     <model type="VisitedPage" id="39ff4987-8ae5-47e3-8369-dbd0d5f79398" deleted_state="Intact" decoding_confidence="High" isrelated="False" extractionId="0">
+        <field name="UserMapping" type="Boolean">
+          <value type="Boolean"><![CDATA[False]]></value>
+        </field>
+        <field name="Title" type="String">
+          <value type="String"><![CDATA[Friday Magazine | Home]]></value>
+        </field>
+        <field name="Url" type="String">
+          <value type="String"><![CDATA[http://www.friday-magazine.ch/]]></value>
+        </field>
+        <field name="LastVisited" type="TimeStamp">
+          <value type="TimeStamp" format="TimeStampKnown">2018-12-06T19:52:21.000+01:00</value>
+        </field>
+        <field name="VisitCount" type="Int32">
+          <empty />
+        </field>
+        <field name="Source" type="String">
+          <value type="String"><![CDATA[Chrome]]></value>
+        </field>
+        <jumptargets name="">
+          <targetid ismodel="true"><![CDATA[5a97ff43-5f03-4a71-afa3-a8a09ccf2801]]></targetid>
+        </jumptargets>
+      </model>
+{% endhighlight %}
+
+
+<h4>CASE Representation</h4>
+
+{% highlight json %}
+@CROSSOVER_URL_HISTORY_JSON@
+{% endhighlight %}

@@ -1,0 +1,18 @@
+SELECT DISTINCT ?nDerivingAction ?lDescription
+WHERE {
+  # Identify action at end of path.
+  ?nEndAction
+    uco-core:hasFacet/uco-action:endTime ?lEndActionEndTime ;
+    uco-core:hasFacet/uco-action:result/uco-core:hasFacet/uco-observable:fileName "IMG_1863.jpg" ;
+    .
+
+  # Identify all actions in chain.
+  ?nEndAction case-investigation:wasInformedBy* ?nDerivingAction .
+
+  # Extract annotations of actions in chain.
+  ?nDerivingAction
+    uco-core:description ?lDescription ;
+    uco-core:hasFacet/uco-action:endTime ?lDerivingActionEndTime ;
+    .
+}
+ORDER BY ?lDerivingActionEndTime

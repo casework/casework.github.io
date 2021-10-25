@@ -4,10 +4,205 @@ questions:
     - question: "Does CASE require hex data be entered uppercase or lowercase?"
       title: "CASE hex data"
       answer: >
-        While CASE and UCO haven’t yet put in a stance on this, it's worth noting that the XML Schema source of basic RDF types does weigh in on this with the more stringent [hexBinaryCanonical](https://www.w3.org/TR/xmlschema11-2/#f-hexBinaryCanonical): Uppercase.
+        While CASE and UCO haven’t yet put in a stance on this, it's worth noting that the XML Schema source of basic RDF types does weigh in on this with the more stringent [`hexBinaryCanonical`](https://www.w3.org/TR/xmlschema11-2/#f-hexBinaryCanonical): Uppercase.
+        
+        
+        Since CASE 0.2.0, there has been no requirement either way.  CASE users should confirm whether `hexBinary` casing would affect usage.  One example of this being tested is in a SPARQL engine in Python, in [`test_hexbinary.py`](https://github.com/casework/CASE-Utilities-Python/blob/main/tests/hexbinary/test_hexbinary.py) (part of the [CASE Python Utilities](https://github.com/casework/CASE-Utilities-Python/) test suite).
+    - question: "Should I use CASE as a data model?"
+      title: "CASE data model"
+      answer: >
+        You could use CASE as a data model but it is actually an ontology that is designed to be a common language between tools/systems and organizations/countries. As such, the most common approach to using CASE is to map an existing data model to the CASE standard, and then translate to/from the data model to CASE via import/export functions. During this mapping and implementation process, tool developers often find features of CASE that are useful to incorporate into their own data models.
+        
+        
+        Some visualization tools import and render CASE natively, effectively using it as a data model to combine information from various sources into a unified repository to strengthen correlation and analysis. This is a design choice, not a requirement for using CASE.
+    - question: "Does CASE represent all activities in cyber-investigations?"
+      title: "CASE represenation of activities in cyber-investigations"
+      answer: >
+        The CASE/UCO community works together in an effort to keep pace with evolving types of information in investigations. Currently, CASE data representation includes data sources (mobile devices, storage media, memory), event details (browser history, logs), and well-known digital objects such as files and folders, messages (email, chat), documents (PDF, Word), multimedia (pictures, video, audio). Additional support being developed by the CASE/UCO community includes SQLite databases and Windows artifacts. In addition, by treating addresses, accounts, locations, identities, and other entities as nodes in a graph, CASE represents relationships between objects to support linked data analysis (pivot, enrich) and automated correlation (similarity/repetition detection).
+    - question: "Does CASE represent all types of information in cyber-investigations? "
+      title: "CASE represenation of types of information in cyber-investigations"
+      answer: >
+        The CASE/UCO community works together in an effort to keep pace with evolving types of information in investigations. Currently, CASE data representation includes data sources (mobile devices, storage media, memory), event details (browser history, logs), and well-known digital objects such as files and folders, messages (email, chat), documents (PDF, Word), multimedia (pictures, video, audio). Additional support being developed by the CASE/UCO community includes SQLite databases and Windows artifacts. In addition, by treating addresses, accounts, locations, identities, and other entities as nodes in a graph, CASE represents relationships between objects to support linked data analysis (pivot, enrich) and automated correlation (similarity/repetition detection). 
+    - question: "How do I represent data not covered by CASE?"
+      title: "Represent data not covered by CASE"
+      answer: >
+        Create a custom Facet (also known as a `Data Property`). If the type of data is useful to others, propose that it be added to the CASE standard.
+    - question: "Does CASE represent multiple devices and the links between them? "
+      title: "CASE multiple device support"
+      answer: >
+        Any number of devices can be represented in a single CASE Bundle, or in multiple Bundles in the same investigation. Links between any objects can be represented with a CASE `Relationship`, using the unique identifier of the objects.
+        
+        ```json
 
+        {
+          "@id": "kb:device-linkage-a1dbff0e-974b-4295-b035-e1bc3271945d",
+          "@type": "uco-observable:ObservableRelationship",
+          "uco-core:source": {
+              "@id": "kb:device1-24d20c80-f035-40ae-88dd-fc66f70180f6"
+          },
+          "uco-core:target": {
+              "@id": "kb:device2-eee670c6-01d4-4e42-bb6b-ebeca149b168"
+          },
+          "uco-core:kindOfRelationship": {
+              "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
+              "@value": "Referenced_Within"
+          },
+          "uco-core:isDirectional": true
+        }
 
-        We can state as of CASE 0.2.0, there is no requirement either way.
+        ```
+    - question: "Why does CASE use RDF?"
+      title: "CASE RDF"
+      answer: >
+        RDF is a generalized representation and is used because it can be serialized into a variety of formats, including JSON-LD.
+    - question: "Does CASE require all output in JSON-LD format? "
+      title: "CASE JSON-LD Required"
+      answer: >
+        Although JSON-LD is the default serialization format currently used in all examples and tooling, CASE can support any serialization. In addition, some tools' output includes files extracted from data sources in their native format, which can be referenced using CASE but stored separately.
+    - question: "Does CASE store the full content of all data in cyber-investigations?"
+      title: "CASE full content for cyber-investigations"
+      answer: >
+        CASE is not a replacement for digital evidence storage containers or disk image formats. CASE should be treated mostly as metadata, descriptive of other formats. A disk image would be represented in CASE as a `uco-observable:Image` node, and some descriptive annotations about the image format (like whether it’s raw, E01), and about the image files themselves (such as its name and original modification time) would be included in the CASE graph in ImageFacet and FileFacet facets. The total CASE payload for this would be probably under a kilobyte.
+        
+        
+        This CASE graph would be sent as a JSON-LD file ahead of, or alongside of, the disk image file, through the communication channel being used in that particular investigation. (While I illustrated a heavily file-centric workflow there, other APIs for communicating CASE data and other payloads could be used interchangeably.)
+        
+        
+        Meanwhile, base64 encoding is used in some areas in CASE to denote data snippets. It could be used to represent the entirety of a disk image as an RDF literal - perhaps a SIM card read. But, generally, the use of base64 for this purpose would be a miserable experience for all involved so we that we don't encourage this as a practice, nor would we design anything in the ontology or community tooling to encourage this.
+    - question: "Does CASE work with digital evidence storage containers?"
+      title: "CASE digital evidence storage containers"
+      answer: >
+        Yes. An example is AFF4 is provided here for a file that was carved from a data source and saved with the filename carved1.jpg into an AFF4 logical container named aff4-container.xyz.
+
+        ```json
+
+          {
+              "@id": "aff4://3b3f6e45-7792-4577-9ce5-e23396d94c32//extracted/carved/carved1.jpg",
+              "@type": "uco-observable:ObservableObject",
+              "uco-core:hasFacet": [
+                  {
+                      "@type": "uco-observable:FileFacet",
+                      "uco-observable:fileName": "carved1.jpg",
+                      "uco-observable:sizeInBytes": 2964571
+                  },
+                  {
+                      "@type": "uco-observable:ContentDataFacet",
+                      "uco-observable:mimeType": "image/jpeg",
+                      "uco-observable:sizeInBytes": 2964571,
+                      "uco-observable:hash": [
+                          {
+                              "@type": "uco-types:Hash",
+                              "uco-types:hashMethod": {
+                                  "@type": "uco-vocabulary:HashNameVocab",
+                                  "@value": "SHA256"
+                              },
+                              "uco-types:hashValue": {
+                                  "@type": "xsd:hexBinary",
+                                  "@value": "a49f0716e610bd0f77543b1e7ca7613e9b31bf32509e854c7ba65b79be502a18"
+                              }
+                          }
+                      ]
+                  }
+              ]
+          },
+          {
+              "@id": "kb:relationship-uuid-2",
+              "@type": "uco-core:Relationship",
+              "uco-core:source": {
+                  "@id": "aff4://3b3f6e45-7792-4577-9ce5-e23396d94c32//extracted/carved/carved1.jpg"
+              },
+              "uco-core:target": {
+                  "@id": "kb:aff4-container-uuid"
+              },
+              "uco-core:kindOfRelationship": {
+                  "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
+                  "@value": "Contained_Within"
+              },
+              "uco-core:isDirectional": true,
+          },
+          {
+              "@id": "kb:aff4-container-uuid",
+              "@type": "uco-observable:ObservableObject",
+              "uco-core:hasFacet": [
+                  {
+                      "@type": "uco-observable:FileFacet",
+                      "uco-observable:extension": "xyz",
+                      "uco-observable:fileName": "aff4-container.xyz",
+                      "uco-observable:modifiedTime": {
+                          "@type": "xsd:dateTime",
+                          "@value": "2021-06-15T12:11:54+00:00"
+                      },
+                      "uco-observable:sizeInBytes": 34864571
+                  },
+              ]
+          }
+
+        ```
+ - category: Ontology
+   questions:
+    - question: "What are Facets?"
+      title: "What are Facets"
+      answer: >
+        CASE uses Facets to represent various properties of the associated Observable Object. CASE uses the programing concept of 'duck typing', allowing an object to be enriched with any rationale combination of Facets.
+    - question: "What is duck typing?"
+      title: "What is Duck typing"
+      answer: >
+        Cyber-investigations can involve various kinds of data, including unexpected combinations of properties in a single object. CASE uses duck typing which allows data to be defined by its inherent characteristics rather than enforcing strict data typing. CASE objects can be assigned any rational combination of Facets, such as a file that is an image and a thumbnail. When employing this approach, data types are evaluated with the duck test, allowing data to be represented more truly without imposing a rigid class structure. Simply stated, if it walks like a duck, swims like a duck, quacks like a duck, and looks like a duck, then it probably is a duck. For certain common combinations of Facets, it is possible to assign them a higher-level class, such a PDF File or WhatsApp Message. "This flexible approach is favored over using the OWL concept of inheritance to define an object with various properties. Using inheritance requires permitted properties to be formally defined for each object type, which becomes un-wieldy when unexpected combinations of objects are encountered, such as one type of data embedded within another type of data that was not imagined when the ontology was designed." \([Casey et al, 2017](https://drive.google.com/file/d/0B2Z-Slbvlz3aSkluRU1heUtkZEU/view?resourcekey=0-EpqemVnzN6lc1OgCLdw0vw)\)
+    - question: "What is Provenance?"
+      title: "What is Provenance"
+      answer: >
+        In any cyber-investigation, when producing digital evidence to support decisions, there is a requirement to provide supporting details of provenance: how the evidence was originally obtained and how it was subsequently processed. This will include: the seizing of any devices, how and by whom they were handled; and the use of various tools to extract data from physical and logical sources and then process it to produce the digital evidence.
+        
+
+        To ensure all analysis results are traceable to their source(s), CASE keeps track of when, where and who performed which actions and used which tools to perform investigative actions on data sources, and what was the result. Specifically, automatic traceability is integrated into CASE using the `InvestigativeAction` and `ProvenanceRecord` representations.
+        
+
+        An `InvestigativeAction` operates on input (device, data, provenance record) and produces an output along with a new `ProvenanceRecord`. An `InvestigativeAction` that operates on an input with multiple available `ProvenanceRecord`s should use the record that is “most recent” or “closest” in the overall process history, not the original record. An `InvestigativeAction` that involves transferring an artifact without any mutation (e.g., transferring from one organization to another with just a relabeling/reassignment of exhibitNumber) should include the artifact as the action inputs (along with the most recent associated `ProvenanceRecord`), but should not include the same artifact as the `InvestigativeAction` outputs, only the new `ProvenanceRecord`. A detailed illustration of Provenance is provided in the Urgent Evidence example.
+    - question: "What is a unique identifier (@id) of an object in CASE?"
+      title: "@id unique identifier"
+      answer: >
+        The identifier for an object should be globally unique, allowing it to be referenced by other objects. The format is described in [Instance Data Guidance](https://caseontology.org/resources/instance_data.html)
+    - question: "What goes into the top-most “container” of a CASE bundle? "
+      title: "CASE bundle top container"
+      answer: >
+        Any information related to a cyber-investigation must be wrapped within a CASE `Bundle`. This can include investigation details, data marking, text description, and reference to objects contained in the `Bundle`. Illustrations of a CASE `Bundle` are provided in all examples on the [website](https://caseontology.org/examples/) and [examples repository](https://github.com/casework/CASE-Examples).
+    - question: "Does CASE represent people and places?"
+      title: "CASE people and place representation"
+      answer: >
+        CASE representation covers information about any person or place associated with the digital evidence, including users of a device and their actions (e.g., running wiping tools to destroy digital evidence).
+    - question: "Does CASE support data markings?"
+      title: "CASE data markings"
+      answer: >
+        Yes. CASE supports classification markings, which are adaptable to different needs, and permit marking both at the overall CASE bundle level and granular CASE object level. An example of representing Traffic Light Protocol and a specific Information Exchange Policy (IEF) to mark CASE data is presented in [Casey et al, 2017](http://users.umiacs.umd.edu/~oard/desi7/papers/EC.pdf). An example of an unclassified data marking definition is shown here in CASE format.
+
+        ```json
+
+        {
+          "@id": "ueexercise:marking-definition-unclass-uuid",
+          "@type": "uco-marking:MarkingDefinition",
+          "uco-marking:definitionType": "EDH",
+          "uco-marking:definition": {
+            "@type": "edh:EnterpriseDataHeader",
+            "edh:edhIdentifier": "guide://999990/testcase1",
+            "edh:edhDataItemCreateDateTime": "2006-05-04T18:13:51.0Z",
+            "edh:edhResponsibleEntity": {
+              "edh:Country": "USA",
+              "edh:Organization": "DNI"
+            },
+            "edh:edhPortionMark": {
+              "@type": "edh:PortionMark",
+              "edh:ownerProducer": "USA",
+              "edh:classification": "U"
+            }
+          }
+        },
+
+        ```
+
+    - question: "What are Roles?"
+      title: "What are Roles"
+      answer: >
+        Roles of people involved in an investigation can be represented using CASE, as appropriate for the context. For instance, the optional Victim object is defined for those who need it (e.g., victim targeting). CASE is sufficiently flexible to deal with any role (e.g., Investigator, Subject, Defendant, Benevolent role, Malicious role, Neutral role) and role changes (e.g., someone is a Victim initially, and becomes a Defendant later). This flexibility also allows avoidance of labelling someone with a particular role (e.g., Victim, Subject) in contexts where it is not permitted or appropriate. In the [Oresteia example](https://github.com/casework/CASE-Examples/tree/master/examples/illustrations/Oresteia), Clytemnestra has the Role of Offender in Crime E and the Role of Victim in Crime F.
  - category: JSON
    questions:
     - question: "What are the possible “versions” (or “methods”) to find an object reference?"
@@ -75,7 +270,7 @@ questions:
 
         Example 2-1 looks a bit ridiculous, but comes from RDF's practice of letting you write all the facts in your knowledge base as full triples with a lot of redundant text.  E.g. examples 2-1 and 2-2 would both look like this in Turtle syntax:
         
-        ```json
+        ```yaml
 
         <http://example.org/kb/object1>	<http://example.org/ontology/someProperty>	<http://example.org/kb/object2>	.
 
@@ -136,3 +331,11 @@ questions:
         ```
 
         The short of the work ahead on context is, that whole `@context` JSON dictionary can be a JSON-LD file, specified by URL, that provides all of the JSON-not-LD syntactic simplifications the CASE and UCO communities think appropriate and helpful.  That file can be mostly (possibly entirely) mechanically derived from the CASE and UCO ontologies.  AND it can handle the cardinality matter, so something that could be a JSON array will always be a JSON array.
+    - question: "How do I pretty-print JSON-LD output from rdflib? "
+      title: "JSON-LD pretty print"
+      answer: >
+        You can use the rdf-toolkit, and a script using PyLD
+    - question: "Does the object property of a CASE `Bundle` have to list each and every object in the `Bundle`?"
+      title: "CASE Bundle list"
+      answer: >
+        There are two approaches: 1) List each and every object for ease of reference, 2) Only list the `InvestigativeAction` and `ProvenanceRecord` objects in the `Bundle`.

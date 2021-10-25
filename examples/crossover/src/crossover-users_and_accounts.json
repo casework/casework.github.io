@@ -1,0 +1,127 @@
+[
+    {
+        "@id": "kb:primaryuser-uuid",
+        "@type": "uco-identity:Identity",
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-identity:SimpleNameFacet",
+                "uco-identity:givenName": "Ares",
+                "uco-identity:familyName": "Lupin"
+            }
+        ]
+    },
+    {
+        "@id": "kb:primaryuser-email-uuid",
+        "@type": "uco-core:Relationship",
+        "uco-core:source": {
+            "@id": "kb:primaryuser-uuid"
+        },
+        "uco-core:target": {
+            "@id": "kb:EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53"
+        },
+        "uco-core:kindOfRelationship": "Has_Account",
+        "uco-core:isDirectional": true
+    },
+    {
+        "@id": "kb:primaryuser-email-uuid",
+        "@type": "uco-core:Relationship",
+        "uco-core:source": {
+            "@id": "kb:primaryuser-uuid"
+        },
+        "uco-core:target": {
+            "@id": "kb:WhatsApp-90652808-7341-40D3-9285-774D865AD3F9"
+        },
+        "uco-core:kindOfRelationship": "Has_Account",
+        "uco-core:isDirectional": true
+    },
+    {
+        "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53",
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-observable:EmailAddressFacet",
+                "uco-observable:value": "aresthewerewolf@gmail.com"
+            }
+        ]
+    },
+    {
+        "@id": "kb:EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53",
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-observable:EmailAccountFacet",
+                "uco-observable:emailAddress": {
+                    "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53"
+                }
+            }
+        ]
+    },
+    {
+        "@id": "kb:C1D3237A-6D7F-4E96-BBEF-6EB4C0A621D1",
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-observable:AccountFacet",
+                "uco-observable:accountIssuer": "Salt",
+                "uco-observable:isActive": true
+            },
+            {
+                "@type": "uco-observable:PhoneAccountFacet",
+                "uco-observable:phoneNumber": "+31647934784",
+                "uco-core:name": ""
+            }
+        ]
+    },
+    {
+        "@id": "kb:associated-account-phonenumber1",
+        "@type": "uco-core:Relationship",
+        "uco-core:source": {
+            "@id": "kb:90652808-7341-40D3-9285-774D865AD3F9"
+        },
+        "uco-core:target": {
+            "@id": "kb:C1D3237A-6D7F-4E96-BBEF-6EB4C0A621D1"
+        },
+        "uco-core:kindOfRelationship": "Associated_Account",
+        "uco-core:isDirectional": true
+    },
+    {
+        "@id": "kb:WhatsApp-90652808-7341-40D3-9285-774D865AD3F9",
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-observable:AccountFacet",
+                "uco-observable:accountIssuer": "organization-whatsapp-uuid",
+                "uco-observable:accountIdentifier": "31647934784@s.whatsapp.net",
+                "uco-observable:isActive": true
+            },
+            {
+                "@type": "uco-observable:ApplicationAccountFacet",
+                "uco-observable:application": "kb:application-whatsapp-uuid"
+            },
+            {
+                "@type": "uco-observable:DigitalAccountFacet",
+                "uco-observable:displayName": "Ares Lupin"
+            }
+        ]
+    },
+    {
+        "@id": "kb:organization-whatsapp-uuid",
+        "@type": "uco-identity:Identity",
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-identity:Organization",
+                "drafting:orgName": "WhatsApp"
+            }
+        ]
+    },
+    {
+        "@id": "kb:application-whatsapp-uuid",
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
+            {
+                "@type": "drafting:ApplicationFacet",
+                "drafting:appName": "WhatsApp"
+            }
+        ]
+    }
+]

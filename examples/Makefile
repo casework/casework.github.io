@@ -17,21 +17,29 @@ top_srcdir := ..
 
 all: \
   all-asgard \
+  all-crossover \
   all-owl_trafficking \
   all-urgent_evidence
 
 .PHONY: \
   all-asgard \
+  all-crossover \
   all-owl_trafficking \
   all-urgent_evidence \
   check-asgard \
+  check-crossover \
   check-owl_trafficking \
   check-urgent_evidence \
   clean-asgard \
+  clean-crossover \
   clean-owl_trafficking \
   clean-urgent_evidence
 
 all-asgard:
+	$(MAKE) \
+	  --directory asgard
+
+all-crossover:
 	$(MAKE) \
 	  --directory asgard
 
@@ -46,12 +54,18 @@ all-urgent_evidence: \
 
 check: \
   check-asgard \
+  check-crossover \
   check-owl_trafficking \
   check-urgent_evidence
 
 check-asgard:
 	$(MAKE) \
 	  --directory asgard \
+	  check
+
+check-crossover:
+	$(MAKE) \
+	  --directory crossover \
 	  check
 
 check-owl_trafficking:
@@ -67,12 +81,18 @@ check-urgent_evidence: \
 
 clean: \
   clean-asgard \
+  clean-crossover \
   clean-owl_trafficking \
   clean-urgent_evidence
 
 clean-asgard:
 	@$(MAKE) \
 	  --directory asgard \
+	  clean
+
+clean-crossover:
+	@$(MAKE) \
+	  --directory crossover \
 	  clean
 
 clean-owl_trafficking:

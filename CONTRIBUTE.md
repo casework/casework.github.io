@@ -13,6 +13,69 @@ make check
 That is, a fresh repository clone should not see any output of `git diff` after running those three commands.
 
 
+## Narratives
+
+If you have a JSON-LD narrative to edit or contribute, please review this section's directions.
+
+The CASE website makes some trades from ease of development for the sake of presentation with static, version-controlled files.  The narrative pages are backed by JSON snippets, as inline data samples and as functional JSON-LD data.  Each narrative has a file named after its directory's basename, e.g. [`urgent_evidence.json`](examples/urgent_evidence/urgent_evidence.json); this file is also backed by those JSON snippets.  Further, that composite JSON-LD file also backs one (and soon to be more) queries that support the README.
+
+`make` handles compiling the README and its supporting files.  So, to edit a narrative's `index.html`, **don't edit index.html**.  Likewise for the JSON snippet file.  Instead, a source file should be edited, and `make` should be run to build all the "Downstream" affected files.
+
+
+### Before working with narratives
+
+First, the workflow in this file only supports a local workflow, and does not support editing via Github's interactive web interface.
+
+To start the editing process:
+
+* Use Git to clone [the website repository](https://github.com/casework/casework.github.io/).
+* Change directory to the cloned directory.
+* Run `make check`.  Resources will download, some code will build, and unit tests will run.  Administrator privileges will not be necessary.
+
+After running `make check`, you will have confirmed you are starting from a functioning state with tests passing.
+
+
+### Editing existing narratives
+
+Each narrative has its housing directory with the user-friendly URL (e.g. [`examples/urgent_evidence`](examples/urgent_evidence), corresponding with [`https://caseontology.org/examples/urgent_evidence/`](https://caseontology.org/examples/urgent_evidence/)).  Each narrative also has its own source directory, where unit test code and JSON-LD snippets are stored.
+
+To revise a narrative, modify files in its `src/` directory.  Take for example [Urgent Evidence's `src/` directory](examples/urgent_evidence/src).
+
+* [`index.html.in`](examples/urgent_evidence/src/index.html.in) - This is a template file housing the narrative text and data insertion points.  It is the basis for generating `index.html`.  It uses Automake-style substitution patterns (i.e. `@STRING_TO_REPLACE@`), executed in the [shared Makefile's](examples/src/example-src.mk) target `generated-index.html`.
+* `@` strings in `index.html.in` rely on a name scheme for patterns to be substituted.  They are expected to be file names of other files in the `src/` directory, with alphabetic characters converted to uppercase, and all non-alphanumeric characters converted to underscores.
+* [`$(example_name)_base.json`](examples/urgent_evidence/src/urgent_evidence_base.json) - The initial "snippet" JSON file, used to start the combined JSON-LD graph.
+* `$(example_name)-*.json` - follow-on snippet JSON files.  (The Urgent Evidence narrative happens to not have any.)
+* `query-*.sparql` - Query files.
+
+After committing changes to any of the files in the `src/` directory, run `make`.  If a Git-tracked file differs from a state that is freshly computed, a prompt will be given to review a `diff` output.  If the `diff` looks like it contains expected changes, a `cp` command is provided in the last `make` output line starting `UPDATE:`.
+
+The changes will be copied into place when `make` is run again in any directory above `src/`.  When all looks ready, run `git commit` to make your patch.
+
+Before posting your patch for a Pull Request, run `make check` from the top directory.  Any generated changes not yet committed will raise a friendly error to encourage you to commit the revisions.
+
+
+#### Adding JSON snippets or queries
+
+Following the name scheme `$(example_name)-*.json` and `query-*.sparql` and the "upper-case, under-score" substitution pattern in `index.html.in` will be sufficient to add a new JSON-LD snippet or SPARQL query.
+
+
+### Adding a new narrative
+
+The procedure for adding a new narrative *that will have JSON-LD snippets* follows the procedure for editing an existing narrative, though with two additional setup steps:
+
+* The Makefile in `examples/` needs to have the new narrative added to its build chains.  Copy and paste lines corresponding to any other narrative.  (Note we provide `all`, `check`, and `clean` targets, and also add lines to `.PHONY`.)
+* The new narrative should have a Makefile copied from any sibling narrative-directory, and likewise for the new narrative's `src/` directory.  Note the two Makefiles are written in a bare, "Pass-through" manner to call a more complex shared Makefile.
+* A short Python script should be written to combine the snippets and base JSON files into the combined JSON-LD graph file.  (This step may be handled by a generic program in the future.)  See e.g. the combiners for [Asgard](examples/asgard/src/asgard_json.py) and [Owl Trafficking](examples/owl_trafficking/src/owl_trafficking_json.py).
+
+
+Note that to assure example base functionality, we expect each narrative to have its own JSON-LD passing through Continuous Integration.
+
+
+### Handling draft ontology concepts
+
+Some narratives incorporate concepts that are not yet part of CASE or UCO, but may be under proposal.  These are housed in "Draft" ontology files, `drafting.ttl`, within the narrative directory.  To support CASE workflow tracking, please keep all defined concepts within these `drafting.ttl` files synchronized with change proposal Jira tickets, linked with `rdfs:seeAlso`.
+
+
 ## Testing website edits locally
 
 The following script can take a fresh Ubuntu VM and get a local copy of the website running. The `bundle exec` call at the end reports the URL to use, typically http://localhost:4000/.

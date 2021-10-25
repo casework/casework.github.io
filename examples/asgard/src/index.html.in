@@ -1,0 +1,91 @@
+---
+<!-- layout: releases -->
+title: Examples
+jumbo_desc: CASE Objects in the Real World
+custom_css:
+  - smart_wizard
+  - smart_wizard_theme_arrows
+custom_js:
+  - jquery.smartWizard
+  - examples
+---
+
+<p>The JSON-LD data on this page are available combined in the file <a href="asgard.json">asgard.json</a>.</p>
+<div id="smartwizard">
+  <ul>
+      <li><a href="#step-0">Step 0<br /><small>Starting a Cyber-investigation</small></a></li>
+      <li><a href="#step-1">Step 1<br /><small>Evidence Seizure &amp; Chain of Custody</small></a></li>
+      <li><a href="#step-2">Step 2<br /><small>Evidence Acquisition</small></a></li>
+      <li><a href="#step-3">Step 3<br /><small>Evidence Extraction</small></a></li>
+  </ul>
+
+  <div>
+    <div id="step-0" class="">
+      <h3 class="pt-3">Starting a Cyber-investigation</h3>
+      <p class="mb-3">When an investigation is initiated, the description and authorization are represented using a CASE
+        Investigation object. Any information related to a cyber-investigation must be wrapped within a CASE bundle.</p>
+      <h6>Examples of an Authorization &amp; Investigation Objects</h6>
+{% highlight json %}
+@ASGARD_BASE_JSON@
+{% endhighlight %}
+      <p class="pb-3">An Investigation can contain any CASE object, including InvestigativeActions and Traces.</p>
+    </div>
+    <div id="step-1" class="">
+      <h3 class="pt-3">Evidence Seizure &amp; Chain of Custody</h3>
+      <p class="mb-3">When a device is first touched, this is represented using an InvestigativeAction with an empty input to indicate that this is the
+        beginning of Chain of Custody. The output of this InvestigativeAction is the seized object and an associated provenance record.</p>
+      <h6>Examples of an InvestigativeAction &amp; ProvenanceRecord Objects</h6>
+{% highlight json %}
+@ASGARD_1_JSON@
+{% endhighlight %}
+      <p class="pb-3">All CASE objects are inserted within the associated Investigation, wrapped in a CASE Bundle.</p>
+    </div>
+    <div id="step-2" class="">
+      <h3 class="pt-3">Evidence Acquisition</h3>
+      <p class="mb-3">The tool used to acquire data, options used, and the resulting forensic copy are represented as an
+          <em><strong>InvestigativeAction</strong></em> and associated Tool using CASE.</p>
+      <h6>Example of an InvestigativeAction</h6>
+{% highlight json %}
+@ASGARD_2_JSON@
+{% endhighlight %}
+      <p class="pb-3">[placeholder for dc3dd wrapper]</p>
+    </div>
+    <div id="step-3" class="">
+      <h3 class="pt-3">Evidence Extraction</h3>
+      <p class="mb-3">Information extracted from a forensic copy of digital evidence, along with the tool used, can be represented using CASE.</p>
+
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Filesystem</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Mobile Device</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Network Traffic</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <h6 class="mt-3">Example of a Filesystem Trace</h6>
+          <p>Note that the file size in the <code>File</code> property bundle is greater than the size in the <code>ContentData</code> property bundle.  This highlights the context-sensitive difference in purpose of <code>sizeInBytes</code>.  In <code>File</code>, the size represents the file system's record of the file's size.  In <code>ContentData</code>, the size represents the measurable size of extracted or extractable file content.  The latter can be less than the file system reports due to, for instance, a faulty storage device.</p>
+{% highlight json %}
+@ASGARD_3_JSON@
+{% endhighlight %}
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <h6 class="mt-3">Example of a Mobile Device Trace</h6>
+{% highlight json %}
+@ASGARD_4_JSON@
+{% endhighlight %}
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+          <h6 class="mt-3">Example of a Network Traffic Trace</h6>
+{% highlight json %}
+@ASGARD_5_JSON@
+{% endhighlight %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

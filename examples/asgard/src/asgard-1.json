@@ -1,0 +1,90 @@
+[
+    {
+        "@id": "kb:investigative-action1-uuid",
+        "@type": "case-investigation:InvestigativeAction",
+        "uco-core:name": "preserved",
+        "uco-action:startTime": {
+            "@type": "xsd:dateTime",
+            "@value": "2019-03-30T22:36:24.35Z"
+        },
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-action:ActionReferencesFacet",
+                "uco-action:instrument": {
+                    "@id": "kb:odin-decree13-uuid"
+                },
+                "uco-action:location": {
+                    "@id": "kb:asgard-bifrost-uuid"
+                },
+                "uco-action:performer": {
+                    "@id": "kb:investigator2-uuid"
+                },
+                "uco-action:object": [],
+                "uco-action:result": [
+                    {
+                        "@id": "kb:provenance-record1-uuid"
+                    },
+                    {
+                        "@id": "kb:suspect-device-uuid"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "@id": "kb:provenance-record1-uuid",
+        "@type": "case-investigation:ProvenanceRecord",
+        "uco-core:description": "Suspect device found near Bifrost Bridge after disruption",
+        "case-investigation:exhibitNumber": "AsgardPD-20190330-001A",
+        "uco-core:object": [
+            {
+                "@id": "kb:suspect-device-uuid"
+            }
+        ]
+    },
+    {
+        "@id": "kb:suspect-device-uuid",
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-observable:DeviceFacet",
+                "uco-observable:manufacturer": "Apple",
+                "uco-observable:deviceType": "iPhone",
+                "uco-observable:model": "MG552",
+                "uco-observable:serialNumber": "F18Q4LGRG5MD"
+            },
+            {
+                "@type": "uco-observable:MobileDeviceFacet",
+                "uco-observable:keypadUnlockCode": "123789",
+                "uco-observable:IMEI": "359305065690067",
+                "uco-observable:MSISDN": "1239275339",
+                "uco-observable:clockSetting": "2019-03-30T22:36:24.35Z",
+                "localeLanguage": "no_AS",
+                "uco-observable:phoneActivationTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-05-09T07:36:24.35Z"
+                },
+                "uco-observable:storageCapacityInBytes": 17179869184
+            },
+            {
+                "@type": "iPhoneDevice",
+                "uniqueID": "B3858A69A29375E6C706226B3633A3A11EB2A774",
+                "ownerName": "Loki iPhone"
+            },
+            {
+                "@type": "uco-observable:OperatingSystemFacet",
+                "uco-core:name": "iOS",
+                "uco-observable:manufacturer": "Apple",
+                "uco-observable:version": "10.3"
+            },
+            {
+                "@type": "uco-observable:WifiAddressFacet",
+                "uco-observable:addressValue": "d0:33:11:13:e7:a1"
+            },
+            {
+                "@type": "uco-observable:BluetoothAddressFacet",
+                "uco-observable:addressValue": "d0:33:11:13:e7:a2"
+            }
+        ]
+    }
+]
