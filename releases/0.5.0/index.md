@@ -15,16 +15,15 @@ custom_css: releases
 ## Migration guidance
 
 From CASE 0.4.0 to CASE 0.5.0, includes
-* @Alex: ***Something about either removing or renaming `investigation:startTime` and `investigation:endTime`***
-* More??
+* Any usage of `investigation:startTime` and `investigation:endTime` should be replaced with `uco-core:startTime` and `uco-core:endTime`, respectively.
 
 ## Release Notes
 
 ### Focus
 
 The focus of this release is on:
-* changing the current property restrictions and domain assertions to SHACL class shapes in order to provide data restriction verification;
-* CASE adopts and imports UCO 0.7.0, which includes changes brought forward by the CASE community.
+* Changing the current property restrictions and domain assertions to SHACL class shapes in order to provide data restriction verification;
+* Adopting and importing UCO 0.7.0, which includes changes brought forward by the CASE community.
 
 ### Changes
 
@@ -36,7 +35,8 @@ Throughout this section, many of the notes are tied to Change Proposals.  These 
 
 *(These are changes to ontology development practice, and are not necessarily changes to ontology data.)*
 
-* None
+* UCO is now tracked as a [Git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) in the [CASE ontology repository](https://github.com/casework/CASE/).  The submodule pointer denotes the version of UCO that CASE has adopted.
+* The CASE ontology repository now also includes as part of Continuous Integration a test suite with [subclass property inheritance satisfiability review](https://github.com/casework/CASE-Utility-SHACL-Inheritance-Reviewer), and [example data](https://github.com/casework/CASE/tree/0.5.0/tests/examples) to demonstrate SHACL validation.
 
 #### Breaking Changes
 
@@ -56,4 +56,3 @@ Throughout this section, many of the notes are tied to Change Proposals.  These 
   *([Change Proposal 40](https://drive.google.com/file/d/1JqPx0ngdFKGxxOgGD1UgwuT9LgM4SKUV/view))* 
 * Convert property restrictions and domain assertions to SHACL class shapes
   *([Change Proposal 41](https://drive.google.com/file/d/1sKFTTiEe-LmQLEG1Bowf52QF1VPZDssL/view))* 
-  
