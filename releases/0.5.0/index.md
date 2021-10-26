@@ -4,16 +4,56 @@ layout: releases
 custom_css: releases
 ---
 
-## {{ page.title }}
+# {{ page.title }}
 
-*Date: _TBD_*
+*Date: 2021-10-26*
 
-#### Ontology File(s)
+## Ontology File(s)
 
-[GitHub](https://github.com/casework/CASE/tree/develop)
+[GitHub](https://github.com/casework/CASE/releases/tag/0.5.0)
 
-#### Migration guidance
+## Migration guidance
 
-A guide to migration from CASE 0.4.0 will be provided.
+From CASE 0.4.0 to CASE 0.5.0, includes
+* @Alex: ***Something about either removing or renaming `investigation:startTime` and `investigation:endTime`***
+* More??
 
-#### Release Notes
+## Release Notes
+
+### Focus
+
+The focus of this release is on:
+* changing the current property restrictions and domain assertions to SHACL class shapes in order to provide data restriction verification;
+* CASE adopts and imports UCO 0.7.0, which includes changes brought forward by the CASE community.
+
+### Changes
+
+*(These are changes to ontologies, classes or properties in the preexisting ontology.)*
+
+Throughout this section, many of the notes are tied to Change Proposals.  These proposals are available on CASE's [Reference Material page](/resources/references.html).
+
+#### Development Changes
+
+*(These are changes to ontology development practice, and are not necessarily changes to ontology data.)*
+
+* None
+
+#### Breaking Changes
+
+*(These are changes to ontologies, classes or properties in the preexisting ontology that make the new release non-backward-compatible.)*
+
+* DELETED: `investigation:startTime` and `investigation:endTime` properties from investigation-da.ttl
+  *([Change Proposal 42](https://drive.google.com/file/d/1JDkSrI7bpVtr2aJ_8lLLa0BrLnBKpEOp/view))* 
+
+
+#### Changes
+
+*(These are general changes to the preexisting ontology that are not breaking or range changes.)*
+
+* Fix broken link to website examples gallery in README
+  *([Change Proposal 37](https://drive.google.com/file/d/16maCSg22Tfwro3OXajT6aYXfLhiihgL4/view))*
+* Adopt UCO 0.7.0
+  *([Change Proposal 40](https://drive.google.com/file/d/1JqPx0ngdFKGxxOgGD1UgwuT9LgM4SKUV/view))* 
+* Convert property restrictions and domain assertions to SHACL class shapes
+  *([Change Proposal 41](https://drive.google.com/file/d/1sKFTTiEe-LmQLEG1Bowf52QF1VPZDssL/view))* 
+  
