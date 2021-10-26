@@ -106,3 +106,20 @@
   desc: Remove "Base IRI" features from ontology and normalization procedure
   date: 2021-08-04
   url: https://drive.google.com/file/d/1T7ZmDZuslKAGc2HA3PPYhSmKqDDoqfkt/view
+- title: Change Proposal 37
+  desc: Fix broken link to website examples gallery in README
+  date: 2021-09-08
+  url: https://drive.google.com/file/d/16maCSg22Tfwro3OXajT6aYXfLhiihgL4/view
+- title: Change Proposal 40
+  desc: Adopt UCO 0.7.0
+  date: 2021-09-17
+  url: https://drive.google.com/file/d/1JqPx0ngdFKGxxOgGD1UgwuT9LgM4SKUV/view
+- title: Change Proposal 41
+  desc: Convert current property restrictions and domain assertions to SHACL class shapes
+  date: 2021-09-17
+  url: https://drive.google.com/file/d/1sKFTTiEe-LmQLEG1Bowf52QF1VPZDssL/view
+- title: Change Proposal 42
+  desc: Remove investigation-namespaced startTime and endTime properties from investigation-da.ttl
+  date: 2021-09-17
+  url: https://drive.google.com/file/d/1JDkSrI7bpVtr2aJ_8lLLa0BrLnBKpEOp/view
+  
