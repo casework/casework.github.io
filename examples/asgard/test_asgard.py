@@ -13,6 +13,7 @@
 
 import os
 
+import pytest
 import rdflib.plugins.sparql
 
 NS_SH = rdflib.SH
@@ -44,6 +45,8 @@ WHERE {
     assert expected_conformance == computed_conformance
     return g
 
+#TODO
+@pytest.mark.xfail(reason="At least one issue known present with vocabulary items.  Once UCO ticket OC-12 is resolved, this xfail annotation should be removed.", strict=True)
 def test_asgard_validation():
     """
     Confirm the instance data passes validation.

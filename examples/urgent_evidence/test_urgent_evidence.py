@@ -133,6 +133,8 @@ def test_exhibit_photos():
     file_names_false_positive = file_names_computed & file_names_ground_truth_negative
     assert set() == file_names_false_positive
 
+#TODO
+@pytest.mark.xfail(reason="At least one issue known present with vocabulary items.  Once UCO ticket OC-12 is resolved, this xfail annotation should be removed.", strict=True)
 def test_urgent_evidence_validation():
     """
     Confirm the instance data passes validation.
