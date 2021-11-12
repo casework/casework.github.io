@@ -17,7 +17,7 @@ SHELL := /bin/bash
 # spelling of 'python3' last.  This is done to accommodate local
 # development: at the time of this writing, the built-in system python3
 # on macOS does not have virtualenv installed by default.
-PYTHON3 ?= $(shell which python3.8 2>/dev/null || which python3.7 2>/dev/null || which python3.6 2>dev/null || which python3 2>/dev/null)
+PYTHON3 ?= $(shell which python3.9 2>/dev/null || which python3.8 2>/dev/null || which python3.7 2>/dev/null || which python3.6 2>/dev/null || which python3 2>/dev/null)
 ifeq ($(PYTHON3),)
 $(error python3 not found)
 endif

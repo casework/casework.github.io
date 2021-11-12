@@ -1,0 +1,39 @@
+[
+    {
+        "@id": "kb:msgstoredb-16805dff-05f9-4cba-9266-d5fa712f3d8f",
+        "@type": "uco-observable:ObservableObject",
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-observable:FileFacet",
+                "uco-observable:observableCreatedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-12-11T08:49:00.00Z"
+                },
+                "uco-observable:fileSystemType": "EXT3",
+                "uco-observable:extension": "db",
+                "uco-observable:fileName": "/data/com.whatsapp/databases/msgstore.db",
+                "uco-observable:isDirectory": false,
+                "uco-observable:sizeInBytes": {
+                    "@type": "xsd:long",
+                    "@value": 327680
+                }
+            },
+            {
+                "@type": "uco-observable:ContentDataFacet",
+                "uco-observable:hash": [
+                    {
+                        "@type": "uco-types:Hash",
+                        "uco-types:hashMethod": {
+                            "@type": "uco-core:HashNameEnum",
+                            "@value": "SHA256"
+                        },
+                        "uco-types:hashValue": {
+                            "@type": "xsd:hexBinary",
+                            "@value": "a13225720074371d56a4f4d5117fbb4953c5b1d316b31f21edcb7ed8fdf66c6e"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]

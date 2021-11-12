@@ -33,8 +33,10 @@
 				action:endTime "2019-01-01T15:05:00+00:00"^^xsd:dateTime ;
 				action:location <http://example.org/kb/location-uuid-3> ;
 				action:object
+					<http://example.org/kb/extracted-file-uuid-1> ,
 					<http://example.org/kb/file2-uuid-1> ,
-					<http://example.org/kb/provenance-record-uuid-6>
+					<http://example.org/kb/provenance-record-uuid-6> ,
+					<http://example.org/kb/provenance-record-uuid-6e>
 					;
 				action:performer <http://example.org/kb/officer-uuid-3> ;
 				action:result

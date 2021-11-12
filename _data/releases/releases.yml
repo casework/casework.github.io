@@ -10,3 +10,6 @@
 - title: 0.4.0
   date: 2021-06-02
   desc: Adoption of UCO 0.6.0. Revised CASE IRI structure, and added provenance support properties.
+- title: 0.5.0
+  date: 2021-10-26
+  desc: Adoption of UCO 0.7.0. Converted class structures to SHACL, and added validation tests.

@@ -162,7 +162,7 @@ jumbo_desc: CASE Narrative on Trafficking
 <div class="card">
   <h5 class="card-header" id="query-imaging_action">Query - imaging action</h5>
   <div class="card-body">
-    <p class="card-text">For the seized device, exhibit number <code>SD1</code>, when was it imaged?  Who imaged it?  What tool and tool version did they use?  What is the name of the resulting image file? (<a href="urgent_evidence-query-imaging_action.sparql">SPARQL source</a>)</p>
+    <p class="card-text">For the seized device, exhibit number <code>SD1</code>, when was it imaged?  Who imaged it?  What tool and tool version did they use?  What is the name of the resulting image file? (<a href="src/query-imaging_action.sparql">SPARQL source</a>)</p>
 {% highlight sparql %}
 SELECT ?lDeviceExhibitNumber ?lImagingEndTime ?lOfficerName ?lToolName ?lToolVersion ?lImageFileName
 WHERE {
@@ -197,7 +197,7 @@ WHERE {
     .
 
   ?nImagingPerformer
-    a uco-identity:Identity ;
+    a uco-identity:Person ;
     uco-core:hasFacet ?nImagingPerformerIdentityFacet ;
     .
 
@@ -258,7 +258,7 @@ WHERE {
 [
     {
         "@id": "kb:investigator-09fb01ce-999e-4521-bd3f-f7be69a63a43",
-        "@type": "uco-identity:Identity",
+        "@type": "uco-identity:Person",
         "uco-core:hasFacet": {
             "@type": "uco-identity:SimpleNameFacet",
             "uco-identity:familyName": "Hoel"
@@ -338,7 +338,7 @@ WHERE {
 <div class="card">
   <h5 class="card-header" id="query-hash_verification">Query - hash verification</h5>
   <div class="card-body">
-    <p class="card-text">For the duplicate, labeled <code>MD1</code>, of the device <code>SD1</code>, what were its original hashes, and when were they made? (<a href="urgent_evidence-query-hash_verification.sparql">SPARQL source</a>)</p>
+    <p class="card-text">For the duplicate, labeled <code>MD1</code>, of the device <code>SD1</code>, what were its original hashes, and when were they made? (<a href="src/query-hash_verification.sparql">SPARQL source</a>)</p>
 {% highlight sparql %}
 SELECT ?lEndTime ?lHashMethod ?lHashValue
 WHERE {
@@ -575,7 +575,7 @@ ORDER BY ?lHashMethod
 [
     {
         "@id": "kb:primaryuser-d28a3fad-10a1-459c-9a1a-6aa07a04e76f",
-        "@type": "uco-identity:Identity",
+        "@type": "uco-identity:Person",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-identity:SimpleNameFacet",
@@ -685,10 +685,10 @@ ORDER BY ?lHashMethod
     },
     {
         "@id": "kb:organization-facebook-fcb0d2ee-e681-4314-98c3-47fb2541aae9",
-        "@type": "uco-identity:Identity",
+        "@type": "uco-identity:Organization",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-identity:Organization",
+                "@type": "uco-identity:OrganizationDetailsFacet",
                 "drafting:orgName": "Facebook"
             }
         ]

@@ -323,23 +323,6 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/organization-facebook-fcb0d2ee-e681-4314-98c3-47fb2541aae9> ;
-			sh:resultMessage "Value does not have class core:Facet" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a identity:Organization ;
-				ns1:orgName "Facebook" ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/partition-87d669fc-8ab9-47c6-a66d-af09d73361d5> ;
 			sh:resultMessage "Value does not have class core:UcoObject" ;
 			sh:resultPath core:source ;
