@@ -112,6 +112,24 @@
 		] ,
 		[
 			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb#suspect-device-uuid> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a ns1:iPhoneDevice ;
+				ns1:ownerName "Loki iPhone" ;
+				ns1:uniqueID "B3858A69A29375E6C706226B3633A3A11EB2A774" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb#trace-relationship3-uuid> ;
 			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;

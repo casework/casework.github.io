@@ -21,6 +21,23 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/2af6fcf3-91d3-4457-9333-abab67f8fb91> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a ns1:TableRelation ;
+				ns1:tableName "urls" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/2af6fcf3-91d3-4457-9333-abab67f8fb91> ;
 			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;
 			sh:resultSeverity sh:Violation ;
@@ -142,6 +159,25 @@
 		] ,
 		[
 			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/downloaded-directory-9999dae3-2bca-4ccb-97fd-9919192e9999> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a ns1:UnallocatedRecoverability ;
+				ns1:contentStatus "unrecoverable" ;
+				ns1:metadataStatus "recoverable" ;
+				ns1:nameStatus "recoverable" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/filesystem-relationship-f64f857e-6c87-417f-9166-5aaaed8a6fd2> ;
 			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;
@@ -202,6 +238,60 @@
 		] ,
 		[
 			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a ns1:AndroidDevice ;
+				ns1:androidFingerprint "lge…" ;
+				ns1:androidID "64cce130286b31b3" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a ns1:BootLoader ;
+				ns1:buildDate "2016-11-03T20:03:42.00Z" ;
+				ns1:buildIdentifier "M4B30Z" ;
+				ns1:label "HHZ20h" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/message-database-relationship-uuid> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a ns1:TableRelation ;
+				ns1:tableName "sms" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/message-database-relationship-uuid> ;
 			sh:resultMessage "Value does not have class core:UcoObject" ;
 			sh:resultPath core:target ;
@@ -233,6 +323,23 @@
 		] ,
 		[
 			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/organization-facebook-fcb0d2ee-e681-4314-98c3-47fb2541aae9> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a identity:Organization ;
+				ns1:orgName "Facebook" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/partition-87d669fc-8ab9-47c6-a66d-af09d73361d5> ;
 			sh:resultMessage "Value does not have class core:UcoObject" ;
 			sh:resultPath core:source ;
@@ -260,6 +367,23 @@
 				sh:path core:kindOfRelationship ;
 			] ;
 			sh:value "Contained_Within"^^vocabulary1:ObservableObjectRelationshipVocab ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/sim-telephony-relationship-f7dfe5f0-e95a-4d0a-9d0e-8ed416e69587> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a ns1:TableRelation ;
+				ns1:tableName "siminfo" ;
+			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
@@ -704,6 +828,24 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
+				a observable:BluetoothAddressFacet ;
+				observable:value "88:c9:d0:03:04:49" ;
+			] ;
+			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:BluetoothAddressFacet ; uco-observable:value Literal("88:c9:d0:03:04:49") ]->observable:addressValue' ;
+			sh:resultPath observable:addressValue ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:addressValue ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
 				a observable:DataRangeFacet ;
 				observable:rangeOffset "100832"^^xsd:integer ;
 				observable:rangeSize "176" ;
@@ -974,6 +1116,24 @@
 				observable:pageTitle "Where can you find baby owls for sale? Are owls legal to keep as pets? - Quora" ;
 				observable:url <http://example.org/kb/url-b7906534-0483-4cf4-979c-5351916602ed> ;
 				observable:visitCount "2"^^xsd:integer ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:WifiAddressFacet ;
+				observable:value "34:4d:f7:54:20:bb" ;
+			] ;
+			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:WifiAddressFacet ; uco-observable:value Literal("34:4d:f7:54:20:bb") ]->observable:addressValue' ;
+			sh:resultPath observable:addressValue ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:addressValue ;
 			] ;
 		] ,
 		[
