@@ -44,7 +44,8 @@ all: \
 	git submodule update
 	$(MAKE) \
 	  --directory dependencies/CASE \
-	  .git_submodule_init.done.log
+	  .git_submodule_init.done.log \
+	  .lib.done.log
 	touch $@
 
 .venv.done.log: \

@@ -17,6 +17,8 @@ PYTHON3 ?= $(shell which python3)
 
 top_srcdir := $(shell cd ../.. ; pwd)
 
+RDF_TOOLKIT_JAR := $(top_srcdir)/dependencies/CASE/lib/rdf-toolkit.jar
+
 all: \
   index.html \
   owl_trafficking.json
@@ -26,6 +28,7 @@ all: \
 
 %_validation.ttl: \
   %.json \
+  $(RDF_TOOLKIT_JAR) \
   $(top_srcdir)/.venv.done.log \
   $(top_srcdir)/dependencies/case_monolithic.ttl
 	source $(top_srcdir)/venv/bin/activate \
@@ -37,9 +40,16 @@ all: \
 	    --ont-graph $(top_srcdir)/dependencies/case_monolithic.ttl \
 	    --shacl $(top_srcdir)/dependencies/case_monolithic.ttl \
 	    --shacl-file-format turtle \
-	    --output _$@ \
+	    --output __$@ \
 	    $< \
 	    ; rc=$$? ; test 0 -eq $$rc -o 1 -eq $$rc
+	java -jar $(RDF_TOOLKIT_JAR) \
+	  --inline-blank-nodes \
+	  --source __$@ \
+	  --source-format turtle \
+	  --target _$@ \
+	  --target-format turtle
+	rm __$@
 	mv _$@ $@
 
 # Tests:
