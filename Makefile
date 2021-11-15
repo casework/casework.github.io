@@ -32,20 +32,14 @@ all: \
   check-examples \
   check-migration-0.2.0
 
-.dependencies.done.log: \
-  .venv.done.log
-	$(MAKE) \
-	  --directory dependencies
-	touch $@
-
+# NOTE: The submodules of CASE-Utilities-Python are being initialized in order to guarantee access to rdf-toolkit.jar.
 .git_submodule_init.done.log: \
   .gitmodules
 	git submodule init
 	git submodule update
 	$(MAKE) \
-	  --directory dependencies/CASE \
-	  .git_submodule_init.done.log \
-	  .lib.done.log
+	  --directory dependencies/CASE-Utilities-Python \
+	  .git_submodule_init.done.log
 	touch $@
 
 .venv.done.log: \
@@ -81,7 +75,7 @@ check: \
   check-migration-0.2.0
 
 check-examples: \
-  .dependencies.done.log
+  .venv.done.log
 	$(MAKE) \
 	  --directory examples \
 	  check

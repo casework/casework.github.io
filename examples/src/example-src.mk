@@ -18,7 +18,7 @@ SHELL := /bin/bash
 # ${top_srcdir}/examples/${example}/src/
 top_srcdir := $(shell cd ../../.. ; pwd)
 
-RDF_TOOLKIT_JAR := $(top_srcdir)/dependencies/CASE/lib/rdf-toolkit.jar
+RDF_TOOLKIT_JAR := $(top_srcdir)/dependencies/CASE-Utilities-Python/dependencies/CASE/lib/rdf-toolkit.jar
 
 examples_srcdir := $(top_srcdir)/examples
 
@@ -65,20 +65,14 @@ all: \
 $(example_name)_validation.ttl: \
   generated-$(example_name).json \
   $(RDF_TOOLKIT_JAR) \
-  $(top_srcdir)/.venv.done.log \
-  $(top_srcdir)/dependencies/case_monolithic.ttl
+  $(top_srcdir)/.venv.done.log
 	source $(top_srcdir)/venv/bin/activate \
-	  && pyshacl \
-	    --data-file-format json-ld \
+	  && case_validate \
 	    --format turtle \
-	    --inference none \
-	    --ont-file-format turtle \
-	    --ont-graph $(top_srcdir)/dependencies/case_monolithic.ttl \
-	    --shacl $(top_srcdir)/dependencies/case_monolithic.ttl \
-	    --shacl-file-format turtle \
 	    --output __$@ \
 	    $< \
 	    ; rc=$$? ; test 0 -eq $$rc -o 1 -eq $$rc
+	test -s __$@
 	java -jar $(RDF_TOOLKIT_JAR) \
 	  --inline-blank-nodes \
 	  --source __$@ \
