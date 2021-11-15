@@ -88,10 +88,7 @@
                 "uco-observable:fileName": "AsgardPD-2019033001-01.dd",
                 "uco-observable:filePath": "C:/evidence/AsgardPD-2019033001-01.dd",
                 "uco-observable:isDirectory": false,
-                "uco-observable:sizeInBytes": {
-                    "@type": "xsd:long",
-                    "@value": 160080500
-                }
+                "uco-observable:sizeInBytes": 160080500
             },
             {
                 "@type": "uco-observable:ContentDataFacet",
@@ -108,10 +105,7 @@
                         }
                     }
                 ],
-                "uco-observable:sizeInBytes": {
-                    "@type": "xsd:long",
-                    "@value": 9080500
-                }
+                "uco-observable:sizeInBytes": 9080500
             }
         ]
     }

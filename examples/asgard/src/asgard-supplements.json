@@ -1,0 +1,42 @@
+[
+    {
+        "@id": "kb:90F73123-DB7E-41E5-B6CA-493B96E4B89F",
+        "@type": "uco-core:UcoObject"
+    },
+    {
+        "@id": "kb:97C74753-FCEB-49C8-A611-7A70EF46AB5D",
+        "@type": "uco-core:UcoObject"
+    },
+    {
+        "@id": "kb:B1C22D51-4A3F-4353-84FB-E210B5EFDA48",
+        "@type": "uco-core:UcoObject"
+    },
+    {
+        "@id": "kb:E9AA4F26-D187-4F32-A602-86A6DF4B8528",
+        "@type": "uco-core:UcoObject"
+    },
+    {
+        "@id": "kb:EBAB06EE-7522-42D6-96EA-E3121D67E393",
+        "@type": "uco-core:UcoObject"
+    },
+    {
+        "@id": "kb:asgard-bifrost-uuid",
+        "@type": "uco-location:Location"
+    },
+    {
+        "@id": "kb:destination-host-uuid",
+        "@type": "uco-observable:ObservableObject"
+    },
+    {
+        "@id": "kb:sms_application1",
+        "@type": "uco-observable:ObservableObject"
+    },
+    {
+        "@id": "kb:source-host-uuid",
+        "@type": "uco-core:UcoObject"
+    },
+    {
+        "@id": "kb:suspect-image-filesystem-uuid",
+        "@type": "uco-core:UcoObject"
+    }
+]

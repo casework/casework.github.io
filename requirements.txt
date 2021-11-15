@@ -1,4 +1,3 @@
 SPARQLWrapper
 case_utils
-pandas
 pytest

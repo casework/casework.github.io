@@ -18,6 +18,8 @@ SHELL := /bin/bash
 # ${top_srcdir}/examples/${example}/src/
 top_srcdir := $(shell cd ../../.. ; pwd)
 
+RDF_TOOLKIT_JAR := $(top_srcdir)/dependencies/CASE-Utilities-Python/dependencies/CASE/lib/rdf-toolkit.jar
+
 examples_srcdir := $(top_srcdir)/examples
 
 example_name := $(shell cd .. ; basename $$PWD)
@@ -54,16 +56,35 @@ all: \
 
 .PHONY: \
   check-normalized-%.json \
-  check-pytest \
-  check-validation
+  check-pytest
 
 .PRECIOUS: \
+  $(example_name)_validation.ttl \
   normalized-%.json
+
+$(example_name)_validation.ttl: \
+  generated-$(example_name).json \
+  $(RDF_TOOLKIT_JAR) \
+  $(top_srcdir)/.venv.done.log
+	source $(top_srcdir)/venv/bin/activate \
+	  && case_validate \
+	    --format turtle \
+	    --output __$@ \
+	    $< \
+	    ; rc=$$? ; test 0 -eq $$rc -o 1 -eq $$rc
+	test -s __$@
+	java -jar $(RDF_TOOLKIT_JAR) \
+	  --inline-blank-nodes \
+	  --source __$@ \
+	  --source-format turtle \
+	  --target _$@ \
+	  --target-format turtle
+	rm __$@
+	mv _$@ $@
 
 check: \
   $(check_normalized_example_snippets_json) \
   check-pytest \
-  check-validation \
   generated-index.html \
   generated-$(example_name).json
 
@@ -79,6 +100,7 @@ check-normalized-%.json: \
 # Run pytest tests only if any are written.
 # (Pytest exits in an error state if called with no tests found.)
 check-pytest: \
+  $(example_name)_validation.ttl \
   generated-$(example_name)-wasInformedBy.json
 	test 0 -eq $$(/bin/ls *_test.py test_*.py 2>/dev/null | wc -l) \
 	  || ( \
@@ -86,9 +108,6 @@ check-pytest: \
 	      && pytest \
 	        --log-level=DEBUG \
 	  )
-
-#TODO - This process will be defined after the release of CASE 0.5.0.
-check-validation:
 
 clean:
 	@rm -f \

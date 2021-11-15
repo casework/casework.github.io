@@ -3,6 +3,7 @@ _site
 .sass-cache
 .jekyll-metadata
 .DS_Store
+.dependencies.done.log
 .git_submodule_init.done.log
 .venv.done.log
 vendor/bundle
