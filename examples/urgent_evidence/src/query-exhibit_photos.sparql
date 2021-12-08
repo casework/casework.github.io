@@ -14,7 +14,7 @@ WHERE {
     SELECT ?nExhibitDevice ?nPictureFile
     WHERE {
       ?nPictureFile
-        a uco-observable:ObservableObject ;
+        a/rdfs:subClassOf* uco-observable:ObservableObject ;
         uco-core:hasFacet ?nRasterPictureFacet ;
         .
 
@@ -38,7 +38,7 @@ WHERE {
         SELECT ?nCameraDevice
         WHERE {
           ?nCameraDevice
-            a uco-observable:ObservableObject ;
+            a/rdfs:subClassOf* uco-observable:ObservableObject ;
             a uco-tool:AnalyticTool ;
             uco-core:hasFacet ?nCameraDeviceDeviceFacet ;
             .
@@ -76,7 +76,7 @@ WHERE {
         SELECT ?nExhibitDevice
         WHERE {
           ?nExhibitDevice
-            a uco-observable:ObservableObject ;
+            a/rdfs:subClassOf* uco-observable:ObservableObject ;
             uco-core:hasFacet ?nExhibitDeviceDeviceFacet ;
             .
 

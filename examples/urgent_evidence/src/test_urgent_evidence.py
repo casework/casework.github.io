@@ -17,6 +17,8 @@ import os
 import pytest
 import rdflib.plugins.sparql
 
+import case_utils.ontology
+
 _logger = logging.getLogger(os.path.basename(__file__))
 
 NS_SH = rdflib.SH
@@ -24,6 +26,7 @@ NS_SH = rdflib.SH
 graph = rdflib.Graph()
 graph.parse("generated-urgent_evidence.json", format="json-ld")
 graph.parse("generated-urgent_evidence-wasInformedBy.json", format="json-ld")
+case_utils.ontology.load_subclass_hierarchy(graph)
 
 # Inherit prefixes defined in input context dictionary.
 nsdict = {k:v for (k,v) in graph.namespace_manager.namespaces()}
@@ -126,6 +129,7 @@ def test_exhibit_photos():
           l_hash_value,
         ) = record
         file_names_computed.add(l_file_name.toPython())
+    _logger.debug("file_names_computed = %r.", file_names_computed)
 
     file_names_true_positive = file_names_computed & file_names_ground_truth_positive
     assert file_names_ground_truth_positive == file_names_true_positive
