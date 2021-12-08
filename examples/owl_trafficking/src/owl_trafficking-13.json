@@ -1,7 +1,7 @@
 [
     {
         "@id": "kb:downloaded-file-3961dae3-2bca-4ccb-97fd-9919192e81db",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:File",
         "uco-core:tag": [
             "Picture",
             "Owl"

@@ -1,7 +1,7 @@
 [
     {
         "@id": "kb:msgstoredb-16805dff-05f9-4cba-9266-d5fa712f3d8f",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:File",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:FileFacet",

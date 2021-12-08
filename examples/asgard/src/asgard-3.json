@@ -1,7 +1,7 @@
 [
     {
         "@id": "kb:suspect-device-mmssms-uuid",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:File",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:FileFacet",

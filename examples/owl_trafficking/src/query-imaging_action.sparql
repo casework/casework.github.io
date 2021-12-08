@@ -16,7 +16,7 @@ WHERE {
     .
 
   ?nSubjectDevice
-    a uco-observable:ObservableObject ;
+    a/rdfs:subClassOf* uco-observable:ObservableObject ;
     uco-core:hasFacet ?nSubjectDeviceFacet ;
     .
 
@@ -47,7 +47,7 @@ WHERE {
     .
 
   ?nImageFile
-    a uco-observable:ObservableObject ;
+    a/rdfs:subClassOf* uco-observable:ObservableObject ;
     uco-core:hasFacet ?nImageFileFacet ;
     .
 

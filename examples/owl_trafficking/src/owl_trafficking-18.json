@@ -37,7 +37,7 @@
     },
     {
         "@id": "kb:url-b7906534-0483-4cf4-979c-5351916602ed",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:URL",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:URLFacet",
@@ -47,7 +47,7 @@
     },
     {
         "@id": "kb:bfe049a6-fa3f-4bf6-9c37-9b09cc6afe6b",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:File",
         "uco-core:tag": [
             "Database"
         ],

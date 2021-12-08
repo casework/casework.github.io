@@ -182,7 +182,7 @@ WHERE {
     .
 
   ?nSubjectDevice
-    a uco-observable:ObservableObject ;
+    a/rdfs:subClassOf* uco-observable:ObservableObject ;
     uco-core:hasFacet ?nSubjectDeviceFacet ;
     .
 
@@ -213,7 +213,7 @@ WHERE {
     .
 
   ?nImageFile
-    a uco-observable:ObservableObject ;
+    a/rdfs:subClassOf* uco-observable:ObservableObject ;
     uco-core:hasFacet ?nImageFileFacet ;
     .
 
@@ -238,6 +238,15 @@ WHERE {
   <tbody>
     <tr>
       <th>0</th>
+      <td>SD1</td>
+      <td>2017-02-06 22:13:08+00:00</td>
+      <td>Hoel</td>
+      <td>Magnet ACQUIRE</td>
+      <td>2.0.0.5412</td>
+      <td>LGE Nexus 5 Full Image.raw</td>
+    </tr>
+    <tr>
+      <th>1</th>
       <td>SD1</td>
       <td>2017-02-06 22:13:08+00:00</td>
       <td>Hoel</td>
@@ -288,7 +297,10 @@ WHERE {
     },
     {
         "@id": "kb:f3fd304e-ef6c-4cbd-94cb-425880f82748",
-        "@type": "uco-observable:ObservableObject",
+        "@type": [
+            "uco-observable:File",
+            "uco-observable:Image"
+        ],
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:FileFacet",
@@ -361,7 +373,7 @@ WHERE {
     .
 
   ?nDiskImage
-    a uco-observable:ObservableObject ;
+    a/rdfs:subClassOf* uco-observable:ObservableObject ;
     uco-core:hasFacet ?nContentDataFacet ;
     .
 
@@ -396,6 +408,18 @@ ORDER BY ?lHashMethod
     </tr>
     <tr>
       <th>1</th>
+      <td>2017-02-06 22:13:08+00:00</td>
+      <td>MD5</td>
+      <td>b334843a07a9e16494eebdf3079e6bc6</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2017-02-06 22:13:08+00:00</td>
+      <td>SHA1</td>
+      <td>5506912aac41534dc5af12b51059d5880737ab5e</td>
+    </tr>
+    <tr>
+      <th>3</th>
       <td>2017-02-06 22:13:08+00:00</td>
       <td>SHA1</td>
       <td>5506912aac41534dc5af12b51059d5880737ab5e</td>
@@ -733,7 +757,7 @@ ORDER BY ?lHashMethod
     },
     {
         "@id": "kb:accountsxml-16805dff-05f9-4cba-9266-d5fa712f3d8f",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:File",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:FileFacet",
@@ -778,7 +802,7 @@ ORDER BY ?lHashMethod
     },
     {
         "@id": "kb:accountsdb-99995dff-05f9-4cba-9266-d5fa712f9999",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:File",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:FileFacet",
@@ -996,7 +1020,7 @@ ORDER BY ?lHashMethod
 [
     {
         "@id": "kb:downloaded-file-3961dae3-2bca-4ccb-97fd-9919192e81db",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:File",
         "uco-core:tag": [
             "Picture",
             "Owl"
@@ -1061,7 +1085,7 @@ ORDER BY ?lHashMethod
 [
     {
         "@id": "kb:downloaded-directory-9999dae3-2bca-4ccb-97fd-9919192e9999",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:File",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:FileFacet",
@@ -1268,7 +1292,7 @@ ORDER BY ?lHashMethod
     },
     {
         "@id": "kb:url-b7906534-0483-4cf4-979c-5351916602ed",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:URL",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:URLFacet",
@@ -1278,7 +1302,7 @@ ORDER BY ?lHashMethod
     },
     {
         "@id": "kb:bfe049a6-fa3f-4bf6-9c37-9b09cc6afe6b",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:File",
         "uco-core:tag": [
             "Database"
         ],

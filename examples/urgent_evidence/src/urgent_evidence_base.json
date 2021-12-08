@@ -363,7 +363,7 @@
         },
         {
             "@id": "kb:dvd-uuid-1",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:Device",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DeviceFacet",
@@ -449,7 +449,7 @@
         },
         {
             "@id": "kb:file-uuid-1",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:File",
             "uco-core:description": "Intake Form",
             "uco-core:hasFacet": [
                 {
@@ -478,7 +478,7 @@
         },
         {
             "@id": "kb:file-uuid-2",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:File",
             "uco-core:description": "Kiosk report",
             "uco-core:hasFacet": [
                 {
@@ -507,7 +507,7 @@
         },
         {
             "@id": "kb:file-uuid-3",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:File",
             "uco-core:description": "Witness statement",
             "uco-core:hasFacet": [
                 {
@@ -571,7 +571,7 @@
         {
             "@id": "kb:camera-uuid-1",
             "@type": [
-                "uco-observable:ObservableObject",
+                "uco-observable:Device",
                 "uco-tool:AnalyticTool"
             ],
             "uco-core:hasFacet": [
@@ -793,7 +793,7 @@
         },
         {
             "@id": "kb:subject-device-photograph-uuid-1",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ContentDataFacet",
@@ -871,7 +871,7 @@
         },
         {
             "@id": "kb:subject-device-photograph-uuid-2",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ContentDataFacet",
@@ -949,7 +949,7 @@
         },
         {
             "@id": "kb:subject-device-photograph-uuid-3",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ContentDataFacet",
@@ -1027,7 +1027,7 @@
         },
         {
             "@id": "kb:subject-device-photograph-uuid-4",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ContentDataFacet",
@@ -1105,7 +1105,7 @@
         },
         {
             "@id": "kb:subject-device-photograph-uuid-5",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ContentDataFacet",
@@ -1183,7 +1183,7 @@
         },
         {
             "@id": "kb:subject-device-photograph-uuid-6",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ContentDataFacet",
@@ -1261,7 +1261,7 @@
         },
         {
             "@id": "kb:extracted-file-uuid-1",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ContentDataFacet",
@@ -1334,7 +1334,7 @@
         },
         {
             "@id": "kb:extracted-file-uuid-2",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ContentDataFacet",
@@ -1407,7 +1407,7 @@
         },
         {
             "@id": "kb:extracted-file-uuid-3",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ContentDataFacet",
@@ -1480,7 +1480,7 @@
         },
         {
             "@id": "kb:subject-device-uuid-1",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:Device",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DeviceFacet"

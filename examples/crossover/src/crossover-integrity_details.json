@@ -10,7 +10,10 @@
     },
     {
         "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748",
-        "@type": "uco-observable:ObservableObject",
+        "@type": [
+            "uco-observable:File",
+            "uco-observable:Image"
+        ],
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:FileFacet",

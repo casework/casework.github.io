@@ -19,7 +19,7 @@ WHERE {
     .
 
   ?nDiskImage
-    a uco-observable:ObservableObject ;
+    a/rdfs:subClassOf* uco-observable:ObservableObject ;
     uco-core:hasFacet ?nContentDataFacet ;
     .
 

@@ -140,7 +140,7 @@ custom_js:
     },
     {
         "@id": "kb:suspect-device-uuid",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:Device",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DeviceFacet",
@@ -271,7 +271,10 @@ custom_js:
     },
     {
         "@id": "kb:suspect-mobiledevice-forensicduplicate-uuid",
-        "@type": "uco-observable:ObservableObject",
+        "@type": [
+            "uco-observable:File",
+            "uco-observable:Image"
+        ],
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:FileFacet",
@@ -331,7 +334,7 @@ custom_js:
 [
     {
         "@id": "kb:suspect-device-mmssms-uuid",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:File",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:FileFacet",
