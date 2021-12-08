@@ -266,20 +266,6 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/relationship-c316c405-9326-4f28-9b8d-44a3bb9e7283> ;
-			sh:resultMessage "More than 1 values on kb:relationship-c316c405-9326-4f28-9b8d-44a3bb9e7283->core:kindOfRelationship" ;
-			sh:resultPath core:kindOfRelationship ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
-			sh:sourceShape [
-				sh:datatype xsd:string ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:path core:kindOfRelationship ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-c316c405-9326-4f28-9b8d-44a3bb9e7283> ;
 			sh:resultMessage "More than 1 values on kb:relationship-c316c405-9326-4f28-9b8d-44a3bb9e7283->core:target" ;
 			sh:resultPath core:target ;
 			sh:resultSeverity sh:Violation ;
@@ -340,21 +326,6 @@
 				sh:path core:target ;
 			] ;
 			sh:value <http://example.org/kb/msgstordb-16805dff-05f9-4cba-9266-d5fa712f3d8f> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-c316c405-9326-4f28-9b8d-44a3bb9e7283> ;
-			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
-			sh:resultPath core:kindOfRelationship ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-			sh:sourceShape [
-				sh:datatype xsd:string ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:path core:kindOfRelationship ;
-			] ;
-			sh:value "Contained_Within"^^observable:ObservableObjectRelationshipVocab ;
 		] ,
 		[
 			a sh:ValidationResult ;

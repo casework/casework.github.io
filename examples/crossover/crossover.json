@@ -1098,7 +1098,7 @@
                 }
             ],
             "uco-core:kindOfRelationship": {
-                "@type": "uco-observable:ObservableObjectRelationshipVocab",
+                "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
                 "@value": "Contained_Within"
             },
             "uco-core:isDirectional": true,
