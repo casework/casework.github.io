@@ -160,7 +160,7 @@
         },
         {
             "@id": "kb:F7CAD990-6687-4849-89DC-55795675F3F5",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:File",
             "uco-core:tag": [
                 "Image"
             ],
@@ -364,7 +364,10 @@
         },
         {
             "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748",
-            "@type": "uco-observable:ObservableObject",
+            "@type": [
+                "uco-observable:File",
+                "uco-observable:Image"
+            ],
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:FileFacet",
@@ -710,7 +713,7 @@
         },
         {
             "@id": "kb:39ff4987-8ae5-47e3-8369-dbd0d5f79398",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:URL",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:URLFacet",
@@ -760,7 +763,7 @@
         },
         {
             "@id": "kb:2AF6FCF3-91D3-4457-9333-ABAB67F8FB91",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:File",
             "uco-core:tag": [
                 "Database"
             ],
@@ -1020,7 +1023,7 @@
         },
         {
             "@id": "kb:msgstoredb-16805dff-05f9-4cba-9266-d5fa712f3d8f",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:FileFacet",
