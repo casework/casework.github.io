@@ -2,11 +2,6 @@
 title: Technical Charter
 jumbo_desc: Cyber Domain Ontology Project a Series of LF Projects, LLC
 ---
-```html
-<style type="text/css">
-    ol { list-style-type: lower-alpha; }
-</style>
-```
 
 **Technical Charter (the “Charter”)**
 
