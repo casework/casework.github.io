@@ -123,6 +123,7 @@ This Charter sets forth the responsibilities and procedures for technical contri
    - engage in the work of the Project in a professional manner consistent with maintaining a cohesive community, while also maintaining the goodwill and esteem of LF Projects, Joint Development Foundation and other partner organizations in the open source community; and
    - respect the rights of all trademark owners, including any branding and trademark usage guidelines.
 
+
 8. **Intellectual Property Policy**
 
    a) Collaborators acknowledge that the copyright in all new contributions will be retained by the copyright holder as independent works of authorship and that no contributor or copyright holder will be required to assign copyrights to the Project. 
@@ -136,6 +137,7 @@ This Charter sets forth the responsibilities and procedures for technical contri
    - To the extent a contribution includes or consists of data, any rights in such data shall be made available under the CDLA-Permissive 2.0 License.
    - The Project may seek to integrate and contribute back to other open source projects (“Upstream Projects”). In such cases, the Project will conform to all license requirements of the Upstream Projects, including dependencies, leveraged by the Project. Upstream Project code contributions not stored within the Project’s main code repository will comply with the contribution process and license terms for the applicable Upstream Project.
 
+
    c) The TSC may approve the use of an alternative license or licenses for inbound or outbound contributions on an exception basis. To request an exception, please describe the contribution, the alternative open source license(s), and the justification for using an alternative open source license for the Project. License exceptions must be approved by a two-thirds vote of the entire TSC. 
 
    d) Contributed files should contain license information, such as SPDX short form identifiers, indicating the open source license or licenses pertaining to the file.
@@ -143,6 +145,7 @@ This Charter sets forth the responsibilities and procedures for technical contri
 9. **Amendments**
 
    a) This charter may be amended by a two-thirds vote of the entire TSC and is subject to approval by LF Projects.
+
 
 
 
