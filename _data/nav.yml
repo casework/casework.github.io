@@ -43,8 +43,8 @@
       link: /community/membership.html
 - name: Resources
   submenuitems:
-    - name: Bylaws
-      link: /resources/bylaws.html
+    - name: Charter
+      link: /resources/charter.html
     - name: Code of Conduct
       link: /resources/coc.html
     - name: Roadmap
