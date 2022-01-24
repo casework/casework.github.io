@@ -93,9 +93,9 @@ This Charter sets forth the responsibilities and procedures for technical contri
 
 5. **Compliance with Polices**
 
-   a) This Charter is subject to the Series Agreement for the Project and the Operating Agreement of LF Projects. Contributors will comply with the policies of LF Projects as may be adopted and amended by LF Projects, including, without limitation the policies listed at https://lfprojects.org/policies/.
+   a) This Charter is subject to the Series Agreement for the Project and the Operating Agreement of LF Projects. Contributors will comply with the policies of LF Projects as may be adopted and amended by LF Projects, including, without limitation the policies listed at [https://lfprojects.org/policies/](https://lfprojects.org/policies/).
 
-   b) The TSC shall adopt and maintain the code of conduct (“CoC”) for the Project (https://caseontology.org/resources/coc.html), which is subject to approval by the Series Manager. In the event that a Project-specific CoC has not been approved, the LF Projects Code of Conduct listed at https://lfprojects.org/policies will apply for all Collaborators in the Project.
+   b) The TSC shall adopt and maintain the code of conduct (“CoC”) for the Project ([https://caseontology.org/resources/coc.html](https://caseontology.org/resources/coc.html)), which is subject to approval by the Series Manager. In the event that a Project-specific CoC has not been approved, the LF Projects Code of Conduct listed at [https://lfprojects.org/policies](https://lfprojects.org/policies) will apply for all Collaborators in the Project.
 
    c) When amending or adopting any policy applicable to the Project, LF Projects will publish such policy, as to be amended or adopted, on its web site at least 30 days prior to such policy taking effect; provided, however, that in the case of any amendment of the Trademark Policy or Terms of Use of LF Projects, any such amendment is effective upon publication on LF Project’s web site.
 
@@ -125,10 +125,10 @@ This Charter sets forth the responsibilities and procedures for technical contri
 
    b) Except as described in Section 7.c., all contributions to the Project are subject to the following: 
 
-   - All new inbound code contributions to the Project must be made using the Apache License, Version 2.0, available at https://www.apache.org/licenses/LICENSE-2.0 (the “Project License”). 
+   - All new inbound code contributions to the Project must be made using the Apache License, Version 2.0, available at [https://www.apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0) (the “Project License”). 
    - All new inbound code contributions must also be accompanied by a Developer Certificate of Origin ([http://developercertificate.org](http://developercertificate.org/)) sign-off in the source code system that is submitted through a TSC-approved contribution process which will bind the authorized contributor and, if not self-employed, their employer to the applicable license;
    - All outbound code will be made available under the Project License.
-   - Documentation other than specifications will be received and made available by the Project under the Creative Commons Attribution 4.0 International License (available at http://creativecommons.org/licenses/by/4.0/). Specifications, including contributions to the CASE Ontology, will be received and made using the Project License.
+   - Documentation other than specifications will be received and made available by the Project under the Creative Commons Attribution 4.0 International License (available at [http://creativecommons.org/licenses/by/4.0/](http://creativecommons.org/licenses/by/4.0/)). Specifications, including contributions to the CASE Ontology, will be received and made using the Project License.
    - To the extent a contribution includes or consists of data, any rights in such data shall be made available under the CDLA-Permissive 2.0 License.
    - The Project may seek to integrate and contribute back to other open source projects (“Upstream Projects”). In such cases, the Project will conform to all license requirements of the Upstream Projects, including dependencies, leveraged by the Project. Upstream Project code contributions not stored within the Project’s main code repository will comply with the contribution process and license terms for the applicable Upstream Project.
 
