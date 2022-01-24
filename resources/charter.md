@@ -91,7 +91,7 @@ This Charter sets forth the responsibilities and procedures for technical contri
      - the coordinating body for the Cyber Domain Ontology Community to address all aspects of Cyber Domain Ontology adoption (e.g., mapping, importing, exporting, training aids and workshops, supporting framework tools and software integration), and
      - a technical advisory group for Cyber Domain Ontology adoption matters, including the oversight of the creation of software and documentation with respect to use of the Cyber Domain Ontology. Members of the Adoption Committee are appointed by the TSC annually to one-year terms, or as otherwise determined by the TSC. The size of the Adoption Committee will be as decided by the TSC. 
 
-5. **Compliance with Polices**
+5. **Compliance with Policies**
 
    a) This Charter is subject to the Series Agreement for the Project and the Operating Agreement of LF Projects. Contributors will comply with the policies of LF Projects as may be adopted and amended by LF Projects, including, without limitation the policies listed at [https://lfprojects.org/policies/](https://lfprojects.org/policies/).
 
