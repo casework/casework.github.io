@@ -52,7 +52,8 @@ all: \
 	  && pip install \
 	    --upgrade \
 	    pip \
-	    setuptools
+	    setuptools \
+	    wheel
 	source venv/bin/activate \
 	  && pip install \
 	    dependencies/CASE-Utilities-Python
