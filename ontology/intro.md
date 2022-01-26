@@ -25,7 +25,7 @@ Developers of systems and tools used in cyber-investigations are working to expo
 
 ##### Implementation examples
 
-Members of the community are implementing CASE within tools used in cyber-investigations, including open source (CASE Plaso implementation and Volatility) and [commercial tools](/community/members.html).
+Members of the community are implementing CASE within tools used in cyber-investigations, including open source (CASE Plaso implementation and Volatility) and [commercial tools](/community/adopters.html).
 
 ### Maintain provenance at all phases of cyber-investigation lifecycle
 
