@@ -37,7 +37,7 @@
         },
         {
             "@id": "kb:samsung-device-uuid",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:MobileDevice",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DeviceFacet",
@@ -217,7 +217,7 @@
         },
         {
             "@id": "kb:EmailMessage-2c032220-8c21-11e9-9c99-0c4de9c21b53",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:EmailMessage",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:EmailMessageFacet",
@@ -243,7 +243,7 @@
         },
         {
             "@id": "kb:456a2bac-8c21-11e9-8902-0c4de9c24de5",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:EmailAddress",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:EmailAddressFacet",
@@ -253,7 +253,7 @@
         },
         {
             "@id": "kb:email-account-99d72bac-8c21-11e9-8902-0c4de9c21b53",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:EmailAccount",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DigitalAccountFacet",
@@ -293,7 +293,7 @@
         },
         {
             "@id": "kb:userdata-partition-uuid",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:FileSystem",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DiskPartitionFacet",
@@ -327,7 +327,7 @@
         },
         {
             "@id": "kb:filesystem-uuid",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:FileSystem",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DiskPartitionFacet",
@@ -478,7 +478,7 @@
         },
         {
             "@id": "kb:Reddit-90652808-7341-40D3-9285-774D865AD3F9",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:DigitalAccount",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:AccountFacet",
@@ -641,7 +641,7 @@
         },
         {
             "@id": "kb:simcard1-uuid",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:SIMCard",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:SIMCardFacet",
@@ -652,7 +652,7 @@
         },
         {
             "@id": "kb:mobileaccount1-uuid",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:MobileAccount",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:AccountFacet",
@@ -667,10 +667,10 @@
         },
         {
             "@id": "kb:simcard2-uuid",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:SIMCard",
             "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:SIMCard",
+                    "@type": "uco-observable:SIMCardFacet",
                     "uco-observable:ICCID": "8935302143531284380",
                     "uco-observable:IMSI": "__NOT_PROVIDED",
                     "uco-observable:carrier": "__NOT_PROVIDED"
@@ -679,7 +679,7 @@
         },
         {
             "@id": "kb:simcard3-uuid",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:SIMCard",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:SIMCardFacet",
@@ -691,7 +691,7 @@
         },
         {
             "@id": "kb:mobileaccount3-uuid",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:MobileAccount",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:AccountFacet",
@@ -743,7 +743,7 @@
         },
         {
             "@id": "kb:860FC853-9C3F-41FC-B144-8AC80D8F5849",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:URLHistory",
             "uco-core:hasFacet": [
                 {
                     "@id": "kb:860FC853-9C3F-41FC-B144-8AC80D8F5849-URLHistory",
@@ -897,7 +897,7 @@
         },
         {
             "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:EmailAddress",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:EmailAddressFacet",
@@ -907,7 +907,7 @@
         },
         {
             "@id": "kb:EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:EmailAccount",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:EmailAccountFacet",
@@ -919,7 +919,7 @@
         },
         {
             "@id": "kb:C1D3237A-6D7F-4E96-BBEF-6EB4C0A621D1",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:PhoneAccount",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:AccountFacet",
@@ -947,7 +947,7 @@
         },
         {
             "@id": "kb:WhatsApp-90652808-7341-40D3-9285-774D865AD3F9",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:ApplicationAccount",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:AccountFacet",
@@ -977,7 +977,7 @@
         },
         {
             "@id": "kb:application-whatsapp-uuid",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:Application",
             "uco-core:hasFacet": [
                 {
                     "@type": "drafting:ApplicationFacet",
@@ -987,7 +987,7 @@
         },
         {
             "@id": "kb:account-90652808-7341-40d3-9285-774d865ad3f9",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:ApplicationAccount",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:AccountFacet",
@@ -1007,7 +1007,7 @@
         },
         {
             "@id": "kb:whatsapp-868abc08-8c21-11e9-934e-0c4de9c21b53",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:Application",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ApplicationFacet",
@@ -1080,7 +1080,7 @@
         },
         {
             "@id": "kb:message-ed5d35d6-6e7c-4099-80f4-1fadfc0ee08c",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:Message",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:MessageFacet",

@@ -316,7 +316,7 @@
         },
         {
             "@id": "kb:sms_message1",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:SMSMessage",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:MessageFacet",
@@ -341,7 +341,7 @@
         },
         {
             "@id": "kb:phone_call1",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:PhoneCall",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:PhoneCallFacet",
@@ -366,7 +366,7 @@
         },
         {
             "@id": "kb:network-connection1-uuid",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:NetworkConnection",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:NetworkConnectionFacet",
@@ -431,19 +431,19 @@
         },
         {
             "@id": "kb:destination-host-uuid",
-            "@type": "uco-observable:ObservableObject"
+            "@type": "uco-observable:Device"
         },
         {
             "@id": "kb:sms_application1",
-            "@type": "uco-observable:ObservableObject"
+            "@type": "uco-observable:Application"
         },
         {
             "@id": "kb:source-host-uuid",
-            "@type": "uco-core:UcoObject"
+            "@type": "uco-observable:Device"
         },
         {
             "@id": "kb:suspect-image-filesystem-uuid",
-            "@type": "uco-core:UcoObject"
+            "@type": "uco-observable:FileSystem"
         }
     ]
 }

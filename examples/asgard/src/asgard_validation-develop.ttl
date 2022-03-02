@@ -95,6 +95,21 @@
 		] ,
 		[
 			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb#bundle-5715FCF3-6BC8-4996-8F7F-FDF289F31649> ;
+			sh:resultMessage "Value does not have class core:UcoObject" ;
+			sh:resultPath core:object ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:object ;
+			] ;
+			sh:value <http://example.org/kb#phone_call1> ;
+		] ,
+		[
+			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb#investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7> ;
 			sh:resultMessage "Less than 1 values on kb:investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7->investigation:investigationForm" ;
 			sh:resultPath investigation:investigationForm ;
@@ -159,28 +174,6 @@
 					<http://example.org/kb#provenance-record1-uuid> ,
 					<http://example.org/kb#suspect-device-uuid>
 					;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#phone_call1> ;
-			sh:resultMessage "Value does not have class core:Facet" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a observable:PhoneCallFacet ;
-				observable:callType "mobile" ;
-				observable:duration "1862"^^xsd:integer ;
-				observable:endTime "2010-01-15T18:30:41.250000+00:00"^^xsd:dateTime ;
-				observable:from <http://example.org/kb#phone_account1> ;
-				observable:startTime "2010-01-15T17:59:43.250000+00:00"^^xsd:dateTime ;
-				observable:to <http://example.org/kb#phone_account2> ;
 			] ;
 		] ,
 		[
