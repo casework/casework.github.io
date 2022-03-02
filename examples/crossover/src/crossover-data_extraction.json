@@ -72,7 +72,7 @@
         ]
     },
     {
-        "@id": "kb:provenance-record13-uuid",
+        "@id": "kb:provenance-record2-uuid",
         "@type": "case-investigation:ProvenanceRecord",
         "uco-core:description": "Forensic duplicate of mobile device used by Ares Lupin",
         "case-investigation:exhibitNumber": "20181211001-002",
