@@ -1,0 +1,1746 @@
+@prefix action: <https://unifiedcyberontology.org/ontology/uco/action#> .
+@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
+@prefix identity: <https://unifiedcyberontology.org/ontology/uco/identity#> .
+@prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
+@prefix location: <https://unifiedcyberontology.org/ontology/uco/location#> .
+@prefix ns1: <http://example.org/ontology/drafting#> .
+@prefix observable: <https://unifiedcyberontology.org/ontology/uco/observable#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix tool: <https://unifiedcyberontology.org/ontology/uco/tool#> .
+@prefix vocab: <https://ontology.caseontology.org/case/vocabulary/> .
+@prefix vocabulary1: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+	a sh:ValidationReport ;
+	sh:conforms "false"^^xsd:boolean ;
+	sh:result
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/860FC853-9C3F-41FC-B144-8AC80D8F5849-URLHistory> ;
+			sh:resultMessage "Value does not have class observable:URLHistoryEntry" ;
+			sh:resultPath observable:urlHistoryEntry ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class observable:URLHistoryEntry ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:urlHistoryEntry ;
+			] ;
+			sh:value [
+				ns1:allocationStatus "allocated" ;
+				observable:browserInformation <http://example.org/kb/5d96df90-d9e1-423c-b8db-c2327812ab38> ;
+				observable:browserUserProfile <http://example.org/kb/profile--account-uuid> ;
+				observable:expirationTime "NULL" ;
+				observable:firstVisit "2018-12-06T18:52:21+00:00"^^xsd:dateTime ;
+				observable:lastVisit "2017-01-25T02:20:22+00:00"^^xsd:dateTime ;
+				observable:manuallyEnteredCount "0"^^xsd:integer ;
+				observable:pageTitle "Friday Magazine | Home" ;
+				observable:referrerUrl <http://example.org/kb/14354987-8ae5-47e3-8369-dbd0d5f77489> ;
+				observable:url <http://example.org/kb/39ff4987-8ae5-47e3-8369-dbd0d5f79398> ;
+				observable:visitCount "1"^^xsd:integer ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/9A3FFCF3-91D3-4457-9333-ABAB67F8AB4F> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a ns1:TableRelation ;
+				ns1:tableName "urls" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/9A3FFCF3-91D3-4457-9333-ABAB67F8AB4F> ;
+			sh:resultMessage "Value does not have class core:UcoObject" ;
+			sh:resultPath core:source ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:source ;
+			] ;
+			sh:value <http://example.org/kb/860FC853-9C3F-41FC-B144-8AC80D8F5849-URLHistory> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/9A3FFCF3-91D3-4457-9333-ABAB67F8AB4F> ;
+			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
+			sh:resultPath core:kindOfRelationship ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path core:kindOfRelationship ;
+			] ;
+			sh:value "Contained_Within"^^vocabulary1:ObservableObjectRelationshipVocab ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/LoginDataC316C405-9326-4F28-9B8D-44A3BB9E7283> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a ns1:TableRelation ;
+				ns1:name "logins" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/LoginDataC316C405-9326-4F28-9B8D-44A3BB9E7283> ;
+			sh:resultMessage "Value does not have class core:UcoObject" ;
+			sh:resultPath core:target ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:target ;
+			] ;
+			sh:value <http://example.org/kb/ChromeLoginData-16805DFF-05F9-4CBA-9266-D5FA712F3D8F> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/LoginDataC316C405-9326-4F28-9B8D-44A3BB9E7283> ;
+			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
+			sh:resultPath core:kindOfRelationship ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path core:kindOfRelationship ;
+			] ;
+			sh:value "Contained_Within"^^vocabulary1:ObservableObjectRelationshipVocab ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/application-whatsapp-uuid> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a ns1:ApplicationFacet ;
+				ns1:appName "WhatsApp" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/associated-account-phonenumber1> ;
+			sh:resultMessage "Value does not have class core:UcoObject" ;
+			sh:resultPath core:source ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:source ;
+			] ;
+			sh:value <http://example.org/kb/90652808-7341-40D3-9285-774D865AD3F9> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/cellebrite-pa1-uuid> ;
+			sh:resultMessage "Value does not have class identity:Identity" ;
+			sh:resultPath tool:creator ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class identity:Identity ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path tool:creator ;
+			] ;
+			sh:value "Cellebrite" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/cellebrite-pa1-uuid> ;
+			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+			sh:resultPath tool:creator ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class identity:Identity ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path tool:creator ;
+			] ;
+			sh:value "Cellebrite" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/cellebrite-ufed1-uuid> ;
+			sh:resultMessage "Value does not have class identity:Identity" ;
+			sh:resultPath tool:creator ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class identity:Identity ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path tool:creator ;
+			] ;
+			sh:value "Cellebrite" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/cellebrite-ufed1-uuid> ;
+			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+			sh:resultPath tool:creator ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class identity:Identity ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path tool:creator ;
+			] ;
+			sh:value "Cellebrite" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/filesystem-relationship-uuid> ;
+			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
+			sh:resultPath core:kindOfRelationship ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path core:kindOfRelationship ;
+			] ;
+			sh:value "Contained_Within"^^vocabulary1:ObservableObjectRelationshipVocab ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7> ;
+			sh:resultMessage "Less than 1 values on kb:investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7->investigation:investigationForm" ;
+			sh:resultPath investigation:investigationForm ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype vocab:InvestigationFormVocab ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path investigation:investigationForm ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7> ;
+			sh:resultMessage "Value does not have class core:UcoObject" ;
+			sh:resultPath core:object ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:object ;
+			] ;
+			sh:value "list of uuids" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7> ;
+			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+			sh:resultPath core:object ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:object ;
+			] ;
+			sh:value "list of uuids" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/investigative-action1-uuid> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a action:ActionReferencesFacet ;
+				action:environment <http://example.org/kb/forensic-computer1-uuid> ;
+				action:instrument <http://example.org/kb/cellebrite-ufed1-uuid> ;
+				action:location <http://example.org/kb/esc-lausanne-uuid> ;
+				action:object
+					<http://example.org/kb/provenance-record1-uuid> ,
+					<http://example.org/kb/samsung-device-uuid>
+					;
+				action:performer <http://example.org/kb/investigator1-uuid> ;
+				action:result
+					<http://example.org/kb/F3FD304E-EF6C-4CBD-94CB-425880F82748> ,
+					<http://example.org/kb/provenance-record2-uuid>
+					;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/investigative-action2-uuid> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a action:ActionReferencesFacet ;
+				action:environment <http://example.org/kb/forensic-computer1-uuid> ;
+				action:instrument <http://example.org/kb/cellebrite-pa1-uuid> ;
+				action:location <http://example.org/kb/esc-lausanne-uuid> ;
+				action:object
+					<http://example.org/kb/F3FD304E-EF6C-4CBD-94CB-425880F82748> ,
+					<http://example.org/kb/provenance-record3-uuid>
+					;
+				action:performer <http://example.org/kb/investigator1-uuid> ;
+				action:result
+					<http://example.org/kb/cellebritexml-report-uuid> ,
+					<http://example.org/kb/provenance-record4-uuid>
+					;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/organization-whatsapp-uuid> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a identity:Organization ;
+				ns1:orgName "WhatsApp" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/partition-uuid> ;
+			sh:resultMessage "Value does not have class core:UcoObject" ;
+			sh:resultPath core:target ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:target ;
+			] ;
+			sh:value <http://example.org/kb/blk0_sda.bin> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/partition-uuid> ;
+			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
+			sh:resultPath core:kindOfRelationship ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path core:kindOfRelationship ;
+			] ;
+			sh:value "Contained_Within"^^vocabulary1:ObservableObjectRelationshipVocab ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/primaryuser-email-uuid> ;
+			sh:resultMessage "More than 1 values on kb:primaryuser-email-uuid->core:target" ;
+			sh:resultPath core:target ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:target ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/provenance-record13-uuid> ;
+			sh:resultMessage "More than 1 values on kb:provenance-record13-uuid->investigation:exhibitNumber" ;
+			sh:resultPath investigation:exhibitNumber ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path investigation:exhibitNumber ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/relationship-c316c405-9326-4f28-9b8d-44a3bb9e7283> ;
+			sh:resultMessage "More than 1 values on kb:relationship-c316c405-9326-4f28-9b8d-44a3bb9e7283->core:target" ;
+			sh:resultPath core:target ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:target ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/relationship-c316c405-9326-4f28-9b8d-44a3bb9e7283> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a ns1:TableRelation ;
+				ns1:path "messages" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/relationship-c316c405-9326-4f28-9b8d-44a3bb9e7283> ;
+			sh:resultMessage "Value does not have class core:UcoObject" ;
+			sh:resultPath core:target ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:target ;
+			] ;
+			sh:value <http://example.org/kb/forensiccopy-309bc178-1836-47b7-aa15-94ea3a2c7401> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/relationship-c316c405-9326-4f28-9b8d-44a3bb9e7283> ;
+			sh:resultMessage "Value does not have class core:UcoObject" ;
+			sh:resultPath core:target ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:target ;
+			] ;
+			sh:value <http://example.org/kb/msgstordb-16805dff-05f9-4cba-9266-d5fa712f3d8f> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/relationship-c316c405-9326-4f28-9b8d-44a3bb9e7283> ;
+			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
+			sh:resultPath core:kindOfRelationship ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path core:kindOfRelationship ;
+			] ;
+			sh:value "Contained_Within"^^vocabulary1:ObservableObjectRelationshipVocab ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/samsung-device-uuid> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a ns1:AndroidDeviceFacet ;
+				ns1:androidFingerprint "samsung/zeroltexx/zerolte:6.0.1/MMB29K/G925FXXU4DPIL" ;
+				ns1:androidID "64cce130286b31b3" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/sim3-telephony-relationship-uuid> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a ns1:TableRelationFacet ;
+				ns1:name "siminfo" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/sim3-telephony-relationship-uuid> ;
+			sh:resultMessage "Value does not have class core:UcoObject" ;
+			sh:resultPath core:target ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:target ;
+			] ;
+			sh:value <http://example.org/kb/cd52c3b8-7759-40b7-ae10-dfc90a35f644> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/sim3-telephony-relationship-uuid> ;
+			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
+			sh:resultPath core:kindOfRelationship ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path core:kindOfRelationship ;
+			] ;
+			sh:value "Contained_Within"^^vocabulary1:ObservableObjectRelationshipVocab ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/simcard1-relationship-uuid> ;
+			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
+			sh:resultPath core:kindOfRelationship ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path core:kindOfRelationship ;
+			] ;
+			sh:value "Contained_Within"^^vocabulary1:ObservableObjectRelationshipVocab ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/simcard2-uuid> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a observable:SIMCard ;
+				observable:ICCID "8935302143531284380" ;
+				observable:IMSI "__NOT_PROVIDED" ;
+				observable:carrier "__NOT_PROVIDED" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/simcard3-relationship-uuid> ;
+			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
+			sh:resultPath core:kindOfRelationship ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path core:kindOfRelationship ;
+			] ;
+			sh:value "Contained_Within"^^vocabulary1:ObservableObjectRelationshipVocab ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/userdata-partition-uuid> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a observable:FileSystem ;
+				observable:fileSystemType "EXT3" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:MobileDeviceFacet ;
+				ns1:advertisingID "48500120-c9c5-402e-a6bc-04e2f92ae259" ;
+				ns1:deviceActivationTime "2018-06-10T14:31:30.00Z" ;
+				ns1:locationsServicesEnabled "true"^^xsd:boolean ;
+				observable:IMEI "356420075722843" ;
+				observable:bluetoothDeviceName "Galaxy S6 edge" ;
+				observable:clockSetting "__NOT_PROVIDED" ;
+				observable:keypadUnlockCode "__NOT_PROVIDED" ;
+				observable:storageCapacityInBytes "__NOT_PROVIDED" ;
+			] ;
+			sh:resultMessage "Value is not Literal with datatype xsd:dateTime" ;
+			sh:resultPath observable:clockSetting ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:dateTime ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:clockSetting ;
+			] ;
+			sh:value "__NOT_PROVIDED" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:MobileDeviceFacet ;
+				ns1:advertisingID "48500120-c9c5-402e-a6bc-04e2f92ae259" ;
+				ns1:deviceActivationTime "2018-06-10T14:31:30.00Z" ;
+				ns1:locationsServicesEnabled "true"^^xsd:boolean ;
+				observable:IMEI "356420075722843" ;
+				observable:bluetoothDeviceName "Galaxy S6 edge" ;
+				observable:clockSetting "__NOT_PROVIDED" ;
+				observable:keypadUnlockCode "__NOT_PROVIDED" ;
+				observable:storageCapacityInBytes "__NOT_PROVIDED" ;
+			] ;
+			sh:resultMessage "Value is not Literal with datatype xsd:integer" ;
+			sh:resultPath observable:storageCapacityInBytes ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:integer ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:storageCapacityInBytes ;
+			] ;
+			sh:value "__NOT_PROVIDED" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:FileFacet ;
+				ns1:fileLocalPath "files/image/Elder_Wand.png" ;
+				observable:accessedTime "2018-11-30T09:43:24+00:00"^^xsd:dateTime ;
+				observable:allocationStatus "allocated" ;
+				observable:extension ".png" ;
+				observable:fileName "the.apk" ;
+				observable:filePath "/Root/media/0/Download/Elder_Wand.png" ;
+				observable:fileSystemType "ExtX" ;
+				observable:isDirectory "false"^^xsd:boolean ;
+				observable:modifiedTime "2018-11-30T09:43:25+00:00"^^xsd:dateTime ;
+				observable:observableCreatedTime "2018-11-30T09:43:24+00:00"^^xsd:dateTime ;
+				observable:sizeInBytes "534167" ;
+			] ;
+			sh:resultMessage "Value is not Literal with datatype xsd:integer" ;
+			sh:resultPath observable:sizeInBytes ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				rdfs:comment "When used to characterize a file the sizeInBytes property conveys the recorded size of a file in a file system."@en ;
+				sh:datatype xsd:integer ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:sizeInBytes ;
+			] ;
+			sh:value "534167" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a core:ConfidenceFacet ;
+				core:confidence "95" ;
+			] ;
+			sh:resultMessage "Value is not Literal with datatype xsd:nonNegativeInteger" ;
+			sh:resultPath core:confidence ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:nonNegativeInteger ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path core:confidence ;
+			] ;
+			sh:value "95" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a location:LatLongCoordinatesFacet ;
+				location:latitude "4.653722e+01"^^xsd:double ;
+				location:longitude "6.579167e+00"^^xsd:double ;
+			] ;
+			sh:resultMessage "Value is not Literal with datatype xsd:decimal" ;
+			sh:resultPath location:latitude ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:decimal ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path location:latitude ;
+			] ;
+			sh:value "4.653722e+01"^^xsd:double ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a location:LatLongCoordinatesFacet ;
+				location:latitude "4.653722e+01"^^xsd:double ;
+				location:longitude "6.579167e+00"^^xsd:double ;
+			] ;
+			sh:resultMessage "Value is not Literal with datatype xsd:decimal" ;
+			sh:resultPath location:longitude ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:decimal ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path location:longitude ;
+			] ;
+			sh:value "6.579167e+00"^^xsd:double ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:AccountFacet ;
+				observable:accountIdentifier "31647934784@s.whatsapp.net" ;
+				observable:accountIssuer "organization-whatsapp-uuid" ;
+				observable:isActive "true"^^xsd:boolean ;
+			] ;
+			sh:resultMessage "Value does not have class core:UcoObject" ;
+			sh:resultPath observable:accountIssuer ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:accountIssuer ;
+			] ;
+			sh:value "organization-whatsapp-uuid" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:AccountFacet ;
+				observable:accountIdentifier "31647934784@s.whatsapp.net" ;
+				observable:accountIssuer "organization-whatsapp-uuid" ;
+				observable:isActive "true"^^xsd:boolean ;
+			] ;
+			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+			sh:resultPath observable:accountIssuer ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:accountIssuer ;
+			] ;
+			sh:value "organization-whatsapp-uuid" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:AccountFacet ;
+				observable:accountIdentifier "31647934784@s.whatsapp.net" ;
+				observable:accountIssuer "whatsapp_org" ;
+				observable:isActive "true"^^xsd:boolean ;
+			] ;
+			sh:resultMessage "Value does not have class core:UcoObject" ;
+			sh:resultPath observable:accountIssuer ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:accountIssuer ;
+			] ;
+			sh:value "whatsapp_org" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:AccountFacet ;
+				observable:accountIdentifier "31647934784@s.whatsapp.net" ;
+				observable:accountIssuer "whatsapp_org" ;
+				observable:isActive "true"^^xsd:boolean ;
+			] ;
+			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+			sh:resultPath observable:accountIssuer ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:accountIssuer ;
+			] ;
+			sh:value "whatsapp_org" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:AccountFacet ;
+				observable:accountIdentifier "aresthewerewolf" ;
+				observable:accountIssuer "kb:organization-reddit-uuid" ;
+				observable:isActive "true"^^xsd:boolean ;
+			] ;
+			sh:resultMessage "Value does not have class core:UcoObject" ;
+			sh:resultPath observable:accountIssuer ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:accountIssuer ;
+			] ;
+			sh:value "kb:organization-reddit-uuid" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:AccountFacet ;
+				observable:accountIdentifier "aresthewerewolf" ;
+				observable:accountIssuer "kb:organization-reddit-uuid" ;
+				observable:isActive "true"^^xsd:boolean ;
+			] ;
+			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+			sh:resultPath observable:accountIssuer ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:accountIssuer ;
+			] ;
+			sh:value "kb:organization-reddit-uuid" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:AccountFacet ;
+				observable:accountIssuer "Salt" ;
+				observable:isActive "true"^^xsd:boolean ;
+			] ;
+			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:AccountFacet ; uco-observable:accountIssuer Literal("Salt") ; uco-observable:isActive Literal("true" = True, datatype=xsd:boolean) ]->observable:accountIdentifier' ;
+			sh:resultPath observable:accountIdentifier ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:accountIdentifier ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:AccountFacet ;
+				observable:accountIssuer "Salt" ;
+				observable:isActive "true"^^xsd:boolean ;
+			] ;
+			sh:resultMessage "Value does not have class core:UcoObject" ;
+			sh:resultPath observable:accountIssuer ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:accountIssuer ;
+			] ;
+			sh:value "Salt" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:AccountFacet ;
+				observable:accountIssuer "Salt" ;
+				observable:isActive "true"^^xsd:boolean ;
+			] ;
+			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+			sh:resultPath observable:accountIssuer ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:accountIssuer ;
+			] ;
+			sh:value "Salt" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:AccountFacet ;
+				observable:accountType "Phone" ;
+				observable:isActive "False" ;
+			] ;
+			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:AccountFacet ; uco-observable:accountType Literal("Phone") ; uco-observable:isActive Literal("False") ]->observable:accountIdentifier' ;
+			sh:resultPath observable:accountIdentifier ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:accountIdentifier ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:AccountFacet ;
+				observable:accountType "Phone" ;
+				observable:isActive "False" ;
+			] ;
+			sh:resultMessage "Value is not Literal with datatype vocabulary1:AccountTypeVocab" ;
+			sh:resultPath observable:accountType ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype vocabulary1:AccountTypeVocab ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:accountType ;
+			] ;
+			sh:value "Phone" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:AccountFacet ;
+				observable:accountType "Phone" ;
+				observable:isActive "False" ;
+			] ;
+			sh:resultMessage "Value is not Literal with datatype xsd:boolean" ;
+			sh:resultPath observable:isActive ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:boolean ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:isActive ;
+			] ;
+			sh:value "False" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:AccountFacet ;
+				observable:accountType "Phone" ;
+				observable:isActive "true"^^xsd:boolean ;
+			] ;
+			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:AccountFacet ; uco-observable:accountType Literal("Phone") ; uco-observable:isActive Literal("true" = True, datatype=xsd:boolean) ]->observable:accountIdentifier' ;
+			sh:resultPath observable:accountIdentifier ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:accountIdentifier ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:AccountFacet ;
+				observable:accountType "Phone" ;
+				observable:isActive "true"^^xsd:boolean ;
+			] ;
+			sh:resultMessage "Value is not Literal with datatype vocabulary1:AccountTypeVocab" ;
+			sh:resultPath observable:accountType ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype vocabulary1:AccountTypeVocab ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:accountType ;
+			] ;
+			sh:value "Phone" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:ApplicationAccountFacet ;
+				observable:application "kb:application-whatsapp-uuid" ;
+			] ;
+			sh:resultMessage "Value does not have class observable:ObservableObject" ;
+			sh:resultPath observable:application ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class observable:ObservableObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:application ;
+			] ;
+			sh:value "kb:application-whatsapp-uuid" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:ApplicationAccountFacet ;
+				observable:application "kb:application-whatsapp-uuid" ;
+			] ;
+			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+			sh:resultPath observable:application ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class observable:ObservableObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:application ;
+			] ;
+			sh:value "kb:application-whatsapp-uuid" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:ApplicationAccountFacet ;
+				observable:application "kb:whatsapp-868abc08-8c21-11e9-934e-0c4de9c21b53" ;
+			] ;
+			sh:resultMessage "Value does not have class observable:ObservableObject" ;
+			sh:resultPath observable:application ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class observable:ObservableObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:application ;
+			] ;
+			sh:value "kb:whatsapp-868abc08-8c21-11e9-934e-0c4de9c21b53" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:ApplicationAccountFacet ;
+				observable:application "kb:whatsapp-868abc08-8c21-11e9-934e-0c4de9c21b53" ;
+			] ;
+			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+			sh:resultPath observable:application ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class observable:ObservableObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:application ;
+			] ;
+			sh:value "kb:whatsapp-868abc08-8c21-11e9-934e-0c4de9c21b53" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:ApplicationFacet ;
+				core:name "WhatsApp" ;
+				observable:applicationIdentifier "com.whatsapp" ;
+				observable:operatingSystem "Android" ;
+				observable:version "2.18.361" ;
+			] ;
+			sh:resultMessage "Value does not have class observable:ObservableObject" ;
+			sh:resultPath observable:operatingSystem ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class observable:ObservableObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:operatingSystem ;
+			] ;
+			sh:value "Android" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:ApplicationFacet ;
+				core:name "WhatsApp" ;
+				observable:applicationIdentifier "com.whatsapp" ;
+				observable:operatingSystem "Android" ;
+				observable:version "2.18.361" ;
+			] ;
+			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+			sh:resultPath observable:operatingSystem ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class observable:ObservableObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:operatingSystem ;
+			] ;
+			sh:value "Android" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:BluetoothAddressFacet ;
+				observable:value "D8:C4:E9:7C:2E:F8" ;
+			] ;
+			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:BluetoothAddressFacet ; uco-observable:value Literal("D8:C4:E9:7C:2E:F8") ]->observable:addressValue' ;
+			sh:resultPath observable:addressValue ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:addressValue ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:BluetoothAddressFacet ;
+				observable:value "D8:C4:E9:7C:2E:F8" ;
+			] ;
+			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:BluetoothAddressFacet ; uco-observable:value Literal("D8:C4:E9:7C:2E:F8") ]->observable:addressValue' ;
+			sh:resultPath observable:addressValue ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:addressValue ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:BluetoothAddressFacet ;
+				observable:value "D8:C4:E9:7C:2E:F8" ;
+			] ;
+			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:BluetoothAddressFacet ; uco-observable:value Literal("D8:C4:E9:7C:2E:F8") ]->observable:addressValue' ;
+			sh:resultPath observable:addressValue ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:addressValue ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:DeviceFacet ;
+				observable:manufacturer "Samsung" ;
+				observable:model "SM-G925F" ;
+				observable:serialNumber "RF8H31GS5SF" ;
+			] ;
+			sh:resultMessage "Value does not have class identity:Identity" ;
+			sh:resultPath observable:manufacturer ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class identity:Identity ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:manufacturer ;
+			] ;
+			sh:value "Samsung" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:DeviceFacet ;
+				observable:manufacturer "Samsung" ;
+				observable:model "SM-G925F" ;
+				observable:serialNumber "RF8H31GS5SF" ;
+			] ;
+			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+			sh:resultPath observable:manufacturer ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class identity:Identity ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:manufacturer ;
+			] ;
+			sh:value "Samsung" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:DigitalAccountFacet ;
+				observable:accountLogin "aresthewerewolf" ;
+				observable:displayName "Ares Lupin" ;
+				observable:firstLoginTime "2018-11-26T19:00:31Z" ;
+			] ;
+			sh:resultMessage "Value is not Literal with datatype xsd:dateTime" ;
+			sh:resultPath observable:firstLoginTime ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:dateTime ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:firstLoginTime ;
+			] ;
+			sh:value "2018-11-26T19:00:31Z" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:EmailAccountFacet ;
+				observable:emailAddress "kb:456a2bac-8c21-11e9-8902-0c4de9c24de5" ;
+			] ;
+			sh:resultMessage "Value does not have class observable:ObservableObject" ;
+			sh:resultPath observable:emailAddress ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class observable:ObservableObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:emailAddress ;
+			] ;
+			sh:value "kb:456a2bac-8c21-11e9-8902-0c4de9c24de5" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:EmailAccountFacet ;
+				observable:emailAddress "kb:456a2bac-8c21-11e9-8902-0c4de9c24de5" ;
+			] ;
+			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+			sh:resultPath observable:emailAddress ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class observable:ObservableObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:emailAddress ;
+			] ;
+			sh:value "kb:456a2bac-8c21-11e9-8902-0c4de9c24de5" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:EmailAddressFacet ;
+				observable:value "aresthewerewolf@gmail.com" ;
+			] ;
+			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:EmailAddressFacet ; uco-observable:value Literal("aresthewerewolf@gmail.com") ]->observable:addressValue' ;
+			sh:resultPath observable:addressValue ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:addressValue ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:EmailAddressFacet ;
+				observable:value "aresthewerewolf@gmail.com" ;
+			] ;
+			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:EmailAddressFacet ; uco-observable:value Literal("aresthewerewolf@gmail.com") ]->observable:addressValue' ;
+			sh:resultPath observable:addressValue ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:addressValue ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:EmailAddressFacet ;
+				observable:value "badquinn3@gmail.com " ;
+			] ;
+			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:EmailAddressFacet ; uco-observable:value Literal("badquinn3@gmail.com ") ]->observable:addressValue' ;
+			sh:resultPath observable:addressValue ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:addressValue ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:EmailAddressFacet ;
+				observable:value "badquinn3@gmail.com " ;
+			] ;
+			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:EmailAddressFacet ; uco-observable:value Literal("badquinn3@gmail.com ") ]->observable:addressValue' ;
+			sh:resultPath observable:addressValue ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:addressValue ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:EmailMessageFacet ;
+				observable:application <http://example.org/kb/Gmail-uuid> ;
+				observable:bodyRaw "Excellent - we need all the help we can get. Sent from my Samsung Galaxy smartphone" ;
+				observable:messageID "CAKBqNfyKo+pvHkJy6kwO82jTbkNA@mail.gmail.com" ;
+				observable:sender <http://example.org/kb/EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
+				observable:sentTime "2018-11-20T21:28:07+00:00"^^xsd:dateTime ;
+				observable:subject "Re: Bank transfer ?" ;
+			] ;
+			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:EmailMessageFacet ; uco-observable:application kb:Gmail-uuid ; uco-observable:bodyRaw Literal("Excellent - we need all the help we can get. Sent from my Samsung Galaxy smartphone") ; uco-observable:messageID Literal("CAKBqNfyKo+pvHkJy6kwO82jTbkNA@mail.gmail.com") ; uco-observable:sender kb:EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53 ; uco-observable:sentTime Literal("2018-11-20T21:28:07+00:00" = 2018-11-20 21:28:07+00:00, datatype=xsd:dateTime) ; uco-observable:subject Literal("Re: Bank transfer ?") ]->observable:isMimeEncoded' ;
+			sh:resultPath observable:isMimeEncoded ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:boolean ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:isMimeEncoded ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:EmailMessageFacet ;
+				observable:application <http://example.org/kb/Gmail-uuid> ;
+				observable:bodyRaw "Excellent - we need all the help we can get. Sent from my Samsung Galaxy smartphone" ;
+				observable:messageID "CAKBqNfyKo+pvHkJy6kwO82jTbkNA@mail.gmail.com" ;
+				observable:sender <http://example.org/kb/EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
+				observable:sentTime "2018-11-20T21:28:07+00:00"^^xsd:dateTime ;
+				observable:subject "Re: Bank transfer ?" ;
+			] ;
+			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:EmailMessageFacet ; uco-observable:application kb:Gmail-uuid ; uco-observable:bodyRaw Literal("Excellent - we need all the help we can get. Sent from my Samsung Galaxy smartphone") ; uco-observable:messageID Literal("CAKBqNfyKo+pvHkJy6kwO82jTbkNA@mail.gmail.com") ; uco-observable:sender kb:EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53 ; uco-observable:sentTime Literal("2018-11-20T21:28:07+00:00" = 2018-11-20 21:28:07+00:00, datatype=xsd:dateTime) ; uco-observable:subject Literal("Re: Bank transfer ?") ]->observable:isMultipart' ;
+			sh:resultPath observable:isMultipart ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:boolean ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:isMultipart ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:EmailMessageFacet ;
+				observable:application <http://example.org/kb/Gmail-uuid> ;
+				observable:bodyRaw "Excellent - we need all the help we can get. Sent from my Samsung Galaxy smartphone" ;
+				observable:messageID "CAKBqNfyKo+pvHkJy6kwO82jTbkNA@mail.gmail.com" ;
+				observable:sender <http://example.org/kb/EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
+				observable:sentTime "2018-11-20T21:28:07+00:00"^^xsd:dateTime ;
+				observable:subject "Re: Bank transfer ?" ;
+			] ;
+			sh:resultMessage "Value does not have class observable:ObservableObject" ;
+			sh:resultPath observable:application ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class observable:ObservableObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:application ;
+			] ;
+			sh:value <http://example.org/kb/Gmail-uuid> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:EmailMessageFacet ;
+				observable:application <http://example.org/kb/Gmail-uuid> ;
+				observable:bodyRaw "Excellent - we need all the help we can get. Sent from my Samsung Galaxy smartphone" ;
+				observable:messageID "CAKBqNfyKo+pvHkJy6kwO82jTbkNA@mail.gmail.com" ;
+				observable:sender <http://example.org/kb/EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
+				observable:sentTime "2018-11-20T21:28:07+00:00"^^xsd:dateTime ;
+				observable:subject "Re: Bank transfer ?" ;
+			] ;
+			sh:resultMessage "Value does not have class observable:ObservableObject" ;
+			sh:resultPath observable:bodyRaw ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class observable:ObservableObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:bodyRaw ;
+			] ;
+			sh:value "Excellent - we need all the help we can get. Sent from my Samsung Galaxy smartphone" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:EmailMessageFacet ;
+				observable:application <http://example.org/kb/Gmail-uuid> ;
+				observable:bodyRaw "Excellent - we need all the help we can get. Sent from my Samsung Galaxy smartphone" ;
+				observable:messageID "CAKBqNfyKo+pvHkJy6kwO82jTbkNA@mail.gmail.com" ;
+				observable:sender <http://example.org/kb/EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
+				observable:sentTime "2018-11-20T21:28:07+00:00"^^xsd:dateTime ;
+				observable:subject "Re: Bank transfer ?" ;
+			] ;
+			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+			sh:resultPath observable:bodyRaw ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class observable:ObservableObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:bodyRaw ;
+			] ;
+			sh:value "Excellent - we need all the help we can get. Sent from my Samsung Galaxy smartphone" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:ExtInodeFacet ;
+				observable:extInodeChangeTime "__NOT_PROVIDED" ;
+				observable:extInodeID "522962"^^xsd:integer ;
+				observable:extSGID "10092"^^xsd:integer ;
+				observable:extSUID "10092"^^xsd:integer ;
+			] ;
+			sh:resultMessage "Value is not Literal with datatype xsd:dateTime" ;
+			sh:resultPath observable:extInodeChangeTime ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:dateTime ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:extInodeChangeTime ;
+			] ;
+			sh:value "__NOT_PROVIDED" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:FileFacet ;
+				observable:extension "db" ;
+				observable:fileName "/data/com.whatsapp/databases/msgstore.db" ;
+				observable:fileSystemType "EXT3" ;
+				observable:isDirectory "false"^^xsd:boolean ;
+				observable:observableCreatedTime "2018-12-11T08:49:00+00:00"^^xsd:dateTime ;
+				observable:sizeInBytes "327680"^^xsd:long ;
+			] ;
+			sh:resultMessage "Value is not Literal with datatype xsd:integer" ;
+			sh:resultPath observable:sizeInBytes ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				rdfs:comment "When used to characterize a file the sizeInBytes property conveys the recorded size of a file in a file system."@en ;
+				sh:datatype xsd:integer ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:sizeInBytes ;
+			] ;
+			sh:value "327680"^^xsd:long ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:MessageFacet ;
+				observable:application <http://example.org/kb/868abc08-8c21-11e9-934e-0c4de9c21b53> ;
+				observable:from <http://example.org/kb/account-90652808-7341-40d3-9285-774d865ad3f9> ;
+				observable:messageText "20 minutes away" ;
+				observable:messageType "outgoing" ;
+				observable:sentTime "2018-12-04T19:12:56+00:00"^^xsd:dateTime ;
+				observable:to <http://example.org/kb/account-865734c8-8c21-11e9-934e-0c4de9c21b53> ;
+			] ;
+			sh:resultMessage "Value does not have class observable:ObservableObject" ;
+			sh:resultPath observable:application ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class observable:ObservableObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:application ;
+			] ;
+			sh:value <http://example.org/kb/868abc08-8c21-11e9-934e-0c4de9c21b53> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:OperatingSystemFacet ;
+				core:name "Android" ;
+				observable:manufacturer "Samsung" ;
+				observable:version "6.0.1" ;
+			] ;
+			sh:resultMessage "Value does not have class identity:Identity" ;
+			sh:resultPath observable:manufacturer ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class identity:Identity ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:manufacturer ;
+			] ;
+			sh:value "Samsung" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:OperatingSystemFacet ;
+				core:name "Android" ;
+				observable:manufacturer "Samsung" ;
+				observable:version "6.0.1" ;
+			] ;
+			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+			sh:resultPath observable:manufacturer ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class identity:Identity ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:manufacturer ;
+			] ;
+			sh:value "Samsung" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:SIMCardFacet ;
+				observable:ICCID "8931088918010550289" ;
+				observable:IMSI "{mobileaccount3-uuid}" ;
+				observable:carrier "Lebara" ;
+			] ;
+			sh:resultMessage "Value does not have class identity:Identity" ;
+			sh:resultPath observable:carrier ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class identity:Identity ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:carrier ;
+			] ;
+			sh:value "Lebara" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:SIMCardFacet ;
+				observable:ICCID "8931088918010550289" ;
+				observable:IMSI "{mobileaccount3-uuid}" ;
+				observable:carrier "Lebara" ;
+			] ;
+			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+			sh:resultPath observable:carrier ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class identity:Identity ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:carrier ;
+			] ;
+			sh:value "Lebara" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:SIMCardFacet ;
+				observable:ICCID "89390100002217635543" ;
+				observable:carrier "Telcom Italia" ;
+			] ;
+			sh:resultMessage "Value does not have class identity:Identity" ;
+			sh:resultPath observable:carrier ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class identity:Identity ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:carrier ;
+			] ;
+			sh:value "Telcom Italia" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:SIMCardFacet ;
+				observable:ICCID "89390100002217635543" ;
+				observable:carrier "Telcom Italia" ;
+			] ;
+			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+			sh:resultPath observable:carrier ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class identity:Identity ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:carrier ;
+			] ;
+			sh:value "Telcom Italia" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:WifiAddressFacet ;
+				observable:value "AC:5F:3E:73:E3:78" ;
+			] ;
+			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:WifiAddressFacet ; uco-observable:value Literal("AC:5F:3E:73:E3:78") ]->observable:addressValue' ;
+			sh:resultPath observable:addressValue ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:addressValue ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:WifiAddressFacet ;
+				observable:value "AC:5F:3E:73:E3:78" ;
+			] ;
+			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:WifiAddressFacet ; uco-observable:value Literal("AC:5F:3E:73:E3:78") ]->observable:addressValue' ;
+			sh:resultPath observable:addressValue ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:addressValue ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:WifiAddressFacet ;
+				observable:value "AC:5F:3E:73:E3:78" ;
+			] ;
+			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:WifiAddressFacet ; uco-observable:value Literal("AC:5F:3E:73:E3:78") ]->observable:addressValue' ;
+			sh:resultPath observable:addressValue ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path observable:addressValue ;
+			] ;
+		]
+		;
+	.
+
