@@ -25,18 +25,18 @@
     },
     {
         "@id": "kb:destination-host-uuid",
-        "@type": "uco-observable:ObservableObject"
+        "@type": "uco-observable:Device"
     },
     {
         "@id": "kb:sms_application1",
-        "@type": "uco-observable:ObservableObject"
+        "@type": "uco-observable:Application"
     },
     {
         "@id": "kb:source-host-uuid",
-        "@type": "uco-core:UcoObject"
+        "@type": "uco-observable:Device"
     },
     {
         "@id": "kb:suspect-image-filesystem-uuid",
-        "@type": "uco-core:UcoObject"
+        "@type": "uco-observable:FileSystem"
     }
 ]

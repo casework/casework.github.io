@@ -1,7 +1,7 @@
 [
     {
         "@id": "kb:EmailMessage-2c032220-8c21-11e9-9c99-0c4de9c21b53",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:EmailMessage",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:EmailMessageFacet",
@@ -27,7 +27,7 @@
     },
     {
         "@id": "kb:456a2bac-8c21-11e9-8902-0c4de9c24de5",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:EmailAddress",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:EmailAddressFacet",
@@ -37,7 +37,7 @@
     },
     {
         "@id": "kb:email-account-99d72bac-8c21-11e9-8902-0c4de9c21b53",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:EmailAccount",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DigitalAccountFacet",

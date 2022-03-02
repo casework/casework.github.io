@@ -36,7 +36,7 @@
     },
     {
         "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:EmailAddress",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:EmailAddressFacet",
@@ -46,7 +46,7 @@
     },
     {
         "@id": "kb:EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:EmailAccount",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:EmailAccountFacet",
@@ -58,7 +58,7 @@
     },
     {
         "@id": "kb:C1D3237A-6D7F-4E96-BBEF-6EB4C0A621D1",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:PhoneAccount",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:AccountFacet",
@@ -86,7 +86,7 @@
     },
     {
         "@id": "kb:WhatsApp-90652808-7341-40D3-9285-774D865AD3F9",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:ApplicationAccount",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:AccountFacet",
@@ -116,7 +116,7 @@
     },
     {
         "@id": "kb:application-whatsapp-uuid",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:Application",
         "uco-core:hasFacet": [
             {
                 "@type": "drafting:ApplicationFacet",

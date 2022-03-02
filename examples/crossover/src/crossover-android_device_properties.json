@@ -1,7 +1,7 @@
 [
     {
         "@id": "kb:samsung-device-uuid",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:MobileDevice",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DeviceFacet",

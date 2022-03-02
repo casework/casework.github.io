@@ -1,7 +1,7 @@
 [
     {
         "@id": "kb:account-90652808-7341-40d3-9285-774d865ad3f9",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:ApplicationAccount",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:AccountFacet",

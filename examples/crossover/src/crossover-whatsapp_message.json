@@ -1,7 +1,7 @@
 [
     {
         "@id": "kb:message-ed5d35d6-6e7c-4099-80f4-1fadfc0ee08c",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:Message",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:MessageFacet",

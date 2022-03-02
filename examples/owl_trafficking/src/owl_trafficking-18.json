@@ -1,7 +1,7 @@
 [
     {
         "@id": "kb:url-history-39ff4987-8ae5-47e3-8369-dbd0d5f79398",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:URLHistory",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:URLHistoryFacet",

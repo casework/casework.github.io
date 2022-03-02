@@ -11,7 +11,7 @@
     },
     {
         "@id": "kb:860FC853-9C3F-41FC-B144-8AC80D8F5849",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:URLHistory",
         "uco-core:hasFacet": [
             {
                 "@id": "kb:860FC853-9C3F-41FC-B144-8AC80D8F5849-URLHistory",

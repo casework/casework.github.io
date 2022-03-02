@@ -1,7 +1,7 @@
 [
     {
         "@id": "kb:simcard1-uuid",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:SIMCard",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:SIMCardFacet",
@@ -12,7 +12,7 @@
     },
     {
         "@id": "kb:mobileaccount1-uuid",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:MobileAccount",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:AccountFacet",
@@ -27,10 +27,10 @@
     },
     {
         "@id": "kb:simcard2-uuid",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:SIMCard",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:SIMCard",
+                "@type": "uco-observable:SIMCardFacet",
                 "uco-observable:ICCID": "8935302143531284380",
                 "uco-observable:IMSI": "__NOT_PROVIDED",
                 "uco-observable:carrier": "__NOT_PROVIDED"
@@ -39,7 +39,7 @@
     },
     {
         "@id": "kb:simcard3-uuid",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:SIMCard",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:SIMCardFacet",
@@ -51,7 +51,7 @@
     },
     {
         "@id": "kb:mobileaccount3-uuid",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:MobileAccount",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:AccountFacet",

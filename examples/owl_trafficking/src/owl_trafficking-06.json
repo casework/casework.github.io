@@ -36,7 +36,7 @@
     },
     {
         "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:EmailAddress",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:EmailAddressFacet",
@@ -46,7 +46,7 @@
     },
     {
         "@id": "kb:email-account-99d72bac-8c21-11e9-8902-0c4de9c21b53",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:EmailAccount",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:EmailAccountFacet",
@@ -60,7 +60,7 @@
     },
     {
         "@id": "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:PhoneAccount",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:AccountFacet",
@@ -87,7 +87,7 @@
     },
     {
         "@id": "kb:facebook-90652808-7341-40d3-9285-774d865ad3f9",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:DigitalAccount",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:AccountFacet",
@@ -121,7 +121,7 @@
     },
     {
         "@id": "kb:application-facebook-25e8018f-49be-4898-bb1d-731e387e9eb7",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:Application",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:ApplicationFacet",
