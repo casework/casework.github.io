@@ -2,7 +2,6 @@
 @prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
 @prefix identity: <https://unifiedcyberontology.org/ontology/uco/identity#> .
 @prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
-@prefix ns1: <http://example.org/ontology/local#> .
 @prefix observable: <https://unifiedcyberontology.org/ontology/uco/observable#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -75,26 +74,6 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#authorization-79D6AB60-D679-49CE-9573-7176DFEEB7C3> ;
-			sh:resultMessage "Value does not have class core:Facet" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a investigation:Authorization ;
-				ns1:authorizationAuthority <http://example.org/kb#530646A9-4290-4C02-B0B3-FD2EC363834A> ;
-				ns1:authorizationIssuedDate "20190330" ;
-				investigation:authorizationIdentifier "Decree_2019_00013" ;
-				investigation:authorizationType "Odin_Decree" ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb#bundle-5715FCF3-6BC8-4996-8F7F-FDF289F31649> ;
 			sh:resultMessage "Value does not have class core:UcoObject" ;
 			sh:resultPath core:object ;
@@ -125,36 +104,6 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7> ;
-			sh:resultMessage "Value does not have class core:UcoObject" ;
-			sh:resultPath core:object ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:UcoObject ;
-				sh:minCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path core:object ;
-			] ;
-			sh:value <http://example.org/kb#530646A9-4290-4C02-B0B3-FD2EC363834A> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7> ;
-			sh:resultMessage "Value does not have class core:UcoObject" ;
-			sh:resultPath core:object ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:UcoObject ;
-				sh:minCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path core:object ;
-			] ;
-			sh:value <http://example.org/kb#86F2E76A-434D-4D3F-9147-CD0CABCCA074> ;
-		] ,
-		[
-			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb#investigative-action1-uuid> ;
 			sh:resultMessage "Value does not have class core:Facet" ;
 			sh:resultPath core:hasFacet ;
@@ -174,24 +123,6 @@
 					<http://example.org/kb#provenance-record1-uuid> ,
 					<http://example.org/kb#suspect-device-uuid>
 					;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#suspect-device-uuid> ;
-			sh:resultMessage "Value does not have class core:Facet" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a ns1:iPhoneDevice ;
-				ns1:ownerName "Loki iPhone" ;
-				ns1:uniqueID "B3858A69A29375E6C706226B3633A3A11EB2A774" ;
 			] ;
 		] ,
 		[
@@ -242,30 +173,6 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
-				a observable:MobileDeviceFacet ;
-				ns1:localeLanguage "no_AS" ;
-				observable:IMEI "359305065690067" ;
-				observable:MSISDN "1239275339" ;
-				observable:clockSetting "2019-03-30T22:36:24.35Z" ;
-				observable:keypadUnlockCode "123789" ;
-				observable:phoneActivationTime "2018-05-09T07:36:24.350000+00:00"^^xsd:dateTime ;
-				observable:storageCapacityInBytes "17179869184"^^xsd:integer ;
-			] ;
-			sh:resultMessage "Value is not Literal with datatype xsd:dateTime" ;
-			sh:resultPath observable:clockSetting ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-			sh:sourceShape [
-				sh:datatype xsd:dateTime ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:path observable:clockSetting ;
-			] ;
-			sh:value "2019-03-30T22:36:24.35Z" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
 				a observable:DeviceFacet ;
 				observable:deviceType "iPhone" ;
 				observable:manufacturer "Apple" ;
@@ -304,28 +211,6 @@
 				sh:path observable:manufacturer ;
 			] ;
 			sh:value "Apple" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:MessageFacet ;
-				observable:application <http://example.org/kb#sms_application1> ;
-				observable:from <http://example.org/kb#phone_account3> ;
-				observable:messageText "Yo dude! This is my new number." ;
-				observable:sentTime "2010-01-15T17:59:43.250000+00:00"^^xsd:dateTime ;
-				observable:to <http://example.org/kb#phone_account1> ;
-			] ;
-			sh:resultMessage "Value does not have class observable:ObservableObject" ;
-			sh:resultPath observable:from ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class observable:ObservableObject ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path observable:from ;
-			] ;
-			sh:value <http://example.org/kb#phone_account3> ;
 		] ,
 		[
 			a sh:ValidationResult ;

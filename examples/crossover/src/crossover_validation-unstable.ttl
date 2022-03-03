@@ -9,36 +9,20 @@
 []
 	a sh:ValidationReport ;
 	sh:conforms "false"^^xsd:boolean ;
-	sh:result
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7> ;
-			sh:resultMessage "Less than 1 values on kb:investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7->investigation:investigationForm" ;
-			sh:resultPath investigation:investigationForm ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-			sh:sourceShape [
-				sh:datatype vocab:InvestigationFormVocab ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:minCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:path investigation:investigationForm ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/provenance-record13-uuid> ;
-			sh:resultMessage "More than 1 values on kb:provenance-record13-uuid->investigation:exhibitNumber" ;
-			sh:resultPath investigation:exhibitNumber ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
-			sh:sourceShape [
-				sh:datatype xsd:string ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:path investigation:exhibitNumber ;
-			] ;
-		]
-		;
+	sh:result [
+		a sh:ValidationResult ;
+		sh:focusNode <http://example.org/kb/investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7> ;
+		sh:resultMessage "Less than 1 values on kb:investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7->investigation:investigationForm" ;
+		sh:resultPath investigation:investigationForm ;
+		sh:resultSeverity sh:Violation ;
+		sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+		sh:sourceShape [
+			sh:datatype vocab:InvestigationFormVocab ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:minCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path investigation:investigationForm ;
+		] ;
+	] ;
 	.
 
