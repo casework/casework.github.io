@@ -1,4 +1,4 @@
-SELECT ?lEndTime ?lHashMethod ?lHashValue
+SELECT DISTINCT ?lEndTime ?lHashMethod ?lHashValue
 WHERE {
   ?nAction
     a case-investigation:InvestigativeAction ;
