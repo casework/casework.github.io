@@ -26,6 +26,14 @@
         ]
     },
     {
+        "@id": "kb:forensic-computer1-uuid",
+        "@type": "uco-observable:Device"
+    },
+    {
+        "@id": "kb:esc-lausanne-uuid",
+        "@type": "uco-location:Location"
+    },
+    {
         "@id": "kb:investigative-action1-uuid",
         "@type": "case-investigation:InvestigativeAction",
         "uco-core:name": "extracted",
@@ -72,14 +80,19 @@
         ]
     },
     {
-        "@id": "kb:provenance-record13-uuid",
+        "@id": "kb:provenance-record1-uuid",
+        "@type": "case-investigation:ProvenanceRecord",
+        "uco-core:object": {
+            "@id": "kb:samsung-device-uuid"
+        }
+    },
+    {
+        "@id": "kb:provenance-record2-uuid",
         "@type": "case-investigation:ProvenanceRecord",
         "uco-core:description": "Forensic duplicate of mobile device used by Ares Lupin",
         "case-investigation:exhibitNumber": "20181211001-002",
-        "uco-core:object": [
-            {
-                "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
-            }
-        ]
+        "uco-core:object": {
+            "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
+        }
     }
 ]

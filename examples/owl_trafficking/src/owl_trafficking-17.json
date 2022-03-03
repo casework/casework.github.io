@@ -1,7 +1,11 @@
 [
     {
+        "@id": "kb:skypeapp-a6b73e78-00da-11eb-a396-acde48001122",
+        "@type": "uco-observable:Application"
+    },
+    {
         "@id": "kb:skypemsg-eafca388-f926-4d48-864d-1bfdd3a2ba7f",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:Message",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:MessageFacet",

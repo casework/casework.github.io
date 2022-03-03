@@ -16,6 +16,10 @@
         }
     },
     {
+        "@id": "kb:camera-xml-uuid",
+        "@type": "uco-observable:File"
+    },
+    {
         "@id": "kb:cameralocation-relationship-uuid",
         "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {

@@ -13,10 +13,7 @@
                 "uco-observable:extension": "db",
                 "uco-observable:fileName": "/data/com.whatsapp/databases/msgstore.db",
                 "uco-observable:isDirectory": false,
-                "uco-observable:sizeInBytes": {
-                    "@type": "xsd:long",
-                    "@value": 327680
-                }
+                "uco-observable:sizeInBytes": 327680
             },
             {
                 "@type": "uco-observable:ContentDataFacet",

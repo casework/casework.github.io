@@ -23,7 +23,7 @@
         "uco-core:isDirectional": true
     },
     {
-        "@id": "kb:primaryuser-email-uuid",
+        "@id": "kb:primaryuser-whatsapp-uuid",
         "@type": "uco-core:Relationship",
         "uco-core:source": {
             "@id": "kb:primaryuser-uuid"
@@ -36,17 +36,17 @@
     },
     {
         "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:EmailAddress",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:EmailAddressFacet",
-                "uco-observable:value": "aresthewerewolf@gmail.com"
+                "uco-observable:addressValue": "aresthewerewolf@gmail.com"
             }
         ]
     },
     {
         "@id": "kb:EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:EmailAccount",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:EmailAccountFacet",
@@ -58,11 +58,13 @@
     },
     {
         "@id": "kb:C1D3237A-6D7F-4E96-BBEF-6EB4C0A621D1",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:PhoneAccount",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:AccountFacet",
-                "uco-observable:accountIssuer": "Salt",
+                "uco-observable:accountIssuer": {
+                    "@id": "kb:organization-salt-uuid"
+                },
                 "uco-observable:isActive": true
             },
             {
@@ -76,7 +78,7 @@
         "@id": "kb:associated-account-phonenumber1",
         "@type": "uco-core:Relationship",
         "uco-core:source": {
-            "@id": "kb:90652808-7341-40D3-9285-774D865AD3F9"
+            "@id": "kb:WhatsApp-90652808-7341-40D3-9285-774D865AD3F9"
         },
         "uco-core:target": {
             "@id": "kb:C1D3237A-6D7F-4E96-BBEF-6EB4C0A621D1"
@@ -86,17 +88,21 @@
     },
     {
         "@id": "kb:WhatsApp-90652808-7341-40D3-9285-774D865AD3F9",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:ApplicationAccount",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:AccountFacet",
-                "uco-observable:accountIssuer": "organization-whatsapp-uuid",
+                "uco-observable:accountIssuer": {
+                    "@id": "kb:organization-whatsapp-uuid"
+                },
                 "uco-observable:accountIdentifier": "31647934784@s.whatsapp.net",
                 "uco-observable:isActive": true
             },
             {
                 "@type": "uco-observable:ApplicationAccountFacet",
-                "uco-observable:application": "kb:application-whatsapp-uuid"
+                "uco-observable:application": {
+                    "@id": "kb:application-whatsapp-uuid"
+                }
             },
             {
                 "@type": "uco-observable:DigitalAccountFacet",
@@ -105,23 +111,59 @@
         ]
     },
     {
+        "@id": "kb:organization-lebara-uuid",
+        "@type": "uco-identity:Organization",
+        "uco-core:hasFacet": {
+            "@type": "uco-identity:OrganizationDetailsFacet",
+            "drafting:orgName": "Lebara"
+        }
+    },
+    {
+        "@id": "kb:organization-reddit-uuid",
+        "@type": "uco-identity:Organization",
+        "uco-core:hasFacet": {
+            "@type": "uco-identity:OrganizationDetailsFacet",
+            "drafting:orgName": "Reddit"
+        }
+    },
+    {
+        "@id": "kb:organization-salt-uuid",
+        "@type": "uco-identity:Organization",
+        "uco-core:hasFacet": {
+            "@type": "uco-identity:OrganizationDetailsFacet",
+            "drafting:orgName": "Salt"
+        }
+    },
+    {
+        "@id": "kb:organization-telcom-italia-uuid",
+        "@type": "uco-identity:Organization",
+        "uco-core:hasFacet": {
+            "@type": "uco-identity:OrganizationDetailsFacet",
+            "drafting:orgName": "Telcom Italia"
+        }
+    },
+    {
         "@id": "kb:organization-whatsapp-uuid",
-        "@type": "uco-identity:Identity",
-        "uco-core:hasFacet": [
-            {
-                "@type": "uco-identity:Organization",
-                "drafting:orgName": "WhatsApp"
-            }
-        ]
+        "@type": "uco-identity:Organization",
+        "uco-core:hasFacet": {
+            "@type": "uco-identity:OrganizationDetailsFacet",
+            "drafting:orgName": "WhatsApp"
+        }
+    },
+    {
+        "@id": "kb:Gmail-uuid",
+        "@type": "uco-observable:Application",
+        "uco-core:hasFacet": {
+            "@type": "uco-observable:ApplicationFacet",
+            "drafting:appName": "GMail"
+        }
     },
     {
         "@id": "kb:application-whatsapp-uuid",
-        "@type": "uco-observable:ObservableObject",
-        "uco-core:hasFacet": [
-            {
-                "@type": "drafting:ApplicationFacet",
-                "drafting:appName": "WhatsApp"
-            }
-        ]
+        "@type": "uco-observable:Application",
+        "uco-core:hasFacet": {
+            "@type": "uco-observable:ApplicationFacet",
+            "drafting:appName": "WhatsApp"
+        }
     }
 ]

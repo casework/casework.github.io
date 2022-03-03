@@ -1,0 +1,38 @@
+[
+    {
+        "@id": "kb:forensic-computer-2132063b-7753-4b51-b146-827e9a1d5037",
+        "@type": "uco-observable:Device"
+    },
+    {
+        "@id": "kb:lab-c44e4679-26e3-4585-aaa1-86110db936f8",
+        "@type": "uco-location:Location"
+    },
+    {
+        "@id": "kb:organization-att-d60ffcec-4d89-48a1-b264-9cd4bc700a70",
+        "@type": "uco-identity:Organization",
+        "uco-core:hasFacet": {
+            "@type": "uco-identity:OrganizationDetailsFacet",
+            "drafting:orgName": "AT&T"
+        }
+    },
+    {
+        "@id": "kb:organization-skypeapp-cc44c2ae-bdd3-4df8-9ca3-1f58d682d62b",
+        "@type": "uco-identity:Organization"
+    },
+    {
+        "@id": "kb:organization-textapp-a2ba855b-1218-44f5-9f73-a2530defbc73",
+        "@type": "uco-identity:Organization"
+    },
+    {
+        "@id": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38",
+        "@type": "uco-observable:Application"
+    },
+    {
+        "@id": "kb:textapplogcat-1a717ea6-8990-4709-92f0-d748cacb817e",
+        "@type": "uco-observable:ObservableObject"
+    },
+    {
+        "@id": "kb:telephony-cd52c3b8-7759-40b7-ae10-dfc90a35f644",
+        "@type": "uco-observable:ObservableObject"
+    }
+]

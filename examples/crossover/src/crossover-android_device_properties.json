@@ -1,7 +1,7 @@
 [
     {
         "@id": "kb:samsung-device-uuid",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:MobileDevice",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DeviceFacet",
@@ -10,7 +10,10 @@
                 "uco-observable:serialNumber": "RF8H31GS5SF"
             },
             {
-                "@type": "drafting:AndroidDeviceFacet",
+                "@type": [
+                    "drafting:AndroidDeviceFacet",
+                    "uco-core:Facet"
+                ],
                 "drafting:androidID": "64cce130286b31b3",
                 "drafting:androidFingerprint": "samsung/zeroltexx/zerolte:6.0.1/MMB29K/G925FXXU4DPIL"
             },
@@ -33,11 +36,11 @@
             },
             {
                 "@type": "uco-observable:WifiAddressFacet",
-                "uco-observable:value": "AC:5F:3E:73:E3:78"
+                "uco-observable:addressValue": "AC:5F:3E:73:E3:78"
             },
             {
                 "@type": "uco-observable:BluetoothAddressFacet",
-                "uco-observable:value": "D8:C4:E9:7C:2E:F8"
+                "uco-observable:addressValue": "D8:C4:E9:7C:2E:F8"
             }
         ]
     }

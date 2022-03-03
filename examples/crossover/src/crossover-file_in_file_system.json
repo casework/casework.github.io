@@ -27,7 +27,7 @@
     },
     {
         "@id": "kb:userdata-partition-uuid",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:FileSystem",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DiskPartitionFacet",
@@ -37,7 +37,7 @@
                 "uco-observable:partitionLength": 245235063
             },
             {
-                "@type": "uco-observable:FileSystem",
+                "@type": "uco-observable:FileSystemFacet",
                 "uco-observable:fileSystemType": "EXT3"
             },
             {

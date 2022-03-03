@@ -1,23 +1,28 @@
 [
     {
         "@id": "kb:simcard1-uuid",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:SIMCard",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:SIMCardFacet",
                 "uco-observable:ICCID": "89390100002217635543",
-                "uco-observable:carrier": "Telcom Italia"
+                "uco-observable:carrier": {
+                    "@id": "kb:organization-telcom-italia-uuid"
+                }
             }
         ]
     },
     {
         "@id": "kb:mobileaccount1-uuid",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:MobileAccount",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:AccountFacet",
-                "uco-observable:accountType": "Phone",
-                "uco-observable:isActive": "False"
+                "uco-observable:accountType": {
+                    "@type": "uco-vocabulary:AccountTypeVocab",
+                    "@value": "Phone"
+                },
+                "uco-observable:isActive": false
             },
             {
                 "@type": "uco-observable:MobileAccountFacet",
@@ -27,10 +32,10 @@
     },
     {
         "@id": "kb:simcard2-uuid",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:SIMCard",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:SIMCard",
+                "@type": "uco-observable:SIMCardFacet",
                 "uco-observable:ICCID": "8935302143531284380",
                 "uco-observable:IMSI": "__NOT_PROVIDED",
                 "uco-observable:carrier": "__NOT_PROVIDED"
@@ -39,23 +44,28 @@
     },
     {
         "@id": "kb:simcard3-uuid",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:SIMCard",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:SIMCardFacet",
                 "uco-observable:ICCID": "8931088918010550289",
                 "uco-observable:IMSI": "{mobileaccount3-uuid}",
-                "uco-observable:carrier": "Lebara"
+                "uco-observable:carrier": {
+                    "@id": "kb:organization-lebara-uuid"
+                }
             }
         ]
     },
     {
         "@id": "kb:mobileaccount3-uuid",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:MobileAccount",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:AccountFacet",
-                "uco-observable:accountType": "Phone",
+                "uco-observable:accountType": {
+                    "@type": "uco-vocabulary:AccountTypeVocab",
+                    "@value": "Phone"
+                },
                 "uco-observable:isActive": true
             },
             {
@@ -64,6 +74,10 @@
                 "uco-observable:IMSI": "204080515881398"
             }
         ]
+    },
+    {
+        "@id": "kb:cd52c3b8-7759-40b7-ae10-dfc90a35f644",
+        "@type": "uco-observable:ObservableObject"
     },
     {
         "@id": "kb:sim3-telephony-relationship-uuid",
@@ -86,7 +100,10 @@
                 "uco-observable:rangeSize": null
             },
             {
-                "@type": "drafting:TableRelationFacet",
+                "@type": [
+                    "drafting:TableRelationFacet",
+                    "uco-core:Facet"
+                ],
                 "drafting:name": "siminfo"
             }
         ]

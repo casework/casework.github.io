@@ -44,7 +44,10 @@
         "uco-core:hasFacet": [
             {
                 "@type": "uco-core:ConfidenceFacet",
-                "uco-core:confidence": "95"
+                "uco-core:confidence": {
+                    "@type": "xsd:nonNegativeInteger",
+                    "@value": "95"
+                }
             }
         ]
     }

@@ -38,7 +38,10 @@
                 }
             },
             {
-                "@type": "drafting:UnallocatedRecoverability",
+                "@type": [
+                    "drafting:UnallocatedRecoverabilityFacet",
+                    "uco-core:Facet"
+                ],
                 "drafting:nameStatus": "recoverable",
                 "drafting:metadataStatus": "recoverable",
                 "drafting:contentStatus": "unrecoverable"

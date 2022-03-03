@@ -37,7 +37,7 @@
         },
         {
             "@id": "kb:samsung-device-uuid",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:MobileDevice",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DeviceFacet",
@@ -46,7 +46,10 @@
                     "uco-observable:serialNumber": "RF8H31GS5SF"
                 },
                 {
-                    "@type": "drafting:AndroidDeviceFacet",
+                    "@type": [
+                        "drafting:AndroidDeviceFacet",
+                        "uco-core:Facet"
+                    ],
                     "drafting:androidID": "64cce130286b31b3",
                     "drafting:androidFingerprint": "samsung/zeroltexx/zerolte:6.0.1/MMB29K/G925FXXU4DPIL"
                 },
@@ -69,11 +72,11 @@
                 },
                 {
                     "@type": "uco-observable:WifiAddressFacet",
-                    "uco-observable:value": "AC:5F:3E:73:E3:78"
+                    "uco-observable:addressValue": "AC:5F:3E:73:E3:78"
                 },
                 {
                     "@type": "uco-observable:BluetoothAddressFacet",
-                    "uco-observable:value": "D8:C4:E9:7C:2E:F8"
+                    "uco-observable:addressValue": "D8:C4:E9:7C:2E:F8"
                 }
             ]
         },
@@ -102,6 +105,14 @@
                     ]
                 }
             ]
+        },
+        {
+            "@id": "kb:forensic-computer1-uuid",
+            "@type": "uco-observable:Device"
+        },
+        {
+            "@id": "kb:esc-lausanne-uuid",
+            "@type": "uco-location:Location"
         },
         {
             "@id": "kb:investigative-action1-uuid",
@@ -150,15 +161,20 @@
             ]
         },
         {
-            "@id": "kb:provenance-record13-uuid",
+            "@id": "kb:provenance-record1-uuid",
+            "@type": "case-investigation:ProvenanceRecord",
+            "uco-core:object": {
+                "@id": "kb:samsung-device-uuid"
+            }
+        },
+        {
+            "@id": "kb:provenance-record2-uuid",
             "@type": "case-investigation:ProvenanceRecord",
             "uco-core:description": "Forensic duplicate of mobile device used by Ares Lupin",
             "case-investigation:exhibitNumber": "20181211001-002",
-            "uco-core:object": [
-                {
-                    "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
-                }
-            ]
+            "uco-core:object": {
+                "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
+            }
         },
         {
             "@id": "kb:F7CAD990-6687-4849-89DC-55795675F3F5",
@@ -176,7 +192,7 @@
                     "uco-observable:fileSystemType": "ExtX",
                     "uco-observable:isDirectory": false,
                     "uco-observable:allocationStatus": "allocated",
-                    "uco-observable:sizeInBytes": "534167",
+                    "uco-observable:sizeInBytes": 534167,
                     "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-11-30T09:43:24.00Z"
@@ -217,7 +233,7 @@
         },
         {
             "@id": "kb:EmailMessage-2c032220-8c21-11e9-9c99-0c4de9c21b53",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:EmailMessage",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:EmailMessageFacet",
@@ -232,7 +248,9 @@
                         "@value": "2018-11-20T21:28:07.00Z"
                     },
                     "uco-observable:subject": "Re: Bank transfer ?",
-                    "uco-observable:bodyRaw": "Excellent - we need all the help we can get. Sent from my Samsung Galaxy smartphone",
+                    "uco-observable:bodyRaw": {
+                        "@id": "kb:content-data-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d"
+                    },
                     "uco-observable:fromRef": null,
                     "uco-observable:toRef": null,
                     "uco-observable:ccRefs": null,
@@ -242,18 +260,26 @@
             ]
         },
         {
+            "@id": "kb:content-data-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d",
+            "@type": "uco-observable:ContentData",
+            "uco-observable:hasFacet": {
+                "@type": "uco-observable:ContentDataFacet",
+                "uco-observable:dataPayload": "Excellent - we need all the help we can get. Sent from my Samsung Galaxy smartphone"
+            }
+        },
+        {
             "@id": "kb:456a2bac-8c21-11e9-8902-0c4de9c24de5",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:EmailAddress",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:EmailAddressFacet",
-                    "uco-observable:value": "badquinn3@gmail.com "
+                    "uco-observable:addressValue": "badquinn3@gmail.com "
                 }
             ]
         },
         {
             "@id": "kb:email-account-99d72bac-8c21-11e9-8902-0c4de9c21b53",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:EmailAccount",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DigitalAccountFacet",
@@ -261,7 +287,9 @@
                 },
                 {
                     "@type": "uco-observable:EmailAccountFacet",
-                    "uco-observable:emailAddress": "kb:456a2bac-8c21-11e9-8902-0c4de9c24de5"
+                    "uco-observable:emailAddress": {
+                        "@id": "kb:456a2bac-8c21-11e9-8902-0c4de9c24de5"
+                    }
                 }
             ]
         },
@@ -293,7 +321,7 @@
         },
         {
             "@id": "kb:userdata-partition-uuid",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:FileSystem",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DiskPartitionFacet",
@@ -303,7 +331,7 @@
                     "uco-observable:partitionLength": 245235063
                 },
                 {
-                    "@type": "uco-observable:FileSystem",
+                    "@type": "uco-observable:FileSystemFacet",
                     "uco-observable:fileSystemType": "EXT3"
                 },
                 {
@@ -327,7 +355,7 @@
         },
         {
             "@id": "kb:filesystem-uuid",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:FileSystem",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DiskPartitionFacet",
@@ -449,8 +477,14 @@
             "@type": "uco-location:Location",
             "uco-core:hasFacet": {
                 "@type": "uco-location:LatLongCoordinatesFacet",
-                "uco-location:latitude": 46.53722222222222,
-                "uco-location:longitude": 6.579166666666667,
+                "uco-location:latitude": {
+                    "@type": "xsd:decimal",
+                    "@value": "46.53722222222222"
+                },
+                "uco-location:longitude": {
+                    "@type": "xsd:decimal",
+                    "@value": "6.579166666666667"
+                },
                 "uco-location:altitude": null
             }
         },
@@ -461,7 +495,7 @@
                 "@id": "kb:userdata-partition-uuid"
             },
             "uco-core:target": {
-                "@id": "kb:blk0_sda.bin"
+                "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
             },
             "uco-core:kindOfRelationship": {
                 "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
@@ -477,12 +511,14 @@
             ]
         },
         {
-            "@id": "kb:Reddit-90652808-7341-40D3-9285-774D865AD3F9",
-            "@type": "uco-observable:ObservableObject",
+            "@id": "kb:Reddit-6F321BAA-CC57-4C0A-9DD2-7F2038FD44D1",
+            "@type": "uco-observable:DigitalAccount",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:AccountFacet",
-                    "uco-observable:accountIssuer": "kb:organization-reddit-uuid",
+                    "uco-observable:accountIssuer": {
+                        "@id": "kb:organization-reddit-uuid"
+                    },
                     "uco-observable:accountIdentifier": "aresthewerewolf",
                     "uco-observable:isActive": true
                 },
@@ -490,7 +526,10 @@
                     "@type": "uco-observable:DigitalAccountFacet",
                     "uco-observable:displayName": "Ares Lupin",
                     "uco-observable:accountLogin": "aresthewerewolf",
-                    "uco-observable:firstLoginTime": "2018-11-26T19:00:31Z"
+                    "uco-observable:firstLoginTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-26T19:00:31Z"
+                    }
                 },
                 {
                     "@type": "uco-observable:AccountAuthenticationFacet",
@@ -502,7 +541,7 @@
             "@id": "kb:LoginDataC316C405-9326-4F28-9B8D-44A3BB9E7283",
             "@type": "uco-core:Relationship",
             "uco-core:source": {
-                "@id": "kb:Reddit-90652808-7341-40D3-9285-774D865AD3F9"
+                "@id": "kb:Reddit-6F321BAA-CC57-4C0A-9DD2-7F2038FD44D1"
             },
             "uco-core:target": {
                 "@id": "kb:ChromeLoginData-16805DFF-05F9-4CBA-9266-D5FA712F3D8F"
@@ -519,10 +558,17 @@
                     "uco-observable:rangeSize": null
                 },
                 {
-                    "@type": "drafting:TableRelation",
+                    "@type": [
+                        "drafting:TableRelationFacet",
+                        "uco-core:Facet"
+                    ],
                     "drafting:name": "logins"
                 }
             ]
+        },
+        {
+            "@id": "kb:ChromeLoginData-16805DFF-05F9-4CBA-9266-D5FA712F3D8F",
+            "@type": "uco-observable:ObservableObject"
         },
         {
             "@id": "kb:cellebrite-pa1-uuid",
@@ -591,6 +637,24 @@
             ]
         },
         {
+            "@id": "kb:cellebritexml-report-uuid",
+            "@type": "uco-observable:File"
+        },
+        {
+            "@id": "kb:provenance-record3-uuid",
+            "@type": "case-investigation:ProvenanceRecord",
+            "uco-core:object": {
+                "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
+            }
+        },
+        {
+            "@id": "kb:provenance-record4-uuid",
+            "@type": "case-investigation:ProvenanceRecord",
+            "uco-core:object": {
+                "@id": "kb:cellebritexml-report-uuid"
+            }
+        },
+        {
             "@id": "kb:simcard1-relationship-uuid",
             "@type": "uco-core:Relationship",
             "uco-core:source": {
@@ -635,29 +699,37 @@
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-core:ConfidenceFacet",
-                    "uco-core:confidence": "95"
+                    "uco-core:confidence": {
+                        "@type": "xsd:nonNegativeInteger",
+                        "@value": "95"
+                    }
                 }
             ]
         },
         {
             "@id": "kb:simcard1-uuid",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:SIMCard",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:SIMCardFacet",
                     "uco-observable:ICCID": "89390100002217635543",
-                    "uco-observable:carrier": "Telcom Italia"
+                    "uco-observable:carrier": {
+                        "@id": "kb:organization-telcom-italia-uuid"
+                    }
                 }
             ]
         },
         {
             "@id": "kb:mobileaccount1-uuid",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:MobileAccount",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:AccountFacet",
-                    "uco-observable:accountType": "Phone",
-                    "uco-observable:isActive": "False"
+                    "uco-observable:accountType": {
+                        "@type": "uco-vocabulary:AccountTypeVocab",
+                        "@value": "Phone"
+                    },
+                    "uco-observable:isActive": false
                 },
                 {
                     "@type": "uco-observable:MobileAccountFacet",
@@ -667,10 +739,10 @@
         },
         {
             "@id": "kb:simcard2-uuid",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:SIMCard",
             "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:SIMCard",
+                    "@type": "uco-observable:SIMCardFacet",
                     "uco-observable:ICCID": "8935302143531284380",
                     "uco-observable:IMSI": "__NOT_PROVIDED",
                     "uco-observable:carrier": "__NOT_PROVIDED"
@@ -679,23 +751,28 @@
         },
         {
             "@id": "kb:simcard3-uuid",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:SIMCard",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:SIMCardFacet",
                     "uco-observable:ICCID": "8931088918010550289",
                     "uco-observable:IMSI": "{mobileaccount3-uuid}",
-                    "uco-observable:carrier": "Lebara"
+                    "uco-observable:carrier": {
+                        "@id": "kb:organization-lebara-uuid"
+                    }
                 }
             ]
         },
         {
             "@id": "kb:mobileaccount3-uuid",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:MobileAccount",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:AccountFacet",
-                    "uco-observable:accountType": "Phone",
+                    "uco-observable:accountType": {
+                        "@type": "uco-vocabulary:AccountTypeVocab",
+                        "@value": "Phone"
+                    },
                     "uco-observable:isActive": true
                 },
                 {
@@ -704,6 +781,10 @@
                     "uco-observable:IMSI": "204080515881398"
                 }
             ]
+        },
+        {
+            "@id": "kb:cd52c3b8-7759-40b7-ae10-dfc90a35f644",
+            "@type": "uco-observable:ObservableObject"
         },
         {
             "@id": "kb:sim3-telephony-relationship-uuid",
@@ -726,7 +807,10 @@
                     "uco-observable:rangeSize": null
                 },
                 {
-                    "@type": "drafting:TableRelationFacet",
+                    "@type": [
+                        "drafting:TableRelationFacet",
+                        "uco-core:Facet"
+                    ],
                     "drafting:name": "siminfo"
                 }
             ]
@@ -743,7 +827,7 @@
         },
         {
             "@id": "kb:860FC853-9C3F-41FC-B144-8AC80D8F5849",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:URLHistory",
             "uco-core:hasFacet": [
                 {
                     "@id": "kb:860FC853-9C3F-41FC-B144-8AC80D8F5849-URLHistory",
@@ -855,7 +939,10 @@
                     "uco-observable:rangeSize": null
                 },
                 {
-                    "@type": "drafting:TableRelation",
+                    "@type": [
+                        "drafting:TableRelationFacet",
+                        "uco-core:Facet"
+                    ],
                     "drafting:tableName": "urls"
                 }
             ]
@@ -884,7 +971,7 @@
             "uco-core:isDirectional": true
         },
         {
-            "@id": "kb:primaryuser-email-uuid",
+            "@id": "kb:primaryuser-whatsapp-uuid",
             "@type": "uco-core:Relationship",
             "uco-core:source": {
                 "@id": "kb:primaryuser-uuid"
@@ -897,17 +984,17 @@
         },
         {
             "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:EmailAddress",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:EmailAddressFacet",
-                    "uco-observable:value": "aresthewerewolf@gmail.com"
+                    "uco-observable:addressValue": "aresthewerewolf@gmail.com"
                 }
             ]
         },
         {
             "@id": "kb:EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:EmailAccount",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:EmailAccountFacet",
@@ -919,11 +1006,13 @@
         },
         {
             "@id": "kb:C1D3237A-6D7F-4E96-BBEF-6EB4C0A621D1",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:PhoneAccount",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:AccountFacet",
-                    "uco-observable:accountIssuer": "Salt",
+                    "uco-observable:accountIssuer": {
+                        "@id": "kb:organization-salt-uuid"
+                    },
                     "uco-observable:isActive": true
                 },
                 {
@@ -937,7 +1026,7 @@
             "@id": "kb:associated-account-phonenumber1",
             "@type": "uco-core:Relationship",
             "uco-core:source": {
-                "@id": "kb:90652808-7341-40D3-9285-774D865AD3F9"
+                "@id": "kb:WhatsApp-90652808-7341-40D3-9285-774D865AD3F9"
             },
             "uco-core:target": {
                 "@id": "kb:C1D3237A-6D7F-4E96-BBEF-6EB4C0A621D1"
@@ -947,17 +1036,21 @@
         },
         {
             "@id": "kb:WhatsApp-90652808-7341-40D3-9285-774D865AD3F9",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:ApplicationAccount",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:AccountFacet",
-                    "uco-observable:accountIssuer": "organization-whatsapp-uuid",
+                    "uco-observable:accountIssuer": {
+                        "@id": "kb:organization-whatsapp-uuid"
+                    },
                     "uco-observable:accountIdentifier": "31647934784@s.whatsapp.net",
                     "uco-observable:isActive": true
                 },
                 {
                     "@type": "uco-observable:ApplicationAccountFacet",
-                    "uco-observable:application": "kb:application-whatsapp-uuid"
+                    "uco-observable:application": {
+                        "@id": "kb:application-whatsapp-uuid"
+                    }
                 },
                 {
                     "@type": "uco-observable:DigitalAccountFacet",
@@ -966,38 +1059,78 @@
             ]
         },
         {
+            "@id": "kb:organization-lebara-uuid",
+            "@type": "uco-identity:Organization",
+            "uco-core:hasFacet": {
+                "@type": "uco-identity:OrganizationDetailsFacet",
+                "drafting:orgName": "Lebara"
+            }
+        },
+        {
+            "@id": "kb:organization-reddit-uuid",
+            "@type": "uco-identity:Organization",
+            "uco-core:hasFacet": {
+                "@type": "uco-identity:OrganizationDetailsFacet",
+                "drafting:orgName": "Reddit"
+            }
+        },
+        {
+            "@id": "kb:organization-salt-uuid",
+            "@type": "uco-identity:Organization",
+            "uco-core:hasFacet": {
+                "@type": "uco-identity:OrganizationDetailsFacet",
+                "drafting:orgName": "Salt"
+            }
+        },
+        {
+            "@id": "kb:organization-telcom-italia-uuid",
+            "@type": "uco-identity:Organization",
+            "uco-core:hasFacet": {
+                "@type": "uco-identity:OrganizationDetailsFacet",
+                "drafting:orgName": "Telcom Italia"
+            }
+        },
+        {
             "@id": "kb:organization-whatsapp-uuid",
-            "@type": "uco-identity:Identity",
-            "uco-core:hasFacet": [
-                {
-                    "@type": "uco-identity:Organization",
-                    "drafting:orgName": "WhatsApp"
-                }
-            ]
+            "@type": "uco-identity:Organization",
+            "uco-core:hasFacet": {
+                "@type": "uco-identity:OrganizationDetailsFacet",
+                "drafting:orgName": "WhatsApp"
+            }
+        },
+        {
+            "@id": "kb:Gmail-uuid",
+            "@type": "uco-observable:Application",
+            "uco-core:hasFacet": {
+                "@type": "uco-observable:ApplicationFacet",
+                "drafting:appName": "GMail"
+            }
         },
         {
             "@id": "kb:application-whatsapp-uuid",
-            "@type": "uco-observable:ObservableObject",
-            "uco-core:hasFacet": [
-                {
-                    "@type": "drafting:ApplicationFacet",
-                    "drafting:appName": "WhatsApp"
-                }
-            ]
+            "@type": "uco-observable:Application",
+            "uco-core:hasFacet": {
+                "@type": "uco-observable:ApplicationFacet",
+                "drafting:appName": "WhatsApp"
+            }
         },
         {
             "@id": "kb:account-90652808-7341-40d3-9285-774d865ad3f9",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:ApplicationAccount",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:AccountFacet",
-                    "uco-observable:accountIssuer": "whatsapp_org",
+                    "uco-observable:accountIssuer": {
+                        "@id": "kb:organization-whatsapp-uuid"
+                    },
                     "uco-observable:accountIdentifier": "31647934784@s.whatsapp.net",
                     "uco-observable:isActive": true
                 },
                 {
                     "@type": "uco-observable:ApplicationAccountFacet",
-                    "uco-observable:application": "kb:whatsapp-868abc08-8c21-11e9-934e-0c4de9c21b53"
+                    "uco-observable:application": {
+                        "@id": "kb:whatsapp-868abc08-8c21-11e9-934e-0c4de9c21b53"
+                    }
                 },
                 {
                     "@type": "uco-observable:DigitalAccountFacet",
@@ -1007,28 +1140,37 @@
         },
         {
             "@id": "kb:whatsapp-868abc08-8c21-11e9-934e-0c4de9c21b53",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:Application",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ApplicationFacet",
+                    "rdfs:comment": "Note that there is an open design issue on class-level references to Android operating systems.  OWL punning (linking the OWL class) might or might not be the mechanism to use on the uco-observable:operatingSystem property here.",
+                    "rdfs:seeAlso": {
+                        "@id": "https://unifiedcyberontology.atlassian.net/browse/OC-149"
+                    },
                     "uco-core:name": "WhatsApp",
                     "uco-observable:applicationIdentifier": "com.whatsapp",
                     "uco-observable:version": "2.18.361",
-                    "uco-observable:operatingSystem": "Android"
+                    "uco-observable:operatingSystem": {
+                        "@id": "kb:Android-class-6f4f675e-9a02-4ab5-8060-50d3d92832d9"
+                    }
                 }
             ]
         },
         {
-            "@id": "kb:relationship-c316c405-9326-4f28-9b8d-44a3bb9e7283",
+            "@id": "kb:Android-class-6f4f675e-9a02-4ab5-8060-50d3d92832d9",
+            "@type": "uco-observable:OperatingSystem",
+            "uco-core:description": "The general class of Android operating system instances, treated as an abstract individual."
+        },
+        {
+            "@id": "kb:relationship-20f7ade6-93a7-4d67-a657-adeffba35dc7",
             "@type": "uco-observable:ObservableRelationship",
             "uco-core:source": {
                 "@id": "kb:msgstoredb-16805dff-05f9-4cba-9266-d5fa712f3d8f"
             },
-            "uco-core:target": [
-                {
-                    "@id": "kb:forensiccopy-309bc178-1836-47b7-aa15-94ea3a2c7401"
-                }
-            ],
+            "uco-core:target": {
+                "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
+            },
             "uco-core:kindOfRelationship": {
                 "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
                 "@value": "Contained_Within"
@@ -1055,10 +1197,7 @@
                     "uco-observable:extension": "db",
                     "uco-observable:fileName": "/data/com.whatsapp/databases/msgstore.db",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": {
-                        "@type": "xsd:long",
-                        "@value": 327680
-                    }
+                    "uco-observable:sizeInBytes": 327680
                 },
                 {
                     "@type": "uco-observable:ContentDataFacet",
@@ -1080,13 +1219,13 @@
         },
         {
             "@id": "kb:message-ed5d35d6-6e7c-4099-80f4-1fadfc0ee08c",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:Message",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:MessageFacet",
                     "uco-observable:messageText": "20 minutes away",
                     "uco-observable:application": {
-                        "@id": "kb:868abc08-8c21-11e9-934e-0c4de9c21b53"
+                        "@id": "kb:whatsapp-868abc08-8c21-11e9-934e-0c4de9c21b53"
                     },
                     "uco-observable:sentTime": {
                         "@type": "xsd:dateTime",
@@ -1110,11 +1249,9 @@
             "uco-core:source": {
                 "@id": "kb:message-ed5d35d6-6e7c-4099-80f4-1fadfc0ee08c"
             },
-            "uco-core:target": [
-                {
-                    "@id": "kb:msgstordb-16805dff-05f9-4cba-9266-d5fa712f3d8f"
-                }
-            ],
+            "uco-core:target": {
+                "@id": "kb:msgstoredb-16805dff-05f9-4cba-9266-d5fa712f3d8f"
+            },
             "uco-core:kindOfRelationship": {
                 "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
                 "@value": "Contained_Within"
@@ -1127,7 +1264,10 @@
                     "uco-observable:rangeSize": 477952
                 },
                 {
-                    "@type": "drafting:TableRelation",
+                    "@type": [
+                        "drafting:TableRelationFacet",
+                        "uco-core:Facet"
+                    ],
                     "drafting:path": "messages"
                 }
             ]

@@ -1,15 +1,26 @@
 [
     {
         "@id": "kb:whatsapp-868abc08-8c21-11e9-934e-0c4de9c21b53",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:Application",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:ApplicationFacet",
+                "rdfs:comment": "Note that there is an open design issue on class-level references to Android operating systems.  OWL punning (linking the OWL class) might or might not be the mechanism to use on the uco-observable:operatingSystem property here.",
+                "rdfs:seeAlso": {
+                    "@id": "https://unifiedcyberontology.atlassian.net/browse/OC-149"
+                },
                 "uco-core:name": "WhatsApp",
                 "uco-observable:applicationIdentifier": "com.whatsapp",
                 "uco-observable:version": "2.18.361",
-                "uco-observable:operatingSystem": "Android"
+                "uco-observable:operatingSystem": {
+                    "@id": "kb:Android-class-6f4f675e-9a02-4ab5-8060-50d3d92832d9"
+                }
             }
         ]
+    },
+    {
+        "@id": "kb:Android-class-6f4f675e-9a02-4ab5-8060-50d3d92832d9",
+        "@type": "uco-observable:OperatingSystem",
+        "uco-core:description": "The general class of Android operating system instances, treated as an abstract individual."
     }
 ]

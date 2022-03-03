@@ -5,11 +5,9 @@
         "uco-core:source": {
             "@id": "kb:message-ed5d35d6-6e7c-4099-80f4-1fadfc0ee08c"
         },
-        "uco-core:target": [
-            {
-                "@id": "kb:msgstordb-16805dff-05f9-4cba-9266-d5fa712f3d8f"
-            }
-        ],
+        "uco-core:target": {
+            "@id": "kb:msgstoredb-16805dff-05f9-4cba-9266-d5fa712f3d8f"
+        },
         "uco-core:kindOfRelationship": {
             "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
             "@value": "Contained_Within"
@@ -22,7 +20,10 @@
                 "uco-observable:rangeSize": 477952
             },
             {
-                "@type": "drafting:TableRelation",
+                "@type": [
+                    "drafting:TableRelationFacet",
+                    "uco-core:Facet"
+                ],
                 "drafting:path": "messages"
             }
         ]

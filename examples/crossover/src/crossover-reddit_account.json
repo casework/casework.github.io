@@ -1,11 +1,13 @@
 [
     {
-        "@id": "kb:Reddit-90652808-7341-40D3-9285-774D865AD3F9",
-        "@type": "uco-observable:ObservableObject",
+        "@id": "kb:Reddit-6F321BAA-CC57-4C0A-9DD2-7F2038FD44D1",
+        "@type": "uco-observable:DigitalAccount",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:AccountFacet",
-                "uco-observable:accountIssuer": "kb:organization-reddit-uuid",
+                "uco-observable:accountIssuer": {
+                    "@id": "kb:organization-reddit-uuid"
+                },
                 "uco-observable:accountIdentifier": "aresthewerewolf",
                 "uco-observable:isActive": true
             },
@@ -13,7 +15,10 @@
                 "@type": "uco-observable:DigitalAccountFacet",
                 "uco-observable:displayName": "Ares Lupin",
                 "uco-observable:accountLogin": "aresthewerewolf",
-                "uco-observable:firstLoginTime": "2018-11-26T19:00:31Z"
+                "uco-observable:firstLoginTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-11-26T19:00:31Z"
+                }
             },
             {
                 "@type": "uco-observable:AccountAuthenticationFacet",
@@ -25,7 +30,7 @@
         "@id": "kb:LoginDataC316C405-9326-4F28-9B8D-44A3BB9E7283",
         "@type": "uco-core:Relationship",
         "uco-core:source": {
-            "@id": "kb:Reddit-90652808-7341-40D3-9285-774D865AD3F9"
+            "@id": "kb:Reddit-6F321BAA-CC57-4C0A-9DD2-7F2038FD44D1"
         },
         "uco-core:target": {
             "@id": "kb:ChromeLoginData-16805DFF-05F9-4CBA-9266-D5FA712F3D8F"
@@ -42,9 +47,16 @@
                 "uco-observable:rangeSize": null
             },
             {
-                "@type": "drafting:TableRelation",
+                "@type": [
+                    "drafting:TableRelationFacet",
+                    "uco-core:Facet"
+                ],
                 "drafting:name": "logins"
             }
         ]
+    },
+    {
+        "@id": "kb:ChromeLoginData-16805DFF-05F9-4CBA-9266-D5FA712F3D8F",
+        "@type": "uco-observable:ObservableObject"
     }
 ]

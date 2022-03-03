@@ -35,8 +35,8 @@
         "uco-core:isDirectional": true
     },
     {
-        "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53",
-        "@type": "uco-observable:ObservableObject",
+        "@id": "kb:email-address-d6fbe80f-9098-4650-b7a8-0b0e225cec2b",
+        "@type": "uco-observable:EmailAddress",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:EmailAddressFacet",
@@ -46,11 +46,13 @@
     },
     {
         "@id": "kb:email-account-99d72bac-8c21-11e9-8902-0c4de9c21b53",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:EmailAccount",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:EmailAccountFacet",
-                "uco-observable:emailAddress": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53"
+                "uco-observable:emailAddress": {
+                    "@id": "kb:email-address-d6fbe80f-9098-4650-b7a8-0b0e225cec2b"
+                }
             },
             {
                 "@type": "uco-observable:AccountAuthenticationFacet",
@@ -60,11 +62,13 @@
     },
     {
         "@id": "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:PhoneAccount",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:AccountFacet",
-                "uco-observable:accountIssuer": "ATT",
+                "uco-observable:accountIssuer": {
+                    "@id": "kb:organization-att-d60ffcec-4d89-48a1-b264-9cd4bc700a70"
+                },
                 "uco-observable:isActive": true
             },
             {
@@ -77,7 +81,7 @@
         "@id": "kb:associated-account-phonenumber-0307a497-f1fb-4af4-9877-90c56ee76fba",
         "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
-            "@id": "kb:90652808-7341-40d3-9285-774d865ad3f9"
+            "@id": "kb:facebook-90652808-7341-40d3-9285-774d865ad3f9"
         },
         "uco-core:target": {
             "@id": "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1"
@@ -87,7 +91,7 @@
     },
     {
         "@id": "kb:facebook-90652808-7341-40d3-9285-774d865ad3f9",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:DigitalAccount",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:AccountFacet",
@@ -121,7 +125,7 @@
     },
     {
         "@id": "kb:application-facebook-25e8018f-49be-4898-bb1d-731e387e9eb7",
-        "@type": "uco-observable:ObservableObject",
+        "@type": "uco-observable:Application",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:ApplicationFacet",

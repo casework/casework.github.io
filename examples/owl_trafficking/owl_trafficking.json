@@ -186,7 +186,7 @@
         },
         {
             "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:MobileDevice",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DeviceFacet",
@@ -198,12 +198,18 @@
                     "drafting:encryptionEnabled": false
                 },
                 {
-                    "@type": "drafting:AndroidDevice",
+                    "@type": [
+                        "drafting:AndroidDeviceFacet",
+                        "uco-core:Facet"
+                    ],
                     "drafting:androidID": "64cce130286b31b3",
                     "drafting:androidFingerprint": "lge\u2026"
                 },
                 {
-                    "@type": "drafting:BootLoader",
+                    "@type": [
+                        "drafting:BootLoaderFacet",
+                        "uco-core:Facet"
+                    ],
                     "drafting:label": "HHZ20h",
                     "drafting:buildIdentifier": "M4B30Z",
                     "drafting:buildDate": "2016-11-03T20:03:42.00Z"
@@ -219,7 +225,10 @@
                     "drafting:locationsServicesEnabled": true,
                     "uco-observable:keypadUnlockCode": "NULL",
                     "uco-observable:IMEI": "352584062438806",
-                    "uco-observable:clockSetting": "2017-02-06T20:51:09.35Z",
+                    "uco-observable:clockSetting": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2017-02-06T20:51:09.35Z"
+                    },
                     "uco-observable:storageCapacityInBytes": 31268536320
                 },
                 {
@@ -230,11 +239,11 @@
                 },
                 {
                     "@type": "uco-observable:WifiAddressFacet",
-                    "uco-observable:value": "34:4d:f7:54:20:bb"
+                    "uco-observable:addressValue": "34:4d:f7:54:20:bb"
                 },
                 {
                     "@type": "uco-observable:BluetoothAddressFacet",
-                    "uco-observable:value": "88:c9:d0:03:04:49"
+                    "uco-observable:addressValue": "88:c9:d0:03:04:49"
                 },
                 {
                     "@type": "uco-observable:MobileAccountFacet",
@@ -256,7 +265,7 @@
                 "@value": "Contained_Within"
             },
             "uco-core:startTime": {
-                "@type": "xsd:datetime",
+                "@type": "xsd:dateTime",
                 "@value": "2017-00-00T12:34:56Z"
             },
             "uco-core:endTime": {
@@ -267,7 +276,7 @@
         },
         {
             "@id": "kb:simcard-24d20c80-f035-40ae-88dd-fc66f70180f6",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:SIMCard",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:SIMCardFacet",
@@ -275,13 +284,15 @@
                     "uco-observable:IMSI": {
                         "@id": "kb:mobileaccount-4b3cdcbd-6a31-462f-be9b-1ca2944c8876"
                     },
-                    "uco-observable:carrier": "AT&T"
+                    "uco-observable:carrier": {
+                        "@id": "kb:organization-att-d60ffcec-4d89-48a1-b264-9cd4bc700a70"
+                    }
                 }
             ]
         },
         {
             "@id": "kb:mobileaccount-4b3cdcbd-6a31-462f-be9b-1ca2944c8876",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:MobileAccount",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:AccountFacet",
@@ -311,15 +322,18 @@
                 "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
                 "@value": "Contained_Within"
             },
-            "uco-core:isDirectional": "True",
+            "uco-core:isDirectional": true,
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DataRangeFacet",
-                    "uco-observable:rangeOffset": "13751",
+                    "uco-observable:rangeOffset": 13751,
                     "uco-observable:rangeSize": "__NOT_PROVIDED"
                 },
                 {
-                    "@type": "drafting:TableRelation",
+                    "@type": [
+                        "drafting:TableRelation",
+                        "uco-core:Facet"
+                    ],
                     "drafting:tableName": "siminfo"
                 }
             ]
@@ -360,8 +374,8 @@
             "uco-core:isDirectional": true
         },
         {
-            "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53",
-            "@type": "uco-observable:ObservableObject",
+            "@id": "kb:email-address-d6fbe80f-9098-4650-b7a8-0b0e225cec2b",
+            "@type": "uco-observable:EmailAddress",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:EmailAddressFacet",
@@ -371,11 +385,13 @@
         },
         {
             "@id": "kb:email-account-99d72bac-8c21-11e9-8902-0c4de9c21b53",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:EmailAccount",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:EmailAccountFacet",
-                    "uco-observable:emailAddress": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53"
+                    "uco-observable:emailAddress": {
+                        "@id": "kb:email-address-d6fbe80f-9098-4650-b7a8-0b0e225cec2b"
+                    }
                 },
                 {
                     "@type": "uco-observable:AccountAuthenticationFacet",
@@ -385,11 +401,13 @@
         },
         {
             "@id": "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:PhoneAccount",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:AccountFacet",
-                    "uco-observable:accountIssuer": "ATT",
+                    "uco-observable:accountIssuer": {
+                        "@id": "kb:organization-att-d60ffcec-4d89-48a1-b264-9cd4bc700a70"
+                    },
                     "uco-observable:isActive": true
                 },
                 {
@@ -402,7 +420,7 @@
             "@id": "kb:associated-account-phonenumber-0307a497-f1fb-4af4-9877-90c56ee76fba",
             "@type": "uco-observable:ObservableRelationship",
             "uco-core:source": {
-                "@id": "kb:90652808-7341-40d3-9285-774d865ad3f9"
+                "@id": "kb:facebook-90652808-7341-40d3-9285-774d865ad3f9"
             },
             "uco-core:target": {
                 "@id": "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1"
@@ -412,7 +430,7 @@
         },
         {
             "@id": "kb:facebook-90652808-7341-40d3-9285-774d865ad3f9",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:DigitalAccount",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:AccountFacet",
@@ -446,7 +464,7 @@
         },
         {
             "@id": "kb:application-facebook-25e8018f-49be-4898-bb1d-731e387e9eb7",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:Application",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ApplicationFacet",
@@ -458,7 +476,7 @@
             "@id": "kb:accounts-9999c405-9326-4f28-9b8d-44a3bb9e9999",
             "@type": "uco-observable:ObservableRelationship",
             "uco-core:source": {
-                "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53"
+                "@id": "kb:email-address-d6fbe80f-9098-4650-b7a8-0b0e225cec2b"
             },
             "uco-core:target": {
                 "@id": "kb:accountsxml-16805dff-05f9-4cba-9266-d5fa712f3d8f"
@@ -503,7 +521,7 @@
             "@id": "kb:accounts-9999999-9326-4f28-9b8d-44a3b9999999",
             "@type": "uco-observable:ObservableRelationship",
             "uco-core:source": {
-                "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53"
+                "@id": "kb:email-address-d6fbe80f-9098-4650-b7a8-0b0e225cec2b"
             },
             "uco-core:target": {
                 "@id": "kb:accountsdb-99995dff-05f9-4cba-9266-d5fa712f9999"
@@ -546,7 +564,7 @@
         },
         {
             "@id": "kb:skype-99992808-7341-40d3-9285-774d865a9999",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:DigitalAccount",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:AccountFacet",
@@ -559,13 +577,13 @@
             ]
         },
         {
-            "@id": "kb:textapp-90652808-7341-40d3-9285-774d865ad3f9",
-            "@type": "uco-observable:ObservableObject",
+            "@id": "kb:textapp-9b38d51f-f5b9-4740-9968-6f1a1e1ec7bf",
+            "@type": "uco-observable:DigitalAccount",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:AccountFacet",
                     "uco-observable:accountIssuer": {
-                        "@id": "kb:organization-textapp-cc44c2ae-bdd3-4df8-9ca3-1f58d682d62b"
+                        "@id": "kb:organization-textapp-a2ba855b-1218-44f5-9f73-a2530defbc73"
                     },
                     "uco-observable:accountIdentifier": "mcavoy287",
                     "uco-observable:isActive": true
@@ -589,10 +607,10 @@
             "@id": "kb:LoginData-c316c405-9326-4f28-9b8d-44a3bb9e7283",
             "@type": "uco-observable:ObservableRelationship",
             "uco-core:source": {
-                "@id": "kb:textapp-90652808-7341-40d3-9285-774d865ad3f9"
+                "@id": "kb:textapp-9b38d51f-f5b9-4740-9968-6f1a1e1ec7bf"
             },
             "uco-core:target": {
-                "@id": "kb:textapplogcat-16805dff-05f9-4cba-9266-d5fa712f3d8f"
+                "@id": "kb:textapplogcat-1a717ea6-8990-4709-92f0-d748cacb817e"
             },
             "uco-core:kindOfRelationship": {
                 "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
@@ -606,6 +624,10 @@
                     "uco-observable:rangeSize": 9
                 }
             ]
+        },
+        {
+            "@id": "kb:userdata-partition-d94cd1b5-5cf7-4642-8927-5ebea573d68e",
+            "@type": "uco-observable:DiskPartition"
         },
         {
             "@id": "kb:partition-87d669fc-8ab9-47c6-a66d-af09d73361d5",
@@ -631,7 +653,7 @@
         },
         {
             "@id": "kb:filesystem-e2a02b5a-7e7e-489f-ab43-3ffadab4ac82",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:FileSystem",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DiskPartitionFacet",
@@ -793,7 +815,10 @@
                     }
                 },
                 {
-                    "@type": "drafting:UnallocatedRecoverability",
+                    "@type": [
+                        "drafting:UnallocatedRecoverabilityFacet",
+                        "uco-core:Facet"
+                    ],
                     "drafting:nameStatus": "recoverable",
                     "drafting:metadataStatus": "recoverable",
                     "drafting:contentStatus": "unrecoverable"
@@ -801,8 +826,12 @@
             ]
         },
         {
+            "@id": "kb:message-9999898c-0178-4534-8107-caea0a0f9999",
+            "@type": "uco-observable:Application"
+        },
+        {
             "@id": "kb:sms-message-2c032220-8c21-11e9-9c99-0c4de9c21b53",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:SMSMessage",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:MessageFacet",
@@ -828,11 +857,13 @@
         },
         {
             "@id": "kb:9999237a-6d7f-4e96-bbef-6eb4c0a69999",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:PhoneAccount",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:AccountFacet",
-                    "uco-observable:accountIssuer": "ATT",
+                    "uco-observable:accountIssuer": {
+                        "@id": "kb:organization-att-d60ffcec-4d89-48a1-b264-9cd4bc700a70"
+                    },
                     "uco-observable:isActive": true
                 },
                 {
@@ -840,6 +871,10 @@
                     "uco-observable:phoneNumber": "+13045184333"
                 }
             ]
+        },
+        {
+            "@id": "kb:mmssmsdb-journalfile-uuid",
+            "@type": "uco-observable:File"
         },
         {
             "@id": "kb:message-database-relationship-uuid",
@@ -858,18 +893,25 @@
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DataRangeFacet",
-                    "uco-observable:rangeOffset": "2560",
-                    "uco-observable:rangeSize": "96"
+                    "uco-observable:rangeOffset": 2560,
+                    "uco-observable:rangeSize": 96
                 },
                 {
-                    "@type": "drafting:TableRelation",
+                    "@type": [
+                        "drafting:TableRelationFacet",
+                        "uco-core:Facet"
+                    ],
                     "drafting:tableName": "sms"
                 }
             ]
         },
         {
+            "@id": "kb:skypeapp-a6b73e78-00da-11eb-a396-acde48001122",
+            "@type": "uco-observable:Application"
+        },
+        {
             "@id": "kb:skypemsg-eafca388-f926-4d48-864d-1bfdd3a2ba7f",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:Message",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:MessageFacet",
@@ -896,7 +938,7 @@
         },
         {
             "@id": "kb:url-history-39ff4987-8ae5-47e3-8369-dbd0d5f79398",
-            "@type": "uco-observable:ObservableObject",
+            "@type": "uco-observable:URLHistory",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:URLHistoryFacet",
@@ -905,6 +947,7 @@
                     },
                     "uco-observable:urlHistoryEntry": [
                         {
+                            "@type": "uco-observable:URLHistoryEntry",
                             "uco-observable:firstVisit": {
                                 "@type": "xsd:dateTime",
                                 "@value": "2017-01-25T02:20:22.00Z"
@@ -923,7 +966,10 @@
                             "uco-observable:referrerUrl": null,
                             "uco-observable:pageTitle": "Where can you find baby owls for sale? Are owls legal to keep as pets? - Quora",
                             "uco-observable:visitCount": 2,
-                            "uco-observable:manuallyEnteredCount": 0,
+                            "uco-observable:manuallyEnteredCount": {
+                                "@type": "xsd:nonNegativeInteger",
+                                "@value": "0"
+                            },
                             "uco-observable:keywordSearchTerm": null
                         }
                     ]
@@ -954,7 +1000,7 @@
                     "drafting:fileLocalPath": "files/Database/History",
                     "uco-observable:extension": null,
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "176128",
+                    "uco-observable:sizeInBytes": 176128,
                     "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2017-01-25T01:10:45.00Z"
@@ -1014,10 +1060,13 @@
                 {
                     "@type": "uco-observable:DataRangeFacet",
                     "uco-observable:rangeOffset": 100832,
-                    "uco-observable:rangeSize": "176"
+                    "uco-observable:rangeSize": 176
                 },
                 {
-                    "@type": "drafting:TableRelation",
+                    "@type": [
+                        "drafting:TableRelationFacet",
+                        "uco-core:Facet"
+                    ],
                     "drafting:tableName": "urls"
                 }
             ]
@@ -1039,6 +1088,10 @@
             }
         },
         {
+            "@id": "kb:camera-xml-uuid",
+            "@type": "uco-observable:File"
+        },
+        {
             "@id": "kb:cameralocation-relationship-uuid",
             "@type": "uco-observable:ObservableRelationship",
             "uco-core:source": {
@@ -1052,6 +1105,42 @@
                 "@value": "Contained_Within"
             },
             "uco-core:isDirectional": true
+        },
+        {
+            "@id": "kb:forensic-computer-2132063b-7753-4b51-b146-827e9a1d5037",
+            "@type": "uco-observable:Device"
+        },
+        {
+            "@id": "kb:lab-c44e4679-26e3-4585-aaa1-86110db936f8",
+            "@type": "uco-location:Location"
+        },
+        {
+            "@id": "kb:organization-att-d60ffcec-4d89-48a1-b264-9cd4bc700a70",
+            "@type": "uco-identity:Organization",
+            "uco-core:hasFacet": {
+                "@type": "uco-identity:OrganizationDetailsFacet",
+                "drafting:orgName": "AT&T"
+            }
+        },
+        {
+            "@id": "kb:organization-skypeapp-cc44c2ae-bdd3-4df8-9ca3-1f58d682d62b",
+            "@type": "uco-identity:Organization"
+        },
+        {
+            "@id": "kb:organization-textapp-a2ba855b-1218-44f5-9f73-a2530defbc73",
+            "@type": "uco-identity:Organization"
+        },
+        {
+            "@id": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38",
+            "@type": "uco-observable:Application"
+        },
+        {
+            "@id": "kb:textapplogcat-1a717ea6-8990-4709-92f0-d748cacb817e",
+            "@type": "uco-observable:ObservableObject"
+        },
+        {
+            "@id": "kb:telephony-cd52c3b8-7759-40b7-ae10-dfc90a35f644",
+            "@type": "uco-observable:ObservableObject"
         }
     ]
 }
