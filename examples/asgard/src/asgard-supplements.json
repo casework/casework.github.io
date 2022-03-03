@@ -1,5 +1,21 @@
 [
     {
+        "@id": "kb:309BC178-1836-47B7-AA15-94EA3A2C7401",
+        "@type": "uco-location:Location"
+    },
+    {
+        "@id": "kb:48C0F0E8-9A63-45EE-99BF-23CC354C3252",
+        "@type": "uco-core:UcoObject"
+    },
+    {
+        "@id": "kb:530646A9-4290-4C02-B0B3-FD2EC363834A",
+        "@type": "uco-core:UcoObject"
+    },
+    {
+        "@id": "kb:86F2E76A-434D-4D3F-9147-CD0CABCCA074",
+        "@type": "uco-core:UcoObject"
+    },
+    {
         "@id": "kb:90F73123-DB7E-41E5-B6CA-493B96E4B89F",
         "@type": "uco-core:UcoObject"
     },
@@ -9,6 +25,10 @@
     },
     {
         "@id": "kb:B1C22D51-4A3F-4353-84FB-E210B5EFDA48",
+        "@type": "uco-core:UcoObject"
+    },
+    {
+        "@id": "kb:B2A7B20E-8307-40CF-ABAF-9733ABBF4335",
         "@type": "uco-core:UcoObject"
     },
     {
@@ -24,8 +44,28 @@
         "@type": "uco-location:Location"
     },
     {
+        "@id": "kb:odin-decree13-uuid",
+        "@type": "uco-core:UcoObject"
+    },
+    {
+        "@id": "kb:phone_account1",
+        "@type": "uco-observable:PhoneAccount"
+    },
+    {
+        "@id": "kb:phone_account2",
+        "@type": "uco-observable:PhoneAccount"
+    },
+    {
+        "@id": "kb:phone_account3",
+        "@type": "uco-observable:PhoneAccount"
+    },
+    {
         "@id": "kb:destination-host-uuid",
         "@type": "uco-observable:Device"
+    },
+    {
+        "@id": "kb:investigator2-uuid",
+        "@type": "uco-identity:Person"
     },
     {
         "@id": "kb:sms_application1",

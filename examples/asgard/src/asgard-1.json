@@ -58,8 +58,11 @@
                 "uco-observable:keypadUnlockCode": "123789",
                 "uco-observable:IMEI": "359305065690067",
                 "uco-observable:MSISDN": "1239275339",
-                "uco-observable:clockSetting": "2019-03-30T22:36:24.35Z",
-                "localeLanguage": "no_AS",
+                "uco-observable:clockSetting": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2019-03-30T22:36:24.35Z"
+                },
+                "drafting:localeLanguage": "no_AS",
                 "uco-observable:phoneActivationTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2018-05-09T07:36:24.35Z"
@@ -67,9 +70,12 @@
                 "uco-observable:storageCapacityInBytes": 17179869184
             },
             {
-                "@type": "iPhoneDevice",
-                "uniqueID": "B3858A69A29375E6C706226B3633A3A11EB2A774",
-                "ownerName": "Loki iPhone"
+                "@type": [
+                    "drafting:iPhoneDeviceFacet",
+                    "uco-core:Facet"
+                ],
+                "drafting:uniqueID": "B3858A69A29375E6C706226B3633A3A11EB2A774",
+                "drafting:ownerName": "Loki iPhone"
             },
             {
                 "@type": "uco-observable:OperatingSystemFacet",

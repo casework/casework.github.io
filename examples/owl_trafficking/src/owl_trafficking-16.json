@@ -1,5 +1,9 @@
 [
     {
+        "@id": "kb:mmssmsdb-journalfile-uuid",
+        "@type": "uco-observable:File"
+    },
+    {
         "@id": "kb:message-database-relationship-uuid",
         "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
@@ -16,11 +20,14 @@
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DataRangeFacet",
-                "uco-observable:rangeOffset": "2560",
-                "uco-observable:rangeSize": "96"
+                "uco-observable:rangeOffset": 2560,
+                "uco-observable:rangeSize": 96
             },
             {
-                "@type": "drafting:TableRelation",
+                "@type": [
+                    "drafting:TableRelationFacet",
+                    "uco-core:Facet"
+                ],
                 "drafting:tableName": "sms"
             }
         ]

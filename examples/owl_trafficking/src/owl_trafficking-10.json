@@ -1,5 +1,9 @@
 [
     {
+        "@id": "kb:userdata-partition-d94cd1b5-5cf7-4642-8927-5ebea573d68e",
+        "@type": "uco-observable:DiskPartition"
+    },
+    {
         "@id": "kb:partition-87d669fc-8ab9-47c6-a66d-af09d73361d5",
         "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {

@@ -13,12 +13,18 @@
                 "drafting:encryptionEnabled": false
             },
             {
-                "@type": "drafting:AndroidDevice",
+                "@type": [
+                    "drafting:AndroidDeviceFacet",
+                    "uco-core:Facet"
+                ],
                 "drafting:androidID": "64cce130286b31b3",
                 "drafting:androidFingerprint": "lge\u2026"
             },
             {
-                "@type": "drafting:BootLoader",
+                "@type": [
+                    "drafting:BootLoaderFacet",
+                    "uco-core:Facet"
+                ],
                 "drafting:label": "HHZ20h",
                 "drafting:buildIdentifier": "M4B30Z",
                 "drafting:buildDate": "2016-11-03T20:03:42.00Z"
@@ -34,7 +40,10 @@
                 "drafting:locationsServicesEnabled": true,
                 "uco-observable:keypadUnlockCode": "NULL",
                 "uco-observable:IMEI": "352584062438806",
-                "uco-observable:clockSetting": "2017-02-06T20:51:09.35Z",
+                "uco-observable:clockSetting": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-06T20:51:09.35Z"
+                },
                 "uco-observable:storageCapacityInBytes": 31268536320
             },
             {
@@ -45,11 +54,11 @@
             },
             {
                 "@type": "uco-observable:WifiAddressFacet",
-                "uco-observable:value": "34:4d:f7:54:20:bb"
+                "uco-observable:addressValue": "34:4d:f7:54:20:bb"
             },
             {
                 "@type": "uco-observable:BluetoothAddressFacet",
-                "uco-observable:value": "88:c9:d0:03:04:49"
+                "uco-observable:addressValue": "88:c9:d0:03:04:49"
             },
             {
                 "@type": "uco-observable:MobileAccountFacet",

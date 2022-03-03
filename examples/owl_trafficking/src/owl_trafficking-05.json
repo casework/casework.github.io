@@ -9,7 +9,9 @@
                 "uco-observable:IMSI": {
                     "@id": "kb:mobileaccount-4b3cdcbd-6a31-462f-be9b-1ca2944c8876"
                 },
-                "uco-observable:carrier": "AT&T"
+                "uco-observable:carrier": {
+                    "@id": "kb:organization-att-d60ffcec-4d89-48a1-b264-9cd4bc700a70"
+                }
             }
         ]
     },
@@ -45,15 +47,18 @@
             "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
             "@value": "Contained_Within"
         },
-        "uco-core:isDirectional": "True",
+        "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DataRangeFacet",
-                "uco-observable:rangeOffset": "13751",
+                "uco-observable:rangeOffset": 13751,
                 "uco-observable:rangeSize": "__NOT_PROVIDED"
             },
             {
-                "@type": "drafting:TableRelation",
+                "@type": [
+                    "drafting:TableRelation",
+                    "uco-core:Facet"
+                ],
                 "drafting:tableName": "siminfo"
             }
         ]

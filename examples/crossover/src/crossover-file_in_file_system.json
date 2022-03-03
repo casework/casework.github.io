@@ -37,7 +37,7 @@
                 "uco-observable:partitionLength": 245235063
             },
             {
-                "@type": "uco-observable:FileSystem",
+                "@type": "uco-observable:FileSystemFacet",
                 "uco-observable:fileSystemType": "EXT3"
             },
             {

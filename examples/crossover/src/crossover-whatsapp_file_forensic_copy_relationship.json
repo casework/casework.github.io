@@ -1,15 +1,13 @@
 [
     {
-        "@id": "kb:relationship-c316c405-9326-4f28-9b8d-44a3bb9e7283",
+        "@id": "kb:relationship-20f7ade6-93a7-4d67-a657-adeffba35dc7",
         "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
             "@id": "kb:msgstoredb-16805dff-05f9-4cba-9266-d5fa712f3d8f"
         },
-        "uco-core:target": [
-            {
-                "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
-            }
-        ],
+        "uco-core:target": {
+            "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
+        },
         "uco-core:kindOfRelationship": {
             "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
             "@value": "Contained_Within"

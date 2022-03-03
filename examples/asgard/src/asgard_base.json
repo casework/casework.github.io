@@ -4,10 +4,12 @@
         "kb": "http://example.org/kb#",
         "@vocab": "http://example.org/ontology/local#",
         "case-investigation": "https://ontology.caseontology.org/case/investigation/",
+        "drafting": "http://example.org/ontology/drafting/",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "uco-action": "https://unifiedcyberontology.org/ontology/uco/action#",
         "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
+        "uco-identity": "https://unifiedcyberontology.org/ontology/uco/identity#",
         "uco-location": "https://unifiedcyberontology.org/ontology/uco/location#",
         "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
         "uco-tool": "https://unifiedcyberontology.org/ontology/uco/tool#",
@@ -22,7 +24,7 @@
         {
             "@id": "kb:authorization-79D6AB60-D679-49CE-9573-7176DFEEB7C3",
             "@type": "case-investigation:Authorization",
-            "uco-core:hasFacet": [
+            "case-investigation:relevantAuthorization": [
                 {
                     "@type": "case-investigation:Authorization",
                     "case-investigation:authorizationType": "Odin_Decree",

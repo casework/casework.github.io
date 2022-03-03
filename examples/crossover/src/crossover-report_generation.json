@@ -64,5 +64,23 @@
                 ]
             }
         ]
+    },
+    {
+        "@id": "kb:cellebritexml-report-uuid",
+        "@type": "uco-observable:File"
+    },
+    {
+        "@id": "kb:provenance-record3-uuid",
+        "@type": "case-investigation:ProvenanceRecord",
+        "uco-core:object": {
+            "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
+        }
+    },
+    {
+        "@id": "kb:provenance-record4-uuid",
+        "@type": "case-investigation:ProvenanceRecord",
+        "uco-core:object": {
+            "@id": "kb:cellebritexml-report-uuid"
+        }
     }
 ]

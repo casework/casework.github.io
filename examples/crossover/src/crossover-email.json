@@ -16,7 +16,9 @@
                     "@value": "2018-11-20T21:28:07.00Z"
                 },
                 "uco-observable:subject": "Re: Bank transfer ?",
-                "uco-observable:bodyRaw": "Excellent - we need all the help we can get. Sent from my Samsung Galaxy smartphone",
+                "uco-observable:bodyRaw": {
+                    "@id": "kb:content-data-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d"
+                },
                 "uco-observable:fromRef": null,
                 "uco-observable:toRef": null,
                 "uco-observable:ccRefs": null,
@@ -26,12 +28,20 @@
         ]
     },
     {
+        "@id": "kb:content-data-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d",
+        "@type": "uco-observable:ContentData",
+        "uco-observable:hasFacet": {
+            "@type": "uco-observable:ContentDataFacet",
+            "uco-observable:dataPayload": "Excellent - we need all the help we can get. Sent from my Samsung Galaxy smartphone"
+        }
+    },
+    {
         "@id": "kb:456a2bac-8c21-11e9-8902-0c4de9c24de5",
         "@type": "uco-observable:EmailAddress",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:EmailAddressFacet",
-                "uco-observable:value": "badquinn3@gmail.com "
+                "uco-observable:addressValue": "badquinn3@gmail.com "
             }
         ]
     },
@@ -45,7 +55,9 @@
             },
             {
                 "@type": "uco-observable:EmailAccountFacet",
-                "uco-observable:emailAddress": "kb:456a2bac-8c21-11e9-8902-0c4de9c24de5"
+                "uco-observable:emailAddress": {
+                    "@id": "kb:456a2bac-8c21-11e9-8902-0c4de9c24de5"
+                }
             }
         ]
     }

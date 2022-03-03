@@ -13,7 +13,7 @@
             "@value": "Contained_Within"
         },
         "uco-core:startTime": {
-            "@type": "xsd:datetime",
+            "@type": "xsd:dateTime",
             "@value": "2017-00-00T12:34:56Z"
         },
         "uco-core:endTime": {

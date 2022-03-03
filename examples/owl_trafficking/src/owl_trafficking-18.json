@@ -10,6 +10,7 @@
                 },
                 "uco-observable:urlHistoryEntry": [
                     {
+                        "@type": "uco-observable:URLHistoryEntry",
                         "uco-observable:firstVisit": {
                             "@type": "xsd:dateTime",
                             "@value": "2017-01-25T02:20:22.00Z"
@@ -28,7 +29,10 @@
                         "uco-observable:referrerUrl": null,
                         "uco-observable:pageTitle": "Where can you find baby owls for sale? Are owls legal to keep as pets? - Quora",
                         "uco-observable:visitCount": 2,
-                        "uco-observable:manuallyEnteredCount": 0,
+                        "uco-observable:manuallyEnteredCount": {
+                            "@type": "xsd:nonNegativeInteger",
+                            "@value": "0"
+                        },
                         "uco-observable:keywordSearchTerm": null
                     }
                 ]
@@ -59,7 +63,7 @@
                 "drafting:fileLocalPath": "files/Database/History",
                 "uco-observable:extension": null,
                 "uco-observable:isDirectory": false,
-                "uco-observable:sizeInBytes": "176128",
+                "uco-observable:sizeInBytes": 176128,
                 "uco-observable:observableCreatedTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2017-01-25T01:10:45.00Z"
@@ -119,10 +123,13 @@
             {
                 "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 100832,
-                "uco-observable:rangeSize": "176"
+                "uco-observable:rangeSize": 176
             },
             {
-                "@type": "drafting:TableRelation",
+                "@type": [
+                    "drafting:TableRelationFacet",
+                    "uco-core:Facet"
+                ],
                 "drafting:tableName": "urls"
             }
         ]

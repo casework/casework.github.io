@@ -1,5 +1,9 @@
 [
     {
+        "@id": "kb:message-9999898c-0178-4534-8107-caea0a0f9999",
+        "@type": "uco-observable:Application"
+    },
+    {
         "@id": "kb:sms-message-2c032220-8c21-11e9-9c99-0c4de9c21b53",
         "@type": "uco-observable:SMSMessage",
         "uco-core:hasFacet": [
@@ -31,7 +35,9 @@
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:AccountFacet",
-                "uco-observable:accountIssuer": "ATT",
+                "uco-observable:accountIssuer": {
+                    "@id": "kb:organization-att-d60ffcec-4d89-48a1-b264-9cd4bc700a70"
+                },
                 "uco-observable:isActive": true
             },
             {

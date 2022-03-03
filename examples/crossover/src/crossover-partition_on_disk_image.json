@@ -6,7 +6,7 @@
             "@id": "kb:userdata-partition-uuid"
         },
         "uco-core:target": {
-            "@id": "kb:blk0_sda.bin"
+            "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
         },
         "uco-core:kindOfRelationship": {
             "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",

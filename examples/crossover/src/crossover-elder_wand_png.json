@@ -15,7 +15,7 @@
                 "uco-observable:fileSystemType": "ExtX",
                 "uco-observable:isDirectory": false,
                 "uco-observable:allocationStatus": "allocated",
-                "uco-observable:sizeInBytes": "534167",
+                "uco-observable:sizeInBytes": 534167,
                 "uco-observable:observableCreatedTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2018-11-30T09:43:24.00Z"
