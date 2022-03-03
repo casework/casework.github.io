@@ -82,8 +82,58 @@ $(example_name)_validation.ttl: \
 	rm __$@
 	mv _$@ $@
 
+$(example_name)_validation-develop.ttl: \
+  generated-$(example_name).json \
+  $(RDF_TOOLKIT_JAR) \
+  $(top_srcdir)/.venv.done.log \
+  $(top_srcdir)/dependencies/CASE-develop.ttl
+	rm -f __$@
+	source $(top_srcdir)/venv/bin/activate \
+	  && case_validate \
+	    --built-version none \
+	    --format turtle \
+	    --ontology-graph $(top_srcdir)/dependencies/CASE-develop.ttl \
+	    --output __$@ \
+	    $< \
+	    ; rc=$$? ; test 0 -eq $$rc -o 1 -eq $$rc
+	test -s __$@
+	java -jar $(RDF_TOOLKIT_JAR) \
+	  --inline-blank-nodes \
+	  --source __$@ \
+	  --source-format turtle \
+	  --target _$@ \
+	  --target-format turtle
+	rm __$@
+	mv _$@ $@
+
+$(example_name)_validation-unstable.ttl: \
+  generated-$(example_name).json \
+  $(RDF_TOOLKIT_JAR) \
+  $(top_srcdir)/.venv.done.log \
+  $(top_srcdir)/dependencies/CASE-unstable.ttl
+	rm -f __$@
+	source $(top_srcdir)/venv/bin/activate \
+	  && case_validate \
+	    --built-version none \
+	    --format turtle \
+	    --ontology-graph $(top_srcdir)/dependencies/CASE-unstable.ttl \
+	    --output __$@ \
+	    $< \
+	    ; rc=$$? ; test 0 -eq $$rc -o 1 -eq $$rc
+	test -s __$@
+	java -jar $(RDF_TOOLKIT_JAR) \
+	  --inline-blank-nodes \
+	  --source __$@ \
+	  --source-format turtle \
+	  --target _$@ \
+	  --target-format turtle
+	rm __$@
+	mv _$@ $@
+
 check: \
   $(check_normalized_example_snippets_json) \
+  $(example_name)_validation-develop.ttl \
+  $(example_name)_validation-unstable.ttl \
   check-pytest \
   generated-index.html \
   generated-$(example_name).json

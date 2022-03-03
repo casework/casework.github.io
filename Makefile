@@ -42,6 +42,12 @@ all: \
 	  .git_submodule_init.done.log
 	touch $@
 
+.dependencies.done.log: \
+  .venv.done.log
+	$(MAKE) \
+	  --directory dependencies
+	touch $@
+
 .venv.done.log: \
   .git_submodule_init.done.log \
   requirements.txt
@@ -63,7 +69,7 @@ all: \
 	touch $@
 
 all-examples: \
-  .venv.done.log
+  .dependencies.done.log
 	$(MAKE) \
 	  --directory examples
 
@@ -76,7 +82,7 @@ check: \
   check-migration-0.2.0
 
 check-examples: \
-  .venv.done.log
+  .dependencies.done.log
 	$(MAKE) \
 	  --directory examples \
 	  check

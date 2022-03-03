@@ -1,0 +1,505 @@
+@prefix action: <https://unifiedcyberontology.org/ontology/uco/action#> .
+@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
+@prefix identity: <https://unifiedcyberontology.org/ontology/uco/identity#> .
+@prefix observable: <https://unifiedcyberontology.org/ontology/uco/observable#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix tool: <https://unifiedcyberontology.org/ontology/uco/tool#> .
+@prefix vocabulary1: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+	a sh:ValidationReport ;
+	sh:conforms "false"^^xsd:boolean ;
+	sh:result
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/action-uuid-1> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a action:ActionReferencesFacet ;
+				action:endTime "2019-01-01T14:00:00+00:00"^^xsd:dateTime ;
+				action:location <http://example.org/kb/location-uuid-1> ;
+				action:performer <http://example.org/kb/officer-uuid-1> ;
+				action:result
+					<http://example.org/kb/provenance-record-uuid-1> ,
+					<http://example.org/kb/subject-device-uuid-1>
+					;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/action-uuid-10> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a action:ActionReferencesFacet ;
+				action:endTime "2019-01-01T15:05:00+00:00"^^xsd:dateTime ;
+				action:location <http://example.org/kb/location-uuid-3> ;
+				action:object
+					<http://example.org/kb/extracted-file-uuid-1> ,
+					<http://example.org/kb/file2-uuid-1> ,
+					<http://example.org/kb/provenance-record-uuid-6> ,
+					<http://example.org/kb/provenance-record-uuid-6e>
+					;
+				action:performer <http://example.org/kb/officer-uuid-3> ;
+				action:result
+					<http://example.org/kb/dvd-uuid-1> ,
+					<http://example.org/kb/provenance-record-uuid-7>
+					;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/action-uuid-11> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a action:ActionReferencesFacet ;
+				action:endTime "2019-01-01T15:10:00+00:00"^^xsd:dateTime ;
+				action:location <http://example.org/kb/location-uuid-3> ;
+				action:performer <http://example.org/kb/officer-uuid-3> ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/action-uuid-12> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a action:ActionReferencesFacet ;
+				action:endTime "2019-01-01T15:15:00+00:00"^^xsd:dateTime ;
+				action:location <http://example.org/kb/location-uuid-3> ;
+				action:object
+					<http://example.org/kb/dvd-uuid-1> ,
+					<http://example.org/kb/provenance-record-uuid-7>
+					;
+				action:performer <http://example.org/kb/officer-uuid-3> ;
+				action:result
+					<http://example.org/kb/file-uuid-3> ,
+					<http://example.org/kb/provenance-record-73f59a8a-1c22-41fe-af50-13e8b6a65de9>
+					;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/action-uuid-13> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a action:ActionReferencesFacet ;
+				action:endTime "2019-01-01T15:20:00+00:00"^^xsd:dateTime ;
+				action:location <http://example.org/kb/location-uuid-4> ;
+				action:object
+					<http://example.org/kb/provenance-record-uuid-3> ,
+					<http://example.org/kb/subject-device-uuid-1>
+					;
+				action:performer <http://example.org/kb/officer-uuid-3> ;
+				action:result <http://example.org/kb/provenance-record-uuid-8> ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/action-uuid-2> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a action:ActionReferencesFacet ;
+				action:endTime "2019-01-01T14:05:00+00:00"^^xsd:dateTime ;
+				action:location <http://example.org/kb/location-uuid-1> ;
+				action:object
+					<http://example.org/kb/provenance-record-uuid-1> ,
+					<http://example.org/kb/subject-device-uuid-1>
+					;
+				action:performer <http://example.org/kb/officer-uuid-2> ;
+				action:result
+					<http://example.org/kb/file-uuid-1> ,
+					<http://example.org/kb/provenance-record-uuid-2>
+					;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/action-uuid-3> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a action:ActionReferencesFacet ;
+				action:endTime "2019-01-01T14:05:30+00:00"^^xsd:dateTime ;
+				action:location <http://example.org/kb/location-uuid-1> ;
+				action:object
+					<http://example.org/kb/provenance-record-uuid-1> ,
+					<http://example.org/kb/subject-device-uuid-1>
+					;
+				action:performer <http://example.org/kb/officer-uuid-2> ;
+				action:result <http://example.org/kb/provenance-record-uuid-3> ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/action-uuid-4> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a action:ActionReferencesFacet ;
+				action:endTime "2019-01-01T14:15:00+00:00"^^xsd:dateTime ;
+				action:instrument <http://example.org/kb/camera-uuid-1> ;
+				action:location <http://example.org/kb/location-uuid-3> ;
+				action:object
+					<http://example.org/kb/provenance-record-uuid-3> ,
+					<http://example.org/kb/subject-device-uuid-1>
+					;
+				action:performer <http://example.org/kb/officer-uuid-3> ;
+				action:result
+					<http://example.org/kb/provenance-record-uuid-4> ,
+					<http://example.org/kb/subject-device-photograph-uuid-1> ,
+					<http://example.org/kb/subject-device-photograph-uuid-2> ,
+					<http://example.org/kb/subject-device-photograph-uuid-3>
+					;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/action-uuid-5> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a action:ActionReferencesFacet ;
+				action:endTime "2019-01-01T14:20:00+00:00"^^xsd:dateTime ;
+				action:location <http://example.org/kb/location-uuid-3> ;
+				action:performer <http://example.org/kb/officer-uuid-3> ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/action-uuid-6> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a action:ActionReferencesFacet ;
+				action:endTime "2019-01-01T14:21:00+00:00"^^xsd:dateTime ;
+				action:instrument <http://example.org/kb/camera-uuid-1> ;
+				action:location <http://example.org/kb/location-uuid-3> ;
+				action:object
+					<http://example.org/kb/provenance-record-uuid-3> ,
+					<http://example.org/kb/subject-device-uuid-1>
+					;
+				action:performer <http://example.org/kb/officer-uuid-3> ;
+				action:result
+					<http://example.org/kb/provenance-record-uuid-5> ,
+					<http://example.org/kb/subject-device-photograph-uuid-4> ,
+					<http://example.org/kb/subject-device-photograph-uuid-5> ,
+					<http://example.org/kb/subject-device-photograph-uuid-6>
+					;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/action-uuid-7> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a action:ActionReferencesFacet ;
+				action:endTime "2019-01-01T14:55:00+00:00"^^xsd:dateTime ;
+				action:instrument <http://example.org/kb/kiosk-uuid-1> ;
+				action:location <http://example.org/kb/location-uuid-3> ;
+				action:object
+					<http://example.org/kb/provenance-record-uuid-3> ,
+					<http://example.org/kb/subject-device-uuid-1>
+					;
+				action:performer <http://example.org/kb/officer-uuid-3> ;
+				action:result
+					<http://example.org/kb/extracted-file-uuid-1> ,
+					<http://example.org/kb/extracted-file-uuid-2> ,
+					<http://example.org/kb/extracted-file-uuid-3> ,
+					<http://example.org/kb/file-uuid-2> ,
+					<http://example.org/kb/provenance-record-uuid-6>
+					;
+				action:startTime "2019-01-01T14:25:00+00:00"^^xsd:dateTime ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/action-uuid-8> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a action:ActionReferencesFacet ;
+				action:endTime "2019-01-01T15:00:00+00:00"^^xsd:dateTime ;
+				action:location <http://example.org/kb/location-uuid-3> ;
+				action:performer <http://example.org/kb/officer-uuid-3> ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/action-uuid-9> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a action:ActionReferencesFacet ;
+				action:endTime "2019-01-01T15:03:00+00:00"^^xsd:dateTime ;
+				action:instrument <http://example.org/kb/kiosk-uuid-1> ;
+				action:location <http://example.org/kb/location-uuid-3> ;
+				action:object
+					<http://example.org/kb/extracted-file-uuid-1> ,
+					<http://example.org/kb/extracted-file-uuid-2> ,
+					<http://example.org/kb/provenance-record-uuid-6>
+					;
+				action:performer <http://example.org/kb/officer-uuid-3> ;
+				action:result <http://example.org/kb/provenance-record-uuid-6e> ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/camera-uuid-1> ;
+			sh:resultMessage "Value does not have class identity:Identity" ;
+			sh:resultPath tool:creator ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class identity:Identity ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path tool:creator ;
+			] ;
+			sh:value "Canon" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/camera-uuid-1> ;
+			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+			sh:resultPath tool:creator ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class identity:Identity ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path tool:creator ;
+			] ;
+			sh:value "Canon" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/kiosk-uuid-1> ;
+			sh:resultMessage "Value does not have class identity:Identity" ;
+			sh:resultPath tool:creator ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class identity:Identity ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path tool:creator ;
+			] ;
+			sh:value "ACME" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/kiosk-uuid-1> ;
+			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+			sh:resultPath tool:creator ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class identity:Identity ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path tool:creator ;
+			] ;
+			sh:value "ACME" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/relationship-uuid-1> ;
+			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
+			sh:resultPath core:kindOfRelationship ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path core:kindOfRelationship ;
+			] ;
+			sh:value "Contained_Within"^^vocabulary1:ObservableObjectRelationshipVocab ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:DeviceFacet ;
+				observable:deviceType "DVD" ;
+				observable:manufacturer "Generic" ;
+				observable:model "XYZ" ;
+				observable:serialNumber "756867KF234" ;
+			] ;
+			sh:resultMessage "Value does not have class identity:Identity" ;
+			sh:resultPath observable:manufacturer ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class identity:Identity ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:manufacturer ;
+			] ;
+			sh:value "Generic" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:DeviceFacet ;
+				observable:deviceType "DVD" ;
+				observable:manufacturer "Generic" ;
+				observable:model "XYZ" ;
+				observable:serialNumber "756867KF234" ;
+			] ;
+			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+			sh:resultPath observable:manufacturer ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class identity:Identity ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:manufacturer ;
+			] ;
+			sh:value "Generic" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:DeviceFacet ;
+				observable:deviceType "camera" ;
+				observable:manufacturer "Canon" ;
+				observable:model "PowerShot SX540" ;
+			] ;
+			sh:resultMessage "Value does not have class identity:Identity" ;
+			sh:resultPath observable:manufacturer ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class identity:Identity ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:manufacturer ;
+			] ;
+			sh:value "Canon" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:DeviceFacet ;
+				observable:deviceType "camera" ;
+				observable:manufacturer "Canon" ;
+				observable:model "PowerShot SX540" ;
+			] ;
+			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
+			sh:resultPath observable:manufacturer ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class identity:Identity ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path observable:manufacturer ;
+			] ;
+			sh:value "Canon" ;
+		]
+		;
+	.
+
