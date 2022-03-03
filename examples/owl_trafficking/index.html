@@ -352,7 +352,7 @@ WHERE {
   <div class="card-body">
     <p class="card-text">For the duplicate, labeled <code>MD1</code>, of the device <code>SD1</code>, what were its original hashes, and when were they made? (<a href="src/query-hash_verification.sparql">SPARQL source</a>)</p>
 {% highlight sparql %}
-SELECT ?lEndTime ?lHashMethod ?lHashValue
+SELECT DISTINCT ?lEndTime ?lHashMethod ?lHashValue
 WHERE {
   ?nAction
     a case-investigation:InvestigativeAction ;
@@ -408,18 +408,6 @@ ORDER BY ?lHashMethod
     </tr>
     <tr>
       <th>1</th>
-      <td>2017-02-06 22:13:08+00:00</td>
-      <td>MD5</td>
-      <td>b334843a07a9e16494eebdf3079e6bc6</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2017-02-06 22:13:08+00:00</td>
-      <td>SHA1</td>
-      <td>5506912aac41534dc5af12b51059d5880737ab5e</td>
-    </tr>
-    <tr>
-      <th>3</th>
       <td>2017-02-06 22:13:08+00:00</td>
       <td>SHA1</td>
       <td>5506912aac41534dc5af12b51059d5880737ab5e</td>
