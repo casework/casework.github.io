@@ -1,4 +1,3 @@
-@prefix action: <https://unifiedcyberontology.org/ontology/uco/action#> .
 @prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
 @prefix identity: <https://unifiedcyberontology.org/ontology/uco/identity#> .
 @prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
@@ -151,34 +150,6 @@
 				sh:path core:object ;
 			] ;
 			sh:value "(list of uuids)" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/investigative-action-4d3778d9-8376-4277-9852-8e6bf926a5d1> ;
-			sh:resultMessage "Value does not have class core:Facet" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a action:ActionReferencesFacet ;
-				action:environment <http://example.org/kb/forensic-computer-2132063b-7753-4b51-b146-827e9a1d5037> ;
-				action:instrument <http://example.org/kb/magnet-acquire2005412-83715215-c5fc-4231-99ff-29a3c51cb5f1> ;
-				action:location <http://example.org/kb/lab-c44e4679-26e3-4585-aaa1-86110db936f8> ;
-				action:object
-					<http://example.org/kb/lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168> ,
-					<http://example.org/kb/provenance-record-9bd9c456-5965-4782-8285-5fee34c8ddd2>
-					;
-				action:performer <http://example.org/kb/investigator-09fb01ce-999e-4521-bd3f-f7be69a63a43> ;
-				action:result
-					<http://example.org/kb/f3fd304e-ef6c-4cbd-94cb-425880f82748> ,
-					<http://example.org/kb/provenance-record-b84dc6ca-6187-4fc3-b5f1-c15142b103a8>
-					;
-			] ;
 		] ,
 		[
 			a sh:ValidationResult ;

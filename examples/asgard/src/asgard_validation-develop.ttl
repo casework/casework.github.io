@@ -1,4 +1,3 @@
-@prefix action: <https://unifiedcyberontology.org/ontology/uco/action#> .
 @prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
 @prefix identity: <https://unifiedcyberontology.org/ontology/uco/identity#> .
 @prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
@@ -16,33 +15,6 @@
 	a sh:ValidationReport ;
 	sh:conforms "false"^^xsd:boolean ;
 	sh:result
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#219189B6-356C-4D53-A844-F0031E74F156> ;
-			sh:resultMessage "Value does not have class core:Facet" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a action:ActionReferencesFacet ;
-				action:instrument <http://example.org/kb#tool-embeddedextractor1-uid> ;
-				action:location <http://example.org/kb#309BC178-1836-47B7-AA15-94EA3A2C7401> ;
-				action:object <http://example.org/kb#suspect-device-uuid> ;
-				action:performer <http://example.org/kb#E9AA4F26-D187-4F32-A602-86A6DF4B8528> ;
-				action:result
-					<http://example.org/kb#48C0F0E8-9A63-45EE-99BF-23CC354C3252> ,
-					<http://example.org/kb#90F73123-DB7E-41E5-B6CA-493B96E4B89F> ,
-					<http://example.org/kb#97C74753-FCEB-49C8-A611-7A70EF46AB5D> ,
-					<http://example.org/kb#B2A7B20E-8307-40CF-ABAF-9733ABBF4335> ,
-					<http://example.org/kb#EBAB06EE-7522-42D6-96EA-E3121D67E393>
-					;
-			] ;
-		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb#authorization-79D6AB60-D679-49CE-9573-7176DFEEB7C3> ;
@@ -100,29 +72,6 @@
 				sh:minCount "1"^^xsd:integer ;
 				sh:nodeKind sh:Literal ;
 				sh:path investigation:investigationForm ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#investigative-action1-uuid> ;
-			sh:resultMessage "Value does not have class core:Facet" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a action:ActionReferencesFacet ;
-				action:instrument <http://example.org/kb#odin-decree13-uuid> ;
-				action:location <http://example.org/kb#asgard-bifrost-uuid> ;
-				action:performer <http://example.org/kb#investigator2-uuid> ;
-				action:result
-					<http://example.org/kb#provenance-record1-uuid> ,
-					<http://example.org/kb#suspect-device-uuid>
-					;
 			] ;
 		] ,
 		[
