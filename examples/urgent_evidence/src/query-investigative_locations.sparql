@@ -3,10 +3,7 @@ WHERE
 {
   ?nAction
     a case-investigation:InvestigativeAction ;
-    uco-core:hasFacet [
-      a uco-action:ActionReferencesFacet ;
-      uco-action:location ?nLocation ;
-    ] ;
+    uco-action:location ?nLocation ;
     .
 
   ?nLocation

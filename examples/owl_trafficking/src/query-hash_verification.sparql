@@ -3,11 +3,6 @@ WHERE {
   ?nAction
     a case-investigation:InvestigativeAction ;
     uco-action:endTime ?lEndTime ;
-    uco-core:hasFacet ?nActionReferences ;
-    .
-
-  ?nActionReferences
-    a uco-action:ActionReferencesFacet ;
     uco-action:result ?nProvenanceRecord ;
     uco-action:result ?nDiskImage ;
     .
