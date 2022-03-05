@@ -7,7 +7,6 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix tool: <https://unifiedcyberontology.org/ontology/uco/tool#> .
 @prefix vocab: <https://ontology.caseontology.org/case/vocabulary/> .
 @prefix vocabulary1: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -87,66 +86,6 @@
 				sh:path core:kindOfRelationship ;
 			] ;
 			sh:value "Contained_Within"^^vocabulary1:ObservableObjectRelationshipVocab ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/cellebrite-pa1-uuid> ;
-			sh:resultMessage "Value does not have class identity:Identity" ;
-			sh:resultPath tool:creator ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path tool:creator ;
-			] ;
-			sh:value "Cellebrite" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/cellebrite-pa1-uuid> ;
-			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
-			sh:resultPath tool:creator ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path tool:creator ;
-			] ;
-			sh:value "Cellebrite" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/cellebrite-ufed1-uuid> ;
-			sh:resultMessage "Value does not have class identity:Identity" ;
-			sh:resultPath tool:creator ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path tool:creator ;
-			] ;
-			sh:value "Cellebrite" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/cellebrite-ufed1-uuid> ;
-			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
-			sh:resultPath tool:creator ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path tool:creator ;
-			] ;
-			sh:value "Cellebrite" ;
 		] ,
 		[
 			a sh:ValidationResult ;
@@ -408,46 +347,6 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
-				a observable:DeviceFacet ;
-				observable:manufacturer "Samsung" ;
-				observable:model "SM-G925F" ;
-				observable:serialNumber "RF8H31GS5SF" ;
-			] ;
-			sh:resultMessage "Value does not have class identity:Identity" ;
-			sh:resultPath observable:manufacturer ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path observable:manufacturer ;
-			] ;
-			sh:value "Samsung" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:DeviceFacet ;
-				observable:manufacturer "Samsung" ;
-				observable:model "SM-G925F" ;
-				observable:serialNumber "RF8H31GS5SF" ;
-			] ;
-			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
-			sh:resultPath observable:manufacturer ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path observable:manufacturer ;
-			] ;
-			sh:value "Samsung" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
 				a observable:EmailMessageFacet ;
 				observable:application <http://example.org/kb/Gmail-uuid> ;
 				observable:bodyRaw <http://example.org/kb/content-data-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d> ;
@@ -511,46 +410,6 @@
 				sh:path observable:extInodeChangeTime ;
 			] ;
 			sh:value "__NOT_PROVIDED" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:OperatingSystemFacet ;
-				core:name "Android" ;
-				observable:manufacturer "Samsung" ;
-				observable:version "6.0.1" ;
-			] ;
-			sh:resultMessage "Value does not have class identity:Identity" ;
-			sh:resultPath observable:manufacturer ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path observable:manufacturer ;
-			] ;
-			sh:value "Samsung" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:OperatingSystemFacet ;
-				core:name "Android" ;
-				observable:manufacturer "Samsung" ;
-				observable:version "6.0.1" ;
-			] ;
-			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
-			sh:resultPath observable:manufacturer ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path observable:manufacturer ;
-			] ;
-			sh:value "Samsung" ;
 		] ,
 		[
 			a sh:ValidationResult ;

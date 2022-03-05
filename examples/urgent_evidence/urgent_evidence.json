@@ -337,7 +337,9 @@
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DeviceFacet",
-                    "uco-observable:manufacturer": "Generic",
+                    "uco-observable:manufacturer": {
+                        "@id": "kb:organization-e84a49ff-f34c-46fe-ab88-6f0f79023925"
+                    },
                     "uco-observable:deviceType": "DVD",
                     "uco-observable:model": "XYZ",
                     "uco-observable:serialNumber": "756867KF234"
@@ -539,16 +541,22 @@
                 {
                     "@type": "uco-observable:DeviceFacet",
                     "uco-observable:deviceType": "camera",
-                    "uco-observable:manufacturer": "Canon",
+                    "uco-observable:manufacturer": {
+                        "@id": "kb:organization-f5a0877c-2a58-4280-8f24-c0df39e8badc"
+                    },
                     "uco-observable:model": "PowerShot SX540"
                 }
             ],
-            "uco-tool:creator": "Canon"
+            "uco-tool:creator": {
+                "@id": "kb:organization-f5a0877c-2a58-4280-8f24-c0df39e8badc"
+            }
         },
         {
             "@id": "kb:kiosk-uuid-1",
             "@type": "uco-tool:AnalyticTool",
-            "uco-tool:creator": "ACME"
+            "uco-tool:creator": {
+                "@id": "kb:organization-a177a5d6-118c-419f-bca3-03af8000d121"
+            }
         },
         {
             "@id": "kb:location-uuid-1",
@@ -617,6 +625,21 @@
                 "@type": "uco-identity:SimpleNameFacet",
                 "uco-identity:familyName": "Walker"
             }
+        },
+        {
+            "@id": "kb:organization-e84a49ff-f34c-46fe-ab88-6f0f79023925",
+            "@type": "uco-identity:Organization",
+            "uco-core:description": "Generic"
+        },
+        {
+            "@id": "kb:organization-a177a5d6-118c-419f-bca3-03af8000d121",
+            "@type": "uco-identity:Organization",
+            "uco-core:name": "ACME"
+        },
+        {
+            "@id": "kb:organization-f5a0877c-2a58-4280-8f24-c0df39e8badc",
+            "@type": "uco-identity:Organization",
+            "uco-core:name": "Canon"
         },
         {
             "@id": "kb:provenance-record-uuid-1",

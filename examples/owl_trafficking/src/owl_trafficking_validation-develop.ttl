@@ -1,13 +1,10 @@
 @prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
-@prefix identity: <https://unifiedcyberontology.org/ontology/uco/identity#> .
 @prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
-@prefix ns1: <http://example.org/ontology/drafting#> .
 @prefix observable: <https://unifiedcyberontology.org/ontology/uco/observable#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix tool: <https://unifiedcyberontology.org/ontology/uco/tool#> .
 @prefix vocab: <https://ontology.caseontology.org/case/vocabulary/> .
 @prefix vocabulary1: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -153,36 +150,6 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/magnet-acquire2005412-83715215-c5fc-4231-99ff-29a3c51cb5f1> ;
-			sh:resultMessage "Value does not have class identity:Identity" ;
-			sh:resultPath tool:creator ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path tool:creator ;
-			] ;
-			sh:value "Magnet" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/magnet-acquire2005412-83715215-c5fc-4231-99ff-29a3c51cb5f1> ;
-			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
-			sh:resultPath tool:creator ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path tool:creator ;
-			] ;
-			sh:value "Magnet" ;
-		] ,
-		[
-			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/message-database-relationship-uuid> ;
 			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;
@@ -254,52 +221,6 @@
 				sh:path core:kindOfRelationship ;
 			] ;
 			sh:value "Contained_Within"^^vocabulary1:ObservableObjectRelationshipVocab ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:DeviceFacet ;
-				ns1:brand "Google" ;
-				ns1:encryptionEnabled "false"^^xsd:boolean ;
-				ns1:name "hammerhead" ;
-				observable:manufacturer "LGE" ;
-				observable:model "Nexus 5" ;
-				observable:serialNumber "08ebf545d00af782" ;
-			] ;
-			sh:resultMessage "Value does not have class identity:Identity" ;
-			sh:resultPath observable:manufacturer ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path observable:manufacturer ;
-			] ;
-			sh:value "LGE" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:DeviceFacet ;
-				ns1:brand "Google" ;
-				ns1:encryptionEnabled "false"^^xsd:boolean ;
-				ns1:name "hammerhead" ;
-				observable:manufacturer "LGE" ;
-				observable:model "Nexus 5" ;
-				observable:serialNumber "08ebf545d00af782" ;
-			] ;
-			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
-			sh:resultPath observable:manufacturer ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path observable:manufacturer ;
-			] ;
-			sh:value "LGE" ;
 		] ,
 		[
 			a sh:ValidationResult ;
@@ -376,46 +297,6 @@
 				sh:path observable:rangeSize ;
 			] ;
 			sh:value "__NOT_PROVIDED" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:OperatingSystemFacet ;
-				core:name "Android" ;
-				observable:manufacturer "LGE" ;
-				observable:version "6.0.1" ;
-			] ;
-			sh:resultMessage "Value does not have class identity:Identity" ;
-			sh:resultPath observable:manufacturer ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path observable:manufacturer ;
-			] ;
-			sh:value "LGE" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:OperatingSystemFacet ;
-				core:name "Android" ;
-				observable:manufacturer "LGE" ;
-				observable:version "6.0.1" ;
-			] ;
-			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
-			sh:resultPath observable:manufacturer ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path observable:manufacturer ;
-			] ;
-			sh:value "LGE" ;
 		] ,
 		[
 			a sh:ValidationResult ;

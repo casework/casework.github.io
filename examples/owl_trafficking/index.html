@@ -90,7 +90,9 @@ jumbo_desc: CASE Narrative on Trafficking
         "@type": "uco-tool:Tool",
         "uco-core:name": "Magnet ACQUIRE",
         "uco-tool:toolType": "Extraction",
-        "uco-tool:creator": "Magnet",
+        "uco-tool:creator": {
+            "@id": "kb:organization-magnet-1ad4338b-fa60-4823-b9af-38de3d388e36"
+        },
         "uco-tool:version": "2.0.0.5412",
         "uco-core:hasFacet": [
             {
@@ -109,6 +111,14 @@ jumbo_desc: CASE Narrative on Trafficking
                 ]
             }
         ]
+    },
+    {
+        "@id": "kb:organization-magnet-1ad4338b-fa60-4823-b9af-38de3d388e36",
+        "@type": "uco-identity:Organization",
+        "uco-core:hasFacet": {
+            "@type": "uco-identity:OrganizationDetailsFacet",
+            "drafting:orgName": "Magnet"
+        }
     },
     {
         "@id": "kb:investigative-action-4d3778d9-8376-4277-9852-8e6bf926a5d1",
@@ -414,7 +424,9 @@ ORDER BY ?lHashMethod
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DeviceFacet",
-                "uco-observable:manufacturer": "LGE",
+                "uco-observable:manufacturer": {
+                    "@id": "kb:organization-lge-e7ae1d96-e054-44b5-9943-8da6515e8332"
+                },
                 "uco-observable:model": "Nexus 5",
                 "uco-observable:serialNumber": "08ebf545d00af782",
                 "drafting:brand": "Google",
@@ -458,7 +470,9 @@ ORDER BY ?lHashMethod
             {
                 "@type": "uco-observable:OperatingSystemFacet",
                 "uco-core:name": "Android",
-                "uco-observable:manufacturer": "LGE",
+                "uco-observable:manufacturer": {
+                    "@id": "kb:organization-lge-e7ae1d96-e054-44b5-9943-8da6515e8332"
+                },
                 "uco-observable:version": "6.0.1"
             },
             {

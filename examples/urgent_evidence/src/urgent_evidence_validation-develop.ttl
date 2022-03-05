@@ -1,12 +1,9 @@
 @prefix action: <https://unifiedcyberontology.org/ontology/uco/action#> .
 @prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
-@prefix identity: <https://unifiedcyberontology.org/ontology/uco/identity#> .
-@prefix observable: <https://unifiedcyberontology.org/ontology/uco/observable#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix tool: <https://unifiedcyberontology.org/ontology/uco/tool#> .
 @prefix vocabulary1: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -30,66 +27,6 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/camera-uuid-1> ;
-			sh:resultMessage "Value does not have class identity:Identity" ;
-			sh:resultPath tool:creator ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path tool:creator ;
-			] ;
-			sh:value "Canon" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/camera-uuid-1> ;
-			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
-			sh:resultPath tool:creator ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path tool:creator ;
-			] ;
-			sh:value "Canon" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/kiosk-uuid-1> ;
-			sh:resultMessage "Value does not have class identity:Identity" ;
-			sh:resultPath tool:creator ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path tool:creator ;
-			] ;
-			sh:value "ACME" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/kiosk-uuid-1> ;
-			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
-			sh:resultPath tool:creator ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path tool:creator ;
-			] ;
-			sh:value "ACME" ;
-		] ,
-		[
-			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/relationship-uuid-1> ;
 			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath core:kindOfRelationship ;
@@ -102,88 +39,6 @@
 				sh:path core:kindOfRelationship ;
 			] ;
 			sh:value "Contained_Within"^^vocabulary1:ObservableObjectRelationshipVocab ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:DeviceFacet ;
-				observable:deviceType "DVD" ;
-				observable:manufacturer "Generic" ;
-				observable:model "XYZ" ;
-				observable:serialNumber "756867KF234" ;
-			] ;
-			sh:resultMessage "Value does not have class identity:Identity" ;
-			sh:resultPath observable:manufacturer ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path observable:manufacturer ;
-			] ;
-			sh:value "Generic" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:DeviceFacet ;
-				observable:deviceType "DVD" ;
-				observable:manufacturer "Generic" ;
-				observable:model "XYZ" ;
-				observable:serialNumber "756867KF234" ;
-			] ;
-			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
-			sh:resultPath observable:manufacturer ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path observable:manufacturer ;
-			] ;
-			sh:value "Generic" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:DeviceFacet ;
-				observable:deviceType "camera" ;
-				observable:manufacturer "Canon" ;
-				observable:model "PowerShot SX540" ;
-			] ;
-			sh:resultMessage "Value does not have class identity:Identity" ;
-			sh:resultPath observable:manufacturer ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path observable:manufacturer ;
-			] ;
-			sh:value "Canon" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:DeviceFacet ;
-				observable:deviceType "camera" ;
-				observable:manufacturer "Canon" ;
-				observable:model "PowerShot SX540" ;
-			] ;
-			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
-			sh:resultPath observable:manufacturer ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path observable:manufacturer ;
-			] ;
-			sh:value "Canon" ;
 		]
 		;
 	.

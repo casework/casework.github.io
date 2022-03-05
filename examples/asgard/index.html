@@ -136,12 +136,19 @@ custom_js:
         ]
     },
     {
+        "@id": "kb:organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4",
+        "@type": "uco-identity:Organization",
+        "uco-core:name": "Apple"
+    },
+    {
         "@id": "kb:suspect-device-uuid",
         "@type": "uco-observable:Device",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DeviceFacet",
-                "uco-observable:manufacturer": "Apple",
+                "uco-observable:manufacturer": {
+                    "@id": "kb:organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4"
+                },
                 "uco-observable:deviceType": "iPhone",
                 "uco-observable:model": "MG552",
                 "uco-observable:serialNumber": "F18Q4LGRG5MD"
@@ -173,7 +180,9 @@ custom_js:
             {
                 "@type": "uco-observable:OperatingSystemFacet",
                 "uco-core:name": "iOS",
-                "uco-observable:manufacturer": "Apple",
+                "uco-observable:manufacturer": {
+                    "@id": "kb:organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4"
+                },
                 "uco-observable:version": "10.3"
             },
             {
@@ -243,11 +252,18 @@ custom_js:
         ]
     },
     {
+        "@id": "kb:person-38cb4243-bc7e-48a4-91b0-9d296b8f862a",
+        "@type": "uco-identity:Person",
+        "uco-core:name": "Harald"
+    },
+    {
         "@id": "kb:tool-embeddedextractor1-uid",
         "@type": "uco-tool:Tool",
         "uco-core:name": "Embedded Device Extrator",
         "uco-tool:toolType": "Extraction",
-        "uco-tool:creator": "Harald",
+        "uco-tool:creator": {
+            "@id": "kb:person-38cb4243-bc7e-48a4-91b0-9d296b8f862a"
+        },
         "uco-tool:version": "1.2.0",
         "uco-core:hasFacet": [
             {
@@ -422,10 +438,10 @@ custom_js:
     },
     {
         "@id": "kb:phone_call1",
-        "@type": "uco-observable:PhoneCall",
+        "@type": "uco-observable:Call",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:PhoneCallFacet",
+                "@type": "uco-observable:CallFacet",
                 "uco-observable:callType": "mobile",
                 "uco-observable:startTime": {
                     "@type": "xsd:dateTime",

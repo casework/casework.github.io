@@ -138,7 +138,9 @@ jumbo_desc: Cellebrite XML Report Example
         "@type": "uco-tool:Tool",
         "uco-core:name": "Physical Analyser",
         "uco-tool:toolType": "Analysis",
-        "uco-tool:creator": "Cellebrite",
+        "uco-tool:creator": {
+            "@id": "kb:organization-ff30d83e-ff57-45f9-8d54-e79b323c2e8b"
+        },
         "uco-tool:version": "7.1.0.106",
         "uco-core:hasFacet": [
             {
@@ -251,7 +253,9 @@ jumbo_desc: Cellebrite XML Report Example
         "uco-core:name": "UFED",
         "uco-tool:toolType": "Extraction",
         "drafting:toolIdentifier": "557488159",
-        "uco-tool:creator": "Cellebrite",
+        "uco-tool:creator": {
+            "@id": "kb:organization-ff30d83e-ff57-45f9-8d54-e79b323c2e8b"
+        },
         "uco-tool:version": "7.1.0.751",
         "uco-core:hasFacet": [
             {
@@ -270,6 +274,11 @@ jumbo_desc: Cellebrite XML Report Example
                 ]
             }
         ]
+    },
+    {
+        "@id": "kb:organization-ff30d83e-ff57-45f9-8d54-e79b323c2e8b",
+        "@type": "uco-identity:Organization",
+        "uco-core:name": "Cellebrite"
     },
     {
         "@id": "kb:forensic-computer1-uuid",
@@ -504,7 +513,9 @@ jumbo_desc: Cellebrite XML Report Example
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DeviceFacet",
-                "uco-observable:manufacturer": "Samsung",
+                "uco-observable:manufacturer": {
+                    "@id": "kb:organization-fb6c05a0-b6be-4a10-ba62-0e7b1da4c0ec"
+                },
                 "uco-observable:model": "SM-G925F",
                 "uco-observable:serialNumber": "RF8H31GS5SF"
             },
@@ -530,7 +541,9 @@ jumbo_desc: Cellebrite XML Report Example
             {
                 "@type": "uco-observable:OperatingSystemFacet",
                 "uco-core:name": "Android",
-                "uco-observable:manufacturer": "Samsung",
+                "uco-observable:manufacturer": {
+                    "@id": "kb:organization-fb6c05a0-b6be-4a10-ba62-0e7b1da4c0ec"
+                },
                 "uco-observable:version": "6.0.1"
             },
             {
@@ -542,6 +555,11 @@ jumbo_desc: Cellebrite XML Report Example
                 "uco-observable:addressValue": "D8:C4:E9:7C:2E:F8"
             }
         ]
+    },
+    {
+        "@id": "kb:organization-fb6c05a0-b6be-4a10-ba62-0e7b1da4c0ec",
+        "@type": "uco-identity:Organization",
+        "uco-core:name": "Samsung"
     }
 ]
 {% endhighlight %}
