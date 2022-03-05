@@ -1,12 +1,10 @@
 @prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
 @prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
-@prefix observable: <https://unifiedcyberontology.org/ontology/uco/observable#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix vocab: <https://ontology.caseontology.org/case/vocabulary/> .
-@prefix vocabulary1: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 []
@@ -45,6 +43,20 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb#investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7> ;
+			sh:resultMessage "Less than 1 values on kb:investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7->core:object" ;
+			sh:resultPath core:object ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:object ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb#investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7> ;
 			sh:resultMessage "Less than 1 values on kb:investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7->investigation:investigationForm" ;
 			sh:resultPath investigation:investigationForm ;
 			sh:resultSeverity sh:Violation ;
@@ -59,40 +71,16 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#trace-relationship3-uuid> ;
-			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
-			sh:resultPath core:kindOfRelationship ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-			sh:sourceShape [
-				sh:datatype xsd:string ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:path core:kindOfRelationship ;
-			] ;
-			sh:value "Contained_Within"^^vocabulary1:ObservableObjectRelationshipVocab ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:CallFacet ;
-				observable:callType "mobile" ;
-				observable:duration "1862"^^xsd:integer ;
-				observable:endTime "2010-01-15T18:30:41.250000+00:00"^^xsd:dateTime ;
-				observable:from <http://example.org/kb#phone_account1> ;
-				observable:startTime "2010-01-15T17:59:43.250000+00:00"^^xsd:dateTime ;
-				observable:to <http://example.org/kb#phone_account2> ;
-			] ;
-			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:CallFacet ; uco-observable:callType Literal("mobile") ; uco-observable:duration Literal("1862", datatype=xsd:integer) ; uco-observable:endTime Literal("2010-01-15T18:30:41.250000+00:00" = 2010-01-15 18:30:41.250000+00:00, datatype=xsd:dateTime) ; uco-observable:from kb:phone_account1 ; uco-observable:startTime Literal("2010-01-15T17:59:43.250000+00:00" = 2010-01-15 17:59:43.250000+00:00, datatype=xsd:dateTime) ; uco-observable:to kb:phone_account2 ]->observable:application' ;
-			sh:resultPath observable:application ;
+			sh:focusNode <http://example.org/kb#provenance-record1-uuid> ;
+			sh:resultMessage "Less than 1 values on kb:provenance-record1-uuid->core:object" ;
+			sh:resultPath core:object ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
 			sh:sourceShape [
-				sh:class observable:ObservableObject ;
-				sh:maxCount "1"^^xsd:integer ;
+				sh:class core:UcoObject ;
 				sh:minCount "1"^^xsd:integer ;
 				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path observable:application ;
+				sh:path core:object ;
 			] ;
 		]
 		;
