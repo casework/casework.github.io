@@ -4,7 +4,9 @@
         "@type": "uco-tool:Tool",
         "uco-core:name": "Physical Analyser",
         "uco-tool:toolType": "Analysis",
-        "uco-tool:creator": "Cellebrite",
+        "uco-tool:creator": {
+            "@id": "kb:organization-ff30d83e-ff57-45f9-8d54-e79b323c2e8b"
+        },
         "uco-tool:version": "7.1.0.106",
         "uco-core:hasFacet": [
             {

@@ -5,7 +5,9 @@
         "uco-core:name": "UFED",
         "uco-tool:toolType": "Extraction",
         "drafting:toolIdentifier": "557488159",
-        "uco-tool:creator": "Cellebrite",
+        "uco-tool:creator": {
+            "@id": "kb:organization-ff30d83e-ff57-45f9-8d54-e79b323c2e8b"
+        },
         "uco-tool:version": "7.1.0.751",
         "uco-core:hasFacet": [
             {
@@ -24,6 +26,11 @@
                 ]
             }
         ]
+    },
+    {
+        "@id": "kb:organization-ff30d83e-ff57-45f9-8d54-e79b323c2e8b",
+        "@type": "uco-identity:Organization",
+        "uco-core:name": "Cellebrite"
     },
     {
         "@id": "kb:forensic-computer1-uuid",

@@ -5,7 +5,9 @@
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DeviceFacet",
-                "uco-observable:manufacturer": "LGE",
+                "uco-observable:manufacturer": {
+                    "@id": "kb:organization-lge-e7ae1d96-e054-44b5-9943-8da6515e8332"
+                },
                 "uco-observable:model": "Nexus 5",
                 "uco-observable:serialNumber": "08ebf545d00af782",
                 "drafting:brand": "Google",
@@ -49,7 +51,9 @@
             {
                 "@type": "uco-observable:OperatingSystemFacet",
                 "uco-core:name": "Android",
-                "uco-observable:manufacturer": "LGE",
+                "uco-observable:manufacturer": {
+                    "@id": "kb:organization-lge-e7ae1d96-e054-44b5-9943-8da6515e8332"
+                },
                 "uco-observable:version": "6.0.1"
             },
             {

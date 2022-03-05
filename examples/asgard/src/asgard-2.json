@@ -45,11 +45,18 @@
         ]
     },
     {
+        "@id": "kb:person-38cb4243-bc7e-48a4-91b0-9d296b8f862a",
+        "@type": "uco-identity:Person",
+        "uco-core:name": "Harald"
+    },
+    {
         "@id": "kb:tool-embeddedextractor1-uid",
         "@type": "uco-tool:Tool",
         "uco-core:name": "Embedded Device Extrator",
         "uco-tool:toolType": "Extraction",
-        "uco-tool:creator": "Harald",
+        "uco-tool:creator": {
+            "@id": "kb:person-38cb4243-bc7e-48a4-91b0-9d296b8f862a"
+        },
         "uco-tool:version": "1.2.0",
         "uco-core:hasFacet": [
             {

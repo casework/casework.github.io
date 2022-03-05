@@ -38,12 +38,19 @@
         ]
     },
     {
+        "@id": "kb:organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4",
+        "@type": "uco-identity:Organization",
+        "uco-core:name": "Apple"
+    },
+    {
         "@id": "kb:suspect-device-uuid",
         "@type": "uco-observable:Device",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DeviceFacet",
-                "uco-observable:manufacturer": "Apple",
+                "uco-observable:manufacturer": {
+                    "@id": "kb:organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4"
+                },
                 "uco-observable:deviceType": "iPhone",
                 "uco-observable:model": "MG552",
                 "uco-observable:serialNumber": "F18Q4LGRG5MD"
@@ -75,7 +82,9 @@
             {
                 "@type": "uco-observable:OperatingSystemFacet",
                 "uco-core:name": "iOS",
-                "uco-observable:manufacturer": "Apple",
+                "uco-observable:manufacturer": {
+                    "@id": "kb:organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4"
+                },
                 "uco-observable:version": "10.3"
             },
             {

@@ -26,10 +26,10 @@
     },
     {
         "@id": "kb:phone_call1",
-        "@type": "uco-observable:PhoneCall",
+        "@type": "uco-observable:Call",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:PhoneCallFacet",
+                "@type": "uco-observable:CallFacet",
                 "uco-observable:callType": "mobile",
                 "uco-observable:startTime": {
                     "@type": "xsd:dateTime",
