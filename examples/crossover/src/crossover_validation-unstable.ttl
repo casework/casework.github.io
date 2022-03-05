@@ -419,28 +419,6 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
-				a observable:MessageFacet ;
-				observable:application <http://example.org/kb/whatsapp-868abc08-8c21-11e9-934e-0c4de9c21b53> ;
-				observable:from <http://example.org/kb/account-90652808-7341-40d3-9285-774d865ad3f9> ;
-				observable:messageText "20 minutes away" ;
-				observable:messageType "outgoing" ;
-				observable:sentTime "2018-12-04T19:12:56+00:00"^^xsd:dateTime ;
-				observable:to <http://example.org/kb/account-865734c8-8c21-11e9-934e-0c4de9c21b53> ;
-			] ;
-			sh:resultMessage "Value does not have class observable:ObservableObject" ;
-			sh:resultPath observable:to ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class observable:ObservableObject ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path observable:to ;
-			] ;
-			sh:value <http://example.org/kb/account-865734c8-8c21-11e9-934e-0c4de9c21b53> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
 				a observable:SIMCardFacet ;
 				observable:ICCID "8935302143531284380" ;
 				observable:IMSI "__NOT_PROVIDED" ;

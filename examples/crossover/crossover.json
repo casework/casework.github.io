@@ -1252,6 +1252,10 @@
             ]
         },
         {
+            "@id": "kb:account-865734c8-8c21-11e9-934e-0c4de9c21b53",
+            "@type": "uco-observable:ApplicationAccount"
+        },
+        {
             "@id": "kb:relationship-c316c405-9326-4f28-9b8d-44a3bb9e7283",
             "@type": "uco-observable:ObservableRelationship",
             "uco-core:source": {
