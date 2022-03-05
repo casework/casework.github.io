@@ -194,7 +194,6 @@
 			a sh:ValidationResult ;
 			sh:focusNode [
 				a observable:MobileDeviceFacet ;
-				ns1:advertisingID "48500120-c9c5-402e-a6bc-04e2f92ae259" ;
 				ns1:deviceActivationTime "2018-06-10T14:31:30.00Z" ;
 				ns1:locationsServicesEnabled "true"^^xsd:boolean ;
 				observable:IMEI "356420075722843" ;
@@ -219,7 +218,6 @@
 			a sh:ValidationResult ;
 			sh:focusNode [
 				a observable:MobileDeviceFacet ;
-				ns1:advertisingID "48500120-c9c5-402e-a6bc-04e2f92ae259" ;
 				ns1:deviceActivationTime "2018-06-10T14:31:30.00Z" ;
 				ns1:locationsServicesEnabled "true"^^xsd:boolean ;
 				observable:IMEI "356420075722843" ;
