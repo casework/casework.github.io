@@ -65,27 +65,22 @@
                 "@type": "xsd:dateTime",
                 "@value": "2019-03-30T22:36:24.35Z"
             },
-            "uco-core:hasFacet": [
+            "uco-action:instrument": {
+                "@id": "kb:odin-decree13-uuid"
+            },
+            "uco-action:location": {
+                "@id": "kb:asgard-bifrost-uuid"
+            },
+            "uco-action:performer": {
+                "@id": "kb:investigator2-uuid"
+            },
+            "uco-action:object": [],
+            "uco-action:result": [
                 {
-                    "@type": "uco-action:ActionReferencesFacet",
-                    "uco-action:instrument": {
-                        "@id": "kb:odin-decree13-uuid"
-                    },
-                    "uco-action:location": {
-                        "@id": "kb:asgard-bifrost-uuid"
-                    },
-                    "uco-action:performer": {
-                        "@id": "kb:investigator2-uuid"
-                    },
-                    "uco-action:object": [],
-                    "uco-action:result": [
-                        {
-                            "@id": "kb:provenance-record1-uuid"
-                        },
-                        {
-                            "@id": "kb:suspect-device-uuid"
-                        }
-                    ]
+                    "@id": "kb:provenance-record1-uuid"
+                },
+                {
+                    "@id": "kb:suspect-device-uuid"
                 }
             ]
         },
@@ -101,12 +96,19 @@
             ]
         },
         {
+            "@id": "kb:organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4",
+            "@type": "uco-identity:Organization",
+            "uco-core:name": "Apple"
+        },
+        {
             "@id": "kb:suspect-device-uuid",
             "@type": "uco-observable:Device",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DeviceFacet",
-                    "uco-observable:manufacturer": "Apple",
+                    "uco-observable:manufacturer": {
+                        "@id": "kb:organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4"
+                    },
                     "uco-observable:deviceType": "iPhone",
                     "uco-observable:model": "MG552",
                     "uco-observable:serialNumber": "F18Q4LGRG5MD"
@@ -138,7 +140,9 @@
                 {
                     "@type": "uco-observable:OperatingSystemFacet",
                     "uco-core:name": "iOS",
-                    "uco-observable:manufacturer": "Apple",
+                    "uco-observable:manufacturer": {
+                        "@id": "kb:organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4"
+                    },
                     "uco-observable:version": "10.3"
                 },
                 {
@@ -164,49 +168,51 @@
                 "@type": "xsd:dateTime",
                 "@value": "2019-03-30T22:47:32Z"
             },
-            "uco-core:hasFacet": [
+            "uco-action:instrument": {
+                "@id": "kb:tool-embeddedextractor1-uid"
+            },
+            "uco-action:location": {
+                "@id": "kb:309BC178-1836-47B7-AA15-94EA3A2C7401"
+            },
+            "uco-action:performer": {
+                "@id": "kb:E9AA4F26-D187-4F32-A602-86A6DF4B8528"
+            },
+            "uco-action:object": [
                 {
-                    "@type": "uco-action:ActionReferencesFacet",
-                    "uco-action:instrument": {
-                        "@id": "kb:tool-embeddedextractor1-uid"
-                    },
-                    "uco-action:location": {
-                        "@id": "kb:309BC178-1836-47B7-AA15-94EA3A2C7401"
-                    },
-                    "uco-action:performer": {
-                        "@id": "kb:E9AA4F26-D187-4F32-A602-86A6DF4B8528"
-                    },
-                    "uco-action:object": [
-                        {
-                            "@id": "kb:suspect-device-uuid"
-                        }
-                    ],
-                    "uco-action:result": [
-                        {
-                            "@id": "kb:90F73123-DB7E-41E5-B6CA-493B96E4B89F"
-                        },
-                        {
-                            "@id": "kb:97C74753-FCEB-49C8-A611-7A70EF46AB5D"
-                        },
-                        {
-                            "@id": "kb:EBAB06EE-7522-42D6-96EA-E3121D67E393"
-                        },
-                        {
-                            "@id": "kb:48C0F0E8-9A63-45EE-99BF-23CC354C3252"
-                        },
-                        {
-                            "@id": "kb:B2A7B20E-8307-40CF-ABAF-9733ABBF4335"
-                        }
-                    ]
+                    "@id": "kb:suspect-device-uuid"
+                }
+            ],
+            "uco-action:result": [
+                {
+                    "@id": "kb:90F73123-DB7E-41E5-B6CA-493B96E4B89F"
+                },
+                {
+                    "@id": "kb:97C74753-FCEB-49C8-A611-7A70EF46AB5D"
+                },
+                {
+                    "@id": "kb:EBAB06EE-7522-42D6-96EA-E3121D67E393"
+                },
+                {
+                    "@id": "kb:48C0F0E8-9A63-45EE-99BF-23CC354C3252"
+                },
+                {
+                    "@id": "kb:B2A7B20E-8307-40CF-ABAF-9733ABBF4335"
                 }
             ]
+        },
+        {
+            "@id": "kb:person-38cb4243-bc7e-48a4-91b0-9d296b8f862a",
+            "@type": "uco-identity:Person",
+            "uco-core:name": "Harald"
         },
         {
             "@id": "kb:tool-embeddedextractor1-uid",
             "@type": "uco-tool:Tool",
             "uco-core:name": "Embedded Device Extrator",
             "uco-tool:toolType": "Extraction",
-            "uco-tool:creator": "Harald",
+            "uco-tool:creator": {
+                "@id": "kb:person-38cb4243-bc7e-48a4-91b0-9d296b8f862a"
+            },
             "uco-tool:version": "1.2.0",
             "uco-core:hasFacet": [
                 {
@@ -349,10 +355,10 @@
         },
         {
             "@id": "kb:phone_call1",
-            "@type": "uco-observable:PhoneCall",
+            "@type": "uco-observable:Call",
             "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:PhoneCallFacet",
+                    "@type": "uco-observable:CallFacet",
                     "uco-observable:callType": "mobile",
                     "uco-observable:startTime": {
                         "@type": "xsd:dateTime",
