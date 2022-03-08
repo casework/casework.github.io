@@ -41,7 +41,7 @@ all-asgard:
 
 all-crossover:
 	$(MAKE) \
-	  --directory asgard
+	  --directory crossover
 
 all-owl_trafficking:
 	$(MAKE) \
