@@ -1,48 +1,15 @@
-@prefix action: <https://unifiedcyberontology.org/ontology/uco/action#> .
-@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
-@prefix identity: <https://unifiedcyberontology.org/ontology/uco/identity#> .
 @prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
-@prefix observable: <https://unifiedcyberontology.org/ontology/uco/observable#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix tool: <https://unifiedcyberontology.org/ontology/uco/tool#> .
 @prefix vocab: <https://ontology.caseontology.org/case/vocabulary/> .
-@prefix vocabulary1: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 []
 	a sh:ValidationReport ;
 	sh:conforms "false"^^xsd:boolean ;
 	sh:result
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#219189B6-356C-4D53-A844-F0031E74F156> ;
-			sh:resultMessage "Value does not have class core:Facet" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a action:ActionReferencesFacet ;
-				action:instrument <http://example.org/kb#tool-embeddedextractor1-uid> ;
-				action:location <http://example.org/kb#309BC178-1836-47B7-AA15-94EA3A2C7401> ;
-				action:object <http://example.org/kb#suspect-device-uuid> ;
-				action:performer <http://example.org/kb#E9AA4F26-D187-4F32-A602-86A6DF4B8528> ;
-				action:result
-					<http://example.org/kb#48C0F0E8-9A63-45EE-99BF-23CC354C3252> ,
-					<http://example.org/kb#90F73123-DB7E-41E5-B6CA-493B96E4B89F> ,
-					<http://example.org/kb#97C74753-FCEB-49C8-A611-7A70EF46AB5D> ,
-					<http://example.org/kb#B2A7B20E-8307-40CF-ABAF-9733ABBF4335> ,
-					<http://example.org/kb#EBAB06EE-7522-42D6-96EA-E3121D67E393>
-					;
-			] ;
-		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb#authorization-79D6AB60-D679-49CE-9573-7176DFEEB7C3> ;
@@ -74,21 +41,6 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#bundle-5715FCF3-6BC8-4996-8F7F-FDF289F31649> ;
-			sh:resultMessage "Value does not have class core:UcoObject" ;
-			sh:resultPath core:object ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:UcoObject ;
-				sh:minCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path core:object ;
-			] ;
-			sh:value <http://example.org/kb#phone_call1> ;
-		] ,
-		[
-			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb#investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7> ;
 			sh:resultMessage "Less than 1 values on kb:investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7->investigation:investigationForm" ;
 			sh:resultPath investigation:investigationForm ;
@@ -101,156 +53,6 @@
 				sh:nodeKind sh:Literal ;
 				sh:path investigation:investigationForm ;
 			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#investigative-action1-uuid> ;
-			sh:resultMessage "Value does not have class core:Facet" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a action:ActionReferencesFacet ;
-				action:instrument <http://example.org/kb#odin-decree13-uuid> ;
-				action:location <http://example.org/kb#asgard-bifrost-uuid> ;
-				action:performer <http://example.org/kb#investigator2-uuid> ;
-				action:result
-					<http://example.org/kb#provenance-record1-uuid> ,
-					<http://example.org/kb#suspect-device-uuid>
-					;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#tool-embeddedextractor1-uid> ;
-			sh:resultMessage "Value does not have class identity:Identity" ;
-			sh:resultPath tool:creator ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path tool:creator ;
-			] ;
-			sh:value "Harald" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#tool-embeddedextractor1-uid> ;
-			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
-			sh:resultPath tool:creator ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path tool:creator ;
-			] ;
-			sh:value "Harald" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#trace-relationship3-uuid> ;
-			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
-			sh:resultPath core:kindOfRelationship ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-			sh:sourceShape [
-				sh:datatype xsd:string ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:path core:kindOfRelationship ;
-			] ;
-			sh:value "Contained_Within"^^vocabulary1:ObservableObjectRelationshipVocab ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:DeviceFacet ;
-				observable:deviceType "iPhone" ;
-				observable:manufacturer "Apple" ;
-				observable:model "MG552" ;
-				observable:serialNumber "F18Q4LGRG5MD" ;
-			] ;
-			sh:resultMessage "Value does not have class identity:Identity" ;
-			sh:resultPath observable:manufacturer ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path observable:manufacturer ;
-			] ;
-			sh:value "Apple" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:DeviceFacet ;
-				observable:deviceType "iPhone" ;
-				observable:manufacturer "Apple" ;
-				observable:model "MG552" ;
-				observable:serialNumber "F18Q4LGRG5MD" ;
-			] ;
-			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
-			sh:resultPath observable:manufacturer ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path observable:manufacturer ;
-			] ;
-			sh:value "Apple" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:OperatingSystemFacet ;
-				core:name "iOS" ;
-				observable:manufacturer "Apple" ;
-				observable:version "10.3" ;
-			] ;
-			sh:resultMessage "Value does not have class identity:Identity" ;
-			sh:resultPath observable:manufacturer ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path observable:manufacturer ;
-			] ;
-			sh:value "Apple" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:OperatingSystemFacet ;
-				core:name "iOS" ;
-				observable:manufacturer "Apple" ;
-				observable:version "10.3" ;
-			] ;
-			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
-			sh:resultPath observable:manufacturer ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path observable:manufacturer ;
-			] ;
-			sh:value "Apple" ;
 		]
 		;
 	.
