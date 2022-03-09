@@ -1,3 +1,4 @@
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -9,20 +10,106 @@
 []
 	a sh:ValidationReport ;
 	sh:conforms "false"^^xsd:boolean ;
-	sh:result [
-		a sh:ValidationResult ;
-		sh:focusNode <http://example.org/kb/investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7> ;
-		sh:resultMessage "Less than 1 values on kb:investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7->investigation:investigationForm" ;
-		sh:resultPath investigation:investigationForm ;
-		sh:resultSeverity sh:Violation ;
-		sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-		sh:sourceShape [
-			sh:datatype vocab:InvestigationFormVocab ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path investigation:investigationForm ;
-		] ;
-	] ;
+	sh:result
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7> ;
+			sh:resultMessage "Less than 1 values on kb:investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7->core:object" ;
+			sh:resultPath core:object ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:object ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7> ;
+			sh:resultMessage "Less than 1 values on kb:investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7->investigation:investigationForm" ;
+			sh:resultPath investigation:investigationForm ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype vocab:InvestigationFormVocab ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path investigation:investigationForm ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/provenance-record1-uuid> ;
+			sh:resultMessage "Less than 1 values on kb:provenance-record1-uuid->core:object" ;
+			sh:resultPath core:object ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:object ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/provenance-record13-uuid> ;
+			sh:resultMessage "Less than 1 values on kb:provenance-record13-uuid->core:object" ;
+			sh:resultPath core:object ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:object ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/provenance-record2-uuid> ;
+			sh:resultMessage "Less than 1 values on kb:provenance-record2-uuid->core:object" ;
+			sh:resultPath core:object ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:object ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/provenance-record3-uuid> ;
+			sh:resultMessage "Less than 1 values on kb:provenance-record3-uuid->core:object" ;
+			sh:resultPath core:object ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:object ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/provenance-record4-uuid> ;
+			sh:resultMessage "Less than 1 values on kb:provenance-record4-uuid->core:object" ;
+			sh:resultPath core:object ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:object ;
+			] ;
+		]
+		;
 	.
 
