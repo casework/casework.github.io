@@ -6,15 +6,15 @@
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "kb": "http://example.org/kb/",
-        "uco-action": "https://unifiedcyberontology.org/ontology/uco/action#",
-        "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
-        "uco-identity": "https://unifiedcyberontology.org/ontology/uco/identity#",
-        "uco-location": "https://unifiedcyberontology.org/ontology/uco/location#",
-        "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
-        "uco-role": "https://unifiedcyberontology.org/ontology/uco/role#",
-        "uco-tool": "https://unifiedcyberontology.org/ontology/uco/tool#",
-        "uco-types": "https://unifiedcyberontology.org/ontology/uco/types#",
-        "uco-vocabulary": "https://unifiedcyberontology.org/ontology/uco/vocabulary#",
+        "uco-action": "https://ontology.unifiedcyberontology.org/uco/action/",
+        "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "uco-identity": "https://ontology.unifiedcyberontology.org/uco/identity/",
+        "uco-location": "https://ontology.unifiedcyberontology.org/uco/location/",
+        "uco-observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "uco-role": "https://ontology.unifiedcyberontology.org/uco/role/",
+        "uco-tool": "https://ontology.unifiedcyberontology.org/uco/tool/",
+        "uco-types": "https://ontology.unifiedcyberontology.org/uco/types/",
+        "uco-vocabulary": "https://ontology.unifiedcyberontology.org/uco/vocabulary/",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
@@ -48,18 +48,17 @@
                     "uco-observable:serialNumber": "RF8H31GS5SF"
                 },
                 {
-                    "@type": [
-                        "drafting:AndroidDeviceFacet",
-                        "uco-core:Facet"
-                    ],
-                    "drafting:androidID": "64cce130286b31b3",
-                    "drafting:androidFingerprint": "samsung/zeroltexx/zerolte:6.0.1/MMB29K/G925FXXU4DPIL"
+                    "@type": "uco-observable:AndroidDeviceFacet",
+                    "uco-observable:androidID": {
+                        "@type": "xsd:hexBinary",
+                        "@value": "64cce130286b31b3"
+                    },
+                    "uco-observable:androidFingerprint": "samsung/zeroltexx/zerolte:6.0.1/MMB29K/G925FXXU4DPIL"
                 },
                 {
                     "@type": "uco-observable:MobileDeviceFacet",
                     "uco-observable:bluetoothDeviceName": "Galaxy S6 edge",
                     "drafting:deviceActivationTime": "2018-06-10T14:31:30.00Z",
-                    "drafting:advertisingID": "48500120-c9c5-402e-a6bc-04e2f92ae259",
                     "drafting:locationsServicesEnabled": true,
                     "uco-observable:keypadUnlockCode": "__NOT_PROVIDED",
                     "uco-observable:IMEI": "356420075722843",
@@ -72,6 +71,7 @@
                     "uco-observable:manufacturer": {
                         "@id": "kb:organization-fb6c05a0-b6be-4a10-ba62-0e7b1da4c0ec"
                     },
+                    "uco-observable:advertisingID": "48500120-c9c5-402e-a6bc-04e2f92ae259",
                     "uco-observable:version": "6.0.1"
                 },
                 {
@@ -1250,6 +1250,10 @@
                     "uco-observable:messageType": "outgoing"
                 }
             ]
+        },
+        {
+            "@id": "kb:account-865734c8-8c21-11e9-934e-0c4de9c21b53",
+            "@type": "uco-observable:ApplicationAccount"
         },
         {
             "@id": "kb:relationship-c316c405-9326-4f28-9b8d-44a3bb9e7283",

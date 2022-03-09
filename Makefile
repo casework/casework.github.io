@@ -102,10 +102,11 @@ clean:
 	  --directory dependencies \
 	  clean
 	@rm -f \
-	  .git_submodule_init.done.log \
 	  .venv.done.log
 	@rm -rf \
 	  venv
+	@rm -f \
+	  .git_submodule_init.done.log
 	@$(MAKE) \
 	  --directory releases/0.2.0/migration \
 	  clean
