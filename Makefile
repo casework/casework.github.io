@@ -93,14 +93,20 @@ check-migration-0.2.0:
 	  check
 
 clean:
-	@rm -f \
-	  .git_submodule_init.done.log \
-	  .venv.done.log
-	@rm -rf \
-	  venv
 	@$(MAKE) \
 	  --directory examples \
 	  clean
+	@rm -f \
+	  .dependencies.done.log
+	@$(MAKE) \
+	  --directory dependencies \
+	  clean
+	@rm -f \
+	  .venv.done.log
+	@rm -rf \
+	  venv
+	@rm -f \
+	  .git_submodule_init.done.log
 	@$(MAKE) \
 	  --directory releases/0.2.0/migration \
 	  clean

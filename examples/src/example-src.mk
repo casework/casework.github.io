@@ -162,6 +162,7 @@ check-pytest: \
 clean:
 	@rm -f \
 	  *.sed \
+	  *validation*ttl \
 	  generated-* \
 	  normalized-* \
 	  query-*.md
