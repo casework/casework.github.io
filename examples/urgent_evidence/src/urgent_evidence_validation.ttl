@@ -1,11 +1,8 @@
 @prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
-@prefix observable: <https://unifiedcyberontology.org/ontology/uco/observable#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix tool: <https://unifiedcyberontology.org/ontology/uco/tool#> .
-@prefix vocabulary1: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 []
@@ -14,160 +11,143 @@
 	sh:result
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/camera-uuid-1> ;
-			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
-			sh:resultPath tool:creator ;
+			sh:focusNode <http://example.org/kb/provenance-record-73f59a8a-1c22-41fe-af50-13e8b6a65de9> ;
+			sh:resultMessage "Less than 1 values on kb:provenance-record-73f59a8a-1c22-41fe-af50-13e8b6a65de9->core:object" ;
+			sh:resultPath core:object ;
 			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
 			sh:sourceShape [
-				sh:datatype xsd:string ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:path tool:creator ;
+				sh:class core:UcoObject ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:object ;
 			] ;
-			sh:value <http://example.org/kb/organization-f5a0877c-2a58-4280-8f24-c0df39e8badc> ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/camera-uuid-1> ;
-			sh:resultMessage "Value is not of Node Kind sh:Literal" ;
-			sh:resultPath tool:creator ;
+			sh:focusNode <http://example.org/kb/provenance-record-uuid-1> ;
+			sh:resultMessage "Less than 1 values on kb:provenance-record-uuid-1->core:object" ;
+			sh:resultPath core:object ;
 			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
 			sh:sourceShape [
-				sh:datatype xsd:string ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:path tool:creator ;
+				sh:class core:UcoObject ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:object ;
 			] ;
-			sh:value <http://example.org/kb/organization-f5a0877c-2a58-4280-8f24-c0df39e8badc> ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/kiosk-uuid-1> ;
-			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
-			sh:resultPath tool:creator ;
+			sh:focusNode <http://example.org/kb/provenance-record-uuid-2> ;
+			sh:resultMessage "Less than 1 values on kb:provenance-record-uuid-2->core:object" ;
+			sh:resultPath core:object ;
 			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
 			sh:sourceShape [
-				sh:datatype xsd:string ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:path tool:creator ;
+				sh:class core:UcoObject ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:object ;
 			] ;
-			sh:value <http://example.org/kb/organization-a177a5d6-118c-419f-bca3-03af8000d121> ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/kiosk-uuid-1> ;
-			sh:resultMessage "Value is not of Node Kind sh:Literal" ;
-			sh:resultPath tool:creator ;
+			sh:focusNode <http://example.org/kb/provenance-record-uuid-3> ;
+			sh:resultMessage "Less than 1 values on kb:provenance-record-uuid-3->core:object" ;
+			sh:resultPath core:object ;
 			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
 			sh:sourceShape [
-				sh:datatype xsd:string ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:path tool:creator ;
+				sh:class core:UcoObject ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:object ;
 			] ;
-			sh:value <http://example.org/kb/organization-a177a5d6-118c-419f-bca3-03af8000d121> ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/relationship-uuid-1> ;
-			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
-			sh:resultPath core:kindOfRelationship ;
+			sh:focusNode <http://example.org/kb/provenance-record-uuid-4> ;
+			sh:resultMessage "Less than 1 values on kb:provenance-record-uuid-4->core:object" ;
+			sh:resultPath core:object ;
 			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
 			sh:sourceShape [
-				sh:datatype xsd:string ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:path core:kindOfRelationship ;
+				sh:class core:UcoObject ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:object ;
 			] ;
-			sh:value "Contained_Within"^^vocabulary1:ObservableObjectRelationshipVocab ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:DeviceFacet ;
-				observable:deviceType "DVD" ;
-				observable:manufacturer <http://example.org/kb/organization-e84a49ff-f34c-46fe-ab88-6f0f79023925> ;
-				observable:model "XYZ" ;
-				observable:serialNumber "756867KF234" ;
-			] ;
-			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
-			sh:resultPath observable:manufacturer ;
+			sh:focusNode <http://example.org/kb/provenance-record-uuid-5> ;
+			sh:resultMessage "Less than 1 values on kb:provenance-record-uuid-5->core:object" ;
+			sh:resultPath core:object ;
 			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
 			sh:sourceShape [
-				sh:datatype xsd:string ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:path observable:manufacturer ;
+				sh:class core:UcoObject ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:object ;
 			] ;
-			sh:value <http://example.org/kb/organization-e84a49ff-f34c-46fe-ab88-6f0f79023925> ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:DeviceFacet ;
-				observable:deviceType "DVD" ;
-				observable:manufacturer <http://example.org/kb/organization-e84a49ff-f34c-46fe-ab88-6f0f79023925> ;
-				observable:model "XYZ" ;
-				observable:serialNumber "756867KF234" ;
-			] ;
-			sh:resultMessage "Value is not of Node Kind sh:Literal" ;
-			sh:resultPath observable:manufacturer ;
+			sh:focusNode <http://example.org/kb/provenance-record-uuid-6> ;
+			sh:resultMessage "Less than 1 values on kb:provenance-record-uuid-6->core:object" ;
+			sh:resultPath core:object ;
 			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
 			sh:sourceShape [
-				sh:datatype xsd:string ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:path observable:manufacturer ;
+				sh:class core:UcoObject ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:object ;
 			] ;
-			sh:value <http://example.org/kb/organization-e84a49ff-f34c-46fe-ab88-6f0f79023925> ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:DeviceFacet ;
-				observable:deviceType "camera" ;
-				observable:manufacturer <http://example.org/kb/organization-f5a0877c-2a58-4280-8f24-c0df39e8badc> ;
-				observable:model "PowerShot SX540" ;
-			] ;
-			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
-			sh:resultPath observable:manufacturer ;
+			sh:focusNode <http://example.org/kb/provenance-record-uuid-6e> ;
+			sh:resultMessage "Less than 1 values on kb:provenance-record-uuid-6e->core:object" ;
+			sh:resultPath core:object ;
 			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
 			sh:sourceShape [
-				sh:datatype xsd:string ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:path observable:manufacturer ;
+				sh:class core:UcoObject ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:object ;
 			] ;
-			sh:value <http://example.org/kb/organization-f5a0877c-2a58-4280-8f24-c0df39e8badc> ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:DeviceFacet ;
-				observable:deviceType "camera" ;
-				observable:manufacturer <http://example.org/kb/organization-f5a0877c-2a58-4280-8f24-c0df39e8badc> ;
-				observable:model "PowerShot SX540" ;
-			] ;
-			sh:resultMessage "Value is not of Node Kind sh:Literal" ;
-			sh:resultPath observable:manufacturer ;
+			sh:focusNode <http://example.org/kb/provenance-record-uuid-7> ;
+			sh:resultMessage "Less than 1 values on kb:provenance-record-uuid-7->core:object" ;
+			sh:resultPath core:object ;
 			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
 			sh:sourceShape [
-				sh:datatype xsd:string ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:path observable:manufacturer ;
+				sh:class core:UcoObject ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:object ;
 			] ;
-			sh:value <http://example.org/kb/organization-f5a0877c-2a58-4280-8f24-c0df39e8badc> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/provenance-record-uuid-8> ;
+			sh:resultMessage "Less than 1 values on kb:provenance-record-uuid-8->core:object" ;
+			sh:resultPath core:object ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path core:object ;
+			] ;
 		]
 		;
 	.
