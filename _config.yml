@@ -63,6 +63,7 @@ exclude:
   - examples/Makefile
   - examples/README.md
   - examples/src/*.mk
+  - ontology/Makefile
   - releases/0.2.0/migration/.gitignore
   - releases/0.2.0/migration/Makefile
   - requirements.txt

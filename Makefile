@@ -24,13 +24,16 @@ endif
 
 all: \
   all-examples \
-  all-migration-0.2.0
+  all-migration-0.2.0 \
+  all-ontology
 
 .PHONY: \
   all-examples \
   all-migration-0.2.0 \
+  all-ontology \
   check-examples \
-  check-migration-0.2.0
+  check-migration-0.2.0 \
+  check-ontology
 
 # NOTE: The submodules of CASE-Utilities-Python are being initialized in order to guarantee access to rdf-toolkit.jar.
 .git_submodule_init.done.log: \
@@ -77,9 +80,15 @@ all-migration-0.2.0:
 	$(MAKE) \
 	  --directory releases/0.2.0/migration
 
+all-ontology: \
+  .dependencies.done.log
+	$(MAKE) \
+	  --directory ontology
+
 check: \
   check-examples \
-  check-migration-0.2.0
+  check-migration-0.2.0 \
+  check-ontology
 
 check-examples: \
   .dependencies.done.log
@@ -92,9 +101,18 @@ check-migration-0.2.0:
 	  --directory releases/0.2.0/migration \
 	  check
 
+check-ontology: \
+  .dependencies.done.log
+	$(MAKE) \
+	  --directory ontology \
+	  check
+
 clean:
 	@$(MAKE) \
 	  --directory examples \
+	  clean
+	@$(MAKE) \
+	  --directory ontology \
 	  clean
 	@rm -f \
 	  .dependencies.done.log
