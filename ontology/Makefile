@@ -31,6 +31,10 @@ all: \
   CASE-develop.ttl \
   CASE-unstable.ttl
 
+.PHONY: \
+  check-develop \
+  check-unstable
+
 CASE-develop.ttl: \
   $(top_srcdir)/dependencies/CASE-develop.ttl \
   $(RDF_TOOLKIT_JAR)
@@ -54,8 +58,22 @@ CASE-unstable.ttl: \
 	mv _$@ $@
 
 check: \
-  CASE-develop.ttl \
+  check-develop \
+  check-unstable
+
+check-develop: \
+  CASE-develop.ttl
+	git diff \
+	  --exit-code \
+	  $< \
+	  || (echo "ERROR:ontology/Makefile:Generated version of $< does not match Git-tracked state.  Please review and commit $<." ; exit 1)
+
+check-unstable: \
   CASE-unstable.ttl
+	git diff \
+	  --exit-code \
+	  $< \
+	  || (echo "ERROR:ontology/Makefile:Generated version of $< does not match Git-tracked state.  Please review and commit $<." ; exit 1)
 
 clean:
 	@rm -f \
