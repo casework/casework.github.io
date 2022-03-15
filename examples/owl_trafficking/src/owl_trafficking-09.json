@@ -35,10 +35,7 @@
         "uco-core:target": {
             "@id": "kb:textapplogcat-1a717ea6-8990-4709-92f0-d748cacb817e"
         },
-        "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-            "@value": "Contained_Within"
-        },
+        "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
