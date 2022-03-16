@@ -28,10 +28,7 @@
         "uco-core:target": {
             "@id": "kb:camera-xml-uuid"
         },
-        "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-            "@value": "Contained_Within"
-        },
+        "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:isDirectional": true
     }
 ]

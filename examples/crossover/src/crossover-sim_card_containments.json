@@ -8,10 +8,7 @@
         "uco-core:target": {
             "@id": "kb:samsung-device-uuid"
         },
-        "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-            "@value": "Contained_Within"
-        },
+        "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:startTime": {
             "@type": "xsd:dateTime",
             "@value": "2018-11-16T12:34:28Z"
@@ -28,10 +25,7 @@
         "uco-core:target": {
             "@id": "kb:samsung-device-uuid"
         },
-        "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-            "@value": "Contained_Within"
-        },
+        "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:startTime": {
             "@type": "xsd:dateTime",
             "@value": "2018-11-16T00:00.00Z"

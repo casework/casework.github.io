@@ -12,10 +12,7 @@
         "uco-core:target": {
             "@id": "kb:f3fd304e-ef6c-4cbd-94cb-425880f82748"
         },
-        "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-            "@value": "Contained_Within"
-        },
+        "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
