@@ -35,7 +35,14 @@ The focus of this release is on:
 Throughout this section, many of the notes are tied to Change Proposals.  These proposals are available on CASE's [Reference Material page](/resources/references.html).
 
 
-#### Changes
+#### Breaking Changes
+
+*(These are changes to ontologies, classes or properties in the preexisting ontology that make the new release non-backward-compatible.)*
+
+While no breaking changes were implemented in CASE directly, the adopted version of UCO did implement breaking changes.  Please refer to the [UCO 0.8.0 release notes](https://unifiedcyberontology.org/releases/0.8.0/).
+
+
+#### General changes
 
 *(These are general changes to the preexisting ontology that are not breaking or range changes.)*
 
