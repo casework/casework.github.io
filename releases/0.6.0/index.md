@@ -12,17 +12,27 @@ custom_css: releases
 
 [GitHub](https://github.com/casework/CASE/releases/tag/0.6.0)
 
+
 ## Migration guidance
 
-From CASE 0.5.0 to CASE 0.6.0, includes
-* 
+A guide to migration from CASE 0.5.0 is [here](migration/).
+
 
 ## Release Notes
+
 
 ### Focus
 
 The focus of this release is on:
+* Aligning exhibit number and root exhibit number definitions.
 * Adopting and importing UCO 0.8.0, which includes changes brought forward by the CASE community.
+
+Work done by CASE in the 0.6.0 release cycle was mostly in efforts adjacent to the CASE ontology repository.
+* CASE contributed bug fixes, design input, and new class and property development for UCO.
+* CASE documentation and full-ontology encoding files now resolve in a manner consistent with their IRIs, being served as Turtle and RDF.
+* Example development practice now incorporates SHACL validation against pre-release states of CASE and UCO.
+* CASE examples have received revisions addressing many SHACL validation issues.
+
 
 ### Changes
 
@@ -30,17 +40,6 @@ The focus of this release is on:
 
 Throughout this section, many of the notes are tied to Change Proposals.  These proposals are available on CASE's [Reference Material page](/resources/references.html).
 
-#### Development Changes
-
-*(These are changes to ontology development practice, and are not necessarily changes to ontology data.)*
-
-*
-
-#### Breaking Changes
-
-*(These are changes to ontologies, classes or properties in the preexisting ontology that make the new release non-backward-compatible.)*
-
-*
 
 #### Changes
 
