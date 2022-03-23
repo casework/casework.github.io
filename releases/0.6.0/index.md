@@ -27,12 +27,6 @@ The focus of this release is on:
 * Aligning exhibit number and root exhibit number definitions.
 * Adopting and importing UCO 0.8.0, which includes changes brought forward by the CASE community.
 
-Work done by CASE in the 0.6.0 release cycle was mostly in efforts adjacent to the CASE ontology repository.
-* CASE contributed bug fixes, design input, and new class and property development for UCO.
-* CASE documentation and full-ontology encoding files now resolve in a manner consistent with their IRIs, being served as Turtle and RDF.
-* Example development practice now incorporates SHACL validation against pre-release states of CASE and UCO.
-* CASE examples have received revisions addressing many SHACL validation issues.
-
 
 ### Changes
 
