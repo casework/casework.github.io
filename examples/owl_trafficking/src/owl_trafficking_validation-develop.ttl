@@ -132,6 +132,32 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
+				a observable:AccountFacet ;
+				observable:accountType "phone"^^vocabulary1:AccountTypeVocab ;
+				observable:isActive "true"^^xsd:boolean ;
+			] ;
+			sh:resultMessage "Value is not member of the vocabulary AccountTypeVocab." ;
+			sh:resultPath observable:accountType ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:OrConstraintComponent ;
+			sh:sourceShape [
+				sh:message "Value is not member of the vocabulary AccountTypeVocab." ;
+				sh:or (
+					[
+						sh:datatype vocabulary1:AccountTypeVocab ;
+						sh:in vocabulary1:AccountTypeVocab-members ;
+					]
+					[
+						sh:datatype xsd:string ;
+					]
+				) ;
+				sh:path observable:accountType ;
+			] ;
+			sh:value "phone"^^vocabulary1:AccountTypeVocab ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
 				a observable:DataRangeFacet ;
 				observable:rangeOffset "13751"^^xsd:integer ;
 				observable:rangeSize "__NOT_PROVIDED" ;
