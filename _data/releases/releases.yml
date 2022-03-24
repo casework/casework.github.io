@@ -13,3 +13,6 @@
 - title: 0.5.0
   date: 2021-10-26
   desc: Adoption of UCO 0.7.0. Converted class structures to SHACL, and added validation tests.
+- title: 0.6.0
+  date: 2022-03-23
+  desc: Adoption of UCO 0.8.0. Alignment of exhibit number and root exhibit number definitions.
