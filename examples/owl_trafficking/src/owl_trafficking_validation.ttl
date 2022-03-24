@@ -1,12 +1,12 @@
-@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
-@prefix observable: <https://unifiedcyberontology.org/ontology/uco/observable#> .
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix vocab: <https://ontology.caseontology.org/case/vocabulary/> .
-@prefix vocabulary1: <https://unifiedcyberontology.org/ontology/uco/vocabulary#> .
+@prefix vocabulary1: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 []
@@ -128,6 +128,32 @@
 				sh:nodeKind sh:Literal ;
 				sh:path observable:accountIdentifier ;
 			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a observable:AccountFacet ;
+				observable:accountType "phone"^^vocabulary1:AccountTypeVocab ;
+				observable:isActive "true"^^xsd:boolean ;
+			] ;
+			sh:resultMessage "Value is not member of the vocabulary AccountTypeVocab." ;
+			sh:resultPath observable:accountType ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:OrConstraintComponent ;
+			sh:sourceShape [
+				sh:message "Value is not member of the vocabulary AccountTypeVocab." ;
+				sh:or (
+					[
+						sh:datatype vocabulary1:AccountTypeVocab ;
+						sh:in vocabulary1:AccountTypeVocab-members ;
+					]
+					[
+						sh:datatype xsd:string ;
+					]
+				) ;
+				sh:path observable:accountType ;
+			] ;
+			sh:value "phone"^^vocabulary1:AccountTypeVocab ;
 		] ,
 		[
 			a sh:ValidationResult ;

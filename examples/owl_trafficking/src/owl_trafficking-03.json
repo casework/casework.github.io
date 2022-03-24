@@ -5,7 +5,9 @@
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DeviceFacet",
-                "uco-observable:manufacturer": "LGE",
+                "uco-observable:manufacturer": {
+                    "@id": "kb:organization-lge-e7ae1d96-e054-44b5-9943-8da6515e8332"
+                },
                 "uco-observable:model": "Nexus 5",
                 "uco-observable:serialNumber": "08ebf545d00af782",
                 "drafting:brand": "Google",
@@ -13,12 +15,12 @@
                 "drafting:encryptionEnabled": false
             },
             {
-                "@type": [
-                    "drafting:AndroidDeviceFacet",
-                    "uco-core:Facet"
-                ],
-                "drafting:androidID": "64cce130286b31b3",
-                "drafting:androidFingerprint": "lge\u2026"
+                "@type": "uco-observable:AndroidDeviceFacet",
+                "uco-observable:androidID": {
+                    "@type": "xsd:hexBinary",
+                    "@value": "64cce130286b31b3"
+                },
+                "uco-observable:androidFingerprint": "lge\u2026"
             },
             {
                 "@type": [
@@ -36,7 +38,6 @@
                     "@type": "xsd:dateTime",
                     "@value": "2017-02-01T14:31:30.00Z"
                 },
-                "drafting:advertisingID": "48500120-c9c5-402e-a6bc-04e2f92ae259",
                 "drafting:locationsServicesEnabled": true,
                 "uco-observable:keypadUnlockCode": "NULL",
                 "uco-observable:IMEI": "352584062438806",
@@ -49,7 +50,10 @@
             {
                 "@type": "uco-observable:OperatingSystemFacet",
                 "uco-core:name": "Android",
-                "uco-observable:manufacturer": "LGE",
+                "uco-observable:manufacturer": {
+                    "@id": "kb:organization-lge-e7ae1d96-e054-44b5-9943-8da6515e8332"
+                },
+                "uco-observable:advertisingID": "48500120-c9c5-402e-a6bc-04e2f92ae259",
                 "uco-observable:version": "6.0.1"
             },
             {

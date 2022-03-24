@@ -20,11 +20,6 @@ WHERE {
 
       ?nInvestigativeAction
         a case-investigation:InvestigativeAction ;
-        uco-core:hasFacet ?nActionReferencesFacet ;
-        .
-
-      ?nActionReferencesFacet
-        a uco-action:ActionReferencesFacet ;
         uco-action:instrument ?nCameraDevice ;
         uco-action:object ?nExhibitDevice ;
         uco-action:result ?nPictureFile ;

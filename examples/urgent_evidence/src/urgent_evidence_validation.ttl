@@ -1,5 +1,5 @@
-@prefix action: <https://unifiedcyberontology.org/ontology/uco/action#> .
-@prefix core: <https://unifiedcyberontology.org/ontology/uco/core#> .
+@prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -11,22 +11,7 @@
 	sh:conforms "false"^^xsd:boolean ;
 	sh:result [
 		a sh:ValidationResult ;
-		sh:focusNode [
-			a action:ActionReferencesFacet ;
-			action:endTime "2019-01-01T15:05:00+00:00"^^xsd:dateTime ;
-			action:location <http://example.org/kb/location-uuid-3> ;
-			action:object
-				<http://example.org/kb/extracted-file-uuid-1> ,
-				<http://example.org/kb/file2-uuid-1> ,
-				<http://example.org/kb/provenance-record-uuid-6> ,
-				<http://example.org/kb/provenance-record-uuid-6e>
-				;
-			action:performer <http://example.org/kb/officer-uuid-3> ;
-			action:result
-				<http://example.org/kb/dvd-uuid-1> ,
-				<http://example.org/kb/provenance-record-uuid-7>
-				;
-		] ;
+		sh:focusNode <http://example.org/kb/action-uuid-10> ;
 		sh:resultMessage "Value does not have class core:UcoObject" ;
 		sh:resultPath action:object ;
 		sh:resultSeverity sh:Violation ;
