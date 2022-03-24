@@ -8,10 +8,7 @@
         "uco-core:target": {
             "@id": "kb:msgstoredb-16805dff-05f9-4cba-9266-d5fa712f3d8f"
         },
-        "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-            "@value": "Contained_Within"
-        },
+        "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {

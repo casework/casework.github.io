@@ -59,28 +59,6 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/associated-account-phonenumber1> ;
-			sh:resultMessage "Value is outside the default relationship vocabularies." ;
-			sh:resultPath core:kindOfRelationship ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraintComponent sh:OrConstraintComponent ;
-			sh:sourceShape [
-				sh:message "Value is outside the default relationship vocabularies." ;
-				sh:or (
-					[
-						sh:datatype vocabulary1:ActionRelationshipTypeVocab ;
-					]
-					[
-						sh:datatype vocabulary1:ObservableObjectRelationshipVocab ;
-					]
-				) ;
-				sh:path core:kindOfRelationship ;
-				sh:severity sh:Info ;
-			] ;
-			sh:value "Associated_Account" ;
-		] ,
-		[
-			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7> ;
 			sh:resultMessage "Less than 1 values on kb:investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7->investigation:investigationForm" ;
 			sh:resultPath investigation:investigationForm ;
@@ -123,72 +101,6 @@
 				sh:path core:object ;
 			] ;
 			sh:value "list of uuids" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/investigatorrole-uuid> ;
-			sh:resultMessage "Value is outside the default relationship vocabularies." ;
-			sh:resultPath core:kindOfRelationship ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraintComponent sh:OrConstraintComponent ;
-			sh:sourceShape [
-				sh:message "Value is outside the default relationship vocabularies." ;
-				sh:or (
-					[
-						sh:datatype vocabulary1:ActionRelationshipTypeVocab ;
-					]
-					[
-						sh:datatype vocabulary1:ObservableObjectRelationshipVocab ;
-					]
-				) ;
-				sh:path core:kindOfRelationship ;
-				sh:severity sh:Info ;
-			] ;
-			sh:value "Has_Role" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/primaryuser-email-uuid> ;
-			sh:resultMessage "Value is outside the default relationship vocabularies." ;
-			sh:resultPath core:kindOfRelationship ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraintComponent sh:OrConstraintComponent ;
-			sh:sourceShape [
-				sh:message "Value is outside the default relationship vocabularies." ;
-				sh:or (
-					[
-						sh:datatype vocabulary1:ActionRelationshipTypeVocab ;
-					]
-					[
-						sh:datatype vocabulary1:ObservableObjectRelationshipVocab ;
-					]
-				) ;
-				sh:path core:kindOfRelationship ;
-				sh:severity sh:Info ;
-			] ;
-			sh:value "Has_Account" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/primaryuser-whatsapp-uuid> ;
-			sh:resultMessage "Value is outside the default relationship vocabularies." ;
-			sh:resultPath core:kindOfRelationship ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraintComponent sh:OrConstraintComponent ;
-			sh:sourceShape [
-				sh:message "Value is outside the default relationship vocabularies." ;
-				sh:or (
-					[
-						sh:datatype vocabulary1:ActionRelationshipTypeVocab ;
-					]
-					[
-						sh:datatype vocabulary1:ObservableObjectRelationshipVocab ;
-					]
-				) ;
-				sh:path core:kindOfRelationship ;
-				sh:severity sh:Info ;
-			] ;
-			sh:value "Has_Account" ;
 		] ,
 		[
 			a sh:ValidationResult ;
