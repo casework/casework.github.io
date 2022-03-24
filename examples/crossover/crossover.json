@@ -273,7 +273,7 @@
         {
             "@id": "kb:content-data-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d",
             "@type": "uco-observable:ContentData",
-            "uco-observable:hasFacet": {
+            "uco-core:hasFacet": {
                 "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:dataPayload": "Excellent - we need all the help we can get. Sent from my Samsung Galaxy smartphone"
             }
