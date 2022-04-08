@@ -11,13 +11,9 @@
 # imports: https://ontology.unifiedcyberontology.org/uco/time
 # imports: https://ontology.unifiedcyberontology.org/uco/tool
 # imports: https://ontology.unifiedcyberontology.org/uco/types
+# imports: https://ontology.unifiedcyberontology.org/uco/uco
 # imports: https://ontology.unifiedcyberontology.org/uco/victim
 # imports: https://ontology.unifiedcyberontology.org/uco/vocabulary
-# imports: https://unifiedcyberontology.org/ontology/uco/action
-# imports: https://unifiedcyberontology.org/ontology/uco/core
-# imports: https://unifiedcyberontology.org/ontology/uco/location
-# imports: https://unifiedcyberontology.org/ontology/uco/role
-# imports: https://unifiedcyberontology.org/ontology/uco/uco
 
 @prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
@@ -36,9 +32,6 @@
 @prefix time1: <https://ontology.unifiedcyberontology.org/uco/time/> .
 @prefix tool: <https://ontology.unifiedcyberontology.org/uco/tool/> .
 @prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
-@prefix uco-action: <https://unifiedcyberontology.org/ontology/uco/action#> .
-@prefix uco-core: <https://unifiedcyberontology.org/ontology/uco/core#> .
-@prefix uco-role: <https://unifiedcyberontology.org/ontology/uco/role#> .
 @prefix victim: <https://ontology.unifiedcyberontology.org/uco/victim/> .
 @prefix vocab: <https://ontology.caseontology.org/case/vocabulary/> .
 @prefix vocabulary1: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
@@ -52,12 +45,12 @@
 	owl:imports
 		<https://ontology.caseontology.org/case/investigation> ,
 		<https://ontology.caseontology.org/case/vocabulary> ,
-		<https://unifiedcyberontology.org/ontology/uco/uco>
+		<https://ontology.unifiedcyberontology.org/uco/uco>
 		;
 	owl:incompatibleWith <http://case.example.org/core> ;
 	owl:ontologyIRI <https://ontology.caseontology.org/case/case> ;
 	owl:priorVersion <http://case.example.org/core> ;
-	owl:versionInfo "0.5.0" ;
+	owl:versionInfo "0.6.0" ;
 	.
 
 <https://ontology.caseontology.org/case/investigation>
@@ -66,10 +59,10 @@
 	rdfs:comment "This ontology defines key concepts, and their associated properties and relationships, for characterizing cyber-investigations in the broadest range of contexts, including security incidents, criminal investigations, civil and regulatory matters, intelligence operations, international disputes, accident inquiries, policy violations, and others." ;
 	owl:imports
 		<https://ontology.caseontology.org/case/vocabulary> ,
-		<https://unifiedcyberontology.org/ontology/uco/action> ,
-		<https://unifiedcyberontology.org/ontology/uco/core> ,
-		<https://unifiedcyberontology.org/ontology/uco/location> ,
-		<https://unifiedcyberontology.org/ontology/uco/role>
+		<https://ontology.unifiedcyberontology.org/uco/action> ,
+		<https://ontology.unifiedcyberontology.org/uco/core> ,
+		<https://ontology.unifiedcyberontology.org/uco/location> ,
+		<https://ontology.unifiedcyberontology.org/uco/role>
 		;
 	.
 
@@ -95,7 +88,6 @@
 	a owl:Ontology ;
 	rdfs:label "uco-core"@en ;
 	rdfs:comment "This ontology defines classes and properties that are shared across the various UCO ontologies.  At a high-level, the UCO core ontology provides base classes, relationship-oriented classes, content-aggregation classes, and shared classes."@en ;
-	owl:imports <https://ontology.unifiedcyberontology.org/uco/vocabulary> ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/identity>
@@ -184,7 +176,7 @@
 		<https://ontology.unifiedcyberontology.org/uco/victim> ,
 		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
 		;
-	owl:versionInfo "0.7.0" ;
+	owl:versionInfo "0.8.0" ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/victim>
@@ -206,7 +198,7 @@ investigation:Attorney
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf uco-role:Role ;
+	rdfs:subClassOf role:Role ;
 	rdfs:label "Attorney"@en ;
 	rdfs:comment "Attorney is a role involved in preparing, interpreting, and applying law."@en ;
 	sh:targetClass investigation:Attorney ;
@@ -217,7 +209,7 @@ investigation:Authorization
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf uco-core:UcoObject ;
+	rdfs:subClassOf core:UcoObject ;
 	rdfs:label "Authorization"@en ;
 	rdfs:comment "An authorization is a grouping of characteristics unique to some form of authoritative permission identified for investigative action."@en ;
 	sh:property
@@ -225,13 +217,13 @@ investigation:Authorization
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path uco-core:endTime ;
+			sh:path core:endTime ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path uco-core:startTime ;
+			sh:path core:startTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -255,7 +247,7 @@ investigation:Examiner
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf uco-role:Role ;
+	rdfs:subClassOf role:Role ;
 	rdfs:label "Examiner"@en ;
 	rdfs:comment "Examiner is a role involved in providing scientific evaluations of evidence that are used to aid law enforcement investigations and court cases."@en ;
 	sh:targetClass investigation:Examiner ;
@@ -266,7 +258,7 @@ investigation:ExaminerActionLifecylce
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf uco-action:ActionLifecycle ;
+	rdfs:subClassOf action:ActionLifecycle ;
 	rdfs:label "ExaminerActionLifecylce"@en ;
 	rdfs:comment "An examiner action life cycle is an action pattern consisting of an ordered set of actions or subordinate action-lifecycles performed by an entity acting in a role involved in providing scientific evaluations of evidence that is used to aid law enforcement investigations and court cases."@en ;
 	sh:targetClass investigation:ExaminerActionLifecylce ;
@@ -277,7 +269,7 @@ investigation:Investigation
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf uco-core:ContextualCompilation ;
+	rdfs:subClassOf core:ContextualCompilation ;
 	rdfs:label "Investigation"@en ;
 	rdfs:comment "An investigation is a grouping of characteristics unique to an exploration of the facts involved in a cyber-relevant set of suspicious activity."@en ;
 	sh:property
@@ -290,13 +282,13 @@ investigation:Investigation
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path uco-core:endTime ;
+			sh:path core:endTime ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path uco-core:startTime ;
+			sh:path core:startTime ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -325,7 +317,7 @@ investigation:InvestigativeAction
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf uco-action:Action ;
+	rdfs:subClassOf action:Action ;
 	rdfs:label "InvestigativeAction"@en ;
 	rdfs:comment "An investigative action is something that may be done or performed within the context of an investigation, typically to examine or analyze evidence or other data."@en ;
 	sh:property [
@@ -341,7 +333,7 @@ investigation:Investigator
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf uco-role:Role ;
+	rdfs:subClassOf role:Role ;
 	rdfs:label "Investigator"@en ;
 	rdfs:comment "Investigator is a role involved in coordinating an investigation."@en ;
 	sh:targetClass investigation:Investigator ;
@@ -352,7 +344,7 @@ investigation:ProvenanceRecord
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf uco-core:ContextualCompilation ;
+	rdfs:subClassOf core:ContextualCompilation ;
 	rdfs:label "ProvenanceRecord"@en ;
 	rdfs:comment "A provenance record is a grouping of characteristics unique to the provenantial (chronology of the ownership, custody or location) connection between an investigative action and a set of observations (items and/or actions) or interpretations that result from it."@en ;
 	sh:property
@@ -377,7 +369,7 @@ investigation:Subject
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf uco-role:Role ;
+	rdfs:subClassOf role:Role ;
 	rdfs:label "Subject"@en ;
 	rdfs:comment "Subject is a role whose conduct is within the scope of an investigation."@en ;
 	sh:targetClass investigation:Subject ;
@@ -388,7 +380,7 @@ investigation:SubjectActionLifecycle
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf uco-action:ActionLifecycle ;
+	rdfs:subClassOf action:ActionLifecycle ;
 	rdfs:label "SubjectActionLifecycle"@en ;
 	rdfs:comment "A subject action life cycle is an action pattern consisting of an ordered set of multiple actions or subordinate action-lifecycles performed by an entity acting in a role whose conduct may be within the scope of an investigation."@en ;
 	sh:targetClass investigation:SubjectActionLifecycle ;
@@ -399,7 +391,7 @@ investigation:VictimActionLifecycle
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf uco-action:ActionLifecycle ;
+	rdfs:subClassOf action:ActionLifecycle ;
 	rdfs:label "VictimActionLifecycle"@en ;
 	rdfs:comment "A victim action life cycle is an action pattern consisting of an ordered set of multiple actions or subordinate action-lifecycles performed by an entity acting in a role characterized by its potential to be harmed as a result of a crime, accident, or other event or action."@en ;
 	sh:targetClass investigation:VictimActionLifecycle ;
@@ -422,7 +414,7 @@ investigation:authorizationType
 investigation:exhibitNumber
 	a owl:DatatypeProperty ;
 	rdfs:label "exhibitNumber"@en ;
-	rdfs:comment "Specifies a unique identifier assigned to a given object at any stage of an investigation to differentiate it from all other objects."@en ;
+	rdfs:comment "The exhibit number specifies an identifier assigned to a set of objects, unique within the scope of an investigation."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -457,7 +449,7 @@ investigation:relevantAuthorization
 investigation:rootExhibitNumber
 	a owl:DatatypeProperty ;
 	rdfs:label "rootExhibitNumber"@en ;
-	rdfs:comment "Specifies a unique identifier assigned to a given object at the start of its treatment as part of an investigation. The first node in a provenance chain, which can be viewed as a heirarchical tree originating from a single root."@en ;
+	rdfs:comment "The root exhibit number specifies a unique identifier assigned to a set of objects at the start of their treatment as part of an investigation. When found on a provenance record that comes after initial investigative treatment, the root exhibit number is a reference to the initial provenance record."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -465,8 +457,8 @@ investigation:wasDerivedFrom
 	a owl:ObjectProperty ;
 	rdfs:label "wasDerivedFrom"@en ;
 	rdfs:comment "A re-implementation of the wasDerivedFrom property in W3C PROV-O.  The definition of this property is 'A derivation is a transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a pre-existing entity.' [Ref: https://www.w3.org/TR/prov-o/#wasDerivedFrom]"@en ;
-	rdfs:domain uco-core:UcoObject ;
-	rdfs:range uco-core:UcoObject ;
+	rdfs:domain core:UcoObject ;
+	rdfs:range core:UcoObject ;
 	.
 
 investigation:wasInformedBy
@@ -565,8 +557,34 @@ action:Action
 		] ,
 		[
 			sh:datatype vocabulary1:ActionStatusTypeVocab ;
+			sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
+			sh:path action:actionStatus ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:ActionStatusTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path action:actionStatus ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary ActionStatusTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:ActionStatusTypeVocab ;
+					sh:in vocabulary1:ActionStatusTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path action:actionStatus ;
 		]
 		;
@@ -669,9 +687,35 @@ action:ActionFrequencyFacet
 		] ,
 		[
 			sh:datatype vocabulary1:TrendVocab ;
+			sh:message "Value is outside the default vocabulary TrendVocab." ;
+			sh:path action:trend ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:TrendVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path action:trend ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary TrendVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:TrendVocab ;
+					sh:in vocabulary1:TrendVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path action:trend ;
 		]
 		;
@@ -776,7 +820,13 @@ action:actionStatus
 	a owl:DatatypeProperty ;
 	rdfs:label "actionStatus"@en ;
 	rdfs:comment "The current state of the action."@en ;
-	rdfs:range vocabulary1:ActionStatusTypeVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary1:ActionStatusTypeVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 action:argumentName
@@ -917,7 +967,13 @@ action:trend
 	a owl:DatatypeProperty ;
 	rdfs:label "trend"@en ;
 	rdfs:comment "A characterization of the frequency trend for the occurence of an action."@en ;
-	rdfs:range vocabulary1:TrendVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary1:TrendVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 action:units
@@ -2390,8 +2446,34 @@ observable:AccountFacet
 		] ,
 		[
 			sh:datatype vocabulary1:AccountTypeVocab ;
+			sh:message "Value is outside the default vocabulary AccountTypeVocab." ;
+			sh:path observable:accountType ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:AccountTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:accountType ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary AccountTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:AccountTypeVocab ;
+					sh:in vocabulary1:AccountTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:accountType ;
 		]
 		;
@@ -2720,6 +2802,8 @@ observable:AutonomousSystemFacet
 	rdfs:label "AutonomousSystemFacet"@en ;
 	rdfs:comment "An autonomous system facet is a grouping of characteristics unique to a collection of connected Internet Protocol (IP) routing prefixes under the control of one or more network operators on behalf of a single administrative entity or domain that presents a common, clearly defined routing policy to the Internet. [based on https://en.wikipedia.org/wiki/Autonomous_system_(Internet)]"@en ;
 	sh:property
+		observable:regionalInternetRegistry-shape-value-not-vocabulary-member ,
+		observable:regionalInternetRegistry-shape-value-outside-default-vocabulary ,
 		[
 			sh:datatype xsd:integer ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -2734,9 +2818,16 @@ observable:AutonomousSystemFacet
 			sh:path observable:asHandle ;
 		] ,
 		[
-			sh:datatype vocabulary1:RegionalRegistryTypeVocab ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:RegionalRegistryTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:regionalInternetRegistry ;
 		]
 		;
@@ -3367,8 +3458,34 @@ observable:ContactAddress
 		] ,
 		[
 			sh:datatype vocabulary1:ContactAddressScopeVocab ;
+			sh:message "Value is outside the default vocabulary ContactAddressScopeVocab." ;
+			sh:path observable:contactAddressScope ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:ContactAddressScopeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:contactAddressScope ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary ContactAddressScopeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:ContactAddressScopeVocab ;
+					sh:in vocabulary1:ContactAddressScopeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:contactAddressScope ;
 		]
 		;
@@ -3458,8 +3575,34 @@ observable:ContactEmail
 		] ,
 		[
 			sh:datatype vocabulary1:ContactEmailScopeVocab ;
+			sh:message "Value is outside the default vocabulary ContactEmailScopeVocab." ;
+			sh:path observable:contactEmailScope ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:ContactEmailScopeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:contactEmailScope ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary ContactEmailScopeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:ContactEmailScopeVocab ;
+					sh:in vocabulary1:ContactEmailScopeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:contactEmailScope ;
 		]
 		;
@@ -3693,8 +3836,34 @@ observable:ContactPhone
 		] ,
 		[
 			sh:datatype vocabulary1:ContactPhoneScopeVocab ;
+			sh:message "Value is outside the default vocabulary ContactPhoneScopeVocab." ;
+			sh:path observable:contactPhoneScope ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:ContactPhoneScopeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:contactPhoneScope ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary ContactPhoneScopeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:ContactPhoneScopeVocab ;
+					sh:in vocabulary1:ContactPhoneScopeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:contactPhoneScope ;
 		]
 		;
@@ -3741,8 +3910,34 @@ observable:ContactSIP
 		] ,
 		[
 			sh:datatype vocabulary1:ContactSIPScopeVocab ;
+			sh:message "Value is outside the default vocabulary ContactSIPScopeVocab." ;
+			sh:path observable:contactSIPScope ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:ContactSIPScopeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:contactSIPScope ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary ContactSIPScopeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:ContactSIPScopeVocab ;
+					sh:in vocabulary1:ContactSIPScopeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:contactSIPScope ;
 		]
 		;
@@ -3765,8 +3960,34 @@ observable:ContactURL
 		] ,
 		[
 			sh:datatype vocabulary1:ContactURLScopeVocab ;
+			sh:message "Value is outside the default vocabulary ContactURLScopeVocab." ;
+			sh:path observable:contactURLScope ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:ContactURLScopeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:contactURLScope ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary ContactURLScopeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:ContactURLScopeVocab ;
+					sh:in vocabulary1:ContactURLScopeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:contactURLScope ;
 		]
 		;
@@ -3848,8 +4069,34 @@ observable:ContentDataFacet
 		] ,
 		[
 			sh:datatype vocabulary1:EndiannessTypeVocab ;
+			sh:message "Value is outside the default vocabulary EndiannessTypeVocab." ;
+			sh:path observable:byteOrder ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:EndiannessTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:byteOrder ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary EndiannessTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:EndiannessTypeVocab ;
+					sh:in vocabulary1:EndiannessTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:byteOrder ;
 		]
 		;
@@ -5793,8 +6040,34 @@ observable:MemoryFacet
 		] ,
 		[
 			sh:datatype vocabulary1:MemoryBlockTypeVocab ;
+			sh:message "Value is outside the default vocabulary MemoryBlockTypeVocab." ;
+			sh:path observable:blockType ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:MemoryBlockTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:blockType ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary MemoryBlockTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:MemoryBlockTypeVocab ;
+					sh:in vocabulary1:MemoryBlockTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:blockType ;
 		]
 		;
@@ -7915,8 +8188,34 @@ observable:TaskActionType
 		] ,
 		[
 			sh:datatype vocabulary1:TaskActionTypeVocab ;
+			sh:message "Value is outside the default vocabulary TaskActionTypeVocab." ;
+			sh:path observable:actionType ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:TaskActionTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:actionType ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary TaskActionTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:TaskActionTypeVocab ;
+					sh:in vocabulary1:TaskActionTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:actionType ;
 		]
 		;
@@ -7980,14 +8279,66 @@ observable:TriggerType
 		] ,
 		[
 			sh:datatype vocabulary1:TriggerFrequencyVocab ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
+			sh:message "Value is outside the default vocabulary TriggerFrequencyVocab." ;
 			sh:path observable:triggerFrequency ;
+			sh:severity sh:Info ;
 		] ,
 		[
 			sh:datatype vocabulary1:TriggerTypeVocab ;
+			sh:message "Value is outside the default vocabulary TriggerTypeVocab." ;
+			sh:path observable:triggerType ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:TriggerFrequencyVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:triggerFrequency ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:TriggerTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:triggerType ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary TriggerFrequencyVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:TriggerFrequencyVocab ;
+					sh:in vocabulary1:TriggerFrequencyVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:triggerFrequency ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary TriggerTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:TriggerTypeVocab ;
+					sh:in vocabulary1:TriggerTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:triggerType ;
 		]
 		;
@@ -8476,8 +8827,35 @@ observable:URLVisitFacet
 			sh:path observable:visitDuration ;
 		] ,
 		[
+			sh:datatype vocabulary1:URLTransitionTypeVocab ;
+			sh:message "Value is outside the default vocabulary URLTransitionTypeVocab." ;
+			sh:path observable:urlTransitionType ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:URLTransitionTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:urlTransitionType ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary URLTransitionTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:URLTransitionTypeVocab ;
+					sh:in vocabulary1:URLTransitionTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:urlTransitionType ;
 		]
 		;
@@ -8674,6 +9052,8 @@ observable:WhoIsFacet
 	rdfs:label "WhoIsFacet"@en ;
 	rdfs:comment "A whois facet is a grouping of characteristics unique to a response record conformant to the WHOIS protocol standard (RFC 3912). [based on https://en.wikipedia.org/wiki/WHOIS]"@en ;
 	sh:property
+		observable:regionalInternetRegistry-shape-value-not-vocabulary-member ,
+		observable:regionalInternetRegistry-shape-value-outside-default-vocabulary ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -8757,12 +9137,6 @@ observable:WhoIsFacet
 			sh:path observable:registrantIDs ;
 		] ,
 		[
-			sh:datatype vocabulary1:RegionalRegistryTypeVocab ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:regionalInternetRegistry ;
-		] ,
-		[
 			sh:datatype vocabulary1:WhoisDNSSECTypeVocab ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -8770,8 +9144,47 @@ observable:WhoIsFacet
 		] ,
 		[
 			sh:datatype vocabulary1:WhoisStatusTypeVocab ;
+			sh:message "Value is outside the default vocabulary WhoisStatusTypeVocab." ;
+			sh:path observable:status ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:RegionalRegistryTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:regionalInternetRegistry ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:WhoisStatusTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:status ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary WhoisStatusTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:WhoisStatusTypeVocab ;
+					sh:in vocabulary1:WhoisStatusTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:status ;
 		]
 		;
@@ -8786,12 +9199,40 @@ observable:WhoisContactFacet
 	rdfs:subClassOf observable:ContactFacet ;
 	rdfs:label "WhoIsContactFacet"@en ;
 	rdfs:comment "A Whois contact type is a grouping of characteristics unique to contact-related information present in a response record conformant to the WHOIS protocol standard (RFC 3912). [based on https://en.wikipedia.org/wiki/WHOIS]"@en ;
-	sh:property [
-		sh:datatype vocabulary1:WhoisContactTypeVocab ;
-		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
-		sh:path observable:whoisContactType ;
-	] ;
+	sh:property
+		[
+			sh:datatype vocabulary1:WhoisContactTypeVocab ;
+			sh:message "Value is outside the default vocabulary WhoisContactTypeVocab." ;
+			sh:path observable:whoisContactType ;
+			sh:severity sh:Info ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:WhoisContactTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:whoisContactType ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary WhoisContactTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:WhoisContactTypeVocab ;
+					sh:in vocabulary1:WhoisContactTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:whoisContactType ;
+		]
+		;
 	sh:targetClass observable:WhoisContactFacet ;
 	.
 
@@ -9984,20 +10425,104 @@ observable:WindowsTaskFacet
 		] ,
 		[
 			sh:datatype vocabulary1:TaskFlagVocab ;
-			sh:nodeKind sh:Literal ;
+			sh:message "Value is outside the default vocabulary TaskFlagVocab." ;
 			sh:path observable:flags ;
+			sh:severity sh:Info ;
 		] ,
 		[
 			sh:datatype vocabulary1:TaskPriorityVocab ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
+			sh:message "Value is outside the default vocabulary TaskPriorityVocab." ;
 			sh:path observable:priority ;
+			sh:severity sh:Info ;
 		] ,
 		[
 			sh:datatype vocabulary1:TaskStatusVocab ;
+			sh:message "Value is outside the default vocabulary TaskStatusVocab." ;
+			sh:path observable:status ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:TaskPriorityVocab ;
+				]
+				[
+					sh:datatype xsd:integer ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:priority ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:TaskStatusVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:status ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary TaskFlagVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:TaskFlagVocab ;
+					sh:in vocabulary1:TaskFlagVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:flags ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary TaskPriorityVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:TaskPriorityVocab ;
+					sh:in vocabulary1:TaskPriorityVocab-members ;
+				]
+				[
+					sh:datatype xsd:integer ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:priority ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary TaskStatusVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:TaskStatusVocab ;
+					sh:in vocabulary1:TaskStatusVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:status ;
+		] ,
+		[
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:TaskFlagVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:flags ;
 		]
 		;
 	sh:targetClass observable:WindowsTaskFacet ;
@@ -10099,15 +10624,41 @@ observable:WindowsVolumeFacet
 		] ,
 		[
 			sh:datatype vocabulary1:WindowsDriveTypeVocab ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
+			sh:message "Value is outside the default vocabulary WindowsDriveTypeVocab." ;
 			sh:path observable:driveType ;
+			sh:severity sh:Info ;
 		] ,
 		[
 			sh:datatype vocabulary1:WindowsVolumeAttributeVocab ;
 			sh:maxCount "4"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:windowsVolumeAttributes ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:WindowsDriveTypeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:driveType ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary WindowsDriveTypeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:WindowsDriveTypeVocab ;
+					sh:in vocabulary1:WindowsDriveTypeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:driveType ;
 		]
 		;
 	sh:targetClass observable:WindowsVolumeFacet ;
@@ -10165,6 +10716,27 @@ observable:WirelessNetworkConnectionFacet
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:WirelessNetworkSecurityModeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:wirelessNetworkSecurityMode ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary WirelessNetworkSecurityModeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:WirelessNetworkSecurityModeVocab ;
+					sh:in vocabulary1:WirelessNetworkSecurityModeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:wirelessNetworkSecurityMode ;
 		]
 		;
@@ -10485,7 +11057,13 @@ observable:accountType
 	a owl:DatatypeProperty ;
 	rdfs:label "accountType"@en ;
 	rdfs:comment "The type of account, for instance bank, phone, application, service, etc."@en ;
-	rdfs:range vocabulary1:AccountTypeVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary1:AccountTypeVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:actionID
@@ -10506,7 +11084,13 @@ observable:actionType
 	a owl:DatatypeProperty ;
 	rdfs:label "actionType"@en ;
 	rdfs:comment "Specifies the type of the action. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380596(v=vs.85).aspx."@en ;
-	rdfs:range vocabulary1:TaskActionTypeVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary1:TaskActionTypeVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:activeDirectoryGroups
@@ -10741,7 +11325,13 @@ observable:blockType
 	a owl:DatatypeProperty ;
 	rdfs:label "blockType"@en ;
 	rdfs:comment "The blockType property specifies the block type of a particular memory object."@en ;
-	rdfs:range vocabulary1:MemoryBlockTypeVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary1:MemoryBlockTypeVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:bluetoothDeviceName
@@ -10794,7 +11384,13 @@ observable:browserUserProfile
 observable:byteOrder
 	a owl:DatatypeProperty ;
 	rdfs:label "byteOrder"@en ;
-	rdfs:range vocabulary1:EndiannessTypeVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary1:EndiannessTypeVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:byteStringValue
@@ -11403,7 +11999,13 @@ observable:driveType
 	a owl:DatatypeProperty ;
 	rdfs:label "driveType"@en ;
 	rdfs:comment "Specifies the drive type of a windows volume."@en ;
-	rdfs:range vocabulary1:WindowsDriveTypeVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary1:WindowsDriveTypeVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:dst
@@ -11784,7 +12386,13 @@ observable:flags
 	a owl:DatatypeProperty ;
 	rdfs:label "flags"@en ;
 	rdfs:comment "Specifies any flags that modify the behavior of the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381248(v=vs.85).aspx."@en ;
-	rdfs:range vocabulary1:TaskFlagVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary1:TaskFlagVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:followersCount
@@ -13372,7 +13980,36 @@ observable:regionalInternetRegistry
 	a owl:DatatypeProperty ;
 	rdfs:label "regionalInternetRegistry"@en ;
 	rdfs:comment "specifies the name of the Regional Internet Registry (RIR) which allocated the IP address contained in a WHOIS entry."@en ;
-	rdfs:range vocabulary1:RegionalRegistryTypeVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary1:RegionalRegistryTypeVocab
+			xsd:string
+		) ;
+	] ;
+	.
+
+observable:regionalInternetRegistry-shape-value-not-vocabulary-member
+	a sh:PropertyShape ;
+	sh:message "Value is not member of the vocabulary RegionalRegistryTypeVocab." ;
+	sh:or (
+		[
+			sh:datatype vocabulary1:RegionalRegistryTypeVocab ;
+			sh:in vocabulary1:RegionalRegistryTypeVocab-members ;
+		]
+		[
+			sh:datatype xsd:string ;
+		]
+	) ;
+	sh:path observable:regionalInternetRegistry ;
+	.
+
+observable:regionalInternetRegistry-shape-value-outside-default-vocabulary
+	a sh:PropertyShape ;
+	sh:datatype vocabulary1:RegionalRegistryTypeVocab ;
+	sh:message "Value is outside the default vocabulary RegionalRegistryTypeVocab." ;
+	sh:path observable:regionalInternetRegistry ;
+	sh:severity sh:Info ;
 	.
 
 observable:registeredOrganization
@@ -14092,7 +14729,13 @@ observable:triggerFrequency
 	a owl:DatatypeProperty ;
 	rdfs:label "triggerFrequency"@en ;
 	rdfs:comment "Specifies the frequency at which the trigger repeats."@en ;
-	rdfs:range vocabulary1:TriggerFrequencyVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary1:TriggerFrequencyVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:triggerList
@@ -14120,7 +14763,13 @@ observable:triggerType
 	a owl:DatatypeProperty ;
 	rdfs:label "triggerType"@en ;
 	rdfs:comment "Specifies the type of the task trigger."@en ;
-	rdfs:range vocabulary1:TriggerTypeVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary1:TriggerTypeVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:twitterHandle
@@ -15174,9 +15823,35 @@ types:Hash
 		] ,
 		[
 			sh:datatype vocabulary1:HashNameVocab ;
+			sh:message "Value is outside the default vocabulary HashNameVocab." ;
+			sh:path types:hashMethod ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:HashNameVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path types:hashMethod ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary HashNameVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:HashNameVocab ;
+					sh:in vocabulary1:HashNameVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path types:hashMethod ;
 		]
 		;
@@ -15215,7 +15890,13 @@ types:hashMethod
 	a owl:DatatypeProperty ;
 	rdfs:label "hashMethod"@en ;
 	rdfs:comment "A particular cryptographic hashing method (e.g., MD5)."@en ;
-	rdfs:range vocabulary1:HashNameVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocabulary1:HashNameVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 types:hashValue
@@ -15265,8 +15946,12 @@ vocabulary1:AccountTypeVocab
 	a rdfs:Datatype ;
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Account Type Vocabulary"@en-US ;
-	owl:oneOf (
-		"ldap"^^vocabulary1:AccountTypeVocab
+	owl:oneOf vocabulary1:AccountTypeVocab-members ;
+	.
+
+vocabulary1:AccountTypeVocab-members
+	rdf:first "ldap"^^vocabulary1:AccountTypeVocab ;
+	rdf:rest (
 		"nis"^^vocabulary1:AccountTypeVocab
 		"openid"^^vocabulary1:AccountTypeVocab
 		"radius"^^vocabulary1:AccountTypeVocab
@@ -15532,8 +16217,12 @@ vocabulary1:ActionRelationshipTypeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Action Relationship Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary for capturing types of relationships between actions."@en-US ;
-	owl:oneOf (
-		"Dependent_On"^^vocabulary1:ActionRelationshipTypeVocab
+	owl:oneOf vocabulary1:ActionRelationshipTypeVocab-members ;
+	.
+
+vocabulary1:ActionRelationshipTypeVocab-members
+	rdf:first "Dependent_On"^^vocabulary1:ActionRelationshipTypeVocab ;
+	rdf:rest (
 		"Equivalent_To"^^vocabulary1:ActionRelationshipTypeVocab
 		"Followed_By"^^vocabulary1:ActionRelationshipTypeVocab
 		"Initiated"^^vocabulary1:ActionRelationshipTypeVocab
@@ -15548,8 +16237,12 @@ vocabulary1:ActionStatusTypeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Action Status Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of action status types."@en-US ;
-	owl:oneOf (
-		"Complete/Finish"^^vocabulary1:ActionStatusTypeVocab
+	owl:oneOf vocabulary1:ActionStatusTypeVocab-members ;
+	.
+
+vocabulary1:ActionStatusTypeVocab-members
+	rdf:first "Complete/Finish"^^vocabulary1:ActionStatusTypeVocab ;
+	rdf:rest (
 		"Error"^^vocabulary1:ActionStatusTypeVocab
 		"Fail"^^vocabulary1:ActionStatusTypeVocab
 		"Ongoing"^^vocabulary1:ActionStatusTypeVocab
@@ -15717,7 +16410,12 @@ vocabulary1:ContactAddressScopeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Contact Address Scope Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of scopes for address entries of digital contacts."@en ;
-	owl:oneOf (
+	owl:oneOf vocabulary1:ContactAddressScopeVocab-members ;
+	.
+
+vocabulary1:ContactAddressScopeVocab-members
+	rdf:first "home"^^vocabulary1:ContactAddressScopeVocab ;
+	rdf:rest (
 		"home"^^vocabulary1:ContactAddressScopeVocab
 		"work"^^vocabulary1:ContactAddressScopeVocab
 		"school"^^vocabulary1:ContactAddressScopeVocab
@@ -15729,11 +16427,15 @@ vocabulary1:ContactEmailScopeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Contact Email Scope Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of scopes for email entries of digital contacts."@en ;
-	owl:oneOf (
-		"home"^^vocabulary1:ContactAddressScopeVocab
-		"work"^^vocabulary1:ContactAddressScopeVocab
-		"school"^^vocabulary1:ContactAddressScopeVocab
-		"cloud"^^vocabulary1:ContactAddressScopeVocab
+	owl:oneOf vocabulary1:ContactEmailScopeVocab-members ;
+	.
+
+vocabulary1:ContactEmailScopeVocab-members
+	rdf:first "home"^^vocabulary1:ContactEmailScopeVocab ;
+	rdf:rest (
+		"work"^^vocabulary1:ContactEmailScopeVocab
+		"school"^^vocabulary1:ContactEmailScopeVocab
+		"cloud"^^vocabulary1:ContactEmailScopeVocab
 	) ;
 	.
 
@@ -15742,15 +16444,19 @@ vocabulary1:ContactPhoneScopeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Contact Phone Scope Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of scopes for phone entries of digital contacts."@en ;
-	owl:oneOf (
-		"home"^^vocabulary1:ContactAddressScopeVocab
-		"work"^^vocabulary1:ContactAddressScopeVocab
-		"school"^^vocabulary1:ContactAddressScopeVocab
-		"mobile"^^vocabulary1:ContactAddressScopeVocab
-		"main"^^vocabulary1:ContactAddressScopeVocab
-		"home fax"^^vocabulary1:ContactAddressScopeVocab
-		"work fax"^^vocabulary1:ContactAddressScopeVocab
-		"pager"^^vocabulary1:ContactAddressScopeVocab
+	owl:oneOf vocabulary1:ContactPhoneScopeVocab-members ;
+	.
+
+vocabulary1:ContactPhoneScopeVocab-members
+	rdf:first "home"^^vocabulary1:ContactPhoneScopeVocab ;
+	rdf:rest (
+		"work"^^vocabulary1:ContactPhoneScopeVocab
+		"school"^^vocabulary1:ContactPhoneScopeVocab
+		"mobile"^^vocabulary1:ContactPhoneScopeVocab
+		"main"^^vocabulary1:ContactPhoneScopeVocab
+		"home fax"^^vocabulary1:ContactPhoneScopeVocab
+		"work fax"^^vocabulary1:ContactPhoneScopeVocab
+		"pager"^^vocabulary1:ContactPhoneScopeVocab
 	) ;
 	.
 
@@ -15759,10 +16465,14 @@ vocabulary1:ContactSIPScopeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Contact SIP Scope Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of scopes for Session Initiation Protocol (SIP) entries of digital contacts."@en ;
-	owl:oneOf (
-		"home"^^vocabulary1:ContactAddressScopeVocab
-		"work"^^vocabulary1:ContactAddressScopeVocab
-		"school"^^vocabulary1:ContactAddressScopeVocab
+	owl:oneOf vocabulary1:ContactSIPScopeVocab-members ;
+	.
+
+vocabulary1:ContactSIPScopeVocab-members
+	rdf:first "home"^^vocabulary1:ContactSIPScopeVocab ;
+	rdf:rest (
+		"work"^^vocabulary1:ContactSIPScopeVocab
+		"school"^^vocabulary1:ContactSIPScopeVocab
 	) ;
 	.
 
@@ -15772,10 +16482,10 @@ vocabulary1:ContactURLScopeVocab
 	rdfs:label "Contact URL Scope Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of scopes for URL entries of digital contacts."@en ;
 	owl:oneOf (
-		"home"^^vocabulary1:ContactAddressScopeVocab
-		"work"^^vocabulary1:ContactAddressScopeVocab
-		"school"^^vocabulary1:ContactAddressScopeVocab
-		"homepage"^^vocabulary1:ContactAddressScopeVocab
+		"home"^^vocabulary1:ContactURLScopeVocab
+		"work"^^vocabulary1:ContactURLScopeVocab
+		"school"^^vocabulary1:ContactURLScopeVocab
+		"homepage"^^vocabulary1:ContactURLScopeVocab
 	) ;
 	.
 
@@ -15798,8 +16508,12 @@ vocabulary1:EndiannessTypeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Endianness Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of byte ordering methods."@en ;
-	owl:oneOf (
-		"Big-endian"^^vocabulary1:EndiannessTypeVocab
+	owl:oneOf vocabulary1:EndiannessTypeVocab-members ;
+	.
+
+vocabulary1:EndiannessTypeVocab-members
+	rdf:first "Big-endian"^^vocabulary1:EndiannessTypeVocab ;
+	rdf:rest (
 		"Little-endian"^^vocabulary1:EndiannessTypeVocab
 		"Middle-endian"^^vocabulary1:EndiannessTypeVocab
 	) ;
@@ -15810,8 +16524,12 @@ vocabulary1:HashNameVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Hash Name Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of hashing algorithm names."@en-US ;
-	owl:oneOf (
-		"MD5"^^vocabulary1:HashNameVocab
+	owl:oneOf vocabulary1:HashNameVocab-members ;
+	.
+
+vocabulary1:HashNameVocab-members
+	rdf:first "MD5"^^vocabulary1:HashNameVocab ;
+	rdf:rest (
 		"MD6"^^vocabulary1:HashNameVocab
 		"SHA1"^^vocabulary1:HashNameVocab
 		"SHA224"^^vocabulary1:HashNameVocab
@@ -15841,8 +16559,12 @@ vocabulary1:MemoryBlockTypeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Memory Block Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of types of memory blocks."@en ;
-	owl:oneOf (
-		"Bit-mapped"^^vocabulary1:MemoryBlockTypeVocab
+	owl:oneOf vocabulary1:MemoryBlockTypeVocab-members ;
+	.
+
+vocabulary1:MemoryBlockTypeVocab-members
+	rdf:first "Bit-mapped"^^vocabulary1:MemoryBlockTypeVocab ;
+	rdf:rest (
 		"Byte-mapped"^^vocabulary1:MemoryBlockTypeVocab
 		"Initialized"^^vocabulary1:MemoryBlockTypeVocab
 		"Overlay"^^vocabulary1:MemoryBlockTypeVocab
@@ -15855,8 +16577,12 @@ vocabulary1:ObservableObjectRelationshipVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Cyber Item Relationship Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of inter-observable object relationships."@en ;
-	owl:oneOf (
-		"Allocated"^^vocabulary1:ObservableObjectRelationshipVocab
+	owl:oneOf vocabulary1:ObservableObjectRelationshipVocab-members ;
+	.
+
+vocabulary1:ObservableObjectRelationshipVocab-members
+	rdf:first "Allocated"^^vocabulary1:ObservableObjectRelationshipVocab ;
+	rdf:rest (
 		"Allocated_By"^^vocabulary1:ObservableObjectRelationshipVocab
 		"Bound"^^vocabulary1:ObservableObjectRelationshipVocab
 		"Bound_By"^^vocabulary1:ObservableObjectRelationshipVocab
@@ -16127,8 +16853,12 @@ vocabulary1:TaskActionTypeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Task Action Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of task action types. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380596(v=vs.85).aspx."@en ;
-	owl:oneOf (
-		"TASK_ACTION_COM_HANDLER"^^vocabulary1:TaskActionTypeVocab
+	owl:oneOf vocabulary1:TaskActionTypeVocab-members ;
+	.
+
+vocabulary1:TaskActionTypeVocab-members
+	rdf:first "TASK_ACTION_COM_HANDLER"^^vocabulary1:TaskActionTypeVocab ;
+	rdf:rest (
 		"TASK_ACTION_EXEC"^^vocabulary1:TaskActionTypeVocab
 		"TASK_ACTION_SEND_EMAIL"^^vocabulary1:TaskActionTypeVocab
 		"TASK_ACTION_SHOW_MESSAGE"^^vocabulary1:TaskActionTypeVocab
@@ -16140,8 +16870,12 @@ vocabulary1:TaskFlagVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Task Flag Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of the run flags for a task scheduler task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381283(v=vs.85).aspx See Also: http://msdn.microsoft.com/en-us/library/microsoft.office.excel.server.addins.computecluster.taskscheduler.taskflags(v=office.12).aspx."@en ;
-	owl:oneOf (
-		"TASK_FLAG_DELETE_WHEN_DONE"^^vocabulary1:TaskFlagVocab
+	owl:oneOf vocabulary1:TaskFlagVocab-members ;
+	.
+
+vocabulary1:TaskFlagVocab-members
+	rdf:first "TASK_FLAG_DELETE_WHEN_DONE"^^vocabulary1:TaskFlagVocab ;
+	rdf:rest (
 		"TASK_FLAG_DISABLED"^^vocabulary1:TaskFlagVocab
 		"TASK_FLAG_DONT_START_IF_ON_BATTERIES"^^vocabulary1:TaskFlagVocab
 		"TASK_FLAG_HIDDEN"^^vocabulary1:TaskFlagVocab
@@ -16162,8 +16896,12 @@ vocabulary1:TaskPriorityVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Task Priority Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of the priority levels of task scheduler tasks. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383512(v=vs.85).aspx."@en ;
-	owl:oneOf (
-		"ABOVE_NORMAL_PRIORITY_CLASS"^^vocabulary1:TaskPriorityVocab
+	owl:oneOf vocabulary1:TaskPriorityVocab-members ;
+	.
+
+vocabulary1:TaskPriorityVocab-members
+	rdf:first "ABOVE_NORMAL_PRIORITY_CLASS"^^vocabulary1:TaskPriorityVocab ;
+	rdf:rest (
 		"BELOW_NORMAL_PRIORITY_CLASS"^^vocabulary1:TaskPriorityVocab
 		"HIGH_PRIORITY_CLASS"^^vocabulary1:TaskPriorityVocab
 		"IDLE_PRIORITY_CLASS"^^vocabulary1:TaskPriorityVocab
@@ -16177,8 +16915,12 @@ vocabulary1:TaskStatusVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Task Status Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of the possible statuses of a scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383604(v=vs.85).aspx See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381263(v=vs.85).aspx See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381833(v=vs.85).aspx See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383617(v=vs.85).aspx."@en ;
-	owl:oneOf (
-		"SCHED_E_ACCOUNT_DBASE_CORRUPT"^^vocabulary1:TaskStatusVocab
+	owl:oneOf vocabulary1:TaskStatusVocab-members ;
+	.
+
+vocabulary1:TaskStatusVocab-members
+	rdf:first "SCHED_E_ACCOUNT_DBASE_CORRUPT"^^vocabulary1:TaskStatusVocab ;
+	rdf:rest (
 		"SCHED_E_ACCOUNT_INFORMATION_NOT_SET"^^vocabulary1:TaskStatusVocab
 		"SCHED_E_ACCOUNT_NAME_NOT_FOUND"^^vocabulary1:TaskStatusVocab
 		"SCHED_E_CANNOT_OPEN_TASK"^^vocabulary1:TaskStatusVocab
@@ -16286,8 +17028,12 @@ vocabulary1:URLTransitionTypeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "URL Transition Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of types of URL transitions."@en ;
-	owl:oneOf (
-		"link"^^vocabulary1:URLTransitionTypeVocab
+	owl:oneOf vocabulary1:URLTransitionTypeVocab-members ;
+	.
+
+vocabulary1:URLTransitionTypeVocab-members
+	rdf:first "link"^^vocabulary1:URLTransitionTypeVocab ;
+	rdf:rest (
 		"typed"^^vocabulary1:URLTransitionTypeVocab
 		"auto_bookmark"^^vocabulary1:URLTransitionTypeVocab
 		"auto_subframe"^^vocabulary1:URLTransitionTypeVocab
@@ -16322,8 +17068,12 @@ vocabulary1:WhoisContactTypeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Whois Contact Type Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of types of registrar contacts listed in a whois entry."@en ;
-	owl:oneOf (
-		"ADMIN"^^vocabulary1:WhoisContactTypeVocab
+	owl:oneOf vocabulary1:WhoisContactTypeVocab-members ;
+	.
+
+vocabulary1:WhoisContactTypeVocab-members
+	rdf:first "ADMIN"^^vocabulary1:WhoisContactTypeVocab ;
+	rdf:rest (
 		"BILLING"^^vocabulary1:WhoisContactTypeVocab
 		"TECHNICAL"^^vocabulary1:WhoisContactTypeVocab
 	) ;
@@ -16402,8 +17152,12 @@ vocabulary1:WirelessNetworkSecurityModeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Wireless Network Security Mode Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of security modes that may be configured for wireless network connections."@en ;
-	owl:oneOf (
-		"None"^^vocabulary1:WirelessNetworkSecurityModeVocab
+	owl:oneOf vocabulary1:WirelessNetworkSecurityModeVocab-members ;
+	.
+
+vocabulary1:WirelessNetworkSecurityModeVocab-members
+	rdf:first "None"^^vocabulary1:WirelessNetworkSecurityModeVocab ;
+	rdf:rest (
 		"WEP"^^vocabulary1:WirelessNetworkSecurityModeVocab
 		"WPA"^^vocabulary1:WirelessNetworkSecurityModeVocab
 		"WPA2-PSK"^^vocabulary1:WirelessNetworkSecurityModeVocab

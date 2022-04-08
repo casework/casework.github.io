@@ -50,7 +50,7 @@
 	owl:incompatibleWith <http://case.example.org/core> ;
 	owl:ontologyIRI <https://ontology.caseontology.org/case/case> ;
 	owl:priorVersion <http://case.example.org/core> ;
-	owl:versionInfo "0.5.0" ;
+	owl:versionInfo "0.6.0" ;
 	.
 
 <https://ontology.caseontology.org/case/investigation>
@@ -88,7 +88,6 @@
 	a owl:Ontology ;
 	rdfs:label "uco-core"@en ;
 	rdfs:comment "This ontology defines classes and properties that are shared across the various UCO ontologies.  At a high-level, the UCO core ontology provides base classes, relationship-oriented classes, content-aggregation classes, and shared classes."@en ;
-	owl:imports <https://ontology.unifiedcyberontology.org/uco/vocabulary> ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/identity>
@@ -177,7 +176,7 @@
 		<https://ontology.unifiedcyberontology.org/uco/victim> ,
 		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
 		;
-	owl:versionInfo "0.7.0" ;
+	owl:versionInfo "0.8.0" ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/victim>
@@ -415,7 +414,7 @@ investigation:authorizationType
 investigation:exhibitNumber
 	a owl:DatatypeProperty ;
 	rdfs:label "exhibitNumber"@en ;
-	rdfs:comment "Specifies a unique identifier assigned to a given object at any stage of an investigation to differentiate it from all other objects."@en ;
+	rdfs:comment "The exhibit number specifies an identifier assigned to a set of objects, unique within the scope of an investigation."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -450,7 +449,7 @@ investigation:relevantAuthorization
 investigation:rootExhibitNumber
 	a owl:DatatypeProperty ;
 	rdfs:label "rootExhibitNumber"@en ;
-	rdfs:comment "Specifies a unique identifier assigned to a given object at the start of its treatment as part of an investigation. The first node in a provenance chain, which can be viewed as a heirarchical tree originating from a single root."@en ;
+	rdfs:comment "The root exhibit number specifies a unique identifier assigned to a set of objects at the start of their treatment as part of an investigation. When found on a provenance record that comes after initial investigative treatment, the root exhibit number is a reference to the initial provenance record."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -1287,65 +1286,10 @@ core:Relationship
 			sh:path core:startTime ;
 		] ,
 		[
+			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary1:ActionRelationshipTypeVocab ;
-				]
-				[
-					sh:datatype vocabulary1:ObservableObjectRelationshipVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path core:kindOfRelationship ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary ActionRelationshipTypeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary1:ActionRelationshipTypeVocab ;
-					sh:in vocabulary1:ActionRelationshipTypeVocab-members ;
-				]
-				[
-					sh:datatype vocabulary1:ObservableObjectRelationshipVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path core:kindOfRelationship ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary ObservableObjectRelationshipVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary1:ActionRelationshipTypeVocab ;
-				]
-				[
-					sh:datatype vocabulary1:ObservableObjectRelationshipVocab ;
-					sh:in vocabulary1:ObservableObjectRelationshipVocab-members ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path core:kindOfRelationship ;
-		] ,
-		[
-			sh:message "Value is outside the default relationship vocabularies." ;
-			sh:or (
-				[
-					sh:datatype vocabulary1:ActionRelationshipTypeVocab ;
-				]
-				[
-					sh:datatype vocabulary1:ObservableObjectRelationshipVocab ;
-				]
-			) ;
-			sh:path core:kindOfRelationship ;
-			sh:severity sh:Info ;
 		]
 		;
 	sh:targetClass core:Relationship ;
@@ -1532,14 +1476,7 @@ core:kindOfRelationship
 	a owl:DatatypeProperty ;
 	rdfs:label "kindOfRelationship"@en ;
 	rdfs:comment "A characterization of the nature of a relationship between objects."@en ;
-	rdfs:range [
-		a rdfs:Datatype ;
-		owl:unionOf (
-			vocabulary1:ActionRelationshipTypeVocab
-			vocabulary1:ObservableObjectRelationshipVocab
-			xsd:string
-		) ;
-	] ;
+	rdfs:range xsd:string ;
 	.
 
 core:modifiedTime
@@ -4126,7 +4063,6 @@ observable:ContentDataFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:mimeType ;
 		] ,
@@ -7129,28 +7065,6 @@ observable:ObservableRelationship
 		;
 	rdfs:label "ObservableRelationship"@en ;
 	rdfs:comment "An observable relationship is a grouping of characteristics unique to an assertion of an association between two observable objects."@en ;
-	sh:property
-		[
-			sh:datatype vocabulary1:ObservableObjectRelationshipVocab ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:message "Value is outside the default vocabulary ObservableObjectRelationshipVocab." ;
-			sh:path core:kindOfRelationship ;
-			sh:severity sh:Info ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary1:ObservableObjectRelationshipVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path core:kindOfRelationship ;
-		]
-		;
 	sh:targetClass observable:ObservableRelationship ;
 	.
 
@@ -10801,6 +10715,27 @@ observable:WirelessNetworkConnectionFacet
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:WirelessNetworkSecurityModeVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:wirelessNetworkSecurityMode ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary WirelessNetworkSecurityModeVocab." ;
+			sh:or (
+				[
+					sh:datatype vocabulary1:WirelessNetworkSecurityModeVocab ;
+					sh:in vocabulary1:WirelessNetworkSecurityModeVocab-members ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path observable:wirelessNetworkSecurityMode ;
 		]
 		;
@@ -17216,8 +17151,12 @@ vocabulary1:WirelessNetworkSecurityModeVocab
 	rdfs:subClassOf rdfs:Resource ;
 	rdfs:label "Wireless Network Security Mode Vocabulary"@en-US ;
 	rdfs:comment "Defines an open-vocabulary of security modes that may be configured for wireless network connections."@en ;
-	owl:oneOf (
-		"None"^^vocabulary1:WirelessNetworkSecurityModeVocab
+	owl:oneOf vocabulary1:WirelessNetworkSecurityModeVocab-members ;
+	.
+
+vocabulary1:WirelessNetworkSecurityModeVocab-members
+	rdf:first "None"^^vocabulary1:WirelessNetworkSecurityModeVocab ;
+	rdf:rest (
 		"WEP"^^vocabulary1:WirelessNetworkSecurityModeVocab
 		"WPA"^^vocabulary1:WirelessNetworkSecurityModeVocab
 		"WPA2-PSK"^^vocabulary1:WirelessNetworkSecurityModeVocab
