@@ -3,14 +3,14 @@
         "case-investigation": "https://ontology.caseontology.org/case/investigation/",
         "drafting": "http://example.org/ontology/drafting#",
         "kb": "http://example.org/kb/",
-        "uco-action": "https://unifiedcyberontology.org/ontology/uco/action#",
-        "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
-        "uco-identity": "https://unifiedcyberontology.org/ontology/uco/identity#",
-        "uco-location": "https://unifiedcyberontology.org/ontology/uco/location#",
-        "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
-        "uco-tool": "https://unifiedcyberontology.org/ontology/uco/tool#",
-        "uco-types": "https://unifiedcyberontology.org/ontology/uco/types#",
-        "uco-vocabulary": "https://unifiedcyberontology.org/ontology/uco/vocabulary#",
+        "uco-action": "https://ontology.unifiedcyberontology.org/uco/action/",
+        "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "uco-identity": "https://ontology.unifiedcyberontology.org/uco/identity/",
+        "uco-location": "https://ontology.unifiedcyberontology.org/uco/location/",
+        "uco-observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "uco-tool": "https://ontology.unifiedcyberontology.org/uco/tool/",
+        "uco-types": "https://ontology.unifiedcyberontology.org/uco/types/",
+        "uco-vocabulary": "https://ontology.unifiedcyberontology.org/uco/vocabulary/",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
@@ -18,154 +18,139 @@
             "@id": "kb:action-uuid-1",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:description": "Exhibit submitted for Kiosk examination",
-            "uco-core:hasFacet": {
-                "@type": "uco-action:ActionReferencesFacet",
-                "uco-action:endTime": {
-                    "@type": "xsd:dateTime",
-                    "@value": "2019-01-01T14:00+00:00"
+            "uco-action:endTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2019-01-01T14:00+00:00"
+            },
+            "uco-action:location": {
+                "@id": "kb:location-uuid-1"
+            },
+            "uco-action:performer": {
+                "@id": "kb:officer-uuid-1"
+            },
+            "uco-action:result": [
+                {
+                    "@id": "kb:provenance-record-uuid-1"
                 },
-                "uco-action:location": {
-                    "@id": "kb:location-uuid-1"
-                },
-                "uco-action:performer": {
-                    "@id": "kb:officer-uuid-1"
-                },
-                "uco-action:result": [
-                    {
-                        "@id": "kb:provenance-record-uuid-1"
-                    },
-                    {
-                        "@id": "kb:subject-device-uuid-1"
-                    }
-                ]
-            }
+                {
+                    "@id": "kb:subject-device-uuid-1"
+                }
+            ]
         },
         {
             "@id": "kb:action-uuid-2",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "transferred",
-            "uco-core:hasFacet": {
-                "@type": "uco-action:ActionReferencesFacet",
-                "uco-action:endTime": {
-                    "@type": "xsd:dateTime",
-                    "@value": "2019-01-01T14:05+00:00"
-                },
-                "uco-action:location": {
-                    "@id": "kb:location-uuid-1"
-                },
-                "uco-action:object": [
-                    {
-                        "@id": "kb:provenance-record-uuid-1"
-                    },
-                    {
-                        "@id": "kb:subject-device-uuid-1"
-                    }
-                ],
-                "uco-action:performer": {
-                    "@id": "kb:officer-uuid-2"
-                },
-                "uco-action:result": [
-                    {
-                        "@id": "kb:file-uuid-1"
-                    },
-                    {
-                        "@id": "kb:provenance-record-uuid-2"
-                    }
-                ]
+            "uco-action:endTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2019-01-01T14:05+00:00"
             },
+            "uco-action:location": {
+                "@id": "kb:location-uuid-1"
+            },
+            "uco-action:object": [
+                {
+                    "@id": "kb:provenance-record-uuid-1"
+                },
+                {
+                    "@id": "kb:subject-device-uuid-1"
+                }
+            ],
+            "uco-action:performer": {
+                "@id": "kb:officer-uuid-2"
+            },
+            "uco-action:result": [
+                {
+                    "@id": "kb:file-uuid-1"
+                },
+                {
+                    "@id": "kb:provenance-record-uuid-2"
+                }
+            ],
             "uco-core:description": "Exhibit seal checks (passed) & Exhibit receipted in lab"
         },
         {
             "@id": "kb:action-uuid-3",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "assigned",
-            "uco-core:hasFacet": {
-                "@type": "uco-action:ActionReferencesFacet",
-                "uco-action:endTime": {
-                    "@type": "xsd:dateTime",
-                    "@value": "2019-01-01T14:05:30+00:00"
-                },
-                "uco-action:location": {
-                    "@id": "kb:location-uuid-1"
-                },
-                "uco-action:performer": {
-                    "@id": "kb:officer-uuid-2"
-                },
-                "uco-action:object": [
-                    {
-                        "@id": "kb:provenance-record-uuid-1"
-                    },
-                    {
-                        "@id": "kb:subject-device-uuid-1"
-                    }
-                ],
-                "uco-action:result": [
-                    {
-                        "@id": "kb:provenance-record-uuid-3"
-                    }
-                ]
+            "uco-action:endTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2019-01-01T14:05:30+00:00"
             },
+            "uco-action:location": {
+                "@id": "kb:location-uuid-1"
+            },
+            "uco-action:performer": {
+                "@id": "kb:officer-uuid-2"
+            },
+            "uco-action:object": [
+                {
+                    "@id": "kb:provenance-record-uuid-1"
+                },
+                {
+                    "@id": "kb:subject-device-uuid-1"
+                }
+            ],
+            "uco-action:result": [
+                {
+                    "@id": "kb:provenance-record-uuid-3"
+                }
+            ],
             "uco-core:description": "Exhibit assigned to Kiosk technician"
         },
         {
             "@id": "kb:action-uuid-4",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "photographed",
-            "uco-core:hasFacet": {
-                "@type": "uco-action:ActionReferencesFacet",
-                "uco-action:endTime": {
-                    "@type": "xsd:dateTime",
-                    "@value": "2019-01-01T14:15+00:00"
-                },
-                "uco-action:instrument": {
-                    "@id": "kb:camera-uuid-1"
-                },
-                "uco-action:location": {
-                    "@id": "kb:location-uuid-3"
-                },
-                "uco-action:performer": {
-                    "@id": "kb:officer-uuid-3"
-                },
-                "uco-action:object": [
-                    {
-                        "@id": "kb:provenance-record-uuid-3"
-                    },
-                    {
-                        "@id": "kb:subject-device-uuid-1"
-                    }
-                ],
-                "uco-action:result": [
-                    {
-                        "@id": "kb:provenance-record-uuid-4"
-                    },
-                    {
-                        "@id": "kb:subject-device-photograph-uuid-1"
-                    },
-                    {
-                        "@id": "kb:subject-device-photograph-uuid-2"
-                    },
-                    {
-                        "@id": "kb:subject-device-photograph-uuid-3"
-                    }
-                ]
+            "uco-action:endTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2019-01-01T14:15+00:00"
             },
+            "uco-action:instrument": {
+                "@id": "kb:camera-uuid-1"
+            },
+            "uco-action:location": {
+                "@id": "kb:location-uuid-3"
+            },
+            "uco-action:performer": {
+                "@id": "kb:officer-uuid-3"
+            },
+            "uco-action:object": [
+                {
+                    "@id": "kb:provenance-record-uuid-3"
+                },
+                {
+                    "@id": "kb:subject-device-uuid-1"
+                }
+            ],
+            "uco-action:result": [
+                {
+                    "@id": "kb:provenance-record-uuid-4"
+                },
+                {
+                    "@id": "kb:subject-device-photograph-uuid-1"
+                },
+                {
+                    "@id": "kb:subject-device-photograph-uuid-2"
+                },
+                {
+                    "@id": "kb:subject-device-photograph-uuid-3"
+                }
+            ],
             "uco-core:description": "Sealed Exhibit Photographed"
         },
         {
             "@id": "kb:action-uuid-5",
             "@type": "case-investigation:InvestigativeAction",
-            "uco-core:hasFacet": {
-                "@type": "uco-action:ActionReferencesFacet",
-                "uco-action:endTime": {
-                    "@type": "xsd:dateTime",
-                    "@value": "2019-01-01T14:20+00:00"
-                },
-                "uco-action:location": {
-                    "@id": "kb:location-uuid-3"
-                },
-                "uco-action:performer": {
-                    "@id": "kb:officer-uuid-3"
-                }
+            "uco-action:endTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2019-01-01T14:20+00:00"
+            },
+            "uco-action:location": {
+                "@id": "kb:location-uuid-3"
+            },
+            "uco-action:performer": {
+                "@id": "kb:officer-uuid-3"
             },
             "uco-core:description": "Exhibit Unsealed"
         },
@@ -173,112 +158,103 @@
             "@id": "kb:action-uuid-6",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "photographed",
-            "uco-core:hasFacet": {
-                "@type": "uco-action:ActionReferencesFacet",
-                "uco-action:endTime": {
-                    "@type": "xsd:dateTime",
-                    "@value": "2019-01-01T14:21+00:00"
-                },
-                "uco-action:instrument": {
-                    "@id": "kb:camera-uuid-1"
-                },
-                "uco-action:location": {
-                    "@id": "kb:location-uuid-3"
-                },
-                "uco-action:performer": {
-                    "@id": "kb:officer-uuid-3"
-                },
-                "uco-action:object": [
-                    {
-                        "@id": "kb:provenance-record-uuid-3"
-                    },
-                    {
-                        "@id": "kb:subject-device-uuid-1"
-                    }
-                ],
-                "uco-action:result": [
-                    {
-                        "@id": "kb:provenance-record-uuid-5"
-                    },
-                    {
-                        "@id": "kb:subject-device-photograph-uuid-4"
-                    },
-                    {
-                        "@id": "kb:subject-device-photograph-uuid-5"
-                    },
-                    {
-                        "@id": "kb:subject-device-photograph-uuid-6"
-                    }
-                ]
+            "uco-action:endTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2019-01-01T14:21+00:00"
             },
+            "uco-action:instrument": {
+                "@id": "kb:camera-uuid-1"
+            },
+            "uco-action:location": {
+                "@id": "kb:location-uuid-3"
+            },
+            "uco-action:performer": {
+                "@id": "kb:officer-uuid-3"
+            },
+            "uco-action:object": [
+                {
+                    "@id": "kb:provenance-record-uuid-3"
+                },
+                {
+                    "@id": "kb:subject-device-uuid-1"
+                }
+            ],
+            "uco-action:result": [
+                {
+                    "@id": "kb:provenance-record-uuid-5"
+                },
+                {
+                    "@id": "kb:subject-device-photograph-uuid-4"
+                },
+                {
+                    "@id": "kb:subject-device-photograph-uuid-5"
+                },
+                {
+                    "@id": "kb:subject-device-photograph-uuid-6"
+                }
+            ],
             "uco-core:description": "Unsealed Exhibit Photographed"
         },
         {
             "@id": "kb:action-uuid-7",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "processed",
-            "uco-core:hasFacet": {
-                "@type": "uco-action:ActionReferencesFacet",
-                "uco-action:startTime": {
-                    "@type": "xsd:dateTime",
-                    "@value": "2019-01-01T14:25+00:00"
-                },
-                "uco-action:endTime": {
-                    "@type": "xsd:dateTime",
-                    "@value": "2019-01-01T14:55+00:00"
-                },
-                "uco-action:location": {
-                    "@id": "kb:location-uuid-3"
-                },
-                "uco-action:instrument": {
-                    "@id": "kb:kiosk-uuid-1"
-                },
-                "uco-action:performer": {
-                    "@id": "kb:officer-uuid-3"
-                },
-                "uco-action:object": [
-                    {
-                        "@id": "kb:provenance-record-uuid-3"
-                    },
-                    {
-                        "@id": "kb:subject-device-uuid-1"
-                    }
-                ],
-                "uco-action:result": [
-                    {
-                        "@id": "kb:provenance-record-uuid-6"
-                    },
-                    {
-                        "@id": "kb:extracted-file-uuid-1"
-                    },
-                    {
-                        "@id": "kb:extracted-file-uuid-2"
-                    },
-                    {
-                        "@id": "kb:extracted-file-uuid-3"
-                    },
-                    {
-                        "@id": "kb:file-uuid-2"
-                    }
-                ]
+            "uco-action:startTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2019-01-01T14:25+00:00"
             },
+            "uco-action:endTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2019-01-01T14:55+00:00"
+            },
+            "uco-action:location": {
+                "@id": "kb:location-uuid-3"
+            },
+            "uco-action:instrument": {
+                "@id": "kb:kiosk-uuid-1"
+            },
+            "uco-action:performer": {
+                "@id": "kb:officer-uuid-3"
+            },
+            "uco-action:object": [
+                {
+                    "@id": "kb:provenance-record-uuid-3"
+                },
+                {
+                    "@id": "kb:subject-device-uuid-1"
+                }
+            ],
+            "uco-action:result": [
+                {
+                    "@id": "kb:provenance-record-uuid-6"
+                },
+                {
+                    "@id": "kb:extracted-file-uuid-1"
+                },
+                {
+                    "@id": "kb:extracted-file-uuid-2"
+                },
+                {
+                    "@id": "kb:extracted-file-uuid-3"
+                },
+                {
+                    "@id": "kb:file-uuid-2"
+                }
+            ],
             "uco-core:description": "Exhibit Connected to Kiosk & process started; exhibit disconnected at conclusion"
         },
         {
             "@id": "kb:action-uuid-8",
             "@type": "case-investigation:InvestigativeAction",
-            "uco-core:hasFacet": {
-                "@type": "uco-action:ActionReferencesFacet",
-                "uco-action:endTime": {
-                    "@type": "xsd:dateTime",
-                    "@value": "2019-01-01T15:00+00:00"
-                },
-                "uco-action:location": {
-                    "@id": "kb:location-uuid-3"
-                },
-                "uco-action:performer": {
-                    "@id": "kb:officer-uuid-3"
-                }
+            "uco-action:endTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2019-01-01T15:00+00:00"
+            },
+            "uco-action:location": {
+                "@id": "kb:location-uuid-3"
+            },
+            "uco-action:performer": {
+                "@id": "kb:officer-uuid-3"
             },
             "uco-core:description": "Exhibit Resealed"
         },
@@ -286,79 +262,73 @@
             "@id": "kb:action-uuid-9",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "selected",
-            "uco-core:hasFacet": {
-                "@type": "uco-action:ActionReferencesFacet",
-                "uco-action:endTime": {
-                    "@type": "xsd:dateTime",
-                    "@value": "2019-01-01T15:03+00:00"
-                },
-                "uco-action:instrument": {
-                    "@id": "kb:kiosk-uuid-1"
-                },
-                "uco-action:location": {
-                    "@id": "kb:location-uuid-3"
-                },
-                "uco-action:performer": {
-                    "@id": "kb:officer-uuid-3"
-                },
-                "uco-action:object": [
-                    {
-                        "@id": "kb:provenance-record-uuid-6"
-                    },
-                    {
-                        "@id": "kb:extracted-file-uuid-1"
-                    },
-                    {
-                        "@id": "kb:extracted-file-uuid-2"
-                    }
-                ],
-                "uco-action:result": [
-                    {
-                        "@id": "kb:provenance-record-uuid-6e"
-                    }
-                ]
+            "uco-action:endTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2019-01-01T15:03+00:00"
             },
+            "uco-action:instrument": {
+                "@id": "kb:kiosk-uuid-1"
+            },
+            "uco-action:location": {
+                "@id": "kb:location-uuid-3"
+            },
+            "uco-action:performer": {
+                "@id": "kb:officer-uuid-3"
+            },
+            "uco-action:object": [
+                {
+                    "@id": "kb:provenance-record-uuid-6"
+                },
+                {
+                    "@id": "kb:extracted-file-uuid-1"
+                },
+                {
+                    "@id": "kb:extracted-file-uuid-2"
+                }
+            ],
+            "uco-action:result": [
+                {
+                    "@id": "kb:provenance-record-uuid-6e"
+                }
+            ],
             "uco-core:description": "Picture selected, via kiosk review screen, from those extracted from exhibit"
         },
         {
             "@id": "kb:action-uuid-10",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "burned",
-            "uco-core:hasFacet": {
-                "@type": "uco-action:ActionReferencesFacet",
-                "uco-action:endTime": {
-                    "@type": "xsd:dateTime",
-                    "@value": "2019-01-01T15:05+00:00"
-                },
-                "uco-action:location": {
-                    "@id": "kb:location-uuid-3"
-                },
-                "uco-action:performer": {
-                    "@id": "kb:officer-uuid-3"
-                },
-                "uco-action:object": [
-                    {
-                        "@id": "kb:extracted-file-uuid-1"
-                    },
-                    {
-                        "@id": "kb:provenance-record-uuid-6"
-                    },
-                    {
-                        "@id": "kb:provenance-record-uuid-6e"
-                    },
-                    {
-                        "@id": "kb:file2-uuid-1"
-                    }
-                ],
-                "uco-action:result": [
-                    {
-                        "@id": "kb:provenance-record-uuid-7"
-                    },
-                    {
-                        "@id": "kb:dvd-uuid-1"
-                    }
-                ]
+            "uco-action:endTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2019-01-01T15:05+00:00"
             },
+            "uco-action:location": {
+                "@id": "kb:location-uuid-3"
+            },
+            "uco-action:performer": {
+                "@id": "kb:officer-uuid-3"
+            },
+            "uco-action:object": [
+                {
+                    "@id": "kb:extracted-file-uuid-1"
+                },
+                {
+                    "@id": "kb:provenance-record-uuid-6"
+                },
+                {
+                    "@id": "kb:provenance-record-uuid-6e"
+                },
+                {
+                    "@id": "kb:file2-uuid-1"
+                }
+            ],
+            "uco-action:result": [
+                {
+                    "@id": "kb:provenance-record-uuid-7"
+                },
+                {
+                    "@id": "kb:dvd-uuid-1"
+                }
+            ],
             "uco-core:description": "Report DVD Generated as associated exhibit"
         },
         {
@@ -367,7 +337,9 @@
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DeviceFacet",
-                    "uco-observable:manufacturer": "Generic",
+                    "uco-observable:manufacturer": {
+                        "@id": "kb:organization-e84a49ff-f34c-46fe-ab88-6f0f79023925"
+                    },
                     "uco-observable:deviceType": "DVD",
                     "uco-observable:model": "XYZ",
                     "uco-observable:serialNumber": "756867KF234"
@@ -383,10 +355,7 @@
             "uco-core:target": {
                 "@id": "kb:dvd-uuid-1"
             },
-            "uco-core:kindOfRelationship": {
-                "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-                "@value": "Contained_Within"
-            },
+            "uco-core:kindOfRelationship": "Contained_Within",
             "uco-core:isDirectional": true,
             "uco-core:hasFacet": [
                 {
@@ -398,53 +367,47 @@
         {
             "@id": "kb:action-uuid-11",
             "@type": "case-investigation:InvestigativeAction",
-            "uco-core:hasFacet": {
-                "@type": "uco-action:ActionReferencesFacet",
-                "uco-action:endTime": {
-                    "@type": "xsd:dateTime",
-                    "@value": "2019-01-01T15:10+00:00"
-                },
-                "uco-action:location": {
-                    "@id": "kb:location-uuid-3"
-                },
-                "uco-action:performer": {
-                    "@id": "kb:officer-uuid-3"
-                }
+            "uco-action:endTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2019-01-01T15:10+00:00"
+            },
+            "uco-action:location": {
+                "@id": "kb:location-uuid-3"
+            },
+            "uco-action:performer": {
+                "@id": "kb:officer-uuid-3"
             },
             "uco-core:description": "DVD Report sealed"
         },
         {
             "@id": "kb:action-uuid-12",
             "@type": "case-investigation:InvestigativeAction",
-            "uco-core:hasFacet": {
-                "@type": "uco-action:ActionReferencesFacet",
-                "uco-action:endTime": {
-                    "@type": "xsd:dateTime",
-                    "@value": "2019-01-01T15:15+00:00"
-                },
-                "uco-action:location": {
-                    "@id": "kb:location-uuid-3"
-                },
-                "uco-action:performer": {
-                    "@id": "kb:officer-uuid-3"
-                },
-                "uco-action:object": [
-                    {
-                        "@id": "kb:provenance-record-uuid-7"
-                    },
-                    {
-                        "@id": "kb:dvd-uuid-1"
-                    }
-                ],
-                "uco-action:result": [
-                    {
-                        "@id": "kb:provenance-record-73f59a8a-1c22-41fe-af50-13e8b6a65de9"
-                    },
-                    {
-                        "@id": "kb:file-uuid-3"
-                    }
-                ]
+            "uco-action:endTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2019-01-01T15:15+00:00"
             },
+            "uco-action:location": {
+                "@id": "kb:location-uuid-3"
+            },
+            "uco-action:performer": {
+                "@id": "kb:officer-uuid-3"
+            },
+            "uco-action:object": [
+                {
+                    "@id": "kb:provenance-record-uuid-7"
+                },
+                {
+                    "@id": "kb:dvd-uuid-1"
+                }
+            ],
+            "uco-action:result": [
+                {
+                    "@id": "kb:provenance-record-73f59a8a-1c22-41fe-af50-13e8b6a65de9"
+                },
+                {
+                    "@id": "kb:file-uuid-3"
+                }
+            ],
             "uco-core:description": "Witness statement completed"
         },
         {
@@ -538,34 +501,31 @@
             "@id": "kb:action-uuid-13",
             "@type": "case-investigation:InvestigativeAction",
             "uco-core:name": "transferred",
-            "uco-core:hasFacet": {
-                "@type": "uco-action:ActionReferencesFacet",
-                "uco-action:endTime": {
-                    "@type": "xsd:dateTime",
-                    "@value": "2019-01-01T15:20+00:00"
-                },
-                "uco-action:location": {
-                    "@id": "kb:location-uuid-4"
-                },
-                "uco-action:performer": [
-                    {
-                        "@id": "kb:officer-uuid-3"
-                    }
-                ],
-                "uco-action:object": [
-                    {
-                        "@id": "kb:provenance-record-uuid-3"
-                    },
-                    {
-                        "@id": "kb:subject-device-uuid-1"
-                    }
-                ],
-                "uco-action:result": [
-                    {
-                        "@id": "kb:provenance-record-uuid-8"
-                    }
-                ]
+            "uco-action:endTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2019-01-01T15:20+00:00"
             },
+            "uco-action:location": {
+                "@id": "kb:location-uuid-4"
+            },
+            "uco-action:performer": [
+                {
+                    "@id": "kb:officer-uuid-3"
+                }
+            ],
+            "uco-action:object": [
+                {
+                    "@id": "kb:provenance-record-uuid-3"
+                },
+                {
+                    "@id": "kb:subject-device-uuid-1"
+                }
+            ],
+            "uco-action:result": [
+                {
+                    "@id": "kb:provenance-record-uuid-8"
+                }
+            ],
             "uco-core:description": "Sealed Exhibit handed the OIC & Transfer documentation signed"
         },
         {
@@ -578,16 +538,22 @@
                 {
                     "@type": "uco-observable:DeviceFacet",
                     "uco-observable:deviceType": "camera",
-                    "uco-observable:manufacturer": "Canon",
+                    "uco-observable:manufacturer": {
+                        "@id": "kb:organization-f5a0877c-2a58-4280-8f24-c0df39e8badc"
+                    },
                     "uco-observable:model": "PowerShot SX540"
                 }
             ],
-            "uco-tool:creator": "Canon"
+            "uco-tool:creator": {
+                "@id": "kb:organization-f5a0877c-2a58-4280-8f24-c0df39e8badc"
+            }
         },
         {
             "@id": "kb:kiosk-uuid-1",
             "@type": "uco-tool:AnalyticTool",
-            "uco-tool:creator": "ACME"
+            "uco-tool:creator": {
+                "@id": "kb:organization-a177a5d6-118c-419f-bca3-03af8000d121"
+            }
         },
         {
             "@id": "kb:location-uuid-1",
@@ -656,6 +622,21 @@
                 "@type": "uco-identity:SimpleNameFacet",
                 "uco-identity:familyName": "Walker"
             }
+        },
+        {
+            "@id": "kb:organization-e84a49ff-f34c-46fe-ab88-6f0f79023925",
+            "@type": "uco-identity:Organization",
+            "uco-core:description": "Generic"
+        },
+        {
+            "@id": "kb:organization-a177a5d6-118c-419f-bca3-03af8000d121",
+            "@type": "uco-identity:Organization",
+            "uco-core:name": "ACME"
+        },
+        {
+            "@id": "kb:organization-f5a0877c-2a58-4280-8f24-c0df39e8badc",
+            "@type": "uco-identity:Organization",
+            "uco-core:name": "Canon"
         },
         {
             "@id": "kb:provenance-record-uuid-1",

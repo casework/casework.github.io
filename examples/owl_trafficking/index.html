@@ -47,14 +47,14 @@ jumbo_desc: CASE Narrative on Trafficking
         "kb": "http://example.org/kb/",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-        "uco-action": "https://unifiedcyberontology.org/ontology/uco/action#",
-        "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
-        "uco-identity": "https://unifiedcyberontology.org/ontology/uco/identity#",
-        "uco-location": "https://unifiedcyberontology.org/ontology/uco/location#",
-        "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
-        "uco-tool": "https://unifiedcyberontology.org/ontology/uco/tool#",
-        "uco-types": "https://unifiedcyberontology.org/ontology/uco/types#",
-        "uco-vocabulary": "https://unifiedcyberontology.org/ontology/uco/vocabulary#",
+        "uco-action": "https://ontology.unifiedcyberontology.org/uco/action/",
+        "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "uco-identity": "https://ontology.unifiedcyberontology.org/uco/identity/",
+        "uco-location": "https://ontology.unifiedcyberontology.org/uco/location/",
+        "uco-observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "uco-tool": "https://ontology.unifiedcyberontology.org/uco/tool/",
+        "uco-types": "https://ontology.unifiedcyberontology.org/uco/types/",
+        "uco-vocabulary": "https://ontology.unifiedcyberontology.org/uco/vocabulary/",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
@@ -90,7 +90,9 @@ jumbo_desc: CASE Narrative on Trafficking
         "@type": "uco-tool:Tool",
         "uco-core:name": "Magnet ACQUIRE",
         "uco-tool:toolType": "Extraction",
-        "uco-tool:creator": "Magnet",
+        "uco-tool:creator": {
+            "@id": "kb:organization-magnet-1ad4338b-fa60-4823-b9af-38de3d388e36"
+        },
         "uco-tool:version": "2.0.0.5412",
         "uco-core:hasFacet": [
             {
@@ -111,6 +113,14 @@ jumbo_desc: CASE Narrative on Trafficking
         ]
     },
     {
+        "@id": "kb:organization-magnet-1ad4338b-fa60-4823-b9af-38de3d388e36",
+        "@type": "uco-identity:Organization",
+        "uco-core:hasFacet": {
+            "@type": "uco-identity:OrganizationDetailsFacet",
+            "drafting:orgName": "Magnet"
+        }
+    },
+    {
         "@id": "kb:investigative-action-4d3778d9-8376-4277-9852-8e6bf926a5d1",
         "@type": "case-investigation:InvestigativeAction",
         "uco-core:name": "extracted",
@@ -122,37 +132,32 @@ jumbo_desc: CASE Narrative on Trafficking
             "@type": "xsd:dateTime",
             "@value": "2017-02-06T22:13:08.00Z"
         },
-        "uco-core:hasFacet": [
+        "uco-action:location": {
+            "@id": "kb:lab-c44e4679-26e3-4585-aaa1-86110db936f8"
+        },
+        "uco-action:performer": {
+            "@id": "kb:investigator-09fb01ce-999e-4521-bd3f-f7be69a63a43"
+        },
+        "uco-action:instrument": {
+            "@id": "kb:magnet-acquire2005412-83715215-c5fc-4231-99ff-29a3c51cb5f1"
+        },
+        "uco-action:environment": {
+            "@id": "kb:forensic-computer-2132063b-7753-4b51-b146-827e9a1d5037"
+        },
+        "uco-action:object": [
             {
-                "@type": "uco-action:ActionReferencesFacet",
-                "uco-action:location": {
-                    "@id": "kb:lab-c44e4679-26e3-4585-aaa1-86110db936f8"
-                },
-                "uco-action:performer": {
-                    "@id": "kb:investigator-09fb01ce-999e-4521-bd3f-f7be69a63a43"
-                },
-                "uco-action:instrument": {
-                    "@id": "kb:magnet-acquire2005412-83715215-c5fc-4231-99ff-29a3c51cb5f1"
-                },
-                "uco-action:environment": {
-                    "@id": "kb:forensic-computer-2132063b-7753-4b51-b146-827e9a1d5037"
-                },
-                "uco-action:object": [
-                    {
-                        "@id": "kb:provenance-record-9bd9c456-5965-4782-8285-5fee34c8ddd2"
-                    },
-                    {
-                        "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168"
-                    }
-                ],
-                "uco-action:result": [
-                    {
-                        "@id": "kb:provenance-record-b84dc6ca-6187-4fc3-b5f1-c15142b103a8"
-                    },
-                    {
-                        "@id": "kb:f3fd304e-ef6c-4cbd-94cb-425880f82748"
-                    }
-                ]
+                "@id": "kb:provenance-record-9bd9c456-5965-4782-8285-5fee34c8ddd2"
+            },
+            {
+                "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168"
+            }
+        ],
+        "uco-action:result": [
+            {
+                "@id": "kb:provenance-record-b84dc6ca-6187-4fc3-b5f1-c15142b103a8"
+            },
+            {
+                "@id": "kb:f3fd304e-ef6c-4cbd-94cb-425880f82748"
             }
         ]
     }
@@ -169,11 +174,6 @@ WHERE {
   ?nImagingAction
     a case-investigation:InvestigativeAction ;
     uco-action:endTime ?lImagingEndTime ;
-    uco-core:hasFacet ?nImagingActionReferences ;
-    .
-
-  ?nImagingActionReferences
-    a uco-action:ActionReferencesFacet ;
     uco-action:instrument ?nImagingTool ;
     uco-action:object ?nSubjectDeviceProvenanceRecord ;
     uco-action:object ?nSubjectDevice ;
@@ -357,11 +357,6 @@ WHERE {
   ?nAction
     a case-investigation:InvestigativeAction ;
     uco-action:endTime ?lEndTime ;
-    uco-core:hasFacet ?nActionReferences ;
-    .
-
-  ?nActionReferences
-    a uco-action:ActionReferencesFacet ;
     uco-action:result ?nProvenanceRecord ;
     uco-action:result ?nDiskImage ;
     .
@@ -429,7 +424,9 @@ ORDER BY ?lHashMethod
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DeviceFacet",
-                "uco-observable:manufacturer": "LGE",
+                "uco-observable:manufacturer": {
+                    "@id": "kb:organization-lge-e7ae1d96-e054-44b5-9943-8da6515e8332"
+                },
                 "uco-observable:model": "Nexus 5",
                 "uco-observable:serialNumber": "08ebf545d00af782",
                 "drafting:brand": "Google",
@@ -437,12 +434,12 @@ ORDER BY ?lHashMethod
                 "drafting:encryptionEnabled": false
             },
             {
-                "@type": [
-                    "drafting:AndroidDeviceFacet",
-                    "uco-core:Facet"
-                ],
-                "drafting:androidID": "64cce130286b31b3",
-                "drafting:androidFingerprint": "lge\u2026"
+                "@type": "uco-observable:AndroidDeviceFacet",
+                "uco-observable:androidID": {
+                    "@type": "xsd:hexBinary",
+                    "@value": "64cce130286b31b3"
+                },
+                "uco-observable:androidFingerprint": "lge\u2026"
             },
             {
                 "@type": [
@@ -460,7 +457,6 @@ ORDER BY ?lHashMethod
                     "@type": "xsd:dateTime",
                     "@value": "2017-02-01T14:31:30.00Z"
                 },
-                "drafting:advertisingID": "48500120-c9c5-402e-a6bc-04e2f92ae259",
                 "drafting:locationsServicesEnabled": true,
                 "uco-observable:keypadUnlockCode": "NULL",
                 "uco-observable:IMEI": "352584062438806",
@@ -473,7 +469,10 @@ ORDER BY ?lHashMethod
             {
                 "@type": "uco-observable:OperatingSystemFacet",
                 "uco-core:name": "Android",
-                "uco-observable:manufacturer": "LGE",
+                "uco-observable:manufacturer": {
+                    "@id": "kb:organization-lge-e7ae1d96-e054-44b5-9943-8da6515e8332"
+                },
+                "uco-observable:advertisingID": "48500120-c9c5-402e-a6bc-04e2f92ae259",
                 "uco-observable:version": "6.0.1"
             },
             {
@@ -506,10 +505,7 @@ ORDER BY ?lHashMethod
         "uco-core:target": {
             "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168"
         },
-        "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-            "@value": "Contained_Within"
-        },
+        "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:startTime": {
             "@type": "xsd:dateTime",
             "@value": "2017-00-00T12:34:56Z"
@@ -570,10 +566,7 @@ ORDER BY ?lHashMethod
         "uco-core:target": {
             "@id": "kb:telephony-cd52c3b8-7759-40b7-ae10-dfc90a35f644"
         },
-        "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-            "@value": "Contained_Within"
-        },
+        "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
@@ -748,10 +741,7 @@ ORDER BY ?lHashMethod
         "uco-core:target": {
             "@id": "kb:accountsxml-16805dff-05f9-4cba-9266-d5fa712f3d8f"
         },
-        "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-            "@value": "Contained_Within"
-        },
+        "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
@@ -793,10 +783,7 @@ ORDER BY ?lHashMethod
         "uco-core:target": {
             "@id": "kb:accountsdb-99995dff-05f9-4cba-9266-d5fa712f9999"
         },
-        "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-            "@value": "Contained_Within"
-        },
+        "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
@@ -891,10 +878,7 @@ ORDER BY ?lHashMethod
         "uco-core:target": {
             "@id": "kb:textapplogcat-1a717ea6-8990-4709-92f0-d748cacb817e"
         },
-        "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-            "@value": "Contained_Within"
-        },
+        "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
@@ -927,10 +911,7 @@ ORDER BY ?lHashMethod
         "uco-core:target": {
             "@id": "kb:f3fd304e-ef6c-4cbd-94cb-425880f82748"
         },
-        "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-            "@value": "Contained_Within"
-        },
+        "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
@@ -1009,10 +990,7 @@ ORDER BY ?lHashMethod
         "uco-core:target": {
             "@id": "kb:filesystem-e2a02b5a-7e7e-489f-ab43-3ffadab4ac82"
         },
-        "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-            "@value": "Contained_Within"
-        },
+        "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
@@ -1221,10 +1199,7 @@ ORDER BY ?lHashMethod
         "uco-core:target": {
             "@id": "kb:mmssmsdb-journalfile-uuid"
         },
-        "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-            "@value": "Contained_Within"
-        },
+        "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
@@ -1250,6 +1225,10 @@ ORDER BY ?lHashMethod
     {
         "@id": "kb:skypeapp-a6b73e78-00da-11eb-a396-acde48001122",
         "@type": "uco-observable:Application"
+    },
+    {
+        "@id": "kb:externalaccount-8976b508-80e5-4442-af1c-637d3b09240e",
+        "@type": "uco-observable:DigitalAccount"
     },
     {
         "@id": "kb:skypemsg-eafca388-f926-4d48-864d-1bfdd3a2ba7f",
@@ -1403,10 +1382,7 @@ ORDER BY ?lHashMethod
             "@id": "kb:bfe049a6-fa3f-4bf6-9c37-9b09cc6afe6b"
         },
         "uco-core:isDirectional": true,
-        "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-            "@value": "Contained_Within"
-        },
+        "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DataRangeFacet",
@@ -1459,10 +1435,7 @@ ORDER BY ?lHashMethod
         "uco-core:target": {
             "@id": "kb:camera-xml-uuid"
         },
-        "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-            "@value": "Contained_Within"
-        },
+        "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:isDirectional": true
     }
 ]

@@ -35,14 +35,14 @@ custom_js:
         "drafting": "http://example.org/ontology/drafting/",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-        "uco-action": "https://unifiedcyberontology.org/ontology/uco/action#",
-        "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
-        "uco-identity": "https://unifiedcyberontology.org/ontology/uco/identity#",
-        "uco-location": "https://unifiedcyberontology.org/ontology/uco/location#",
-        "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
-        "uco-tool": "https://unifiedcyberontology.org/ontology/uco/tool#",
-        "uco-types": "https://unifiedcyberontology.org/ontology/uco/types#",
-        "uco-vocabulary": "https://unifiedcyberontology.org/ontology/uco/vocabulary#",
+        "uco-action": "https://ontology.unifiedcyberontology.org/uco/action/",
+        "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "uco-identity": "https://ontology.unifiedcyberontology.org/uco/identity/",
+        "uco-location": "https://ontology.unifiedcyberontology.org/uco/location/",
+        "uco-observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "uco-tool": "https://ontology.unifiedcyberontology.org/uco/tool/",
+        "uco-types": "https://ontology.unifiedcyberontology.org/uco/types/",
+        "uco-vocabulary": "https://ontology.unifiedcyberontology.org/uco/vocabulary/",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@id": "kb:bundle-5715FCF3-6BC8-4996-8F7F-FDF289F31649",
@@ -105,27 +105,22 @@ custom_js:
             "@type": "xsd:dateTime",
             "@value": "2019-03-30T22:36:24.35Z"
         },
-        "uco-core:hasFacet": [
+        "uco-action:instrument": {
+            "@id": "kb:odin-decree13-uuid"
+        },
+        "uco-action:location": {
+            "@id": "kb:asgard-bifrost-uuid"
+        },
+        "uco-action:performer": {
+            "@id": "kb:investigator2-uuid"
+        },
+        "uco-action:object": [],
+        "uco-action:result": [
             {
-                "@type": "uco-action:ActionReferencesFacet",
-                "uco-action:instrument": {
-                    "@id": "kb:odin-decree13-uuid"
-                },
-                "uco-action:location": {
-                    "@id": "kb:asgard-bifrost-uuid"
-                },
-                "uco-action:performer": {
-                    "@id": "kb:investigator2-uuid"
-                },
-                "uco-action:object": [],
-                "uco-action:result": [
-                    {
-                        "@id": "kb:provenance-record1-uuid"
-                    },
-                    {
-                        "@id": "kb:suspect-device-uuid"
-                    }
-                ]
+                "@id": "kb:provenance-record1-uuid"
+            },
+            {
+                "@id": "kb:suspect-device-uuid"
             }
         ]
     },
@@ -141,12 +136,19 @@ custom_js:
         ]
     },
     {
+        "@id": "kb:organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4",
+        "@type": "uco-identity:Organization",
+        "uco-core:name": "Apple"
+    },
+    {
         "@id": "kb:suspect-device-uuid",
         "@type": "uco-observable:Device",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DeviceFacet",
-                "uco-observable:manufacturer": "Apple",
+                "uco-observable:manufacturer": {
+                    "@id": "kb:organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4"
+                },
                 "uco-observable:deviceType": "iPhone",
                 "uco-observable:model": "MG552",
                 "uco-observable:serialNumber": "F18Q4LGRG5MD"
@@ -178,7 +180,9 @@ custom_js:
             {
                 "@type": "uco-observable:OperatingSystemFacet",
                 "uco-core:name": "iOS",
-                "uco-observable:manufacturer": "Apple",
+                "uco-observable:manufacturer": {
+                    "@id": "kb:organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4"
+                },
                 "uco-observable:version": "10.3"
             },
             {
@@ -215,49 +219,51 @@ custom_js:
             "@type": "xsd:dateTime",
             "@value": "2019-03-30T22:47:32Z"
         },
-        "uco-core:hasFacet": [
+        "uco-action:instrument": {
+            "@id": "kb:tool-embeddedextractor1-uid"
+        },
+        "uco-action:location": {
+            "@id": "kb:309BC178-1836-47B7-AA15-94EA3A2C7401"
+        },
+        "uco-action:performer": {
+            "@id": "kb:E9AA4F26-D187-4F32-A602-86A6DF4B8528"
+        },
+        "uco-action:object": [
             {
-                "@type": "uco-action:ActionReferencesFacet",
-                "uco-action:instrument": {
-                    "@id": "kb:tool-embeddedextractor1-uid"
-                },
-                "uco-action:location": {
-                    "@id": "kb:309BC178-1836-47B7-AA15-94EA3A2C7401"
-                },
-                "uco-action:performer": {
-                    "@id": "kb:E9AA4F26-D187-4F32-A602-86A6DF4B8528"
-                },
-                "uco-action:object": [
-                    {
-                        "@id": "kb:suspect-device-uuid"
-                    }
-                ],
-                "uco-action:result": [
-                    {
-                        "@id": "kb:90F73123-DB7E-41E5-B6CA-493B96E4B89F"
-                    },
-                    {
-                        "@id": "kb:97C74753-FCEB-49C8-A611-7A70EF46AB5D"
-                    },
-                    {
-                        "@id": "kb:EBAB06EE-7522-42D6-96EA-E3121D67E393"
-                    },
-                    {
-                        "@id": "kb:48C0F0E8-9A63-45EE-99BF-23CC354C3252"
-                    },
-                    {
-                        "@id": "kb:B2A7B20E-8307-40CF-ABAF-9733ABBF4335"
-                    }
-                ]
+                "@id": "kb:suspect-device-uuid"
+            }
+        ],
+        "uco-action:result": [
+            {
+                "@id": "kb:90F73123-DB7E-41E5-B6CA-493B96E4B89F"
+            },
+            {
+                "@id": "kb:97C74753-FCEB-49C8-A611-7A70EF46AB5D"
+            },
+            {
+                "@id": "kb:EBAB06EE-7522-42D6-96EA-E3121D67E393"
+            },
+            {
+                "@id": "kb:48C0F0E8-9A63-45EE-99BF-23CC354C3252"
+            },
+            {
+                "@id": "kb:B2A7B20E-8307-40CF-ABAF-9733ABBF4335"
             }
         ]
+    },
+    {
+        "@id": "kb:person-38cb4243-bc7e-48a4-91b0-9d296b8f862a",
+        "@type": "uco-identity:Person",
+        "uco-core:name": "Harald"
     },
     {
         "@id": "kb:tool-embeddedextractor1-uid",
         "@type": "uco-tool:Tool",
         "uco-core:name": "Embedded Device Extrator",
         "uco-tool:toolType": "Extraction",
-        "uco-tool:creator": "Harald",
+        "uco-tool:creator": {
+            "@id": "kb:person-38cb4243-bc7e-48a4-91b0-9d296b8f862a"
+        },
         "uco-tool:version": "1.2.0",
         "uco-core:hasFacet": [
             {
@@ -386,10 +392,7 @@ custom_js:
                 "@id": "kb:suspect-image-filesystem-uuid"
             }
         ],
-        "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-            "@value": "Contained_Within"
-        },
+        "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
@@ -432,10 +435,10 @@ custom_js:
     },
     {
         "@id": "kb:phone_call1",
-        "@type": "uco-observable:PhoneCall",
+        "@type": "uco-observable:Call",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:PhoneCallFacet",
+                "@type": "uco-observable:CallFacet",
                 "uco-observable:callType": "mobile",
                 "uco-observable:startTime": {
                     "@type": "xsd:dateTime",

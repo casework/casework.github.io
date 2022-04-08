@@ -6,15 +6,15 @@
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "kb": "http://example.org/kb/",
-        "uco-action": "https://unifiedcyberontology.org/ontology/uco/action#",
-        "uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",
-        "uco-identity": "https://unifiedcyberontology.org/ontology/uco/identity#",
-        "uco-location": "https://unifiedcyberontology.org/ontology/uco/location#",
-        "uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",
-        "uco-role": "https://unifiedcyberontology.org/ontology/uco/role#",
-        "uco-tool": "https://unifiedcyberontology.org/ontology/uco/tool#",
-        "uco-types": "https://unifiedcyberontology.org/ontology/uco/types#",
-        "uco-vocabulary": "https://unifiedcyberontology.org/ontology/uco/vocabulary#",
+        "uco-action": "https://ontology.unifiedcyberontology.org/uco/action/",
+        "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "uco-identity": "https://ontology.unifiedcyberontology.org/uco/identity/",
+        "uco-location": "https://ontology.unifiedcyberontology.org/uco/location/",
+        "uco-observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "uco-role": "https://ontology.unifiedcyberontology.org/uco/role/",
+        "uco-tool": "https://ontology.unifiedcyberontology.org/uco/tool/",
+        "uco-types": "https://ontology.unifiedcyberontology.org/uco/types/",
+        "uco-vocabulary": "https://ontology.unifiedcyberontology.org/uco/vocabulary/",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@graph": [
@@ -41,23 +41,24 @@
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DeviceFacet",
-                    "uco-observable:manufacturer": "Samsung",
+                    "uco-observable:manufacturer": {
+                        "@id": "kb:organization-fb6c05a0-b6be-4a10-ba62-0e7b1da4c0ec"
+                    },
                     "uco-observable:model": "SM-G925F",
                     "uco-observable:serialNumber": "RF8H31GS5SF"
                 },
                 {
-                    "@type": [
-                        "drafting:AndroidDeviceFacet",
-                        "uco-core:Facet"
-                    ],
-                    "drafting:androidID": "64cce130286b31b3",
-                    "drafting:androidFingerprint": "samsung/zeroltexx/zerolte:6.0.1/MMB29K/G925FXXU4DPIL"
+                    "@type": "uco-observable:AndroidDeviceFacet",
+                    "uco-observable:androidID": {
+                        "@type": "xsd:hexBinary",
+                        "@value": "64cce130286b31b3"
+                    },
+                    "uco-observable:androidFingerprint": "samsung/zeroltexx/zerolte:6.0.1/MMB29K/G925FXXU4DPIL"
                 },
                 {
                     "@type": "uco-observable:MobileDeviceFacet",
                     "uco-observable:bluetoothDeviceName": "Galaxy S6 edge",
                     "drafting:deviceActivationTime": "2018-06-10T14:31:30.00Z",
-                    "drafting:advertisingID": "48500120-c9c5-402e-a6bc-04e2f92ae259",
                     "drafting:locationsServicesEnabled": true,
                     "uco-observable:keypadUnlockCode": "__NOT_PROVIDED",
                     "uco-observable:IMEI": "356420075722843",
@@ -67,7 +68,10 @@
                 {
                     "@type": "uco-observable:OperatingSystemFacet",
                     "uco-core:name": "Android",
-                    "uco-observable:manufacturer": "Samsung",
+                    "uco-observable:manufacturer": {
+                        "@id": "kb:organization-fb6c05a0-b6be-4a10-ba62-0e7b1da4c0ec"
+                    },
+                    "uco-observable:advertisingID": "48500120-c9c5-402e-a6bc-04e2f92ae259",
                     "uco-observable:version": "6.0.1"
                 },
                 {
@@ -81,12 +85,19 @@
             ]
         },
         {
+            "@id": "kb:organization-fb6c05a0-b6be-4a10-ba62-0e7b1da4c0ec",
+            "@type": "uco-identity:Organization",
+            "uco-core:name": "Samsung"
+        },
+        {
             "@id": "kb:cellebrite-ufed1-uuid",
             "@type": "uco-tool:Tool",
             "uco-core:name": "UFED",
             "uco-tool:toolType": "Extraction",
             "drafting:toolIdentifier": "557488159",
-            "uco-tool:creator": "Cellebrite",
+            "uco-tool:creator": {
+                "@id": "kb:organization-ff30d83e-ff57-45f9-8d54-e79b323c2e8b"
+            },
             "uco-tool:version": "7.1.0.751",
             "uco-core:hasFacet": [
                 {
@@ -105,6 +116,11 @@
                     ]
                 }
             ]
+        },
+        {
+            "@id": "kb:organization-ff30d83e-ff57-45f9-8d54-e79b323c2e8b",
+            "@type": "uco-identity:Organization",
+            "uco-core:name": "Cellebrite"
         },
         {
             "@id": "kb:forensic-computer1-uuid",
@@ -126,37 +142,32 @@
                 "@type": "xsd:dateTime",
                 "@value": "2018-12-11T09:54:00.00Z"
             },
-            "uco-core:hasFacet": [
+            "uco-action:location": {
+                "@id": "kb:esc-lausanne-uuid"
+            },
+            "uco-action:performer": {
+                "@id": "kb:investigator1-uuid"
+            },
+            "uco-action:instrument": {
+                "@id": "kb:cellebrite-ufed1-uuid"
+            },
+            "uco-action:environment": {
+                "@id": "kb:forensic-computer1-uuid"
+            },
+            "uco-action:object": [
                 {
-                    "@type": "uco-action:ActionReferencesFacet",
-                    "uco-action:location": {
-                        "@id": "kb:esc-lausanne-uuid"
-                    },
-                    "uco-action:performer": {
-                        "@id": "kb:investigator1-uuid"
-                    },
-                    "uco-action:instrument": {
-                        "@id": "kb:cellebrite-ufed1-uuid"
-                    },
-                    "uco-action:environment": {
-                        "@id": "kb:forensic-computer1-uuid"
-                    },
-                    "uco-action:object": [
-                        {
-                            "@id": "kb:provenance-record1-uuid"
-                        },
-                        {
-                            "@id": "kb:samsung-device-uuid"
-                        }
-                    ],
-                    "uco-action:result": [
-                        {
-                            "@id": "kb:provenance-record2-uuid"
-                        },
-                        {
-                            "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
-                        }
-                    ]
+                    "@id": "kb:provenance-record1-uuid"
+                },
+                {
+                    "@id": "kb:samsung-device-uuid"
+                }
+            ],
+            "uco-action:result": [
+                {
+                    "@id": "kb:provenance-record2-uuid"
+                },
+                {
+                    "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
                 }
             ]
         },
@@ -262,7 +273,7 @@
         {
             "@id": "kb:content-data-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d",
             "@type": "uco-observable:ContentData",
-            "uco-observable:hasFacet": {
+            "uco-core:hasFacet": {
                 "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:dataPayload": "Excellent - we need all the help we can get. Sent from my Samsung Galaxy smartphone"
             }
@@ -302,10 +313,7 @@
             "uco-core:target": {
                 "@id": "kb:filesystem-uuid"
             },
-            "uco-core:kindOfRelationship": {
-                "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-                "@value": "Contained_Within"
-            },
+            "uco-core:kindOfRelationship": "Contained_Within",
             "uco-core:isDirectional": true,
             "uco-core:hasFacet": [
                 {
@@ -497,10 +505,7 @@
             "uco-core:target": {
                 "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
             },
-            "uco-core:kindOfRelationship": {
-                "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-                "@value": "Contained_Within"
-            },
+            "uco-core:kindOfRelationship": "Contained_Within",
             "uco-core:isDirectional": true,
             "uco-core:hasFacet": [
                 {
@@ -546,10 +551,7 @@
             "uco-core:target": {
                 "@id": "kb:ChromeLoginData-16805DFF-05F9-4CBA-9266-D5FA712F3D8F"
             },
-            "uco-core:kindOfRelationship": {
-                "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-                "@value": "Contained_Within"
-            },
+            "uco-core:kindOfRelationship": "Contained_Within",
             "uco-core:isDirectional": true,
             "uco-core:hasFacet": [
                 {
@@ -575,7 +577,9 @@
             "@type": "uco-tool:Tool",
             "uco-core:name": "Physical Analyser",
             "uco-tool:toolType": "Analysis",
-            "uco-tool:creator": "Cellebrite",
+            "uco-tool:creator": {
+                "@id": "kb:organization-ff30d83e-ff57-45f9-8d54-e79b323c2e8b"
+            },
             "uco-tool:version": "7.1.0.106",
             "uco-core:hasFacet": [
                 {
@@ -602,37 +606,32 @@
                 "@type": "xsd:dateTime",
                 "@value": "2020-04-12T11:32:12.00Z"
             },
-            "uco-core:hasFacet": [
+            "uco-action:location": {
+                "@id": "kb:esc-lausanne-uuid"
+            },
+            "uco-action:performer": {
+                "@id": "kb:investigator1-uuid"
+            },
+            "uco-action:instrument": {
+                "@id": "kb:cellebrite-pa1-uuid"
+            },
+            "uco-action:environment": {
+                "@id": "kb:forensic-computer1-uuid"
+            },
+            "uco-action:object": [
                 {
-                    "@type": "uco-action:ActionReferencesFacet",
-                    "uco-action:location": {
-                        "@id": "kb:esc-lausanne-uuid"
-                    },
-                    "uco-action:performer": {
-                        "@id": "kb:investigator1-uuid"
-                    },
-                    "uco-action:instrument": {
-                        "@id": "kb:cellebrite-pa1-uuid"
-                    },
-                    "uco-action:environment": {
-                        "@id": "kb:forensic-computer1-uuid"
-                    },
-                    "uco-action:object": [
-                        {
-                            "@id": "kb:provenance-record3-uuid"
-                        },
-                        {
-                            "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
-                        }
-                    ],
-                    "uco-action:result": [
-                        {
-                            "@id": "kb:provenance-record4-uuid"
-                        },
-                        {
-                            "@id": "kb:cellebritexml-report-uuid"
-                        }
-                    ]
+                    "@id": "kb:provenance-record3-uuid"
+                },
+                {
+                    "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
+                }
+            ],
+            "uco-action:result": [
+                {
+                    "@id": "kb:provenance-record4-uuid"
+                },
+                {
+                    "@id": "kb:cellebritexml-report-uuid"
                 }
             ]
         },
@@ -663,10 +662,7 @@
             "uco-core:target": {
                 "@id": "kb:samsung-device-uuid"
             },
-            "uco-core:kindOfRelationship": {
-                "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-                "@value": "Contained_Within"
-            },
+            "uco-core:kindOfRelationship": "Contained_Within",
             "uco-core:startTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2018-11-16T12:34:28Z"
@@ -683,10 +679,7 @@
             "uco-core:target": {
                 "@id": "kb:samsung-device-uuid"
             },
-            "uco-core:kindOfRelationship": {
-                "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-                "@value": "Contained_Within"
-            },
+            "uco-core:kindOfRelationship": "Contained_Within",
             "uco-core:startTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2018-11-16T00:00.00Z"
@@ -795,10 +788,7 @@
             "uco-core:target": {
                 "@id": "kb:cd52c3b8-7759-40b7-ae10-dfc90a35f644"
             },
-            "uco-core:kindOfRelationship": {
-                "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-                "@value": "Contained_Within"
-            },
+            "uco-core:kindOfRelationship": "Contained_Within",
             "uco-core:isDirectional": true,
             "uco-core:hasFacet": [
                 {
@@ -928,10 +918,7 @@
                 "@id": "kb:2AF6FCF3-91D3-4457-9333-ABAB67F8FB91"
             },
             "uco-core:isDirectional": true,
-            "uco-core:kindOfRelationship": {
-                "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-                "@value": "Contained_Within"
-            },
+            "uco-core:kindOfRelationship": "Contained_Within",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:DataRangeFacet",
@@ -1171,10 +1158,7 @@
             "uco-core:target": {
                 "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
             },
-            "uco-core:kindOfRelationship": {
-                "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-                "@value": "Contained_Within"
-            },
+            "uco-core:kindOfRelationship": "Contained_Within",
             "uco-core:isDirectional": true,
             "uco-core:hasFacet": [
                 {
@@ -1244,6 +1228,10 @@
             ]
         },
         {
+            "@id": "kb:account-865734c8-8c21-11e9-934e-0c4de9c21b53",
+            "@type": "uco-observable:ApplicationAccount"
+        },
+        {
             "@id": "kb:relationship-c316c405-9326-4f28-9b8d-44a3bb9e7283",
             "@type": "uco-observable:ObservableRelationship",
             "uco-core:source": {
@@ -1252,10 +1240,7 @@
             "uco-core:target": {
                 "@id": "kb:msgstoredb-16805dff-05f9-4cba-9266-d5fa712f3d8f"
             },
-            "uco-core:kindOfRelationship": {
-                "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-                "@value": "Contained_Within"
-            },
+            "uco-core:kindOfRelationship": "Contained_Within",
             "uco-core:isDirectional": true,
             "uco-core:hasFacet": [
                 {

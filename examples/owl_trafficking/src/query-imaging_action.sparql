@@ -3,11 +3,6 @@ WHERE {
   ?nImagingAction
     a case-investigation:InvestigativeAction ;
     uco-action:endTime ?lImagingEndTime ;
-    uco-core:hasFacet ?nImagingActionReferences ;
-    .
-
-  ?nImagingActionReferences
-    a uco-action:ActionReferencesFacet ;
     uco-action:instrument ?nImagingTool ;
     uco-action:object ?nSubjectDeviceProvenanceRecord ;
     uco-action:object ?nSubjectDevice ;

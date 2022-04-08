@@ -13,6 +13,7 @@
 
 import logging
 import os
+import pathlib
 
 import pytest
 import rdflib.plugins.sparql
@@ -26,7 +27,9 @@ NS_SH = rdflib.SH
 graph = rdflib.Graph()
 graph.parse("generated-urgent_evidence.json", format="json-ld")
 graph.parse("generated-urgent_evidence-wasInformedBy.json", format="json-ld")
-case_utils.ontology.load_subclass_hierarchy(graph)
+# TODO - Remove CASE-unstable.ttl reference on release of CASE 0.6.0.
+top_srcdir = pathlib.Path(os.path.dirname(__file__)).parent.parent.parent
+graph.parse(str(top_srcdir / "dependencies" / "CASE-unstable.ttl"))
 
 # Inherit prefixes defined in input context dictionary.
 nsdict = {k:v for (k,v) in graph.namespace_manager.namespaces()}

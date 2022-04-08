@@ -107,18 +107,13 @@ WHERE
 {
   ?nAction
     a case-investigation:InvestigativeAction ;
-    uco-core:hasFacet ?nActionReferences ;
     uco-core:description ?lDescription ;
-    .
-
-  ?nActionReferences
-    a uco-action:ActionReferencesFacet ;
     uco-action:endTime ?lEndTime ;
     .
 
   OPTIONAL
   {
-    ?nActionReferences
+    ?nAction
       uco-action:startTime ?lStartTime ;
       .
   }
@@ -228,10 +223,7 @@ WHERE
 {
   ?nAction
     a case-investigation:InvestigativeAction ;
-    uco-core:hasFacet [
-      a uco-action:ActionReferencesFacet ;
-      uco-action:location ?nLocation ;
-    ] ;
+    uco-action:location ?nLocation ;
     .
 
   ?nLocation
@@ -305,11 +297,6 @@ WHERE
   # Then, look up the people that produced other provenance records for this device.
   ?nInvestigativeAction
     a case-investigation:InvestigativeAction ;
-    uco-core:hasFacet ?nActionReferences ;
-    .
-
-  ?nActionReferences
-    a uco-action:ActionReferencesFacet ;
     uco-action:performer ?nPerformer ;
     uco-action:result ?nActionProvenanceRecord ;
     .
@@ -385,11 +372,6 @@ WHERE {
 
       ?nInvestigativeAction
         a case-investigation:InvestigativeAction ;
-        uco-core:hasFacet ?nActionReferencesFacet ;
-        .
-
-      ?nActionReferencesFacet
-        a uco-action:ActionReferencesFacet ;
         uco-action:instrument ?nCameraDevice ;
         uco-action:object ?nExhibitDevice ;
         uco-action:result ?nPictureFile ;
@@ -577,8 +559,8 @@ WHERE {
   # result of one action.
   ?nGeneratingAction
     a case-investigation:InvestigativeAction ;
-    uco-core:hasFacet/uco-action:result ?nGenerationProvenanceRecord ;
-    uco-core:hasFacet/uco-action:result ?nResult ;
+    uco-action:result ?nGenerationProvenanceRecord ;
+    uco-action:result ?nResult ;
     .
 
   # ?nResult might be processed by multiple actions, but cannot be
@@ -601,12 +583,12 @@ WHERE {
     WHERE {
       ?nMostRecentAction
         a case-investigation:InvestigativeAction ;
-        uco-core:hasFacet/uco-action:result ?nMostRecentProvenanceRecord ;
+        uco-action:result ?nMostRecentProvenanceRecord ;
         .
 
       ?nUsingAction
         a case-investigation:InvestigativeAction ;
-        uco-core:hasFacet/uco-action:object ?nMostRecentProvenanceRecord ;
+        uco-action:object ?nMostRecentProvenanceRecord ;
         .
 
       ?nMostRecentProvenanceRecord
@@ -616,7 +598,7 @@ WHERE {
   }
 
   ?nUsingAction
-    uco-core:hasFacet/uco-action:object ?nResult ;
+    uco-action:object ?nResult ;
     .
 
   ?nGenerationProvenanceRecord
@@ -637,8 +619,8 @@ SELECT DISTINCT ?nDerivingAction ?lDescription
 WHERE {
   # Identify action at end of path.
   ?nEndAction
-    uco-core:hasFacet/uco-action:endTime ?lEndActionEndTime ;
-    uco-core:hasFacet/uco-action:result/uco-core:hasFacet/uco-observable:fileName "IMG_1863.jpg" ;
+    uco-action:endTime ?lEndActionEndTime ;
+    uco-action:result/uco-core:hasFacet/uco-observable:fileName "IMG_1863.jpg" ;
     .
 
   # Identify all actions in chain.
@@ -647,7 +629,7 @@ WHERE {
   # Extract annotations of actions in chain.
   ?nDerivingAction
     uco-core:description ?lDescription ;
-    uco-core:hasFacet/uco-action:endTime ?lDerivingActionEndTime ;
+    uco-action:endTime ?lDerivingActionEndTime ;
     .
 }
 ORDER BY ?lDerivingActionEndTime
@@ -738,8 +720,8 @@ WHERE {
   # Find the selection action via the provenance records being some
   # input and output.
   ?nSelectionAction
-    uco-core:hasFacet / uco-action:object ?nExtractionProvenanceRecord ;
-    uco-core:hasFacet / uco-action:result ?nSelectionProvenanceRecord ;
+    uco-action:object ?nExtractionProvenanceRecord ;
+    uco-action:result ?nSelectionProvenanceRecord ;
     .
 
   # Use duck-typing to filter down to the objects that have a
@@ -762,7 +744,7 @@ WHERE {
       # input to the action.  Other systems may differ.)
       FILTER NOT EXISTS {
         ?nSelectionAction
-          uco-core:hasFacet / uco-action:object ?nFile ;
+          uco-action:object ?nFile ;
           .
       }
       BIND ("Not displayed" AS ?lReviewStatus)
@@ -773,7 +755,7 @@ WHERE {
     SELECT ?nFile ?lReviewStatus
     WHERE {
       ?nSelectionAction
-        uco-core:hasFacet / uco-action:object ?nFile ;
+        uco-action:object ?nFile ;
         .
       FILTER NOT EXISTS {
         ?nSelectionProvenanceRecord

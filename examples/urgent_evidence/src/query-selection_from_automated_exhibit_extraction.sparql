@@ -17,8 +17,8 @@ WHERE {
   # Find the selection action via the provenance records being some
   # input and output.
   ?nSelectionAction
-    uco-core:hasFacet / uco-action:object ?nExtractionProvenanceRecord ;
-    uco-core:hasFacet / uco-action:result ?nSelectionProvenanceRecord ;
+    uco-action:object ?nExtractionProvenanceRecord ;
+    uco-action:result ?nSelectionProvenanceRecord ;
     .
 
   # Use duck-typing to filter down to the objects that have a
@@ -41,7 +41,7 @@ WHERE {
       # input to the action.  Other systems may differ.)
       FILTER NOT EXISTS {
         ?nSelectionAction
-          uco-core:hasFacet / uco-action:object ?nFile ;
+          uco-action:object ?nFile ;
           .
       }
       BIND ("Not displayed" AS ?lReviewStatus)
@@ -52,7 +52,7 @@ WHERE {
     SELECT ?nFile ?lReviewStatus
     WHERE {
       ?nSelectionAction
-        uco-core:hasFacet / uco-action:object ?nFile ;
+        uco-action:object ?nFile ;
         .
       FILTER NOT EXISTS {
         ?nSelectionProvenanceRecord

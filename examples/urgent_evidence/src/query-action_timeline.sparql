@@ -3,18 +3,13 @@ WHERE
 {
   ?nAction
     a case-investigation:InvestigativeAction ;
-    uco-core:hasFacet ?nActionReferences ;
     uco-core:description ?lDescription ;
-    .
-
-  ?nActionReferences
-    a uco-action:ActionReferencesFacet ;
     uco-action:endTime ?lEndTime ;
     .
 
   OPTIONAL
   {
-    ?nActionReferences
+    ?nAction
       uco-action:startTime ?lStartTime ;
       .
   }

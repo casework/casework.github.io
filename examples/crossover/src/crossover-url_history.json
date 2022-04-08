@@ -112,10 +112,7 @@
             "@id": "kb:2AF6FCF3-91D3-4457-9333-ABAB67F8FB91"
         },
         "uco-core:isDirectional": true,
-        "uco-core:kindOfRelationship": {
-            "@type": "uco-vocabulary:ObservableObjectRelationshipVocab",
-            "@value": "Contained_Within"
-        },
+        "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DataRangeFacet",
