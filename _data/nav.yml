@@ -34,6 +34,8 @@
     #   link: /community/ontology.html
     - name: Members
       link: /community/members.html
+    - name: Adopters
+      link: /community/adopters.html
     - name: Meetings
       link: /community/meetings.html
     - name: Presentations
