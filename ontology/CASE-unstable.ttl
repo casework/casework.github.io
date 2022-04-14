@@ -2718,22 +2718,6 @@ observable:ArchiveFileFacet
 	sh:targetClass observable:ArchiveFileFacet ;
 	.
 
-observable:AttachmentFacet
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf core:Facet ;
-	rdfs:label "AttachmentFacet"@en ;
-	rdfs:comment "An attachment facet is a grouping of characteristics unique to the inclusion of an associated object as part of a message."@en ;
-	sh:property [
-		sh:class observable:ObservableObject ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
-		sh:path observable:url ;
-	] ;
-	sh:targetClass observable:AttachmentFacet ;
-	.
-
 observable:Audio
 	a
 		owl:Class ,
@@ -16583,6 +16567,7 @@ vocabulary1:ObservableObjectRelationshipVocab-members
 	rdf:first "Allocated"^^vocabulary1:ObservableObjectRelationshipVocab ;
 	rdf:rest (
 		"Allocated_By"^^vocabulary1:ObservableObjectRelationshipVocab
+		"Attachment_Of"^^vocabulary1:ObservableObjectRelationshipVocab
 		"Bound"^^vocabulary1:ObservableObjectRelationshipVocab
 		"Bound_By"^^vocabulary1:ObservableObjectRelationshipVocab
 		"Characterized_By"^^vocabulary1:ObservableObjectRelationshipVocab
@@ -16629,6 +16614,7 @@ vocabulary1:ObservableObjectRelationshipVocab-members
 		"FQDN_Of"^^vocabulary1:ObservableObjectRelationshipVocab
 		"Freed"^^vocabulary1:ObservableObjectRelationshipVocab
 		"Freed_By"^^vocabulary1:ObservableObjectRelationshipVocab
+		"Had_Attachment"^^vocabulary1:ObservableObjectRelationshipVocab
 		"Hooked"^^vocabulary1:ObservableObjectRelationshipVocab
 		"Hooked_By"^^vocabulary1:ObservableObjectRelationshipVocab
 		"Initialized_By"^^vocabulary1:ObservableObjectRelationshipVocab
