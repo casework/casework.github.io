@@ -14,7 +14,7 @@ custom_css: releases
 
 ## Migration guidance
 
-In terms of CASE-namespaced concepts, release 0.2.1 is a patch to 0.2.0.  Migration from CASE 0.2.0 does not require alterations to existing data.  
+In terms of CASE-namespaced concepts, release 0.2.1 is a patch to 0.2.0.  Migration from CASE 0.2.0 does not require alterations to existing data, except that ontology prefixes will now encode the ontology version in the concept IRI.
 
 ## Release Notes
 
