@@ -1,8 +1,10 @@
 {
     "@context": {
         "case-investigation": "https://ontology.caseontology.org/case/investigation/",
-        "drafting": "http://example.org/ontology/drafting#",
+        "drafting": "http://example.org/ontology/drafting/",
         "kb": "http://example.org/kb/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
         "uco-action": "https://ontology.unifiedcyberontology.org/uco/action/",
         "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
         "uco-identity": "https://ontology.unifiedcyberontology.org/uco/identity/",
@@ -773,12 +775,22 @@
             }
         },
         {
+            "@id": "drafting:image/jpeg",
+            "@type": "uco-types:IANAMediaType",
+            "rdfs:seeAlso": {
+                "@id": "https://github.com/ucoProject/UCO/Issues/363"
+            },
+            "skos:notation": "image/jpeg"
+        },
+        {
             "@id": "kb:subject-device-photograph-uuid-1",
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ContentDataFacet",
-                    "uco-observable:mimeType": "image/jpeg",
+                    "uco-observable:mimeType": {
+                        "@id": "drafting:image/jpeg"
+                    },
                     "uco-observable:sizeInBytes": 4929041,
                     "uco-observable:hash": [
                         {
@@ -856,7 +868,9 @@
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ContentDataFacet",
-                    "uco-observable:mimeType": "image/jpeg",
+                    "uco-observable:mimeType": {
+                        "@id": "drafting:image/jpeg"
+                    },
                     "uco-observable:sizeInBytes": 4491816,
                     "uco-observable:hash": [
                         {
@@ -934,7 +948,9 @@
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ContentDataFacet",
-                    "uco-observable:mimeType": "image/jpeg",
+                    "uco-observable:mimeType": {
+                        "@id": "drafting:image/jpeg"
+                    },
                     "uco-observable:sizeInBytes": 3236101,
                     "uco-observable:hash": [
                         {
@@ -1012,7 +1028,9 @@
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ContentDataFacet",
-                    "uco-observable:mimeType": "image/jpeg",
+                    "uco-observable:mimeType": {
+                        "@id": "drafting:image/jpeg"
+                    },
                     "uco-observable:sizeInBytes": 3777924,
                     "uco-observable:hash": [
                         {
@@ -1090,7 +1108,9 @@
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ContentDataFacet",
-                    "uco-observable:mimeType": "image/jpeg",
+                    "uco-observable:mimeType": {
+                        "@id": "drafting:image/jpeg"
+                    },
                     "uco-observable:sizeInBytes": 5010291,
                     "uco-observable:hash": [
                         {
@@ -1168,7 +1188,9 @@
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ContentDataFacet",
-                    "uco-observable:mimeType": "image/jpeg",
+                    "uco-observable:mimeType": {
+                        "@id": "drafting:image/jpeg"
+                    },
                     "uco-observable:sizeInBytes": 4565505,
                     "uco-observable:hash": [
                         {
@@ -1246,7 +1268,9 @@
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ContentDataFacet",
-                    "uco-observable:mimeType": "image/jpeg",
+                    "uco-observable:mimeType": {
+                        "@id": "drafting:image/jpeg"
+                    },
                     "uco-observable:sizeInBytes": 2964571,
                     "uco-observable:hash": [
                         {
@@ -1319,7 +1343,9 @@
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ContentDataFacet",
-                    "uco-observable:mimeType": "image/jpeg",
+                    "uco-observable:mimeType": {
+                        "@id": "drafting:image/jpeg"
+                    },
                     "uco-observable:sizeInBytes": 3963541,
                     "uco-observable:hash": [
                         {
@@ -1392,7 +1418,9 @@
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-observable:ContentDataFacet",
-                    "uco-observable:mimeType": "image/jpeg",
+                    "uco-observable:mimeType": {
+                        "@id": "drafting:image/jpeg"
+                    },
                     "uco-observable:sizeInBytes": 4007352,
                     "uco-observable:hash": [
                         {
