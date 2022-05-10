@@ -1,3 +1,4 @@
+# imports: http://www.w3.org/TR/skos-reference/skos-owl1-dl.rdf
 # imports: https://ontology.caseontology.org/case/investigation
 # imports: https://ontology.caseontology.org/case/vocabulary
 # imports: https://ontology.unifiedcyberontology.org/uco/action
@@ -17,7 +18,7 @@
 
 @prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
 @prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
 @prefix location: <https://ontology.unifiedcyberontology.org/uco/location/> .
@@ -29,6 +30,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix role: <https://ontology.unifiedcyberontology.org/uco/role/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix time1: <https://ontology.unifiedcyberontology.org/uco/time/> .
 @prefix tool: <https://ontology.unifiedcyberontology.org/uco/tool/> .
 @prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
@@ -41,7 +43,7 @@
 	a owl:Ontology ;
 	rdfs:label "case-master"@en ;
 	rdfs:comment "The Cyber-investigation Analysis Standard Expression (CASE) ontology is a community-developed standard that defines concepts used in a broad range of cyber-investigation domains, including digital forensic science, incident response, counter-terrorism, criminal justice, forensic intelligence, and situational awareness. CASE includes all aspects of the digital forensic process, from evidence-gathering and chain of custody, to generating a final report. The goal is to increase sharing and interoperability of cyber-investigation information among organizations and between forensic analytic tools. CASE aligns with and extends the Unified Cyber Ontology (UCO). The preferred namespace abbreviation for this ontology is: case-master."@en ;
-	dct:title "Cyber-investigation Analysis Standard Expression (CASE)"@en ;
+	dcterms:title "Cyber-investigation Analysis Standard Expression (CASE)"@en ;
 	owl:imports
 		<https://ontology.caseontology.org/case/investigation> ,
 		<https://ontology.caseontology.org/case/vocabulary> ,
@@ -88,6 +90,7 @@
 	a owl:Ontology ;
 	rdfs:label "uco-core"@en ;
 	rdfs:comment "This ontology defines classes and properties that are shared across the various UCO ontologies.  At a high-level, the UCO core ontology provides base classes, relationship-oriented classes, content-aggregation classes, and shared classes."@en ;
+	owl:imports <http://www.w3.org/TR/skos-reference/skos-owl1-dl.rdf> ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/identity>
@@ -162,6 +165,7 @@
 	a owl:Ontology ;
 	rdfs:label "uco-master"@en ;
 	owl:imports
+		<http://www.w3.org/TR/skos-reference/skos-owl1-dl.rdf> ,
 		<https://ontology.unifiedcyberontology.org/uco/action> ,
 		<https://ontology.unifiedcyberontology.org/uco/core> ,
 		<https://ontology.unifiedcyberontology.org/uco/identity> ,
@@ -191,6 +195,11 @@
 <https://ontology.unifiedcyberontology.org/uco/vocabulary>
 	a owl:Ontology ;
 	rdfs:label "uco-vocabularies"@en ;
+	.
+
+dcterms:FileFormat
+	a owl:Class ;
+	rdfs:comment "UCO extends dcterms:FileFormat to be an OWL Class in addition to its native definition of an RDF Class."@en ;
 	.
 
 investigation:Attorney
@@ -1293,6 +1302,13 @@ core:Relationship
 		]
 		;
 	sh:targetClass core:Relationship ;
+	.
+
+core:TaxonomicConcept
+	a owl:Class ;
+	rdfs:subClassOf skos:Concept ;
+	rdfs:label "TaxonomicConcept"@en ;
+	rdfs:comment "Taxonomic Concept is a mix-in class that enables UCO as an OWL ontology to use SKOS taxonomic individuals. [based on https://www.w3.org/2006/07/SWD/SKOS/skos-and-owl/master.html#Hybrids]"@en ;
 	.
 
 core:UcoObject
@@ -3999,6 +4015,11 @@ observable:ContentDataFacet
 	rdfs:comment "A content data facet is a grouping of characteristics unique to a block of digital data."@en ;
 	sh:property
 		[
+			sh:class dcterms:FileFormat ;
+			sh:nodeKind sh:IRI ;
+			sh:path observable:mimeType ;
+		] ,
+		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
@@ -4044,11 +4065,6 @@ observable:ContentDataFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:mimeClass ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:mimeType ;
 		] ,
 		[
 			sh:datatype vocabulary1:EndiannessTypeVocab ;
@@ -5138,13 +5154,6 @@ observable:FileFacet
 	rdfs:comment "A file facet is a grouping of characteristics unique to the storage of a file (computer resource for recording data discretely in a computer storage device) on a file system (process that manages how and where data on a storage device is stored, accessed and managed). [based on https://en.wikipedia.org/Computer_file and https://www.techopedia.com/definition/5510/file-system]"@en ;
 	sh:property
 		[
-			rdfs:comment "When used to characterize a file the sizeInBytes property conveys the recorded size of a file in a file system."@en ;
-			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:sizeInBytes ;
-		] ,
-		[
 			sh:datatype xsd:boolean ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:isDirectory ;
@@ -5172,6 +5181,13 @@ observable:FileFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:observableCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:integer ;
+			sh:description "When used to characterize a file the sizeInBytes property conveys the recorded size of a file in a file system."@en ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:sizeInBytes ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -13214,10 +13230,37 @@ observable:mimeClass
 	.
 
 observable:mimeType
-	a owl:DatatypeProperty ;
+	a owl:ObjectProperty ;
 	rdfs:label "mimeType"@en ;
-	rdfs:comment "MIME type of the data. For example 'text/html' or 'audio/mp3'."@en ;
-	rdfs:range xsd:string ;
+	rdfs:comment "MIME type of the data. The text form of '${type}/${subtype}' (for example, 'text/html' or 'audio/mp3') can be used to find a UCO-provisioned set of types from the UCO Media Types Taxonomy.  For interoperability with non-UCO resources, dcterms:FileFormat is this property's required range.  The more-specific UCO classes types:IANAMediaType or types:NonIANAMediaType should be used when available."@en ;
+	rdfs:range dcterms:FileFormat ;
+	rdfs:seeAlso
+		types:IANAMediaType ,
+		types:NonIANAMediaType ,
+		<https://taxonomy.unifiedcyberontology.org/uco/mime/>
+		;
+	.
+
+observable:mimeType-class-types-MIMEFormat
+	a sh:PropertyShape ;
+	rdfs:comment "This shape is given an IRI in order to facilitate deactivation on request."@en ;
+	rdfs:seeAlso sh:deactivated ;
+	sh:class types:MIMEFormat ;
+	sh:message "Value is not an instance of types:MIMEFormat or one of its subclasses.  Please consider using a value having type types:IANAMediaType or types:NonIANAMediaType."@en ;
+	sh:path observable:mimeType ;
+	sh:severity sh:Info ;
+	sh:targetSubjectsOf observable:mimeType ;
+	.
+
+observable:mimeType-notation
+	a sh:PropertyShape ;
+	rdfs:comment "This shape is intended to be deactivated by using overriding shapes in the UCO Mime Taxonomy."@en ;
+	rdfs:seeAlso <https://taxonomy.unifiedcyberontology.org/uco/mime/> ;
+	sh:message "The used mimeType value is not a concept with a skos:notation.  Some consumers of this data expect a string with the MIME 'type/subtype' format to be supplied with skos:notation.  Please either add the skos:notation to your input graph or incorporate the UCO MIME Taxonomy."@en ;
+	sh:minCount "1"^^xsd:integer ;
+	sh:path skos:notation ;
+	sh:severity sh:Warning ;
+	sh:targetObjectsOf observable:mimeType ;
 	.
 
 observable:minorImageVersion
@@ -15841,14 +15884,39 @@ types:Hash
 	sh:targetClass types:Hash ;
 	.
 
+types:IANAMediaType
+	a owl:Class ;
+	rdfs:subClassOf types:MIMEFormat ;
+	rdfs:label "IANAMediaType"@en ;
+	owl:disjointWith types:NonIANAMediaType ;
+	.
+
 types:Identifier
 	a rdfs:Datatype ;
 	rdfs:comment "An identifier is a string conformant to the specified UUID-based format for UCO object identifiers."@en ;
 	.
 
+types:MIMEFormat
+	a owl:Class ;
+	rdfs:subClassOf
+		dcterms:FileFormat ,
+		core:TaxonomicConcept
+		;
+	rdfs:label "MIMEFormat"@en ;
+	rdfs:comment "This class should be considered an intermediary, 'abstract' class, and should not have individuals defined that are not a member of one of its subclasses.  This class has two purposes.  First, to encode for interoperability with existing frameworks, without relying on RDFS inference, that a UCO MIMEFormat individual is both a SKOS Concept (via core:TaxonomicConcept) and Dublin Core Terms FileFormat.  Second, to guarantee a concept to be used as a UCO MIME type has exactly one skos:notation.  Note that strict SHACL enforcement of the skos:notation presence is not within the UCO Types ontology, but is instead a part of the shapes provided by the UCO MIME Taxonomy.  The warning about skos:notation in the Observable namespace is deactivated on importing the taxonomy's shapes."@en ;
+	rdfs:seeAlso observable:mimeType-notation ;
+	.
+
 types:NativeFormatString
 	a rdfs:Datatype ;
 	rdfs:comment "Specifies data in its native format of some external language. The data may be encoded in Base64 per [RFC4648]. Data encoded in Base64 must be denoted as such using the encoded property."@en ;
+	.
+
+types:NonIANAMediaType
+	a owl:Class ;
+	rdfs:subClassOf types:MIMEFormat ;
+	rdfs:label "NonIANAMediaType"@en ;
+	owl:disjointWith types:IANAMediaType ;
 	.
 
 types:StructuredText
