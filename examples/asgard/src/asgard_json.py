@@ -22,6 +22,7 @@ __version__ = "0.1.0"
 import json
 import sys
 
+
 def main():
     obj = None
     sys.stderr.write("args.in_json = %r." % args.in_json)
@@ -36,8 +37,10 @@ def main():
 
     json.dump(obj, sys.stdout, indent=4)
 
+
 if __name__ == "__main__":
     import argparse
+
     parser = argparse.ArgumentParser()
     parser.add_argument("in_json", nargs="+")
     args = parser.parse_args()

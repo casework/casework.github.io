@@ -20,15 +20,14 @@ NS_SH = rdflib.SH
 
 NSDICT = {"sh": NS_SH}
 
-def load_validation_graph(
-  filename : str,
-  expected_conformance : bool
-) -> rdflib.Graph:
+
+def load_validation_graph(filename: str, expected_conformance: bool) -> rdflib.Graph:
     g = rdflib.Graph()
     g.parse(filename, format="turtle")
     g.namespace_manager.bind("sh", NS_SH)
 
-    query = rdflib.plugins.sparql.prepareQuery("""\
+    query = rdflib.plugins.sparql.prepareQuery(
+        """\
 SELECT ?lConforms
 WHERE {
   ?nReport
@@ -36,7 +35,9 @@ WHERE {
     sh:conforms ?lConforms ;
     .
 }
-""", initNs=NSDICT)
+""",
+        initNs=NSDICT,
+    )
 
     computed_conformance = None
     for result in g.query(query):
@@ -45,11 +46,17 @@ WHERE {
     assert expected_conformance == computed_conformance
     return g
 
-#TODO
-@pytest.mark.xfail(reason="At least one issue known present with vocabulary items.  Once UCO ticket OC-12 is resolved, this xfail annotation should be removed.", strict=True)
+
+# TODO
+@pytest.mark.xfail(
+    reason="At least one issue known present with vocabulary items.  Once UCO ticket OC-12 is resolved, this xfail annotation should be removed.",
+    strict=True,
+)
 def test_owl_trafficking_validation():
     """
     Confirm the instance data passes validation.
     """
-    g = load_validation_graph(os.path.join(os.path.dirname(__file__), "owl_trafficking_validation.ttl"), True)
+    g = load_validation_graph(
+        os.path.join(os.path.dirname(__file__), "owl_trafficking_validation.ttl"), True
+    )
     assert isinstance(g, rdflib.Graph)
