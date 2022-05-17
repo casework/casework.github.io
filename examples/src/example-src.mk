@@ -32,12 +32,6 @@ drafting_ttl := $(wildcard ../drafting.ttl)
 example_snippets_json := \
   $(shell find * -maxdepth 0 -name '$(example_name)-*.json' | LC_ALL=C sort)
 
-normalized_example_snippets_json := \
-  $(foreach example_snippet_json,$(example_snippets_json),normalized-$(example_snippet_json))
-check_normalized_example_snippets_json := \
-  check-normalized-$(example_name)_base.json \
-  $(foreach normalized_example_snippet_json,$(normalized_example_snippets_json),check-$(normalized_example_snippet_json))
-
 query_sparql_files := $(wildcard query-*.sparql)
 query_html_files := $(foreach query_sparql_file,$(query_sparql_files),$(subst .sparql,.html,$(query_sparql_file)))
 query_md_files := $(foreach query_sparql_file,$(query_sparql_files),$(subst .sparql,.md,$(query_sparql_file)))
@@ -55,12 +49,10 @@ all: \
   generated-$(example_name).json
 
 .PHONY: \
-  check-normalized-%.json \
   check-pytest
 
 .PRECIOUS: \
-  $(example_name)_validation.ttl \
-  normalized-%.json
+  $(example_name)_validation.ttl
 
 $(example_name)_validation.ttl: \
   generated-$(example_name).json \
@@ -131,21 +123,11 @@ $(example_name)_validation-unstable.ttl: \
 	mv _$@ $@
 
 check: \
-  $(check_normalized_example_snippets_json) \
   $(example_name)_validation-develop.ttl \
   $(example_name)_validation-unstable.ttl \
   check-pytest \
   generated-index.html \
   generated-$(example_name).json
-
-# Generic test:
-# * Confirm JSON portions of example are not changed when normalized with json.tool.
-check-normalized-%.json: \
-  %.json \
-  normalized-%.json
-	@diff $^ >/dev/null \
-	  || echo "ERROR:JSON snippet not normalized: $<." >&2
-	diff $^
 
 # Run pytest tests only if any are written.
 # (Pytest exits in an error state if called with no tests found.)
@@ -164,7 +146,6 @@ clean:
 	  *.sed \
 	  *validation*ttl \
 	  generated-* \
-	  normalized-* \
 	  query-*.md
 
 generated-index.html: \
@@ -216,13 +197,6 @@ generated-$(example_name)-wasInformedBy.json: \
 	    _$@ \
 	    $< \
 	    generated-$(example_name).json
-	mv _$@ $@
-
-normalized-%.json: \
-  %.json
-	python3 -m json.tool \
-	  $< \
-	  _$@
 	mv _$@ $@
 
 # TODO - Remove '--built-version none' and CASE-unstable.ttl reference on release of CASE 0.6.0.
