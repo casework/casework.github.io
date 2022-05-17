@@ -10,7 +10,7 @@
 # We would appreciate acknowledgement if the software is used.
 
 repos:
--   repo: https://github.com/psf/black
-    rev: 22.3.0
-    hooks:
-    -   id: black
+- repo: https://github.com/psf/black
+  rev: 22.3.0
+  hooks:
+  - id: black
