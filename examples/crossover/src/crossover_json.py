@@ -26,6 +26,7 @@ import sys
 
 _logger = logging.getLogger(os.path.basename(__file__))
 
+
 def main():
     obj = None
     with open(args.in_base_json, "r") as in_fh:
@@ -48,12 +49,14 @@ def main():
 
     json.dump(obj, sys.stdout, indent=4)
 
+
 if __name__ == "__main__":
     import argparse
+
     parser = argparse.ArgumentParser()
     parser.add_argument("in_base_json")
     parser.add_argument("in_json", nargs="*")
     args = parser.parse_args()
-    #logging.basicConfig(level=logging.DEBUG)
+    # logging.basicConfig(level=logging.DEBUG)
     logging.basicConfig(level=logging.INFO)
     main()

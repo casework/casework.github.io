@@ -23,6 +23,7 @@ __version__ = "0.1.0"
 import argparse
 import sys
 
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("in_json")
@@ -30,6 +31,7 @@ def main():
 
     with open(args.in_json, "r") as in_fh:
         sys.stdout.write(in_fh.read())
+
 
 if __name__ == "__main__":
     main()
