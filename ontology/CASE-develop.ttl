@@ -2718,22 +2718,6 @@ observable:ArchiveFileFacet
 	sh:targetClass observable:ArchiveFileFacet ;
 	.
 
-observable:AttachmentFacet
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf core:Facet ;
-	rdfs:label "AttachmentFacet"@en ;
-	rdfs:comment "An attachment facet is a grouping of characteristics unique to the inclusion of an associated object as part of a message."@en ;
-	sh:property [
-		sh:class observable:ObservableObject ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
-		sh:path observable:url ;
-	] ;
-	sh:targetClass observable:AttachmentFacet ;
-	.
-
 observable:Audio
 	a
 		owl:Class ,
@@ -4752,14 +4736,12 @@ observable:EmailMessageFacet
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:isMimeEncoded ;
 		] ,
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:isMultipart ;
 		] ,
@@ -5154,13 +5136,6 @@ observable:FileFacet
 	rdfs:comment "A file facet is a grouping of characteristics unique to the storage of a file (computer resource for recording data discretely in a computer storage device) on a file system (process that manages how and where data on a storage device is stored, accessed and managed). [based on https://en.wikipedia.org/Computer_file and https://www.techopedia.com/definition/5510/file-system]"@en ;
 	sh:property
 		[
-			rdfs:comment "When used to characterize a file the sizeInBytes property conveys the recorded size of a file in a file system."@en ;
-			sh:datatype xsd:integer ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:sizeInBytes ;
-		] ,
-		[
 			sh:datatype xsd:boolean ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:isDirectory ;
@@ -5188,6 +5163,13 @@ observable:FileFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:observableCreatedTime ;
+		] ,
+		[
+			sh:datatype xsd:integer ;
+			sh:description "When used to characterize a file the sizeInBytes property conveys the recorded size of a file in a file system."@en ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:sizeInBytes ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -8609,12 +8591,6 @@ observable:URLFacet
 			sh:path observable:host ;
 		] ,
 		[
-			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:userName ;
-		] ,
-		[
 			sh:datatype xsd:integer ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -8656,6 +8632,12 @@ observable:URLFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:scheme ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:userName ;
 		]
 		;
 	sh:targetClass observable:URLFacet ;
@@ -14841,10 +14823,10 @@ observable:userLocationString
 	.
 
 observable:userName
-	a owl:ObjectProperty ;
+	a owl:DatatypeProperty ;
 	rdfs:label "userName"@en ;
 	rdfs:comment "Username used to authenticate to this resource."@en ;
-	rdfs:range observable:ObservableObject ;
+	rdfs:range xsd:string ;
 	.
 
 observable:validityNotAfter
@@ -16583,6 +16565,7 @@ vocabulary1:ObservableObjectRelationshipVocab-members
 	rdf:first "Allocated"^^vocabulary1:ObservableObjectRelationshipVocab ;
 	rdf:rest (
 		"Allocated_By"^^vocabulary1:ObservableObjectRelationshipVocab
+		"Attachment_Of"^^vocabulary1:ObservableObjectRelationshipVocab
 		"Bound"^^vocabulary1:ObservableObjectRelationshipVocab
 		"Bound_By"^^vocabulary1:ObservableObjectRelationshipVocab
 		"Characterized_By"^^vocabulary1:ObservableObjectRelationshipVocab
@@ -16629,6 +16612,7 @@ vocabulary1:ObservableObjectRelationshipVocab-members
 		"FQDN_Of"^^vocabulary1:ObservableObjectRelationshipVocab
 		"Freed"^^vocabulary1:ObservableObjectRelationshipVocab
 		"Freed_By"^^vocabulary1:ObservableObjectRelationshipVocab
+		"Had_Attachment"^^vocabulary1:ObservableObjectRelationshipVocab
 		"Hooked"^^vocabulary1:ObservableObjectRelationshipVocab
 		"Hooked_By"^^vocabulary1:ObservableObjectRelationshipVocab
 		"Initialized_By"^^vocabulary1:ObservableObjectRelationshipVocab
