@@ -1,14 +1,14 @@
 ---
 <!-- layout: releases -->
-title: Crossover CASE
+title: Crossover CASE - WMD
 jumbo_desc: Cellebrite XML Report Example
 ---
 
-<h2>Crossover CASE - Cellebrite XML Report Example</h2>
+<h2>Crossover CASE - WMD - Cellebrite XML Report Example</h2>
 
 <p>This document uses CASE to represent digital evidence extracted from an Android device using Cellebrite, with Autopsy to fill in gaps. The physical image and scenario introduction can be downloaded from the following location: <a href="https://drive.switch.ch/index.php/s/0c7BiyQZRKOtMMq">https://drive.switch.ch/index.php/s/0c7BiyQZRKOtMMq</a>.</p>
 
-<p>The JSON-LD data on this page are available combined in the file <a href="crossover.json">crossover.json</a>.</p>
+<p>The JSON-LD data on this page are available combined in the file <a href="crossover_wmd.json">crossover_wmd.json</a>.</p>
 
 
 <h3>Disclaimers</h3>
@@ -60,7 +60,7 @@ jumbo_desc: Cellebrite XML Report Example
 <h4>CASE Representation of Investigation</h4>
 
 {% highlight json %}
-@CROSSOVER_BASE_JSON@
+@CROSSOVER_WMD_BASE_JSON@
 {% endhighlight %}
 
 
@@ -94,7 +94,7 @@ jumbo_desc: Cellebrite XML Report Example
 <h4>CASE Representation of Report Generation</h4>
 
 {% highlight json %}
-@CROSSOVER_REPORT_GENERATION_JSON@
+@CROSSOVER_WMD_REPORT_GENERATION_JSON@
 {% endhighlight %}
 
 
@@ -126,13 +126,13 @@ jumbo_desc: Cellebrite XML Report Example
 <h4>CASE Representation of data extraction</h4>
 
 {% highlight json %}
-@CROSSOVER_DATA_EXTRACTION_JSON@
+@CROSSOVER_WMD_DATA_EXTRACTION_JSON@
 {% endhighlight %}
 
 <p>The role of investigator should be linked to an entity, such as a person and/or organization. This is not represented in the current Cellebrite XML report, and is represented here using CASE.</p>
 
 {% highlight json %}
-@CROSSOVER_INVESTIGATOR_ROLE_JSON@
+@CROSSOVER_WMD_INVESTIGATOR_ROLE_JSON@
 {% endhighlight %}
 
 
@@ -146,7 +146,7 @@ jumbo_desc: Cellebrite XML Report Example
 <h4>CASE Representation of Integrity Details</h4>
 
 {% highlight json %}
-@CROSSOVER_INTEGRITY_DETAILS_JSON@
+@CROSSOVER_WMD_INTEGRITY_DETAILS_JSON@
 {% endhighlight %}
 
 
@@ -199,7 +199,7 @@ jumbo_desc: Cellebrite XML Report Example
 <h4>CASE Representation of Android Device Properties</h4>
 
 {% highlight json %}
-@CROSSOVER_ANDROID_DEVICE_PROPERTIES_JSON@
+@CROSSOVER_WMD_ANDROID_DEVICE_PROPERTIES_JSON@
 {% endhighlight %}
 
 
@@ -218,14 +218,14 @@ SimChangeTime=1528641355649<br />
 <p>In actuality, the current SIM card ICCID is <samp>8931088918010550289</samp>, as listed in the "<samp>siminfo</samp>" table of the <samp>data/com.android.providers.telephony/databases/telephony.db</samp> database. This SIM card has a different phone number than the one displayed by Cellebrite. The current SIM card was placed in the Samsung device on <samp>2018-11-16T12:34:28Z</samp>.</p>
 
 {% highlight json %}
-@CROSSOVER_SIM_CARD_CONTAINMENTS_JSON@
+@CROSSOVER_WMD_SIM_CARD_CONTAINMENTS_JSON@
 {% endhighlight %}
 
 
 <h4>CASE Representation of SIM Card properties</h4>
 
 {% highlight json %}
-@CROSSOVER_SIM_CARD_PROPERTIES_JSON@
+@CROSSOVER_WMD_SIM_CARD_PROPERTIES_JSON@
 {% endhighlight %}
 
 <p><b>Note:</b> Observe IMSI traces in "<samp>system/netpolicy.xml</samp>" file.</p>
@@ -280,7 +280,7 @@ SimChangeTime=1528641355649<br />
 <h4>CASE Representation of Users and Accounts</h4>
 
 {% highlight json %}
-@CROSSOVER_USERS_AND_ACCOUNTS_JSON@
+@CROSSOVER_WMD_USERS_AND_ACCOUNTS_JSON@
 {% endhighlight %}
 
 <p>In addition, a Reddit account was extracted from the Chrome Login Data database, and Cellebrite provides a converted timestamp as a known format.</p>
@@ -327,7 +327,7 @@ SimChangeTime=1528641355649<br />
 <h4>CASE Representation of Reddit account</h4>
 
 {% highlight json %}
-@CROSSOVER_REDDIT_ACCOUNT_JSON@
+@CROSSOVER_WMD_REDDIT_ACCOUNT_JSON@
 {% endhighlight %}
 
 
@@ -374,7 +374,7 @@ SimChangeTime=1528641355649<br />
 <h4>CASE Representation</h4>
 
 {% highlight json %}
-@CROSSOVER_LOCATION_JSON@
+@CROSSOVER_WMD_LOCATION_JSON@
 {% endhighlight %}
 
 
@@ -389,7 +389,7 @@ SimChangeTime=1528641355649<br />
 <h4>CASE Representation <em>(values obtained using Autopsy)</em></h4>
 
 {% highlight json %}
-@CROSSOVER_PARTITION_ON_DISK_IMAGE_JSON@
+@CROSSOVER_WMD_PARTITION_ON_DISK_IMAGE_JSON@
 {% endhighlight %}
 
 
@@ -401,7 +401,7 @@ SimChangeTime=1528641355649<br />
 <h4>CASE Representation <em>(values obtained using Autopsy)</em></h4>
 
 {% highlight json %}
-@CROSSOVER_FILE_SYSTEM_IN_PARTITION_JSON@
+@CROSSOVER_WMD_FILE_SYSTEM_IN_PARTITION_JSON@
 {% endhighlight %}
 
 
@@ -413,7 +413,7 @@ SimChangeTime=1528641355649<br />
 <h4>CASE Representation</h4>
 
 {% highlight json %}
-@CROSSOVER_FILE_IN_FILE_SYSTEM_JSON@
+@CROSSOVER_WMD_FILE_IN_FILE_SYSTEM_JSON@
 {% endhighlight %}
 
 
@@ -453,7 +453,7 @@ SimChangeTime=1528641355649<br />
 <h4>CASE Representation</h4>
 
 {% highlight json %}
-@CROSSOVER_ELDER_WAND_PNG_JSON@
+@CROSSOVER_WMD_ELDER_WAND_PNG_JSON@
 {% endhighlight %}
 
 <p><strong>Note:</strong> EXIF metadata is represented using properties specified in the standard.  (Further CASE EXIF development is occuring in ticket AC-126.)</p>
@@ -599,20 +599,20 @@ SimChangeTime=1528641355649<br />
 <h5>WhatsApp Application</h5>
 
 {% highlight json %}
-@CROSSOVER_WHATSAPP_APPLICATION_JSON@
+@CROSSOVER_WMD_WHATSAPP_APPLICATION_JSON@
 {% endhighlight %}
 
 
 <h5> WhatsApp Account</h5>
 {% highlight json %}
-@CROSSOVER_WHATSAPP_ACCOUNT_JSON@
+@CROSSOVER_WMD_WHATSAPP_ACCOUNT_JSON@
 {% endhighlight %}
 
 
 <h5>WhatsApp Message</h5>
 
 {% highlight json %}
-@CROSSOVER_WHATSAPP_MESSAGE_JSON@
+@CROSSOVER_WMD_WHATSAPP_MESSAGE_JSON@
 {% endhighlight %}
 
 
@@ -621,14 +621,14 @@ SimChangeTime=1528641355649<br />
 <p>The WhatsApp message was contained within the file <samp>msgstore.db</samp> at offset <samp>293822</samp> in the <samp>messages</samp> table.</p>
 
 {% highlight json %}
-@CROSSOVER_WHATSAPP_MESSAGE_FILE_RELATIONSHIP_JSON@
+@CROSSOVER_WMD_WHATSAPP_MESSAGE_FILE_RELATIONSHIP_JSON@
 {% endhighlight %}
 
 
 <h5>File msgstore.db</h5>
 
 {% highlight json %}
-@CROSSOVER_WHATSAPP_FILE_MSGSTORE_DB_JSON@
+@CROSSOVER_WMD_WHATSAPP_FILE_MSGSTORE_DB_JSON@
 {% endhighlight %}
 
 
@@ -637,7 +637,7 @@ SimChangeTime=1528641355649<br />
 <p>The WhatsApp SQLite database file was contained within the forensic copy of the mobile device.</p>
 
 {% highlight json %}
-@CROSSOVER_WHATSAPP_FILE_FORENSIC_COPY_RELATIONSHIP_JSON@
+@CROSSOVER_WMD_WHATSAPP_FILE_FORENSIC_COPY_RELATIONSHIP_JSON@
 {% endhighlight %}
 
 
@@ -647,7 +647,7 @@ SimChangeTime=1528641355649<br />
 <h4>CASE Representation</h4>
 
 {% highlight json %}
-@CROSSOVER_EMAIL_JSON@
+@CROSSOVER_WMD_EMAIL_JSON@
 {% endhighlight %}
 
 
@@ -686,5 +686,5 @@ SimChangeTime=1528641355649<br />
 <h4>CASE Representation</h4>
 
 {% highlight json %}
-@CROSSOVER_URL_HISTORY_JSON@
+@CROSSOVER_WMD_URL_HISTORY_JSON@
 {% endhighlight %}
