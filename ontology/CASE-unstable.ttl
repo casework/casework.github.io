@@ -262,14 +262,14 @@ investigation:Examiner
 	sh:targetClass investigation:Examiner ;
 	.
 
-investigation:ExaminerActionLifecylce
+investigation:ExaminerActionLifecycle
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
 	rdfs:subClassOf action:ActionLifecycle ;
-	rdfs:label "ExaminerActionLifecylce"@en ;
-	rdfs:comment "An examiner action life cycle is an action pattern consisting of an ordered set of actions or subordinate action-lifecycles performed by an entity acting in a role involved in providing scientific evaluations of evidence that is used to aid law enforcement investigations and court cases."@en ;
+	rdfs:label "ExaminerActionLifecycle"@en ;
+	rdfs:comment "An examiner action lifecycle is an action pattern consisting of an ordered set of actions or subordinate action-lifecycles performed by an entity acting in a role involved in providing scientific evaluations of evidence that is used to aid law enforcement investigations and court cases."@en ;
 	sh:targetClass investigation:ExaminerActionLifecylce ;
 	.
 
@@ -391,7 +391,7 @@ investigation:SubjectActionLifecycle
 		;
 	rdfs:subClassOf action:ActionLifecycle ;
 	rdfs:label "SubjectActionLifecycle"@en ;
-	rdfs:comment "A subject action life cycle is an action pattern consisting of an ordered set of multiple actions or subordinate action-lifecycles performed by an entity acting in a role whose conduct may be within the scope of an investigation."@en ;
+	rdfs:comment "A subject action lifecycle is an action pattern consisting of an ordered set of multiple actions or subordinate action-lifecycles performed by an entity acting in a role whose conduct may be within the scope of an investigation."@en ;
 	sh:targetClass investigation:SubjectActionLifecycle ;
 	.
 
@@ -402,7 +402,7 @@ investigation:VictimActionLifecycle
 		;
 	rdfs:subClassOf action:ActionLifecycle ;
 	rdfs:label "VictimActionLifecycle"@en ;
-	rdfs:comment "A victim action life cycle is an action pattern consisting of an ordered set of multiple actions or subordinate action-lifecycles performed by an entity acting in a role characterized by its potential to be harmed as a result of a crime, accident, or other event or action."@en ;
+	rdfs:comment "A victim action lifecycle is an action pattern consisting of an ordered set of multiple actions or subordinate action-lifecycles performed by an entity acting in a role characterized by its potential to be harmed as a result of a crime, accident, or other event or action."@en ;
 	sh:targetClass investigation:VictimActionLifecycle ;
 	.
 
@@ -1318,6 +1318,7 @@ core:UcoObject
 		;
 	rdfs:label "UcoObject"@en ;
 	rdfs:comment "A UCO object is a representation of a fundamental concept either directly inherent to the cyber domain or indirectly related to the cyber domain and necessary for contextually characterizing cyber domain concepts and relationships. Within the Unified Cyber Ontology (UCO) structure this is the base class acting as a consistent, unifying and interoperable foundation for all explicit and inter-relatable content objects."@en ;
+	owl:disjointWith core:Facet ;
 	sh:property
 		[
 			sh:class core:ExternalReference ;
@@ -4709,12 +4710,6 @@ observable:EmailMessageFacet
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:inReplyTo ;
-		] ,
-		[
-			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:sender ;
 		] ,
 		[
@@ -4802,6 +4797,12 @@ observable:EmailMessageFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:contentType ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:inReplyTo ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -4955,6 +4956,12 @@ observable:EventFacet
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:application ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:endTime ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
@@ -6757,39 +6764,16 @@ observable:NetworkSocketAddressFamily
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "af_appletalk" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "af_bth" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "af_inet" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "af_inet6" ;
-						rdf:rest [
-							a rdf:List ;
-							rdf:first "af_ipx" ;
-							rdf:rest [
-								a rdf:List ;
-								rdf:first "af_irda" ;
-								rdf:rest [
-									a rdf:List ;
-									rdf:first "af_netbios" ;
-									rdf:rest [
-										a rdf:List ;
-										rdf:first "af_unspec" ;
-										rdf:rest rdf:nil ;
-									] ;
-								] ;
-							] ;
-						] ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"af_appletalk"
+			"af_bth"
+			"af_inet"
+			"af_inet6"
+			"af_ipx"
+			"af_irda"
+			"af_netbios"
+			"af_unspec"
+		) ;
 	] ;
 	.
 
@@ -6797,107 +6781,33 @@ observable:NetworkSocketProtocolFamily
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "pf_appletalk" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "pf_ash" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "pf_atmpvc" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "pf_atmsvc" ;
-						rdf:rest [
-							a rdf:List ;
-							rdf:first "pf_ax25" ;
-							rdf:rest [
-								a rdf:List ;
-								rdf:first "pf_bluetooth" ;
-								rdf:rest [
-									a rdf:List ;
-									rdf:first "pf_bridge" ;
-									rdf:rest [
-										a rdf:List ;
-										rdf:first "pf_decnet" ;
-										rdf:rest [
-											a rdf:List ;
-											rdf:first "pf_econet" ;
-											rdf:rest [
-												a rdf:List ;
-												rdf:first "pf_inet" ;
-												rdf:rest [
-													a rdf:List ;
-													rdf:first "pf_inet6" ;
-													rdf:rest [
-														a rdf:List ;
-														rdf:first "pf_ipx" ;
-														rdf:rest [
-															a rdf:List ;
-															rdf:first "pf_irda" ;
-															rdf:rest [
-																a rdf:List ;
-																rdf:first "pf_key" ;
-																rdf:rest [
-																	a rdf:List ;
-																	rdf:first "pf_netbeui" ;
-																	rdf:rest [
-																		a rdf:List ;
-																		rdf:first "pf_netlink" ;
-																		rdf:rest [
-																			a rdf:List ;
-																			rdf:first "pf_netrom" ;
-																			rdf:rest [
-																				a rdf:List ;
-																				rdf:first "pf_packet" ;
-																				rdf:rest [
-																					a rdf:List ;
-																					rdf:first "pf_pppox" ;
-																					rdf:rest [
-																						a rdf:List ;
-																						rdf:first "pf_rose" ;
-																						rdf:rest [
-																							a rdf:List ;
-																							rdf:first "pf_route" ;
-																							rdf:rest [
-																								a rdf:List ;
-																								rdf:first "pf_security" ;
-																								rdf:rest [
-																									a rdf:List ;
-																									rdf:first "pf_sna" ;
-																									rdf:rest [
-																										a rdf:List ;
-																										rdf:first "pf_wanpipe" ;
-																										rdf:rest [
-																											a rdf:List ;
-																											rdf:first "pf_x25" ;
-																											rdf:rest rdf:nil ;
-																										] ;
-																									] ;
-																								] ;
-																							] ;
-																						] ;
-																					] ;
-																				] ;
-																			] ;
-																		] ;
-																	] ;
-																] ;
-															] ;
-														] ;
-													] ;
-												] ;
-											] ;
-										] ;
-									] ;
-								] ;
-							] ;
-						] ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"pf_appletalk"
+			"pf_ash"
+			"pf_atmpvc"
+			"pf_atmsvc"
+			"pf_ax25"
+			"pf_bluetooth"
+			"pf_bridge"
+			"pf_decnet"
+			"pf_econet"
+			"pf_inet"
+			"pf_inet6"
+			"pf_ipx"
+			"pf_irda"
+			"pf_key"
+			"pf_netbeui"
+			"pf_netlink"
+			"pf_netrom"
+			"pf_packet"
+			"pf_pppox"
+			"pf_rose"
+			"pf_route"
+			"pf_security"
+			"pf_sna"
+			"pf_wanpipe"
+			"pf_x25"
+		) ;
 	] ;
 	.
 
@@ -6905,27 +6815,13 @@ observable:NetworkSocketType
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "sock_dgram" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "sock_raw" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "sock_rdm" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "sock_seqpacket" ;
-						rdf:rest [
-							a rdf:List ;
-							rdf:first "sock_stream" ;
-							rdf:rest rdf:nil ;
-						] ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"sock_dgram"
+			"sock_raw"
+			"sock_rdm"
+			"sock_seqpacket"
+			"sock_stream"
+		) ;
 	] ;
 	.
 
@@ -7433,6 +7329,17 @@ observable:ProcessFacet
 	sh:targetClass observable:ProcessFacet ;
 	.
 
+observable:ProcessThread
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "Thread"@en ;
+	rdfs:comment "A thread is the smallest sequence of programmed instructions that can be managed independently by a scheduler on a computer, which is typically a part of the operating system. It is a component of a process. Multiple threads can exist within one process, executing concurrently and sharing resources such as memory, while different processes do not share these resources. In particular, the threads of a process share its executable code and the values of its dynamically allocated variables and non-thread-local global variables at any given time. [based on https://en.wikipedia.org/wiki/Thread_(computing)]"@en ;
+	sh:targetClass observable:ProcessThread ;
+	.
+
 observable:Profile
 	a
 		owl:Class ,
@@ -7648,59 +7555,21 @@ observable:RegistryDatatype
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "reg_binary" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "reg_dword" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "reg_dword_big_endian" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "reg_expand_sz" ;
-						rdf:rest [
-							a rdf:List ;
-							rdf:first "reg_full_resource_descriptor" ;
-							rdf:rest [
-								a rdf:List ;
-								rdf:first "reg_invalid_type" ;
-								rdf:rest [
-									a rdf:List ;
-									rdf:first "reg_link" ;
-									rdf:rest [
-										a rdf:List ;
-										rdf:first "reg_multi_sz" ;
-										rdf:rest [
-											a rdf:List ;
-											rdf:first "reg_none" ;
-											rdf:rest [
-												a rdf:List ;
-												rdf:first "reg_qword" ;
-												rdf:rest [
-													a rdf:List ;
-													rdf:first "reg_resource_list" ;
-													rdf:rest [
-														a rdf:List ;
-														rdf:first "reg_resource_requirements_list" ;
-														rdf:rest [
-															a rdf:List ;
-															rdf:first "reg_sz" ;
-															rdf:rest rdf:nil ;
-														] ;
-													] ;
-												] ;
-											] ;
-										] ;
-									] ;
-								] ;
-							] ;
-						] ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"reg_binary"
+			"reg_dword"
+			"reg_dword_big_endian"
+			"reg_expand_sz"
+			"reg_full_resource_descriptor"
+			"reg_invalid_type"
+			"reg_link"
+			"reg_multi_sz"
+			"reg_none"
+			"reg_qword"
+			"reg_resource_list"
+			"reg_resource_requirements_list"
+			"reg_sz"
+		) ;
 	] ;
 	.
 
@@ -8217,17 +8086,6 @@ observable:TaskActionType
 		]
 		;
 	sh:targetClass observable:TaskActionType ;
-	.
-
-observable:Thread
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf observable:ObservableObject ;
-	rdfs:label "Thread"@en ;
-	rdfs:comment "A thread is the smallest sequence of programmed instructions that can be managed independently by a scheduler on a computer, which is typically a part of the operating system. It is a component of a process. Multiple threads can exist within one process, executing concurrently and sharing resources such as memory, while different processes do not share these resources. In particular, the threads of a process share its executable code and the values of its dynamically allocated variables and non-thread-local global variables at any given time. [based on https://en.wikipedia.org/wiki/Thread_(computing)]"@en ;
-	sh:targetClass observable:Thread ;
 	.
 
 observable:TriggerType
@@ -9661,19 +9519,11 @@ observable:WindowsPEBinaryType
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "dll" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "exe" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "sys" ;
-					rdf:rest rdf:nil ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"dll"
+			"exe"
+			"sys"
+		) ;
 	] ;
 	.
 
@@ -10205,27 +10055,13 @@ observable:WindowsServiceStartType
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "service_auto_start" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "service_boot_start" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "service_demand_start" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "service_disabled" ;
-						rdf:rest [
-							a rdf:List ;
-							rdf:first "service_system_alert" ;
-							rdf:rest rdf:nil ;
-						] ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"service_auto_start"
+			"service_boot_start"
+			"service_demand_start"
+			"service_disabled"
+			"service_system_alert"
+		) ;
 	] ;
 	.
 
@@ -10233,35 +10069,15 @@ observable:WindowsServiceStatus
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "service_continue_pending" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "service_pause_pending" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "service_paused" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "service_running" ;
-						rdf:rest [
-							a rdf:List ;
-							rdf:first "service_start_pending" ;
-							rdf:rest [
-								a rdf:List ;
-								rdf:first "service_stop_pending" ;
-								rdf:rest [
-									a rdf:List ;
-									rdf:first "service_stopped" ;
-									rdf:rest rdf:nil ;
-								] ;
-							] ;
-						] ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"service_continue_pending"
+			"service_pause_pending"
+			"service_paused"
+			"service_running"
+			"service_start_pending"
+			"service_stop_pending"
+			"service_stopped"
+		) ;
 	] ;
 	.
 
@@ -10269,23 +10085,12 @@ observable:WindowsServiceType
 	a rdfs:Datatype ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:oneOf [
-			a rdf:List ;
-			rdf:first "service_file_system_driver" ;
-			rdf:rest [
-				a rdf:List ;
-				rdf:first "service_kernel_driver" ;
-				rdf:rest [
-					a rdf:List ;
-					rdf:first "service_win32_own_process" ;
-					rdf:rest [
-						a rdf:List ;
-						rdf:first "service_win32_share_process" ;
-						rdf:rest rdf:nil ;
-					] ;
-				] ;
-			] ;
-		] ;
+		owl:oneOf (
+			"service_file_system_driver"
+			"service_kernel_driver"
+			"service_win32_own_process"
+			"service_win32_share_process"
+		) ;
 	] ;
 	.
 
@@ -10530,7 +10335,7 @@ observable:WindowsThread
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:Thread ;
+	rdfs:subClassOf observable:ProcessThread ;
 	rdfs:label "WindowsThread"@en ;
 	rdfs:comment "A Windows thread is a single thread of execution within a Windows process."@en ;
 	sh:targetClass observable:WindowsThread ;
@@ -12664,10 +12469,10 @@ observable:impHash
 	.
 
 observable:inReplyTo
-	a owl:ObjectProperty ;
+	a owl:DatatypeProperty ;
 	rdfs:label "inReplyTo"@en ;
 	rdfs:comment "One of more unique identifiers for identifying the email(s) this email is a reply to."@en ;
-	rdfs:range observable:ObservableObject ;
+	rdfs:range xsd:string ;
 	.
 
 observable:inetLocation

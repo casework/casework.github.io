@@ -25,7 +25,7 @@ SHELL := /bin/bash
 
 top_srcdir := $(shell cd .. ; pwd)
 
-RDF_TOOLKIT_JAR := $(top_srcdir)/dependencies/CASE-Utilities-Python/dependencies/CASE/lib/rdf-toolkit.jar
+RDF_TOOLKIT_JAR := $(top_srcdir)/dependencies/CASE-unstable/dependencies/UCO/lib/rdf-toolkit.jar
 
 all: \
   CASE-develop.ttl \
