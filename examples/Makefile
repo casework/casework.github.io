@@ -17,21 +17,21 @@ top_srcdir := ..
 
 all: \
   all-asgard \
-  all-crossover \
+  all-crossover_wmd \
   all-owl_trafficking \
   all-urgent_evidence
 
 .PHONY: \
   all-asgard \
-  all-crossover \
+  all-crossover_wmd \
   all-owl_trafficking \
   all-urgent_evidence \
   check-asgard \
-  check-crossover \
+  check-crossover_wmd \
   check-owl_trafficking \
   check-urgent_evidence \
   clean-asgard \
-  clean-crossover \
+  clean-crossover_wmd \
   clean-owl_trafficking \
   clean-urgent_evidence
 
@@ -39,9 +39,9 @@ all-asgard:
 	$(MAKE) \
 	  --directory asgard
 
-all-crossover:
+all-crossover_wmd:
 	$(MAKE) \
-	  --directory crossover
+	  --directory crossover_wmd
 
 all-owl_trafficking:
 	$(MAKE) \
@@ -54,7 +54,7 @@ all-urgent_evidence: \
 
 check: \
   check-asgard \
-  check-crossover \
+  check-crossover_wmd \
   check-owl_trafficking \
   check-urgent_evidence
 
@@ -63,9 +63,9 @@ check-asgard:
 	  --directory asgard \
 	  check
 
-check-crossover:
+check-crossover_wmd:
 	$(MAKE) \
-	  --directory crossover \
+	  --directory crossover_wmd \
 	  check
 
 check-owl_trafficking:
@@ -81,7 +81,7 @@ check-urgent_evidence: \
 
 clean: \
   clean-asgard \
-  clean-crossover \
+  clean-crossover_wmd \
   clean-owl_trafficking \
   clean-urgent_evidence
 
@@ -90,9 +90,9 @@ clean-asgard:
 	  --directory asgard \
 	  clean
 
-clean-crossover:
+clean-crossover_wmd:
 	@$(MAKE) \
-	  --directory crossover \
+	  --directory crossover_wmd \
 	  clean
 
 clean-owl_trafficking:
