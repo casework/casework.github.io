@@ -14,7 +14,7 @@ custom_css:
   <button class="btn btn-default filter-button" data-filter="Presentation">Presentations</button>
 </div>
 <div id="page">
-{% assign presentations_sorted = site.data.community.presentations | sort: 'date' | reverse %}
+{% assign presentations_sorted = site.data.resources.presentations | sort: 'date' | reverse %}
 {% for item in presentations_sorted %}
   <div class="card bg-light mb-3 filter {{ item.type }}">
     <div class="card-header d-flex">
