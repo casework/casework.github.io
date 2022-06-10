@@ -38,8 +38,6 @@
       link: /community/adopters.html
     - name: Meetings
       link: /community/meetings.html
-    - name: Presentations
-      link: /community/presentations.html
     - name: SPACE
     - name: Join CASE Community
       link: /community/membership.html
@@ -65,6 +63,8 @@
       link: /resources/downloads.html
     - name: Publications
       link: /resources/publications.html
+    - name: Presentations
+      link: /resources/presentations.html
     - name: Reference Material
       link: /resources/references.html
     - name: Media
