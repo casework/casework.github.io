@@ -28,8 +28,8 @@
   submenuitems:
     # - name: 2020 Governance Committee Elections
     #   link: /community/elections.html
-    - name: Governance Committee
-      link: /community/governance.html
+    - name: Governance
+      link: https://cyberdomainontology.org/community/tsc.html
     # - name: Ontology Committee
     #   link: /community/ontology.html
     - name: Members
