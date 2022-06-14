@@ -52,7 +52,8 @@ all: \
   check-pytest
 
 .PRECIOUS: \
-  $(example_name)_validation.ttl
+  $(example_name)_validation.ttl \
+  generated-$(example_name).json
 
 $(example_name)_validation.ttl: \
   generated-$(example_name).json \
@@ -126,13 +127,13 @@ check: \
   $(example_name)_validation-develop.ttl \
   $(example_name)_validation-unstable.ttl \
   check-pytest \
-  generated-index.html \
-  generated-$(example_name).json
+  generated-index.html
 
 # Run pytest tests only if any are written.
 # (Pytest exits in an error state if called with no tests found.)
 check-pytest: \
   $(example_name)_validation.ttl \
+  generated-$(example_name).ttl \
   generated-$(example_name)-wasInformedBy.json
 	test 0 -eq $$(/bin/ls *_test.py test_*.py 2>/dev/null | wc -l) \
 	  || ( \
@@ -183,6 +184,16 @@ generated-$(example_name).json: \
 	  __$@ \
 	  _$@
 	rm __$@
+	mv _$@ $@
+
+generated-$(example_name).ttl: \
+  generated-$(example_name).json
+	java -jar $(RDF_TOOLKIT_JAR) \
+	  --inline-blank-nodes \
+	  --source $< \
+	  --source-format json-ld \
+	  --target _$@ \
+	  --target-format turtle
 	mv _$@ $@
 
 # Not all examples will require the chain of communication, but some do.
