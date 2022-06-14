@@ -253,14 +253,14 @@ investigation:Examiner
 	sh:targetClass investigation:Examiner ;
 	.
 
-investigation:ExaminerActionLifecylce
+investigation:ExaminerActionLifecycle
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
 	rdfs:subClassOf action:ActionLifecycle ;
-	rdfs:label "ExaminerActionLifecylce"@en ;
-	rdfs:comment "An examiner action life cycle is an action pattern consisting of an ordered set of actions or subordinate action-lifecycles performed by an entity acting in a role involved in providing scientific evaluations of evidence that is used to aid law enforcement investigations and court cases."@en ;
+	rdfs:label "ExaminerActionLifecycle"@en ;
+	rdfs:comment "An examiner action lifecycle is an action pattern consisting of an ordered set of actions or subordinate action-lifecycles performed by an entity acting in a role involved in providing scientific evaluations of evidence that is used to aid law enforcement investigations and court cases."@en ;
 	sh:targetClass investigation:ExaminerActionLifecylce ;
 	.
 
@@ -382,7 +382,7 @@ investigation:SubjectActionLifecycle
 		;
 	rdfs:subClassOf action:ActionLifecycle ;
 	rdfs:label "SubjectActionLifecycle"@en ;
-	rdfs:comment "A subject action life cycle is an action pattern consisting of an ordered set of multiple actions or subordinate action-lifecycles performed by an entity acting in a role whose conduct may be within the scope of an investigation."@en ;
+	rdfs:comment "A subject action lifecycle is an action pattern consisting of an ordered set of multiple actions or subordinate action-lifecycles performed by an entity acting in a role whose conduct may be within the scope of an investigation."@en ;
 	sh:targetClass investigation:SubjectActionLifecycle ;
 	.
 
@@ -393,7 +393,7 @@ investigation:VictimActionLifecycle
 		;
 	rdfs:subClassOf action:ActionLifecycle ;
 	rdfs:label "VictimActionLifecycle"@en ;
-	rdfs:comment "A victim action life cycle is an action pattern consisting of an ordered set of multiple actions or subordinate action-lifecycles performed by an entity acting in a role characterized by its potential to be harmed as a result of a crime, accident, or other event or action."@en ;
+	rdfs:comment "A victim action lifecycle is an action pattern consisting of an ordered set of multiple actions or subordinate action-lifecycles performed by an entity acting in a role characterized by its potential to be harmed as a result of a crime, accident, or other event or action."@en ;
 	sh:targetClass investigation:VictimActionLifecycle ;
 	.
 
@@ -4693,12 +4693,6 @@ observable:EmailMessageFacet
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path observable:inReplyTo ;
-		] ,
-		[
-			sh:class observable:ObservableObject ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:sender ;
 		] ,
 		[
@@ -4786,6 +4780,12 @@ observable:EmailMessageFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:contentType ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:inReplyTo ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -12446,10 +12446,10 @@ observable:impHash
 	.
 
 observable:inReplyTo
-	a owl:ObjectProperty ;
+	a owl:DatatypeProperty ;
 	rdfs:label "inReplyTo"@en ;
 	rdfs:comment "One of more unique identifiers for identifying the email(s) this email is a reply to."@en ;
-	rdfs:range observable:ObservableObject ;
+	rdfs:range xsd:string ;
 	.
 
 observable:inetLocation
