@@ -71,12 +71,7 @@ WHERE {
         SELECT ?nExhibitDevice
         WHERE {
           ?nExhibitDevice
-            a/rdfs:subClassOf* uco-observable:ObservableObject ;
-            uco-core:hasFacet ?nExhibitDeviceDeviceFacet ;
-            .
-
-          ?nExhibitDeviceDeviceFacet
-            a uco-observable:DeviceFacet ;
+            a/rdfs:subClassOf* uco-observable:Device ;
             .
         }
       }  # Ends sub-query: SELECT ?nExhibitDevice

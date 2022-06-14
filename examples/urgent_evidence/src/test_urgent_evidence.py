@@ -25,7 +25,7 @@ _logger = logging.getLogger(os.path.basename(__file__))
 NS_SH = rdflib.SH
 
 graph = rdflib.Graph()
-graph.parse("generated-urgent_evidence.json", format="json-ld")
+graph.parse("generated-urgent_evidence.ttl", format="turtle")
 graph.parse("generated-urgent_evidence-wasInformedBy.json", format="json-ld")
 # TODO - Remove CASE-unstable.ttl reference on release of CASE 0.6.0.
 top_srcdir = pathlib.Path(os.path.dirname(__file__)).parent.parent.parent
