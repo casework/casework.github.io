@@ -17,6 +17,8 @@
     #   link: /ontology/guides.html
     - name: Versioning
       link: /ontology/versioning.html
+    - name: Documentation
+      link: https://ontology.caseontology.org/
     - name: SPACE
     - header: Examples
     - name: Gallery
