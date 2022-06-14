@@ -1461,12 +1461,7 @@
         },
         {
             "@id": "kb:subject-device-uuid-1",
-            "@type": "uco-observable:Device",
-            "uco-core:hasFacet": [
-                {
-                    "@type": "uco-observable:DeviceFacet"
-                }
-            ]
+            "@type": "uco-observable:Device"
         }
     ]
 }
