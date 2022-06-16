@@ -35,5 +35,4 @@ custom_css: releases
 
 *(These are general changes to the preexisting ontology that are not breaking or range changes.)*
 
-* Fixed typos in investigation:ExaminerActionLifecycle ([*GitHub Pull Request 69*](https://github.com/casework/CASE/pull/69/files))
-
+* Fixed typos in investigation:ExaminerActionLifecycle ([*GitHub Pull Request 69*](https://github.com/casework/CASE/pull/69))
