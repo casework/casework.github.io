@@ -6,7 +6,7 @@ custom_css: releases
 
 # {{ page.title }}
 
-*Date: 2022-06-16*
+*Date: 2022-06-17*
 
 ## Ontology File(s)
 
@@ -18,6 +18,7 @@ custom_css: releases
 
 ### Focus
 
+CASE 0.7.0 primarily focused on workflow technology transitions, and was necessitated by a Java dependency upgrade.  The workflow used to normalize Turtle files in the newly adopted UCO 0.9.0 and its downstream repositories---including the CASE ontology and other CASE projects---now minimally requires Java 11.  The workflow to interface with the UCO and CASE ontologies has transitioned to Github Issues, which has caused some files related to programming Github interfaces to become versioned with the ontology.
 
 
 ### Changes
@@ -36,3 +37,12 @@ custom_css: releases
 *(These are general changes to the preexisting ontology that are not breaking or range changes.)*
 
 * Fixed typos in investigation:ExaminerActionLifecycle ([*GitHub Pull Request 69*](https://github.com/casework/CASE/pull/69))
+
+
+## Documentation
+
+Starting with CASE 0.7.0, generated documentation is available at this site:
+
+[https://ontology.caseontology.org/](https://ontology.caseontology.org/)
+
+Be aware that the documentation will show the most recent release, until an ontology versioning strategy currently in initial implementation completes its testing.  The upper-left corner of the documentation pages shows the ontology version being reviewed.
