@@ -18,7 +18,7 @@ custom_css: releases
 
 ### Focus
 
-CASE 0.7.0 primarily focused on workflow technology transitions, and was necessitated by a Java dependency upgrade.  The workflow used to normalize Turtle files in the newly adopted UCO 0.9.0 and its downstream repositories---including the CASE ontology and other CASE projects---now minimally requires Java 11.  The workflow to interface with the UCO and CASE ontologies has transitioned to Github Issues, which has caused some files related to programming Github interfaces to become versioned with the ontology.
+CASE 0.7.0 primarily focused on workflow technology transitions, and was necessitated by a Java dependency upgrade.  The workflow used to normalize Turtle files in the newly adopted [UCO 0.9.0](https://unifiedcyberontology.org/releases/0.9.0/) and its downstream repositories---including the CASE ontology and other CASE projects---now minimally requires Java 11.  The workflow to interface with the UCO and CASE ontologies has transitioned to Github Issues, which has caused some files related to programming Github interfaces to become versioned with the ontology.
 
 
 ### Changes
@@ -31,6 +31,8 @@ CASE 0.7.0 primarily focused on workflow technology transitions, and was necessi
 *(These are changes to ontologies, classes or properties in the preexisting ontology that make the new release non-backward-compatible.)*
 
 * Updated rdf-toolkit to version 1.11.0 and Java to version 11 ([*GitHub Issue 373*](https://github.com/ucoProject/UCO/issues/373))
+
+While no other breaking changes were implemented in CASE directly, the adopted version of UCO did implement breaking changes.  Please refer to the [UCO 0.9.0 release notes](https://unifiedcyberontology.org/releases/0.9.0/).
 
 #### General changes
 
