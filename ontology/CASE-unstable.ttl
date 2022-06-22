@@ -1,6 +1,8 @@
+# imports: http://purl.org/co
 # imports: http://www.w3.org/TR/skos-reference/skos-owl1-dl.rdf
 # imports: https://ontology.caseontology.org/case/investigation
 # imports: https://ontology.caseontology.org/case/vocabulary
+# imports: https://ontology.unifiedcyberontology.org/co
 # imports: https://ontology.unifiedcyberontology.org/uco/action
 # imports: https://ontology.unifiedcyberontology.org/uco/core
 # imports: https://ontology.unifiedcyberontology.org/uco/identity
@@ -17,6 +19,7 @@
 # imports: https://ontology.unifiedcyberontology.org/uco/vocabulary
 
 @prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix co: <http://purl.org/co/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
@@ -34,6 +37,7 @@
 @prefix time1: <https://ontology.unifiedcyberontology.org/uco/time/> .
 @prefix tool: <https://ontology.unifiedcyberontology.org/uco/tool/> .
 @prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
+@prefix uco-co: <https://ontology.unifiedcyberontology.org/co/> .
 @prefix victim: <https://ontology.unifiedcyberontology.org/uco/victim/> .
 @prefix vocab: <https://ontology.caseontology.org/case/vocabulary/> .
 @prefix vocabulary1: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
@@ -52,7 +56,7 @@
 	owl:incompatibleWith <http://case.example.org/core> ;
 	owl:ontologyIRI <https://ontology.caseontology.org/case/case> ;
 	owl:priorVersion <http://case.example.org/core> ;
-	owl:versionInfo "0.6.0" ;
+	owl:versionInfo "0.7.0" ;
 	.
 
 <https://ontology.caseontology.org/case/investigation>
@@ -71,6 +75,12 @@
 <https://ontology.caseontology.org/case/vocabulary>
 	a owl:Ontology ;
 	rdfs:label "vocabularies"@en ;
+	.
+
+<https://ontology.unifiedcyberontology.org/co>
+	a owl:Ontology ;
+	rdfs:comment "This ontology defines SHACL shapes to supplement the OWL 2 DL definitions in the Collections Ontology."@en ;
+	owl:imports <http://purl.org/co> ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/action>
@@ -156,6 +166,7 @@
 	a owl:Ontology ;
 	rdfs:label "uco-types"@en ;
 	owl:imports
+		<https://ontology.unifiedcyberontology.org/co> ,
 		<https://ontology.unifiedcyberontology.org/uco/core> ,
 		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
 		;
@@ -180,7 +191,7 @@
 		<https://ontology.unifiedcyberontology.org/uco/victim> ,
 		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
 		;
-	owl:versionInfo "0.8.0" ;
+	owl:versionInfo "0.9.0" ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/victim>
@@ -195,6 +206,10 @@
 <https://ontology.unifiedcyberontology.org/uco/vocabulary>
 	a owl:Ontology ;
 	rdfs:label "uco-vocabularies"@en ;
+	.
+
+co:ListItem
+	rdfs:subClassOf co:Item ;
 	.
 
 dcterms:FileFormat
@@ -488,6 +503,134 @@ vocab:InvestigationFormVocab
 		"incident"^^vocab:InvestigationFormVocab
 		"suspicious-activity"^^vocab:InvestigationFormVocab
 	) ;
+	.
+
+uco-co:List-shape
+	a sh:NodeShape ;
+	sh:property [
+		sh:class co:ListItem ;
+		sh:path co:item ;
+	] ;
+	sh:targetClass co:List ;
+	.
+
+uco-co:ListItem-shape
+	a sh:NodeShape ;
+	sh:property [
+		rdfs:comment "Adapted from restriction on co:ListItem."@en ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:path co:index ;
+	] ;
+	sh:targetClass co:ListItem ;
+	.
+
+uco-co:firstItem-subjects-previousItem-shape
+	a sh:PropertyShape ;
+	sh:description "The first item in a list must not have a previous item."@en ;
+	sh:maxCount "0"^^xsd:integer ;
+	sh:path (
+		co:firstItem
+		co:previousItem
+	) ;
+	sh:targetSubjectsOf co:firstItem ;
+	.
+
+uco-co:firstItem-subjects-shape
+	a sh:PropertyShape ;
+	sh:class co:ListItem ;
+	sh:maxCount "1"^^xsd:integer ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path co:firstItem ;
+	sh:targetSubjectsOf co:firstItem ;
+	.
+
+uco-co:followedBy-subjects-shape
+	a sh:PropertyShape ;
+	sh:class co:Item ;
+	sh:description "This shape encodes in SHACL that co:followedBy has range co:Item (induced via the propertyChainAxiom on co:item and superproperty relationship with co:nextItem)."@en ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path co:followedBy ;
+	sh:targetSubjectsOf co:followedBy ;
+	.
+
+uco-co:index-subjects-shape
+	a sh:PropertyShape ;
+	sh:datatype xsd:positiveInteger ;
+	sh:nodeKind sh:Literal ;
+	sh:path co:index ;
+	sh:targetSubjectsOf co:index ;
+	.
+
+uco-co:item-subjects-shape
+	a sh:PropertyShape ;
+	sh:class co:Item ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path co:item ;
+	sh:targetSubjectsOf co:item ;
+	.
+
+uco-co:itemContent-subjects-shape
+	a sh:NodeShape ;
+	sh:not [
+		a sh:PropertyShape ;
+		sh:class co:Item ;
+		sh:description "This shape encodes in SHACL that the range of co:itemContent is the complement of co:Item."@en ;
+		sh:path co:itemContent ;
+	] ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:description "This shape encodes in SHACL that co:itemContent is an OWL FunctionalProperty (giving the sh:maxCount constraint)."@en ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:path co:itemContent ;
+	] ;
+	sh:targetSubjectsOf co:itemContent ;
+	.
+
+uco-co:lastItem-subjects-shape
+	sh:class co:ListItem ;
+	sh:maxCount "1"^^xsd:integer ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path co:lastItem ;
+	sh:targetSubjectsOf co:lastItem ;
+	.
+
+uco-co:nextItem-subjects-shape
+	a sh:PropertyShape ;
+	sh:class co:Item ;
+	sh:description "This shape encodes in SHACL that co:nextItem is a FunctionalProperty (giving the sh:maxCount constraint), and has range co:Item (induced via the propertyChainAxiom on co:item)."@en ;
+	sh:maxCount "1"^^xsd:integer ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path co:nextItem ;
+	sh:targetSubjectsOf co:nextItem ;
+	.
+
+uco-co:precededBy-subjects-shape
+	a sh:PropertyShape ;
+	sh:class co:Item ;
+	sh:description "This shape encodes in SHACL that co:precededBy has range co:Item (induced via the propertyChainAxiom on co:item and superproperty relationship with co:previousItem)."@en ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path co:precededBy ;
+	sh:targetSubjectsOf co:precededBy ;
+	.
+
+uco-co:previousItem-subjects-shape
+	a sh:PropertyShape ;
+	sh:class co:Item ;
+	sh:description "This shape encodes in SHACL that co:previousItem is a FunctionalProperty (giving the sh:maxCount constraint), and has range co:Item (induced via the propertyChainAxiom on co:item)."@en ;
+	sh:maxCount "1"^^xsd:integer ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path co:previousItem ;
+	sh:targetSubjectsOf co:previousItem ;
+	.
+
+uco-co:size-subjects-shape
+	a sh:PropertyShape ;
+	sh:datatype xsd:nonNegativeInteger ;
+	sh:maxCount "1"^^xsd:integer ;
+	sh:nodeKind sh:Literal ;
+	sh:path co:size ;
+	sh:targetSubjectsOf co:size ;
 	.
 
 action:Action
@@ -6160,9 +6303,20 @@ observable:MessageThread
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:subClassOf
+		observable:ObservableObject ,
+		types:Thread
+		;
 	rdfs:label "MessageTread"@en ;
 	rdfs:comment "A message thread is a running commentary of electronic messages pertaining to one topic or question."@en ;
+	sh:property [
+		sh:class observable:Message ;
+		sh:description "A MessageThread's items' contents must be Message objects."@en ;
+		sh:path (
+			co:item
+			co:itemContent
+		) ;
+	] ;
 	sh:targetClass observable:MessageThread ;
 	.
 
@@ -15733,6 +15887,42 @@ types:StructuredText
 	rdfs:comment "Expresses string-based data in some information structuring format (e.g., HTML5)."@en ;
 	.
 
+types:Thread
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf
+		co:Bag ,
+		core:UcoObject
+		;
+	rdfs:label "Thread"@en ;
+	rdfs:comment "A semi-ordered array of items, that can be present in multiple copies.  Implemetation of a UCO Thread is similar to a Collections Ontology List, except a Thread may fork and merge - that is, one of its members may have two or more direct successors, and two or more direct predecessors."@en ;
+	owl:disjointWith co:List ;
+	sh:property [
+		sh:class types:ThreadItem ;
+		sh:path co:item ;
+	] ;
+	.
+
+types:ThreadItem
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf
+		co:Item ,
+		core:UcoObject
+		;
+	rdfs:label "ThreadItem"@en ;
+	rdfs:comment "A ThreadItem is a member of a thread."@en ;
+	owl:disjointWith co:ListItem ;
+	sh:property [
+		sh:class core:UcoObject ;
+		sh:path co:itemContent ;
+	] ;
+	.
+
 types:entry
 	a owl:ObjectProperty ;
 	rdfs:label "entry"@en ;
@@ -15771,6 +15961,178 @@ types:key
 	rdfs:label "key"@en ;
 	rdfs:comment "A key property of a single dictionary entry."@en ;
 	rdfs:range xsd:string ;
+	.
+
+types:threadNextItem
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf types:threadSuccessor ;
+	rdfs:label "threadNextItem"@en ;
+	rdfs:comment "The link to a next item in a thread."@en ;
+	rdfs:seeAlso co:nextItem ;
+	.
+
+types:threadNextItem-subjects-shape
+	a sh:PropertyShape ;
+	sh:class types:ThreadItem ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path types:threadNextItem ;
+	sh:targetSubjectsOf types:threadNextItem ;
+	.
+
+types:threadOriginItem
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf co:item ;
+	rdfs:label "threadOriginItem"@en ;
+	rdfs:comment "A link to an item of the thread known to have no predecessor."@en ;
+	rdfs:domain types:Thread ;
+	rdfs:range [
+		a owl:Class ;
+		owl:intersectionOf (
+			types:ThreadItem
+			[
+				a owl:Restriction ;
+				owl:onProperty types:threadPreviousItem ;
+				owl:cardinality "0"^^xsd:nonNegativeInteger ;
+			]
+		) ;
+	] ;
+	rdfs:seeAlso co:firstItem ;
+	.
+
+types:threadOriginItem-subjects-shape
+	a sh:PropertyShape ;
+	sh:class types:ThreadItem ;
+	sh:path types:threadOriginItem ;
+	sh:targetSubjectsOf types:threadOriginItem ;
+	.
+
+types:threadOriginItem-subjects-threadPredecessor-shape
+	a sh:PropertyShape ;
+	sh:description "An origin item in a thread must not have a predecessor."@en ;
+	sh:maxCount "0"^^xsd:integer ;
+	sh:path (
+		types:threadOriginItem
+		types:threadPredecessor
+	) ;
+	sh:targetSubjectsOf types:threadOriginItem ;
+	.
+
+types:threadOriginItem-subjects-threadPreviousItem-shape
+	a sh:PropertyShape ;
+	sh:description "An origin item in a thread must not have a previous item."@en ;
+	sh:maxCount "0"^^xsd:integer ;
+	sh:path (
+		types:threadOriginItem
+		types:threadPreviousItem
+	) ;
+	sh:targetSubjectsOf types:threadOriginItem ;
+	.
+
+types:threadPredecessor
+	a
+		owl:ObjectProperty ,
+		owl:TransitiveProperty
+		;
+	rdfs:label "threadPredecessor"@en ;
+	rdfs:comment "The link to the preceding item in a thread."@en ;
+	rdfs:domain types:ThreadItem ;
+	rdfs:range types:ThreadItem ;
+	rdfs:seeAlso co:precededBy ;
+	owl:inverseOf types:threadSuccessor ;
+	.
+
+types:threadPredecessor-subjects-shape
+	a sh:PropertyShape ;
+	sh:class types:ThreadItem ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path types:threadPredecessor ;
+	sh:targetSubjectsOf types:threadPredecessor ;
+	.
+
+types:threadPreviousItem
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf types:threadPredecessor ;
+	rdfs:label "threadPreviousItem"@en ;
+	rdfs:comment "A direct link to a previous item in a thread."@en ;
+	rdfs:seeAlso co:previousItem ;
+	owl:inverseOf types:threadNextItem ;
+	.
+
+types:threadPreviousItem-subjects-shape
+	a sh:PropertyShape ;
+	sh:class types:ThreadItem ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path types:threadPreviousItem ;
+	sh:targetSubjectsOf types:threadPreviousItem ;
+	.
+
+types:threadSuccessor
+	a
+		owl:ObjectProperty ,
+		owl:TransitiveProperty
+		;
+	rdfs:label "threadSuccessor"@en ;
+	rdfs:comment "A link to a following item in a thread."@en ;
+	rdfs:domain types:ThreadItem ;
+	rdfs:range types:ThreadItem ;
+	rdfs:seeAlso co:followedBy ;
+	.
+
+types:threadSuccessor-subjects-shape
+	a sh:PropertyShape ;
+	sh:class types:ThreadItem ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:path types:threadSuccessor ;
+	sh:targetSubjectsOf types:threadSuccessor ;
+	.
+
+types:threadTerminalItem
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf co:item ;
+	rdfs:label "threadTerminalItem"@en ;
+	rdfs:comment "A link to an item of the thread known to have no successor."@en ;
+	rdfs:domain types:Thread ;
+	rdfs:range [
+		a owl:Class ;
+		owl:intersectionOf (
+			types:ThreadItem
+			[
+				a owl:Restriction ;
+				owl:onProperty types:threadNextItem ;
+				owl:cardinality "0"^^xsd:nonNegativeInteger ;
+			]
+		) ;
+	] ;
+	rdfs:seeAlso co:lastItem ;
+	.
+
+types:threadTerminalItem-subjects-shape
+	a sh:PropertyShape ;
+	sh:class types:ThreadItem ;
+	sh:path types:threadTerminalItem ;
+	sh:targetSubjectsOf types:threadTerminalItem ;
+	.
+
+types:threadTerminalItem-subjects-threadNextItem-shape
+	a sh:PropertyShape ;
+	sh:description "A terminal item in a thread must not have a next item."@en ;
+	sh:maxCount "0"^^xsd:integer ;
+	sh:path (
+		types:threadTerminalItem
+		types:threadNextItem
+	) ;
+	sh:targetSubjectsOf types:threadTerminalItem ;
+	.
+
+types:threadTerminalItem-subjects-threadSuccessor-shape
+	a sh:PropertyShape ;
+	sh:description "A terminal item in a thread must not have a successor."@en ;
+	sh:maxCount "0"^^xsd:integer ;
+	sh:path (
+		types:threadTerminalItem
+		types:threadSuccessor
+	) ;
+	sh:targetSubjectsOf types:threadTerminalItem ;
 	.
 
 types:value
@@ -17027,5 +17389,13 @@ vocabulary1:WirelessNetworkSecurityModeVocab-members
 		"WPA3-PSK"^^vocabulary1:WirelessNetworkSecurityModeVocab
 		"WPA3-Enterprise"^^vocabulary1:WirelessNetworkSecurityModeVocab
 	) ;
+	.
+
+[]
+	a owl:Axiom ;
+	rdfs:comment "This triple is repeated from the Collections Ontology."@en ;
+	owl:AnnotatedProperty rdfs:subClassOf ;
+	owl:AnnotatedSource co:ListItem ;
+	owl:AnnotatedTarget co:Item ;
 	.
 
