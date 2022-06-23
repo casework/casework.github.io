@@ -18,7 +18,7 @@ SHELL := /bin/bash
 # ${top_srcdir}/examples/${example}/src/
 top_srcdir := $(shell cd ../../.. ; pwd)
 
-RDF_TOOLKIT_JAR := $(top_srcdir)/dependencies/CASE-unstable/dependencies/UCO/lib/rdf-toolkit.jar
+RDF_TOOLKIT_JAR := $(top_srcdir)/dependencies/UCO-develop/lib/rdf-toolkit.jar
 
 examples_srcdir := $(top_srcdir)/examples
 

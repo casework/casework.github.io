@@ -46,9 +46,8 @@ all: \
   .gitmodules
 	git submodule init
 	git submodule update
-	# TODO - After release of CASE 0.7.0 and UCO 0.9.0, rdf-toolkit.jar references should adjust to UCO-develop.
 	$(MAKE) \
-	  --directory dependencies/CASE-unstable \
+	  --directory dependencies/UCO-develop \
 	  .lib.done.log
 	touch $@
 
