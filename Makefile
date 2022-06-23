@@ -42,7 +42,6 @@ all: \
 	  --directory dependencies
 	touch $@
 
-# NOTE: The submodules of CASE-Utilities-Python are being initialized in order to guarantee access to rdf-toolkit.jar.
 .git_submodule_init.done.log: \
   .gitmodules
 	git submodule init
@@ -65,9 +64,6 @@ all: \
 	    pip \
 	    setuptools \
 	    wheel
-	source venv/bin/activate \
-	  && pip install \
-	    dependencies/CASE-Utilities-Python
 	source venv/bin/activate \
 	  && pip install \
 	    --requirement requirements.txt
