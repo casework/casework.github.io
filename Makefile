@@ -42,14 +42,12 @@ all: \
 	  --directory dependencies
 	touch $@
 
-# NOTE: The submodules of CASE-Utilities-Python are being initialized in order to guarantee access to rdf-toolkit.jar.
 .git_submodule_init.done.log: \
   .gitmodules
 	git submodule init
 	git submodule update
-	# TODO - After release of CASE 0.7.0 and UCO 0.9.0, rdf-toolkit.jar references should adjust to UCO-develop.
 	$(MAKE) \
-	  --directory dependencies/CASE-unstable \
+	  --directory dependencies/UCO-develop \
 	  .lib.done.log
 	touch $@
 
@@ -65,9 +63,6 @@ all: \
 	    pip \
 	    setuptools \
 	    wheel
-	source venv/bin/activate \
-	  && pip install \
-	    dependencies/CASE-Utilities-Python
 	source venv/bin/activate \
 	  && pip install \
 	    --requirement requirements.txt
