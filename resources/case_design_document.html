@@ -1,0 +1,778 @@
+---
+title: Cyber-investigation Analysis Standard Expression (CASE) Ontology Design and Specification
+---
+<p>This document is in draft in preparation for release of CASE 1.0.0 in August 2022. Comments and corrections are welcome and should be submitted as a GitHub issue: <a href="https://github.com/casework/casework.github.io">https://github.com/casework/casework.github.io</a>
+
+<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 24.0px; font: 20.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">Table of contents</span></h2>
+<p class="p1"><span class="s3"><object data="file:///macro">macro</object></span></p>
+<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 24.0px; font: 20.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">Revision history</span></h2>
+<table cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td valign="top" class="td1">
+        <p class="p5"><span class="s1"><b>Version</b></span></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p5"><span class="s1"><b>Approval date</b></span></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p5"><span class="s1"><b>Point of contact</b></span></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p5"><span class="s1"><b>Description of changes</b></span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p1"><span class="s1">0.3</span></p>
+      </td>
+      <td valign="top" class="td2">
+        <p class="p1"><span class="s1">13 April 2021</span></p>
+      </td>
+      <td valign="top" class="td2">
+        <p class="p1"><span class="s1">Technical director and Ontology SME</span></p>
+      </td>
+      <td valign="top" class="td2">
+        <p class="p1"><span class="s1">Initial drafting and community feedback</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p1"><span class="s1">0.4</span></p>
+      </td>
+      <td valign="top" class="td2">
+        <p class="p1"><span class="s1">19 April 2022</span></p>
+      </td>
+      <td valign="top" class="td2">
+        <p class="p1"><span class="s1">Presiding director and Technical director</span></p>
+      </td>
+      <td valign="top" class="td2">
+        <p class="p1"><span class="s1">Public release</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p1"><span class="s1">1.0</span></p>
+      </td>
+      <td valign="top" class="td2">
+        <p class="p1"><span class="s1">TBD</span></p>
+      </td>
+      <td valign="top" class="td2">
+        <p class="p3"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td2">
+        <p class="p3"><span class="s1"></span><br></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+  
+<h2>Status of the Specification</h2>
+<p>CASE 1.0.0 is scheduled for 30 August 2022 as the first full release of the Cyber-investigation Analysis Structured Expression (CASE), which builds on and extends the Unified Cyber Ontology (UCO). 
+
+ 
+<p>CASE 1.0.0 represents a major update to the CASE prototype (CASE 0.2.0, August 2020) and is not backwards compatible with that ontology. CASE 1.0.0 is backwards compatible with CASE 0.4[DLN1] .
+
+ 
+<p>Details of support for migrating from the CASE prototype to CASE 1.0.0 can be found at: [WWW] [DLN2].
+<p>This ontology design document provides the specification for the CASE 1.0.0 ontology. The document covers: (1) the ontology engineering choices made in creating the CASE ontology, including the W3C standard ontology language (OWL 2), the knowledge representation approach including ontology design patterns, and the supported encodings; (2) the principal classes of entities included in the ontology to represent the cyber-investigation domain; and (3) the re-use of the <a href="Unified Cyber Ontology (UCO)">Unified Cyber Ontology (UCO)</a>. Current documentation for UCO is available <a href="https://ontology.unifiedcyberontology.org/">here</a>.
+ 
+
+<p>Details of support for migrating from CASE 0.4 [DLN3] to CASE 1.0.0 can be found at: [WWW].
+
+<h3>1.1 The purpose of the CASE ontology</h3>
+<p>The growing number of investigations involving digital evidence from various data sources is driving the demand for a standard way to represent, analyze, and exchange pertinent information. The purpose of CASE is to provide a common language to support automated normalization, interoperation, combination and validation of varied information sources to facilitate analysis and exploration of investigative questions (who, when, how long, where). This ontology-based standard promotes the consistency and reliability of investigative information, and enhances analysis capabilities, including searching, correlation, contextual analysis, pattern recognition, machine learning, and visualization. To this end, CASE provides a standardized, machine-understandable representation for information commonly analyzed and exchanged by people and systems during investigations involving digital evidence. CASE also ensures that analysis results can be protected and traced back to their source(s), keeping track of when, where and who used which tools to perform investigative actions on data sources. </p>
+
+<h3>1.2 Domain of the CASE ontology</h3>
+<p>The principal domain of CASE is investigations involving digital evidence, including in criminal, cybersecurity, and intelligence contexts. The cyber-investigation domain places special requirements on the representation of investigation data, due to the nature of evidence and the need for traceability and flexibility in describing data with different degrees of certainty and/or at different stages of the investigation. These requirements are reflected in the namespace architecture and the design patterns used in the ontology. </p>
+
+<h3>1.3 Scope of the CASE ontology</h3>
+<p>The scope of the CASE ontology covers investigations in any context, including in criminal, cybersecurity, and intelligence. Digital evidence includes data sources (mobile devices, storage media, memory) and well-known digital objects such as files and folders, messages (email, chat), documents (PDF, Word), multimedia (pictures, video, audio) and logs (browser history, events). CASE ensures that analysis results can be traced back to their source(s), keeping track of when, where and who used which tools to perform investigative actions on data sources. These details are generally referred to as provenance (e.g., chain of custody) and lineage (e.g., chain of evidence). CASE aligns with the <a href="https://github.com/casework/CASE-Implementation-PROV-O">PROV-O</a> ontology to support enhanced provenance tracking that is needed in more mature operating environments. Furthermore, data markings are baked into CASE to support protection of information.</p>
+
+<h3>1.4 Relationship to the Unified Cyber Ontology (UCO)</h3><p>The CASE ontology is an extension of the Unified Cyber Ontology (UCO), which is imported by CASE. CASE re-uses concepts from UCO to represent objects in the cyber domain that are of interest in an investigation. Section 2 provides background about CASE as an extension of UCO. Section 8 addresses details of how CASE uses UCO concepts.</p>
+
+<h3>1.5 How to read this document</h3><p>This document contains two main foci: (1) explanation of the formal organization, including the knowledge representation standards and structures used in CASE (Sections 3 – 5); (2) description of the specific domain content of the CASE ontology (Sections 6 – 7).</p>
+
+<p class="p1"><span class="s1"> </span></p>
+<p class="p1"><span class="s1">The format for CASE-compliant instance data is addressed in Section 9.</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<p class="p1"><span class="s1">The full concrete specification of CASE 1.0.0 is expressed in the W3C OWL 2 Turtle (.ttl) syntax.</span></p>
+<p class="p1"><span class="s1">The latest release may be accessed from the CASE Community Release web page: <a href="https://caseontology.org/releases/archive/"><span class="s2">https://caseontology.org/releases/archive/</span></a> .</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">1.6 Summary of important changes since the CASE prototype (CASE 0.1)</span></h3>
+<p class="p1"><span class="s1">The initial CASE prototype was released in 2017 as a proof of concept. Early applications were developed to support use of the prototype.</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<p class="p1"><span class="s1">The CASE prototype took shortcuts in the interest of quickly developing a proof of concept. Among those was the copying of concepts from the Unified Cyber Ontology (UCO) into the CASE prototype namespace. Subsequently, following ontological best practices beginning with version 0.2.0, the CASE ontology has been published with concepts specific to the domain of investigation in the CASE namespace and importation of general concepts for the cyber domain from UCO. The CASE community provided a <a href="https://caseontology.org/releases/0.2.0/migration/"><span class="s2">Migration Guide</span></a> for early adopters, as well as <a href="https://caseontology.org/releases/0.2.0/"><span class="s2">release notes</span></a> describing changes and updates.</span></p>
+<p class="p1"><span class="s1">Significantly, the class </span><span class="s4">Trace</span><span class="s1"> was changed to </span><span class="s4">CyberItem</span><span class="s1">, the class </span><span class="s4">PropertyBundle</span><span class="s1"> was changed to </span><span class="s4">Facet</span><span class="s1">, and the property </span><span class="s4">propertyBundle</span><span class="s1">, was changed to </span><span class="s4">uco-core:facets</span><span class="s1">.<span class="Apple-converted-space"> </span></span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">1.7 Summary of important changes since CASE 0.2.0</span></h3>
+<p class="p1"><span class="s1">CASE 0.2.0 (August 2020) implemented significant re-engineering based on ontology best practices. Concurrently, the CASE Community conducted a development process to ensure that CASE 1.0 would cover the domain concepts needed for a Minimum Viable Product (MVP) that could be used to encode investigation data for exchange and analysis. CASE 0.2 incorporated some new concepts based on the early results of that process. The main part of that work is reflected in the expanded domain coverage of concepts in CASE 1.0.</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<p class="p1"><span class="s1">[List/description of the relevant changes – same question here as above with respect to including details of changes here or in an appendix?]</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<p class="p1"><span class="s1">[If there are additional intermediate version(s) of CASE prior to 1.0, add Section 1.8 (etc.), to address their changes.]</span></p>
+<ul class="ul1">
+  <li class="li1"><span class="s5"></span><span class="s1">UCO CyberItem renamed ObservableObject<br>
+</span></li>
+  <li class="li1"><span class="s5"></span><span class="s1">CASE Trace renamed ObservableObject<br>
+</span></li>
+  <li class="li1"><span class="s5"></span><span class="s1">CASE PropertyBundle renamed Facet (aligned with UCO)<br>
+</span></li>
+  <li class="li1"><span class="s5"></span><span class="s1">Added “Facet” suffix to all facets<br>
+</span></li>
+  <li class="li1"><span class="s5"></span><span class="s1">Versioning<br>
+</span></li>
+</ul>
+<p class="p3"><span class="s1"></span><br></p>
+<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 24.0px; font: 20.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">2. CASE as an Extension of the Unified Cyber Ontology (UCO)</span></h2>
+<p class="p1"><span class="s1"><img src="file:///CASE-Overview.png" alt="CASE-Overview.png"></span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">2.1. CASE represents cyber-investigations</span></h3>
+<p class="p1"><span class="s1">The purpose of CASE is to define concepts for representing cyber-investigations. Essential concepts for the representation of investigations include <b>Investigative Actions</b> (human and tools) and <b>Provenance Records</b> for tracking when, where and who performed investigative actions on data sources, with what tool when applicable, and evidence-based <b>Inferences</b> (e.g., probability of evidence given alternative hypotheses).<span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<ul class="ul1">
+  <li class="li7"><span class="s6"></span><span class="s7">Casey, Barnum, Griffith, Snyder, van Beek, Nelson (2017) <a href="https://drive.google.com/file/d/0B2Z-Slbvlz3aSkluRU1heUtkZEU/view"><span class="s2">Advancing coordinated cyber-investigations and tool interoperability using a community developed specification language</span></a><br>
+</span></li>
+  <li class="li1"><span class="s5"></span><span class="s1">Casey, Barnum, Griffith, Snyder, van Beek, Nelson (2018) The Evolution of Expressing and Exchanging Cyber-Investigation Information in a Standardized Form<br>
+</span></li>
+  <li class="li7"><span class="s6"></span><span class="s7">Casey, Biasiotti, Turchi (2017) <a href="http://users.umiacs.umd.edu/~oard/desi7/papers/EC.pdf"><span class="s2">Using Standardization and Ontology to Enhance Data Protection and Intelligent Analysis</span></a><br>
+</span></li>
+  <li class="li7"><span class="s6"></span><span class="s7">Chabot, Bertauxa, Nicolle, Kechadi (2015) <a href="https://doi.org/10.1016/j.diin.2015.07.005"><span class="s2">An ontology-based approach for the reconstruction and analysis of digital incidents timelines</span></a><br>
+</span></li>
+  <li class="li7"><span class="s6"></span><span class="s7">Casey, Back, Barnum (2015) <a href="https://github.com/dfrws/papers/blob/master/2015%20EU/2015_EU_paper-leveraging_cybox_to_standardize_representation_and_exchange_of_digital_forensic_information.pdf"><span class="s2">Leveraging CybOX™ to standardize representation and exchange of digital forensic information</span></a><br>
+</span></li>
+</ul>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">The fundamental objects that CASE imports from UCO include <b>Observable Object</b>, <b>Location</b>, <b>Tool</b> and <b>Identity</b>, as well as <b>Action</b>, <b>Annotation</b> and <b>Relationship</b> objects. The full list of CASE concepts is provided in Section 8.</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<p class="p1"><span class="s1">For other concepts in the cyber domain, CASE imports UCO.</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">2.2. CASE imports UCO for general cyber-domain concepts</span></h3>
+<p class="p1"><span class="s1">CASE imports the UCO ontology for use in representing objects and events that may be related to investigations (for example, computer files and electronic devices), but which are not inherently investigative concepts. By re-using cyber-domain concepts already defined by UCO, CASE takes advantage of work that experts have already done to represent the semantics of that domain in a machine-interpretable formalism. The UCO ontology includes both a model of the cyber-domain as understood by domain experts, and a terminology used by experts to describe the cyber-domain.</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<p class="p1"><span class="s1">With the release of CASE 1.0.0, the version of UCO that is imported will match, starting with UCO 1.0.0.</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">2.3. CASE aligns with ontology design patterns of UCO</span></h3>
+<p class="p1"><span class="s1">The fundamental objects of study in cyber-investigations are the perceptible results of an event of interest. To represent these objects and their context, CASE makes use of ontology design patterns implemented in UCO, including those for <b>Facet</b>,<b> Observable Object</b>, and <b>Relationship</b>.</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<h4 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 19.0px; font: 14.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>2.3.1.    Facet and Observable Object</b></span></h4>
+<p class="p1"><span class="s1">An Observable Object can be enriched with one of more Facets, each with its own set of properties. Facets provide flexibility for representing the wide variety of data structures that can be encountered in cyber domains, and permit custom (non-standard) properties to be added if needed for internal or proprietary systems.</span></p>
+<p class="p1"><span class="s1"><img src="file:///image-20210413-203236.png" alt="image-20210413-203236.png"></span></p>
+<p class="p1"><span class="s1"><b>Figure</b>: Observable Object with Facets that represent various properties.<span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">Further design details about Facet and Observable Object are provided in the <a href="https://unifiedcyberontology.org/resources/uco_design_document.html"><span class="s2">UCO Design Document</span></a>.</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<p class="p1"><span class="s1">In UCO, Observable Object is an owl:Class whose instances represent individuals in the cyber domain. Certain aspects of those individuals are described using properties defined on the Observable Object class; however, other descriptions may be applied to the instance by linking it to one or more Facet-instances. UCO defines Facet as an owl:Class representing a grouping of properties. Property assignment – that is, descriptions of individuals – using Facets differs from descriptions by properties defined directly on the Observable Object class of which an individual is an instance.</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<p class="p1"><span class="s1">Properties defined on the class Observable Object are those whose values are not expected to change when an individual is described, while the properties defined in a Facet class are used to assign values that may be updated in the future. Properties can include date-time stamps, the contents of an Observable Object, the hash values (e.g., MD5 and SHA256) of the data, and other details. [Address the meaning and use of the property (“hasFacet”) in the pattern relating Facet instances to instances of Observable Objects.]</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<p class="p1"><span class="s1">A Facet is represented by an owl:Class. However, its instances are not domain individuals (e.g., files, accounts). Instead, they are anonymous individuals that organize properties to describe <i>other</i> individuals which are instances of Observable Object (or one of its subclasses).</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<p class="p9"><span class="s8"><a href="https://cyberontology.atlassian.net/wiki/people/5d1d2d418636560d1b5bfc4d?ref=confluence">Alexander Nelson</a></span><span class="s1"> Please insert link to subclass documentation to introduce the range of UCO Facet subclasses – kinds of property-groupings.</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<h4 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 19.0px; font: 14.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>2.3.2.    References</b></span></h4>
+<p class="p1"><span class="s1">Within a Facet, certain Properties reference another object that is linked immutably, i.e., the link will never change. Such linked objects are represented using an identifier reference that specifies the @id of another object. For example, the manufacturer of a device is represented as a reference within the DeviceFacet:</span></p>
+<p class="p7"><span class="s1"><a href="https://github.com/casework/CASE-Examples/blob/master/examples/illustrations/device/device.json">https://github.com/casework/CASE-Examples/blob/master/examples/illustrations/device/device.json</a></span><span class="s7"><span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<h4 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 19.0px; font: 14.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>2.3.3.    Relationships</b></span></h4>
+<p class="p1"><span class="s1">In addition to using Properties as defined in OWL 2, UCO defines a class, <b>Relationship</b>, in order to represent information about relationships (such as their duration) that cannot be captured otherwise. For those familiar with UML, a UCO Relationship is similar in structure and purpose to a UML Association Class.<span class="Apple-converted-space"> </span></span></p>
+<p class="p9"><span class="s9"><a href="https://cyberontology.atlassian.net/wiki/people/5cfb831ce193b50e8bca233b?ref=confluence">Eoghan Casey</a></span><span class="s1"> [Add explanation of the UCO Relationship construct. Save CASE examples for Section 6.]</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<p class="p1"><span class="s1">As a general rule, a link between two objects should be represented as an independent Relationship object specifying the type of connection (a.k.a. external relationship). An example “contained-within” Relationship is the representation of a SIM card contained within a mobile device:</span></p>
+<p class="p7"><span class="s1"><a href="https://github.com/casework/CASE-Examples/tree/master/examples/illustrations/mobile_device_and_sim_card">https://github.com/casework/CASE-Examples/tree/master/examples/illustrations/mobile_device_and_sim_card</a></span><span class="s7"><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">  </span></p>
+<h4 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 19.0px; font: 14.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>2.3.4.    Domain Assertions</b></span></h4>
+<p class="p1"><span class="s1">In the OWL 2 language, domain assertions (i.e., using rdfs:domain) are not constraints on the use of properties. They are expressions of knowledge about the kind of thing to which a property is expected to apply, and those assertions can be used as the basis of an inference that an individual that is the subject of such a property is of a specific kind. [Include explanation of Open World Assumption and consequences of reasoning based on it.]</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<p class="p1"><span class="s1">Domain assertions for properties are included in the CASE ontology to capture knowledge about the type(s) of entity to which a property normally applies. However, CASE implements a design pattern in which those domain assertions are defined in a separate namespace (and ontology document) that may optionally not be loaded with the main ontology. This is to prevent unwanted inferences (based on domain assertions) about the types of individual entities, in applications where an  imposition of domain types on individual entities whose specific type is either unknown or may conflict with the expected type, may result in unwanted consequences.</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<p class="p9"><span class="s8"><a href="https://cyberontology.atlassian.net/wiki/people/557058:3a2ef2d9-ebcb-45e9-9989-3da6c2a1969a?ref=confluence">Sean Barnum</a></span><span class="s1"> <a href="https://cyberontology.atlassian.net/wiki/people/5d1d2d418636560d1b5bfc4d?ref=confluence"><span class="s8">Alexander Nelson</span></a> Are there other UCO patterns we should list here?</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<h4 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 19.0px; font: 14.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>2.4. Cooperation of the CASE and UCO Communities</b></span></h4>
+<p class="p1"><span class="s1">The CASE Community has formalized its working relationship with the UCO Community, including written guidance on common software development practices.</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 24.0px; font: 20.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">3.   Domain and Scope of CASE</span></h2>
+<p class="p1"><span class="s1"> </span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">3.1. Cyber-investigation</span></h3>
+<p class="p1"><span class="s1">Cyber-investigation is the principal domain of the CASE ontology, and is defined most broadly to cover any context, including in criminal, cybersecurity, and intelligence. In cybersecurity contexts, the detection of a potential incident by a Security Operations Center (SOC) is the starting point of an investigation that can lead to Digital Forensics &amp; Incident Response (DFIR), and ultimately legal action (e.g., regulatory compliance, criminal prosecution). In criminal contexts, the reporting of an offense initiates an investigation, followed by preservation and analysis of evidence, with the aim of apprehending and prosecuting perpetrators. In intelligence contexts, such as counter-terrorism operations, an investigation can combine information from various sources to support analysis and decision-making.</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">3.2. Provenance</span></h3>
+<p class="p1"><span class="s1">In any investigation, it is important to maintain links between data sources, their treatment, and analysis results. CASE includes concepts for keeping track of when, where and who used which tools to perform investigative actions on data sources. These details are generally referred to as provenance (e.g., chain of custody) and lineage (e.g., chain of evidence). CASE tracks provenance and lineage with the combination of <b>ProvenanceRecords</b> and <b>InvestigativeActions</b> on data as shown here.</span></p>
+<p class="p1"><span class="s1"><object data="file:///jOl7dTqhGU1tA3ukhBGdhCHbaZoSCk8WMmlu1VAQB7Tjtllim4B0eXJ_ex3pddeZMXAmcCKrSdxsLee1KvQXAxgvySxJZ1cubpiy_7cWN1xhVsfFl7wOZT-gsqxSnrUaOm5fDapiNyw">jOl7dTqhGU1tA3ukhBGdhCHbaZoSCk8WMmlu1VAQB7Tjtllim4B0eXJ_ex3pddeZMXAmcCKrSdxsLee1KvQXAxgvySxJZ1cubpiy_7cWN1xhVsfFl7wOZT-gsqxSnrUaOm5fDapiNyw</object></span></p>
+<p class="p1"><span class="s1"><b>Figure</b>: Depiction of <b>ProvenanceRecords</b> as links in chain of <b>InvestigativeActions</b> on data.<span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">CASE aligns with the <a href="https://github.com/casework/CASE-Implementation-PROV-O"><span class="s2">PROV-O</span></a> ontology to support enhanced provenance tracking that is needed in more mature operating environments. The PROV-O enhanced representing of the <a href="https://caseontology.org/examples/urgent_evidence/"><span class="s2">Urgent Evidence</span></a> scenario is depicted here.</span></p>
+<p class="p1"><span class="s1"><object data="file:///m84X8sv06Zc2gCxlFovcKPI5n4T1sX-qT2gaKwCqWnlkpJ8hxj5ONWCyWkAgRKQuz9PBGv2wYv1k3WrXu9J3FQUdIxL3o57CX9v3xjnDihbEL5X4VEmOJK3zEN3A410uIuS2AOSUEXo">m84X8sv06Zc2gCxlFovcKPI5n4T1sX-qT2gaKwCqWnlkpJ8hxj5ONWCyWkAgRKQuz9PBGv2wYv1k3WrXu9J3FQUdIxL3o57CX9v3xjnDihbEL5X4VEmOJK3zEN3A410uIuS2AOSUEXo</object></span></p>
+<p class="p1"><span class="s1"><b>Figure</b>: PROV-O graph was derived from CASE data, with no modifications</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 24.0px; font: 20.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">4.   CASE is an OWL Ontology</span></h2>
+<p class="p1"><span class="s1"> </span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">4.1. Introduction</span></h3>
+<p class="p1"><span class="s1">The CASE ontology is a representation of the cyber-investigation domain created using the OWL 2 Web Ontology Language (informally, “OWL 2”). OWL 2 is a W3C Recommendation (<a href="https://www.w3.org/TR/owl2-overview/"><span class="s2">https://www.w3.org/TR/owl2-overview/</span></a> ). The primary rationale for using OWL 2 is compatibility with other OWL 2 ontologies, enabling reuse of existing representations such as the <a href="https://www.w3.org/TR/vocab-ssn/"><span class="s2">Semantic Sensor Network</span></a> (SSN) ontology and the <a href="http://qudt.org/"><span class="s2">Quantity, Unit, Dimension and Type</span></a> (QUDT) ontology. The widespread use of OWL 2 supporting Semantic Web provides a stable foundation for development and interoperability. </span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">4.2. Profile of OWL</span></h3>
+<p class="p1"><span class="s1">To ensure compatibility with other OWL ontologies, CASE uses OWL DL rather than more restrictive profiles or OWL Full.<a href="https://cyberontology.atlassian.net/wiki/plugins/viewsource/viewpagesrc.action?pageId=1384087557#_ftn1"><span class="s2">[1]</span></a> The original OWL profiles OWL Lite and OWL 1 DL are considered valid profiles of OWL 2 (see Section 1 at that URL).<a href="https://cyberontology.atlassian.net/wiki/plugins/viewsource/viewpagesrc.action?pageId=1384087557#"><span class="s2">[DLN4]</span></a> CASE probably will not be able to support more restrictive OWL Profiles.</span></p>
+<p class="p1"><span class="s1">Throughout the development of CASE and UCO, consideration has been given to the constraints of OWL profiles. See definitions of the OWL 2 profiles: <a href="https://www.w3.org/TR/owl2-profiles/"><span class="s2">https://www.w3.org/TR/owl2-profiles/</span></a> .<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">Currently, it is necessary to check whether CASE and UCO violate a constraint of OWL 2 DL: (<a href="https://www.w3.org/TR/owl-syntax/#Entity_Declarations_and_Typing"><span class="s2">https://www.w3.org/TR/owl-syntax/#Entity_Declarations_and_Typing</span></a> ). <i>Note the typing constraint in </i><b><i>5.8.1 Typing Constraints of OWL 2 DL</i></b><i>: “No IRI </i>I<i> is declared in </i>Ax<i> </i>[a set of axioms]<i> to be both a class and a datatype.”</i>]</span></p>
+<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 24.0px; font: 20.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">5.   CASE Ontology Architecture and Namespaces</span></h2>
+<p class="p1"><span class="s1">The CASE ontology extends UCO with the Investigation namespaces and associated domain specific vocabulary.</span></p>
+<ul class="ul1">
+  <li class="li1"><span class="s5"></span><span class="s1">The namespace for the CASE ontology is </span><span class="s4">https://ontology.caseontology.org/case/</span><span class="s1">. UCO and CASE now have a similar IRI structure, including use of sub-ontologies implemented as independently importable namespaces.<br>
+</span></li>
+  <li class="li1"><span class="s5"></span><span class="s1">CASE now provides the Investigation sub-ontology, with the IRI </span><span class="s4">https://ontology.caseontology.org/case/investigation/</span><span class="s1">. Enumerations supporting this sub-ontology are in the vocabulary sub-ontology, with the IRI </span><span class="s4">https://ontology.caseontology.org/case/vocabulary/</span><span class="s1">. These files were imported without revision, aside from minimal IRI string substitution, from UCO.<br>
+</span></li>
+</ul>
+<p class="p1"><span class="s1"> </span></p>
+<p class="p9"><span class="s8"><a href="https://cyberontology.atlassian.net/wiki/people/5d1d2d418636560d1b5bfc4d?ref=confluence">Alexander Nelson</a></span><span class="s1"> [<i>Insert</i> a diagram of CASE namespace and import structure. In this one, UCO could be shown as one shaded block, with a detailed diagram of UCO namespaces used by CASE shown later.]</span></p>
+<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 24.0px; font: 20.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">6.   Ontology Design Patterns Used in CASE</span></h2>
+<p class="p1"><span class="s1"> </span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">6.1. Introduction</span></h3>
+<p class="p1"><span class="s1">This section presents the principal ontology design patterns used in CASE 1.0. As introduced in Section 2.3, some CASE design patterns are based on those of UCO. Other patterns, including those used for representing investigations and provenance, are unique to CASE. The CASE ontology patterns described in this section should be considered best practices for extensions of CASE.</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<p class="p1"><span class="s1">The CASE bundle header provides context for the investigation and represented information.</span></p>
+<table cellspacing="0" cellpadding="0" class="t2">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td3">
+        <p class="p10"><span class="s1">{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"@context":{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>"": "http://example.org/kb#",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>"@vocab": "http://example.org/ontology/local#",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>"case-core": "https://caseontology.org/ontology/case/core#",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>"rdfs": "http://www.w3.org/2000/01/rdf-schema#",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>"uco-action": "https://unifiedcyberontology.org/ontology/uco/action#",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>"uco-core": "https://unifiedcyberontology.org/ontology/uco/core#",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>"uco-investigation": "https://unifiedcyberontology.org/ontology/uco/investigation#",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>"uco-observable": "https://unifiedcyberontology.org/ontology/uco/observable#",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>"uco-tool": "https://unifiedcyberontology.org/ontology/uco/tool#",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>"xsd": "http://www.w3.org/2001/XMLSchema#"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"@id":":bundle-uuid",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"@type":"uco-case:Bundle",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"uco-case:description":"Investigation of any crime type",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"uco-case:object":[</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">      </span>"@id":":investigation-uuid",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">      </span>"@type":"case-investigation:Investigation",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">      </span>"uco-core:name":"Investigation_2021_0415",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">      </span>"uco-core:focus":"Robbery",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">      </span>"uco-core:description":"The theft of intellectual property",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">      </span>"uco-core:object":[list of uuids in bundle OR list of uuids of ProvenanceRecords and InvestigatigveActions</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>]</span></p>
+        <p class="p10"><span class="s1">}</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">The </span><span class="s4">object</span><span class="s1"> property in a CASE bundle header can provide a comprehensive list explicit referencing all objects in the bundle, or a shorter list of </span><span class="s4">PropertyBundles</span><span class="s1"> and </span><span class="s4">InvestigativeActions</span><span class="s1"> which contain implicit references to all objects in the bundle.</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">6.3. Tools</span></h3>
+<p class="p1"><span class="s1">The </span><span class="s4">Tool</span><span class="s1"> object is used to represent tools that are used to treat data, including their configuration options.</span></p>
+<table cellspacing="0" cellpadding="0" class="t2">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td3">
+        <p class="p10"><span class="s1">{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"@id": ":dc3dd-uuid-1",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"@type":"uco-tool:Tool",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"uco-tool:name":"dc3dd",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"uco-tool:toolType":"acquisition",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"uco-tool:creator":"DC3",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"uco-tool:version":"7.2.646",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"uco-core:hasFacet":[</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">      </span>"@type":"uco-tool:ToolConfigurationType",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">      </span>"uco-tool:configurationSetting":[</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">          </span>"@type":"uco-tool:ConfigurationSettingType",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">          </span>"uco-tool:itemName":"bs",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">          </span>"uco-tool:itemValue":"4k"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">          </span>"@type":"uco-tool:ConfigurationSettingType",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">          </span>"uco-tool:itemName":"hash",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">          </span>"uco-tool:itemValue":"md5"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">          </span>"@type":"uco-tool:ConfigurationSettingType",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">          </span>"uco-tool:itemName":"log",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">          </span>"uco-tool:itemValue":"dc3dd.log"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">          </span>"@type":"uco-tool:ConfigurationSettingType",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">          </span>"uco-tool:itemName":"command_line_arguments",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">          </span>"uco-tool:itemValue":"dc3dd if=/dev/sdc of=sdc.dd bs=4k hash=md5 log=dc3dd.log"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">      </span>]</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>]</span></p>
+        <p class="p10"><span class="s1">},</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">6.2. InvestigativeAction and Role</span></h3>
+<p class="p1"><span class="s1">CASE uses </span><span class="s4">InvestigativeActions</span><span class="s1"> to represent actions taken as part of an investigation, including initial evidence collection, subsequent tool processing, analysis activities, and reporting results. As a subclass of Action in UCO, an InvestigativeAction references the </span><span class="s4">location</span><span class="s1">, </span><span class="s4">performer</span><span class="s1">, </span><span class="s4">instrument</span><span class="s1">, and </span><span class="s4">environment</span><span class="s1"> as well as the input </span><span class="s4">object</span><span class="s1"> and output </span><span class="s4">result</span><span class="s1">.</span></p>
+<p class="p1"><span class="s1">Notably, the initial </span><span class="s4">InvestigativeAction</span><span class="s1"> of seizing/receiving data sources has a null input and a </span><span class="s4">performer</span><span class="s1"> property that references a </span><span class="s4">Role</span><span class="s1">. Assigning a </span><span class="s4">Role</span><span class="s1"> within a specific context allows the same person to have multiple roles in different contexts. For example, in the Oresteia example, Clytemnestra has the Role of Offender in Crime E and the Role of Victim in Crime F. Also see <a href="https://doi.org/10.1016/j.diin.2018.10.001"><span class="s2">https://doi.org/10.1016/j.diin.2018.10.001</span></a></span></p>
+<table cellspacing="0" cellpadding="0" class="t2">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td3">
+        <p class="p10"><span class="s1">{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"@id": "kb:action-uuid-1",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"@type": "case-investigation:InvestigativeAction",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"uco-core:description": "Items collected at scene",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"uco-core:hasFacet": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">      </span>"@type": "uco-action:ActionReferences",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">      </span>"uco-action:endTime": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"@type": "xsd:dateTime",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"@value": "2021-04-01T14:00+00:00"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">      </span>"uco-action:location": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"@id": "kb:location-uuid-1"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">      </span>"uco-action:performer": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"@id": "kb:agent-uuid-1"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">      </span>"uco-action:result": [</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                        </span>"@id": "kb:provenance-record-uuid-1"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                        </span>"@id": "kb:subject-device-uuid-1"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                   </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                   </span>... &lt;list all items&gt;</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                        </span>"@id": "kb:subject-device-uuid-23"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>]</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+        <p class="p10"><span class="s1">},</span></p>
+        <p class="p10"><span class="s1">{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"@id": "kb:provenance-record-uuid-1",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"@type": "case-investigation:ProvenanceRecord",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"case-investigation:exhibitNumber": "URI-1234",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"case-investigation:rootExhibitNumber": "URI-1234",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"uco-core:object": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>"@id": "kb:subject-device-uuid-1"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+        <p class="p10"><span class="s1">},</span></p>
+        <p class="p10"><span class="s1">{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"@id": "kb:location-uuid-1",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"@type": "uco-location:Location",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"uco-core:description": "Location where evidence was seized",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"uco-core:hasFacet": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"@type": "uco-location:LatLongCoordinatesFacet",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"uco-location:latitude": "46.537222222222219",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"uco-location:longitude": "6.5791666666666666",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+        <p class="p10"><span class="s1">},</span></p>
+        <p class="p10"><span class="s1">{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"@id": "kb:agent1-uuid",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"@type": "uco-role:Role",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"uco-core:name": "Investigator"</span></p>
+        <p class="p10"><span class="s1">},</span></p>
+        <p class="p10"><span class="s1">{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"@id": "kb:agent1-id-uuid",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"@type": "uco-identity:Identity",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>"uco-core:hasFacet": [</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"@type": "uco-identity:SimpleName",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"uco-identity:givenName": "James",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"uco-identity:familyName": "Reese"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>]</span></p>
+        <p class="p10"><span class="s1">},</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p11"><span class="s8"><a href="https://cyberontology.atlassian.net/wiki/people/557058:3a2ef2d9-ebcb-45e9-9989-3da6c2a1969a?ref=confluence">Sean Barnum</a></span><span class="s7"> <a href="https://cyberontology.atlassian.net/wiki/people/5f47c8d96db35e0039a88f20?ref=confluence"><span class="s8">Paul Brandt</span></a> <a href="https://cyberontology.atlassian.net/wiki/people/5d1d2d418636560d1b5bfc4d?ref=confluence"><span class="s8">Alexander Nelson</span></a> </span><span class="s1">: Please confirm use of ‘Has_Role’ in vocabulary:ObservableObjectRelationshipVocab in UCO and representation of Role relationship in above example.</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">Part of acquiring digital evidence can involve photographing items using a digital camera for documentation. Any Any </span><span class="s4">InvestigativeAction</span><span class="s1"> can reference the tool used to treat the data as the </span><span class="s4">instrument</span><span class="s1"> which reference a </span><span class="s4">Tool</span><span class="s1"> object.</span></p>
+<table cellspacing="0" cellpadding="0" class="t2">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td3">
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">       </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"@id": "kb:camera-uuid-1",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"@type": [</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>"uco-observable:ObservableObject",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>"uco-tool:AnalyticTool"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>],</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"uco-core:hasFacet": [</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"@type": "uco-observable:DeviceFacet",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"uco-observable:deviceType": "camera",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"uco-observable:manufacturer": "Canon",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"uco-observable:model": "PowerShot SX540"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>],</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"uco-tool:creator": "Canon"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"@id": "kb:action-uuid-2",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"@type": "case-investigation:InvestigativeAction",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"uco-core:name": "Photographed exhibits",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"uco-core:hasFacet": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>"@type": "uco-action:ActionReferences",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>"uco-action:endTime": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"@type": "xsd:dateTime",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"@value": "2021-04-01T14:15+00:00"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>"uco-action:instrument": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"@id": "kb:camera-uuid-1"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>"uco-action:location": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"@id": "kb:location1-uuid"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>"uco-action:performer": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"@id": "kb:agent1-uuid"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>"uco-action:object": [</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                        </span>"@id": "kb:provenance-record-uuid-1"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                        </span>"@id": "kb:subject-device1-uuid"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>],</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>"uco-action:result": [</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                        </span>"@id": "kb:provenance-record-uuid-2"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                        </span>"@id": "kb:camera-mediacard-uuid"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>]</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p3"><span class="s1"></span><br></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">6.3. Facets of Observable Objects</span></h3>
+<p class="p1"><span class="s1">CASE can enrich </span><span class="s4">ObservableObjects</span><span class="s1"> using </span><span class="s4">Facets</span><span class="s1"> defined in UCO, as well as custom facets not currently defined in the ontology. For instance, a digital photograph is represented as an </span><span class="s4">ObservableObject</span><span class="s1"> with the </span><span class="s4">RasterPictureFacet</span><span class="s1"> (see example <a href="https://github.com/casework/CASE-Examples/blob/555c756ba7364ee0c4849f14cc1426dc68bc5a48/examples/exif_data.json"><span class="s2">https://github.com/casework/CASE-Examples/blob/555c756ba7364ee0c4849f14cc1426dc68bc5a48/examples/exif_data.json</span></a> ). This Figure depicts a digital photograph that has been enriched with a custom Facet to define properties associated with contraband using a chosen scale (e.g., COPINE, SAP).</span></p>
+<p class="p1"><span class="s1"><img src="file:///CASECustomFacet.png" alt="CASECustomFacet.png"></span></p>
+<p class="p1"><span class="s1"><b>Figure</b>: Observable Object with Facets that represent properties of a File that is a Picture that a custom facet.<span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">This depicted example can be represented in CASE as follows:</span></p>
+<table cellspacing="0" cellpadding="0" class="t2">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td3">
+        <p class="p10"><span class="s1">{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"@id": "kb:digital_photograph1",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"@type": "uco-observable:ObservableObject",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"uco-core:hasFacet": [</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"@type": "uco-observable:FileFacet",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"uco-observable:fileSystemType": "EXT4",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"uco-observable:fileName": "IMG_0123.jpg",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"uco-observable:filePath": "/sdcard/IMG_0123.jpg",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"uco-observable:extension": "jpg",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"uco-observable:sizeInBytes": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                        </span>"@type": "xsd:long",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                        </span>"@value": 35002</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"@type": "uco-observable:RasterPictureFacet",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"uco-observable:pictureType": "jpg",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"uco-observable:pictureHeight": 12345,</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"uco-observable:pictureWidth": 12345,</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"uco-observable:bitsPerPixel": 2</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                                </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"@type": "example-custom:Contraband",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"example-custom:scaleType": "COPINE",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"example-custom:scaleCategory": 5</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"@type": "uco-observable:ContentDataFacet",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"uco-observable:byteOrder": "BigEndian",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"uco-observable:magicNumber": "/9j/ww==",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"uco-observable:mimeType": "image/jpg",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"uco-observable:sizeInBytes": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                        </span>"@type": "xsd:long",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                        </span>"@value": 35000</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"uco-observable:dataPayload": "&lt;base 64 encoded data of the file&gt;",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>"uco-observable:hash": [</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                        </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                            </span>"@type": "uco-types:Hash",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                            </span>"uco-types:hashMethod": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                                </span>"@type": "uco-vocabulary:HashNameVocab",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                                </span>"@value": "SHA256"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                            </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                            </span>"uco-types:hashValue": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                                </span>"@type": "xsd:hexBinary",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                                </span>"@value": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                            </span>}</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                        </span>}</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                    </span>]</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+        <p class="p10"><span class="s1">}</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">6.4. References</span></h3>
+<p class="p1"><span class="s1">When data contains immutable/unchanging links between objects, this is represented using an embedded reference.<span class="Apple-converted-space"> </span></span></p>
+<p class="p9"><span class="s9"><a href="https://cyberontology.atlassian.net/wiki/people/5cfb831ce193b50e8bca233b?ref=confluence">Eoghan Casey</a></span><span class="s1"> [Add description and example of immutable references]</span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">6.5. Relationships as Classes</span></h3>
+<p class="p9"><span class="s9"><a href="https://cyberontology.atlassian.net/wiki/people/5cfb831ce193b50e8bca233b?ref=confluence">Eoghan Casey</a></span><span class="s1"> [<i>Describe</i> CASE’s use of this UCO pattern and present CASE examples. Either reference back to the diagram in Section 2.3.2, or a new CASE-specific diagram, would be helpful.]</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">Relationship are intentionally flexible to allow mutable/changeable links or associations to be defined between any object. For instance, a relationship between one object and another (e.g., SIM card in a mobile device) can last for a limited time period, and then can change (e.g., moving the SIM card to another mobile device). The “Contained_Within” relationship is commonly used in CASE. The following example represents the relationship between a SIM card and the mobile device it was contained within.</span></p>
+<table cellspacing="0" cellpadding="0" class="t2">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td3">
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"@id": "kb:simcard1-relationship-a1dbff0e-974b-4295-b035-e1bc3271945d",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"@type": "uco-observable:ObservableRelationship",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"uco-core:source": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"@id": "kb:simcard-24d20c80-f035-40ae-88dd-fc66f70180f6"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"uco-core:target": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"uco-core:kindOfRelationship": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"@type": "uco-vocabulary:ObservableObjectRelationshipVocab",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"@value": "Contained_Within"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"uco-core:isDirectional": true</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p1"><span class="s1">A relationship object can be enriched with a </span><span class="s4">Facet</span><span class="s1"> such as the physical location of one object within another. In the following example, the </span><span class="s4">DataRangeFacet</span><span class="s1"> is used to specify where a partition is located within a piece of storage media or forensic copy.</span></p>
+<table cellspacing="0" cellpadding="0" class="t2">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td3">
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"@id": "kb:partition-87d669fc-8ab9-47c6-a66d-af09d73361d5",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"@type": "uco-observable:ObservableRelationship",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"uco-core:source": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"@id": "kb:userdata-partition-d94cd1b5-5cf7-4642-8927-5ebea573d68e"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"uco-core:target": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"@id": "kb:f3fd304e-ef6c-4cbd-94cb-425880f82748"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"uco-core:kindOfRelationship": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"@type": "uco-vocabulary:ObservableObjectRelationshipVocab",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"@value": "Contained_Within"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"uco-core:isDirectional": true,</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"uco-core:hasFacet": [</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>"@type": "uco-observable:DataRangeFacet",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>"uco-observable:rangeOffset": 2032140288,</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>"uco-observable:rangeSize": 29236373504</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>]</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p1"><span class="s1">CASE also uses the </span><span class="s4">PathRelationFacet</span><span class="s1"> on relationships between a file and its logical location within a file system.</span></p>
+<table cellspacing="0" cellpadding="0" class="t2">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td3">
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"@id": "kb:filesystem-relationship-f64f857e-6c87-417f-9166-5aaaed8a6fd2",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"@type": "uco-observable:ObservableRelationship",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"uco-core:source": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"@id": "kb:downloaded-file-3961dae3-2bca-4ccb-97fd-9919192e81db"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"uco-core:target": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"@id": "kb:filesystem-e2a02b5a-7e7e-489f-ab43-3ffadab4ac82"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"uco-core:kindOfRelationship": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"@type": "uco-vocabulary:ObservableObjectRelationshipVocab",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"@value": "Contained_Within"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"uco-core:isDirectional": true,</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"uco-core:hasFacet": [</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>"@type": "uco-observable:PathRelationFacet",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>"uco-observable:path": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/media/0/Download/download.jpg"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>]</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p1"><span class="s1">The same pattern is used to represent the relationship between a Windows Registry value and its logical location within a Windows Registry hive.</span></p>
+<table cellspacing="0" cellpadding="0" class="t2">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td3">
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">  </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"@id": "kb:user1-registryhive-cells-relationship",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"@type": "uco-observable:CyberRelationship",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"uco-core:source": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"@id": "kb:user1-registrycell-shellbag1"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"uco-core:target": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"@id": "kb:user1-registryhive"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"uco-core:kindOfRelationship": {</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"@type": "uco-vocabulary:CyberItemRelationshipVocab",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>"@value": "Contained_Within"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"uco-core:isDirectional": true,</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"uco-core:facets": [</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>"@type": "uco-observable:PathRelation",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>"uco-observable:path": "\Software\Microsoft\Windows\Shell\Bags\1\Desktop\ItemPos1920x1080x120(1)"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>]</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>},</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">6.6. Vocabularies</span></h3>
+<p class="p9"><span class="s8"><a href="https://cyberontology.atlassian.net/wiki/people/5d1d2d418636560d1b5bfc4d?ref=confluence">Alexander Nelson</a></span><span class="s1"> [<i>Describe</i> CASE’s use of this UCO pattern and present CASE examples. Either reference back to the diagram in Section 2.3.3, or a new CASE-specific diagram, would be helpful.]</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">6.7. Separate Namespace for Domain Assertions</span></h3>
+<p class="p1"><span class="s1">[<i>Describe</i> CASE’s use of this UCO pattern and present CASE examples. Reference back to Section 2.3.4 if needed.]</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">6.8. Cyber-investigation patterns</span></h3>
+<p class="p9"><span class="s9"><a href="https://cyberontology.atlassian.net/wiki/people/5cfb831ce193b50e8bca233b?ref=confluence">Eoghan Casey</a></span><span class="s1"> The domain of the CASE ontology is cyber-investigations in general…. The CASE domain includes the following topics:</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">6.9. Provenance patterns</span></h3>
+<p class="p1"><span class="s1">Provenance of evidentiary material in an investigation needs to be tracked. Therefore, the CASE ontology includes concepts for representing the source and chain-of-custody (including any operations) for evidence related to an investigation.</span></p>
+<table cellspacing="0" cellpadding="0" class="t2">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td3">
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"@id": "kb:provenance-record-b84dc6ca-6187-4fc3-b5f1-c15142b103a8",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"@type": "case-investigation:ProvenanceRecord",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"case-investigation:exhibitNumber": "C001-HD1",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"case-investigation:rootExhibitNumber": "Collection-001",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"uco-core:description": "Forensic duplicate of hard drive used by subject",</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>"uco-core:object": [</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>{</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">                </span>"@id": "kb:hard-drive-d3a2304e-ef6c-4cbd-94cb-425880f88546"</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">        </span>]</span></p>
+        <p class="p10"><span class="s1"><span class="Apple-converted-space">    </span>},</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<ul class="ul1">
+  <li class="li1"><span class="s5"></span><span class="s1">In a </span><span class="s4">ProvenanceRecord</span><span class="s1">, the </span><span class="s4">rootExhibitNumber</span><span class="s1"> is a unique identifier assigned to a set of objects at the start of their treatment as part of an investigation. A subsequent </span><span class="s4">ProvenanceRecord</span><span class="s1"> can reference more than one </span><span class="s4">rootExhibitNumber</span><span class="s1"> when information combines multiple sources.<br>
+</span></li>
+  <li class="li1"><span class="s5"></span><span class="s1">At any stage during the treatment of data, a unique </span><span class="s4">exhibitNumber</span><span class="s1"> can be assigned in a </span><span class="s4">ProvenanceRecord</span><span class="s1"> by the performer/instrument to differentiate it from other objects within the given context.<br>
+</span></li>
+  <li class="li1"><span class="s5"></span><span class="s1">The optional </span><span class="s4">informedBy</span><span class="s1"> relationship between </span><span class="s4">InvestigativeActions</span><span class="s1"> explicitly represents backtracking links in the provenance/lineage of an object. An </span><span class="s4">InvestigativeAction</span><span class="s1"> can only have one link back to the causal </span><span class="s4">InvestigativeAction</span><span class="s1">.<br>
+</span></li>
+  <li class="li1"><span class="s5"></span><span class="s1">The optional </span><span class="s4">derivedFrom</span><span class="s1"> relationship between objects explicitly represents backtracking links in the provenance/lineage of an object. An object can have multiple </span><span class="s4">derivedFrom</span><span class="s1"> links back to multiple objects. There is currently no way to track the scenario of a bulk input to an InvestigativeAction with multiple outputs that are not explicitly linked to specific parts of the bulk input (this is currently left to the user, but could be discussed in future).<br>
+</span></li>
+</ul>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">[<i>If applicable, extend list </i>with other CASE ontology design patterns.]</span></p>
+<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 24.0px; font: 20.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">7.   Concepts in CASE 1.0.0<a href="https://cyberontology.atlassian.net/wiki/plugins/viewsource/viewpagesrc.action?pageId=1384087557#_msocom_5"><span class="s10">[DLN5]</span></a> </span></h2>
+<p class="p1"><span class="s1"> </span></p>
+<p class="p1"><span class="s1">This section describing concepts from the CASE ontology is normative.</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<p class="p1"><span class="s1">[<i>Generate list automatically</i>. See example: Good Relations Language Reference, online at <a href="http://www.heppnetz.de/ontologies/goodrelations/v1.html"><span class="s2">http://www.heppnetz.de/ontologies/goodrelations/v1.html</span></a>. Consider including a diagram of CASE concepts to orient the reader.]</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">7.1. Entity Classes</span></h3>
+<p class="p1"><span class="s1"> </span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">7.2. Facet Classes</span></h3>
+<p class="p1"><span class="s1"> </span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">7.3. Data Properties</span></h3>
+<p class="p1"><span class="s1"> </span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">7.4. Object Properties</span></h3>
+<p class="p1"><span class="s1"> </span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">7.5. Relationships as classes</span></h3>
+<p class="p1"><span class="s1"> </span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">7.6. Datatypes</span></h3>
+<p class="p1"><span class="s1"> </span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">7.7. Vocabularies</span></h3>
+<p class="p1"><span class="s1"> </span></p>
+<p class="p1"><span class="s1">[Add additional sections if needed]</span></p>
+<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 24.0px; font: 20.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">8.   CASE Re-use of Concepts in UCO<a href="https://cyberontology.atlassian.net/wiki/plugins/viewsource/viewpagesrc.action?pageId=1384087557#_msocom_6"><span class="s10">[DLN6]</span></a> </span></h2>
+<p class="p1"><span class="s1"> </span></p>
+<p class="p1"><span class="s1">This section describes the re-use of concepts from the Unified Cyber Ontology (UCO). With respect to UCO content, this section is informative, not normative. The authoritative documentation and encodings of UCO are published at the UCO website [<a href="https://unifiedcyberontology.org/"><span class="s2">https://unifiedcyberontology.org/</span></a> ]. With respect to the use of UCO with CASE, however, this section should be considered prescriptive. The UCO concepts discussed herein are those that CASE re-uses directly or may interface with.</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">8.1. UCO Objects</span></h3>
+<p class="p1"><span class="s1">A UCO object is a representation of a fundamental cyber-relevant concept either directly inherent to the cyber domain or indirectly related to the cyber domain and necessary for contextually characterizing cyber domain concepts and relationships. Within the Unified Cyber Ontology (UCO) structure this is the base class defining the minimal core set of properties to act as a consistent, unifying, and interoperable foundation for all explicit and inter-relatable content objects. Objects and Object Identifiers are described in Sections 3 and 4 of the <a href="https://unifiedcyberontology.org/resources/uco_design_document.html"><span class="s2">UCO Design Document</span></a>.</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<h4 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 19.0px; font: 14.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>8.1.1.    Actions</b></span></h4>
+<p class="p1"><span class="s1"> </span></p>
+<h4 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 19.0px; font: 14.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>8.1.2.    Compilation</b></span></h4>
+<p class="p1"><span class="s1"> </span></p>
+<h4 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 19.0px; font: 14.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>8.1.3.    Identities</b></span></h4>
+<p class="p1"><span class="s1"> </span></p>
+<h5 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 15.0px; font: 12.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>8.1.3.1.        Organizations</b></span></h5>
+<p class="p1"><span class="s1"> </span></p>
+<h5 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 15.0px; font: 12.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>8.1.3.2.        Persons</b></span></h5>
+<p class="p1"><span class="s1"> </span></p>
+<h4 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 19.0px; font: 14.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>8.1.4.    Locations</b></span></h4>
+<p class="p1"><span class="s1"> </span></p>
+<h4 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 19.0px; font: 14.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>8.1.5.    Observables</b></span></h4>
+<p class="p1"><span class="s1"> </span></p>
+<h5 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 15.0px; font: 12.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>8.1.5.1.        Observable Actions</b></span></h5>
+<p class="p1"><span class="s1"> </span></p>
+<h5 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 15.0px; font: 12.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>8.1.5.2.        Observable Objects</b></span></h5>
+<p class="p1"><span class="s1"> </span></p>
+<h5 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 15.0px; font: 12.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>8.1.5.3.        Cyber Observable Patterns</b></span></h5>
+<p class="p1"><span class="s1"> </span></p>
+<h5 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 15.0px; font: 12.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>8.1.5.4.        Observable Relationships</b></span></h5>
+<p class="p1"><span class="s1"> </span></p>
+<h4 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 19.0px; font: 14.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>8.1.6.    Patterns</b></span></h4>
+<p class="p1"><span class="s1"> </span></p>
+<h4 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 19.0px; font: 14.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>8.1.7.    Relationships</b></span></h4>
+<p class="p1"><span class="s1">See Section 6 of the <a href="https://unifiedcyberontology.org/resources/uco_design_document.html"><span class="s2">UCO Design Document</span></a>.</span></p>
+<h4 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 19.0px; font: 14.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>8.1.8.    Roles</b></span></h4>
+<p class="p1"><span class="s1"> </span></p>
+<h4 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 19.0px; font: 14.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>8.1.9.    Security Classifications and other Markings</b></span></h4>
+<p class="p1"><span class="s1"> </span></p>
+<h5 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 15.0px; font: 12.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>8.1.10.                  Tools</b></span></h5>
+<p class="p1"><span class="s1"> </span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">8.2.  UCO Facets</span></h3>
+<p class="p1"><span class="s1">See Section 5 of the <a href="https://unifiedcyberontology.org/resources/uco_design_document.html"><span class="s2">UCO Design Document</span></a>.</span></p>
+<h3 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 23.0px; font: 16.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">8.3.  UCO Vocabularies</span></h3>
+<p class="p1"><span class="s1">See Section 8 of the <a href="https://unifiedcyberontology.org/resources/uco_design_document.html"><span class="s2">UCO Design Document</span></a>.</span></p>
+<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 24.0px; font: 20.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">9.   Instance Data in CASE</span></h2>
+<p class="p1"><span class="s1"> Data represented using the CASE ontology is serialized in the syntax JSON-LD (<a href="https://www.w3.org/2018/json-ld-wg/"><span class="s2">https://www.w3.org/2018/json-ld-wg/</span></a> ; specification: <a href="https://www.w3.org/TR/json-ld11/"><span class="s2">https://www.w3.org/TR/json-ld11/</span></a> ). </span></p>
+<p class="p1"><span class="s1"> </span></p>
+<p class="p1"><span class="s1">[Insert additional description and/or reference to other CASE documents about JSON-LD serialization of CASE-compliant data.]</span></p>
+<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 24.0px; font: 20.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">10.        License for CASE</span></h2>
+<p class="p1"><span class="s1"> All new inbound code contributions to CASE and specifications must be made using the Apache License, Version 2.0, available at <a href="https://www.apache.org/licenses/LICENSE-2.0"><span class="s2">https://www.apache.org/licenses/LICENSE-2.0</span></a><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">Documentation other than specifications will be received and made available under the Creative Commons Attribution 4.0 International License (available at <a href="http://creativecommons.org/licenses/by/4.0/"><span class="s2">http://creativecommons.org/licenses/by/4.0/</span></a> ).</span></p>
+<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 24.0px; font: 20.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">11.        Acknowledgements</span></h2>
+<p class="p1"><span class="s1">Development of CASE began in 2014 as a collaboration between the DoD Cyber Crime Center (DC3) and MITRE, led by Dr. Eoghan Casey and Sean Barnum, involving the National Institute of Standards and Technology (NIST). In response to international interest, this initiative became an open source evolving standard, with hundreds of participants in industry, government and academia around the globe.</span></p>
+<p class="p1"><span class="s1">Early contributors include the Netherlands Forensic Institute (NFI), the Italian Institute of Legal Informatics and Judicial Systems (IGSG-CNR), FireEye, and University of Lausanne. CASE governance and community coordination were formalized with support of Harm van Beek, Rich Brown, Ryan Griffith, Cory Hall, Christopher Hargreaves, Jessica Hyde, Deborah Nichols, and Martin Westman. Growing international involvement is tracked on the CASE website: <a href="https://caseontology.org/community/members.html"><span class="s2">https://caseontology.org/community/members.html</span></a><span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">The Technical Director is Alex Nelson, and the Ontology Committee is led by Paul Brandt.</span></p>
+<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; line-height: 24.0px; font: 20.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1">12.        References</span></h2>
+<p class="p1"><span class="s1"> </span></p>
+<p class="p1"><span class="s1">[Insert list in standard bibliography format of references pertinent to the CASE ontology structure and coverage, including W3C Recommendations (i.e., standards).]</span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p13"><span class="s1"></span><br></p>
+<p class="p1"><span class="s2"><a href="https://cyberontology.atlassian.net/wiki/plugins/viewsource/viewpagesrc.action?pageId=1384087557#_ftnref1">[1]</a></span><span class="s1"> “Profiles” is the current W3C designation for subsets of OWL 2 that are restricted for certain representational and/or computational purposes. Other (and past W3C) sources have referred to OWL profiles as “dialects” (e.g., <a href="https://graphdb.ontotext.com/documentation/8.0/enterprise/introduction-to-semantic-web.html"><span class="s2">https://graphdb.ontotext.com/documentation/8.0/enterprise/introduction-to-semantic-web.html</span></a>), “species” (e.g., <a href="https://www.w3.org/2007/OWL/wiki/Profile_Explanations"><span class="s2">https://www.w3.org/2007/OWL/wiki/Profile_Explanations</span></a> ), or “flavors” (e.g., <a href="https://www.cambridgesemantics.com/blog/semantic-university/learn-owl-rdfs/flavors-of-owl/"><span class="s2">https://www.cambridgesemantics.com/blog/semantic-university/learn-owl-rdfs/flavors-of-owl/</span></a>).</span></p>
+<p class="p13"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"> <a href="https://cyberontology.atlassian.net/wiki/plugins/viewsource/viewpagesrc.action?pageId=1384087557#_msoanchor_1"><span class="s2">[DLN1]</span></a>Also, address any other intermediate, post-0.1.0 CASE releases prior to CASE 1.0.</span></p>
+<p class="p1"><span class="s1"> <a href="https://cyberontology.atlassian.net/wiki/plugins/viewsource/viewpagesrc.action?pageId=1384087557#_msoanchor_2"><span class="s2">[DLN2]</span></a>“WWW” is placeholder for a URL to referenced information.</span></p>
+<p class="p1"><span class="s1"> <a href="https://cyberontology.atlassian.net/wiki/plugins/viewsource/viewpagesrc.action?pageId=1384087557#_msoanchor_3"><span class="s2">[DLN3]</span></a> <a href="https://cyberontology.atlassian.net/wiki/plugins/viewsource/viewpagesrc.action?pageId=1384087557#_msoanchor_3"><span class="s2">[DLN3]</span></a>Also, address any other intermediate, post-0.1.0 CASE releases prior to CASE 1.0.</span></p>
+<p class="p1"><span class="s1"> <a href="https://cyberontology.atlassian.net/wiki/plugins/viewsource/viewpagesrc.action?pageId=1384087557#_msoanchor_4"><span class="s2">[DLN4]</span></a>I recommend that the more formally oriented members of the Ontology Committees (both UCO and CASE) review their ontologies against the specifications for the OWL profiles before making a definitive statement here. For one possible issue that should be answered, see the highlighted “Note” later in this section.</span></p>
+<p class="p1"><span class="s1"> <a href="https://cyberontology.atlassian.net/wiki/plugins/viewsource/viewpagesrc.action?pageId=1384087557#_msoanchor_5"><span class="s2">[DLN5]</span></a>This is the full version number, which <i>must be incremented</i> if a new edition of this document is generated to go with a new ontology version (and includes a regenerated list of concepts from the new version).</span></p>
+<p class="p1"><span class="s1"> <a href="https://cyberontology.atlassian.net/wiki/plugins/viewsource/viewpagesrc.action?pageId=1384087557#_msoanchor_6"><span class="s2">[DLN6]</span></a><b><i>Trim</i></b> the draft list of UCO concepts included below in this section to include only those used by CASE. This does </span><span class="s11">not</span><span class="s1"> need to be a catalog of all UCO concepts, but rather an indication of (1) <i>which</i> concepts (in which sub-ontologies) of UCO are used by CASE; (2) <i>how</i> UCO concepts are used by CASE.</span></p>
+<p class="p1"><span class="s1"> </span></p>
+<p class="p1"><span class="s1">Also, be sure to <b><i>update the UCO concept names and any definitions listed here</i></b> with the latest class and property names after pending change proposals are implemented.</span></p>
+<p class="p3"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"> </span></p>
+
+
