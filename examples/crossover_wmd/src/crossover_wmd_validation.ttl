@@ -262,52 +262,6 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
-				a observable:EmailMessageFacet ;
-				observable:application <http://example.org/kb/Gmail-uuid> ;
-				observable:bodyRaw <http://example.org/kb/content-data-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d> ;
-				observable:messageID "CAKBqNfyKo+pvHkJy6kwO82jTbkNA@mail.gmail.com" ;
-				observable:sender <http://example.org/kb/EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
-				observable:sentTime "2018-11-20T21:28:07+00:00"^^xsd:dateTime ;
-				observable:subject "Re: Bank transfer ?" ;
-			] ;
-			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:EmailMessageFacet ; uco-observable:application kb:Gmail-uuid ; uco-observable:bodyRaw kb:content-data-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d ; uco-observable:messageID Literal("CAKBqNfyKo+pvHkJy6kwO82jTbkNA@mail.gmail.com") ; uco-observable:sender kb:EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53 ; uco-observable:sentTime Literal("2018-11-20T21:28:07+00:00" = 2018-11-20 21:28:07+00:00, datatype=xsd:dateTime) ; uco-observable:subject Literal("Re: Bank transfer ?") ]->observable:isMimeEncoded' ;
-			sh:resultPath observable:isMimeEncoded ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-			sh:sourceShape [
-				sh:datatype xsd:boolean ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:minCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:path observable:isMimeEncoded ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a observable:EmailMessageFacet ;
-				observable:application <http://example.org/kb/Gmail-uuid> ;
-				observable:bodyRaw <http://example.org/kb/content-data-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d> ;
-				observable:messageID "CAKBqNfyKo+pvHkJy6kwO82jTbkNA@mail.gmail.com" ;
-				observable:sender <http://example.org/kb/EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
-				observable:sentTime "2018-11-20T21:28:07+00:00"^^xsd:dateTime ;
-				observable:subject "Re: Bank transfer ?" ;
-			] ;
-			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:EmailMessageFacet ; uco-observable:application kb:Gmail-uuid ; uco-observable:bodyRaw kb:content-data-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d ; uco-observable:messageID Literal("CAKBqNfyKo+pvHkJy6kwO82jTbkNA@mail.gmail.com") ; uco-observable:sender kb:EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53 ; uco-observable:sentTime Literal("2018-11-20T21:28:07+00:00" = 2018-11-20 21:28:07+00:00, datatype=xsd:dateTime) ; uco-observable:subject Literal("Re: Bank transfer ?") ]->observable:isMultipart' ;
-			sh:resultPath observable:isMultipart ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-			sh:sourceShape [
-				sh:datatype xsd:boolean ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:minCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:path observable:isMultipart ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
 				a observable:ExtInodeFacet ;
 				observable:extInodeChangeTime "__NOT_PROVIDED" ;
 				observable:extInodeID "522962"^^xsd:integer ;
