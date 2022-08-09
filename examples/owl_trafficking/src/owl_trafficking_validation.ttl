@@ -60,20 +60,6 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/simcard1-relationship-a1dbff0e-974b-4295-b035-e1bc3271945d> ;
-			sh:resultMessage "Value is not Literal with datatype xsd:dateTime" ;
-			sh:resultPath core:startTime ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-			sh:sourceShape [
-				sh:datatype xsd:dateTime ;
-				sh:nodeKind sh:Literal ;
-				sh:path core:startTime ;
-			] ;
-			sh:value "2017-00-00T12:34:56Z"^^xsd:dateTime ;
-		] ,
-		[
-			a sh:ValidationResult ;
 			sh:focusNode [
 				a observable:AccountFacet ;
 				observable:accountIssuer <http://example.org/kb/organization-att-d60ffcec-4d89-48a1-b264-9cd4bc700a70> ;

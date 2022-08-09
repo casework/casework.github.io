@@ -102,6 +102,10 @@ jumbo_desc: CASE Sub-topic of Chain of Custody
           <div class="card-body">
             <p class="card-text">According to the CASE report, what is the timeline of all of the recorded actions? (<a href="src/query-action_timeline.sparql">SPARQL source</a>)</p>
 {% highlight sparql %}
+PREFIX case-investigation: <https://ontology.caseontology.org/case/investigation/>
+PREFIX uco-action: <https://ontology.unifiedcyberontology.org/uco/action/>
+PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+
 SELECT ?lStartTime ?lEndTime ?lDescription
 WHERE
 {
@@ -218,6 +222,12 @@ ORDER BY ?lEndTime
           <div class="card-body">
             <p class="card-text">According to the CASE report, in what locations did the investigative actions take place? (<a href="src/query-investigative_locations.sparql">SPARQL source</a>)</p>
 {% highlight sparql %}
+PREFIX case-investigation: <https://ontology.caseontology.org/case/investigation/>
+PREFIX drafting: <http://example.org/ontology/drafting#>
+PREFIX uco-action: <https://ontology.unifiedcyberontology.org/uco/action/>
+PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+PREFIX uco-location: <https://ontology.unifiedcyberontology.org/uco/location/>
+
 SELECT DISTINCT ?nLocation ?lRoomId ?lDescription
 WHERE
 {
@@ -283,6 +293,11 @@ ORDER BY ?nLocation
             <p class="card-text">According to the provenance chain, who was involved in handling this evidence? (<a href="src/query-investigative_personae.sparql">SPARQL source</a>)</p>
             <p class="card-text">The evidence exhibit number is <code>EXH-20190101-7</code>.</p>
 {% highlight sparql %}
+PREFIX case-investigation: <https://ontology.caseontology.org/case/investigation/>
+PREFIX uco-action: <https://ontology.unifiedcyberontology.org/uco/action/>
+PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+PREFIX uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/>
+
 SELECT DISTINCT ?lLastName
 WHERE
 {
@@ -350,6 +365,13 @@ ORDER BY ?lLastName
           <div class="card-body">
             <p class="card-text">What photographs were taken of the exhibit and sub-exhibits? (<a href="src/query-exhibit_photos.sparql">SPARQL source</a>)</p>
 {% highlight sparql %}
+PREFIX case-investigation: <https://ontology.caseontology.org/case/investigation/>
+PREFIX uco-action: <https://ontology.unifiedcyberontology.org/uco/action/>
+PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+PREFIX uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/>
+PREFIX uco-tool: <https://ontology.unifiedcyberontology.org/uco/tool/>
+PREFIX uco-types: <https://ontology.unifiedcyberontology.org/uco/types/>
+
 SELECT ?lExhibitNumber ?lFileName ?lModifiedTime ?lHashValue
 WHERE {
 
@@ -610,6 +632,11 @@ WHERE {
 {% endhighlight %}
             <p class="card-text">That graph is then analyzed with the <code>*</code> path operator.  The query uses <code>*</code> instead of <code>+</code> in order to include the action that generated the file as well. (<a href="src/query-actions_to_artifact.sparql">SPARQL source</a>)</p>
 {% highlight sparql %}
+PREFIX case-investigation: <https://ontology.caseontology.org/case/investigation/>
+PREFIX uco-action: <https://ontology.unifiedcyberontology.org/uco/action/>
+PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+PREFIX uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/>
+
 SELECT DISTINCT ?nDerivingAction ?lDescription
 WHERE {
   # Identify action at end of path.
@@ -664,6 +691,9 @@ ORDER BY ?lDerivingActionEndTime
             <p class="card-text">What objects were the initial evidence submission(s) into the <code>ProvenanceRecord</code> chain? (<a href="src/query-initial_evidence_submission.sparql">SPARQL source</a>)</p>
 
 {% highlight sparql %}
+PREFIX case-investigation: <https://ontology.caseontology.org/case/investigation/>
+PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+
 SELECT DISTINCT ?nSourceObject
 WHERE
 {
@@ -696,6 +726,11 @@ WHERE
             <p class="card-text">Several picture files were extracted by the kiosk, tracked in the internal process-record exhibit <code>EXH-20190101-7-KioskReport</code>.  Some of them were selected by the investigator for presentation in exhibit <code>EXH-20190101-7-B</code>, after visual review of just some of the files.  Which were extracted, displayed, and selected?  (<a href="src/query-selection_from_automated_exhibit_extraction.sparql">SPARQL source</a>)</p>
 
 {% highlight sparql %}
+PREFIX case-investigation: <https://ontology.caseontology.org/case/investigation/>
+PREFIX uco-action: <https://ontology.unifiedcyberontology.org/uco/action/>
+PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+PREFIX uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/>
+
 SELECT DISTINCT ?lFileName ?lReviewStatus
 WHERE {
   # Use the requested exhibit numbers to identify provenance records
