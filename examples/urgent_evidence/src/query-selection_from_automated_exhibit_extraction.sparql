@@ -1,3 +1,8 @@
+PREFIX case-investigation: <https://ontology.caseontology.org/case/investigation/>
+PREFIX uco-action: <https://ontology.unifiedcyberontology.org/uco/action/>
+PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+PREFIX uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/>
+
 SELECT DISTINCT ?lFileName ?lReviewStatus
 WHERE {
   # Use the requested exhibit numbers to identify provenance records
