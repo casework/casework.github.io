@@ -26,7 +26,7 @@ def load_validation_graph(filename: str, expected_conformance: bool) -> rdflib.G
     g.parse(filename, format="turtle")
     g.namespace_manager.bind("sh", NS_SH)
 
-    query = rdflib.plugins.sparql.prepareQuery(
+    query = rdflib.plugins.sparql.processor.prepareQuery(
         """\
 SELECT ?lConforms
 WHERE {
@@ -52,7 +52,7 @@ WHERE {
     reason="At least one issue known present with vocabulary items.  Once UCO ticket OC-12 is resolved, this xfail annotation should be removed.",
     strict=True,
 )
-def test_asgard_validation():
+def test_asgard_validation() -> None:
     """
     Confirm the instance data passes validation.
     """

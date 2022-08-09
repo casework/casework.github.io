@@ -24,7 +24,7 @@ import argparse
 import sys
 
 
-def main():
+def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("in_json")
     args = parser.parse_args()

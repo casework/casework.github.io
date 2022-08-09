@@ -23,7 +23,7 @@ import json
 import sys
 
 
-def main():
+def main() -> None:
     obj = None
     sys.stderr.write("args.in_json = %r." % args.in_json)
     for in_json in args.in_json:
