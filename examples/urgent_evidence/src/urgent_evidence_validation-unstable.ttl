@@ -8,7 +8,7 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
-@prefix vocabulary1: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
+@prefix vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 []
@@ -44,7 +44,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "132bfadcc46addedcafcd84653f1a56007eba2f27bfcb15824536cda65a49c9a"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -67,7 +67,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "132bfadcc46addedcafcd84653f1a56007eba2f27bfcb15824536cda65a49c9a"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -86,7 +86,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "132bfadcc46addedcafcd84653f1a56007eba2f27bfcb15824536cda65a49c9a"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -109,7 +109,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "1929ec6c6186f43860da7c77c0c65d1b8543a5543572261a1b71084e7bf80a0e"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -132,7 +132,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "1929ec6c6186f43860da7c77c0c65d1b8543a5543572261a1b71084e7bf80a0e"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -151,7 +151,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "1929ec6c6186f43860da7c77c0c65d1b8543a5543572261a1b71084e7bf80a0e"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -174,7 +174,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73a43362938b9824"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -197,7 +197,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73a43362938b9824"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -216,7 +216,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73a43362938b9824"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -239,7 +239,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "6ba5b138057cca4e737a86083cf28426093f218efbef64967863a6c83138fe89"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -262,7 +262,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "6ba5b138057cca4e737a86083cf28426093f218efbef64967863a6c83138fe89"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -281,7 +281,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "6ba5b138057cca4e737a86083cf28426093f218efbef64967863a6c83138fe89"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -304,7 +304,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "9a171853eee9f8162e480b28c36f7619a2db8539ccfee849b8ec0068aef53789"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -327,7 +327,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "9a171853eee9f8162e480b28c36f7619a2db8539ccfee849b8ec0068aef53789"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -346,7 +346,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "9a171853eee9f8162e480b28c36f7619a2db8539ccfee849b8ec0068aef53789"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -369,7 +369,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "a49f0716e610bd0f77543b1e7ca7613e9b31bf32509e854c7ba65b79be502a18"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -392,7 +392,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "a49f0716e610bd0f77543b1e7ca7613e9b31bf32509e854c7ba65b79be502a18"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -411,7 +411,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "a49f0716e610bd0f77543b1e7ca7613e9b31bf32509e854c7ba65b79be502a18"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -434,7 +434,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "cadc54f42a9d01ecb5ecdc3a9a4824c73301d6ce9857eaa73fc28317ccd5d40f"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -457,7 +457,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "cadc54f42a9d01ecb5ecdc3a9a4824c73301d6ce9857eaa73fc28317ccd5d40f"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -476,7 +476,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "cadc54f42a9d01ecb5ecdc3a9a4824c73301d6ce9857eaa73fc28317ccd5d40f"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -499,7 +499,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "ee3657ad73c09098312e71a31ca7ac468c1fb1b998b5d6647ad471dcc89c4141"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -522,7 +522,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "ee3657ad73c09098312e71a31ca7ac468c1fb1b998b5d6647ad471dcc89c4141"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -541,7 +541,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "ee3657ad73c09098312e71a31ca7ac468c1fb1b998b5d6647ad471dcc89c4141"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -564,7 +564,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "fc0819ed4dcb2af9c85a041a0da11ea6a146dec0b108c09f5e0d41e8ea3bb041"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -587,7 +587,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "fc0819ed4dcb2af9c85a041a0da11ea6a146dec0b108c09f5e0d41e8ea3bb041"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
@@ -606,7 +606,7 @@
 				a observable:ContentDataFacet ;
 				observable:hash [
 					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary1:HashNameVocab ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
 					types:hashValue "fc0819ed4dcb2af9c85a041a0da11ea6a146dec0b108c09f5e0d41e8ea3bb041"^^xsd:hexBinary ;
 				] ;
 				observable:mimeType "image/jpeg" ;
