@@ -14,9 +14,10 @@
 import logging
 import os
 import pathlib
+import typing
 
 import pytest
-import rdflib.plugins.sparql
+import rdflib
 
 import case_utils.ontology
 
@@ -27,13 +28,10 @@ NS_SH = rdflib.SH
 graph = rdflib.Graph()
 graph.parse("generated-urgent_evidence.ttl", format="turtle")
 graph.parse("generated-urgent_evidence-wasInformedBy.json", format="json-ld")
-# TODO - Remove CASE-unstable.ttl reference on release of CASE 0.6.0.
-top_srcdir = pathlib.Path(os.path.dirname(__file__)).parent.parent.parent
-graph.parse(str(top_srcdir / "dependencies" / "CASE-unstable.ttl"))
 
-# Inherit prefixes defined in input context dictionary.
-nsdict = {k: v for (k, v) in graph.namespace_manager.namespaces()}
-nsdict["sh"] = NS_SH
+# Load subclasses so 'a/rdfs:subClassOf*' query pattern for subclasses
+# without RDFS inferencing works.
+case_utils.ontology.load_subclass_hierarchy(graph)
 
 
 def load_validation_graph(filename: str, expected_conformance: bool) -> rdflib.Graph:
@@ -41,8 +39,7 @@ def load_validation_graph(filename: str, expected_conformance: bool) -> rdflib.G
     g.parse(filename, format="turtle")
     g.namespace_manager.bind("sh", NS_SH)
 
-    query = rdflib.plugins.sparql.prepareQuery(
-        """\
+    query_str = """\
 SELECT ?lConforms
 WHERE {
   ?nReport
@@ -50,37 +47,33 @@ WHERE {
     sh:conforms ?lConforms ;
     .
 }
-""",
-        initNs=nsdict,
-    )
+"""
 
     computed_conformance = None
-    for result in g.query(query):
+    for result in g.query(query_str):
         (l_conforms,) = result
         computed_conformance = bool(l_conforms)
     assert expected_conformance == computed_conformance
     return g
 
 
-@pytest.fixture
-def action_iris_all():
+@pytest.fixture(scope="module")
+def action_iris_all() -> typing.Set[str]:
     retval = set()
-    select_query_object = rdflib.plugins.sparql.prepareQuery(
-        """\
+    query_str = """\
+PREFIX case-investigation: <https://ontology.caseontology.org/case/investigation/>
 SELECT ?nAction
 WHERE {
   ?nAction a case-investigation:InvestigativeAction .
 }
-""",
-        initNs=nsdict,
-    )
-    for record in graph.query(select_query_object):
+"""
+    for record in graph.query(query_str):
         retval.add(record[0].toPython())
     assert len(retval) > 0, "Failed to retrieve investigative actions."
     return retval
 
 
-def test_actions_to_photo(action_iris_all):
+def test_actions_to_photo(action_iris_all: typing.Set[str]) -> None:
     action_iris_computed = set()
     action_iris_ground_truth_positive = {
         "http://example.org/kb/action-uuid-1",
@@ -105,10 +98,7 @@ def test_actions_to_photo(action_iris_all):
     with open("query-actions_to_artifact.sparql", "r") as in_fh:
         select_query_text = in_fh.read().strip()
     _logger.debug("select_query_text = %r." % select_query_text)
-    select_query_object = rdflib.plugins.sparql.prepareQuery(
-        select_query_text, initNs=nsdict
-    )
-    for record in graph.query(select_query_object):
+    for record in graph.query(select_query_text):
         (n_deriving_action, l_description) = record
         action_iris_computed.add(n_deriving_action.toPython())
 
@@ -121,7 +111,7 @@ def test_actions_to_photo(action_iris_all):
     assert set() == action_iris_false_positive
 
 
-def test_exhibit_photos():
+def test_exhibit_photos() -> None:
     file_names_computed = set()
     file_names_ground_truth_positive = {
         "IMG_4829.jpg",
@@ -137,10 +127,7 @@ def test_exhibit_photos():
     with open("query-exhibit_photos.sparql", "r") as in_fh:
         select_query_text = in_fh.read().strip()
     _logger.debug("select_query_text = %r." % select_query_text)
-    select_query_object = rdflib.plugins.sparql.prepareQuery(
-        select_query_text, initNs=nsdict
-    )
-    for record in graph.query(select_query_object):
+    for record in graph.query(select_query_text):
         (
             l_exhibit_number,
             l_file_name,
@@ -157,7 +144,7 @@ def test_exhibit_photos():
     assert set() == file_names_false_positive
 
 
-def test_photo_selection():
+def test_photo_selection() -> None:
     file_name_status_computed = set()
     file_name_status_expected = {
         ("IMG_1863.jpg", "Selected"),
@@ -169,10 +156,7 @@ def test_photo_selection():
     with open("query-selection_from_automated_exhibit_extraction.sparql", "r") as in_fh:
         select_query_text = in_fh.read().strip()
     _logger.debug("select_query_text = %r." % select_query_text)
-    select_query_object = rdflib.plugins.sparql.prepareQuery(
-        select_query_text, initNs=nsdict
-    )
-    for record in graph.query(select_query_object):
+    for record in graph.query(select_query_text):
         (l_file_name, l_review_status) = record
         file_name_status_computed.add(
             (l_file_name.toPython(), l_review_status.toPython())
@@ -186,7 +170,7 @@ def test_photo_selection():
     reason="At least one issue known present with vocabulary items.  Once UCO ticket OC-12 is resolved, this xfail annotation should be removed.",
     strict=True,
 )
-def test_urgent_evidence_validation():
+def test_urgent_evidence_validation() -> None:
     """
     Confirm the instance data passes validation.
     """

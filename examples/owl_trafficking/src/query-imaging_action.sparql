@@ -1,3 +1,10 @@
+PREFIX case-investigation: <https://ontology.caseontology.org/case/investigation/>
+PREFIX uco-action: <https://ontology.unifiedcyberontology.org/uco/action/>
+PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+PREFIX uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/>
+PREFIX uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/>
+PREFIX uco-tool: <https://ontology.unifiedcyberontology.org/uco/tool/>
+
 SELECT ?lDeviceExhibitNumber ?lImagingEndTime ?lOfficerName ?lToolName ?lToolVersion ?lImageFileName
 WHERE {
   ?nImagingAction

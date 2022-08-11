@@ -27,7 +27,7 @@ import sys
 _logger = logging.getLogger(os.path.basename(__file__))
 
 
-def main():
+def main() -> None:
     obj = None
     with open(args.in_base_json, "r") as in_fh:
         obj = json.load(in_fh)

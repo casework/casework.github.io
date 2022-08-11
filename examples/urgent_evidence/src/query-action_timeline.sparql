@@ -1,3 +1,7 @@
+PREFIX case-investigation: <https://ontology.caseontology.org/case/investigation/>
+PREFIX uco-action: <https://ontology.unifiedcyberontology.org/uco/action/>
+PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+
 SELECT ?lStartTime ?lEndTime ?lDescription
 WHERE
 {

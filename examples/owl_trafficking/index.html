@@ -169,6 +169,13 @@ jumbo_desc: CASE Narrative on Trafficking
   <div class="card-body">
     <p class="card-text">For the seized device, exhibit number <code>SD1</code>, when was it imaged?  Who imaged it?  What tool and tool version did they use?  What is the name of the resulting image file? (<a href="src/query-imaging_action.sparql">SPARQL source</a>)</p>
 {% highlight sparql %}
+PREFIX case-investigation: <https://ontology.caseontology.org/case/investigation/>
+PREFIX uco-action: <https://ontology.unifiedcyberontology.org/uco/action/>
+PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+PREFIX uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/>
+PREFIX uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/>
+PREFIX uco-tool: <https://ontology.unifiedcyberontology.org/uco/tool/>
+
 SELECT ?lDeviceExhibitNumber ?lImagingEndTime ?lOfficerName ?lToolName ?lToolVersion ?lImageFileName
 WHERE {
   ?nImagingAction
@@ -352,6 +359,12 @@ WHERE {
   <div class="card-body">
     <p class="card-text">For the duplicate, labeled <code>MD1</code>, of the device <code>SD1</code>, what were its original hashes, and when were they made? (<a href="src/query-hash_verification.sparql">SPARQL source</a>)</p>
 {% highlight sparql %}
+PREFIX case-investigation: <https://ontology.caseontology.org/case/investigation/>
+PREFIX uco-action: <https://ontology.unifiedcyberontology.org/uco/action/>
+PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+PREFIX uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/>
+PREFIX uco-types: <https://ontology.unifiedcyberontology.org/uco/types/>
+
 SELECT DISTINCT ?lEndTime ?lHashMethod ?lHashValue
 WHERE {
   ?nAction
@@ -506,9 +519,9 @@ ORDER BY ?lHashMethod
             "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168"
         },
         "uco-core:kindOfRelationship": "Contained_Within",
-        "uco-core:startTime": {
-            "@type": "xsd:dateTime",
-            "@value": "2017-00-00T12:34:56Z"
+        "rdfs:comment": "TODO - The startTime for this relationship was previously recorded with a time stamp that, by later analyst's guess, was meant to be a stand-in for an unknown time in 2017: '2017-00-00T12:34:56Z'.  Such partial information requires another representation.  See e.g. time:Instant.",
+        "rdfs:seeAlso": {
+            "@id": "https://www.w3.org/TR/owl-time/#time:Instant"
         },
         "uco-core:endTime": {
             "@type": "xsd:dateTime",

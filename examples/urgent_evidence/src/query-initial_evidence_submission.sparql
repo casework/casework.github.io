@@ -1,3 +1,6 @@
+PREFIX case-investigation: <https://ontology.caseontology.org/case/investigation/>
+PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+
 SELECT DISTINCT ?nSourceObject
 WHERE
 {
