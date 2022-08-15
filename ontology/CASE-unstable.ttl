@@ -15897,18 +15897,17 @@ tool:ConfigurationSettingType
 	rdfs:comment "A configuration setting type is a grouping of characteristics unique to a particular parameter or initial setting for the use of a tool, application, or other cyber object."@en ;
 	sh:property
 		[
-			sh:datatype xsd:string ;
+			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:itemName ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path tool:itemObject ;
 		] ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path tool:itemValue ;
+			sh:path tool:itemName ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -15921,9 +15920,56 @@ tool:ConfigurationSettingType
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path tool:itemType ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path tool:itemValue ;
 		]
 		;
 	sh:targetClass tool:ConfigurationSettingType ;
+	sh:xone (
+		[
+			sh:property
+				[
+					sh:maxCount "0"^^xsd:integer ;
+					sh:path tool:itemObject ;
+				] ,
+				[
+					sh:maxCount "0"^^xsd:integer ;
+					sh:path tool:itemValue ;
+				]
+				;
+		]
+		[
+			sh:property [
+				sh:minCount "1"^^xsd:integer ;
+				sh:path tool:itemObject ;
+			] ;
+		]
+		[
+			sh:property [
+				sh:minCount "1"^^xsd:integer ;
+				sh:path tool:itemValue ;
+			] ;
+		]
+	) ;
+	.
+
+tool:ConfiguredTool
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf tool:Tool ;
+	sh:property [
+		sh:class tool:Tool ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:path tool:isConfigurationOf ;
+	] ;
+	sh:targetClass tool:ConfiguredTool ;
 	.
 
 tool:DefensiveTool
@@ -16204,6 +16250,14 @@ tool:dependencyType
 	rdfs:range xsd:string ;
 	.
 
+tool:isConfigurationOf
+	a
+		owl:ObjectProperty ,
+		owl:IrreflexiveProperty
+		;
+	rdfs:range tool:Tool ;
+	.
+
 tool:itemDescription
 	a owl:DatatypeProperty ;
 	rdfs:label "itemDescription"@en ;
@@ -16216,6 +16270,11 @@ tool:itemName
 	rdfs:label "itemName"@en ;
 	rdfs:comment "The name of a configuration item."@en ;
 	rdfs:range xsd:string ;
+	.
+
+tool:itemObject
+	a owl:ObjectProperty ;
+	rdfs:range core:UcoObject ;
 	.
 
 tool:itemType
