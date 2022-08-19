@@ -337,9 +337,39 @@ investigation:Investigation
 		] ,
 		[
 			sh:datatype vocab:InvestigationFormVocab ;
+			sh:message "Value is outside the default vocabulary InvestigationFormVocab." ;
+			sh:path investigation:investigationForm ;
+			sh:severity sh:Info ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype vocab:InvestigationFormVocab ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path investigation:investigationForm ;
+		] ,
+		[
+			sh:message "Value is not member of the vocabulary InvestigationFormVocab." ;
+			sh:or (
+				[
+					sh:datatype vocab:InvestigationFormVocab ;
+					sh:in (
+						"case"^^vocab:InvestigationFormVocab
+						"incident"^^vocab:InvestigationFormVocab
+						"suspicious-activity"^^vocab:InvestigationFormVocab
+					) ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
 			sh:path investigation:investigationForm ;
 		]
 		;
@@ -463,7 +493,13 @@ investigation:investigationForm
 	a owl:DatatypeProperty ;
 	rdfs:label "investigationForm"@en ;
 	rdfs:comment "A label categorizing a type of investigation (case, incident, suspicious-activity, etc.)"@en ;
-	rdfs:range vocab:InvestigationFormVocab ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			vocab:InvestigationFormVocab
+			xsd:string
+		) ;
+	] ;
 	.
 
 investigation:investigationStatus
