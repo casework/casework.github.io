@@ -1,7 +1,7 @@
 [
     {
         "@id": "kb:cellebrite-ufed1-uuid",
-        "@type": "uco-tool:Tool",
+        "@type": "uco-tool:ConfiguredTool",
         "uco-core:name": "UFED",
         "uco-tool:toolType": "Extraction",
         "drafting:toolIdentifier": "557488159",
@@ -9,23 +9,22 @@
             "@id": "kb:organization-ff30d83e-ff57-45f9-8d54-e79b323c2e8b"
         },
         "uco-tool:version": "7.1.0.751",
-        "uco-core:hasFacet": [
-            {
-                "@type": "uco-tool:ToolConfigurationTypeFacet",
-                "uco-tool:configurationSettings": [
-                    {
-                        "@type": "uco-tool:ConfigurationSettingType",
-                        "uco-tool:itemName": "DeviceInfoConnectionType",
-                        "uco-tool:itemValue": "Cable No. 130"
-                    },
-                    {
-                        "@type": "uco-tool:ConfigurationSettingType",
-                        "uco-tool:itemName": "ExtractionType",
-                        "uco-tool:itemValue": "Physical"
-                    }
-                ]
-            }
-        ]
+        "uco-configuration:usesConfiguration": {
+            "@id": "kb:7d574534-2013-414e-a349-77d819d5d8d7",
+            "@type": "uco-configuration:Configuration",
+            "uco-configuration:configurationEntry": [
+                {
+                    "@type": "uco-configuration:ConfigurationEntry",
+                    "uco-configuration:itemName": "DeviceInfoConnectionType",
+                    "uco-configuration:itemValue": "Cable No. 130"
+                },
+                {
+                    "@type": "uco-configuration:ConfigurationEntry",
+                    "uco-configuration:itemName": "ExtractionType",
+                    "uco-configuration:itemValue": "Physical"
+                }
+            ]
+        }
     },
     {
         "@id": "kb:organization-ff30d83e-ff57-45f9-8d54-e79b323c2e8b",
