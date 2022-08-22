@@ -1,3 +1,4 @@
+@prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
 @prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
@@ -101,6 +102,34 @@
 				sh:path core:object ;
 			] ;
 			sh:value "list of uuids" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/investigative-action1-uuid> ;
+			sh:resultMessage "Value does not have class core:UcoObject" ;
+			sh:resultPath action:instrument ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path action:instrument ;
+			] ;
+			sh:value <http://example.org/kb/cellebrite-ufed1-uuid> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/investigative-action2-uuid> ;
+			sh:resultMessage "Value does not have class core:UcoObject" ;
+			sh:resultPath action:instrument ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:nodeKind sh:BlankNodeOrIRI ;
+				sh:path action:instrument ;
+			] ;
+			sh:value <http://example.org/kb/cellebrite-pa1-uuid> ;
 		] ,
 		[
 			a sh:ValidationResult ;

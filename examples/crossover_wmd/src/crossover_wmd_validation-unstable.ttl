@@ -7,7 +7,6 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix tool: <https://ontology.unifiedcyberontology.org/uco/tool/> .
 @prefix vocab: <https://ontology.caseontology.org/case/vocabulary/> .
 @prefix vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -56,55 +55,6 @@
 				sh:path core:source ;
 			] ;
 			sh:value <http://example.org/kb/860FC853-9C3F-41FC-B144-8AC80D8F5849-URLHistory> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/cellebrite-pa1-uuid> ;
-			sh:resultMessage "Value does not have class core:Facet" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a tool:ToolConfigurationTypeFacet ;
-				tool:configurationSettings [
-					a tool:ConfigurationSettingType ;
-					tool:itemName "OutputFormat" ;
-					tool:itemValue "XML" ;
-				] ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/cellebrite-ufed1-uuid> ;
-			sh:resultMessage "Value does not have class core:Facet" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a tool:ToolConfigurationTypeFacet ;
-				tool:configurationSettings
-					[
-						a tool:ConfigurationSettingType ;
-						tool:itemName "DeviceInfoConnectionType" ;
-						tool:itemValue "Cable No. 130" ;
-					] ,
-					[
-						a tool:ConfigurationSettingType ;
-						tool:itemName "ExtractionType" ;
-						tool:itemValue "Physical" ;
-					]
-					;
-			] ;
 		] ,
 		[
 			a sh:ValidationResult ;

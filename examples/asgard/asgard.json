@@ -8,6 +8,7 @@
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "uco-action": "https://ontology.unifiedcyberontology.org/uco/action/",
+        "uco-configuration": "https://ontology.unifiedcyberontology.org/uco/configuration/",
         "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
         "uco-identity": "https://ontology.unifiedcyberontology.org/uco/identity/",
         "uco-location": "https://ontology.unifiedcyberontology.org/uco/location/",
@@ -207,30 +208,29 @@
         },
         {
             "@id": "kb:tool-embeddedextractor1-uid",
-            "@type": "uco-tool:Tool",
+            "@type": "uco-tool:ConfiguredTool",
             "uco-core:name": "Embedded Device Extrator",
             "uco-tool:toolType": "Extraction",
             "uco-tool:creator": {
                 "@id": "kb:person-38cb4243-bc7e-48a4-91b0-9d296b8f862a"
             },
             "uco-tool:version": "1.2.0",
-            "uco-core:hasFacet": [
-                {
-                    "@type": "uco-tool:ToolConfigurationTypeFacet",
-                    "uco-tool:configurationSettings": [
-                        {
-                            "@type": "uco-tool:ConfigurationSettingType",
-                            "uco-tool:itemName": "ExtractionMethod",
-                            "uco-tool:itemValue": "iOS_Backup"
-                        },
-                        {
-                            "@type": "uco-tool:ConfigurationSettingType",
-                            "uco-tool:itemName": "ExtractionType",
-                            "uco-tool:itemValue": "File System"
-                        }
-                    ]
-                }
-            ]
+            "uco-configuration:usesConfiguration": {
+                "@id": "kb:configuration-23657472-c4c9-472b-835c-a105e8832064",
+                "@type": "uco-configuration:Configuration",
+                "uco-configuration:configurationEntry": [
+                    {
+                        "@type": "uco-configuration:ConfigurationEntry",
+                        "uco-configuration:itemName": "ExtractionMethod",
+                        "uco-configuration:itemValue": "iOS_Backup"
+                    },
+                    {
+                        "@type": "uco-configuration:ConfigurationEntry",
+                        "uco-configuration:itemName": "ExtractionType",
+                        "uco-configuration:itemValue": "File System"
+                    }
+                ]
+            }
         },
         {
             "@id": "kb:suspect-mobiledevice-forensicduplicate-uuid",
