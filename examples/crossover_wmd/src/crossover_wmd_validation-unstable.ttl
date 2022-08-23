@@ -1,13 +1,11 @@
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
-@prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
 @prefix ns1: <http://example.org/ontology/drafting#> .
 @prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix vocab: <https://ontology.caseontology.org/case/vocabulary/> .
 @prefix vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -55,28 +53,6 @@
 				sh:path core:source ;
 			] ;
 			sh:value <http://example.org/kb/860FC853-9C3F-41FC-B144-8AC80D8F5849-URLHistory> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7> ;
-			sh:resultMessage "Less than 1 values on kb:investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7->investigation:investigationForm" ;
-			sh:resultPath investigation:investigationForm ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-			sh:sourceShape [
-				sh:maxCount "1"^^xsd:integer ;
-				sh:minCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:or (
-					[
-						sh:datatype vocab:InvestigationFormVocab ;
-					]
-					[
-						sh:datatype xsd:string ;
-					]
-				) ;
-				sh:path investigation:investigationForm ;
-			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
