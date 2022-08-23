@@ -276,13 +276,11 @@ investigation:Authorization
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path investigation:authorizationType ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path investigation:authorizationIdentifier ;
 		]
@@ -357,7 +355,6 @@ investigation:Investigation
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:or (
 				[
