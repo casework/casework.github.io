@@ -146,8 +146,9 @@ Representing the hard drive being acquired and its provenance record.
               "@value": "4196297e15b9190b8770fb51a8408d71d6728454"
             }
           }
-        }
-    ],
+        ]
+      }
+   ]
 },
 {
    "@id":"{A2C1CA50-704B-4BF8-BA50-49935D83C59E}",
@@ -319,7 +320,7 @@ Representing the action to perform the forensic acquisition using the Logicube F
         "{6728339A-4FAB-4B36-BF79-6480F14AAAB8}", "{24ECAE83-E1D0-48B1-A65B-2E6882FCBD4A}",
         "{703BAA18-B3B7-4C8E-9545-6A38FEFA8E0C}", "{A5AB3F2F-8169-47C8-8A33-767ACDEB1864}",
         "{7A80DF48-8CE3-471A-9F76-899774442B68}", "{8620D5D3-6C5F-4E73-892D-A879592DAF0B}",
-        "{6223D000-ED53-464A-A0A2-90EC8E67D531}", "{B61A61DF-C254-4578-B57A-BE38BEDF3670}]
+        "{6223D000-ED53-464A-A0A2-90EC8E67D531}", "{B61A61DF-C254-4578-B57A-BE38BEDF3670}"]
     }
   ]
 },
@@ -329,7 +330,7 @@ Representing the action to perform the forensic acquisition using the Logicube F
    "uco-core:description":"Segment files (38) partitions with E01Capture",
    "uco-observable:createdTime":{
         "@type": "xsd:dateTime",
-        "@value": "2018-10-26T13:12:48.00Z"}
+        "@value": "2018-10-26T13:12:48.00Z"
    },  
    "case-investigation:exhibitNumber":"NOT PROVIDED BY XML REPORT", 
    "uco-core:object":["{76087322-932D-4A64-B5C7-9FD4F4835386}", "{9E6B8C9D-5686-4CA8-A00C-05CA4107170E}", 
@@ -350,7 +351,7 @@ Representing the action to perform the forensic acquisition using the Logicube F
         "{6728339A-4FAB-4B36-BF79-6480F14AAAB8}", "{24ECAE83-E1D0-48B1-A65B-2E6882FCBD4A}",
         "{703BAA18-B3B7-4C8E-9545-6A38FEFA8E0C}", "{A5AB3F2F-8169-47C8-8A33-767ACDEB1864}",
         "{7A80DF48-8CE3-471A-9F76-899774442B68}", "{8620D5D3-6C5F-4E73-892D-A879592DAF0B}",
-        "{6223D000-ED53-464A-A0A2-90EC8E67D531}", "{B61A61DF-C254-4578-B57A-BE38BEDF3670}]]
+        "{6223D000-ED53-464A-A0A2-90EC8E67D531}", "{B61A61DF-C254-4578-B57A-BE38BEDF3670}"]]
 },
 {% endhighlight %}
 
@@ -376,16 +377,22 @@ Representing file segments of acquired forensic acquisition.
         "@type": "xsd:dateTime",
         "@value": "2018-10-26T13:12:48.00Z"}
       },
-      {
+      {  
          "type":"uco-observable:ContentDataFacet",
-         "hash":[
-         {
-            "@type":"Hash",
-            "hashMethod":"SHA1",
-            "hashValue":"3f9006a2d3130c4845678bdb6824dbac2b12c9c8"
+         "uco-observable:hash": [
+          { 
+            "@type": "uco-observable:Hash",
+            "uco-types:hashMethod": {
+              "@type": "uco-vocabulary:HashNameVocab",
+              "@value": "SHA1"
+            },
+            "uco-types:hashValue": {
+              "@type": "xsd:hexBinary",
+              "@value": "3f9006a2d3130c4845678bdb6824dbac2b12c9c8"
+            }
          }
-         ]
-      }
+       ]
+     }
    ]
 },
 {
@@ -916,6 +923,9 @@ Representing file segments of acquired forensic acquisition.
       },
       {
          "type":"uco-observable:ContentDataFacet",
+         "uco-observable:hash": [
+          {
+            "@type": "uco-types:Hash",
             "uco-types:hashMethod": {
               "@type": "uco-vocabulary:HashNameVocab",
               "@value": "SHA1"
@@ -947,6 +957,9 @@ Representing file segments of acquired forensic acquisition.
       },
       {
          "type":"uco-observable:ContentDataFacet",
+         "uco-observable:hash": [
+          {
+            "@type": "uco-observable:Hash",
             "uco-types:hashMethod": {
               "@type": "uco-vocabulary:HashNameVocab",
               "@value": "SHA1"
@@ -978,6 +991,9 @@ Representing file segments of acquired forensic acquisition.
       },
       {
          "type":"uco-observable:ContentDataFacet",
+         "uco-observable:hash": [
+          {
+            "@type": "uco-observable:Hash",
          "uco-types:hashMethod": {
               "@type": "uco-vocabulary:HashNameVocab",
               "@value": "SHA1"
@@ -1009,6 +1025,9 @@ Representing file segments of acquired forensic acquisition.
       },
       {
          "type":"uco-observable:ContentDataFacet",
+         "uco-observable:hash": [
+          {
+            "@type": "uco-observable:Hash",
          "uco-types:hashMethod": {
               "@type": "uco-vocabulary:HashNameVocab",
               "@value": "SHA1"
@@ -1040,6 +1059,9 @@ Representing file segments of acquired forensic acquisition.
       },
       {
          "type":"uco-observable:ContentDataFacet",
+         "uco-observable:hash": [
+          {
+            "@type": "uco-observable:Hash",
          "uco-types:hashMethod": {
               "@type": "uco-vocabulary:HashNameVocab",
               "@value": "SHA1"
@@ -1071,6 +1093,9 @@ Representing file segments of acquired forensic acquisition.
       },
       {
          "type":"uco-observable:ContentDataFacet",
+         "uco-observable:hash": [
+          {
+            "@type": "uco-observable:Hash",
          "uco-types:hashMethod": {
               "@type": "uco-vocabulary:HashNameVocab",
               "@value": "SHA1"
@@ -1102,6 +1127,9 @@ Representing file segments of acquired forensic acquisition.
       },
       {
          "type":"uco-observable:ContentDataFacet",
+         "uco-observable:hash": [
+          {
+            "@type": "uco-observable:Hash",
          "uco-types:hashMethod": {
               "@type": "uco-vocabulary:HashNameVocab",
               "@value": "SHA1"
@@ -1133,6 +1161,9 @@ Representing file segments of acquired forensic acquisition.
       },
       {
          "type":"uco-observable:ContentDataFacet",
+         "uco-observable:hash": [
+          {
+            "@type": "uco-observable:Hash",
          "uco-types:hashMethod": {
               "@type": "uco-vocabulary:HashNameVocab",
               "@value": "SHA1"
@@ -1164,6 +1195,9 @@ Representing file segments of acquired forensic acquisition.
       },
       {
          "type":"uco-observable:ContentDataFacet",
+         "uco-observable:hash": [
+          {
+            "@type": "uco-observable:Hash",
          "uco-types:hashMethod": {
               "@type": "uco-vocabulary:HashNameVocab",
               "@value": "SHA1"
@@ -1195,6 +1229,9 @@ Representing file segments of acquired forensic acquisition.
       },
       {
          "type":"uco-observable:ContentDataFacet",
+         "uco-observable:hash": [
+          {
+            "@type": "uco-observable:Hash",
          "uco-types:hashMethod": {
               "@type": "uco-vocabulary:HashNameVocab",
               "@value": "SHA1"
@@ -1226,6 +1263,9 @@ Representing file segments of acquired forensic acquisition.
       },
       {
          "type":"uco-observable:ContentDataFacet",
+         "uco-observable:hash": [
+          {
+            "@type": "uco-observable:Hash",
          "uco-types:hashMethod": {
               "@type": "uco-vocabulary:HashNameVocab",
               "@value": "SHA1"
@@ -1257,6 +1297,9 @@ Representing file segments of acquired forensic acquisition.
       },
       {
          "type":"uco-observable:ContentDataFacet",
+         "uco-observable:hash": [
+          {
+            "@type": "uco-observable:Hash",
          "hash":[
          "uco-types:hashMethod": {
               "@type": "uco-vocabulary:HashNameVocab",
@@ -1289,6 +1332,9 @@ Representing file segments of acquired forensic acquisition.
       },
       {
          "type":"uco-observable:ContentDataFacet",
+         "uco-observable:hash": [
+          {
+            "@type": "uco-observable:Hash",
          "uco-types:hashMethod": {
               "@type": "uco-vocabulary:HashNameVocab",
               "@value": "SHA1"
@@ -1320,6 +1366,9 @@ Representing file segments of acquired forensic acquisition.
       },
       {
          "type":"uco-observable:ContentDataFacet",
+         "uco-observable:hash": [
+          {
+            "@type": "uco-observable:Hash",
          "uco-types:hashMethod": {
               "@type": "uco-vocabulary:HashNameVocab",
               "@value": "SHA1"
@@ -1351,6 +1400,9 @@ Representing file segments of acquired forensic acquisition.
       },
       {
          "type":"uco-observable:ContentDataFacet",
+         "uco-observable:hash": [
+          {
+            "@type": "uco-observable:Hash",
          "uco-types:hashMethod": {
               "@type": "uco-vocabulary:HashNameVocab",
               "@value": "SHA1"
@@ -1382,6 +1434,9 @@ Representing file segments of acquired forensic acquisition.
       },
       {
          "type":"uco-observable:ContentDataFacet",
+         "uco-observable:hash": [
+          {
+            "@type": "uco-observable:Hash",
          "uco-types:hashMethod": {
               "@type": "uco-vocabulary:HashNameVocab",
               "@value": "SHA1"
@@ -1413,6 +1468,9 @@ Representing file segments of acquired forensic acquisition.
       },
       {
          "type":"uco-observable:ContentDataFacet",
+         "uco-observable:hash": [
+          {
+            "@type": "uco-observable:Hash",
          "uco-types:hashMethod": {
               "@type": "uco-vocabulary:HashNameVocab",
               "@value": "SHA1"
@@ -1444,6 +1502,9 @@ Representing file segments of acquired forensic acquisition.
       },
       {
          "type":"uco-observable:ContentDataFacet",
+         "uco-observable:hash": [
+          {
+            "@type": "uco-observable:Hash",
          "uco-types:hashMethod": {
               "@type": "uco-vocabulary:HashNameVocab",
               "@value": "SHA1"
@@ -1475,6 +1536,9 @@ Representing file segments of acquired forensic acquisition.
       },
       {
          "type":"uco-observable:ContentDataFacet",
+         "uco-observable:hash": [
+          {
+            "@type": "uco-observable:Hash",
          "uco-types:hashMethod": {
               "@type": "uco-vocabulary:HashNameVocab",
               "@value": "SHA1"
@@ -1506,6 +1570,9 @@ Representing file segments of acquired forensic acquisition.
       },
       {
          "type":"uco-observable:ContentDataFacet",
+         "uco-observable:hash": [
+          {
+            "@type": "uco-observable:Hash",
          "uco-types:hashMethod": {
               "@type": "uco-vocabulary:HashNameVocab",
               "@value": "SHA1"
@@ -1537,6 +1604,9 @@ Representing file segments of acquired forensic acquisition.
       },
       {
          "type":"uco-observable:ContentDataFacet",
+         "uco-observable:hash": [
+          {
+            "@type": "uco-observable:Hash",
          "uco-types:hashMethod": {
               "@type": "uco-vocabulary:HashNameVocab",
               "@value": "SHA1"
@@ -1568,6 +1638,9 @@ Representing file segments of acquired forensic acquisition.
       },
       {
          "type":"uco-observable:ContentDataFacet",
+         "uco-observable:hash": [
+          {
+            "@type": "uco-observable:Hash",
          "uco-types:hashMethod": {
               "@type": "uco-vocabulary:HashNameVocab",
               "@value": "SHA1"
