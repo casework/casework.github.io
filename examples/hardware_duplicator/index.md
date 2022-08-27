@@ -31,12 +31,12 @@ The first part of representing information in CASE is to provide the context, in
     "uco-vocabulary": "https://unifiedcyberontology.org/ontology/uco/vocabulary#",
     "xsd": "http://www.w3.org/2001/XMLSchema#"  
   },
-  "@id":":bundle-3578FCF3-6BC8-4996-8F7F-FDF289F33789",
+  "@id":"kb:Bundle-5db141fc-597b-4771-bea5-b9605292d2ed",
   "@type":"uco-case:Bundle",
   "uco-core:description":"HARD DISK DA 1TB CONTENUTO NEL PC MARCA ACER DENOMINATO R14_ACER",
   "uco-core:object":[
 {
-      "@id":":investigation-15785FBB-BA09-449D-AF77-8A210D013789",
+      "@id":"kb:Investigation-e2c24473-63fa-4122-83ee-868325bdd5e8",
       "@type":"case-investigation:Investigation",
       "uco-core:name":"PP 1234_18_21",
       "uco-core:focus":"Child solicitation",
@@ -44,7 +44,7 @@ The first part of representing information in CASE is to provide the context, in
       "uco-core:object":[list uuids in investigation]
 },
 {
-   "@id":"{A4B0AAF7-82AB-411C-944F-1FA955DD9B22}",
+   "@id":"kb:Identity-c5bb09c3-3612-4bf2-b165-6f12d0e3c6af",
    "@type":"uco-identity:Identity",
    "uco-core:hasFacet":[
    {
@@ -54,20 +54,20 @@ The first part of representing information in CASE is to provide the context, in
    ]
 },
 {
-   "@id":"{37C48C5E-72A8-4B22-BBB8-02E7CB7B9335}", 
+   "@id":"kb:Role-856975ce-3c25-49c3-b6eb-28d1e929f915", 
    "@type":"uco-core:Role",
    "uco-core:name":"Forensic Expert"
 },
 {
-   "@id":"{D045621F-B5AC-4B87-9242-241600C98769}", 
+   "@id":"kb:Relationship-d5b4a1e1-0e25-4257-81f7-19febc86ded1", 
    "@type":"uco-core:Relationship",
-   "uco-core:source":"{A4B0AAF7-82AB-411C-944F-1FA955DD9B22}",
-   "uco-core:target":"{37C48C5E-72A8-4B22-BBB8-02E7CB7B9335}",
-   "uco-core:kindOfRelationship":"has_role",
+   "uco-core:source":"kb:Identity-c5bb09c3-3612-4bf2-b165-6f12d0e3c6af",
+   "uco-core:target":"kb:Role-856975ce-3c25-49c3-b6eb-28d1e929f915",
+   "uco-core:kindOfRelationship":"Has_Role",
    "uco-core:isDirectional":"True"
 },
 {
-   "@id":"{7D016261-D192-4A7F-8BEE-F9388224BA77}", 
+   "@id":"kb:Tool-58f07c30-ae20-4587-9bb8-1a5299821e57", 
    "@type":"uco-tool:Tool", 
    "uco-core:name":"Logicube",
    "uco-tool:toolType":"acquisition/duplication", 
@@ -112,7 +112,7 @@ Representing the hard drive being acquired and its provenance record.
 
 {% highlight json %}
 {
-   "@id":"{DFEC45DF-DAB9-4FED-9A07-FFA77A0DA824}", 
+   "@id":"kb:Disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11", 
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
       {
@@ -151,7 +151,7 @@ Representing the hard drive being acquired and its provenance record.
    ]
 },
 {
-   "@id":"{A2C1CA50-704B-4BF8-BA50-49935D83C59E}",
+   "@id":"kb:ProvenanceRecord-43f26e68-b02f-410b-a917-506c70b732e6",
    "@type":"case-investigation:ProvenanceRecord",
    "uco-observable:createdTime":{
      "@type": "xsd:dateTime",
@@ -159,7 +159,7 @@ Representing the hard drive being acquired and its provenance record.
    }, 
    "uco-core:description":"HD TOSHIBA_MQ01ABD100", 
    "case-investigation:exhibitNumber":"R14_ACER_HD", 
-   "uco-core:object":["{DFEC45DF-DAB9-4FED-9A07-FFA77A0DA824}"]
+   "uco-core:object":["kb:disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11"]
 },
 {% endhighlight %}
 
@@ -170,7 +170,7 @@ Representing the partition structure of the evidential hard drive as reported by
 
 {% highlight json %}
 {
-   "@id":"{50C800D0-F90E-488D-ADBD-B3FCE500B2BF}", 
+   "@id":"kb:DiskPartition-6f643033-9a10-4519-af98-a0902690b9a9", 
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -183,15 +183,15 @@ Representing the partition structure of the evidential hard drive as reported by
    ]
 },
 {
-   "@id":"{E3C5F778-10A5-4F1A-B4F3-F656CB85CF66}", 
+   "@id":"kb:Relationship-52aa42a6-8d79-450d-9236-bc76d67840ec", 
    "@type":"uco-core:Relationship",
-   "uco-core:source":"{50C800D0-F90E-488D-ADBD-B3FCE500B2BF}",
-   "uco-core:target":"{DFEC45DF-DAB9-4FED-9A07-FFA77A0DA824}",
-   "uco-core:kindOfRelationship":"contained_within",
+   "uco-core:source":"kb:DiskPartition-6f643033-9a10-4519-af98-a0902690b9a9",
+   "uco-core:target":"kb:Disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11",
+   "uco-core:kindOfRelationship":"Contained_Within",
    "uco-core:isDirectional":"True"
 },
 {
-   "@id":"{62CCDE4A-7316-4C62-BCB6-2F56C5A21B9A}", 
+   "@id":"kb:DiskPartition-820d247d-3016-49a0-82ca-705dc9b70254", 
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -204,15 +204,15 @@ Representing the partition structure of the evidential hard drive as reported by
    ]
 },
 {
-   "@id":"{59F60C73-1C3F-4B1B-8D5F-A192C6267EE0}", 
+   "@id":"kb:Relationship-fb44d09e-2ada-44e8-9c2e-70fe71202652", 
    "@type":"uco-core:Relationship",
-   "uco-core:source":"{62CCDE4A-7316-4C62-BCB6-2F56C5A21B9A}",
-   "uco-core:target":"{DFEC45DF-DAB9-4FED-9A07-FFA77A0DA824}",
-   "uco-core:kindOfRelationship":"contained_within",
+   "uco-core:source":"kb:DiskPartition-820d247d-3016-49a0-82ca-705dc9b70254",
+   "uco-core:target":"kb:Disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11",
+   "uco-core:kindOfRelationship":"Contained_Within",
    "uco-core:isDirectional":"True"
 },
 {
-   "@id":"{8D4AA272-7879-47D0-BA9E-8E36AB528431}", 
+   "@id":"kb:DiskPartition-e19c38f5-692b-4336-8d6d-fdc34a51b00e", 
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -225,15 +225,15 @@ Representing the partition structure of the evidential hard drive as reported by
    ]
 },
 {
-   "@id":"{244D4629-15E7-4281-BB06-0B0BC79C2993}", 
+   "@id":"kb:Relationship-c34de1cd-daa3-4381-a4c6-7a05005cb3d3", 
    "@type":"uco-core:Relationship",
-   "uco-core:source":"{8D4AA272-7879-47D0-BA9E-8E36AB528431}",
-   "uco-core:target":"{DFEC45DF-DAB9-4FED-9A07-FFA77A0DA824}",
-   "uco-core:kindOfRelationship":"contained_within",
+   "uco-core:source":"kb:DiskPartition-e19c38f5-692b-4336-8d6d-fdc34a51b00e",
+   "uco-core:target":"kb:Disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11",
+   "uco-core:kindOfRelationship":"Contained_Within",
    "uco-core:isDirectional":"True"
 },
 {
-   "@id":"{0EC88A6B-104C-47D9-81A8-D5DC403D0BA1}", 
+   "@id":"kb:DiskPartition-a193840c-7b8b-4ede-a5a7-e4464b30b9c7", 
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -246,15 +246,15 @@ Representing the partition structure of the evidential hard drive as reported by
    ]
 },
 {
-   "@id":"{2AC9DD8C-79D8-4C08-9F46-D24299136F46}", 
+   "@id":"kb:Relationship-d348200b-e180-40b8-8617-2319f5fe6ffa", 
    "@type":"uco-core:Relationship",
-   "uco-core:source":"{0EC88A6B-104C-47D9-81A8-D5DC403D0BA1}",
-   "uco-core:target":"{DFEC45DF-DAB9-4FED-9A07-FFA77A0DA824}",
-   "uco-core:kindOfRelationship":"contained_within",
+   "uco-core:source":"kb:DiskPartition-a193840c-7b8b-4ede-a5a7-e4464b30b9c7",
+   "uco-core:target":"kb:Disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11",
+   "uco-core:kindOfRelationship":"Contained_Within",
    "uco-core:isDirectional":"True"
 },
 {
-   "@id":"{BC47A595-C74F-48B5-974C-6415E5A38C7F}", 
+   "@id":"kb:DiskPartition-f90a3ee1-2cde-439f-9768-23c67aafe347", 
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -267,11 +267,11 @@ Representing the partition structure of the evidential hard drive as reported by
    ]
 },
 {
-   "@id":"{96D4721F-3DC3-498A-B6EE-B463B50EEBF0}", 
+   "@id":"kb:Relationship-ff010f40-7f95-498a-9cde-14fa8de501b9", 
    "@type":"uco-core:Relationship",
-   "uco-core:source":"{BC47A595-C74F-48B5-974C-6415E5A38C7F}",
-   "uco-core:target":"{DFEC45DF-DAB9-4FED-9A07-FFA77A0DA824}",
-   "uco-core:kindOfRelationship":"contained_within",
+   "uco-core:source":"kb:DiskPartition-f90a3ee1-2cde-439f-9768-23c67aafe347",
+   "uco-core:target":"kb:Disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11",
+   "uco-core:kindOfRelationship":"Contained_Within",
    "uco-core:isDirectional":"True"
 },
 {% endhighlight %}
@@ -282,7 +282,7 @@ Representing the action to perform the forensic acquisition using the Logicube F
 
 {% highlight json %}
 {
-   "@id":"{492A7400-6B08-4D68-A520-9AB32C6DA043}",
+   "@id":"kb:InvestigativeAction-414ef4e5-0a1f-43d9-9e93-002bc2a28de4",
    "@type":"case-investigation:InvestigativeAction",
    "uco-core:name":"acquired",
    "uco-core:description":"Acquisition of TOSHIBA_MQ01ABD100",
@@ -297,35 +297,56 @@ Representing the action to perform the forensic acquisition using the Logicube F
    "uco-core:hasFacet":[   
    {
       "@type":"uco-action:ActionReferences",
-      "uco-action:instrument":"{A4B0AAF7-82AB-411C-944F-1FA955DD9B22}",
+      "uco-action:instrument":"kb:Tool-58f07c30-ae20-4587-9bb8-1a5299821e57",
       "uco-action:location":"NOT PROVIDED BY XML REPORT",
-      "uco-action:performer":"{37C48C5E-72A8-4B22-BBB8-02E7CB7B9335}",
-      "uco-action:object":["{DFEC45DF-DAB9-4FED-9A07-FFA77A0DA824}"],
-      "uco-action:result":["{9240F851-0E2A-4016-BACF-02AFB3DDAB74}", 
-        "{76087322-932D-4A64-B5C7-9FD4F4835386}", "{9E6B8C9D-5686-4CA8-A00C-05CA4107170E}", 
-        "{CC6A7682-B6F3-4F14-9C94-DB6104A5EF8A}", "{C3D99EAD-F4C2-4EA1-AA95-A4578786CB7C}",
-        "{ECC522D5-F0CE-4BAE-B4D2-05D192F2104D}", "{2A60ACC3-1C37-4831-B0AA-784F27B2ACA7}",
-        "{1CFB3C01-9EB9-4209-946D-A6A9D24302B1}", "{9203DB1A-FB25-4FDD-BD42-0EEC0BD4D218}",
-        "{DAB4363B-14FF-4852-B8F6-A1729DB4EF8C}", "{E916BECF-474E-4ABE-92B8-21332E4E7524}", 
-        "{F58917F7-9E14-43DF-86B6-3AE0501CF1F7}", "{242F4AD9-729F-4A7E-9672-1ED06EDF7BE0}",
-        "{725F48DC-AD3F-4FF0-B6CE-4629B35A7E69}", "{6157788F-DE83-4EDD-8A49-40DDE04DDB40}",
-        "{71CAADC6-02FF-4AEA-830B-C527294E57B2}", "{D42A32EE-D758-4A14-8001-036E4AA37246}",
-        "{FECB8535-CE31-47C2-A5F4-8B912FFF422A}", "{9E2F578F-CAD0-486B-A79B-3DAA6119DBB8}",
-        "{65F91056-20DE-4777-A604-4A0F1803DAD5}", "{7B8BBEFE-A35A-44D1-A4A9-4E65BBE6E9B1}",
-        "{C6C3ECE3-2869-47D4-A28B-F0F6335001CE}", "{BB3B2A36-63F9-4059-9102-D1B92D37E596}",
-        "{2DF640CA-42E1-47AB-8E28-7B2B1B865701}", "{15F78336-E38C-4450-98E8-5BCB0299777B}",
-        "{B7B353F1-FE2E-44E4-80ED-4104F72C7FCF}", "{061CC315-8A1F-4C5B-8ABB-E3E2B1CB2483}",
-        "{BF4D02D3-8D0D-491E-81EC-56611BCDE409}", "{DA73E0A7-7679-42B8-A1ED-561F2BAA3478}",
-        "{F9A04C4F-C140-4338-AF20-71A7810F9C7B}", "{3DE6522E-D250-4A31-860B-2E75027AB361}",
-        "{6728339A-4FAB-4B36-BF79-6480F14AAAB8}", "{24ECAE83-E1D0-48B1-A65B-2E6882FCBD4A}",
-        "{703BAA18-B3B7-4C8E-9545-6A38FEFA8E0C}", "{A5AB3F2F-8169-47C8-8A33-767ACDEB1864}",
-        "{7A80DF48-8CE3-471A-9F76-899774442B68}", "{8620D5D3-6C5F-4E73-892D-A879592DAF0B}",
-        "{6223D000-ED53-464A-A0A2-90EC8E67D531}", "{B61A61DF-C254-4578-B57A-BE38BEDF3670}"]
+      "uco-action:performer":"kb:Role-856975ce-3c25-49c3-b6eb-28d1e929f915",
+      "uco-action:object":["kb:Disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11"],
+      "uco-action:result":[
+           "kb:ProvenanceRecord-d1828cbb-bb0f-42e3-b021-cfd9d6419ae6"
+           "kb:File-3366d44d-4e46-43a3-9df6-20aaff011d16", 
+           "kb:File-e8b28291-ca89-4199-b30d-d1d180619077",
+           "kb:File-3a3fffe1-630f-4f2c-a1a3-d7d4ee0d632e",
+           "kb:File-9d5d0b5d-73cb-4eac-8123-dba4d177ba78",
+           "kb:File-ead689c2-26d4-4268-b4dd-d7936221f1ac",
+           "kb:File-1616af98-d178-45ba-adb6-e45ba004b7be",
+           "kb:File-9c08fdb3-36f6-4438-9da1-9d5eef691283",
+           "kb:File-49457498-305a-42e8-b5a4-54559940b3ef",
+           "kb:File-b4e0f188-26d0-4c94-b7f4-e3dd92df2321",
+           "kb:File-697cab05-bd2a-4c41-87f4-c279b0fd9089",
+           "kb:File-ea3a8789-fd83-4768-ad72-aed2ebf7ee67",
+           "kb:File-c0c296e6-d143-4af0-bec4-81e3b62d70f6",
+           "kb:File-7b828acc-1e0a-4215-b847-5f79869791ed",
+           "kb:File-05f2d0ad-1fb0-4015-8805-5cf2b17574de",
+           "kb:File-2377b497-02fa-4010-b00d-545a682b5022",
+           "kb:File-61cf1397-159e-4b45-99c4-4c3eb78a500d",
+           "kb:File-6d3551e3-c707-49d9-a17c-c297de884995",
+           "kb:File-c5a93f7d-2482-4752-b8f1-491d8584496a",
+           "kb:File-14ca15b8-020c-449e-9206-7c66c92a7663",
+           "kb:File-24d16a25-55dd-46e2-8114-590b4ca01ab7",
+           "kb:File-9322e5d1-175e-4b27-b750-f3d3ef16b601",
+           "kb:File-1c0fcc09-a413-4cbf-8d6b-ff1fcff1b28c",
+           "kb:File-795ce33b-87ec-43c4-b7d6-fa656e77c407",
+           "kb:File-6422b2db-8e83-4635-bda3-21ef3f7f571e",
+           "kb:File-a672b9b3-2b00-49f3-bff1-997ec5c4d1a0",
+           "kb:File-cefde0b9-201d-424c-86cb-866253a089f7",
+           "kb:File-2e5c740c-1948-48f5-a7dc-2dc58071efc6",
+           "kb:File-73891986-60af-47f9-a7c6-c2bd0b749754",
+           "kb:File-eff98353-779f-455c-828a-0c5a31a83b89",
+           "kb:File-37eb9103-46af-4b60-93a6-6169f8cd0767",
+           "kb:File-fb00a9cd-17e1-438f-9b28-ca5d7149f9c7",
+           "kb:File-7fbb2a37-b524-41da-843c-512c757f9a53",
+           "kb:File-339d008c-9a91-4db8-a0fd-772e0824f7a3",
+           "kb:File-3781b13c-4814-4884-ad9e-f7c8a5912a77",
+           "kb:File-f1980292-3045-445f-a0e4-f6f89a60835f",
+           "kb:File-f8896dfb-6d42-4962-bb9b-84c0eb998da7",
+           "kb:File-1908407e-ddde-4524-9f23-81ff37b4daf9",
+           "kb:File-42533fb7-0cb4-4016-bb0d-d1e13846eca1"
+      ]
     }
   ]
 },
 {
-   "@id":"{9240F851-0E2A-4016-BACF-02AFB3DDAB74}",
+   "@id":"kb:ProvenanceRecord-d1828cbb-bb0f-42e3-b021-cfd9d6419ae6",
    "@type":"case-investigation:ProvenanceRecord",
    "uco-core:description":"Segment files (38) partitions with E01Capture",
    "uco-observable:createdTime":{
@@ -333,25 +354,46 @@ Representing the action to perform the forensic acquisition using the Logicube F
         "@value": "2018-10-26T13:12:48.00Z"
    },  
    "case-investigation:exhibitNumber":"NOT PROVIDED BY XML REPORT", 
-   "uco-core:object":["{76087322-932D-4A64-B5C7-9FD4F4835386}", "{9E6B8C9D-5686-4CA8-A00C-05CA4107170E}", 
-        "{CC6A7682-B6F3-4F14-9C94-DB6104A5EF8A}", "{C3D99EAD-F4C2-4EA1-AA95-A4578786CB7C}",
-        "{ECC522D5-F0CE-4BAE-B4D2-05D192F2104D}", "{2A60ACC3-1C37-4831-B0AA-784F27B2ACA7}",
-        "{1CFB3C01-9EB9-4209-946D-A6A9D24302B1}", "{9203DB1A-FB25-4FDD-BD42-0EEC0BD4D218}",
-        "{DAB4363B-14FF-4852-B8F6-A1729DB4EF8C}", "{E916BECF-474E-4ABE-92B8-21332E4E7524}", 
-        "{F58917F7-9E14-43DF-86B6-3AE0501CF1F7}", "{242F4AD9-729F-4A7E-9672-1ED06EDF7BE0}",
-        "{725F48DC-AD3F-4FF0-B6CE-4629B35A7E69}", "{6157788F-DE83-4EDD-8A49-40DDE04DDB40}",
-        "{71CAADC6-02FF-4AEA-830B-C527294E57B2}", "{D42A32EE-D758-4A14-8001-036E4AA37246}",
-        "{FECB8535-CE31-47C2-A5F4-8B912FFF422A}", "{9E2F578F-CAD0-486B-A79B-3DAA6119DBB8}",
-        "{65F91056-20DE-4777-A604-4A0F1803DAD5}", "{7B8BBEFE-A35A-44D1-A4A9-4E65BBE6E9B1}",
-        "{C6C3ECE3-2869-47D4-A28B-F0F6335001CE}", "{BB3B2A36-63F9-4059-9102-D1B92D37E596}",
-        "{2DF640CA-42E1-47AB-8E28-7B2B1B865701}", "{15F78336-E38C-4450-98E8-5BCB0299777B}",
-        "{B7B353F1-FE2E-44E4-80ED-4104F72C7FCF}", "{061CC315-8A1F-4C5B-8ABB-E3E2B1CB2483}",
-        "{BF4D02D3-8D0D-491E-81EC-56611BCDE409}", "{DA73E0A7-7679-42B8-A1ED-561F2BAA3478}",
-        "{F9A04C4F-C140-4338-AF20-71A7810F9C7B}", "{3DE6522E-D250-4A31-860B-2E75027AB361}",
-        "{6728339A-4FAB-4B36-BF79-6480F14AAAB8}", "{24ECAE83-E1D0-48B1-A65B-2E6882FCBD4A}",
-        "{703BAA18-B3B7-4C8E-9545-6A38FEFA8E0C}", "{A5AB3F2F-8169-47C8-8A33-767ACDEB1864}",
-        "{7A80DF48-8CE3-471A-9F76-899774442B68}", "{8620D5D3-6C5F-4E73-892D-A879592DAF0B}",
-        "{6223D000-ED53-464A-A0A2-90EC8E67D531}", "{B61A61DF-C254-4578-B57A-BE38BEDF3670}"]]
+   "uco-core:object":["
+           "kb:File-3366d44d-4e46-43a3-9df6-20aaff011d16",
+           "kb:File-e8b28291-ca89-4199-b30d-d1d180619077",
+           "kb:File-3a3fffe1-630f-4f2c-a1a3-d7d4ee0d632e",
+           "kb:File-9d5d0b5d-73cb-4eac-8123-dba4d177ba78",
+           "kb:File-ead689c2-26d4-4268-b4dd-d7936221f1ac",
+           "kb:File-1616af98-d178-45ba-adb6-e45ba004b7be",
+           "kb:File-9c08fdb3-36f6-4438-9da1-9d5eef691283",
+           "kb:File-49457498-305a-42e8-b5a4-54559940b3ef",
+           "kb:File-b4e0f188-26d0-4c94-b7f4-e3dd92df2321",
+           "kb:File-697cab05-bd2a-4c41-87f4-c279b0fd9089",
+           "kb:File-ea3a8789-fd83-4768-ad72-aed2ebf7ee67",
+           "kb:File-c0c296e6-d143-4af0-bec4-81e3b62d70f6",
+           "kb:File-7b828acc-1e0a-4215-b847-5f79869791ed",
+           "kb:File-05f2d0ad-1fb0-4015-8805-5cf2b17574de",
+           "kb:File-2377b497-02fa-4010-b00d-545a682b5022",
+           "kb:File-61cf1397-159e-4b45-99c4-4c3eb78a500d",
+           "kb:File-6d3551e3-c707-49d9-a17c-c297de884995",
+           "kb:File-c5a93f7d-2482-4752-b8f1-491d8584496a",
+           "kb:File-14ca15b8-020c-449e-9206-7c66c92a7663",
+           "kb:File-24d16a25-55dd-46e2-8114-590b4ca01ab7",
+           "kb:File-9322e5d1-175e-4b27-b750-f3d3ef16b601",
+           "kb:File-1c0fcc09-a413-4cbf-8d6b-ff1fcff1b28c",
+           "kb:File-795ce33b-87ec-43c4-b7d6-fa656e77c407",
+           "kb:File-6422b2db-8e83-4635-bda3-21ef3f7f571e",
+           "kb:File-a672b9b3-2b00-49f3-bff1-997ec5c4d1a0",
+           "kb:File-cefde0b9-201d-424c-86cb-866253a089f7",
+           "kb:File-2e5c740c-1948-48f5-a7dc-2dc58071efc6",
+           "kb:File-73891986-60af-47f9-a7c6-c2bd0b749754",
+           "kb:File-eff98353-779f-455c-828a-0c5a31a83b89",
+           "kb:File-37eb9103-46af-4b60-93a6-6169f8cd0767",
+           "kb:File-fb00a9cd-17e1-438f-9b28-ca5d7149f9c7",
+           "kb:File-7fbb2a37-b524-41da-843c-512c757f9a53",
+           "kb:File-339d008c-9a91-4db8-a0fd-772e0824f7a3",
+           "kb:File-3781b13c-4814-4884-ad9e-f7c8a5912a77",
+           "kb:File-f1980292-3045-445f-a0e4-f6f89a60835f",
+           "kb:File-f8896dfb-6d42-4962-bb9b-84c0eb998da7",
+           "kb:File-1908407e-ddde-4524-9f23-81ff37b4daf9",
+           "kb:File-42533fb7-0cb4-4016-bb0d-d1e13846eca1"
+   ]
 },
 {% endhighlight %}
 
@@ -362,7 +404,7 @@ Representing file segments of acquired forensic acquisition.
 
 {% highlight json %}
 {
-   "@id":"{76087322-932D-4A64-B5C7-9FD4F4835386}", 
+   "@id":"kb:File-3366d44d-4e46-43a3-9df6-20aaff011d16", 
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -396,7 +438,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{9E6B8C9D-5686-4CA8-A00C-05CA4107170E}", 
+   "@id":"kb:File-e8b28291-ca89-4199-b30d-d1d180619077",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
     {
@@ -430,7 +472,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{CC6A7682-B6F3-4F14-9C94-DB6104A5EF8A}", 
+   "@id":"kb:File-3a3fffe1-630f-4f2c-a1a3-d7d4ee0d632e",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -464,7 +506,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{C3D99EAD-F4C2-4EA1-AA95-A4578786CB7C}", 
+   "@id":"kb:File-9d5d0b5d-73cb-4eac-8123-dba4d177ba78",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -498,7 +540,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{ECC522D5-F0CE-4BAE-B4D2-05D192F2104D}", 
+   "@id":"kb:File-ead689c2-26d4-4268-b4dd-d7936221f1ac",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -532,7 +574,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{2A60ACC3-1C37-4831-B0AA-784F27B2ACA7}", 
+   "@id":"kb:File-1616af98-d178-45ba-adb6-e45ba004b7be",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -566,7 +608,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{1CFB3C01-9EB9-4209-946D-A6A9D24302B1}", 
+   "@id":"kb:File-9c08fdb3-36f6-4438-9da1-9d5eef691283",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -600,7 +642,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{9203DB1A-FB25-4FDD-BD42-0EEC0BD4D218}", 
+   "@id":"kb:File-49457498-305a-42e8-b5a4-54559940b3ef",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -634,7 +676,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{DAB4363B-14FF-4852-B8F6-A1729DB4EF8C}", 
+   "@id":"kb:File-b4e0f188-26d0-4c94-b7f4-e3dd92df2321",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -668,7 +710,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{E916BECF-474E-4ABE-92B8-21332E4E7524}", 
+   "@id":"kb:File-697cab05-bd2a-4c41-87f4-c279b0fd9089",
    "@type":"uco-observable:ObservableObject",
    "":[
    {
@@ -702,7 +744,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{F58917F7-9E14-43DF-86B6-3AE0501CF1F7}", 
+   "@id":"kb:File-ea3a8789-fd83-4768-ad72-aed2ebf7ee67",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -736,7 +778,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{242F4AD9-729F-4A7E-9672-1ED06EDF7BE0}", 
+   "@id":"kb:File-c0c296e6-d143-4af0-bec4-81e3b62d70f6",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -770,7 +812,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{725F48DC-AD3F-4FF0-B6CE-4629B35A7E69}", 
+   "@id":"kb:File-7b828acc-1e0a-4215-b847-5f79869791ed",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -804,7 +846,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{6157788F-DE83-4EDD-8A49-40DDE04DDB40}", 
+   "@id":"kb:File-05f2d0ad-1fb0-4015-8805-5cf2b17574de",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -838,7 +880,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{71CAADC6-02FF-4AEA-830B-C527294E57B2}", 
+   "@id":"kb:File-2377b497-02fa-4010-b00d-545a682b5022",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -872,7 +914,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{D42A32EE-D758-4A14-8001-036E4AA37246}", 
+   "@id":"kb:File-61cf1397-159e-4b45-99c4-4c3eb78a500d",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -906,7 +948,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{FECB8535-CE31-47C2-A5F4-8B912FFF422A}", 
+   "@id":"kb:File-6d3551e3-c707-49d9-a17c-c297de884995",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -940,7 +982,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{9E2F578F-CAD0-486B-A79B-3DAA6119DBB8}", 
+   "@id":"kb:File-c5a93f7d-2482-4752-b8f1-491d8584496a",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -974,7 +1016,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{65F91056-20DE-4777-A604-4A0F1803DAD5}", 
+   "@id":"kb:File-14ca15b8-020c-449e-9206-7c66c92a7663",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -1008,7 +1050,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{7B8BBEFE-A35A-44D1-A4A9-4E65BBE6E9B1}", 
+   "@id":"kb:File-24d16a25-55dd-46e2-8114-590b4ca01ab7",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -1042,7 +1084,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{C6C3ECE3-2869-47D4-A28B-F0F6335001CE}", 
+   "@id":"kb:File-9322e5d1-175e-4b27-b750-f3d3ef16b601",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -1076,7 +1118,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{BB3B2A36-63F9-4059-9102-D1B92D37E596}", 
+   "@id":"kb:File-1c0fcc09-a413-4cbf-8d6b-ff1fcff1b28c",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -1110,7 +1152,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{2DF640CA-42E1-47AB-8E28-7B2B1B865701}", 
+   "@id":"kb:File-795ce33b-87ec-43c4-b7d6-fa656e77c407",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -1144,7 +1186,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{15F78336-E38C-4450-98E8-5BCB0299777B}", 
+   "@id":"kb:File-6422b2db-8e83-4635-bda3-21ef3f7f571e",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -1178,7 +1220,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{B7B353F1-FE2E-44E4-80ED-4104F72C7FCF}", 
+   "@id":"kb:File-a672b9b3-2b00-49f3-bff1-997ec5c4d1a0",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -1212,7 +1254,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{061CC315-8A1F-4C5B-8ABB-E3E2B1CB2483}", 
+   "@id":"kb:File-cefde0b9-201d-424c-86cb-866253a089f7",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -1246,7 +1288,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{BF4D02D3-8D0D-491E-81EC-56611BCDE409}", 
+   "@id":"kb:File-2e5c740c-1948-48f5-a7dc-2dc58071efc6",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -1280,7 +1322,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{DA73E0A7-7679-42B8-A1ED-561F2BAA3478}", 
+   "@id":"kb:File-73891986-60af-47f9-a7c6-c2bd0b749754",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -1315,7 +1357,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{F9A04C4F-C140-4338-AF20-71A7810F9C7B}", 
+   "@id":"kb:File-eff98353-779f-455c-828a-0c5a31a83b89",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -1349,7 +1391,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{3DE6522E-D250-4A31-860B-2E75027AB361}", 
+   "@id":"kb:File-37eb9103-46af-4b60-93a6-6169f8cd0767",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -1383,7 +1425,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{6728339A-4FAB-4B36-BF79-6480F14AAAB8}", 
+   "@id":"kb:File-fb00a9cd-17e1-438f-9b28-ca5d7149f9c7",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -1417,7 +1459,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{24ECAE83-E1D0-48B1-A65B-2E6882FCBD4A}", 
+   "@id":"kb:File-7fbb2a37-b524-41da-843c-512c757f9a53",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -1451,7 +1493,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{703BAA18-B3B7-4C8E-9545-6A38FEFA8E0C}", 
+   "@id":"kb:File-339d008c-9a91-4db8-a0fd-772e0824f7a3",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -1485,7 +1527,7 @@ Representing file segments of acquired forensic acquisition.
    ]   
 },
 {
-   "@id":"{A5AB3F2F-8169-47C8-8A33-767ACDEB1864}", 
+   "@id":"kb:File-3781b13c-4814-4884-ad9e-f7c8a5912a77",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -1519,7 +1561,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{7A80DF48-8CE3-471A-9F76-899774442B68}", 
+   "@id":"kb:File-f1980292-3045-445f-a0e4-f6f89a60835f",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -1553,7 +1595,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{8620D5D3-6C5F-4E73-892D-A879592DAF0B}", 
+   "@id":"kb:File-f8896dfb-6d42-4962-bb9b-84c0eb998da7",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -1587,7 +1629,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{6223D000-ED53-464A-A0A2-90EC8E67D531}", 
+   "@id":"kb:File-1908407e-ddde-4524-9f23-81ff37b4daf9",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
@@ -1621,7 +1663,7 @@ Representing file segments of acquired forensic acquisition.
    ]
 },
 {
-   "@id":"{B61A61DF-C254-4578-B57A-BE38BEDF3670}", 
+   "@id":"kb:File-42533fb7-0cb4-4016-bb0d-d1e13846eca1",
    "@type":"uco-observable:ObservableObject",
    "uco-core:hasFacet":[
    {
