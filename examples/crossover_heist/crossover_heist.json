@@ -1,0 +1,682 @@
+{
+    "@context": {
+        "@vocab": "http://example.org/ontology/local#",
+        "case-investigation": "https://ontology.caseontology.org/case/investigation/",
+        "drafting": "http://example.org/ontology/drafting#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "kb": "http://example.org/kb/",
+        "uco-action": "https://ontology.unifiedcyberontology.org/uco/action/",
+        "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "uco-identity": "https://ontology.unifiedcyberontology.org/uco/identity/",
+        "uco-location": "https://ontology.unifiedcyberontology.org/uco/location/",
+        "uco-observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "uco-role": "https://ontology.unifiedcyberontology.org/uco/role/",
+        "uco-tool": "https://ontology.unifiedcyberontology.org/uco/tool/",
+        "uco-types": "https://ontology.unifiedcyberontology.org/uco/types/",
+        "uco-vocabulary": "https://ontology.unifiedcyberontology.org/uco/vocabulary/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:bundle-feb83c4b-9d88-41ac-b8d8-82d317b40a53",
+            "@type": "uco-core:Bundle",
+            "uco-core:description": "Evidence in bank robbery",
+            "uco-core:object": [
+                {
+                    "@id": "kb:investigation1-85c7b8d1-54e0-4023-847a-20e0f55dd48e",
+                    "@type": "case-investigation:Investigation",
+                    "uco-core:name": "CROSSOVER_2018_11191001",
+                    "case-investigation:focus": "Bank Robbery (UBS Lausanne)",
+                    "uco-core:description": "Forensic treatment of storage media recovered from getaway car and suspects apartment during investigation of bank robbery.",
+                    "uco-core:object": [
+                        "list of uuids"
+                    ]
+                },
+                {
+                   "@id":"kb:A4B0AAF7-82AB-411C-944F-1FA955DD9B22",
+                   "@type":"uco-identity:Identity",
+                   "uco-core:hasFacet":[
+                   {
+                      "@type":"uco-identity:Organisation",
+                      "uco-drafting:orgName":"ESC"
+                   }
+                   ]
+                },
+                {
+                   "@id":"kb:37C48C5E-72A8-4B22-BBB8-02E7CB7B9335",
+                   "@type":"uco-core:Role",
+                   "uco-core:name":"Forensic Expert"
+                },
+                {
+                   "@id":"kb:D045621F-B5AC-4B87-9242-241600C98769",
+                   "@type":"uco-core:Relationship",
+                   "uco-core:source":"{A4B0AAF7-82AB-411C-944F-1FA955DD9B22}",
+                   "uco-core:target":"{37C48C5E-72A8-4B22-BBB8-02E7CB7B9335}",
+                   "uco-core:kindOfRelationship":"has_role",
+                   "uco-core:isDirectional":"True"
+                },
+                {
+                   "@id":"kb:7D016261-D192-4A7F-8BEE-F9388224BA77",
+                   "@type":"uco-tool:Tool",
+                   "uco-core:name":"Tableau TD2u",
+                   "uco-tool:toolType":"acquisition/duplication",
+                   "uco-tool:creator":"Opentext",
+                   "uco-tool:version":"1.2.1 (build 5241-814712f)",
+                   "uco-tool:drafting:toolIdentifier":"000eccd2007540a6",
+                   "uco-core:hasFacet":[
+                   {
+                       type":"uco-tool:ToolConfigurationType",
+                       uco-tool:configurationSetting":[
+                       {
+                           "@type":"uco-tool:ConfigurationSettingType",
+                           "uco-tool:itemName":"Mode",
+                           "uco-tool:itemValue":"DriveToFile"
+                        },
+                        {
+                           "@type":"uco-tool:ConfigurationSettingType",
+                           "uco-tool:itemName":"Method",
+                           "uco-tool:itemValue":"E01Capture"
+                        },
+                        {
+                           "@type":"uco-tool:ConfigurationSettingType",
+                           "uco-tool:itemName":"Hash",
+                           "uco-tool:itemValue":"SHA-1+MD5"
+                        }
+                       ]
+                     }
+                  ]
+                },
+                {
+                   "@id":"kb:492A7400-6B08-4D68-A520-9AB32C6DA043",
+                    "@type":"case-investigation:InvestigativeAction",
+                    "uco-core:name":"disk image",
+                    "uco-core:description":"Acquisition of Kingston DataTraveler 2.0",
+                    "uco-action:startTime":{
+                      "@type": "xsd:dateTime",
+                      "@value": "2018-11-19T15:51:10.00Z"
+                    },
+                    "uco-action:endTime":{
+                      "@type": "xsd:dateTime",
+                      "@value": "2018-11-19T15:58:38.00Z"
+                    },
+                    "uco-core:hasFacet":[
+                    {
+                       "@type":"uco-action:ActionReferences",
+                       "uco-action:instrument":"kb:A4B0AAF7-82AB-411C-944F-1FA955DD9B22",
+                       "uco-action:location":"NOT PROVIDED BY REPORT",
+                       "uco-action:performer":"kb:37C48C5E-72A8-4B22-BBB8-02E7CB7B9335",
+                       "uco-action:object":["kb:DFEC45DF-DAB9-4FED-9A07-FFA77A0DA824", "kb:A2C1CA50-704B-4BF8-BA50-49935D83C59E"],
+                       "uco-action:result":["kb:usb-b2dbb227-06ec-432d-9f63-058e8ab73944",
+                         "kb:0ff68932-2abc-433c-91b0-5af1ca34b470"]
+                      }
+                   ]
+                },
+    {
+           "@id":"kb:DFEC45DF-DAB9-4FED-9A07-FFA77A0DA824",
+           "@type":"uco-observable:ObservableObject",
+           "uco-core:hasFacet":[
+              {
+                 "@type":"uco-observable:DiskFacet",
+                 "uco-observable:model":"Kingston DataTraveler 2.0",
+                 "uco-drafting:USBSerialNumber":"001D7D06CF09ED91D97F1B1B",
+                 "uco-observable:serialNumber":"0E0D19D17DD9",
+                 "uco-observable:capacity":"7803174912"
+              },
+              {
+              "@type": "uco-observable:ContentDataFacet",
+              "uco-observable:hash": [
+                {
+                  "@type": "uco-observable:Hash",
+                  "uco-types:hashMethod": {
+                    "@type": "uco-vocabulary:HashNameVocab",
+                    "@value": "MD5"
+                  },
+                  "uco-types:hashValue": {
+                    "@type": "xsd:hexBinary",
+                    "@value": "058f03317c1612eadd624342b7fde511"
+                  }
+                },
+                {
+                  "@type": "uco-observable:Hash",
+                  "uco-types:hashMethod": {
+                    "@type": "uco-vocabulary:HashNameVocab",
+                    "@value": "SHA1"
+                  },
+                    "uco-types:hashValue": {
+                      "@type": "xsd:hexBinary",
+                      "@value": "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"
+                    }
+                  }
+                }
+            ],
+    },
+    {
+           "@id":"kb:A2C1CA50-704B-4BF8-BA50-49935D83C59E",
+           "@type":"case-investigation:ProvenanceRecord",
+           "uco-observable:createdTime":{
+             "@type": "xsd:dateTime",
+             "@value": "2018-10-26T13:12:48.00Z"
+           },
+           "uco-core:description":"Kingston DataTraveler 2.0",
+           "case-investigation:exhibitNumber":20181119-001-001",
+           "uco-core:object":["{DFEC45DF-DAB9-4FED-9A07-FFA77A0DA824}"]
+    },
+    {
+           "@id":"kb:usb-b2dbb227-06ec-432d-9f63-058e8ab73944",
+           "@type":"uco-observable:ObservableObject",
+           "uco-core:hasFacet":[
+           {
+              "@type":"uco-observable:FileFacet",
+              "uco-observable:fileName":"image.E01",
+              "uco-observable:filePath":"2018-11-19_15-50-58/image.E01",
+              "uco-observable:extension":"E01",
+              "uco-observable:fileSystemType":"ntfs",
+              "uco-observable:isDirectory":"false",
+              "uco-observable:sizeInBytes":"2GB",
+              "uco-observable:createdTime":{
+                "@type": "xsd:dateTime",
+                "@value": "2018-11-19T15:50:58.00Z"}
+              },
+              {
+                 "type":"uco-observable:ContentDataFacet",
+                 "hash":[
+                 {
+                    "@type":"Hash",
+                    "hashMethod":"SHA1",
+                    "hashValue":"a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"
+                 }
+                 ]
+              }
+           ]
+    },
+    {
+           "@id":"kb:0ff68932-2abc-433c-91b0-5af1ca34b470",
+           "@type":"case-investigation:ProvenanceRecord",
+           "uco-core:description":"Forensic image with E01Capture",
+           "uco-observable:createdTime": {
+                "@type": "xsd:dateTime",
+                "@value": "2018-11-19T15:50:58.00Z"}
+           },
+           "case-investigation:exhibitNumber":"20181119-001-001-01",
+           "uco-core:object":["{usb-b2dbb227-06ec-432d-9f63-058e8ab73944}" ]
+         ]
+    }
+{
+            "uco-core:hasFacet": [
+                {
+                    "uco-observable:sizeInBytes": 508,
+                    "uco-observable:mimeType": "application/octet-stream",
+                    "uco-observable:hash": [
+                        {
+                            "uco-types:hashMethod": {
+                                "@type": "uco-vocabulary:HashNameVocab",
+                                "@value": "MD5"
+                            },
+                            "uco-types:hashValue": {
+                                "@type": "xsd:hexBinary",
+                                "@value": "969715f8e9fa6c6514d24503bf5f87e6"
+                            }
+                            "@type": "uco-types:Hash"
+                        }
+                    ],
+                    "@type": "uco-observable:ContentDataFacet"
+                },
+                {
+                    "uco-observable:accessedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-19T00:29:15Z"
+                        },
+                    "uco-observable:extension": "lnk",
+                    "uco-observable:fileName": "Thebatplan.lnk",
+                    "uco-observable:filePath": "/img_image.E01/vol_vol3/Users/Harley Quinn/AppData/Roaming/Microsoft/Windows/Recent/Thebatplan.lnk",
+                    "uco-observable:isDirectory": false,
+                    "uco-observable:sizeInBytes": 508,
+                    "@type": "uco-observable:FileFacet",
+                    "uco-observable:createdTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-19T00:29:15Z"
+                        },
+                    "uco-observable:modifiedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-19T00:29:15Z"
+                        }
+                }
+            ],
+            "@id": "kb:lnkfile-487b236d-e75d-467e-9c6d-dad2d12cf94e",
+            "@type": "uco-observable:ObservableObject"
+        },
+        {
+            "uco-core:source": { "@id": "kb:lnkfile-487b236d-e75d-467e-9c6d-dad2d12cf94e", }
+            "uco-core:target": { "@id": "kb:harddrive-partition2-e3f25b0b-37bf-4111-bae3-d355aff3c8a2", }
+            "uco-core:kindOfRelationship": "Contained-Within",
+            "uco-core:isDirectional": true,
+            "@id": "kb:f0505f2a-5de0-4651-9486-16746758f6c8",
+            "@type": "uco-observable:ObservableRelationship"
+        },
+{
+        "@id": "kb:lnk1-relationship-a1dbff0e-974b-4295-b035-e1bc3271945d",
+        "@type": "uco-observable:CyberRelationship",
+        "uco-core:source": { "@id": "kb:file-d87ecfcb-006c-46e6-a973-e756ee4d4f70" },
+        "uco-core:target": { "@id": "kb:lnkfile-487b236d-e75d-467e-9c6d-dad2d12cf94e" },
+        "uco-core:kindOfRelationship": {
+            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@value": "Referenced_Within"
+        },
+        "uco-core:isDirectional": true
+    }
+{
+            "uco-core:hasFacet": [
+                {
+                    "uco-observable:sizeInBytes": 1389601,
+                    "uco-observable:mimeType": "image/jpeg",
+                    "hash": [
+                        {
+                            "uco-observable:hashMethod":  {
+                                "@type": "uco-vocabulary:HashNameVocab",
+                                "@value": "MD5"
+                            },
+                            "uco-types:hashValue": {
+                                "@type": "xsd:hexBinary",
+                                "@value": "2282dddf9378cd1dd0497a3484adf768"
+                            }
+                            "@type": "uco-types:Hash"
+                        }
+                    ],
+                    "@type": "uco-observable:ContentDataFacet"
+                },
+                {
+                    "uco-observable:accessedTime": "2018-11-18T22:53:09Z",
+                    "uco-observable:extension": "",
+                    "uco-observable:fileName": "Thebatplan",
+                    "uco-observable:filePath": "/img_image.E01/Thebatplan",
+                    "uco-observable:isDirectory": false,
+                    "uco-observable:sizeInBytes": 1389601,
+                    "@type": "uco-observable:FileFacet",
+                    "uco-observable:createdTime": "2018-11-18T22:53:09Z",
+                    "uco-observable:modifiedTime": "2018-11-18T20:10:48Z"
+                }
+            ],
+            "@id": "kb:file-d87ecfcb-006c-46e6-a973-e756ee4d4f70",
+            "@type": "uco-observable:ObservableObject"
+        },
+        {
+            "uco-core:source": { "@id": "kb:file-d87ecfcb-006c-46e6-a973-e756ee4d4f70", }
+            "uco-core:target": { "@id": "kb:usb-b2dbb227-06ec-432d-9f63-058e8ab73944", }
+            "uco-core:kindOfRelationship": "contained-within",
+            "uco-core:isDirectional": true,
+            "@id": "kb:e6d52185-c570-409c-ae35-ceaf3e01080b",
+            "@type": "uco-observable:ObservableRelationship"
+        },
+{
+            "uco-core:hasFacet": [
+                {
+                    "accessedTime": "2018-11-19T00:23:50Z",
+                    "extension": "lnk",
+                    "fileName": "thebatletter.lnk",
+                    "filePath": "/img_image.E01/vol_vol3/Users/Harley Quinn/AppData/Roaming/Microsoft/Windows/Recent/thebatletter.lnk",
+                    "isDirectory": false,
+                    "sizeInBytes": 535,
+                    "@type": "File",
+                    "createdTime": "2018-11-19T00:23:50Z",
+                    "modifiedTime": "2018-11-19T00:23:50Z"
+                }
+            ],
+            "@id": "kb:lnkfile-f3c23080-0236-4ee7-83e7-cccc5fa06ee0",
+            "@type": "uco-observable:ObservableObject"
+        },
+        {
+            "uco-core:source": "kb:lnkfile-f3c23080-0236-4ee7-83e7-cccc5fa06ee0",
+            "uco-core:target": "kb:harddrive-partition2-e3f25b0b-37bf-4111-bae3-d355aff3c8a2",
+            "uco-core:kindOfRelationship": "contained-within",
+            "uco-core:isDirectional": true,
+            "@id": "kb:e29bbd14-396d-48d4-abbf-acdfd346ca64",
+            "@type": "uco-observable:ObservableRelationship"
+        },
+{
+            "uco-core:hasFacet": [
+                {
+                    "accessedTime": "2018-11-18T22:53:09Z",
+                    "extension": "docx",
+                    "fileName": "thebatletter.docx",
+                    "filePath": "/thebatletter.docx",
+                    "isDirectory": false,
+                    "sizeInBytes": 11633,
+                    "@type": "File",
+                    "createdTime": "2018-11-18T22:53:09Z",
+                    "modifiedTime": "2018-11-18T21:30:48Z"
+                }
+            ],
+            "@id": "kb:file-ed7c30a2-e233-4732-adee-8514955b6dfb",
+            "@type": "uco-observable:ObservableObject"
+        },
+        {
+            "uco-core:source": "kb:file-ed7c30a2-e233-4732-adee-8514955b6dfb",
+            "uco-core:target": "kb:usb-b2dbb227-06ec-432d-9f63-058e8ab73944",
+            "uco-core:kindOfRelationship": "contained-within",
+            "uco-core:isDirectional": true,
+            "@id": "kb:b3a202b4-ee2b-4f26-9a31-6d10801524e7",
+            "@type": "uco-observable:ObservableRelationship"
+        },
+        {
+            "@id": "kb:content-2ea73bc6-801a-47ff-a8fa-837c226bfa14",
+            "@type": [
+                "uco-observable:ContentData",
+                "uco-drafting:RecoveredObject"
+            ],
+            "uco-core:hasFacet": [
+                {
+                    "@type": "drafting:RecoveredObjectFacet",
+                    "uco-drafting:contentRecoveredStatus": {
+                        "@type": "uco-drafting:RecoveredObjectStatusVocab",
+                        "@value": "recovered"
+                    },
+                    "uco-drafting:metadataRecoveredStatus": {
+                        "@type": "uco-drafting:RecoveredObjectStatusVocab",
+                        "@value": "recovered"
+                    },
+                    "uco-drafting:nameRecoveredStatus": {
+                        "@type": "uco-drafting:RecoveredObjectStatusVocab",
+                        "@value": "recovered"
+                    }
+                },
+                {
+                    "@type": "uco-observable:ContentDataFacet",
+                    "uco-observable:byteOrder": {
+                        "@type": "uco-vocabulary:EndiannessTypeVocab",
+                        "@value": "Big-endian"
+                    },
+                    "uco-observable:sizeInBytes": 11633,
+                    "uco-observable:mimeType": "application/application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                    "uco-observable:hash": [
+                        {
+                            "@type": "uco-types:Hash",
+                            "uco-types:hashMethod": {
+                                "@type": "uco-vocabulary:HashNameVocab",
+                                "@value": "SHA256"
+                            },
+                            "uco-types:hashValue": {
+                                "@type": "xsd:hexBinary",
+                                "@value": "701ad15009b0e79af524336f7d069ed1"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "@id": "kb:e4b416ed-4e02-4ecd-bd4d-d57ec485a37e",
+            "@type": "uco-observable:ObservableRelationship",
+            "uco-core:source": {
+                "@id": "kb:content-2ea73bc6-801a-47ff-a8fa-837c226bfa14"
+            },
+            "uco-core:target": {
+                "@id": "kb:usb-b2dbb227-06ec-432d-9f63-058e8ab73944"
+            },
+            "uco-core:kindOfRelationship": "Contained_Within",
+            "uco-core:isDirectional": true,
+            "uco-core:hasFacet": [
+                {
+                    "@type": "uco-observable:DataRangeFacet",
+                    "uco-observable:rangeOffset": 9994240,
+                    "uco-observable:rangeSize": 11633
+                }
+            ]
+        },
+        {  
+            "uco-core:source": "kb:content-2ea73bc6-801a-47ff-a8fa-837c226bfa14",
+            "uco-core:target": "kb:file-ed7c30a2-e233-4732-adee-8514955b6dfb",
+            "uco-core:kindOfRelationship": "Contained-Within",
+            "uco-core:isDirectional": true,
+            "@id": "kb:59a90c3f-12a9-4ed4-b175-2e56b75abd74",
+            "@type": "uco-observable:ObservableRelationship"
+        },
+{
+            "uco-core:hasFacet": [
+                {
+                    "accessedTime": "2018-11-19T00:27:14Z",
+                    "extension": "lnk",
+                    "fileName": "wow.lnk",
+                    "filePath": "/img_image.E01/vol_vol3/Users/Harley Quinn/AppData/Roaming/Microsoft/Windows/Recent/wow.lnk",
+                    "isDirectory": false,
+                    "sizeInBytes": 495,
+                    "@type": "File",
+                    "createdTime": "2018-11-19T00:27:14Z",
+                    "modifiedTime": "2018-11-19T00:27:14Z"
+                }
+            ],
+            "@id": "kb:file-31c06b79-ad9f-446a-859a-62b848e2e1f8",
+            "@type": "uco-observable:ObservableObject"
+        },
+        {
+            "uco-core:source": "kb:file-31c06b79-ad9f-446a-859a-62b848e2e1f8",
+            "uco-core:target": "kb:harddrive-partition2-e3f25b0b-37bf-4111-bae3-d355aff3c8a2",
+            "uco-core:kindOfRelationship": "Contained-Within",
+            "uco-core:isDirectional": true,
+            "@id": "kb:df9f6a42-fbb6-4e7e-bf60-6518680241dd",
+            "@type": "uco-observable:ObservableRelationship"
+        },
+         {
+            "uco-core:hasFacet": [
+                {
+                    "accessedTime": "2018-11-19T00:28:41Z",
+                    "extension": "lnk",
+                    "fileName": "wow (2).lnk",
+                    "filePath": "/img_image.E01/vol_vol3/Users/Harley Quinn/AppData/Roaming/Microsoft/Windows/Recent/wow (2).lnk",
+                    "isDirectory": false,
+                    "sizeInBytes": 457,
+                    "@type": "File",
+                    "createdTime": "2018-11-19T00:28:28Z",
+                    "modifiedTime": "2018-11-19T00:28:41Z"
+                }
+            ],
+            "@id": "kb:file-26adfe08-e545-4d24-872b-84f95bd01284",
+            "@type": "uco-observable:ObservableObject"
+        },
+        {
+            "uco-core:source": "kb:file-26adfe08-e545-4d24-872b-84f95bd01284",
+            "uco-core:target": "kb:harddrive-partition2-e3f25b0b-37bf-4111-bae3-d355aff3c8a2",
+            "uco-core:kindOfRelationship": "contained-within",
+            "uco-core:isDirectional": true,
+            "@id": "kb:d70472d2-42a7-4ea1-9f3f-4fd7637bd4ff",
+            "@type": "uco-observable:ObservableRelationship"
+        },
+{
+            "uco-core:hasFacet": [
+                {
+                    "uco-observable:fullValue": "file:///D:/wow.jpg",
+
+                    "@type": "uco-observable:URLFacet"
+                },
+                {
+                    "value": "",
+                    "@type": "DomainName"
+                }
+
+            ],
+            "@id": "kb:url-def4ae18-9181-4cce-8f5f-a9aba022b98b",
+            "@type": "uco-observable:ObservableObject"
+        },
+       {
+            "source": "kb:url-def4ae18-9181-4cce-8f5f-a9aba022b98b",
+            "target": "kb:file-webcache-12c51c62-e5e2-4018-ac45-e0e69e36573f",
+            "kindOfRelationship": "contained-within",
+            "isDirectional": true,
+            "@id": "kb:47601a3c-d962-4e3a-b90d-fa2bad7a0be3",
+            "@type": "uco-observable:ObservableRelationship"
+        },
+         {
+            "uco-core:hasFacet": [
+                {
+                    "@type": "ApplicationAccountFacet",
+                    "displayName": "Harley Quinn"
+                }
+            ],
+            "@id": "kb:580d7253-5086-41a5-b788-69e3ceaa4bae",
+            "@type": "uco-observable:ObservableObject"
+        },
+        {
+            "uco-core:hasFacet": [
+                {
+                    "applicationIdentifier": "Microsoft Edge",
+                    "@type": "ApplicationFacet"
+                }
+            "@id": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38",
+            "@type": "uco-observable:ObservableObject"
+        },
+        {
+            "@id": "kb:url-history-39ff4987-8ae5-47e3-8369-dbd0d5f79398",
+            "@type": "uco-observable:ObservableObject",
+            "uco-core:hasFacet": [
+              {
+                "@type": "uco-observable:URLHistoryFacet",
+                "uco-observable:browserInformation": {
+                    "@id": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38"
+                },
+                "uco-observable:urlHistoryEntry": [
+                    {
+                        "uco-observable:firstVisit": {
+                            "@type": "xsd:dateTime",
+                            "@value": "2018-11-19T00:27:14.00Z"
+                        },
+                        "uco-observable:lastVisit": {
+                            "@type": "xsd:dateTime",
+                            "@value": "2018-11-19T00:27:14.00Z"
+                        },
+                        "uco-observable:expirationTime": null,
+                        "uco-observable:browserUserProfile": {
+                            "@id": "kb:580d7253-5086-41a5-b788-69e3ceaa4bae"
+                        },
+                        "uco-observable:url": {
+                            "@id": "kb:url-def4ae18-9181-4cce-8f5f-a9aba022b98b"
+                        },
+                        "uco-observable:referrerUrl": null,
+                        "uco-observable:pageTitle": null,
+                        "uco-observable:visitCount": 1,
+                        "uco-observable:manuallyEnteredCount": 0,
+                        "uco-observable:keywordSearchTerm": null
+                    }
+                   ]
+                }
+            ]
+        },
+{
+            "uco-core:hasFacet": [
+                {
+                    "sizeInBytes": 756969,
+                    "mimeType": "image/jpeg",
+                    "hash": [
+                        {
+                            "hashMethod": "MD5",
+                            "@type": "Hash"
+                        }
+                    ],
+                    "@type": "ContentData"
+                },
+                {
+                    "accessedTime": "2018-11-18T22:53:09Z",
+                    "extension": "jpg",
+                    "fileName": "wow.jpg",
+                    "filePath": "/img_image.E01/wow.jpg",
+                    "isDirectory": false,
+                    "sizeInBytes": 756969,
+                    "@type": "File",
+                    "createdTime": "2018-11-18T22:53:09Z",
+                    "modifiedTime": "2018-11-18T20:28:58Z"
+                }
+            ],
+            "@id": "kb:file-bbb4f0c4-ea2c-42fa-9ec0-11bc4678b7b8",
+            "@type": "uco-observable:ObservableObject"
+        },
+        {
+            "uco-core:source": "kb:content-372191_autopsy.db",
+            "uco-core:target": "kb:usb-b2dbb227-06ec-432d-9f63-058e8ab73944",
+            "uco-core:kindOfRelationship": "contained-within",
+            "uco-core:isDirectional": true,
+            "@id": "kb:ce92625b-c5f0-4856-940b-692d82de602c",
+            "@type": "uco-observable:ObservableRelationship"
+        },
+{
+        "@id": "kb:system-registryfile",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:File",
+                "uco-observable:fileName": "SYSTEM",
+                "uco-observable:filePath": "/Windows/system32/config/SYSTEM",
+                "uco-observable:isDirectory": false
+
+        ]
+   }
+   {
+        "@id": "kb:system-registryfile-hive-relationship",
+        "@type": "uco-observable:CyberRelationship",
+        "uco-core:source": {
+            "@id": "kb:system-registryhive"
+        },
+        "uco-core:target": {
+            "@id": "kb:system-registryfile"
+        },
+        "uco-core:kindOfRelationship": {
+            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@value": "Contained_Within"
+        },
+        "uco-core:isDirectional": true
+    },
+    {
+        "@id": "kb:system-registryhive",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:WindowsRegistryHiveFacet",
+                "uco-observable:hiveType": {
+                    "@type": "uco-vocabulary:HiveTypeVocab",
+                    "@value": "SYSTEM"
+                }
+            },
+        ]
+    },
+{
+        "@id": "kb:system-registryhive-cells-relationship",
+        "@type": "uco-observable:CyberRelationship",
+        "uco-core:source": {
+            "@id": "kb:system-registrycell-usb1"
+        },
+        "uco-core:target": {
+            "@id": "kb:system-registryhive"
+        },
+        "uco-core:kindOfRelationship": {
+            "@type": "uco-vocabulary:CyberItemRelationshipVocab",
+            "@value": "Contained_Within"
+        },
+        "uco-core:isDirectional": true,
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:PathRelation",
+                "uco-observable:path": "SYSTEM/ControlSet001/Enum/USB/VID_1234&PID_5678/001D7D06CF09ED91D97F1B1B"
+            }
+        ]
+    },
+    {
+        "@id": "kb:system-registrycell-usb1",
+        "@type": "uco-observable:CyberItem",
+        "uco-core:facets": [
+            {
+                "@type": "uco-observable:WindowsRegistryCellFacet",
+                "uco-observable:cellPath": "SYSTEM/ControlSet001/Enum/USB/VID_0781&PID_5575/001D7D06CF09ED91D97F1B1B",
+                "uco-observable:cellName": "001D7D06CF09ED91D97F1B1B",
+                "uco-observable:modifiedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-02T22:38:09.00Z"
+                },
+                "uco-observable:isRegistryKey": true,
+                "uco-observable:allocationStatus": "allocated",
+                "uco-observable:sizeInBytes": 0,
+                "uco-observable:numberOfSubkeys": "2"
+            },
+        ]
+    },
+            ]
+        }
+    ]
+}
