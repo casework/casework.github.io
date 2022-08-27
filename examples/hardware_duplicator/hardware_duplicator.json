@@ -260,7 +260,7 @@
       "uco-action:performer":"kb:Role-856975ce-3c25-49c3-b6eb-28d1e929f915",
       "uco-action:object":["kb:Disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11"],
       "uco-action:result":[
-           "kb:ProvenanceRecord-d1828cbb-bb0f-42e3-b021-cfd9d6419ae6"
+           "kb:ProvenanceRecord-d1828cbb-bb0f-42e3-b021-cfd9d6419ae6",
            "kb:File-3366d44d-4e46-43a3-9df6-20aaff011d16",
            "kb:File-e8b28291-ca89-4199-b30d-d1d180619077",
            "kb:File-3a3fffe1-630f-4f2c-a1a3-d7d4ee0d632e",
