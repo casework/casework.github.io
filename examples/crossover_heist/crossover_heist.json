@@ -586,7 +586,7 @@
             "@type": "uco-observable:File"
         },
         {
-            "uco-core:source": "kb:Content-372191_autopsy.db",
+            "uco-core:source": "kb:File-bbb4f0c4-ea2c-42fa-9ec0-11bc4678b7b8",
             "uco-core:target": "kb:usb-b2dbb227-06ec-432d-9f63-058e8ab73944",
             "uco-core:kindOfRelationship": "contained-within",
             "uco-core:isDirectional": true,
