@@ -11,10 +11,33 @@ jumbo_desc:
 <p>The index of scenario portions is <a href="../crossover/">here</a>.</p>
 
 {% highlight sparql %}
-INSERT QUERY
+SELECT ?nInvestigationName ?lAddress
+WHERE {
+
+  ?nInvestigation
+    a case-investigation:Investigation ;
+    uco-core:name ?nInvestigationName ;
+    .
+
+  ?nEmailAddress
+    a uco-observable:EmailAddress ;
+    uco-core:hasFacet ?nEmailAddressFacet ;
+    .
+
+  ?nEmailAddressFacet
+    uco-observable:addressValue ?lAddress ;
+    .
+}
 {% endhighlight %}
 
-RESULTS
+The results of this query list the Investigation and associated email address, which reveal a link.
+
+|    | ?nInvestigationName     | ?lAddress                                   |
+|----|-------------------------|---------------------------------------------|
+|  0 | CROSSOVER_2018_11191001 | aresthewerewolf@gmail.com <aresthewerewolf> |
+|  1 | CROSSOVER_2018_11191001 | badquinn3@gmail.com                         |
+|  2 | CROSSOVER_2018_12111001 | aresthewerewolf@gmail.com <aresthewerewolf> |
+|  3 | CROSSOVER_2018_12111001 | badquinn3@gmail.com                         |
 
 <h3>Disclaimers</h3>
 
