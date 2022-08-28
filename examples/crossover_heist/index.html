@@ -265,9 +265,11 @@ The recovered file system metadata and content can be represented as Observable 
 <h4>Links Between USB Device and Hard Drive</h4>
 <p>Various links between the USB device and hard drive can be represented using CASE, including LNK shortcuts and Registry key entries.
 
+<p>All of these links are in the user account context "Harley Quinn" connecting the USB device to the user of that account.
+
 <p>Recent LNK files on Windows contain metadata for a target file that was recently opened by the user, providing a shortcut link for ease of reopening.
 
-Thebatplan.lnk file on the hard drive:
+Thebatplan.lnk file on the hard drive represented using CASE:
 {% highlight json %}
 {
             "@id": "kb:lnkfile-487b236d-e75d-467e-9c6d-dad2d12cf94e",
@@ -305,7 +307,7 @@ Thebatplan.lnk file on the hard drive:
         },
 {% endhighlight %}
 
-The LNK file “Users/Harley Quinn/AppData/Roaming/Microsoft/Windows/Recent/Thebatplan.lnk” references a file on USB device “D:\Thebatplan“ that contains. The metadata captured in the LNK file are all 2018-11-18T22:53:09Z. The LNK file creation and modification timestamps are 2018-11-19T00:29:15Z indicating that the file was opened once at this time.
+The LNK file “Users/Harley Quinn/AppData/Roaming/Microsoft/Windows/Recent/Thebatplan.lnk” on the hard drive references a file on USB device “D:\Thebatplan“ that contains a floor plan. The metadata captured in the LNK file are all 2018-11-18T22:53:09Z. The LNK file creation and modification timestamps are 2018-11-19T00:29:15Z indicating that the file was opened once at this time.
 
 {% highlight json %}
     {
@@ -346,7 +348,7 @@ Thebatplan file on the USB device referenced in the Thebatplan.lnk file:
                     "uco-observable:accessedTime": "2018-11-18T22:53:09Z",
                     "uco-observable:extension": "",
                     "uco-observable:fileName": "Thebatplan",
-                    "uco-observable:filePath": "/img_image.E01/Thebatplan",
+                    "uco-observable:filePath": "/Thebatplan",
                     "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": 1389601,
                     "@type": "uco-observable:FileFacet",
