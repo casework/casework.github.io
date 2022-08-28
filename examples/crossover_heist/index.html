@@ -691,25 +691,7 @@ A Registry hive can be treated as a volume contained within a file as represente
                 "uco-observable:filePath": "/Windows/system32/config/SYSTEM",
                 "uco-observable:isDirectory": false
             }
-        ]
-   },
-   {
-        "@id": "kb:Relationship-ded80fce-1c64-463c-a6f7-eea8237931d8",
-        "@type": "uco-observable:ObservableRelationship",
-        "uco-core:source": {
-            "@id": "kb:WindowsRegistryHive-1c0d3550-db7a-467d-81bf-32e098b99f52"
-        },
-        "uco-core:target": {
-            "@id": "kb:File-61082f03-46ed-4bc7-a7c9-571754ffcb60"
-        },
-        "uco-core:kindOfRelationship": "Contained_Within",
-        "uco-core:isDirectional": true
-    },
-    {
-        "@id": "kb:WindowsRegistryHive-1c0d3550-db7a-467d-81bf-32e098b99f52",
-        "@type": "uco-observable:WindowsRegistryHive",
-        "uco-core:facets": [
-            {
+            {   
                 "@type": "uco-observable:WindowsRegistryHiveFacet",
                 "uco-observable:hiveType": {
                     "@type": "uco-vocabulary:HiveTypeVocab",
@@ -717,7 +699,7 @@ A Registry hive can be treated as a volume contained within a file as represente
                 }
             },
         ]
-    },
+   },
 {% endhighlight %}
 
 Note that this use of a Contained_Within relationship is analogous to how a file system is contained within an image of a disk partition.
@@ -727,36 +709,24 @@ In the same way that some file systems treat both directories and regular files 
     {
         "@id": "kb:Relationship-d974c54f-60de-46af-b0fd-a19704543785",
         "@type": "uco-observable:ObservableRelationship",
-        "uco-core:source": {
-            "@id": "kb:WindowsRegistryCell-684af874-4c95-4be9-9c58-3eda29b94443"
+        "uco-core:source": "kb:WindowsRegistryKey-684af874-4c95-4be9-9c58-3eda29b94443",
         },
-        "uco-core:target": {
-            "@id": "kb:WindowsRegistryHive-systemregistryhive-1c0d3550-db7a-467d-81bf-32e098b99f52"
+        "uco-core:target": "kb:File-61082f03-46ed-4bc7-a7c9-571754ffcb60",
         },
         "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:isDirectional": true,
-        "uco-core:facets": [
-            {
-                "@type": "uco-observable:PathRelation",
-                "uco-observable:path": "SYSTEM/ControlSet001/Enum/USB/VID_1234&PID_5678/001D7D06CF09ED91D97F1B1B"
-            }
-        ]
     },
     {
-        "@id": "kb:WindowsRegistryCell-684af874-4c95-4be9-9c58-3eda29b94443",
-        "@type": "uco-observable:CyberItem",
+        "@id": "kb:WindowsRegistryKey-684af874-4c95-4be9-9c58-3eda29b94443",
+        "@type": "uco-observable:WindowsRegistryKey",
         "uco-core:hasFacet": [
             {
-                "@type": "uco-observable:WindowsRegistryCellFacet",
-                "uco-observable:cellPath": "SYSTEM/ControlSet001/Enum/USB/VID_0781&PID_5575/001D7D06CF09ED91D97F1B1B",
-                "uco-observable:cellName": "001D7D06CF09ED91D97F1B1B",
+                "@type": "uco-observable:WindowsRegistryKey",
+                "uco-observable:key": "SYSTEM/ControlSet001/Enum/USB/VID_0781&PID_5575/001D7D06CF09ED91D97F1B1B",
                 "uco-observable:modifiedTime": {
                     "@type": "xsd:dateTime",
                     "@value": "2017-02-02T22:38:09.00Z"
                 },
-                "uco-observable:isRegistryKey": true,
-                "uco-observable:allocationStatus": "allocated",
-                "uco-observable:sizeInBytes": 0,
                 "uco-observable:numberOfSubkeys": "2"
             },
         ]
@@ -796,7 +766,7 @@ In the same way that some file systems treat both directories and regular files 
       "@type": "uco-observable:EmailMessage",
       "uco-core:hasFacet": {
         "@type": "uco-observable:EmailMessageFacet",
-        "uco-observable:bodyRaw": "None",
+        "uco-observable:body": "",
         "uco-observable:from": {
           "@id": "kb:EmailAddress-d2bc0936-e1c5-4b55-8a1b-af2b3a2b145c"
         },

@@ -590,7 +590,7 @@
             "uco-core:target": "kb:usb-b2dbb227-06ec-432d-9f63-058e8ab73944",
             "uco-core:kindOfRelationship": "contained-within",
             "uco-core:isDirectional": true,
-            "@id": "kb:ce92625b-c5f0-4856-940b-692d82de602c",
+            "@id": "kb:Relationship-ce92625b-c5f0-4856-940b-692d82de602c",
             "@type": "uco-observable:ObservableRelationship"
         },
         {
@@ -602,21 +602,7 @@
                     "uco-observable:fileName": "SYSTEM",
                     "uco-observable:filePath": "/Windows/system32/config/SYSTEM",
                     "uco-observable:isDirectory": false
-                }
-            ]
-        },
-        {
-            "@id": "kb:Relationship-ded80fce-1c64-463c-a6f7-eea8237931d8",
-            "@type": "uco-observable:CyberRelationship",
-            "uco-core:source": "kb:WindowsRegistryHive-1c0d3550-db7a-467d-81bf-32e098b99f52",
-            "uco-core:target": "kb:File-61082f03-46ed-4bc7-a7c9-571754ffcb60",
-            "uco-core:kindOfRelationship": "Contained_Within",
-            "uco-core:isDirectional": true
-        },
-        {
-            "@id": "kb:WindowsRegistryHive-1c0d3550-db7a-467d-81bf-32e098b99f52",
-            "@type": "uco-observable:WindowsRegistryHive",
-            "uco-core:hasFacet": [
+                },
                 {
                     "@type": "uco-observable:WindowsRegistryHiveFacet",
                     "uco-observable:hiveType": {
@@ -629,33 +615,74 @@
         {
             "@id": "kb:Relationship-d974c54f-60de-46af-b0fd-a19704543785",
             "@type": "uco-observable:ObservableRelationship",
-            "uco-core:source": "kb:WindowsRegistryCell-684af874-4c95-4be9-9c58-3eda29b94443",
-            "uco-core:target": "kb:WindowsRegistryHive-systemregistryhive-1c0d3550-db7a-467d-81bf-32e098b99f52",
+            "uco-core:source": "kb:WindowsRegistryKey-684af874-4c95-4be9-9c58-3eda29b94443",
+            "uco-core:target": "kb:File-61082f03-46ed-4bc7-a7c9-571754ffcb60",
             "uco-core:kindOfRelationship": "Contained_Within",
-            "uco-core:isDirectional": true,
-            "uco-core:hasFacet": [
-                {
-                    "@type": "uco-observable:PathRelation",
-                    "uco-observable:path": "SYSTEM/ControlSet001/Enum/USB/VID_1234&PID_5678/001D7D06CF09ED91D97F1B1B"
-                }
-            ]
+            "uco-core:isDirectional": true
         },
         {
-            "@id": "kb:WindowsRegistryCell-684af874-4c95-4be9-9c58-3eda29b94443",
-            "@type": "uco-observable:WindowsRegistryCell",
+            "@id": "kb:WindowsRegistryKey-684af874-4c95-4be9-9c58-3eda29b94443",
+            "@type": "uco-observable:WindowsRegistryKey",
             "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:WindowsRegistryCellFacet",
-                    "uco-observable:cellPath": "SYSTEM/ControlSet001/Enum/USB/VID_0781&PID_5575/001D7D06CF09ED91D97F1B1B",
-                    "uco-observable:cellName": "001D7D06CF09ED91D97F1B1B",
+                    "@type": "uco-observable:WindowsRegistryKeyFacet",
+                    "uco-observable:key": "SYSTEM/ControlSet001/Enum/USB/VID_0781&PID_5575/001D7D06CF09ED91D97F1B1B",
                     "uco-observable:modifiedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2017-02-02T22:38:09.00Z"
                     },
-                    "uco-observable:isRegistryKey": true,
-                    "uco-observable:allocationStatus": "allocated",
-                    "uco-observable:sizeInBytes": 0,
                     "uco-observable:numberOfSubkeys": "2"
+                }
+            ]
+        },
+        {
+            "@id": "kb:EmailAddress-d2bc0936-e1c5-4b55-8a1b-af2b3a2b145c",
+            "@type": "uco-observable:EmailAddress",
+            "uco-core:hasFacet": {
+                "@type": "uco-observable:EmailAddressFacet",
+                "uco-observable:addressValue": "aresthewerewolf@gmail.com <aresthewerewolf>"
+            }
+        },
+        {
+            "@id": "kb:EmailAccount-ca4bc5e3-33a7-4457-b106-d0213e248979",
+            "uco-core:hasFacet": {
+                "@type": "uco-observable:EmailAddressFacet",
+                "uco-observable:emailAddress": {
+                    "@id": "kb:EmailAddress-5f63c12b-115a-474f-b1b2-15ebdb2fce31"
+                }
+            }
+        },
+        {
+            "@id": "kb:EmailAddress-5f63c12b-115a-474f-b1b2-15ebdb2fce31",
+            "@type": "uco-observable:EmailAddress",
+            "uco-core:hasFacet": {
+                "@type": "uco-observable:EmailAddressFacet",
+                "uco-observable:addressValue": "badquinn3@gmail.com"
+            }
+        },
+        {
+            "@id": "kb:EmailMessage-c5efd42c-d771-43aa-afe5-6b30740348e3",
+            "@type": "uco-observable:EmailMessage",
+            "uco-core:hasFacet": [
+                {
+                    "@type": "uco-observable:EmailMessageFacet",
+                    "uco-observable:body": "",
+                    "uco-observable:from": {
+                        "@id": "kb:EmailAddress-d2bc0936-e1c5-4b55-8a1b-af2b3a2b145c"
+                    },
+                    "uco-observable:isRead": true,
+                    "uco-observable:messageID": "2320dc68-65a3-4f05-8884-945992231a1e",
+                    "uco-observable:sender": {
+                        "@id": "kb:EmailAddress-d2bc0936-e1c5-4b55-8a1b-af2b3a2b145c"
+                    },
+                    "uco-observable:sentTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-20T00:00:30+00:00"
+                    },
+                    "uco-observable:subject": "Bank transfer ?",
+                    "uco-observable:to": {
+                        "@id": "kb:EmailAccount-ca4bc5e3-33a7-4457-b106-d0213e248979"
+                    }
                 }
             ]
         }
