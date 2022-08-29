@@ -120,7 +120,7 @@ custom_js:
                 "@id": "kb:provenance-record1-uuid"
             },
             {
-                "@id": "kb:suspect-device-uuid"
+                "@id": "kb:Device-446421ea-6dde-4fd7-8653-3e631ed872f4"
             }
         ]
     },
@@ -131,7 +131,7 @@ custom_js:
         "case-investigation:exhibitNumber": "AsgardPD-20190330-001A",
         "uco-core:object": [
             {
-                "@id": "kb:suspect-device-uuid"
+                "@id": "kb:Device-446421ea-6dde-4fd7-8653-3e631ed872f4"
             }
         ]
     },
@@ -141,7 +141,7 @@ custom_js:
         "uco-core:name": "Apple"
     },
     {
-        "@id": "kb:suspect-device-uuid",
+        "@id": "kb:Device-446421ea-6dde-4fd7-8653-3e631ed872f4",
         "@type": "uco-observable:Device",
         "uco-core:hasFacet": [
             {
@@ -157,7 +157,6 @@ custom_js:
                 "@type": "uco-observable:MobileDeviceFacet",
                 "uco-observable:keypadUnlockCode": "123789",
                 "uco-observable:IMEI": "359305065690067",
-                "uco-observable:MSISDN": "1239275339",
                 "uco-observable:clockSetting": {
                     "@type": "xsd:dateTime",
                     "@value": "2019-03-30T22:36:24.35Z"
@@ -194,7 +193,37 @@ custom_js:
                 "uco-observable:addressValue": "d0:33:11:13:e7:a2"
             }
         ]
-    }
+    },
+        {
+            "@id": "kb:MobileAccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90",
+            "@type": "uco-observable:MobileAccount",
+            "uco-core:hasFacet": [
+                {
+                    "@type": "uco-observable:AccountFacet",
+                    "uco-observable:accountType": {
+                        "@type": "uco-vocabulary:AccountTypeVocab",
+                        "@value": "Phone"
+                    },
+                    "uco-observable:isActive": true
+                },
+                {
+                    "@type": "uco-observable:MobileAccountFacet",
+                    "uco-observable:MSISDN": "1239275339"
+                }
+            ]
+        },
+        {
+            "@id": "kb:Relationship-68d4edd7-3aca-449b-8f6d-261f8c70ca08",
+            "@type": "uco-core:Relationship",
+            "uco-core:source": {
+                "@id": "kb:Device-446421ea-6dde-4fd7-8653-3e631ed872f4"
+            },
+            "uco-core:target": {
+                "@id": "kb:MobileAccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90"
+            },
+            "uco-core:kindOfRelationship": "Has_Account",
+            "uco-core:isDirectional": true
+        },
 ]
 {% endhighlight %}
       <p class="pb-3">All CASE objects are inserted within the associated Investigation, wrapped in a CASE Bundle.</p>
@@ -230,7 +259,7 @@ custom_js:
         },
         "uco-action:object": [
             {
-                "@id": "kb:suspect-device-uuid"
+                "@id": "kb:Device-446421ea-6dde-4fd7-8653-3e631ed872f4"
             }
         ],
         "uco-action:result": [
@@ -409,7 +438,7 @@ custom_js:
 {% highlight json %}
 [
     {
-        "@id": "kb:sms_message1",
+        "@id": "kb:SMSMessage-21b3e39d-772d-47b0-8501-a6945ddbdfcd",
         "@type": "uco-observable:SMSMessage",
         "uco-core:hasFacet": [
             {
@@ -423,7 +452,7 @@ custom_js:
                 },
                 "uco-observable:to": [
                     {
-                        "@id": "kb:phone_account1"
+                        "@id": "kb:MobileAccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90"
                     }
                 ],
                 "uco-observable:sentTime": {
@@ -449,7 +478,7 @@ custom_js:
                     "@value": "2010-01-15T18:30:41.25Z"
                 },
                 "uco-observable:from": {
-                    "@id": "kb:phone_account1"
+                    "@id": "kb:MobileAccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90"
                 },
                 "uco-observable:to": {
                     "@id": "kb:phone_account2"
