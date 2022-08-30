@@ -57,35 +57,34 @@
             "uco-core:isDirectional": "True"
         },
         {
-            "@id": "kb:Tool-22cb1ad6-7910-4a71-8654-5e93280111a",
-            "@type": "uco-tool:Tool",
+            "@id": "kb:ConfiguredTool-22cb1ad6-7910-4a71-8654-5e93280111a",
+            "@type": "uco-tool:ConfiguredTool",
             "uco-core:name": "Tableau TD2u",
             "uco-tool:toolType": "acquisition/duplication",
             "uco-tool:creator": "Opentext",
             "uco-tool:version": "1.2.1 (build 5241-814712f)",
             "uco-tool:drafting:toolIdentifier": "000eccd2007540a6",
-            "uco-core:hasFacet": [
-                {
-                    "@type": "uco-tool:ToolConfigurationType",
-                    "uco-tool:configurationSetting": [
-                        {
-                            "@type": "uco-tool:ConfigurationSettingType",
-                            "uco-tool:itemName": "Mode",
-                            "uco-tool:itemValue": "DriveToFile"
-                        },
-                        {
-                            "@type": "uco-tool:ConfigurationSettingType",
-                            "uco-tool:itemName": "Method",
-                            "uco-tool:itemValue": "E01Capture"
-                        },
-                        {
-                            "@type": "uco-tool:ConfigurationSettingType",
-                            "uco-tool:itemName": "Hash",
-                            "uco-tool:itemValue": "SHA-1+MD5"
-                        }
-                    ]
-                }
-            ]
+            "uco-configuration:usesConfiguration": {
+                "@id": "kb:Configuration-d9f82a71-1074-409f-a481-28f1fbc7ee28",
+                "@type": "uco-configuration:Configuration",
+                "uco-configuration:configurationEntry": [
+                    {
+                        "@type": "uco-configuration:ConfigurationEntry",
+                        "uco-tool:itemName": "Mode",
+                        "uco-tool:itemValue": "DriveToFile"
+                    },
+                    {
+                        "@type": "uco-configuration:ConfigurationEntry",
+                        "uco-tool:itemName": "Method",
+                        "uco-tool:itemValue": "E01Capture"
+                    },
+                    {
+                        "@type": "uco-configuration:ConfigurationEntry",
+                        "uco-tool:itemName": "Hash",
+                        "uco-tool:itemValue": "SHA-1+MD5"
+                    }
+                ]
+            }
         },
         {
             "@id": "kb:InvestigativeAction-e019ed92-af10-4a9f-a914-7a9ba539807c",
@@ -103,7 +102,7 @@
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-action:ActionReferences",
-                    "uco-action:instrument": "kb:Tool-22cb1ad6-7910-4a71-8654-5e93280111a",
+                    "uco-action:instrument": "kb:ConfiguredTool-22cb1ad6-7910-4a71-8654-5e93280111a",
                     "uco-action:location": "NOT PROVIDED BY REPORT",
                     "uco-action:performer": "kb:Role-870e2626-5ffd-4a80-83c2-8ee429709c81",
                     "uco-action:object": [
