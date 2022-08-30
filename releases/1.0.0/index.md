@@ -38,7 +38,9 @@ custom_css: releases
 
 *(These are general changes to the preexisting ontology that are not breaking or range changes.)*
 
+* Changed minCount from 1 to 0 on multiple properties ([*GitHub Issue 98*](https://github.com/casework/CASE/issues/98))
 * Fixed Makefile to grab all of UCO's files, even those under different directories ([*GitHub Pull Request 101*](https://github.com/casework/CASE/pull/101))
+* Removed requirement of repeating all property constraints from parent to child classes ([*UCO GitHub Issue 417*](https://github.com/ucoProject/UCO/issues/417))
 
 ## Documentation
 
