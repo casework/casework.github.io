@@ -67,40 +67,39 @@ The first part of representing information in CASE is to provide the context, in
    "uco-core:isDirectional":"True"
 },
 {
-   "@id":"kb:Tool-58f07c30-ae20-4587-9bb8-1a5299821e57", 
-   "@type":"uco-tool:Tool", 
+   "@id":"kb:ConfiguredTool-58f07c30-ae20-4587-9bb8-1a5299821e57", 
+   "@type":"uco-tool:ConfiguredTool", 
    "uco-core:name":"Logicube",
    "uco-tool:toolType":"acquisition/duplication", 
    "uco-tool:creator":"Falcon", 
    "uco-tool:version":"3.2u1",
    "uco-tool_NOT_EXISTS:toolIdentifier":"134090",
-   "uco-core:hasFacet":[
-   {
-   "@type":"uco-tool:ToolConfigurationType",
-   "uco-tool:configurationSetting":[
-   {
-      "@type":"uco-tool:ConfigurationSettingType",
-      "uco-tool:itemName":"Mode",
-      "uco-tool:itemValue":"DriveToFile"
-   },
-   {
-      "@type":"uco-tool:ConfigurationSettingType",
-      "uco-tool:itemName":"Method",
-      "uco-tool:itemValue":"E01Capture"
-   },
-   {
-      "@type":"uco-tool:ConfigurationSettingType",
-      "uco-tool:itemName":"Hash",
-      "uco-tool:itemValue":"SHA-1+MD5"
-   },
-   {
-      "@type":"uco-tool:ConfigurationSettingType",
-      "uco-tool:itemName":"SegmentSize",
-      "uco-tool:itemValue":"4GB"
-      }
-      ]
-   }
-  ]
+   "uco-configuration:usesConfiguration": {
+            "@id": "kb:Configuration-2afbfbb1-b4d6-4ad5-9691-ff09b9f6eebe",
+            "@type": "uco-configuration:Configuration",
+            "uco-configuration:configurationEntry": [
+                {
+                    "@type": "uco-configuration:ConfigurationEntry",
+                    "uco-configuration:itemName": "Mode",
+                    "uco-configuration:itemValue": "DriveToFile"
+                },
+                {
+                    "@type": "uco-configuration:ConfigurationEntry",
+                    "uco-configuration:itemName": "Method",
+                    "uco-configuration:itemValue": "E01Capture"
+                },
+                {
+                    "@type": "uco-configuration:ConfigurationEntry",
+                    "uco-configuration:itemName": "Hash",
+                    "uco-configuration:itemValue": "SHA-1+MD5"
+                },
+                {
+                    "@type": "uco-configuration:ConfigurationEntry",
+                    "uco-configuration:itemName": "SegmentSize",
+                    "uco-configuration:itemValue": "4GB"
+                }
+            ]
+        }
 },
 {% endhighlight %}
 
@@ -297,7 +296,7 @@ Representing the action to perform the forensic acquisition using the Logicube F
    "uco-core:hasFacet":[   
    {
       "@type":"uco-action:ActionReferences",
-      "uco-action:instrument":"kb:Tool-58f07c30-ae20-4587-9bb8-1a5299821e57",
+      "uco-action:instrument":"kb:ConfiguredTool-58f07c30-ae20-4587-9bb8-1a5299821e57",
       "uco-action:location":"NOT PROVIDED BY XML REPORT",
       "uco-action:performer":"kb:Role-856975ce-3c25-49c3-b6eb-28d1e929f915",
       "uco-action:object":["kb:Disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11"],
