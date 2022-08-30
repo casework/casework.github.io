@@ -494,7 +494,7 @@
             "@type": "uco-core:UcoObject"
         },
         {
-            "@id": "kb:phone_account1",
+            "@id": "kb:MobileAccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90",
             "@type": "uco-observable:PhoneAccount"
         },
         {

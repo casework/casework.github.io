@@ -1,4 +1,3 @@
-@prefix drafting: <http://example.org/ontology/drafting/> .
 @prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -6,6 +5,7 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix vocab: <https://ontology.caseontology.org/case/vocabulary/> .
+@prefix vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 []
@@ -59,23 +59,56 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
-				a uco-observable:MobileDeviceFacet ;
-				drafting:localeLanguage "no_AS" ;
-				uco-observable:IMEI "359305065690067" ;
-				uco-observable:MSISDN "1239275339" ;
-				uco-observable:clockSetting "2019-03-30T22:36:24.350000+00:00"^^xsd:dateTime ;
-				uco-observable:keypadUnlockCode "123789" ;
-				uco-observable:phoneActivationTime "2018-05-09T07:36:24.350000+00:00"^^xsd:dateTime ;
-				uco-observable:storageCapacityInBytes "17179869184"^^xsd:integer ;
+				a uco-observable:AccountFacet ;
+				uco-observable:accountType "Phone"^^vocabulary:AccountTypeVocab ;
+				uco-observable:isActive "true"^^xsd:boolean ;
 			] ;
-			sh:resultMessage 'More than 0 values on [ drafting:localeLanguage Literal("no_AS") ; rdf:type uco-observable:MobileDeviceFacet ; uco-observable:IMEI Literal("359305065690067") ; uco-observable:MSISDN Literal("1239275339") ; uco-observable:clockSetting Literal("2019-03-30T22:36:24.350000+00:00" = 2019-03-30 22:36:24.350000+00:00, datatype=xsd:dateTime) ; uco-observable:keypadUnlockCode Literal("123789") ; uco-observable:phoneActivationTime Literal("2018-05-09T07:36:24.350000+00:00" = 2018-05-09 07:36:24.350000+00:00, datatype=xsd:dateTime) ; uco-observable:storageCapacityInBytes Literal("17179869184", datatype=xsd:integer) ]->uco-observable:MSISDN' ;
-			sh:resultPath uco-observable:MSISDN ;
+			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:AccountFacet ; uco-observable:accountType Literal("Phone" = None, datatype=uco-vocabulary:AccountTypeVocab) ; uco-observable:isActive Literal("true" = True, datatype=xsd:boolean) ]->uco-observable:accountIdentifier' ;
+			sh:resultPath uco-observable:accountIdentifier ;
 			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
 			sh:sourceShape [
-				sh:maxCount "0"^^xsd:integer ;
-				sh:path uco-observable:MSISDN ;
+				sh:datatype xsd:string ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path uco-observable:accountIdentifier ;
 			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a uco-observable:AccountFacet ;
+				uco-observable:accountType "Phone"^^vocabulary:AccountTypeVocab ;
+				uco-observable:isActive "true"^^xsd:boolean ;
+			] ;
+			sh:resultMessage "Value is not member of the vocabulary AccountTypeVocab." ;
+			sh:resultPath uco-observable:accountType ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:OrConstraintComponent ;
+			sh:sourceShape [
+				sh:message "Value is not member of the vocabulary AccountTypeVocab." ;
+				sh:or (
+					[
+						sh:datatype vocabulary:AccountTypeVocab ;
+						sh:in (
+							"ldap"^^vocabulary:AccountTypeVocab
+							"nis"^^vocabulary:AccountTypeVocab
+							"openid"^^vocabulary:AccountTypeVocab
+							"radius"^^vocabulary:AccountTypeVocab
+							"tacacs"^^vocabulary:AccountTypeVocab
+							"unix"^^vocabulary:AccountTypeVocab
+							"windows_domain"^^vocabulary:AccountTypeVocab
+							"windows_local"^^vocabulary:AccountTypeVocab
+						) ;
+					]
+					[
+						sh:datatype xsd:string ;
+					]
+				) ;
+				sh:path uco-observable:accountType ;
+			] ;
+			sh:value "Phone"^^vocabulary:AccountTypeVocab ;
 		]
 		;
 	.
