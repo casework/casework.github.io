@@ -1,6 +1,6 @@
 [
     {
-        "@id": "kb:sms_message1",
+        "@id": "kb:SMSMessage-21b3e39d-772d-47b0-8501-a6945ddbdfcd",
         "@type": "uco-observable:SMSMessage",
         "uco-core:hasFacet": [
             {
@@ -14,7 +14,7 @@
                 },
                 "uco-observable:to": [
                     {
-                        "@id": "kb:phone_account1"
+                        "@id": "kb:MobileAccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90"
                     }
                 ],
                 "uco-observable:sentTime": {
@@ -40,7 +40,7 @@
                     "@value": "2010-01-15T18:30:41.25Z"
                 },
                 "uco-observable:from": {
-                    "@id": "kb:phone_account1"
+                    "@id": "kb:MobileAccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90"
                 },
                 "uco-observable:to": {
                     "@id": "kb:phone_account2"
