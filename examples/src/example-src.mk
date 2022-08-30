@@ -45,107 +45,25 @@ generated_local_index_sed_sources := \
   $(query_sparql_files)
 
 all: \
-  generated-index.html \
-  generated-$(example_name).json
-
-.PHONY: \
-  check-pytest
-
-.PRECIOUS: \
-  $(example_name)_validation.ttl \
-  generated-$(example_name).json
-
-$(example_name)_validation.ttl: \
   generated-$(example_name).json \
-  $(RDF_TOOLKIT_JAR) \
-  $(top_srcdir)/.venv.done.log
-	source $(top_srcdir)/venv/bin/activate \
-	  && case_validate \
-	    --format turtle \
-	    --output __$@ \
-	    $< \
-	    ; rc=$$? ; test 0 -eq $$rc -o 1 -eq $$rc
-	test -s __$@
-	java -jar $(RDF_TOOLKIT_JAR) \
-	  --inline-blank-nodes \
-	  --source __$@ \
-	  --source-format turtle \
-	  --target _$@ \
-	  --target-format turtle
-	rm __$@
-	mv _$@ $@
-
-$(example_name)_validation-develop.ttl: \
-  generated-$(example_name).json \
-  $(RDF_TOOLKIT_JAR) \
-  $(top_srcdir)/.venv.done.log \
-  $(top_srcdir)/dependencies/CASE-develop.ttl
-	rm -f __$@
-	source $(top_srcdir)/venv/bin/activate \
-	  && case_validate \
-	    --built-version none \
-	    --format turtle \
-	    --ontology-graph $(top_srcdir)/dependencies/CASE-develop.ttl \
-	    --output __$@ \
-	    $< \
-	    ; rc=$$? ; test 0 -eq $$rc -o 1 -eq $$rc
-	test -s __$@
-	java -jar $(RDF_TOOLKIT_JAR) \
-	  --inline-blank-nodes \
-	  --source __$@ \
-	  --source-format turtle \
-	  --target _$@ \
-	  --target-format turtle
-	rm __$@
-	mv _$@ $@
-
-$(example_name)_validation-unstable.ttl: \
-  generated-$(example_name).json \
-  $(RDF_TOOLKIT_JAR) \
-  $(top_srcdir)/.venv.done.log \
-  $(top_srcdir)/dependencies/CASE-unstable.ttl
-	rm -f __$@
-	source $(top_srcdir)/venv/bin/activate \
-	  && case_validate \
-	    --built-version none \
-	    --format turtle \
-	    --ontology-graph $(top_srcdir)/dependencies/CASE-unstable.ttl \
-	    --output __$@ \
-	    $< \
-	    ; rc=$$? ; test 0 -eq $$rc -o 1 -eq $$rc
-	test -s __$@
-	java -jar $(RDF_TOOLKIT_JAR) \
-	  --inline-blank-nodes \
-	  --source __$@ \
-	  --source-format turtle \
-	  --target _$@ \
-	  --target-format turtle
-	rm __$@
-	mv _$@ $@
-
-check: \
-  $(example_name)_validation-develop.ttl \
-  $(example_name)_validation-unstable.ttl \
-  check-pytest \
   generated-index.html
 
-# Run pytest tests only if any are written.
-# (Pytest exits in an error state if called with no tests found.)
-check-pytest: \
-  $(example_name)_validation.ttl \
+.PRECIOUS: \
   generated-$(example_name).ttl \
   generated-$(example_name)-wasInformedBy.json
-	test 0 -eq $$(/bin/ls *_test.py test_*.py 2>/dev/null | wc -l) \
-	  || ( \
-	    source $(top_srcdir)/venv/bin/activate \
-	      && pytest \
-	        --log-level=DEBUG \
-	  )
+
+$(RDF_TOOLKIT_JAR):
+	@echo "ERROR:example-nosrc.mk:Could not find rdf-toolkit.jar.  Did you run 'make' from the top source directory ($(top_srcdir))?" >&2
+	@test -r $@
+
+check: \
+  generated-$(example_name).ttl \
+  generated-$(example_name)-wasInformedBy.json \
+  generated-index.html
 
 clean:
 	@rm -f \
 	  *.sed \
-	  *validation*ttl \
 	  generated-* \
 	  query-*.md
 
@@ -187,7 +105,8 @@ generated-$(example_name).json: \
 	mv _$@ $@
 
 generated-$(example_name).ttl: \
-  generated-$(example_name).json
+  generated-$(example_name).json \
+  $(RDF_TOOLKIT_JAR)
 	java -jar $(RDF_TOOLKIT_JAR) \
 	  --inline-blank-nodes \
 	  --source $< \
@@ -210,30 +129,24 @@ generated-$(example_name)-wasInformedBy.json: \
 	    generated-$(example_name).json
 	mv _$@ $@
 
-# TODO - Remove '--built-version none' and CASE-unstable.ttl reference on release of CASE 0.6.0.
 query-%.html: \
   query-%.sparql \
   $(drafting_ttl) \
-  $(top_srcdir)/dependencies/CASE-unstable.ttl \
   generated-$(example_name).json \
   generated-$(example_name)-wasInformedBy.json
 	source $(top_srcdir)/venv/bin/activate \
 	  && case_sparql_select \
-	    --built-version none \
 	    --disallow-empty-results \
 	    _$@ \
 	    $< \
 	    generated-$(example_name).json \
 	    generated-$(example_name)-wasInformedBy.json \
-	    $(drafting_ttl) \
-	    $(top_srcdir)/dependencies/CASE-unstable.ttl
+	    $(drafting_ttl)
 	mv _$@ $@
 
-# TODO - Remove '--built-version none' and CASE-unstable.ttl reference on release of CASE 0.6.0.
 query-%.md: \
   query-%.sparql \
   $(drafting_ttl) \
-  $(top_srcdir)/dependencies/CASE-unstable.ttl \
   generated-$(example_name).json \
   generated-$(example_name)-wasInformedBy.json
 	source $(top_srcdir)/venv/bin/activate \
@@ -243,6 +156,5 @@ query-%.md: \
 	    $< \
 	    generated-$(example_name).json \
 	    generated-$(example_name)-wasInformedBy.json \
-	    $(drafting_ttl) \
-	    $(top_srcdir)/dependencies/CASE-unstable.ttl
+	    $(drafting_ttl)
 	mv _$@ $@

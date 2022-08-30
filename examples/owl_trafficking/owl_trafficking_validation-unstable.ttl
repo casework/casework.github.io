@@ -1,10 +1,10 @@
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
-@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix tool: <https://ontology.unifiedcyberontology.org/uco/tool/> .
+@prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -73,12 +73,12 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
-				a observable:AccountFacet ;
-				observable:accountType "phone"^^vocabulary:AccountTypeVocab ;
-				observable:isActive "true"^^xsd:boolean ;
+				a uco-observable:AccountFacet ;
+				uco-observable:accountType "phone"^^vocabulary:AccountTypeVocab ;
+				uco-observable:isActive "true"^^xsd:boolean ;
 			] ;
 			sh:resultMessage "Value is not member of the vocabulary AccountTypeVocab." ;
-			sh:resultPath observable:accountType ;
+			sh:resultPath uco-observable:accountType ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:OrConstraintComponent ;
 			sh:sourceShape [
@@ -101,114 +101,114 @@
 						sh:datatype xsd:string ;
 					]
 				) ;
-				sh:path observable:accountType ;
+				sh:path uco-observable:accountType ;
 			] ;
 			sh:value "phone"^^vocabulary:AccountTypeVocab ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
-				a observable:DataRangeFacet ;
-				observable:rangeOffset "13751"^^xsd:integer ;
-				observable:rangeSize "__NOT_PROVIDED" ;
+				a uco-observable:DataRangeFacet ;
+				uco-observable:rangeOffset "13751"^^xsd:integer ;
+				uco-observable:rangeSize "__NOT_PROVIDED" ;
 			] ;
 			sh:resultMessage "Value is not Literal with datatype xsd:integer" ;
-			sh:resultPath observable:rangeSize ;
+			sh:resultPath uco-observable:rangeSize ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
 				sh:datatype xsd:integer ;
 				sh:maxCount "1"^^xsd:integer ;
 				sh:nodeKind sh:Literal ;
-				sh:path observable:rangeSize ;
+				sh:path uco-observable:rangeSize ;
 			] ;
 			sh:value "__NOT_PROVIDED" ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
-				a observable:SIMCardFacet ;
-				observable:ICCID "89014104279201697299" ;
-				observable:IMSI <http://example.org/kb/mobileaccount-4b3cdcbd-6a31-462f-be9b-1ca2944c8876> ;
-				observable:carrier <http://example.org/kb/organization-att-d60ffcec-4d89-48a1-b264-9cd4bc700a70> ;
+				a uco-observable:SIMCardFacet ;
+				uco-observable:ICCID "89014104279201697299" ;
+				uco-observable:IMSI <http://example.org/kb/mobileaccount-4b3cdcbd-6a31-462f-be9b-1ca2944c8876> ;
+				uco-observable:carrier <http://example.org/kb/organization-att-d60ffcec-4d89-48a1-b264-9cd4bc700a70> ;
 			] ;
 			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
-			sh:resultPath observable:IMSI ;
+			sh:resultPath uco-observable:IMSI ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
 				sh:datatype xsd:string ;
 				sh:maxCount "1"^^xsd:integer ;
 				sh:nodeKind sh:Literal ;
-				sh:path observable:IMSI ;
+				sh:path uco-observable:IMSI ;
 			] ;
 			sh:value <http://example.org/kb/mobileaccount-4b3cdcbd-6a31-462f-be9b-1ca2944c8876> ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
-				a observable:SIMCardFacet ;
-				observable:ICCID "89014104279201697299" ;
-				observable:IMSI <http://example.org/kb/mobileaccount-4b3cdcbd-6a31-462f-be9b-1ca2944c8876> ;
-				observable:carrier <http://example.org/kb/organization-att-d60ffcec-4d89-48a1-b264-9cd4bc700a70> ;
+				a uco-observable:SIMCardFacet ;
+				uco-observable:ICCID "89014104279201697299" ;
+				uco-observable:IMSI <http://example.org/kb/mobileaccount-4b3cdcbd-6a31-462f-be9b-1ca2944c8876> ;
+				uco-observable:carrier <http://example.org/kb/organization-att-d60ffcec-4d89-48a1-b264-9cd4bc700a70> ;
 			] ;
 			sh:resultMessage "Value is not of Node Kind sh:Literal" ;
-			sh:resultPath observable:IMSI ;
+			sh:resultPath uco-observable:IMSI ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
 			sh:sourceShape [
 				sh:datatype xsd:string ;
 				sh:maxCount "1"^^xsd:integer ;
 				sh:nodeKind sh:Literal ;
-				sh:path observable:IMSI ;
+				sh:path uco-observable:IMSI ;
 			] ;
 			sh:value <http://example.org/kb/mobileaccount-4b3cdcbd-6a31-462f-be9b-1ca2944c8876> ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
-				a observable:URLHistoryEntry ;
-				observable:browserUserProfile <http://example.org/kb/profile-account-857c7f17-2f6b-4618-aeca-50d79fa69b97> ;
-				observable:firstVisit "2017-01-25T02:20:22+00:00"^^xsd:dateTime ;
-				observable:lastVisit "2017-01-25T02:20:22+00:00"^^xsd:dateTime ;
-				observable:manuallyEnteredCount "0"^^xsd:nonNegativeInteger ;
-				observable:pageTitle "Where can you find baby owls for sale? Are owls legal to keep as pets? - Quora" ;
-				observable:url <http://example.org/kb/url-b7906534-0483-4cf4-979c-5351916602ed> ;
-				observable:visitCount "2"^^xsd:integer ;
+				a uco-observable:URLHistoryEntry ;
+				uco-observable:browserUserProfile <http://example.org/kb/profile-account-857c7f17-2f6b-4618-aeca-50d79fa69b97> ;
+				uco-observable:firstVisit "2017-01-25T02:20:22+00:00"^^xsd:dateTime ;
+				uco-observable:lastVisit "2017-01-25T02:20:22+00:00"^^xsd:dateTime ;
+				uco-observable:manuallyEnteredCount "0"^^xsd:nonNegativeInteger ;
+				uco-observable:pageTitle "Where can you find baby owls for sale? Are owls legal to keep as pets? - Quora" ;
+				uco-observable:url <http://example.org/kb/url-b7906534-0483-4cf4-979c-5351916602ed> ;
+				uco-observable:visitCount "2"^^xsd:integer ;
 			] ;
 			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
-			sh:resultPath observable:browserUserProfile ;
+			sh:resultPath uco-observable:browserUserProfile ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
 				sh:datatype xsd:string ;
 				sh:maxCount "1"^^xsd:integer ;
 				sh:nodeKind sh:Literal ;
-				sh:path observable:browserUserProfile ;
+				sh:path uco-observable:browserUserProfile ;
 			] ;
 			sh:value <http://example.org/kb/profile-account-857c7f17-2f6b-4618-aeca-50d79fa69b97> ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
-				a observable:URLHistoryEntry ;
-				observable:browserUserProfile <http://example.org/kb/profile-account-857c7f17-2f6b-4618-aeca-50d79fa69b97> ;
-				observable:firstVisit "2017-01-25T02:20:22+00:00"^^xsd:dateTime ;
-				observable:lastVisit "2017-01-25T02:20:22+00:00"^^xsd:dateTime ;
-				observable:manuallyEnteredCount "0"^^xsd:nonNegativeInteger ;
-				observable:pageTitle "Where can you find baby owls for sale? Are owls legal to keep as pets? - Quora" ;
-				observable:url <http://example.org/kb/url-b7906534-0483-4cf4-979c-5351916602ed> ;
-				observable:visitCount "2"^^xsd:integer ;
+				a uco-observable:URLHistoryEntry ;
+				uco-observable:browserUserProfile <http://example.org/kb/profile-account-857c7f17-2f6b-4618-aeca-50d79fa69b97> ;
+				uco-observable:firstVisit "2017-01-25T02:20:22+00:00"^^xsd:dateTime ;
+				uco-observable:lastVisit "2017-01-25T02:20:22+00:00"^^xsd:dateTime ;
+				uco-observable:manuallyEnteredCount "0"^^xsd:nonNegativeInteger ;
+				uco-observable:pageTitle "Where can you find baby owls for sale? Are owls legal to keep as pets? - Quora" ;
+				uco-observable:url <http://example.org/kb/url-b7906534-0483-4cf4-979c-5351916602ed> ;
+				uco-observable:visitCount "2"^^xsd:integer ;
 			] ;
 			sh:resultMessage "Value is not of Node Kind sh:Literal" ;
-			sh:resultPath observable:browserUserProfile ;
+			sh:resultPath uco-observable:browserUserProfile ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
 			sh:sourceShape [
 				sh:datatype xsd:string ;
 				sh:maxCount "1"^^xsd:integer ;
 				sh:nodeKind sh:Literal ;
-				sh:path observable:browserUserProfile ;
+				sh:path uco-observable:browserUserProfile ;
 			] ;
 			sh:value <http://example.org/kb/profile-account-857c7f17-2f6b-4618-aeca-50d79fa69b97> ;
 		]
