@@ -11,22 +11,4 @@
 #
 # We would appreciate acknowledgement if the software is used.
 
-SHELL := /bin/bash
-
-top_srcdir := $(shell cd ../../.. ; pwd)
-
-examples_srcdir := $(top_srcdir)/examples
-
-all:
-	$(MAKE) \
-	  --file $(examples_srcdir)/src/example-src.mk
-
-check:
-	$(MAKE) \
-	  --file $(examples_srcdir)/src/example-src.mk \
-	  check
-
-clean:
-	@$(MAKE) \
-	  --file $(examples_srcdir)/src/example-src.mk \
-	  clean
+include ../../src/example-src.mk
