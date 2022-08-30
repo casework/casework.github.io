@@ -42,5 +42,10 @@ custom_css: releases
 * Fixed Makefile to grab all of UCO's files, even those under different directories ([*GitHub Pull Request 101*](https://github.com/casework/CASE/pull/101))
 * Removed requirement of repeating all property constraints from parent to child classes ([*UCO GitHub Issue 417*](https://github.com/ucoProject/UCO/issues/417))
 
+#### Bug Fixes
+*(These are bugs found within the preexisting ontology that have been fixed.)*
+
+* Isodate fails to install (removed legacy requirements) ([*GitHub Issue 106*](https://github.com/casework/CASE/issues/106))
+
 ## Documentation
 
