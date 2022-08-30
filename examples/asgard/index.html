@@ -194,36 +194,36 @@ custom_js:
             }
         ]
     },
-        {
-            "@id": "kb:MobileAccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90",
-            "@type": "uco-observable:MobileAccount",
-            "uco-core:hasFacet": [
-                {
-                    "@type": "uco-observable:AccountFacet",
-                    "uco-observable:accountType": {
-                        "@type": "uco-vocabulary:AccountTypeVocab",
-                        "@value": "Phone"
-                    },
-                    "uco-observable:isActive": true
+    {
+        "@id": "kb:MobileAccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90",
+        "@type": "uco-observable:MobileAccount",
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-observable:AccountFacet",
+                "uco-observable:accountType": {
+                    "@type": "uco-vocabulary:AccountTypeVocab",
+                    "@value": "Phone"
                 },
-                {
-                    "@type": "uco-observable:MobileAccountFacet",
-                    "uco-observable:MSISDN": "1239275339"
-                }
-            ]
-        },
-        {
-            "@id": "kb:Relationship-68d4edd7-3aca-449b-8f6d-261f8c70ca08",
-            "@type": "uco-core:Relationship",
-            "uco-core:source": {
-                "@id": "kb:Device-446421ea-6dde-4fd7-8653-3e631ed872f4"
+                "uco-observable:isActive": true
             },
-            "uco-core:target": {
-                "@id": "kb:MobileAccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90"
-            },
-            "uco-core:kindOfRelationship": "Has_Account",
-            "uco-core:isDirectional": true
+            {
+                "@type": "uco-observable:MobileAccountFacet",
+                "uco-observable:MSISDN": "1239275339"
+            }
+        ]
+    },
+    {
+        "@id": "kb:Relationship-68d4edd7-3aca-449b-8f6d-261f8c70ca08",
+        "@type": "uco-core:Relationship",
+        "uco-core:source": {
+            "@id": "kb:Device-446421ea-6dde-4fd7-8653-3e631ed872f4"
         },
+        "uco-core:target": {
+            "@id": "kb:MobileAccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90"
+        },
+        "uco-core:kindOfRelationship": "Has_Account",
+        "uco-core:isDirectional": true
+    }
 ]
 {% endhighlight %}
       <p class="pb-3">All CASE objects are inserted within the associated Investigation, wrapped in a CASE Bundle.</p>
