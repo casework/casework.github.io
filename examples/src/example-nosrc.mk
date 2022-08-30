@@ -28,11 +28,11 @@ RDF_TOOLKIT_JAR := $(top_srcdir)/dependencies/UCO-develop/lib/rdf-toolkit.jar
 example_name := $(shell basename $$PWD)
 
 # Use a drafting.ttl file in the validation and dependency list, if it is present.
-drafting_ttl := $(wildcard drafting.ttl)
-ifeq ($(drafting_ttl),)
-drafting_validation_flag :=
+local_drafting_ttl := $(wildcard drafting.ttl)
+ifeq ($(local_drafting_ttl),)
+local_drafting_validation_flag :=
 else
-drafting_validation_flag := --ontology-graph $(wildcard drafting.ttl)
+local_drafting_validation_flag := --ontology-graph $(wildcard drafting.ttl)
 endif
 
 all: \
@@ -50,13 +50,15 @@ $(RDF_TOOLKIT_JAR):
 $(example_name)_validation.ttl: \
   $(example_name).json \
   $(RDF_TOOLKIT_JAR) \
-  $(drafting_ttl) \
-  $(top_srcdir)/.venv.done.log
+  $(local_drafting_ttl) \
+  $(top_srcdir)/.venv.done.log \
+  $(top_srcdir)/ontology/drafting.ttl
 	rm -f __$@
 	source $(top_srcdir)/venv/bin/activate \
 	  && case_validate \
 	    --format turtle \
-	    $(drafting_validation_flag) \
+	    $(local_drafting_validation_flag) \
+	    --ontology-graph $(top_srcdir)/ontology/drafting.ttl \
 	    --output __$@ \
 	    $< \
 	    $(drafting_ttl) \
@@ -76,7 +78,8 @@ $(example_name)_validation-develop.ttl: \
   $(RDF_TOOLKIT_JAR) \
   $(drafting_ttl) \
   $(top_srcdir)/.venv.done.log \
-  $(top_srcdir)/dependencies/CASE-develop.ttl
+  $(top_srcdir)/dependencies/CASE-develop.ttl \
+  $(top_srcdir)/ontology/drafting.ttl
 	rm -f __$@
 	source $(top_srcdir)/venv/bin/activate \
 	  && case_validate \
@@ -84,6 +87,7 @@ $(example_name)_validation-develop.ttl: \
 	    --format turtle \
 	    $(drafting_validation_flag) \
 	    --ontology-graph $(top_srcdir)/dependencies/CASE-develop.ttl \
+	    --ontology-graph $(top_srcdir)/ontology/drafting.ttl \
 	    --output __$@ \
 	    $< \
 	    ; rc=$$? ; test 0 -eq $$rc -o 1 -eq $$rc
@@ -102,7 +106,8 @@ $(example_name)_validation-unstable.ttl: \
   $(RDF_TOOLKIT_JAR) \
   $(drafting_ttl) \
   $(top_srcdir)/.venv.done.log \
-  $(top_srcdir)/dependencies/CASE-unstable.ttl
+  $(top_srcdir)/dependencies/CASE-unstable.ttl \
+  $(top_srcdir)/ontology/drafting.ttl
 	rm -f __$@
 	source $(top_srcdir)/venv/bin/activate \
 	  && case_validate \
@@ -110,6 +115,7 @@ $(example_name)_validation-unstable.ttl: \
 	    --format turtle \
 	    $(drafting_validation_flag) \
 	    --ontology-graph $(top_srcdir)/dependencies/CASE-unstable.ttl \
+	    --ontology-graph $(top_srcdir)/ontology/drafting.ttl \
 	    --output __$@ \
 	    $< \
 	    ; rc=$$? ; test 0 -eq $$rc -o 1 -eq $$rc
