@@ -1,23 +1,23 @@
 # imports: http://purl.org/co
-# imports: https://ontology.caseontology.org/case/investigation
-# imports: https://ontology.caseontology.org/case/vocabulary
-# imports: https://ontology.unifiedcyberontology.org/co
-# imports: https://ontology.unifiedcyberontology.org/owl
-# imports: https://ontology.unifiedcyberontology.org/uco/action
-# imports: https://ontology.unifiedcyberontology.org/uco/configuration
-# imports: https://ontology.unifiedcyberontology.org/uco/core
-# imports: https://ontology.unifiedcyberontology.org/uco/identity
-# imports: https://ontology.unifiedcyberontology.org/uco/location
-# imports: https://ontology.unifiedcyberontology.org/uco/marking
-# imports: https://ontology.unifiedcyberontology.org/uco/observable
-# imports: https://ontology.unifiedcyberontology.org/uco/pattern
-# imports: https://ontology.unifiedcyberontology.org/uco/role
-# imports: https://ontology.unifiedcyberontology.org/uco/time
-# imports: https://ontology.unifiedcyberontology.org/uco/tool
-# imports: https://ontology.unifiedcyberontology.org/uco/types
-# imports: https://ontology.unifiedcyberontology.org/uco/uco
-# imports: https://ontology.unifiedcyberontology.org/uco/victim
-# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary
+# imports: https://ontology.caseontology.org/case/investigation/1.0.0
+# imports: https://ontology.caseontology.org/case/vocabulary/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/co/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/owl/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/action/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/configuration/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/core/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/identity/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/location/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/marking/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/observable/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/pattern/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/role/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/time/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/tool/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/types/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/uco/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/victim/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary/1.0.0
 
 @prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix co: <http://purl.org/co/> .
@@ -51,14 +51,15 @@
 	rdfs:comment "The Cyber-investigation Analysis Standard Expression (CASE) ontology is a community-developed standard that defines concepts used in a broad range of cyber-investigation domains, including digital forensic science, incident response, counter-terrorism, criminal justice, forensic intelligence, and situational awareness. CASE includes all aspects of the digital forensic process, from evidence-gathering and chain of custody, to generating a final report. The goal is to increase sharing and interoperability of cyber-investigation information among organizations and between forensic analytic tools. CASE aligns with and extends the Unified Cyber Ontology (UCO). The preferred namespace abbreviation for this ontology is: case-master."@en ;
 	dct:title "Cyber-investigation Analysis Standard Expression (CASE)"@en ;
 	owl:imports
-		<https://ontology.caseontology.org/case/investigation> ,
-		<https://ontology.caseontology.org/case/vocabulary> ,
-		<https://ontology.unifiedcyberontology.org/uco/uco>
+		investigation:1.0.0 ,
+		vocab:1.0.0 ,
+		<https://ontology.unifiedcyberontology.org/uco/uco/1.0.0>
 		;
-	owl:incompatibleWith <http://case.example.org/core> ;
+	owl:incompatibleWith <https://ontology.caseontology.org/case/case/0.7.1> ;
 	owl:ontologyIRI <https://ontology.caseontology.org/case/case> ;
-	owl:priorVersion <http://case.example.org/core> ;
-	owl:versionInfo "0.7.0" ;
+	owl:priorVersion <https://ontology.caseontology.org/case/case/0.7.1> ;
+	owl:versionIRI <https://ontology.caseontology.org/case/case/1.0.0> ;
+	owl:versionInfo "1.0.0" ;
 	.
 
 <https://ontology.caseontology.org/case/investigation>
@@ -66,17 +67,23 @@
 	rdfs:label "investigation"@en ;
 	rdfs:comment "This ontology defines key concepts, and their associated properties and relationships, for characterizing cyber-investigations in the broadest range of contexts, including security incidents, criminal investigations, civil and regulatory matters, intelligence operations, international disputes, accident inquiries, policy violations, and others." ;
 	owl:imports
-		<https://ontology.caseontology.org/case/vocabulary> ,
-		<https://ontology.unifiedcyberontology.org/uco/action> ,
-		<https://ontology.unifiedcyberontology.org/uco/core> ,
-		<https://ontology.unifiedcyberontology.org/uco/location> ,
-		<https://ontology.unifiedcyberontology.org/uco/role>
+		vocab:1.0.0 ,
+		action:1.0.0 ,
+		role:1.0.0
 		;
+	owl:incompatibleWith investigation:0.7.1 ;
+	owl:ontologyIRI <https://ontology.caseontology.org/case/investigation> ;
+	owl:priorVersion investigation:0.7.1 ;
+	owl:versionIRI investigation:1.0.0 ;
 	.
 
 <https://ontology.caseontology.org/case/vocabulary>
 	a owl:Ontology ;
 	rdfs:label "vocabularies"@en ;
+	owl:incompatibleWith vocab:0.7.1 ;
+	owl:ontologyIRI <https://ontology.caseontology.org/case/vocabulary> ;
+	owl:priorVersion vocab:0.7.1 ;
+	owl:versionIRI vocab:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/co>
@@ -84,6 +91,8 @@
 	rdfs:label "uco-co"@en ;
 	rdfs:comment "This ontology defines SHACL shapes to supplement the OWL 2 DL definitions in the Collections Ontology."@en ;
 	owl:imports <http://purl.org/co> ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/co> ;
+	owl:versionIRI uco-co:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/owl>
@@ -91,6 +100,8 @@
 	rdfs:label "uco-owl"@en ;
 	rdfs:comment "This ontology defines SHACL shapes to perform conformance testing of OWL 2 DL.  Some of these shapes follow rules specified from the canonical, subtractive parsing process of Section 3 of the OWL 2 mapping to RDF.  From the last line of that document's Section 3, 'At the end of this process, the graph G MUST be empty,' anything not strictly matching patterns specified in that section cause the input graph to be non-conformant with OWL 2 DL."@en ;
 	rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-mapping-to-rdf-20121211/#Mapping_from_RDF_Graphs_to_the_Structural_Specification> ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/owl> ;
+	owl:versionIRI uco-owl:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/action>
@@ -98,12 +109,16 @@
 	rdfs:label "uco-action"@en ;
 	rdfs:comment "This ontology defines classes and properties for characterizing actions."@en-US ;
 	owl:imports
-		<https://ontology.unifiedcyberontology.org/uco/core> ,
-		<https://ontology.unifiedcyberontology.org/uco/location> ,
-		<https://ontology.unifiedcyberontology.org/uco/pattern> ,
-		<https://ontology.unifiedcyberontology.org/uco/types> ,
-		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
+		core:1.0.0 ,
+		location:1.0.0 ,
+		pattern:1.0.0 ,
+		types:1.0.0 ,
+		vocabulary:1.0.0
 		;
+	owl:incompatibleWith action:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/action> ;
+	owl:priorVersion action:0.9.1 ;
+	owl:versionIRI action:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/configuration>
@@ -111,124 +126,175 @@
 	rdfs:label "uco-configuration"@en ;
 	rdfs:comment "This ontology defines classes and properties for characterizing configurations."@en-US ;
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/432> ;
-	owl:imports <https://ontology.unifiedcyberontology.org/uco/core> ;
+	owl:imports core:1.0.0 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/configuration> ;
+	owl:versionIRI configuration:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/core>
 	a owl:Ontology ;
 	rdfs:label "uco-core"@en ;
 	rdfs:comment "This ontology defines classes and properties that are shared across the various UCO ontologies.  At a high-level, the UCO core ontology provides base classes, relationship-oriented classes, content-aggregation classes, and shared classes."@en ;
+	owl:incompatibleWith core:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/core> ;
+	owl:priorVersion core:0.9.1 ;
+	owl:versionIRI core:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/identity>
 	a owl:Ontology ;
 	rdfs:label "uco-identity"@en ;
 	owl:imports
-		<https://ontology.unifiedcyberontology.org/uco/core> ,
-		<https://ontology.unifiedcyberontology.org/uco/location>
+		core:1.0.0 ,
+		location:1.0.0
 		;
+	owl:incompatibleWith identity:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/identity> ;
+	owl:priorVersion identity:0.9.1 ;
+	owl:versionIRI identity:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/location>
 	a owl:Ontology ;
 	rdfs:label "uco-location"@en ;
-	owl:imports <https://ontology.unifiedcyberontology.org/uco/core> ;
+	owl:imports core:1.0.0 ;
+	owl:incompatibleWith location:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/location> ;
+	owl:priorVersion location:0.9.1 ;
+	owl:versionIRI location:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/marking>
 	a owl:Ontology ;
 	rdfs:label "uco-marking"@en ;
 	rdfs:comment "Data markings represent restrictions, permissions, and other guidance for how data can be used and shared."@en ;
-	owl:imports <https://ontology.unifiedcyberontology.org/uco/core> ;
+	owl:imports core:1.0.0 ;
+	owl:incompatibleWith marking:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/marking> ;
+	owl:priorVersion marking:0.9.1 ;
+	owl:versionIRI marking:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/observable>
 	a owl:Ontology ;
 	rdfs:label "uco-observable"@en ;
 	owl:imports
-		<https://ontology.unifiedcyberontology.org/uco/action> ,
-		<https://ontology.unifiedcyberontology.org/uco/configuration> ,
-		<https://ontology.unifiedcyberontology.org/uco/core> ,
-		<https://ontology.unifiedcyberontology.org/uco/identity> ,
-		<https://ontology.unifiedcyberontology.org/uco/location> ,
-		<https://ontology.unifiedcyberontology.org/uco/types> ,
-		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
+		action:1.0.0 ,
+		configuration:1.0.0 ,
+		core:1.0.0 ,
+		identity:1.0.0 ,
+		location:1.0.0 ,
+		types:1.0.0 ,
+		vocabulary:1.0.0
 		;
+	owl:incompatibleWith observable:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/observable> ;
+	owl:priorVersion observable:0.9.1 ;
+	owl:versionIRI observable:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/pattern>
 	a owl:Ontology ;
 	rdfs:label "uco-pattern"@en ;
-	owl:imports <https://ontology.unifiedcyberontology.org/uco/core> ;
+	owl:imports core:1.0.0 ;
+	owl:incompatibleWith pattern:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/pattern> ;
+	owl:priorVersion pattern:0.9.1 ;
+	owl:versionIRI pattern:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/role>
 	a owl:Ontology ;
 	rdfs:label "uco-role"@en ;
-	owl:imports <https://ontology.unifiedcyberontology.org/uco/core> ;
+	owl:imports core:1.0.0 ;
+	owl:incompatibleWith role:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/role> ;
+	owl:priorVersion role:0.9.1 ;
+	owl:versionIRI role:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/time>
 	a owl:Ontology ;
 	rdfs:label "uco-time"@en ;
-	owl:imports <https://ontology.unifiedcyberontology.org/uco/core> ;
+	owl:imports core:1.0.0 ;
+	owl:incompatibleWith time:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/time> ;
+	owl:priorVersion time:0.9.1 ;
+	owl:versionIRI time:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/tool>
 	a owl:Ontology ;
 	rdfs:label "uco-tool"@en ;
 	owl:imports
-		<https://ontology.unifiedcyberontology.org/uco/configuration> ,
-		<https://ontology.unifiedcyberontology.org/uco/core>
+		configuration:1.0.0 ,
+		identity:1.0.0
 		;
+	owl:incompatibleWith tool:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/tool> ;
+	owl:priorVersion tool:0.9.1 ;
+	owl:versionIRI tool:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/types>
 	a owl:Ontology ;
 	rdfs:label "uco-types"@en ;
 	owl:imports
-		<https://ontology.unifiedcyberontology.org/co> ,
-		<https://ontology.unifiedcyberontology.org/uco/core> ,
-		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
+		uco-co:1.0.0 ,
+		core:1.0.0 ,
+		vocabulary:1.0.0
 		;
+	owl:incompatibleWith types:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/types> ;
+	owl:priorVersion types:0.9.1 ;
+	owl:versionIRI types:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/uco>
 	a owl:Ontology ;
 	rdfs:label "uco-master"@en ;
 	owl:imports
-		<https://ontology.unifiedcyberontology.org/co> ,
-		<https://ontology.unifiedcyberontology.org/owl> ,
-		<https://ontology.unifiedcyberontology.org/uco/action> ,
-		<https://ontology.unifiedcyberontology.org/uco/configuration> ,
-		<https://ontology.unifiedcyberontology.org/uco/core> ,
-		<https://ontology.unifiedcyberontology.org/uco/identity> ,
-		<https://ontology.unifiedcyberontology.org/uco/location> ,
-		<https://ontology.unifiedcyberontology.org/uco/marking> ,
-		<https://ontology.unifiedcyberontology.org/uco/observable> ,
-		<https://ontology.unifiedcyberontology.org/uco/pattern> ,
-		<https://ontology.unifiedcyberontology.org/uco/role> ,
-		<https://ontology.unifiedcyberontology.org/uco/time> ,
-		<https://ontology.unifiedcyberontology.org/uco/tool> ,
-		<https://ontology.unifiedcyberontology.org/uco/types> ,
-		<https://ontology.unifiedcyberontology.org/uco/victim> ,
-		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
+		uco-co:1.0.0 ,
+		uco-owl:1.0.0 ,
+		action:1.0.0 ,
+		configuration:1.0.0 ,
+		core:1.0.0 ,
+		identity:1.0.0 ,
+		location:1.0.0 ,
+		marking:1.0.0 ,
+		observable:1.0.0 ,
+		pattern:1.0.0 ,
+		role:1.0.0 ,
+		time:1.0.0 ,
+		tool:1.0.0 ,
+		types:1.0.0 ,
+		victim:1.0.0 ,
+		vocabulary:1.0.0
 		;
-	owl:versionInfo "0.9.0" ;
+	owl:incompatibleWith <https://ontology.unifiedcyberontology.org/uco/uco/0.9.1> ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/uco> ;
+	owl:priorVersion <https://ontology.unifiedcyberontology.org/uco/uco/0.9.1> ;
+	owl:versionIRI <https://ontology.unifiedcyberontology.org/uco/uco/1.0.0> ;
+	owl:versionInfo "1.0.0" ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/victim>
 	a owl:Ontology ;
 	rdfs:label "uco-victim"@en ;
-	owl:imports
-		<https://ontology.unifiedcyberontology.org/uco/core> ,
-		<https://ontology.unifiedcyberontology.org/uco/role>
-		;
+	owl:imports role:1.0.0 ;
+	owl:incompatibleWith victim:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/victim> ;
+	owl:priorVersion victim:0.9.1 ;
+	owl:versionIRI victim:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/vocabulary>
 	a owl:Ontology ;
 	rdfs:label "uco-vocabularies"@en ;
+	owl:incompatibleWith vocabulary:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/vocabulary> ;
+	owl:priorVersion vocabulary:0.9.1 ;
+	owl:versionIRI vocabulary:1.0.0 ;
 	.
 
 co:ListItem
@@ -901,82 +967,128 @@ uco-owl:ObjectProperty-shacl-constraints-shape
 	sh:targetClass owl:ObjectProperty ;
 	.
 
-uco-owl:ontologyIRI-shape
-	a sh:NodeShape ;
-	sh:property [
-		a sh:PropertyShape ;
-		sh:nodeKind sh:IRI ;
-		sh:path owl:ontologyIRI ;
-	] ;
-	sh:sparql [
-		a sh:SPARQLConstraint ;
-		rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
-		sh:message "'If an ontology has an ontology IRI but no version IRI, then a different ontology with the same ontology IRI but no version IRI SHOULD NOT exist.'"@en ;
-		sh:select """
-			PREFIX owl: <http://www.w3.org/2002/07/owl#>
-			SELECT $this
-			WHERE {
-				$value owl:ontologyIRI $this .
-				FILTER NOT EXISTS {
-					$value owl:versionIRI ?nVersionIRI1 .
-				}
-				?nOtherOntology owl:ontologyIRI $this .
-				FILTER NOT EXISTS {
-					$nOtherOntology owl:versionIRI ?nVersionIRI2 .
-				}
-				FILTER ( $value != ?nOtherOntology )
-			}
-		""" ;
-		sh:severity sh:Warning ;
-	] ;
-	sh:targetSubjectsOf owl:ontologyIRI ;
-	.
-
-uco-owl:versionIRI-shape
-	a sh:NodeShape ;
-	sh:property [
-		a sh:PropertyShape ;
-		sh:nodeKind sh:IRI ;
-		sh:path owl:versionIRI ;
-	] ;
+uco-owl:incompatibleWith-shape
+	a sh:PropertyShape ;
+	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Imports> ;
+	sh:message "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to either the ontology IRI or the version IRI of O2.'"@en ;
+	sh:path owl:incompatibleWith ;
+	sh:severity sh:Warning ;
 	sh:sparql
 		[
 			a sh:SPARQLConstraint ;
-			rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
-			sh:message "'An ontology without an ontology IRI MUST NOT contain a version IRI.'"@en ;
 			sh:select """
 				PREFIX owl: <http://www.w3.org/2002/07/owl#>
-				SELECT $this
+				SELECT $this ?value
 				WHERE {
-					$value owl:versionIRI $this .
-					FILTER NOT EXISTS {
-						$value owl:ontologyIRI ?nOntologyIRI .
-					}
+					$this
+						owl:imports ?value ;
+						owl:incompatibleWith ?value ;
+						.
 				}
 			""" ;
 		] ,
 		[
 			a sh:SPARQLConstraint ;
-			rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
-			sh:message "'If an ontology has both an ontology IRI and a version IRI, then a different ontology with the same ontology IRI and the same version IRI SHOULD NOT exist.'"@en ;
 			sh:select """
 				PREFIX owl: <http://www.w3.org/2002/07/owl#>
-				SELECT $this
+				SELECT $this ?value
 				WHERE {
-					$value
-						owl:ontologyIRI ?nOntologyIRI ;
-						owl:versionIRI $this ;
-						.
-					?nOtherOntology
-						owl:ontologyIRI ?nOntologyIRI ;
-						owl:versionIRI $this ;
-						.
-					FILTER ( $value != ?nOtherOntology )
+					$this owl:incompatibleWith ?value .
+
+					{ ?value a owl:Ontology . }
+					UNION
+					{ ?nOntology owl:ontologyIRI ?value . }
+					UNION
+					{ ?nOntology owl:versionIRI ?value . }
 				}
 			""" ;
-			sh:severity sh:Warning ;
 		]
 		;
+	sh:targetSubjectsOf owl:incompatibleWith ;
+	.
+
+uco-owl:ontologyIRI-nodeKind-shape
+	a sh:PropertyShape ;
+	sh:nodeKind sh:IRI ;
+	sh:path owl:ontologyIRI ;
+	sh:targetSubjectsOf owl:ontologyIRI ;
+	.
+
+uco-owl:ontologyIRI-ontology-uniqueness-shape
+	a sh:NodeShape ;
+	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
+	sh:message "'If an ontology has an ontology IRI but no version IRI, then a different ontology with the same ontology IRI but no version IRI SHOULD NOT exist.'"@en ;
+	sh:severity sh:Warning ;
+	sh:sparql [
+		a sh:SPARQLConstraint ;
+		sh:select """
+			PREFIX owl: <http://www.w3.org/2002/07/owl#>
+			SELECT $this ?value
+			WHERE {
+				$this owl:ontologyIRI ?nOntologyIRI .
+				FILTER NOT EXISTS {
+					$this owl:versionIRI ?nVersionIRI1 .
+				}
+				?value owl:ontologyIRI ?nOntologyIRI .
+				FILTER NOT EXISTS {
+					?value owl:versionIRI ?nVersionIRI2 .
+				}
+				FILTER ( $this != ?value )
+			}
+		""" ;
+	] ;
+	sh:targetSubjectsOf owl:ontologyIRI ;
+	.
+
+uco-owl:ontologyIRI-versionIRI-prerequisite-shape
+	a sh:PropertyShape ;
+	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
+	sh:message "'An ontology without an ontology IRI MUST NOT contain a version IRI.'"@en ;
+	sh:minCount "1"^^xsd:integer ;
+	sh:path owl:ontologyIRI ;
+	sh:targetSubjectsOf owl:versionIRI ;
+	.
+
+uco-owl:ontologyIRI-versionIRI-uniqueness-shape
+	a sh:NodeShape ;
+	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
+	sh:message "'If an ontology has both an ontology IRI and a version IRI, then a different ontology with the same ontology IRI and the same version IRI SHOULD NOT exist.'"@en ;
+	sh:severity sh:Warning ;
+	sh:sparql [
+		a sh:SPARQLConstraint ;
+		sh:select """
+			PREFIX owl: <http://www.w3.org/2002/07/owl#>
+			SELECT $this ?value
+			WHERE {
+				$this
+					owl:ontologyIRI ?nOntologyIRI ;
+					owl:versionIRI ?nVersionIRI ;
+					.
+				?value
+					owl:ontologyIRI ?nOntologyIRI ;
+					owl:versionIRI ?nVersionIRI ;
+					.
+				FILTER ( $this != ?value )
+			}
+		""" ;
+	] ;
+	sh:targetSubjectsOf owl:ontologyIRI ;
+	.
+
+uco-owl:versionIRI-multiversion-shape
+	a sh:PropertyShape ;
+	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Imports> ;
+	sh:maxCount "1"^^xsd:integer ;
+	sh:message "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that O_1 and O_2 are different ontology versions from the same ontology series.'"@en ;
+	sh:path owl:versionIRI ;
+	sh:severity sh:Warning ;
+	sh:targetSubjectsOf owl:versionIRI ;
+	.
+
+uco-owl:versionIRI-nodeKind-shape
+	a sh:PropertyShape ;
+	sh:nodeKind sh:IRI ;
+	sh:path owl:versionIRI ;
 	sh:targetSubjectsOf owl:versionIRI ;
 	.
 
