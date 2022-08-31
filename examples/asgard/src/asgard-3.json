@@ -1,6 +1,6 @@
 [
     {
-        "@id": "kb:suspect-device-mmssms-uuid",
+        "@id": "kb:file-mmssms-dcec8d09-a8bc-4b7c-93ab-16c7b363d48b",
         "@type": "uco-observable:File",
         "uco-core:hasFacet": [
             {
@@ -35,14 +35,14 @@
         ]
     },
     {
-        "@id": "kb:trace-relationship3-uuid",
+        "@id": "kb:relationship3-64625b2b-a64e-4ea0-90f0-216dc5f51306",
         "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
-            "@id": "kb:suspect-device-mmssms-uuid"
+            "@id": "kb:file-mmssms-dcec8d09-a8bc-4b7c-93ab-16c7b363d48b"
         },
         "uco-core:target": [
             {
-                "@id": "kb:suspect-image-filesystem-uuid"
+                "@id": "kb:diskpartition-f49304c6-a9c7-4aa2-9860-a68d78ae838a"
             }
         ],
         "uco-core:kindOfRelationship": "Contained_Within",

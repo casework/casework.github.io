@@ -1,20 +1,20 @@
 [
     {
-        "@id": "kb:SMSMessage-21b3e39d-772d-47b0-8501-a6945ddbdfcd",
+        "@id": "kb:smsmessage-21b3e39d-772d-47b0-8501-a6945ddbdfcd",
         "@type": "uco-observable:SMSMessage",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:MessageFacet",
                 "uco-observable:application": {
-                    "@id": "kb:sms_application1"
+                    "@id": "kb:application1-8538c226-1ba5-473b-8342-96150a4ab4ed"
                 },
                 "uco-observable:messageText": "Yo dude! This is my new number.",
                 "uco-observable:from": {
-                    "@id": "kb:phone_account3"
+                    "@id": "kb:mobileaccount-96f8460f-760e-49cb-adad-bb4a0840fb63"
                 },
                 "uco-observable:to": [
                     {
-                        "@id": "kb:MobileAccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90"
+                        "@id": "kb:mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90"
                     }
                 ],
                 "uco-observable:sentTime": {
@@ -25,7 +25,7 @@
         ]
     },
     {
-        "@id": "kb:phone_call1",
+        "@id": "kb:call-3e3e316c-25dd-4651-98a2-fc3422e577f7",
         "@type": "uco-observable:Call",
         "uco-core:hasFacet": [
             {
@@ -40,10 +40,10 @@
                     "@value": "2010-01-15T18:30:41.25Z"
                 },
                 "uco-observable:from": {
-                    "@id": "kb:MobileAccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90"
+                    "@id": "kb:mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90"
                 },
                 "uco-observable:to": {
-                    "@id": "kb:phone_account2"
+                    "@id": "kb:mobileaccount-48c627e7-03c9-44d2-9731-2bbf08029c7d"
                 },
                 "uco-observable:duration": 1862
             }
