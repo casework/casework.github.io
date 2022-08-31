@@ -4,6 +4,7 @@
 # imports: https://ontology.unifiedcyberontology.org/co
 # imports: https://ontology.unifiedcyberontology.org/owl
 # imports: https://ontology.unifiedcyberontology.org/uco/action
+# imports: https://ontology.unifiedcyberontology.org/uco/configuration
 # imports: https://ontology.unifiedcyberontology.org/uco/core
 # imports: https://ontology.unifiedcyberontology.org/uco/identity
 # imports: https://ontology.unifiedcyberontology.org/uco/location
@@ -20,6 +21,7 @@
 
 @prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix co: <http://purl.org/co/> .
+@prefix configuration: <https://ontology.unifiedcyberontology.org/uco/configuration/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
@@ -79,12 +81,14 @@
 
 <https://ontology.unifiedcyberontology.org/co>
 	a owl:Ontology ;
+	rdfs:label "uco-co"@en ;
 	rdfs:comment "This ontology defines SHACL shapes to supplement the OWL 2 DL definitions in the Collections Ontology."@en ;
 	owl:imports <http://purl.org/co> ;
 	.
 
 <https://ontology.unifiedcyberontology.org/owl>
 	a owl:Ontology ;
+	rdfs:label "uco-owl"@en ;
 	rdfs:comment "This ontology defines SHACL shapes to perform conformance testing of OWL 2 DL.  Some of these shapes follow rules specified from the canonical, subtractive parsing process of Section 3 of the OWL 2 mapping to RDF.  From the last line of that document's Section 3, 'At the end of this process, the graph G MUST be empty,' anything not strictly matching patterns specified in that section cause the input graph to be non-conformant with OWL 2 DL."@en ;
 	rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-mapping-to-rdf-20121211/#Mapping_from_RDF_Graphs_to_the_Structural_Specification> ;
 	.
@@ -100,6 +104,14 @@
 		<https://ontology.unifiedcyberontology.org/uco/types> ,
 		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
 		;
+	.
+
+<https://ontology.unifiedcyberontology.org/uco/configuration>
+	a owl:Ontology ;
+	rdfs:label "uco-configuration"@en ;
+	rdfs:comment "This ontology defines classes and properties for characterizing configurations."@en-US ;
+	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/432> ;
+	owl:imports <https://ontology.unifiedcyberontology.org/uco/core> ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/core>
@@ -135,6 +147,7 @@
 	rdfs:label "uco-observable"@en ;
 	owl:imports
 		<https://ontology.unifiedcyberontology.org/uco/action> ,
+		<https://ontology.unifiedcyberontology.org/uco/configuration> ,
 		<https://ontology.unifiedcyberontology.org/uco/core> ,
 		<https://ontology.unifiedcyberontology.org/uco/identity> ,
 		<https://ontology.unifiedcyberontology.org/uco/location> ,
@@ -164,7 +177,10 @@
 <https://ontology.unifiedcyberontology.org/uco/tool>
 	a owl:Ontology ;
 	rdfs:label "uco-tool"@en ;
-	owl:imports <https://ontology.unifiedcyberontology.org/uco/core> ;
+	owl:imports
+		<https://ontology.unifiedcyberontology.org/uco/configuration> ,
+		<https://ontology.unifiedcyberontology.org/uco/core>
+		;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/types>
@@ -184,6 +200,7 @@
 		<https://ontology.unifiedcyberontology.org/co> ,
 		<https://ontology.unifiedcyberontology.org/owl> ,
 		<https://ontology.unifiedcyberontology.org/uco/action> ,
+		<https://ontology.unifiedcyberontology.org/uco/configuration> ,
 		<https://ontology.unifiedcyberontology.org/uco/core> ,
 		<https://ontology.unifiedcyberontology.org/uco/identity> ,
 		<https://ontology.unifiedcyberontology.org/uco/location> ,
@@ -253,13 +270,11 @@ investigation:Authorization
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path investigation:authorizationType ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path investigation:authorizationIdentifier ;
 		]
@@ -334,7 +349,6 @@ investigation:Investigation
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:or (
 				[
@@ -1259,9 +1273,7 @@ action:ActionLifecycle
 			sh:path action:actionCount ;
 		] ,
 		[
-			sh:datatype vocabulary:ActionStatusTypeVocab ;
 			sh:maxCount "0"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
 			sh:path action:actionStatus ;
 		]
 		;
@@ -1484,6 +1496,212 @@ action:value
 	rdfs:label "value"@en ;
 	rdfs:comment "The value of an action parameter."@en ;
 	rdfs:range xsd:string ;
+	.
+
+configuration:Configuration
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "Configuration"@en ;
+	rdfs:comment "A configuration is a grouping of characteristics unique to a set of parameters or initial settings for the use of a tool, application, software, or other cyber object."@en ;
+	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/432> ;
+	sh:property
+		[
+			sh:class configuration:ConfigurationEntry ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path configuration:configurationEntry ;
+		] ,
+		[
+			sh:class configuration:Dependency ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path configuration:dependencies ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path configuration:usageContextAssumptions ;
+		]
+		;
+	sh:targetClass configuration:Configuration ;
+	.
+
+configuration:ConfigurationEntry
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:label "ConfigurationEntry"@en ;
+	rdfs:comment "A configuration entry is a grouping of characteristics unique to a particular parameter or initial setting for the use of a tool, application, software, or other cyber object."@en ;
+	sh:property
+		[
+			sh:class core:UcoObject ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path configuration:itemObject ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path configuration:itemDescription ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path configuration:itemName ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path configuration:itemType ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path configuration:itemValue ;
+		]
+		;
+	sh:targetClass configuration:ConfigurationEntry ;
+	sh:xone (
+		[
+			sh:property
+				[
+					sh:maxCount "0"^^xsd:integer ;
+					sh:path configuration:itemObject ;
+				] ,
+				[
+					sh:maxCount "0"^^xsd:integer ;
+					sh:path configuration:itemValue ;
+				]
+				;
+		]
+		[
+			sh:property [
+				sh:minCount "1"^^xsd:integer ;
+				sh:path configuration:itemObject ;
+			] ;
+		]
+		[
+			sh:property [
+				sh:minCount "1"^^xsd:integer ;
+				sh:path configuration:itemValue ;
+			] ;
+		]
+	) ;
+	.
+
+configuration:Dependency
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:label "Dependency"@en ;
+	rdfs:comment "A dependency is a grouping of characteristics unique to something that a tool or other software relies on to function as intended."@en ;
+	sh:property
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path configuration:dependencyDescription ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path configuration:dependencyType ;
+		]
+		;
+	sh:targetClass configuration:Dependency ;
+	.
+
+configuration:configurationEntry
+	a owl:ObjectProperty ;
+	rdfs:comment "A single configuration setting entry item for a tool or other software."@en ;
+	rdfs:range configuration:ConfigurationEntry ;
+	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/432> ;
+	.
+
+configuration:dependencies
+	a owl:ObjectProperty ;
+	rdfs:label "dependencies"@en ;
+	rdfs:comment "The relevant configuration dependencies for a tool, application, software, or other cyber object."@en ;
+	rdfs:range configuration:Dependency ;
+	.
+
+configuration:dependencyDescription
+	a owl:DatatypeProperty ;
+	rdfs:label "dependencyDescription"@en ;
+	rdfs:comment "A description of a tool or other software dependency."@en ;
+	rdfs:range xsd:string ;
+	.
+
+configuration:dependencyType
+	a owl:DatatypeProperty ;
+	rdfs:label "dependencyType"@en ;
+	rdfs:comment "The type of a tool or other software dependency."@en ;
+	rdfs:range xsd:string ;
+	.
+
+configuration:isConfigurationOf
+	a
+		owl:ObjectProperty ,
+		owl:IrreflexiveProperty
+		;
+	rdfs:label "isConfigurationOf"@en ;
+	rdfs:comment "The object which has been configured to run in a more specified manner than another object.  This property is expected to have a more specific range when associated with a class, such as a configured Tool having this property have a range of a Tool."@en ;
+	rdfs:range core:UcoObject ;
+	.
+
+configuration:itemDescription
+	a owl:DatatypeProperty ;
+	rdfs:label "itemDescription"@en ;
+	rdfs:comment "A description of a configuration setting entry item."@en ;
+	rdfs:range xsd:string ;
+	.
+
+configuration:itemName
+	a owl:DatatypeProperty ;
+	rdfs:label "itemName"@en ;
+	rdfs:comment "The name of a configuration setting entry item."@en ;
+	rdfs:range xsd:string ;
+	.
+
+configuration:itemObject
+	a owl:ObjectProperty ;
+	rdfs:comment "The structured value of a configuration setting entry instance."@en ;
+	rdfs:range core:UcoObject ;
+	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/432> ;
+	.
+
+configuration:itemType
+	a owl:DatatypeProperty ;
+	rdfs:label "itemType"@en ;
+	rdfs:comment "The type of a configuration setting entry item."@en ;
+	rdfs:range xsd:string ;
+	.
+
+configuration:itemValue
+	a owl:DatatypeProperty ;
+	rdfs:label "itemValue"@en ;
+	rdfs:comment "The value of a configuration setting entry instance."@en ;
+	rdfs:range xsd:string ;
+	.
+
+configuration:usageContextAssumptions
+	a owl:DatatypeProperty ;
+	rdfs:label "usageContextAssumptions"@en ;
+	rdfs:comment "Description of the various relevant usage context assumptions for a tool or other software ."@en ;
+	rdfs:range xsd:string ;
+	.
+
+configuration:usesConfiguration
+	a owl:ObjectProperty ;
+	rdfs:label "usesConfiguration"@en ;
+	rdfs:comment "A configuration used by an object."@en ;
+	rdfs:range configuration:Configuration ;
 	.
 
 core:Annotation
@@ -1854,17 +2072,6 @@ core:UcoObject
 			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:tag ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:nodeKind sh:Literal ;
-			sh:path core:type ;
-		] ,
-		[
-			sh:datatype types:Identifier ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path core:id ;
 		]
 		;
 	sh:targetClass core:UcoObject ;
@@ -1949,17 +2156,36 @@ core:externalReference
 	.
 
 core:hasFacet
-	a owl:ObjectProperty ;
+	a
+		owl:ObjectProperty ,
+		owl:InverseFunctionalProperty
+		;
 	rdfs:label "hasFacet"@en ;
 	rdfs:comment "Further sets of properties characterizing a concept based on the particular context of the class and of the particular instance of the concept being characterized."@en ;
 	rdfs:range core:Facet ;
 	.
 
-core:id
-	a owl:DatatypeProperty ;
-	rdfs:label "id"@en ;
-	rdfs:comment "A globally unique identifier for a characterization of a concept."@en ;
-	rdfs:range types:Identifier ;
+core:hasFacet-shape
+	a sh:PropertyShape ;
+	sh:path core:hasFacet ;
+	sh:sparql [
+		a sh:SPARQLConstraint ;
+		sh:message "hasFacet must not be used to link two objects to one Facet."@en ;
+		sh:select """
+			PREFIX core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			PREFIX owl: <http://www.w3.org/2002/07/owl#>
+			SELECT $this ?value
+			WHERE {
+				?value core:hasFacet $this .
+				?nOtherValue core:hasFacet $this .
+				FILTER ( ?value != ?nOtherValue )
+				FILTER NOT EXISTS {
+					?value owl:sameAs|^owl:sameAs ?nOtherValue .
+				}
+			}
+			""" ;
+	] ;
+	sh:targetObjectsOf core:hasFacet ;
 	.
 
 core:isDirectional
@@ -2065,13 +2291,6 @@ core:target
 	rdfs:label "target"@en ;
 	rdfs:comment "The terminating node of a specified relationship."@en ;
 	rdfs:range core:UcoObject ;
-	.
-
-core:type
-	a owl:DatatypeProperty ;
-	rdfs:label "type"@en ;
-	rdfs:comment "The explicitly-defined type of characterization of a concept."@en ;
-	rdfs:range xsd:string ;
 	.
 
 core:value
@@ -2984,6 +3203,17 @@ observable:AccountFacet
 	sh:targetClass observable:AccountFacet ;
 	.
 
+observable:Adaptor
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "Adaptor"@en-US ;
+	rdfs:comment "An adaptor is a device that physically converts the pin outputs but does not alter the underlying protocol (e.g. uSD to SD, CF to ATA, etc.)"@en-US ;
+	sh:targetClass observable:Adaptor ;
+	.
+
 observable:Address
 	a
 		owl:Class ,
@@ -3091,6 +3321,20 @@ observable:AndroidDeviceFacet
 	sh:targetClass observable:AndroidDeviceFacet ;
 	.
 
+observable:AndroidPhone
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf
+		observable:AndroidDevice ,
+		observable:SmartPhone
+		;
+	rdfs:label "AndroidPhone"@en-US ;
+	rdfs:comment "An android phone is a smart phone that applies the Android mobile operating system."@en-US ;
+	sh:targetClass observable:AndroidPhone ;
+	.
+
 observable:AntennaFacet
 	a
 		owl:Class ,
@@ -3138,6 +3382,17 @@ observable:AntennaFacet
 		]
 		;
 	sh:targetClass observable:AntennaFacet ;
+	.
+
+observable:AppleDevice
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "AppleDevice"@en-US ;
+	rdfs:comment "An apple device is a smart device that applies either the MacOS or iOS operating system."@en-US ;
+	sh:targetClass observable:AppleDevice ;
 	.
 
 observable:Appliance
@@ -3200,6 +3455,11 @@ observable:ApplicationFacet
 	rdfs:comment "An application facet is a grouping of characteristics unique to a particular software program designed for end users."@en ;
 	sh:property
 		[
+			sh:class observable:ApplicationVersion ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:installedVersionHistory ;
+		] ,
+		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
@@ -3225,6 +3485,36 @@ observable:ApplicationFacet
 		]
 		;
 	sh:targetClass observable:ApplicationFacet ;
+	.
+
+observable:ApplicationVersion
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:label "ApplicationVersion"@en ;
+	rdfs:comment "An application version is a grouping of characteristics unique to a particular software program version."@en ;
+	sh:property
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:installDate ;
+		] ,
+		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:uninstallDate ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:version ;
+		]
+		;
+	sh:targetClass observable:ApplicationVersion ;
 	.
 
 observable:ArchiveFile
@@ -3368,6 +3658,17 @@ observable:AutonomousSystemFacet
 	sh:targetClass observable:AutonomousSystemFacet ;
 	.
 
+observable:BlackberryPhone
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:SmartPhone ;
+	rdfs:label "BlackberryPhone"@en-US ;
+	rdfs:comment "A blackberry phone is a smart phone that applies the Blackberry OS mobile operating system. (Blackberry 10 re-introduces Blackberry OS, prior to that the OS was Android.)"@en-US ;
+	sh:targetClass observable:BlackberryPhone ;
+	.
+
 observable:BlockDeviceNode
 	a
 		owl:Class ,
@@ -3398,12 +3699,6 @@ observable:BluetoothAddressFacet
 	rdfs:subClassOf observable:MACAddressFacet ;
 	rdfs:label "BluetoothAddressFacet"@en ;
 	rdfs:comment "A Bluetooth address facet is a grouping of characteristics unique to a Bluetooth standard conformant identifier assigned to a Bluetooth device to enable routing and management of Bluetooth standards conformant communication to or from that device."@en ;
-	sh:property [
-		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
-		sh:path observable:addressValue ;
-	] ;
 	sh:targetClass observable:BluetoothAddressFacet ;
 	.
 
@@ -3922,6 +4217,17 @@ observable:CompressedStreamFacet
 	sh:targetClass observable:CompressedStreamFacet ;
 	.
 
+observable:Computer
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "Computer"@en-US ;
+	rdfs:comment "A computer is an electronic device for storing and processing data, typically in binary, according to instructions given to it in a variable program. [based on 'Computer.' Oxford English Dictionary, Oxford University Press, 2022.]"@en-US ;
+	sh:targetClass observable:Computer ;
+	.
+
 observable:ComputerSpecification
 	a
 		owl:Class ,
@@ -4063,6 +4369,31 @@ observable:ComputerSpecificationFacet
 		]
 		;
 	sh:targetClass observable:ComputerSpecificationFacet ;
+	.
+
+observable:ConfiguredSoftware
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Software ;
+	rdfs:label "ConfiguredSoftware"@en ;
+	rdfs:comment "A ConfiguredSoftware is a Software that is known to be configured to run in a more specified manner than some unconfigured or less-configured Software."@en ;
+	sh:property
+		[
+			sh:class configuration:Configuration ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path configuration:usesConfiguration ;
+		] ,
+		[
+			sh:class observable:Software ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path configuration:isConfigurationOf ;
+		]
+		;
+	sh:targetClass observable:ConfiguredSoftware ;
 	.
 
 observable:Contact
@@ -4999,6 +5330,17 @@ observable:DigitalAddressFacet
 	sh:targetClass observable:DigitalAddressFacet ;
 	.
 
+observable:DigitalCamera
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "DigitalCamera"@en-US ;
+	rdfs:comment "A digital camera is a camera that captures photographs in digital memory as opposed to capturing images on photographic film."@en-US ;
+	sh:targetClass observable:DigitalCamera ;
+	.
+
 observable:DigitalSignatureInfo
 	a
 		owl:Class ,
@@ -5225,6 +5567,17 @@ observable:DomainNameFacet
 	sh:targetClass observable:DomainNameFacet ;
 	.
 
+observable:Drone
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:MobileDevice ;
+	rdfs:label "Drone"@en-US ;
+	rdfs:comment "A drone, unmanned aerial vehicle (UAV), is an aircraft without a human pilot, crew, or passengers that typically involve a ground-based controller and a system for communications with the UAV."@en-US ;
+	sh:targetClass observable:Drone ;
+	.
+
 observable:ESN
 	a owl:DatatypeProperty ;
 	rdfs:label "ESN"@en ;
@@ -5295,20 +5648,6 @@ observable:EmailAddressFacet
 	rdfs:subClassOf observable:DigitalAddressFacet ;
 	rdfs:label "EmailAddressFacet"@en ;
 	rdfs:comment "An email address facet is a grouping of characteristics unique to an identifier for an electronic mailbox to which electronic mail messages (conformant to the Simple Mail Transfer Protocol (SMTP)) are sent from and delivered to."@en ;
-	sh:property
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:addressValue ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:displayName ;
-		]
-		;
 	sh:targetClass observable:EmailAddressFacet ;
 	.
 
@@ -5502,6 +5841,17 @@ observable:EmailMessageFacet
 	sh:targetClass observable:EmailMessageFacet ;
 	.
 
+observable:EmbeddedDevice
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "EmbeddedDevice"@en-US ;
+	rdfs:comment "An embedded device is a highly specialized microprocessor device meant for one or very few specific purposes and is usually embedded or included within another object or as part of a larger system. Examples include answer machine, door access logger, card scanner, etc."@en-US ;
+	sh:targetClass observable:EmbeddedDevice ;
+	.
+
 observable:EncodedStreamFacet
 	a
 		owl:Class ,
@@ -5578,25 +5928,36 @@ observable:EnvironmentVariable
 	sh:targetClass observable:EnvironmentVariable ;
 	.
 
-observable:Event
+observable:EventLog
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
 	rdfs:subClassOf observable:ObservableObject ;
-	rdfs:label "Event"@en ;
-	rdfs:comment "An event is something that happens in a digital context (e.g., operating system events)."@en ;
-	sh:targetClass observable:Event ;
+	rdfs:label "EventLog"@en ;
+	rdfs:comment "An event log is a collection of event records."@en ;
+	sh:targetClass observable:EventLog ;
 	.
 
-observable:EventFacet
+observable:EventRecord
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "EventRecord"@en ;
+	rdfs:comment "An event record is something that happens in a digital context (e.g., operating system events)."@en ;
+	sh:targetClass observable:EventRecord ;
+	.
+
+observable:EventRecordFacet
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
 	rdfs:subClassOf core:Facet ;
-	rdfs:label "EventFacet"@en ;
-	rdfs:comment "An event facet is a grouping of characteristics unique to something that happens in a digital context (e.g., operating system events)."@en ;
+	rdfs:label "EventRecordFacet"@en ;
+	rdfs:comment "An event record facet is a grouping of characteristics unique to something that happens in a digital context (e.g., operating system events)."@en ;
 	sh:property
 		[
 			sh:class observable:ObservableAction ;
@@ -5608,7 +5969,19 @@ observable:EventFacet
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:account ;
+		] ,
+		[
+			sh:class observable:ObservableObject ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path observable:application ;
+		] ,
+		[
+			sh:class observable:ObservableObject ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path observable:eventRecordDevice ;
 		] ,
 		[
 			sh:datatype xsd:dateTime ;
@@ -5632,7 +6005,7 @@ observable:EventFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:computerName ;
+			sh:path observable:eventID ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -5665,18 +6038,7 @@ observable:EventFacet
 			sh:path observable:eventType ;
 		]
 		;
-	sh:targetClass observable:EventFacet ;
-	.
-
-observable:EventLog
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf observable:ObservableObject ;
-	rdfs:label "EventLog"@en ;
-	rdfs:comment "An event log is a recorded collection of events."@en ;
-	sh:targetClass observable:EventLog ;
+	sh:targetClass observable:EventRecordFacet ;
 	.
 
 observable:ExtInodeFacet
@@ -6009,6 +6371,17 @@ observable:GUI
 	rdfs:label "GUI"@en ;
 	rdfs:comment "A GUI is a graphical user interface that allows users to interact with electronic devices through graphical icons and audio indicators such as primary notation, instead of text-based user interfaces, typed command labels or text navigation. [based on https://en.wikipedia.org/wiki/Graphical_user_interface]"@en ;
 	sh:targetClass observable:GUI ;
+	.
+
+observable:GamingConsole
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "GamingConsole"@en-US ;
+	rdfs:comment "A gaming console (video game console or game console) is an electronic system that connects to a display, typically a TV or computer monitor, for the primary purpose of playing video games."@en-US ;
+	sh:targetClass observable:GamingConsole ;
 	.
 
 observable:GenericObservableObject
@@ -6386,20 +6759,6 @@ observable:IPAddressFacet
 	rdfs:subClassOf observable:DigitalAddressFacet ;
 	rdfs:label "IPAddressFacet"@en ;
 	rdfs:comment "An IP address facet is a grouping of characteristics unique to an Internet Protocol (IP) standards conformant identifier assigned to a device to enable routing and management of IP standards conformant communication to or from that device."@en ;
-	sh:property
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:addressValue ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:displayName ;
-		]
-		;
 	sh:targetClass observable:IPAddressFacet ;
 	.
 
@@ -6410,8 +6769,22 @@ observable:IPNetmask
 		;
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "IPNetmask"@en ;
-	rdfs:comment "An IP netmask is a 32-bit \"mask\" used to divide an IP address into subnets and specify the network's available hosts."@en ;
+	rdfs:comment "An IP netmask is a 32-bit 'mask' used to divide an IP address into subnets and specify the network's available hosts."@en ;
 	sh:targetClass observable:IPNetmask ;
+	.
+
+observable:IPhone
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf
+		observable:AppleDevice ,
+		observable:SmartPhone
+		;
+	rdfs:label "IPhone"@en-US ;
+	rdfs:comment "An iPhone is a smart phone that applies the iOS mobile operating system."@en-US ;
+	sh:targetClass observable:IPhone ;
 	.
 
 observable:IPv4Address
@@ -6433,12 +6806,6 @@ observable:IPv4AddressFacet
 	rdfs:subClassOf observable:IPAddressFacet ;
 	rdfs:label "IPv4AddressFacet"@en ;
 	rdfs:comment "An IPv4 (Internet Protocol version 4) address facet is a grouping of characteristics unique to an IPv4 standards conformant identifier assigned to a device to enable routing and management of IPv4 standards conformant communication to or from that device."@en ;
-	sh:property [
-		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
-		sh:path observable:addressValue ;
-	] ;
 	sh:targetClass observable:IPv4AddressFacet ;
 	.
 
@@ -6461,12 +6828,6 @@ observable:IPv6AddressFacet
 	rdfs:subClassOf observable:IPAddressFacet ;
 	rdfs:label "IPv6AddressFacet"@en ;
 	rdfs:comment "An IPv6 (Internet Protocol version 6) address facet is a grouping of characteristics unique to an IPv6 standards conformant identifier assigned to a device to enable routing and management of IPv6 standards conformant communication to or from that device."@en ;
-	sh:property [
-		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
-		sh:path observable:addressValue ;
-	] ;
 	sh:targetClass observable:IPv6AddressFacet ;
 	.
 
@@ -6541,20 +6902,6 @@ observable:InstantMessagingAddressFacet
 	rdfs:subClassOf observable:DigitalAddressFacet ;
 	rdfs:label "InstantMessagingAddressFacet"@en ;
 	rdfs:comment "An instant messaging address facet is a grouping of characteristics unique to an identifier assigned to enable routing and management of instant messaging digital communication."@en ;
-	sh:property
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:addressValue ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:displayName ;
-		]
-		;
 	sh:targetClass observable:InstantMessagingAddressFacet ;
 	.
 
@@ -6567,6 +6914,17 @@ observable:Junction
 	rdfs:label "Junction"@en ;
 	rdfs:comment "A junction is a specific NTFS (New Technology File System) reparse point to redirect a directory access to another directory which can be on the same volume or another volume. A junction is similar to a directory symbolic link but may differ on whether they are processed on the local system or on the remote file server. [based on https://jp-andre.pagesperso-orange.fr/junctions.html]"@en ;
 	sh:targetClass observable:Junction ;
+	.
+
+observable:Laptop
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Computer ;
+	rdfs:label "Laptop"@en-US ;
+	rdfs:comment "A laptop, laptop computer, or notebook computer is a small, portable personal computer with a screen and alphanumeric keyboard. These typically have a clam shell form factor with the screen mounted on the inside of the upper lid and the keyboard on the inside of the lower lid, although 2-in-1 PCs with a detachable keyboard are often marketed as laptops or as having a laptop mode. (Devices categorized by their manufacturer as a Laptop)"@en-US ;
+	sh:targetClass observable:Laptop ;
 	.
 
 observable:Library
@@ -6616,12 +6974,6 @@ observable:MACAddressFacet
 	rdfs:subClassOf observable:DigitalAddressFacet ;
 	rdfs:label "MACAddressFacet"@en ;
 	rdfs:comment "A MAC address facet is a grouping of characteristics unique to a media access control standards conformant identifier assigned to a network interface to enable routing and management of communications at the data link layer of a network segment."@en ;
-	sh:property [
-		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
-		sh:path observable:addressValue ;
-	] ;
 	sh:targetClass observable:MACAddressFacet ;
 	.
 
@@ -7124,14 +7476,20 @@ observable:MobileDeviceFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:network ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:MSISDN ;
 		]
 		;
 	sh:targetClass observable:MobileDeviceFacet ;
+	.
+
+observable:MobilePhone
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:MobileDevice ;
+	rdfs:label "MobilePhone"@en-US ;
+	rdfs:comment "A mobile phone is a portable telephone that at least can make and receive calls over a radio frequency link while the user is moving within a telephone service area. This category encompasses all types of mobiles, simple and smart and satellite ones all together."@en-US ;
+	sh:targetClass observable:MobilePhone ;
 	.
 
 observable:Mutex
@@ -7153,12 +7511,20 @@ observable:MutexFacet
 	rdfs:subClassOf core:Facet ;
 	rdfs:label "MutexFacet"@en ;
 	rdfs:comment "A mutex facet is a grouping of characteristics unique to a mechanism that enforces limits on access to a resource when there are many threads of execution. A mutex is designed to enforce a mutual exclusion concurrency control policy, and with a variety of possible methods there exists multiple unique implementations for different applications. [based on https://en.wikipedia.org/wiki/Lock_(computer_science)]"@en ;
-	sh:property [
-		sh:datatype xsd:boolean ;
-		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
-		sh:path observable:isNamed ;
-	] ;
+	sh:property
+		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:isNamed ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:mutexName ;
+		]
+		;
 	sh:targetClass observable:MutexFacet ;
 	.
 
@@ -8174,10 +8540,7 @@ observable:PropertyReadEffectFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf
-		core:Facet ,
-		observable:DefinedEffectFacet
-		;
+	rdfs:subClassOf observable:DefinedEffectFacet ;
 	rdfs:label "PropertyReadEffectFacet"@en ;
 	rdfs:comment "A properties read effect facet is a grouping of characteristics unique to the effects of actions upon observable objects where a characteristic is read from an observable object. An example of this would be the current running state of a process."@en ;
 	sh:property
@@ -8195,6 +8558,17 @@ observable:PropertyReadEffectFacet
 		]
 		;
 	sh:targetClass observable:PropertyReadEffectFacet ;
+	.
+
+observable:ProtocolConverter
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "ProtocolConverter"@en-US ;
+	rdfs:comment "A protocol converter is a device that converts from one protocol to another (e.g. SD to USB, SATA to USB, etc."@en-US ;
+	sh:targetClass observable:ProtocolConverter ;
 	.
 
 observable:RasterPicture
@@ -8530,20 +8904,6 @@ observable:SIPAddressFacet
 	rdfs:subClassOf observable:DigitalAddressFacet ;
 	rdfs:label "SIPAddressFacet"@en ;
 	rdfs:comment "A SIP address facet is a grouping of characteristics unique to a Session Initiation Protocol (SIP) standards conformant identifier assigned to a user to enable routing and management of SIP standards conformant communication to or from that user loosely coupled from any particular devices."@en ;
-	sh:property
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:addressValue ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:displayName ;
-		]
-		;
 	sh:targetClass observable:SIPAddressFacet ;
 	.
 
@@ -8649,10 +9009,7 @@ observable:SendControlCodeEffectFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf
-		core:Facet ,
-		observable:DefinedEffectFacet
-		;
+	rdfs:subClassOf observable:DefinedEffectFacet ;
 	rdfs:label "SendControlCodeEffectFacet"@en ;
 	rdfs:comment "A send control code effect facet is a grouping of characteristics unique to the effects of actions upon observable objects where a control code, or other control-oriented communication signal, is sent to the observable object. An example of this would be an action sending a control code changing the running state of a process."@en ;
 	sh:property [
@@ -8664,6 +9021,17 @@ observable:SendControlCodeEffectFacet
 	sh:targetClass observable:SendControlCodeEffectFacet ;
 	.
 
+observable:Server
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Computer ;
+	rdfs:label "Server"@en-US ;
+	rdfs:comment "A server is a server rack-mount based computer, minicomputer, supercomputer, etc."@en-US ;
+	sh:targetClass observable:Server ;
+	.
+
 observable:ShopListing
 	a
 		owl:Class ,
@@ -8673,6 +9041,32 @@ observable:ShopListing
 	rdfs:label "ShopListing"@en ;
 	rdfs:comment "A shop listing is a listing of offered products on an online marketplace/shop."@en ;
 	sh:targetClass observable:ShopListing ;
+	.
+
+observable:SmartDevice
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "SmartDevice"@en-US ;
+	rdfs:comment "A smart device is a microprocessor IoT device that is expected to be connected directly to cloud-based networks or via smartphone"@en-US ;
+	sh:targetClass observable:SmartDevice ;
+	.
+
+observable:SmartPhone
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf
+		observable:Computer ,
+		observable:MobilePhone ,
+		observable:SmartDevice
+		;
+	rdfs:label "SmartPhone"@en-US ;
+	rdfs:comment "A smartphone is a portable device that combines mobile telephone and computing functions into one unit.  Examples include iPhone, Samsung Galaxy, Huawei, Blackberry. (Inferred by model and OperatingSystemFacet)"@en-US ;
+	sh:targetClass observable:SmartPhone ;
 	.
 
 observable:Snapshot
@@ -8767,10 +9161,7 @@ observable:StateChangeEffectFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf
-		core:Facet ,
-		observable:DefinedEffectFacet
-		;
+	rdfs:subClassOf observable:DefinedEffectFacet ;
 	rdfs:label "StateChangeEffectFacet"@en ;
 	rdfs:comment "A state change effect facet is a grouping of characteristics unique to the effects of actions upon observable objects where a state of the observable object is changed."@en ;
 	sh:property
@@ -8788,6 +9179,17 @@ observable:StateChangeEffectFacet
 		]
 		;
 	sh:targetClass observable:StateChangeEffectFacet ;
+	.
+
+observable:StorageMedium
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "StorageMedium"@en-US ;
+	rdfs:comment "A storage medium is any digital storage device that applies electromagnetic or optical surfaces, or depends solely on electronic circuits as solid state storage, for storing digital data. Examples include HDD (PATA), SATA, SSD, Optical, Memory_Card, Tape, etc"@en-US ;
+	sh:targetClass observable:StorageMedium ;
 	.
 
 observable:SymbolicLink
@@ -8849,6 +9251,21 @@ observable:TCPConnectionFacet
 		]
 		;
 	sh:targetClass observable:TCPConnectionFacet ;
+	.
+
+observable:Tablet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf
+		observable:Computer ,
+		observable:MobileDevice ,
+		observable:SmartDevice
+		;
+	rdfs:label "Tablet"@en-US ;
+	rdfs:comment "A tablet is a mobile computer that is primarily operated by touching the screen. (Devices categorized by their manufacturer as a Tablet)"@en-US ;
+	sh:targetClass observable:Tablet ;
 	.
 
 observable:TaskActionType
@@ -9692,10 +10109,7 @@ observable:ValuesEnumeratedEffectFacet
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf
-		core:Facet ,
-		observable:DefinedEffectFacet
-		;
+	rdfs:subClassOf observable:DefinedEffectFacet ;
 	rdfs:label "ValuesEnumeratedEffectFacet"@en ;
 	rdfs:comment "A values enumerated effect facet is a grouping of characteristics unique to the effects of actions upon observable objects where a value of the observable object is enumerated. An example of this would be the values of a registry key."@en ;
 	sh:property [
@@ -9741,6 +10155,17 @@ observable:VolumeFacet
 		]
 		;
 	sh:targetClass observable:VolumeFacet ;
+	.
+
+observable:WearableDevice
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:SmartDevice ;
+	rdfs:label "WearableDevice"@en-US ;
+	rdfs:comment "A wearable device is an electronic device that is designed to be worn on a person's body."@en-US ;
+	sh:targetClass observable:WearableDevice ;
 	.
 
 observable:WebPage
@@ -10061,12 +10486,6 @@ observable:WifiAddressFacet
 	rdfs:subClassOf observable:MACAddressFacet ;
 	rdfs:label "WifiAddressFacet"@en ;
 	rdfs:comment "A Wi-Fi address facet is a grouping of characteristics unique to a media access control (MAC) standards conformant identifier assigned to a device network interface to enable routing and management of IEEE 802.11 standards-conformant communications to and from that device."@en ;
-	sh:property [
-		sh:datatype xsd:string ;
-		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
-		sh:path observable:addressValue ;
-	] ;
 	sh:targetClass observable:WifiAddressFacet ;
 	.
 
@@ -11510,6 +11929,17 @@ observable:WirelessNetworkConnectionFacet
 	sh:targetClass observable:WirelessNetworkConnectionFacet ;
 	.
 
+observable:WriteBlocker
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:Device ;
+	rdfs:label "WriteBlocker"@en-US ;
+	rdfs:comment "A write blocker is a device that allows read-only access to storage mediums in order to preserve the integrity of the data being analyzed. Examples include Tableau, Cellibrite, Talon, etc."@en-US ;
+	sh:targetClass observable:WriteBlocker ;
+	.
+
 observable:X509Certificate
 	a
 		owl:Class ,
@@ -11781,7 +12211,7 @@ observable:accessedTime
 observable:account
 	a owl:ObjectProperty ;
 	rdfs:label "account"@en ;
-	rdfs:comment "Specifies the account used to run the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381228(v=vs.85).aspx."@en ;
+	rdfs:comment "Specifies the account referenced in an event log entry or used to run the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381228(v=vs.85).aspx."@en ;
 	rdfs:range observable:ObservableObject ;
 	.
 
@@ -12346,13 +12776,6 @@ observable:compressionRatio
 	rdfs:label "compressionRatio"@en ;
 	rdfs:comment "The compression ratio of the compressed data."@en ;
 	rdfs:range xsd:decimal ;
-	.
-
-observable:computerName
-	a owl:DatatypeProperty ;
-	rdfs:label "computerName"@en ;
-	rdfs:comment "A name of the computer on which the log entry was created."@en ;
-	rdfs:range xsd:string ;
 	.
 
 observable:contact
@@ -12982,6 +13405,13 @@ observable:environmentVariables
 	rdfs:range types:Dictionary ;
 	.
 
+observable:eventRecordDevice
+	a owl:ObjectProperty ;
+	rdfs:label "device"@en ;
+	rdfs:comment "The device on which the log entry was generated."@en ;
+	rdfs:range observable:ObservableObject ;
+	.
+
 observable:eventRecordID
 	a owl:DatatypeProperty ;
 	rdfs:label "eventRecordID"@en ;
@@ -13553,8 +13983,15 @@ observable:inhibitAnyPolicy
 observable:installDate
 	a owl:DatatypeProperty ;
 	rdfs:label "installDate"@en ;
-	rdfs:comment "Specifies the date the operating system was installed."@en ;
+	rdfs:comment "Specifies the date the operating system or application was installed."@en ;
 	rdfs:range xsd:dateTime ;
+	.
+
+observable:installedVersionHistory
+	a owl:ObjectProperty ;
+	rdfs:label "installedVersionHistory"@en ;
+	rdfs:comment "Specifies the history of installed application version(s)."@en ;
+	rdfs:range observable:ApplicationVersion ;
 	.
 
 observable:interceptedCallState
@@ -14202,6 +14639,13 @@ observable:msProductName
 	a owl:DatatypeProperty ;
 	rdfs:label "msProductName"@en ;
 	rdfs:comment "The Microsoft ProductName of the current installation of Windows. This is typically found in HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion!ProductName."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:mutexName
+	a owl:DatatypeProperty ;
+	rdfs:label "mutexName"@en ;
+	rdfs:comment "Specifies the name identifier for a specific instance of a mechanism that enforces limits on access to a resource when there are many threads of execution ."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -15738,6 +16182,13 @@ observable:twitterId
 	rdfs:range xsd:string ;
 	.
 
+observable:uninstallDate
+	a owl:DatatypeProperty ;
+	rdfs:label "uninstallDate"@en ;
+	rdfs:comment "Specifies the date the operating system or application was uninstalled."@en ;
+	rdfs:range xsd:dateTime ;
+	.
+
 observable:updatedDate
 	a owl:DatatypeProperty ;
 	rdfs:label "updatedDate"@en ;
@@ -16090,29 +16541,6 @@ tool:AnalyticTool
 	sh:targetClass tool:AnalyticTool ;
 	.
 
-tool:BuildConfigurationType
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:label "BuildConfigurationType"@en ;
-	rdfs:comment "A build configuration type is a characterization of how a particular version of software can or should be built."@en ;
-	sh:property
-		[
-			sh:class tool:ConfigurationSettingType ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path tool:configurationSettings ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:configurationSettingDescription ;
-		]
-		;
-	sh:targetClass tool:BuildConfigurationType ;
-	.
-
 tool:BuildFacet
 	a
 		owl:Class ,
@@ -16139,7 +16567,7 @@ tool:BuildInformationType
 	rdfs:comment "A build information type is a grouping of characteristics that describe how a particular version of software was converted from source code to executable code."@en ;
 	sh:property
 		[
-			sh:class tool:BuildConfigurationType ;
+			sh:class configuration:Configuration ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
 			sh:path tool:buildConfiguration ;
@@ -16266,40 +16694,29 @@ tool:CompilerType
 	sh:targetClass tool:CompilerType ;
 	.
 
-tool:ConfigurationSettingType
+tool:ConfiguredTool
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:label "ConfigurationSettingType"@en ;
-	rdfs:comment "A configuration setting type is a grouping of characteristics unique to a particular parameter or initial setting for the use of a tool, application, or other cyber object."@en ;
+	rdfs:subClassOf tool:Tool ;
+	rdfs:label "ConfiguredTool"@en ;
+	rdfs:comment "A ConfiguredTool is a Tool that is known to be configured to run in a more specified manner than some unconfigured or less-configured Tool."@en ;
 	sh:property
 		[
-			sh:datatype xsd:string ;
+			sh:class configuration:Configuration ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:itemDescription ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path configuration:usesConfiguration ;
 		] ,
 		[
-			sh:datatype xsd:string ;
+			sh:class tool:Tool ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:itemName ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:itemType ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:itemValue ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path configuration:isConfigurationOf ;
 		]
 		;
-	sh:targetClass tool:ConfigurationSettingType ;
+	sh:targetClass tool:ConfiguredTool ;
 	.
 
 tool:DefensiveTool
@@ -16311,30 +16728,6 @@ tool:DefensiveTool
 	rdfs:label "DefensiveTool"@en ;
 	rdfs:comment "A defensive tool is an artifact of hardware and/or software utilized to accomplish a task or purpose of guarding."@en ;
 	sh:targetClass tool:DefensiveTool ;
-	.
-
-tool:DependencyType
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:label "DependencyType"@en ;
-	rdfs:comment "A dependency type is a grouping of characteristics unique to something that a tool or other software relies on to function as intended."@en ;
-	sh:property
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:dependencyDescription ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:dependencyType ;
-		]
-		;
-	sh:targetClass tool:DependencyType ;
 	.
 
 tool:LibraryType
@@ -16414,34 +16807,11 @@ tool:Tool
 	sh:targetClass tool:Tool ;
 	.
 
-tool:ToolConfigurationTypeFacet
-	a
-		owl:Class ,
-		sh:NodeShape
-		;
-	rdfs:subClassOf core:Facet ;
-	rdfs:label "ToolConfigurationTypeFacet"@en ;
-	rdfs:comment "A tool configuration type facet is a grouping of characteristics unique to the instantial settings and setup of a tool."@en ;
-	sh:property
-		[
-			sh:class tool:DependencyType ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
-			sh:path tool:dependencies ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:nodeKind sh:Literal ;
-			sh:path tool:usageContextAssumptions ;
-		]
-		;
-	sh:targetClass tool:ToolConfigurationTypeFacet ;
-	.
-
 tool:buildConfiguration
 	a owl:ObjectProperty ;
 	rdfs:label "buildConfiguration"@en ;
 	rdfs:comment "How the build utility was configured for a particular build of a particular software."@en ;
-	rdfs:range tool:BuildConfigurationType ;
+	rdfs:range configuration:Configuration ;
 	.
 
 tool:buildID
@@ -16528,20 +16898,6 @@ tool:compilers
 	rdfs:range tool:CompilerType ;
 	.
 
-tool:configurationSettingDescription
-	a owl:DatatypeProperty ;
-	rdfs:label "configurationSettingDescription"@en ;
-	rdfs:comment "Description of the configuration settings for a particular build of a particular software."@en ;
-	rdfs:range xsd:string ;
-	.
-
-tool:configurationSettings
-	a owl:ObjectProperty ;
-	rdfs:label "configurationSettings"@en ;
-	rdfs:comment "The configuration settings for a particular build of a particular software."@en ;
-	rdfs:range tool:ConfigurationSettingType ;
-	.
-
 tool:cpeid
 	a owl:DatatypeProperty ;
 	rdfs:label "cpeid"@en ;
@@ -16554,55 +16910,6 @@ tool:creator
 	rdfs:label "creator"@en ;
 	rdfs:comment "The creator organization for a particular tool."@en ;
 	rdfs:range identity:Identity ;
-	.
-
-tool:dependencies
-	a owl:ObjectProperty ;
-	rdfs:label "dependencies"@en ;
-	rdfs:comment "The relevant dependencies for a tool."@en ;
-	rdfs:range tool:DependencyType ;
-	.
-
-tool:dependencyDescription
-	a owl:DatatypeProperty ;
-	rdfs:label "dependencyDescription"@en ;
-	rdfs:comment "A description of a tool dependency."@en ;
-	rdfs:range xsd:string ;
-	.
-
-tool:dependencyType
-	a owl:DatatypeProperty ;
-	rdfs:label "dependencyType"@en ;
-	rdfs:comment "The type of a tool dependency."@en ;
-	rdfs:range xsd:string ;
-	.
-
-tool:itemDescription
-	a owl:DatatypeProperty ;
-	rdfs:label "itemDescription"@en ;
-	rdfs:comment "A description of a configuration item."@en ;
-	rdfs:range xsd:string ;
-	.
-
-tool:itemName
-	a owl:DatatypeProperty ;
-	rdfs:label "itemName"@en ;
-	rdfs:comment "The name of a configuration item."@en ;
-	rdfs:range xsd:string ;
-	.
-
-tool:itemType
-	a owl:DatatypeProperty ;
-	rdfs:label "itemType"@en ;
-	rdfs:comment "The type of a configuration item."@en ;
-	rdfs:range xsd:string ;
-	.
-
-tool:itemValue
-	a owl:DatatypeProperty ;
-	rdfs:label "itemValue"@en ;
-	rdfs:comment "The value of a configuration setting instance."@en ;
-	rdfs:range xsd:string ;
 	.
 
 tool:libraries
@@ -16654,13 +16961,6 @@ tool:toolType
 	rdfs:range xsd:string ;
 	.
 
-tool:usageContextAssumptions
-	a owl:DatatypeProperty ;
-	rdfs:label "usageContextAssumptions"@en ;
-	rdfs:comment "dDescriptions of the various relevant usage context assumptions for this tool ."@en ;
-	rdfs:range xsd:string ;
-	.
-
 tool:version
 	a owl:DatatypeProperty ;
 	rdfs:label "version"@en ;
@@ -16673,12 +16973,11 @@ types:ControlledDictionary
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf types:Dictionary ;
 	rdfs:label "ControlledDictionary"@en ;
 	rdfs:comment "A controlled dictionary is a list of (term/key, value) pairs where each term/key exists no more than once and is constrained to an explicitly defined set of values."@en ;
 	sh:property [
 		sh:class types:ControlledDictionaryEntry ;
-		sh:minCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
 		sh:path types:entry ;
 	] ;
 	sh:targetClass types:ControlledDictionary ;
@@ -16689,24 +16988,9 @@ types:ControlledDictionaryEntry
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf types:DictionaryEntry ;
 	rdfs:label "ControlledDictionaryEntry"@en ;
 	rdfs:comment "A controlled dictionary entry is a single (term/key, value) pair where the term/key is constrained to an explicitly defined set of values."@en ;
-	sh:property
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path types:key ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path types:value ;
-		]
-		;
 	sh:targetClass types:ControlledDictionaryEntry ;
 	.
 
@@ -16868,13 +17152,7 @@ types:entry
 	a owl:ObjectProperty ;
 	rdfs:label "entry"@en ;
 	rdfs:comment "A dictionary entry."@en ;
-	rdfs:range [
-		a rdfs:Datatype ;
-		owl:unionOf (
-			types:ControlledDictionaryEntry
-			types:DictionaryEntry
-		) ;
-	] ;
+	rdfs:range types:DictionaryEntry ;
 	.
 
 types:hashMethod
