@@ -103,12 +103,12 @@ Comments and corrections are welcome and should be submitted as a GitHub issue: 
     &quot;uco-tool&quot;: &quot;https://unifiedcyberontology.org/ontology/uco/tool#&quot;,
     &quot;xsd&quot;: &quot;http://www.w3.org/2001/XMLSchema#&quot;
   },
-  &quot;@id&quot;:&quot;:bundle-uuid&quot;,
+  &quot;@id&quot;:&quot;:bundle-32467e43-3d56-4a66-a483-db22cb56e6b9&quot;,
   &quot;@type&quot;:&quot;uco-case:Bundle&quot;,
   &quot;uco-case:description&quot;:&quot;Investigation of any crime type&quot;,
   &quot;uco-case:object&quot;:[
     {
-      &quot;@id&quot;:&quot;:investigation-uuid&quot;,
+      &quot;@id&quot;:&quot;:investigation-12ea9028-290b-46f9-9c8a-d49d00351a3a&quot;,
       &quot;@type&quot;:&quot;case-investigation:Investigation&quot;,
       &quot;uco-core:name&quot;:&quot;Investigation_2021_0415&quot;,
       &quot;uco-core:focus&quot;:&quot;Robbery&quot;,
@@ -119,14 +119,14 @@ Comments and corrections are welcome and should be submitted as a GitHub issue: 
 }</pre>
 </div></div><p /><p>The <code>object</code> property in a CASE bundle header can provide a comprehensive list explicit referencing all objects in the bundle, or a shorter list of <code>PropertyBundles</code> and <code>InvestigativeActions</code> which contain implicit references to all objects in the bundle.</p><p /><h3 id="CASEOntologyDesignDocument-6.3.Tools">6.3. Tools</h3><p>The <code>ConfiguredTool</code> object is used to represent tools that are used to treat data, including their configuration options.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
-  &quot;@id&quot;: &quot;:dc3dd-uuid-1&quot;,
+  &quot;@id&quot;: &quot;:configuredtool-771f892b-9830-4d71-b0a2-bcff5072ec80&quot;,
   &quot;@type&quot;:&quot;uco-tool:ConfiguredTool&quot;,
   &quot;uco-tool:name&quot;:&quot;dc3dd&quot;,
   &quot;uco-tool:toolType&quot;:&quot;acquisition&quot;,
   &quot;uco-tool:creator&quot;:&quot;DC3&quot;,
   &quot;uco-tool:version&quot;:&quot;7.2.646&quot;,
   &quot;uco-configuration:usesConfiguration&quot;: {
-    &quot;@id&quot;: &quot;kb:Configuration-2afbfbb1-b4d6-4ad5-9691-ff09b9f6eebe&quot;,
+    &quot;@id&quot;: &quot;kb:configuration-33b352c2-478d-4bb1-b758-49df5cc0cd49&quot;,
     &quot;@type&quot;: &quot;uco-configuration:Configuration&quot;,
     &quot;uco-configuration:configurationEntry&quot;:[
         {
@@ -154,7 +154,7 @@ Comments and corrections are welcome and should be submitted as a GitHub issue: 
 },</pre>
 </div></div><h3 id="CASEOntologyDesignDocument-6.2.InvestigativeActionandRole">6.2. InvestigativeAction and Role</h3><p>CASE uses <code>InvestigativeActions</code> to represent actions taken as part of an investigation, including initial evidence collection, subsequent tool processing, analysis activities, and reporting results. As a subclass of Action in UCO, an InvestigativeAction references the <code>location</code>, <code>performer</code>, <code>instrument</code>, and <code>environment</code> as well as the input <code>object</code> and output <code>result</code>.</p><p>Notably, the initial <code>InvestigativeAction</code> of seizing/receiving data sources has a null input and a <code>performer</code>  property that references a <code>Role</code>. Assigning a <code>Role</code> within a specific context allows the same person to have multiple roles in different contexts. For example, in the Oresteia example, Clytemnestra has the Role of Offender in Crime E and the Role of Victim in Crime F. Also see <a href="https://doi.org/10.1016/j.diin.2018.10.001" class="external-link" rel="nofollow">https://doi.org/10.1016/j.diin.2018.10.001</a></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
-  &quot;@id&quot;: &quot;kb:action-uuid-1&quot;,
+  &quot;@id&quot;: &quot;kb:action-20e71c39-3a5a-4d7a-a01d-95dc6545d31e&quot;,
   &quot;@type&quot;: &quot;case-investigation:InvestigativeAction&quot;,
   &quot;uco-core:description&quot;: &quot;Items collected at scene&quot;,
   &quot;uco-core:hasFacet&quot;: {
@@ -164,36 +164,36 @@ Comments and corrections are welcome and should be submitted as a GitHub issue: 
                     &quot;@value&quot;: &quot;2021-04-01T14:00+00:00&quot;
                 },
       &quot;uco-action:location&quot;: {
-                    &quot;@id&quot;: &quot;kb:location-uuid-1&quot;
+                    &quot;@id&quot;: &quot;kb:location-dd8d6513-389c-413f-9f30-cf75e24ad838&quot;
                 },
       &quot;uco-action:performer&quot;: {
-                    &quot;@id&quot;: &quot;kb:agent-uuid-1&quot;
+                    &quot;@id&quot;: &quot;kb:role-d2cd172c-bc44-429f-be13-d4ea58480852&quot;
                 },
       &quot;uco-action:result&quot;: [
                     {
-                        &quot;@id&quot;: &quot;kb:provenance-record-uuid-1&quot;
+                        &quot;@id&quot;: &quot;kb:provenancerecord-a5c55cda-c515-4bd5-9f34-f65176ee6d4f&quot;
                     },
                     {
-                        &quot;@id&quot;: &quot;kb:subject-device-uuid-1&quot;
+                        &quot;@id&quot;: &quot;kb:device-0e3d3524-c19d-4c22-9edd-2a6e65f82bd7&quot;
                    },
                    ... &lt;list all items&gt;
                     {
-                        &quot;@id&quot;: &quot;kb:subject-device-uuid-23&quot;
+                        &quot;@id&quot;: &quot;kb:device-4358a269-4159-4475-820e-b67660f9c55c&quot;
                     }
                 ]
       }
 },
 {
-  &quot;@id&quot;: &quot;kb:provenance-record-uuid-1&quot;,
+  &quot;@id&quot;: &quot;kb:provenancerecord-a5c55cda-c515-4bd5-9f34-f65176ee6d4&quot;,
   &quot;@type&quot;: &quot;case-investigation:ProvenanceRecord&quot;,
   &quot;case-investigation:exhibitNumber&quot;: &quot;URI-1234&quot;,
   &quot;case-investigation:rootExhibitNumber&quot;: &quot;URI-1234&quot;,
   &quot;uco-core:object&quot;: {
-                &quot;@id&quot;: &quot;kb:subject-device-uuid-1&quot;
+                &quot;@id&quot;: &quot;kb:device-0e3d3524-c19d-4c22-9edd-2a6e65f82bd7&quot;
   }
 },
 {
-  &quot;@id&quot;: &quot;kb:location-uuid-1&quot;,
+  &quot;@id&quot;: &quot;kb:location-dd8d6513-389c-413f-9f30-cf75e24ad838&quot;,
   &quot;@type&quot;: &quot;uco-location:Location&quot;,
   &quot;uco-core:description&quot;: &quot;Location where evidence was seized&quot;,
   &quot;uco-core:hasFacet&quot;: {
@@ -203,12 +203,12 @@ Comments and corrections are welcome and should be submitted as a GitHub issue: 
   }
 },
 {
-  &quot;@id&quot;: &quot;kb:agent1-uuid&quot;,
+  &quot;@id&quot;: &quot;kb:role-d2cd172c-bc44-429f-be13-d4ea58480852&quot;,
   &quot;@type&quot;: &quot;uco-role:Role&quot;,
   &quot;uco-core:name&quot;: &quot;Investigator&quot;
 },
 {
-  &quot;@id&quot;: &quot;kb:agent1-id-uuid&quot;,
+  &quot;@id&quot;: &quot;kb:identity-b02bc46d-3dbb-49a4-9e6d-27a89f162f96&quot;,
   &quot;@type&quot;: &quot;uco-identity:Identity&quot;,
   &quot;uco-core:hasFacet&quot;: [
                 {
@@ -220,7 +220,7 @@ Comments and corrections are welcome and should be submitted as a GitHub issue: 
 },</pre>
 <p>Part of acquiring digital evidence can involve photographing items using a digital camera for documentation. Any Any <code>InvestigativeAction</code> can reference the tool used to treat the data as the <code>instrument</code> which reference a <code>ConfiguredTool</code> object.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">       {
-            &quot;@id&quot;: &quot;kb:camera-uuid-1&quot;,
+            &quot;@id&quot;: &quot;kb:analytictool-34eefb72-19c8-42c8-933c-3c1e13372e491&quot;,
             &quot;@type&quot;: [
                 &quot;uco-observable:ObservableObject&quot;,
                 &quot;uco-tool:AnalyticTool&quot;
@@ -236,7 +236,7 @@ Comments and corrections are welcome and should be submitted as a GitHub issue: 
             &quot;uco-tool:creator&quot;: &quot;Canon&quot;
         },
         {
-            &quot;@id&quot;: &quot;kb:action-uuid-2&quot;,
+            &quot;@id&quot;: &quot;kb:action-5f560f12-2be5-4b9a-a8e8-96aa4e2d0c13&quot;,
             &quot;@type&quot;: &quot;case-investigation:InvestigativeAction&quot;,
             &quot;uco-core:name&quot;: &quot;Photographed exhibits&quot;,
             &quot;uco-core:hasFacet&quot;: {
@@ -246,35 +246,35 @@ Comments and corrections are welcome and should be submitted as a GitHub issue: 
                     &quot;@value&quot;: &quot;2021-04-01T14:15+00:00&quot;
                 },
                 &quot;uco-action:instrument&quot;: {
-                    &quot;@id&quot;: &quot;kb:camera-uuid-1&quot;
+                    &quot;@id&quot;: &quot;kb:analytictool-34eefb72-19c8-42c8-933c-3c1e13372e491&quot;
                 },
                 &quot;uco-action:location&quot;: {
-                    &quot;@id&quot;: &quot;kb:location1-uuid&quot;
+                    &quot;@id&quot;: &quot;kb:location-dd8d6513-389c-413f-9f30-cf75e24ad838&quot;
                 },
                 &quot;uco-action:performer&quot;: {
-                    &quot;@id&quot;: &quot;kb:agent1-uuid&quot;
+                    &quot;@id&quot;: &quot;kb:role-d2cd172c-bc44-429f-be13-d4ea58480852&quot;
                 },
                 &quot;uco-action:object&quot;: [
                     {
-                        &quot;@id&quot;: &quot;kb:provenance-record-uuid-1&quot;
+                        &quot;@id&quot;: &quot;kb:provenancerecord-a5c55cda-c515-4bd5-9f34-f65176ee6d4f&quot;
                     },
                     {
-                        &quot;@id&quot;: &quot;kb:subject-device1-uuid&quot;
+                        &quot;@id&quot;: &quot;kb:device-0e3d3524-c19d-4c22-9edd-2a6e65f82bd7&quot;
                     }
                 ],
                 &quot;uco-action:result&quot;: [
                     {
-                        &quot;@id&quot;: &quot;kb:provenance-record-uuid-2&quot;
+                        &quot;@id&quot;: &quot;kb:provenancerecord-a73ef018-75b2-4522-b485-979ecb36d624&quot;
                     },
                     {
-                        &quot;@id&quot;: &quot;kb:camera-mediacard-uuid&quot;
+                        &quot;@id&quot;: &quot;kb:camera-mediacard-def63f6a-d031-4104-91b9-76f060a0ece9&quot;
                     }
                 ]
             },</pre>
 </div></div><p /><h3 id="CASEOntologyDesignDocument-6.3.FacetsofObservableObjects">6.3. Facets of Observable Objects</h3><p>CASE can enrich <code>ObservableObjects</code> using <code>Facets</code> defined in UCO, as well as custom facets not currently defined in the ontology. For instance, a digital photograph is represented as an <code>ObservableObject</code> with the <code>RasterPictureFacet</code> (see example <a href="https://github.com/casework/CASE-Examples/blob/555c756ba7364ee0c4849f14cc1426dc68bc5a48/examples/exif_data.json" class="external-link" rel="nofollow">https://github.com/casework/CASE-Examples/blob/555c756ba7364ee0c4849f14cc1426dc68bc5a48/examples/exif_data.json</a>  ). This Figure depicts a digital photograph that has been enriched with a custom Facet to define properties associated with contraband using a chosen scale (e.g., COPINE, SAP).</p><span class="confluence-embedded-file-wrapper image-center-wrapper"><img class="confluence-embedded-image image-center" loading="lazy" src="attachments/1384087557/1753677827.png" data-image-src="attachments/1384087557/1753677827.png" data-height="187" data-width="507" data-unresolved-comment-count="0" data-linked-resource-id="1753677827" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="CASECustomFacet.png" data-base-url="https://cyberontology.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="1384087557" data-linked-resource-container-version="21" data-media-id="71e15c48-0277-42c0-a850-87dc6b1089aa" data-media-type="file"></span><p><strong>Figure</strong>: Observable Object with Facets that represent properties of a File that is a Picture that a custom facet. </p><p /><p>This depicted example can be represented in CASE as follows:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
-            &quot;@id&quot;: &quot;kb:digital_photograph1&quot;,
-            &quot;@type&quot;: &quot;uco-observable:ObservableObject&quot;,
+            &quot;@id&quot;: &quot;kb:file-fa836108-ed37-44b0-9b2b-0b61c4a0590d&quot;,
+            &quot;@type&quot;: &quot;uco-observable:File&quot;,
             &quot;uco-core:hasFacet&quot;: [
                 {
                     &quot;@type&quot;: &quot;uco-observable:FileFacet&quot;,
@@ -393,28 +393,8 @@ Comments and corrections are welcome and should be submitted as a GitHub issue: 
             }
         ]
     }</pre>
-</div></div><p>The same pattern is used to represent the relationship between a Windows Registry value and its logical location within a Windows Registry hive.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">  {
-        &quot;@id&quot;: &quot;kb:user1-registryhive-cells-relationship&quot;,
-        &quot;@type&quot;: &quot;uco-observable:CyberRelationship&quot;,
-        &quot;uco-core:source&quot;: {
-            &quot;@id&quot;: &quot;kb:user1-registrycell-shellbag1&quot;
-        },
-        &quot;uco-core:target&quot;: {
-            &quot;@id&quot;: &quot;kb:user1-registryhive&quot;
-        },
-        &quot;uco-core:kindOfRelationship&quot;: {
-            &quot;@type&quot;: &quot;uco-vocabulary:CyberItemRelationshipVocab&quot;,
-            &quot;@value&quot;: &quot;Contained_Within&quot;
-        },
-        &quot;uco-core:isDirectional&quot;: true,
-        &quot;uco-core:hasFacet&quot;: [
-            {
-                &quot;@type&quot;: &quot;uco-observable:PathRelation&quot;,
-                &quot;uco-observable:path&quot;: &quot;\Software\Microsoft\Windows\Shell\Bags\1\Desktop\ItemPos1920x1080x120(1)&quot;
-            }
-        ]
-    },</pre>
+</div></div><p>The same pattern is used to represent the relationship between 
+  EOGHAN NOTE: REPLACE EXAMPLE
 </div></div><h3 id="CASEOntologyDesignDocument-6.6.Vocabularies">6.6. Vocabularies</h3>
 <p>[<em>Describe</em> CASE’s use of this UCO pattern and present CASE examples. Either reference back to the diagram in Section 2.3.3, or a new CASE-specific diagram, would be helpful.]</p>
 <p> </p><h3 id="CASEOntologyDesignDocument-6.7.SeparateNamespaceforDomainAssertions">6.7. Separate Namespace for Domain Assertions</h3><p>[<em>Describe</em> CASE’s use of this UCO pattern and present CASE examples. Reference back to Section 2.3.4 if needed.]</p><p> </p><h3 id="CASEOntologyDesignDocument-6.8.Cyber-investigationpatterns">6.8. Cyber-investigation patterns</h3><p><a class="confluence-userlink user-mention" data-username="5cfb831ce193b50e8bca233b" data-account-id="5cfb831ce193b50e8bca233b" href="https://cyberontology.atlassian.net/wiki/people/5cfb831ce193b50e8bca233b?ref=confluence" target="_blank" data-linked-resource-id="2981893" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://cyberontology.atlassian.net/wiki">Eoghan Casey</a> The domain of the CASE ontology is cyber-investigations in general…. The CASE domain includes the following topics:</p><p> </p><h3 id="CASEOntologyDesignDocument-6.9.Provenancepatterns">6.9. Provenance patterns</h3><p>Provenance of evidentiary material in an investigation needs to be tracked. Therefore, the CASE ontology includes concepts for representing the source and chain-of-custody (including any operations) for evidence related to an investigation.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
