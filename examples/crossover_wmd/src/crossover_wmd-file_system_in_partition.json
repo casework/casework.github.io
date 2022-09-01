@@ -1,6 +1,6 @@
 [
     {
-        "@id": "kb:filesystem-uuid",
+        "@id": "kb:filesystem-440e36cc-7451-4cf1-9db0-1a8ca8537a1c",
         "@type": "uco-observable:FileSystem",
         "uco-core:hasFacet": [
             {

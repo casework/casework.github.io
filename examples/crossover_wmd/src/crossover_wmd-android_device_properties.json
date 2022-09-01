@@ -1,6 +1,6 @@
 [
     {
-        "@id": "kb:samsung-device-uuid",
+        "@id": "kb:mobiledevice-803df237-bc7e-4e24-a5cb-8157063014b4",
         "@type": "uco-observable:MobileDevice",
         "uco-core:hasFacet": [
             {

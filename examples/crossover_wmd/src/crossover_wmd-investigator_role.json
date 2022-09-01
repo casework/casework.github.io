@@ -1,6 +1,6 @@
 [
     {
-        "@id": "kb:eoghancasey-uuid",
+        "@id": "kb:identity-0108480e-1e7a-4341-8b1d-558877c4cc39",
         "@type": "uco-identity:Identity",
         "uco-core:hasFacet": [
             {
@@ -11,18 +11,18 @@
         ]
     },
     {
-        "@id": "kb:investigator1-uuid",
+        "@id": "kb:investigator-10b3d2da-e801-4afe-b70a-61f16a75e68b",
         "@type": "uco-role:Role",
         "uco-core:name": "Investigator"
     },
     {
-        "@id": "kb:investigatorrole-uuid",
-        "@type": "uco-core:Relationship",
+        "@id": "kb:investigatorrole-e9a01d66-fff4-4fa8-88d4-8e445f3369aa",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
-            "@id": "kb:eoghancasey-uuid"
+            "@id": "kb:identity-0108480e-1e7a-4341-8b1d-558877c4cc39"
         },
         "uco-core:target": {
-            "@id": "kb:investigator1-uuid"
+            "@id": "kb:investigator-10b3d2da-e801-4afe-b70a-61f16a75e68b"
         },
         "uco-core:kindOfRelationship": "Has_Role",
         "uco-core:isDirectional": true

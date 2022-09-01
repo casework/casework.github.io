@@ -1,6 +1,6 @@
 [
     {
-        "@id": "kb:39ff4987-8ae5-47e3-8369-dbd0d5f79398",
+        "@id": "kb:url-39ff4987-8ae5-47e3-8369-dbd0d5f79398",
         "@type": "uco-observable:URL",
         "uco-core:hasFacet": [
             {
@@ -10,11 +10,10 @@
         ]
     },
     {
-        "@id": "kb:860FC853-9C3F-41FC-B144-8AC80D8F5849",
+        "@id": "kb:urlhistory-860fc853-9c3f-41fc-b144-8ac80d8f5849",
         "@type": "uco-observable:URLHistory",
         "uco-core:hasFacet": [
             {
-                "@id": "kb:860FC853-9C3F-41FC-B144-8AC80D8F5849-URLHistory",
                 "@type": "uco-observable:URLHistoryFacet",
                 "uco-observable:urlHistoryEntry": [
                     {
@@ -50,7 +49,7 @@
         ]
     },
     {
-        "@id": "kb:2AF6FCF3-91D3-4457-9333-ABAB67F8FB91",
+        "@id": "kb:file-2af6fcf3-91d3-4457-9333-abab67f8fb91",
         "@type": "uco-observable:File",
         "uco-core:tag": [
             "Database"
@@ -103,13 +102,13 @@
         ]
     },
     {
-        "@id": "kb:9A3FFCF3-91D3-4457-9333-ABAB67F8AB4F",
+        "@id": "kb:relationship-9a3ffcf3-91d3-4457-9333-abab67f8ab4f",
         "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
-            "@id": "kb:860FC853-9C3F-41FC-B144-8AC80D8F5849-URLHistory"
+            "@id": "kb:urlhistory-860fc853-9c3f-41fc-b144-8ac80d8f5849"
         },
         "uco-core:target": {
-            "@id": "kb:2AF6FCF3-91D3-4457-9333-ABAB67F8FB91"
+            "@id": "kb:2af6fcf3-91d3-4457-9333-abab67f8fb91"
         },
         "uco-core:isDirectional": true,
         "uco-core:kindOfRelationship": "Contained_Within",

@@ -1,12 +1,12 @@
 [
     {
-        "@id": "kb:simcard1-relationship-uuid",
-        "@type": "uco-core:Relationship",
+        "@id": "kb:simcard1-relationship-af318ae5-b792-4297-b1c3-74e5bbd9b018",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
-            "@id": "kb:simcard1-uuid"
+            "@id": "kb:simcard-b0252511-4875-4e2e-a27f-d95c35d87c1f"
         },
         "uco-core:target": {
-            "@id": "kb:samsung-device-uuid"
+            "@id": "kb:mobiledevice-803df237-bc7e-4e24-a5cb-8157063014b4"
         },
         "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:startTime": {
@@ -17,13 +17,13 @@
         "uco-core:isDirectional": true
     },
     {
-        "@id": "kb:simcard3-relationship-uuid",
-        "@type": "uco-core:Relationship",
+        "@id": "kb:simcard3-relationship-dfba6daa-26fd-4a3e-9638-d85c32f17e2f",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
-            "@id": "kb:simcard1-uuid"
+            "@id": "kb:simcard-b0252511-4875-4e2e-a27f-d95c35d87c1f"
         },
         "uco-core:target": {
-            "@id": "kb:samsung-device-uuid"
+            "@id": "kb:mobiledevice-803df237-bc7e-4e24-a5cb-8157063014b4"
         },
         "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:startTime": {
