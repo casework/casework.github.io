@@ -73,6 +73,7 @@
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
 			sh:sourceShape [
+				a sh:PropertyShape ;
 				sh:maxCount "0"^^xsd:integer ;
 				sh:path uco-observable:MSISDN ;
 			] ;
