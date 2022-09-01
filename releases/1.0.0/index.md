@@ -34,6 +34,9 @@ custom_css: releases
   * (While this is not necessarily a backwards-incompatible change within the scope of UCO, it does identify what end users might not have realized were broader OWL errors.)
 * Removed CASE's IRI base ([*GitHub Pull Request 103*](https://github.com/casework/CASE/pull/103)) 
 * Graph individuals are now required to not be blank nodes, and an IRI ending with a UUID is suggested ([*UCO GitHub Issue 430*](https://github.com/ucoProject/UCO/issues/430))
+* CASE now uses `owl:versionIRI`, `owl:priorVersion` and `owl:backwardCompatibleWith` or `owl:incompatibleWith` to declare and relate ontology versions ([*UCO GitHub Issue 437*](https://github.com/ucoProject/UCO/issues/437))
+  * (Due to new OWL-level testing, this has the same backwards-incompatibility interpretation as Pull Request 102.)
+
 
 #### General changes
 
