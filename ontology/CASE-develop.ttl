@@ -1,23 +1,23 @@
 # imports: http://purl.org/co
-# imports: https://ontology.caseontology.org/case/investigation
-# imports: https://ontology.caseontology.org/case/vocabulary
-# imports: https://ontology.unifiedcyberontology.org/co
-# imports: https://ontology.unifiedcyberontology.org/owl
-# imports: https://ontology.unifiedcyberontology.org/uco/action
-# imports: https://ontology.unifiedcyberontology.org/uco/configuration
-# imports: https://ontology.unifiedcyberontology.org/uco/core
-# imports: https://ontology.unifiedcyberontology.org/uco/identity
-# imports: https://ontology.unifiedcyberontology.org/uco/location
-# imports: https://ontology.unifiedcyberontology.org/uco/marking
-# imports: https://ontology.unifiedcyberontology.org/uco/observable
-# imports: https://ontology.unifiedcyberontology.org/uco/pattern
-# imports: https://ontology.unifiedcyberontology.org/uco/role
-# imports: https://ontology.unifiedcyberontology.org/uco/time
-# imports: https://ontology.unifiedcyberontology.org/uco/tool
-# imports: https://ontology.unifiedcyberontology.org/uco/types
-# imports: https://ontology.unifiedcyberontology.org/uco/uco
-# imports: https://ontology.unifiedcyberontology.org/uco/victim
-# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary
+# imports: https://ontology.caseontology.org/case/investigation/1.0.0
+# imports: https://ontology.caseontology.org/case/vocabulary/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/co/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/owl/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/action/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/configuration/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/core/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/identity/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/location/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/marking/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/observable/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/pattern/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/role/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/time/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/tool/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/types/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/uco/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/victim/1.0.0
+# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary/1.0.0
 
 @prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix co: <http://purl.org/co/> .
@@ -51,14 +51,15 @@
 	rdfs:comment "The Cyber-investigation Analysis Standard Expression (CASE) ontology is a community-developed standard that defines concepts used in a broad range of cyber-investigation domains, including digital forensic science, incident response, counter-terrorism, criminal justice, forensic intelligence, and situational awareness. CASE includes all aspects of the digital forensic process, from evidence-gathering and chain of custody, to generating a final report. The goal is to increase sharing and interoperability of cyber-investigation information among organizations and between forensic analytic tools. CASE aligns with and extends the Unified Cyber Ontology (UCO). The preferred namespace abbreviation for this ontology is: case-master."@en ;
 	dct:title "Cyber-investigation Analysis Standard Expression (CASE)"@en ;
 	owl:imports
-		<https://ontology.caseontology.org/case/investigation> ,
-		<https://ontology.caseontology.org/case/vocabulary> ,
-		<https://ontology.unifiedcyberontology.org/uco/uco>
+		investigation:1.0.0 ,
+		vocab:1.0.0 ,
+		<https://ontology.unifiedcyberontology.org/uco/uco/1.0.0>
 		;
-	owl:incompatibleWith <http://case.example.org/core> ;
+	owl:incompatibleWith <https://ontology.caseontology.org/case/case/0.7.1> ;
 	owl:ontologyIRI <https://ontology.caseontology.org/case/case> ;
-	owl:priorVersion <http://case.example.org/core> ;
-	owl:versionInfo "0.7.0" ;
+	owl:priorVersion <https://ontology.caseontology.org/case/case/0.7.1> ;
+	owl:versionIRI <https://ontology.caseontology.org/case/case/1.0.0> ;
+	owl:versionInfo "1.0.0" ;
 	.
 
 <https://ontology.caseontology.org/case/investigation>
@@ -66,17 +67,23 @@
 	rdfs:label "investigation"@en ;
 	rdfs:comment "This ontology defines key concepts, and their associated properties and relationships, for characterizing cyber-investigations in the broadest range of contexts, including security incidents, criminal investigations, civil and regulatory matters, intelligence operations, international disputes, accident inquiries, policy violations, and others." ;
 	owl:imports
-		<https://ontology.caseontology.org/case/vocabulary> ,
-		<https://ontology.unifiedcyberontology.org/uco/action> ,
-		<https://ontology.unifiedcyberontology.org/uco/core> ,
-		<https://ontology.unifiedcyberontology.org/uco/location> ,
-		<https://ontology.unifiedcyberontology.org/uco/role>
+		vocab:1.0.0 ,
+		action:1.0.0 ,
+		role:1.0.0
 		;
+	owl:incompatibleWith investigation:0.7.1 ;
+	owl:ontologyIRI <https://ontology.caseontology.org/case/investigation> ;
+	owl:priorVersion investigation:0.7.1 ;
+	owl:versionIRI investigation:1.0.0 ;
 	.
 
 <https://ontology.caseontology.org/case/vocabulary>
 	a owl:Ontology ;
 	rdfs:label "vocabularies"@en ;
+	owl:incompatibleWith vocab:0.7.1 ;
+	owl:ontologyIRI <https://ontology.caseontology.org/case/vocabulary> ;
+	owl:priorVersion vocab:0.7.1 ;
+	owl:versionIRI vocab:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/co>
@@ -84,6 +91,8 @@
 	rdfs:label "uco-co"@en ;
 	rdfs:comment "This ontology defines SHACL shapes to supplement the OWL 2 DL definitions in the Collections Ontology."@en ;
 	owl:imports <http://purl.org/co> ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/co> ;
+	owl:versionIRI uco-co:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/owl>
@@ -91,6 +100,8 @@
 	rdfs:label "uco-owl"@en ;
 	rdfs:comment "This ontology defines SHACL shapes to perform conformance testing of OWL 2 DL.  Some of these shapes follow rules specified from the canonical, subtractive parsing process of Section 3 of the OWL 2 mapping to RDF.  From the last line of that document's Section 3, 'At the end of this process, the graph G MUST be empty,' anything not strictly matching patterns specified in that section cause the input graph to be non-conformant with OWL 2 DL."@en ;
 	rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-mapping-to-rdf-20121211/#Mapping_from_RDF_Graphs_to_the_Structural_Specification> ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/owl> ;
+	owl:versionIRI uco-owl:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/action>
@@ -98,12 +109,16 @@
 	rdfs:label "uco-action"@en ;
 	rdfs:comment "This ontology defines classes and properties for characterizing actions."@en-US ;
 	owl:imports
-		<https://ontology.unifiedcyberontology.org/uco/core> ,
-		<https://ontology.unifiedcyberontology.org/uco/location> ,
-		<https://ontology.unifiedcyberontology.org/uco/pattern> ,
-		<https://ontology.unifiedcyberontology.org/uco/types> ,
-		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
+		core:1.0.0 ,
+		location:1.0.0 ,
+		pattern:1.0.0 ,
+		types:1.0.0 ,
+		vocabulary:1.0.0
 		;
+	owl:incompatibleWith action:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/action> ;
+	owl:priorVersion action:0.9.1 ;
+	owl:versionIRI action:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/configuration>
@@ -111,124 +126,175 @@
 	rdfs:label "uco-configuration"@en ;
 	rdfs:comment "This ontology defines classes and properties for characterizing configurations."@en-US ;
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/432> ;
-	owl:imports <https://ontology.unifiedcyberontology.org/uco/core> ;
+	owl:imports core:1.0.0 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/configuration> ;
+	owl:versionIRI configuration:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/core>
 	a owl:Ontology ;
 	rdfs:label "uco-core"@en ;
 	rdfs:comment "This ontology defines classes and properties that are shared across the various UCO ontologies.  At a high-level, the UCO core ontology provides base classes, relationship-oriented classes, content-aggregation classes, and shared classes."@en ;
+	owl:incompatibleWith core:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/core> ;
+	owl:priorVersion core:0.9.1 ;
+	owl:versionIRI core:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/identity>
 	a owl:Ontology ;
 	rdfs:label "uco-identity"@en ;
 	owl:imports
-		<https://ontology.unifiedcyberontology.org/uco/core> ,
-		<https://ontology.unifiedcyberontology.org/uco/location>
+		core:1.0.0 ,
+		location:1.0.0
 		;
+	owl:incompatibleWith identity:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/identity> ;
+	owl:priorVersion identity:0.9.1 ;
+	owl:versionIRI identity:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/location>
 	a owl:Ontology ;
 	rdfs:label "uco-location"@en ;
-	owl:imports <https://ontology.unifiedcyberontology.org/uco/core> ;
+	owl:imports core:1.0.0 ;
+	owl:incompatibleWith location:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/location> ;
+	owl:priorVersion location:0.9.1 ;
+	owl:versionIRI location:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/marking>
 	a owl:Ontology ;
 	rdfs:label "uco-marking"@en ;
 	rdfs:comment "Data markings represent restrictions, permissions, and other guidance for how data can be used and shared."@en ;
-	owl:imports <https://ontology.unifiedcyberontology.org/uco/core> ;
+	owl:imports core:1.0.0 ;
+	owl:incompatibleWith marking:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/marking> ;
+	owl:priorVersion marking:0.9.1 ;
+	owl:versionIRI marking:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/observable>
 	a owl:Ontology ;
 	rdfs:label "uco-observable"@en ;
 	owl:imports
-		<https://ontology.unifiedcyberontology.org/uco/action> ,
-		<https://ontology.unifiedcyberontology.org/uco/configuration> ,
-		<https://ontology.unifiedcyberontology.org/uco/core> ,
-		<https://ontology.unifiedcyberontology.org/uco/identity> ,
-		<https://ontology.unifiedcyberontology.org/uco/location> ,
-		<https://ontology.unifiedcyberontology.org/uco/types> ,
-		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
+		action:1.0.0 ,
+		configuration:1.0.0 ,
+		core:1.0.0 ,
+		identity:1.0.0 ,
+		location:1.0.0 ,
+		types:1.0.0 ,
+		vocabulary:1.0.0
 		;
+	owl:incompatibleWith observable:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/observable> ;
+	owl:priorVersion observable:0.9.1 ;
+	owl:versionIRI observable:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/pattern>
 	a owl:Ontology ;
 	rdfs:label "uco-pattern"@en ;
-	owl:imports <https://ontology.unifiedcyberontology.org/uco/core> ;
+	owl:imports core:1.0.0 ;
+	owl:incompatibleWith pattern:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/pattern> ;
+	owl:priorVersion pattern:0.9.1 ;
+	owl:versionIRI pattern:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/role>
 	a owl:Ontology ;
 	rdfs:label "uco-role"@en ;
-	owl:imports <https://ontology.unifiedcyberontology.org/uco/core> ;
+	owl:imports core:1.0.0 ;
+	owl:incompatibleWith role:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/role> ;
+	owl:priorVersion role:0.9.1 ;
+	owl:versionIRI role:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/time>
 	a owl:Ontology ;
 	rdfs:label "uco-time"@en ;
-	owl:imports <https://ontology.unifiedcyberontology.org/uco/core> ;
+	owl:imports core:1.0.0 ;
+	owl:incompatibleWith time:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/time> ;
+	owl:priorVersion time:0.9.1 ;
+	owl:versionIRI time:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/tool>
 	a owl:Ontology ;
 	rdfs:label "uco-tool"@en ;
 	owl:imports
-		<https://ontology.unifiedcyberontology.org/uco/configuration> ,
-		<https://ontology.unifiedcyberontology.org/uco/core>
+		configuration:1.0.0 ,
+		identity:1.0.0
 		;
+	owl:incompatibleWith tool:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/tool> ;
+	owl:priorVersion tool:0.9.1 ;
+	owl:versionIRI tool:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/types>
 	a owl:Ontology ;
 	rdfs:label "uco-types"@en ;
 	owl:imports
-		<https://ontology.unifiedcyberontology.org/co> ,
-		<https://ontology.unifiedcyberontology.org/uco/core> ,
-		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
+		uco-co:1.0.0 ,
+		core:1.0.0 ,
+		vocabulary:1.0.0
 		;
+	owl:incompatibleWith types:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/types> ;
+	owl:priorVersion types:0.9.1 ;
+	owl:versionIRI types:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/uco>
 	a owl:Ontology ;
 	rdfs:label "uco-master"@en ;
 	owl:imports
-		<https://ontology.unifiedcyberontology.org/co> ,
-		<https://ontology.unifiedcyberontology.org/owl> ,
-		<https://ontology.unifiedcyberontology.org/uco/action> ,
-		<https://ontology.unifiedcyberontology.org/uco/configuration> ,
-		<https://ontology.unifiedcyberontology.org/uco/core> ,
-		<https://ontology.unifiedcyberontology.org/uco/identity> ,
-		<https://ontology.unifiedcyberontology.org/uco/location> ,
-		<https://ontology.unifiedcyberontology.org/uco/marking> ,
-		<https://ontology.unifiedcyberontology.org/uco/observable> ,
-		<https://ontology.unifiedcyberontology.org/uco/pattern> ,
-		<https://ontology.unifiedcyberontology.org/uco/role> ,
-		<https://ontology.unifiedcyberontology.org/uco/time> ,
-		<https://ontology.unifiedcyberontology.org/uco/tool> ,
-		<https://ontology.unifiedcyberontology.org/uco/types> ,
-		<https://ontology.unifiedcyberontology.org/uco/victim> ,
-		<https://ontology.unifiedcyberontology.org/uco/vocabulary>
+		uco-co:1.0.0 ,
+		uco-owl:1.0.0 ,
+		action:1.0.0 ,
+		configuration:1.0.0 ,
+		core:1.0.0 ,
+		identity:1.0.0 ,
+		location:1.0.0 ,
+		marking:1.0.0 ,
+		observable:1.0.0 ,
+		pattern:1.0.0 ,
+		role:1.0.0 ,
+		time:1.0.0 ,
+		tool:1.0.0 ,
+		types:1.0.0 ,
+		victim:1.0.0 ,
+		vocabulary:1.0.0
 		;
-	owl:versionInfo "0.9.0" ;
+	owl:incompatibleWith <https://ontology.unifiedcyberontology.org/uco/uco/0.9.1> ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/uco> ;
+	owl:priorVersion <https://ontology.unifiedcyberontology.org/uco/uco/0.9.1> ;
+	owl:versionIRI <https://ontology.unifiedcyberontology.org/uco/uco/1.0.0> ;
+	owl:versionInfo "1.0.0" ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/victim>
 	a owl:Ontology ;
 	rdfs:label "uco-victim"@en ;
-	owl:imports
-		<https://ontology.unifiedcyberontology.org/uco/core> ,
-		<https://ontology.unifiedcyberontology.org/uco/role>
-		;
+	owl:imports role:1.0.0 ;
+	owl:incompatibleWith victim:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/victim> ;
+	owl:priorVersion victim:0.9.1 ;
+	owl:versionIRI victim:1.0.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/vocabulary>
 	a owl:Ontology ;
 	rdfs:label "uco-vocabularies"@en ;
+	owl:incompatibleWith vocabulary:0.9.1 ;
+	owl:ontologyIRI <https://ontology.unifiedcyberontology.org/uco/vocabulary> ;
+	owl:priorVersion vocabulary:0.9.1 ;
+	owl:versionIRI vocabulary:1.0.0 ;
 	.
 
 co:ListItem
@@ -901,82 +967,128 @@ uco-owl:ObjectProperty-shacl-constraints-shape
 	sh:targetClass owl:ObjectProperty ;
 	.
 
-uco-owl:ontologyIRI-shape
-	a sh:NodeShape ;
-	sh:property [
-		a sh:PropertyShape ;
-		sh:nodeKind sh:IRI ;
-		sh:path owl:ontologyIRI ;
-	] ;
-	sh:sparql [
-		a sh:SPARQLConstraint ;
-		rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
-		sh:message "'If an ontology has an ontology IRI but no version IRI, then a different ontology with the same ontology IRI but no version IRI SHOULD NOT exist.'"@en ;
-		sh:select """
-			PREFIX owl: <http://www.w3.org/2002/07/owl#>
-			SELECT $this
-			WHERE {
-				$value owl:ontologyIRI $this .
-				FILTER NOT EXISTS {
-					$value owl:versionIRI ?nVersionIRI1 .
-				}
-				?nOtherOntology owl:ontologyIRI $this .
-				FILTER NOT EXISTS {
-					$nOtherOntology owl:versionIRI ?nVersionIRI2 .
-				}
-				FILTER ( $value != ?nOtherOntology )
-			}
-		""" ;
-		sh:severity sh:Warning ;
-	] ;
-	sh:targetSubjectsOf owl:ontologyIRI ;
-	.
-
-uco-owl:versionIRI-shape
-	a sh:NodeShape ;
-	sh:property [
-		a sh:PropertyShape ;
-		sh:nodeKind sh:IRI ;
-		sh:path owl:versionIRI ;
-	] ;
+uco-owl:incompatibleWith-shape
+	a sh:PropertyShape ;
+	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Imports> ;
+	sh:message "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that ... O_1 contains an ontology annotation owl:incompatibleWith with the value equal to either the ontology IRI or the version IRI of O2.'"@en ;
+	sh:path owl:incompatibleWith ;
+	sh:severity sh:Warning ;
 	sh:sparql
 		[
 			a sh:SPARQLConstraint ;
-			rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
-			sh:message "'An ontology without an ontology IRI MUST NOT contain a version IRI.'"@en ;
 			sh:select """
 				PREFIX owl: <http://www.w3.org/2002/07/owl#>
-				SELECT $this
+				SELECT $this ?value
 				WHERE {
-					$value owl:versionIRI $this .
-					FILTER NOT EXISTS {
-						$value owl:ontologyIRI ?nOntologyIRI .
-					}
+					$this
+						owl:imports ?value ;
+						owl:incompatibleWith ?value ;
+						.
 				}
 			""" ;
 		] ,
 		[
 			a sh:SPARQLConstraint ;
-			rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
-			sh:message "'If an ontology has both an ontology IRI and a version IRI, then a different ontology with the same ontology IRI and the same version IRI SHOULD NOT exist.'"@en ;
 			sh:select """
 				PREFIX owl: <http://www.w3.org/2002/07/owl#>
-				SELECT $this
+				SELECT $this ?value
 				WHERE {
-					$value
-						owl:ontologyIRI ?nOntologyIRI ;
-						owl:versionIRI $this ;
-						.
-					?nOtherOntology
-						owl:ontologyIRI ?nOntologyIRI ;
-						owl:versionIRI $this ;
-						.
-					FILTER ( $value != ?nOtherOntology )
+					$this owl:incompatibleWith ?value .
+
+					{ ?value a owl:Ontology . }
+					UNION
+					{ ?nOntology owl:ontologyIRI ?value . }
+					UNION
+					{ ?nOntology owl:versionIRI ?value . }
 				}
 			""" ;
-			sh:severity sh:Warning ;
 		]
 		;
+	sh:targetSubjectsOf owl:incompatibleWith ;
+	.
+
+uco-owl:ontologyIRI-nodeKind-shape
+	a sh:PropertyShape ;
+	sh:nodeKind sh:IRI ;
+	sh:path owl:ontologyIRI ;
+	sh:targetSubjectsOf owl:ontologyIRI ;
+	.
+
+uco-owl:ontologyIRI-ontology-uniqueness-shape
+	a sh:NodeShape ;
+	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
+	sh:message "'If an ontology has an ontology IRI but no version IRI, then a different ontology with the same ontology IRI but no version IRI SHOULD NOT exist.'"@en ;
+	sh:severity sh:Warning ;
+	sh:sparql [
+		a sh:SPARQLConstraint ;
+		sh:select """
+			PREFIX owl: <http://www.w3.org/2002/07/owl#>
+			SELECT $this ?value
+			WHERE {
+				$this owl:ontologyIRI ?nOntologyIRI .
+				FILTER NOT EXISTS {
+					$this owl:versionIRI ?nVersionIRI1 .
+				}
+				?value owl:ontologyIRI ?nOntologyIRI .
+				FILTER NOT EXISTS {
+					?value owl:versionIRI ?nVersionIRI2 .
+				}
+				FILTER ( $this != ?value )
+			}
+		""" ;
+	] ;
+	sh:targetSubjectsOf owl:ontologyIRI ;
+	.
+
+uco-owl:ontologyIRI-versionIRI-prerequisite-shape
+	a sh:PropertyShape ;
+	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
+	sh:message "'An ontology without an ontology IRI MUST NOT contain a version IRI.'"@en ;
+	sh:minCount "1"^^xsd:integer ;
+	sh:path owl:ontologyIRI ;
+	sh:targetSubjectsOf owl:versionIRI ;
+	.
+
+uco-owl:ontologyIRI-versionIRI-uniqueness-shape
+	a sh:NodeShape ;
+	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
+	sh:message "'If an ontology has both an ontology IRI and a version IRI, then a different ontology with the same ontology IRI and the same version IRI SHOULD NOT exist.'"@en ;
+	sh:severity sh:Warning ;
+	sh:sparql [
+		a sh:SPARQLConstraint ;
+		sh:select """
+			PREFIX owl: <http://www.w3.org/2002/07/owl#>
+			SELECT $this ?value
+			WHERE {
+				$this
+					owl:ontologyIRI ?nOntologyIRI ;
+					owl:versionIRI ?nVersionIRI ;
+					.
+				?value
+					owl:ontologyIRI ?nOntologyIRI ;
+					owl:versionIRI ?nVersionIRI ;
+					.
+				FILTER ( $this != ?value )
+			}
+		""" ;
+	] ;
+	sh:targetSubjectsOf owl:ontologyIRI ;
+	.
+
+uco-owl:versionIRI-multiversion-shape
+	a sh:PropertyShape ;
+	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Imports> ;
+	sh:maxCount "1"^^xsd:integer ;
+	sh:message "'The import closure of [ontology] O SHOULD NOT contain ontologies O_1 and O_2 such that O_1 and O_2 are different ontology versions from the same ontology series.'"@en ;
+	sh:path owl:versionIRI ;
+	sh:severity sh:Warning ;
+	sh:targetSubjectsOf owl:versionIRI ;
+	.
+
+uco-owl:versionIRI-nodeKind-shape
+	a sh:PropertyShape ;
+	sh:nodeKind sh:IRI ;
+	sh:path owl:versionIRI ;
 	sh:targetSubjectsOf owl:versionIRI ;
 	.
 
@@ -991,49 +1103,49 @@ action:Action
 	sh:property
 		[
 			sh:class action:Action ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path action:subaction ;
 		] ,
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path action:environment ;
 		] ,
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path action:performer ;
 		] ,
 		[
 			sh:class core:UcoObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path action:error ;
 		] ,
 		[
 			sh:class core:UcoObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path action:instrument ;
 		] ,
 		[
 			sh:class core:UcoObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path action:object ;
 		] ,
 		[
 			sh:class core:UcoObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path action:participant ;
 		] ,
 		[
 			sh:class core:UcoObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path action:result ;
 		] ,
 		[
 			sh:class location:Location ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path action:location ;
 		] ,
 		[
@@ -1245,13 +1357,13 @@ action:ActionLifecycle
 			sh:class action:ArrayOfAction ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path action:phase ;
 		] ,
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path action:error ;
 		] ,
 		[
@@ -1299,12 +1411,13 @@ action:ArrayOfAction
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ArrayOfAction"@en ;
 	rdfs:comment "An array of action is an ordered list of references to things that may be done or performed."@en ;
 	sh:property [
 		sh:class action:Action ;
 		sh:minCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path action:action ;
 	] ;
 	sh:targetClass action:ArrayOfAction ;
@@ -1532,6 +1645,7 @@ configuration:ConfigurationEntry
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ConfigurationEntry"@en ;
 	rdfs:comment "A configuration entry is a grouping of characteristics unique to a particular parameter or initial setting for the use of a tool, application, software, or other cyber object."@en ;
 	sh:property
@@ -1598,6 +1712,7 @@ configuration:Dependency
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "Dependency"@en ;
 	rdfs:comment "A dependency is a grouping of characteristics unique to something that a tool or other software relies on to function as intended."@en ;
 	sh:property
@@ -1715,7 +1830,7 @@ core:Annotation
 	sh:property [
 		sh:class core:UcoObject ;
 		sh:minCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path core:object ;
 	] ;
 	sh:targetClass core:Annotation ;
@@ -1805,7 +1920,7 @@ core:ContextualCompilation
 	sh:property [
 		sh:class core:UcoObject ;
 		sh:minCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path core:object ;
 	] ;
 	sh:targetClass core:ContextualCompilation ;
@@ -1854,7 +1969,7 @@ core:EnclosingCompilation
 	sh:property [
 		sh:class core:UcoObject ;
 		sh:minCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path core:object ;
 	] ;
 	sh:targetClass core:EnclosingCompilation ;
@@ -1865,6 +1980,7 @@ core:ExternalReference
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ExternalReference"@en ;
 	rdfs:comment "Characteristics of a reference to a resource outside of the UCO."@en ;
 	sh:property
@@ -1895,8 +2011,9 @@ core:Facet
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "Facet"@en ;
-	rdfs:comment "A facet is a grouping of characteristics unique to a particular aspect of an object."@en ;
+	rdfs:comment "A facet is a grouping of characteristics singularly unique to a particular inherent aspect of a UCO domain object."@en ;
 	sh:targetClass core:Facet ;
 	.
 
@@ -1973,13 +2090,13 @@ core:Relationship
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path core:target ;
 		] ,
 		[
 			sh:class core:UcoObject ;
 			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path core:source ;
 		] ,
 		[
@@ -2009,35 +2126,46 @@ core:Relationship
 	sh:targetClass core:Relationship ;
 	.
 
+core:UcoInherentCharacterizationThing
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoThing ;
+	rdfs:label "UcoInherentCharacterizationThing"@en ;
+	rdfs:comment "A UCO inherent characterization thing is a grouping of characteristics unique to a particular inherent aspect of a UCO domain object."@en ;
+	sh:targetClass core:UcoInherentCharacterizationThing ;
+	.
+
 core:UcoObject
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "UcoObject"@en ;
 	rdfs:comment "A UCO object is a representation of a fundamental concept either directly inherent to the cyber domain or indirectly related to the cyber domain and necessary for contextually characterizing cyber domain concepts and relationships. Within the Unified Cyber Ontology (UCO) structure this is the base class acting as a consistent, unifying and interoperable foundation for all explicit and inter-relatable content objects."@en ;
-	owl:disjointWith core:Facet ;
 	sh:property
 		[
 			sh:class core:ExternalReference ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path core:externalReference ;
 		] ,
 		[
 			sh:class core:Facet ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path core:hasFacet ;
 		] ,
 		[
 			sh:class core:IdentityAbstraction ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path core:createdBy ;
 		] ,
 		[
 			sh:class core:MarkingDefinitionAbstraction ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path core:objectMarking ;
 		] ,
 		[
@@ -2075,6 +2203,57 @@ core:UcoObject
 		]
 		;
 	sh:targetClass core:UcoObject ;
+	.
+
+core:UcoThing
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf owl:Thing ;
+	rdfs:label "UcoThing"@en ;
+	rdfs:comment "UcoThing is the top-level class within UCO."@en ;
+	rdfs:seeAlso core:UcoThing-identifier-shape ;
+	sh:sparql [
+		a sh:SPARQLConstraint ;
+		sh:message "UcoThings are required to not be blank nodes."@en ;
+		sh:select """
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER isBlank ($this)
+			}
+		""" ;
+	] ;
+	sh:targetClass core:UcoThing ;
+	.
+
+core:UcoThing-identifier-regex-shape
+	a sh:NodeShape ;
+	rdfs:comment "This shape is given an independent IRI for applications that have sufficient controls in place to deactivate this advisory of node identification practice."@en ;
+	rdfs:seeAlso sh:deactivated ;
+	sh:severity sh:Info ;
+	sh:sparql [
+		a sh:SPARQLConstraint ;
+		rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
+		sh:message "UcoThings are suggested to end with a UUID."@en ;
+		sh:select '''
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER (
+			                ! REGEX (
+			                        STR($this),
+			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
+			                        "i"
+			                )
+			        )
+			}
+		''' ;
+	] ;
+	sh:targetClass core:UcoThing ;
 	.
 
 core:confidence
@@ -2311,7 +2490,7 @@ identity:AddressFacet
 	sh:property [
 		sh:class location:Location ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path identity:address ;
 	] ;
 	sh:targetClass identity:AddressFacet ;
@@ -2820,12 +2999,13 @@ marking:GranularMarking
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "GranularMarking"@en ;
 	rdfs:comment "A granular marking is a grouping of characteristics unique to specification of marking definitions (restrictions, permissions, and other guidance for how data can be used and shared) that apply to particular portions of a particular UCO object."@en ;
 	sh:property
 		[
 			sh:class marking:MarkingDefinition ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path marking:marking ;
 		] ,
 		[
@@ -2874,7 +3054,7 @@ marking:MarkingDefinition
 	sh:property
 		[
 			sh:class marking:MarkingModel ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path marking:definition ;
 		] ,
 		[
@@ -2893,6 +3073,7 @@ marking:MarkingModel
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "MarkingModel"@en ;
 	rdfs:comment "A marking model is a grouping of characteristics unique to the expression of a particular form of data marking definitions (restrictions, permissions, and other guidance for how data can be used and shared)."@en ;
 	sh:targetClass marking:MarkingModel ;
@@ -3119,13 +3300,13 @@ observable:AccountFacet
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:accountIssuer ;
 		] ,
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:owner ;
 		] ,
 		[
@@ -3248,7 +3429,7 @@ observable:AlternateDataStreamFacet
 		[
 			sh:class types:Hash ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:hashes ;
 		] ,
 		[
@@ -3439,7 +3620,7 @@ observable:ApplicationAccountFacet
 	sh:property [
 		sh:class observable:ObservableObject ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path observable:application ;
 	] ;
 	sh:targetClass observable:ApplicationAccountFacet ;
@@ -3456,13 +3637,13 @@ observable:ApplicationFacet
 	sh:property
 		[
 			sh:class observable:ApplicationVersion ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:installedVersionHistory ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:operatingSystem ;
 		] ,
 		[
@@ -3492,6 +3673,7 @@ observable:ApplicationVersion
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ApplicationVersion"@en ;
 	rdfs:comment "An application version is a grouping of characteristics unique to a particular software program version."@en ;
 	sh:property
@@ -3736,7 +3918,7 @@ observable:BrowserBookmarkFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
@@ -3801,13 +3983,13 @@ observable:BrowserCookieFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:cookieDomain ;
 		] ,
 		[
@@ -3884,24 +4066,24 @@ observable:CalendarEntryFacet
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:owner ;
 		] ,
 		[
 			sh:class identity:Identity ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:attendant ;
 		] ,
 		[
 			sh:class location:Location ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:location ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
@@ -3986,13 +4168,13 @@ observable:CalendarFacet
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:owner ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		]
 		;
@@ -4022,23 +4204,23 @@ observable:CallFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:from ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:participant ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:to ;
 		] ,
 		[
@@ -4092,7 +4274,7 @@ observable:CapturedTelecommunicationsInformationFacet
 			sh:class observable:CellSite ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:captureCellSite ;
 		] ,
 		[
@@ -4250,7 +4432,7 @@ observable:ComputerSpecificationFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:networkInterface ;
 		] ,
 		[
@@ -4383,13 +4565,13 @@ observable:ConfiguredSoftware
 		[
 			sh:class configuration:Configuration ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path configuration:usesConfiguration ;
 		] ,
 		[
 			sh:class observable:Software ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path configuration:isConfigurationOf ;
 		]
 		;
@@ -4412,13 +4594,14 @@ observable:ContactAddress
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ContactAddress"@en ;
 	rdfs:comment "A contact address is a grouping of characteristics unique to a geolocation address of a contact entity."@en ;
 	sh:property
 		[
 			sh:class location:Location ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:geolocationAddress ;
 		] ,
 		[
@@ -4466,49 +4649,50 @@ observable:ContactAffiliation
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ContactListAffiliation"@en ;
 	rdfs:comment "A contact affiliation is a grouping of characteristics unique to details of an organizational affiliation for a single contact entity."@en ;
 	sh:property
 		[
 			sh:class identity:Organization ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactOrganization ;
 		] ,
 		[
 			sh:class observable:ContactAddress ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:organizationLocation ;
 		] ,
 		[
 			sh:class observable:ContactEmail ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactEmail ;
 		] ,
 		[
 			sh:class observable:ContactMessaging ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactMessaging ;
 		] ,
 		[
 			sh:class observable:ContactPhone ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactPhone ;
 		] ,
 		[
 			sh:class observable:ContactProfile ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactProfile ;
 		] ,
 		[
 			sh:class observable:ContactURL ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactURL ;
 		] ,
 		[
@@ -4532,13 +4716,14 @@ observable:ContactEmail
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ContactEmail"@en ;
 	rdfs:comment "A contact email is a grouping of characteristics unique to details for contacting a contact entity by email."@en ;
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:emailAddress ;
 		] ,
 		[
@@ -4594,55 +4779,55 @@ observable:ContactFacet
 		[
 			sh:class observable:ContactAddress ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactAddress ;
 		] ,
 		[
 			sh:class observable:ContactAffiliation ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactAffiliation ;
 		] ,
 		[
 			sh:class observable:ContactEmail ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactEmail ;
 		] ,
 		[
 			sh:class observable:ContactMessaging ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactMessaging ;
 		] ,
 		[
 			sh:class observable:ContactPhone ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactPhone ;
 		] ,
 		[
 			sh:class observable:ContactProfile ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactProfile ;
 		] ,
 		[
 			sh:class observable:ContactSIP ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactSIP ;
 		] ,
 		[
 			sh:class observable:ContactURL ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactURL ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:sourceApplication ;
 		] ,
 		[
@@ -4756,12 +4941,12 @@ observable:ContactListFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:sourceApplication ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contact ;
 		]
 		;
@@ -4773,19 +4958,20 @@ observable:ContactMessaging
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ContactMessaging"@en ;
 	rdfs:comment "A contact messaging is a grouping of characteristics unique to details for contacting a contact entity by digital messaging."@en ;
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactMessagingPlatform ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:messagingAddress ;
 		]
 		;
@@ -4797,13 +4983,14 @@ observable:ContactPhone
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ContactPhone"@en ;
 	rdfs:comment "A contact phone is a grouping of characteristics unique to details for contacting a contact entity by telephone."@en ;
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactPhoneNumber ;
 		] ,
 		[
@@ -4856,19 +5043,20 @@ observable:ContactProfile
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ContactProfile"@en ;
 	rdfs:comment "A contact profile is a grouping of characteristics unique to details for contacting a contact entity by online service."@en ;
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactProfilePlatform ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profile ;
 		]
 		;
@@ -4880,13 +5068,14 @@ observable:ContactSIP
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ContactSIP"@en ;
 	rdfs:comment "A contact SIP is a grouping of characteristics unique to details for contacting a contact entity by Session Initiation Protocol (SIP)."@en ;
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:sipAddress ;
 		] ,
 		[
@@ -4934,13 +5123,14 @@ observable:ContactURL
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ContactURL"@en ;
 	rdfs:comment "A contact URL is a grouping of characteristics unique to details for contacting a contact entity by Uniform Resource Locator (URL)."@en ;
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:url ;
 		] ,
 		[
@@ -5007,12 +5197,12 @@ observable:ContentDataFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:dataPayloadReferenceURL ;
 		] ,
 		[
 			sh:class types:Hash ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:hash ;
 		] ,
 		[
@@ -5216,7 +5406,7 @@ observable:DeviceFacet
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:manufacturer ;
 		] ,
 		[
@@ -5364,13 +5554,13 @@ observable:DigitalSignatureInfoFacet
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:certificateSubject ;
 		] ,
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:certificateIssuer ;
 		] ,
 		[
@@ -5428,7 +5618,7 @@ observable:DiskFacet
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:partition ;
 		] ,
 		[
@@ -5595,7 +5785,7 @@ observable:EXIFFacet
 	rdfs:comment "An EXIF (exchangeable image file format) facet is a grouping of characteristics unique to the formats for images, sound, and ancillary tags used by digital cameras (including smartphones), scanners and other systems handling image and sound files recorded by digital cameras conformant to JEIDA/JEITA/CIPA specifications. [based on https://en.wikipedia.org/wiki/Exif]"@en ;
 	sh:property [
 		sh:class types:ControlledDictionary ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path observable:exifData ;
 	] ;
 	sh:targetClass observable:EXIFFacet ;
@@ -5623,7 +5813,7 @@ observable:EmailAccountFacet
 	sh:property [
 		sh:class observable:ObservableObject ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path observable:emailAddress ;
 	] ;
 	sh:targetClass observable:EmailAccountFacet ;
@@ -5673,69 +5863,69 @@ observable:EmailMessageFacet
 	sh:property
 		[
 			sh:class observable:MimePartType ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:bodyMultipart ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:bodyRaw ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:from ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:headerRaw ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:sender ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:xOriginatingIP ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:bcc ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:cc ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:references ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:to ;
 		] ,
 		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:otherHeaders ;
 		] ,
 		[
@@ -5909,6 +6099,7 @@ observable:EnvironmentVariable
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "EnvironmentVariable"@en ;
 	rdfs:comment "An environment variable is a grouping of characteristics unique to a dynamic-named value that can affect the way running processes will behave on a computer. [based on https://en.wikipedia.org/wiki/Environment_variable]"@en ;
 	sh:property
@@ -5962,25 +6153,25 @@ observable:EventRecordFacet
 		[
 			sh:class observable:ObservableAction ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:cyberAction ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:account ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:eventRecordDevice ;
 		] ,
 		[
@@ -6113,6 +6304,7 @@ observable:ExtractedString
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ExtractedString"@en ;
 	rdfs:comment "An extracted string is a grouping of characteristics unique to a series of characters pulled from an observable object."@en ;
 	sh:property
@@ -6165,7 +6357,7 @@ observable:ExtractedStringsFacet
 	rdfs:comment "An extracted strings facet is a grouping of characteristics unique to one or more sequences of characters pulled from an observable object."@en ;
 	sh:property [
 		sh:class observable:ExtractedString ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path observable:strings ;
 	] ;
 	sh:targetClass observable:ExtractedStringsFacet ;
@@ -6264,7 +6456,7 @@ observable:FilePermissionsFacet
 	sh:property [
 		sh:class core:UcoObject ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path observable:owner ;
 	] ;
 	sh:targetClass observable:FilePermissionsFacet ;
@@ -6418,13 +6610,13 @@ observable:GeoLocationEntryFacet
 		[
 			sh:class location:Location ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:location ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
@@ -6460,7 +6652,7 @@ observable:GeoLocationLogFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
@@ -6496,12 +6688,12 @@ observable:GeoLocationTrackFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:geoLocationEntry ;
 		] ,
 		[
@@ -6525,6 +6717,7 @@ observable:GlobalFlagType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "GlobalFlagType"@en ;
 	rdfs:comment 'A global flag type is a grouping of characteristics unique to the Windows systemwide global variable named NtGlobalFlag that enables various internal debugging, tracing, and validation support in the operating system. [based on "Windows Global Flags, Chapter 3: System Mechanisms of Windows Internals by Solomon, Russinovich, and Ionescu]'@en ;
 	sh:property
@@ -6578,13 +6771,13 @@ observable:HTTPConnectionFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:httpMessageBodyData ;
 		] ,
 		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:httpRequestHeader ;
 		] ,
 		[
@@ -6672,6 +6865,7 @@ observable:IComHandlerActionType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "IComHandlerActionType"@en ;
 	rdfs:comment "An IComHandler action type is a grouping of characteristics unique to a Windows Task-related action that fires a Windows COM handler (smart code in the client address space that can optimize calls between a client and server). [based on https://docs.microsoft.com/en-us/windows/win32/taskschd/comhandleraction]"@en ;
 	sh:property
@@ -6696,12 +6890,13 @@ observable:IExecActionType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "IExecActionType"@en ;
 	rdfs:comment "An IExec action type is a grouping of characteristics unique to an action that executes a command-line operation on a Windows operating system. [based on https://docs.microsoft.com/en-us/windows/win32/api/taskschd/nn-taskschd-iexecaction?redirectedfrom=MSDN]"@en ;
 	sh:property
 		[
 			sh:class types:Hash ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:execProgramHashes ;
 		] ,
 		[
@@ -6836,6 +7031,7 @@ observable:IShowMessageActionType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "IShowMessageActionType"@en ;
 	rdfs:comment "An IShow message action type is a grouping of characteristics unique to an action that shows a message box when a task is activate. [based on https://docs.microsoft.com/en-us/windows/win32/api/taskschd/nn-taskschd-ishowmessageaction?redirectedfrom=MSDN]"@en ;
 	sh:property
@@ -7116,18 +7312,18 @@ observable:MessageFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:from ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:to ;
 		] ,
 		[
@@ -7221,13 +7417,13 @@ observable:MessageThreadFacet
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:participant ;
 		] ,
 		[
 			sh:class types:Thread ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:messageThread ;
 		] ,
 		[
@@ -7330,13 +7526,14 @@ observable:MimePartType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "MimePartType"@en ;
 	rdfs:comment "A mime part type is a grouping of characteristics unique to a component of a multi-part email body."@en ;
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:bodyRaw ;
 		] ,
 		[
@@ -7550,7 +7747,7 @@ observable:NTFSFileFacet
 	sh:property
 		[
 			sh:class observable:AlternateDataStream ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:alternateDataStreams ;
 		] ,
 		[
@@ -7624,18 +7821,18 @@ observable:NetworkConnectionFacet
 	sh:property
 		[
 			sh:class core:UcoObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:src ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:dst ;
 		] ,
 		[
 			sh:class types:ControlledDictionary ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:protocols ;
 		] ,
 		[
@@ -7695,19 +7892,19 @@ observable:NetworkFlowFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:dstPayload ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:srcPayload ;
 		] ,
 		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:ipfix ;
 		] ,
 		[
@@ -7761,22 +7958,22 @@ observable:NetworkInterfaceFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:macAddress ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:dhcpServer ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:ip ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:ipGateway ;
 		] ,
 		[
@@ -7922,7 +8119,7 @@ observable:NoteFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
@@ -8067,13 +8264,13 @@ observable:OnlineServiceFacet
 		[
 			sh:class location:Location ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:location ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:inetLocation ;
 		] ,
 		[
@@ -8109,13 +8306,13 @@ observable:OperatingSystemFacet
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:manufacturer ;
 		] ,
 		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:environmentVariables ;
 		] ,
 		[
@@ -8174,7 +8371,7 @@ observable:PDFFileFacet
 		[
 			sh:class types:ControlledDictionary ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:documentInformationDictionary ;
 		] ,
 		[
@@ -8330,25 +8527,25 @@ observable:ProcessFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:binary ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:creatorUser ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:parent ;
 		] ,
 		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:environmentVariables ;
 		] ,
 		[
@@ -8436,55 +8633,55 @@ observable:ProfileFacet
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileIdentity ;
 		] ,
 		[
 			sh:class observable:ContactAddress ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactAddress ;
 		] ,
 		[
 			sh:class observable:ContactEmail ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactEmail ;
 		] ,
 		[
 			sh:class observable:ContactMessaging ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactMessaging ;
 		] ,
 		[
 			sh:class observable:ContactPhone ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactPhone ;
 		] ,
 		[
 			sh:class observable:ContactURL ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactURL ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileAccount ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileService ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileWebsite ;
 		] ,
 		[
@@ -8594,7 +8791,7 @@ observable:RasterPictureFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:camera ;
 		] ,
 		[
@@ -8822,7 +9019,7 @@ observable:SIMCardFacet
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:carrier ;
 		] ,
 		[
@@ -9125,7 +9322,7 @@ observable:SoftwareFacet
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:manufacturer ;
 		] ,
 		[
@@ -9168,13 +9365,13 @@ observable:StateChangeEffectFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:newObject ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:oldObject ;
 		]
 		;
@@ -9214,7 +9411,7 @@ observable:SymbolicLinkFacet
 	sh:property [
 		sh:class observable:ObservableObject ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path observable:targetFile ;
 	] ;
 	sh:targetClass observable:SymbolicLinkFacet ;
@@ -9273,31 +9470,32 @@ observable:TaskActionType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "TaskActionType"@en ;
 	rdfs:comment "A task action type is a grouping of characteristics for a scheduled action to be completed."@en ;
 	sh:property
 		[
 			sh:class observable:IComHandlerActionType ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:iComHandlerAction ;
 		] ,
 		[
 			sh:class observable:IExecActionType ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:iExecAction ;
 		] ,
 		[
 			sh:class observable:IShowMessageActionType ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:iShowMessageAction ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:iEmailAction ;
 		] ,
 		[
@@ -9352,6 +9550,7 @@ observable:TriggerType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "TriggerType"@en ;
 	rdfs:comment "A trigger type is a grouping of characterizes unique to a set of criteria that, when met, starts the execution of a task within a Windows operating system. [based on https://docs.microsoft.com/en-us/windows/win32/taskschd/task-triggers]"@en ;
 	sh:property
@@ -9499,37 +9698,37 @@ observable:TwitterProfileFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileBackgroundLocation ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileBannerLocation ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileImageLocation ;
 		] ,
 		[
 			sh:class types:Hash ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileBackgroundHash ;
 		] ,
 		[
 			sh:class types:Hash ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileBannerHash ;
 		] ,
 		[
 			sh:class types:Hash ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:profileImageHash ;
 		] ,
 		[
@@ -9736,7 +9935,7 @@ observable:URLFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:host ;
 		] ,
 		[
@@ -9807,19 +10006,20 @@ observable:URLHistoryEntry
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "URL History Entry"@en-US ;
 	rdfs:comment "A URL history entry is a grouping of characteristics unique to the properties of a single URL history entry for a particular browser."@en-US ;
 	sh:property
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:url ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:minCount "0"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:referrerUrl ;
 		] ,
 		[
@@ -9892,12 +10092,12 @@ observable:URLHistoryFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:browserInformation ;
 		] ,
 		[
 			sh:class observable:URLHistoryEntry ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:urlHistoryEntry ;
 		]
 		;
@@ -9927,19 +10127,19 @@ observable:URLVisitFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:browserInformation ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:fromURLVisit ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:url ;
 		] ,
 		[
@@ -10073,7 +10273,7 @@ observable:UserSessionFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:effectiveUser ;
 		] ,
 		[
@@ -10204,36 +10404,36 @@ observable:WhoIsFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:domainName ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:ipAddress ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:registrantContactInfo ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:serverName ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:nameServer ;
 		] ,
 		[
 			sh:class observable:WhoisRegistrarInfoType ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:registrarInfo ;
 		] ,
 		[
@@ -10412,37 +10612,38 @@ observable:WhoisRegistrarInfoType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "WhoisRegistrarInfoType"@en ;
 	rdfs:comment "A Whois registrar info type is a grouping of characteristics unique to registrar-related information present in a response record conformant to the WHOIS protocol standard (RFC 3912). [based on https://en.wikipedia.org/wiki/WHOIS]"@en ;
 	sh:property
 		[
 			sh:class location:Location ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:geolocationAddress ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:contactPhoneNumber ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:emailAddress ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:referralURL ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:whoisServer ;
 		] ,
 		[
@@ -10596,36 +10797,36 @@ observable:WindowsComputerSpecificationFacet
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:registeredOrganization ;
 		] ,
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:registeredOwner ;
 		] ,
 		[
 			sh:class observable:GlobalFlagType ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:globalFlagList ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:windowsDirectory ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:windowsSystemDirectory ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:windowsTempDirectory ;
 		] ,
 		[
@@ -10773,17 +10974,17 @@ observable:WindowsPEBinaryFileFacet
 		[
 			sh:class observable:WindowsPEOptionalHeader ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:optionalHeader ;
 		] ,
 		[
 			sh:class observable:WindowsPESection ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:sections ;
 		] ,
 		[
 			sh:class types:Hash ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:fileHeaderHashes ;
 		] ,
 		[
@@ -10858,6 +11059,7 @@ observable:WindowsPEFileHeader
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "WindowsPEFileHeader"@en ;
 	rdfs:comment "A Windows PE file header is a grouping of characteristics unique to the 'header' of a Windows PE (Portable Executable) file, consisting of a collection of metadata about the overall nature and structure of the file."@en ;
 	sh:property [
@@ -10874,6 +11076,7 @@ observable:WindowsPEOptionalHeader
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "WindowsPEOptionalHeader"@en ;
 	rdfs:comment "A Windows PE optional header is a grouping of characteristics unique to the 'optional header' of a Windows PE (Portable Executable) file, consisting of a collection of metadata about the executable code structure of the file."@en ;
 	sh:property
@@ -11031,12 +11234,13 @@ observable:WindowsPESection
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "WindowsPESection"@en ;
 	rdfs:comment "A Windows PE section is a grouping of characteristics unique to a specific default or custom-defined region of a Windows PE (Portable Executable) file, consisting of an individual portion of the actual executable content of the file delineated according to unique purpose and memory protection requirements."@en ;
 	sh:property
 		[
 			sh:class types:Hash ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:hashes ;
 		] ,
 		[
@@ -11084,17 +11288,17 @@ observable:WindowsPrefetchFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:volume ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:accessedDirectory ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:accessedFile ;
 		] ,
 		[
@@ -11154,7 +11358,7 @@ observable:WindowsProcessFacet
 		[
 			sh:class types:Dictionary ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:startupInfo ;
 		] ,
 		[
@@ -11242,12 +11446,12 @@ observable:WindowsRegistryKeyFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:creator ;
 		] ,
 		[
 			sh:class observable:WindowsRegistryValue ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:registryValues ;
 		] ,
 		[
@@ -11277,6 +11481,7 @@ observable:WindowsRegistryValue
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "WindowsRegistryValue"@en ;
 	rdfs:comment "A Windows registry value is a grouping of characteristics unique to a particular value within a Windows registry (a hierarchical database that stores low-level settings for the Microsoft Windows operating system and for applications that opt to use the registry. [based on https://en.wikipedia.org/wiki/Windows_Registry]"@en ;
 	sh:property
@@ -11450,35 +11655,35 @@ observable:WindowsTaskFacet
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:account ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:application ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:workItemData ;
 		] ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:workingDirectory ;
 		] ,
 		[
 			sh:class observable:TaskActionType ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:actionList ;
 		] ,
 		[
 			sh:class observable:TriggerType ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:triggerList ;
 		] ,
 		[
@@ -11963,25 +12168,25 @@ observable:X509CertificateFacet
 		[
 			sh:class observable:X509V3ExtensionsFacet ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:x509v3extensions ;
 		] ,
 		[
 			sh:class types:Hash ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:issuerHash ;
 		] ,
 		[
 			sh:class types:Hash ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:subjectHash ;
 		] ,
 		[
 			sh:class types:Hash ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path observable:thumbprintHash ;
 		] ,
 		[
@@ -16462,6 +16667,7 @@ pattern:PatternExpression
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "PatternExpression"@en ;
 	rdfs:comment "A pattern expression is a grouping of characteristics unique to an explicit logical expression defining a pattern (e.g., regular expression, SQL Select expression, etc.)."@en ;
 	sh:targetClass pattern:PatternExpression ;
@@ -16552,7 +16758,7 @@ tool:BuildFacet
 	sh:property [
 		sh:class tool:BuildInformationType ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path tool:buildInformation ;
 	] ;
 	sh:targetClass tool:BuildFacet ;
@@ -16563,29 +16769,30 @@ tool:BuildInformationType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "BuildInformationType"@en ;
 	rdfs:comment "A build information type is a grouping of characteristics that describe how a particular version of software was converted from source code to executable code."@en ;
 	sh:property
 		[
 			sh:class configuration:Configuration ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path tool:buildConfiguration ;
 		] ,
 		[
 			sh:class tool:BuildUtilityType ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path tool:buildUtility ;
 		] ,
 		[
 			sh:class tool:CompilerType ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path tool:compilers ;
 		] ,
 		[
 			sh:class tool:LibraryType ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path tool:libraries ;
 		] ,
 		[
@@ -16639,6 +16846,7 @@ tool:BuildUtilityType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "BuildUtilityType"@en ;
 	rdfs:comment "A build utility type characterizes the tool used to convert from source code to executable code for a particular version of software."@en ;
 	sh:property
@@ -16669,6 +16877,7 @@ tool:CompilerType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "CompilerType"@en ;
 	rdfs:comment "A compiler type is a grouping of characteristics unique to a specific program that translates computer code written in one programming language (the source language) into another language (the target language). Typically a program that translates source code from a high-level programming language to a lower-level language (e.g., assembly language, object code, or machine code) to create an executable program. [based on https://en.wikipedia.org/wiki/Compiler]"@en ;
 	sh:property
@@ -16735,6 +16944,7 @@ tool:LibraryType
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "LibraryType"@en ;
 	rdfs:comment "A library type is a grouping of characteristics unique to a collection of resources incorporated into the build of a software."@en ;
 	sh:property
@@ -16777,7 +16987,7 @@ tool:Tool
 		[
 			sh:class identity:Identity ;
 			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:nodeKind sh:IRI ;
 			sh:path tool:creator ;
 		] ,
 		[
@@ -16999,12 +17209,13 @@ types:Dictionary
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "Dictionary"@en ;
 	rdfs:comment "A dictionary is list of (term/key, value) pairs with each term/key existing no more than once."@en ;
 	sh:property [
 		sh:class types:DictionaryEntry ;
 		sh:minCount "1"^^xsd:integer ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
+		sh:nodeKind sh:IRI ;
 		sh:path types:entry ;
 	] ;
 	sh:targetClass types:Dictionary ;
@@ -17015,6 +17226,7 @@ types:DictionaryEntry
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "DictionaryEntry"@en ;
 	rdfs:comment "A dictionary entry is a single (term/key, value) pair."@en ;
 	sh:property
@@ -17041,6 +17253,7 @@ types:Hash
 		owl:Class ,
 		sh:NodeShape
 		;
+	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "Hash"@en ;
 	rdfs:comment "A hash is a grouping of characteristics unique to the result of applying a mathematical algorithm that maps data of arbitrary size to a bit string (the 'hash') and is a one-way function, that is, a function which is practically infeasible to invert. This is commonly used for integrity checking of data. [based on https://en.wikipedia.org/wiki/Cryptographic_hash_function]"@en ;
 	sh:property
@@ -17119,7 +17332,7 @@ types:Thread
 		;
 	rdfs:subClassOf
 		co:Bag ,
-		core:UcoObject
+		core:UcoThing
 		;
 	rdfs:label "Thread"@en ;
 	rdfs:comment "A semi-ordered array of items, that can be present in multiple copies.  Implemetation of a UCO Thread is similar to a Collections Ontology List, except a Thread may fork and merge - that is, one of its members may have two or more direct successors, and two or more direct predecessors."@en ;
@@ -17137,7 +17350,7 @@ types:ThreadItem
 		;
 	rdfs:subClassOf
 		co:Item ,
-		core:UcoObject
+		core:UcoThing
 		;
 	rdfs:label "ThreadItem"@en ;
 	rdfs:comment "A ThreadItem is a member of a thread."@en ;
@@ -17193,7 +17406,7 @@ types:threadNextItem
 types:threadNextItem-subjects-shape
 	a sh:PropertyShape ;
 	sh:class types:ThreadItem ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path types:threadNextItem ;
 	sh:targetSubjectsOf types:threadNextItem ;
 	.
@@ -17221,7 +17434,7 @@ types:threadOriginItem
 types:threadOriginItem-subjects-shape
 	a sh:PropertyShape ;
 	sh:class types:ThreadItem ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path types:threadOriginItem ;
 	sh:targetSubjectsOf types:threadOriginItem ;
 	.
@@ -17230,7 +17443,7 @@ types:threadOriginItem-subjects-threadPredecessor-shape
 	a sh:PropertyShape ;
 	sh:description "An origin item in a thread must not have a predecessor."@en ;
 	sh:maxCount "0"^^xsd:integer ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path (
 		types:threadOriginItem
 		types:threadPredecessor
@@ -17242,7 +17455,7 @@ types:threadOriginItem-subjects-threadPreviousItem-shape
 	a sh:PropertyShape ;
 	sh:description "An origin item in a thread must not have a previous item."@en ;
 	sh:maxCount "0"^^xsd:integer ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path (
 		types:threadOriginItem
 		types:threadPreviousItem
@@ -17266,7 +17479,7 @@ types:threadPredecessor
 types:threadPredecessor-subjects-shape
 	a sh:PropertyShape ;
 	sh:class types:ThreadItem ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path types:threadPredecessor ;
 	sh:targetSubjectsOf types:threadPredecessor ;
 	.
@@ -17283,7 +17496,7 @@ types:threadPreviousItem
 types:threadPreviousItem-subjects-shape
 	a sh:PropertyShape ;
 	sh:class types:ThreadItem ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path types:threadPreviousItem ;
 	sh:targetSubjectsOf types:threadPreviousItem ;
 	.
@@ -17303,7 +17516,7 @@ types:threadSuccessor
 types:threadSuccessor-subjects-shape
 	a sh:PropertyShape ;
 	sh:class types:ThreadItem ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path types:threadSuccessor ;
 	sh:targetSubjectsOf types:threadSuccessor ;
 	.
@@ -17331,7 +17544,7 @@ types:threadTerminalItem
 types:threadTerminalItem-subjects-shape
 	a sh:PropertyShape ;
 	sh:class types:ThreadItem ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path types:threadTerminalItem ;
 	sh:targetSubjectsOf types:threadTerminalItem ;
 	.
@@ -17340,7 +17553,7 @@ types:threadTerminalItem-subjects-threadNextItem-shape
 	a sh:PropertyShape ;
 	sh:description "A terminal item in a thread must not have a next item."@en ;
 	sh:maxCount "0"^^xsd:integer ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path (
 		types:threadTerminalItem
 		types:threadNextItem
@@ -17352,7 +17565,7 @@ types:threadTerminalItem-subjects-threadSuccessor-shape
 	a sh:PropertyShape ;
 	sh:description "A terminal item in a thread must not have a successor."@en ;
 	sh:maxCount "0"^^xsd:integer ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:nodeKind sh:IRI ;
 	sh:path (
 		types:threadTerminalItem
 		types:threadSuccessor
@@ -18686,6 +18899,14 @@ vocabulary:WirelessNetworkSecurityModeVocab
 			"WPA3-Enterprise"^^vocabulary:WirelessNetworkSecurityModeVocab
 		) ;
 	] ;
+	.
+
+[]
+	a owl:AllDisjointClasses ;
+	owl:members (
+		core:UcoInherentCharacterizationThing
+		core:UcoObject
+	) ;
 	.
 
 []
