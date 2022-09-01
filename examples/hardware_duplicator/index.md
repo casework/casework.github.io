@@ -60,9 +60,9 @@ The first part of representing information in CASE is to provide the context, in
 },
 {
    "@id":"kb:Relationship-d5b4a1e1-0e25-4257-81f7-19febc86ded1", 
-   "@type":"uco-core:Relationship",
-   "uco-core:source":"kb:Identity-c5bb09c3-3612-4bf2-b165-6f12d0e3c6af",
-   "uco-core:target":"kb:Role-856975ce-3c25-49c3-b6eb-28d1e929f915",
+   "@type":"uco-observable:ObservableRelationship",
+   "uco-core:source": { "@id": "kb:c5bb09c3-3612-4bf2-b165-6f12d0e3c6af" },
+   "uco-core:target": { "@id": "kb:856975ce-3c25-49c3-b6eb-28d1e929f915" },
    "uco-core:kindOfRelationship":"Has_Role",
    "uco-core:isDirectional":"True"
 },
@@ -183,9 +183,9 @@ Representing the partition structure of the evidential hard drive as reported by
 },
 {
    "@id":"kb:Relationship-52aa42a6-8d79-450d-9236-bc76d67840ec", 
-   "@type":"uco-core:Relationship",
-   "uco-core:source":"kb:DiskPartition-6f643033-9a10-4519-af98-a0902690b9a9",
-   "uco-core:target":"kb:Disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11",
+   "@type":"uco-observable:ObservableRelationship",
+   "uco-core:source": { "@id": "kb:DiskPartition-6f643033-9a10-4519-af98-a0902690b9a9" },
+   "uco-core:target": { "@id": "kb:Disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11" },
    "uco-core:kindOfRelationship":"Contained_Within",
    "uco-core:isDirectional":"True"
 },
@@ -204,9 +204,9 @@ Representing the partition structure of the evidential hard drive as reported by
 },
 {
    "@id":"kb:Relationship-fb44d09e-2ada-44e8-9c2e-70fe71202652", 
-   "@type":"uco-core:Relationship",
-   "uco-core:source":"kb:DiskPartition-820d247d-3016-49a0-82ca-705dc9b70254",
-   "uco-core:target":"kb:Disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11",
+   "@type":"uco-observable:ObservableRelationship",
+   "uco-core:source": { "@id": "kb:DiskPartition-6f643033-9a10-4519-af98-a0902690b9a9" },
+   "uco-core:target": { "@id": "kb:Disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11" },
    "uco-core:kindOfRelationship":"Contained_Within",
    "uco-core:isDirectional":"True"
 },
@@ -225,9 +225,9 @@ Representing the partition structure of the evidential hard drive as reported by
 },
 {
    "@id":"kb:Relationship-c34de1cd-daa3-4381-a4c6-7a05005cb3d3", 
-   "@type":"uco-core:Relationship",
-   "uco-core:source":"kb:DiskPartition-e19c38f5-692b-4336-8d6d-fdc34a51b00e",
-   "uco-core:target":"kb:Disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11",
+   "@type":"uco-observable:ObservableRelationship",
+   "uco-core:source": { "@id": "kb:DiskPartition-e19c38f5-692b-4336-8d6d-fdc34a51b00e" },
+   "uco-core:target": { "@id": "kb:Disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11" },
    "uco-core:kindOfRelationship":"Contained_Within",
    "uco-core:isDirectional":"True"
 },
@@ -246,9 +246,9 @@ Representing the partition structure of the evidential hard drive as reported by
 },
 {
    "@id":"kb:Relationship-d348200b-e180-40b8-8617-2319f5fe6ffa", 
-   "@type":"uco-core:Relationship",
-   "uco-core:source":"kb:DiskPartition-a193840c-7b8b-4ede-a5a7-e4464b30b9c7",
-   "uco-core:target":"kb:Disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11",
+   "@type":"uco-observable:ObservableRelationship",
+   "uco-core:source": { "@id": "kb:DiskPartition-a193840c-7b8b-4ede-a5a7-e4464b30b9c7" },
+   "uco-core:target": { "@id": "kb:Disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11" },
    "uco-core:kindOfRelationship":"Contained_Within",
    "uco-core:isDirectional":"True"
 },
@@ -267,9 +267,9 @@ Representing the partition structure of the evidential hard drive as reported by
 },
 {
    "@id":"kb:Relationship-ff010f40-7f95-498a-9cde-14fa8de501b9", 
-   "@type":"uco-core:Relationship",
-   "uco-core:source":"kb:DiskPartition-f90a3ee1-2cde-439f-9768-23c67aafe347",
-   "uco-core:target":"kb:Disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11",
+   "@type":"uco-observable:ObservableRelationship",
+   "uco-core:source": { "@id": "kb:DiskPartition-f90a3ee1-2cde-439f-9768-23c67aafe347" },
+   "uco-core:target": { "@id": "kb:Disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11" },
    "uco-core:kindOfRelationship":"Contained_Within",
    "uco-core:isDirectional":"True"
 },
