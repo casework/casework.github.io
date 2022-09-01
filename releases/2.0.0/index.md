@@ -1,5 +1,5 @@
 ---
-title: 1.1.0 Release
+title: 2.0.0 Release
 layout: releases
 custom_css: releases
 ---
