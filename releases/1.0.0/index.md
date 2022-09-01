@@ -33,6 +33,7 @@ custom_css: releases
 * Added OWL 2 DL review with SHACL-SPARQL for UCO ([*Github Pull Request 102*](https://github.com/casework/CASE/pull/102))
   * (While this is not necessarily a backwards-incompatible change within the scope of UCO, it does identify what end users might not have realized were broader OWL errors.)
 * Removed CASE's IRI base ([*GitHub Pull Request 103*](https://github.com/casework/CASE/pull/103)) 
+* Graph individuals are now required to not be blank nodes, and an IRI ending with a UUID is suggested ([*UCO GitHub Issue 430*](https://github.com/ucoProject/UCO/issues/430))
 
 #### General changes
 
