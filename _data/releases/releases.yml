@@ -22,3 +22,9 @@
 - title: 0.7.0
   date: 2022-06-17
   desc: Adoption of UCO 0.9.0. Updates to workflow technology transitions and depedency upgrades.
+- title: 0.7.1
+  date: 2022-08-31
+  desc: Implementation and testing of ontology versioning.
+- title: 1.0.0
+  date: 2022-08-31
+  desc: Initial major release.
