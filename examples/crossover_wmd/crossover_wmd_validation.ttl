@@ -3,11 +3,11 @@
 @prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
 @prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
 @prefix ns1: <http://example.org/ontology/drafting#> .
-@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix vocab: <https://ontology.caseontology.org/case/vocabulary/> .
 @prefix vocabulary1: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -19,28 +19,28 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/860FC853-9C3F-41FC-B144-8AC80D8F5849-URLHistory> ;
-			sh:resultMessage "Value does not have class observable:URLHistoryEntry" ;
-			sh:resultPath observable:urlHistoryEntry ;
+			sh:resultMessage "Value does not have class uco-observable:URLHistoryEntry" ;
+			sh:resultPath uco-observable:urlHistoryEntry ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
 			sh:sourceShape [
-				sh:class observable:URLHistoryEntry ;
+				sh:class uco-observable:URLHistoryEntry ;
 				sh:minCount "1"^^xsd:integer ;
 				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path observable:urlHistoryEntry ;
+				sh:path uco-observable:urlHistoryEntry ;
 			] ;
 			sh:value [
 				ns1:allocationStatus "allocated" ;
-				observable:browserInformation <http://example.org/kb/5d96df90-d9e1-423c-b8db-c2327812ab38> ;
-				observable:browserUserProfile <http://example.org/kb/profile--account-uuid> ;
-				observable:expirationTime "NULL" ;
-				observable:firstVisit "2018-12-06T18:52:21+00:00"^^xsd:dateTime ;
-				observable:lastVisit "2017-01-25T02:20:22+00:00"^^xsd:dateTime ;
-				observable:manuallyEnteredCount "0"^^xsd:integer ;
-				observable:pageTitle "Friday Magazine | Home" ;
-				observable:referrerUrl <http://example.org/kb/14354987-8ae5-47e3-8369-dbd0d5f77489> ;
-				observable:url <http://example.org/kb/39ff4987-8ae5-47e3-8369-dbd0d5f79398> ;
-				observable:visitCount "1"^^xsd:integer ;
+				uco-observable:browserInformation <http://example.org/kb/5d96df90-d9e1-423c-b8db-c2327812ab38> ;
+				uco-observable:browserUserProfile <http://example.org/kb/profile--account-uuid> ;
+				uco-observable:expirationTime "NULL" ;
+				uco-observable:firstVisit "2018-12-06T18:52:21+00:00"^^xsd:dateTime ;
+				uco-observable:lastVisit "2017-01-25T02:20:22+00:00"^^xsd:dateTime ;
+				uco-observable:manuallyEnteredCount "0"^^xsd:integer ;
+				uco-observable:pageTitle "Friday Magazine | Home" ;
+				uco-observable:referrerUrl <http://example.org/kb/14354987-8ae5-47e3-8369-dbd0d5f77489> ;
+				uco-observable:url <http://example.org/kb/39ff4987-8ae5-47e3-8369-dbd0d5f79398> ;
+				uco-observable:visitCount "1"^^xsd:integer ;
 			] ;
 		] ,
 		[
@@ -134,60 +134,60 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
-				a observable:MobileDeviceFacet ;
+				a uco-observable:MobileDeviceFacet ;
 				ns1:deviceActivationTime "2018-06-10T14:31:30.00Z" ;
 				ns1:locationsServicesEnabled "true"^^xsd:boolean ;
-				observable:IMEI "356420075722843" ;
-				observable:bluetoothDeviceName "Galaxy S6 edge" ;
-				observable:clockSetting "__NOT_PROVIDED" ;
-				observable:keypadUnlockCode "__NOT_PROVIDED" ;
-				observable:storageCapacityInBytes "__NOT_PROVIDED" ;
+				uco-observable:IMEI "356420075722843" ;
+				uco-observable:bluetoothDeviceName "Galaxy S6 edge" ;
+				uco-observable:clockSetting "__NOT_PROVIDED" ;
+				uco-observable:keypadUnlockCode "__NOT_PROVIDED" ;
+				uco-observable:storageCapacityInBytes "__NOT_PROVIDED" ;
 			] ;
 			sh:resultMessage "Value is not Literal with datatype xsd:dateTime" ;
-			sh:resultPath observable:clockSetting ;
+			sh:resultPath uco-observable:clockSetting ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
 				sh:datatype xsd:dateTime ;
 				sh:maxCount "1"^^xsd:integer ;
 				sh:nodeKind sh:Literal ;
-				sh:path observable:clockSetting ;
+				sh:path uco-observable:clockSetting ;
 			] ;
 			sh:value "__NOT_PROVIDED" ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
-				a observable:MobileDeviceFacet ;
+				a uco-observable:MobileDeviceFacet ;
 				ns1:deviceActivationTime "2018-06-10T14:31:30.00Z" ;
 				ns1:locationsServicesEnabled "true"^^xsd:boolean ;
-				observable:IMEI "356420075722843" ;
-				observable:bluetoothDeviceName "Galaxy S6 edge" ;
-				observable:clockSetting "__NOT_PROVIDED" ;
-				observable:keypadUnlockCode "__NOT_PROVIDED" ;
-				observable:storageCapacityInBytes "__NOT_PROVIDED" ;
+				uco-observable:IMEI "356420075722843" ;
+				uco-observable:bluetoothDeviceName "Galaxy S6 edge" ;
+				uco-observable:clockSetting "__NOT_PROVIDED" ;
+				uco-observable:keypadUnlockCode "__NOT_PROVIDED" ;
+				uco-observable:storageCapacityInBytes "__NOT_PROVIDED" ;
 			] ;
 			sh:resultMessage "Value is not Literal with datatype xsd:integer" ;
-			sh:resultPath observable:storageCapacityInBytes ;
+			sh:resultPath uco-observable:storageCapacityInBytes ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
 				sh:datatype xsd:integer ;
 				sh:maxCount "1"^^xsd:integer ;
 				sh:nodeKind sh:Literal ;
-				sh:path observable:storageCapacityInBytes ;
+				sh:path uco-observable:storageCapacityInBytes ;
 			] ;
 			sh:value "__NOT_PROVIDED" ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
-				a observable:AccountFacet ;
-				observable:accountIssuer <http://example.org/kb/organization-salt-uuid> ;
-				observable:isActive "true"^^xsd:boolean ;
+				a uco-observable:AccountFacet ;
+				uco-observable:accountIssuer <http://example.org/kb/organization-salt-uuid> ;
+				uco-observable:isActive "true"^^xsd:boolean ;
 			] ;
-			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:AccountFacet ; uco-observable:accountIssuer kb:organization-salt-uuid ; uco-observable:isActive Literal("true" = True, datatype=xsd:boolean) ]->observable:accountIdentifier' ;
-			sh:resultPath observable:accountIdentifier ;
+			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:AccountFacet ; uco-observable:accountIssuer kb:organization-salt-uuid ; uco-observable:isActive Literal("true" = True, datatype=xsd:boolean) ]->uco-observable:accountIdentifier' ;
+			sh:resultPath uco-observable:accountIdentifier ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
 			sh:sourceShape [
@@ -195,18 +195,18 @@
 				sh:maxCount "1"^^xsd:integer ;
 				sh:minCount "1"^^xsd:integer ;
 				sh:nodeKind sh:Literal ;
-				sh:path observable:accountIdentifier ;
+				sh:path uco-observable:accountIdentifier ;
 			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
-				a observable:AccountFacet ;
-				observable:accountType "Phone"^^vocabulary1:AccountTypeVocab ;
-				observable:isActive "false"^^xsd:boolean ;
+				a uco-observable:AccountFacet ;
+				uco-observable:accountType "Phone"^^vocabulary1:AccountTypeVocab ;
+				uco-observable:isActive "false"^^xsd:boolean ;
 			] ;
-			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:AccountFacet ; uco-observable:accountType Literal("Phone" = None, datatype=uco-vocabulary:AccountTypeVocab) ; uco-observable:isActive Literal("false" = False, datatype=xsd:boolean) ]->observable:accountIdentifier' ;
-			sh:resultPath observable:accountIdentifier ;
+			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:AccountFacet ; uco-observable:accountType Literal("Phone" = None, datatype=uco-vocabulary:AccountTypeVocab) ; uco-observable:isActive Literal("false" = False, datatype=xsd:boolean) ]->uco-observable:accountIdentifier' ;
+			sh:resultPath uco-observable:accountIdentifier ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
 			sh:sourceShape [
@@ -214,18 +214,18 @@
 				sh:maxCount "1"^^xsd:integer ;
 				sh:minCount "1"^^xsd:integer ;
 				sh:nodeKind sh:Literal ;
-				sh:path observable:accountIdentifier ;
+				sh:path uco-observable:accountIdentifier ;
 			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
-				a observable:AccountFacet ;
-				observable:accountType "Phone"^^vocabulary1:AccountTypeVocab ;
-				observable:isActive "false"^^xsd:boolean ;
+				a uco-observable:AccountFacet ;
+				uco-observable:accountType "Phone"^^vocabulary1:AccountTypeVocab ;
+				uco-observable:isActive "false"^^xsd:boolean ;
 			] ;
 			sh:resultMessage "Value is not member of the vocabulary AccountTypeVocab." ;
-			sh:resultPath observable:accountType ;
+			sh:resultPath uco-observable:accountType ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:OrConstraintComponent ;
 			sh:sourceShape [
@@ -239,19 +239,19 @@
 						sh:datatype xsd:string ;
 					]
 				) ;
-				sh:path observable:accountType ;
+				sh:path uco-observable:accountType ;
 			] ;
 			sh:value "Phone"^^vocabulary1:AccountTypeVocab ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
-				a observable:AccountFacet ;
-				observable:accountType "Phone"^^vocabulary1:AccountTypeVocab ;
-				observable:isActive "true"^^xsd:boolean ;
+				a uco-observable:AccountFacet ;
+				uco-observable:accountType "Phone"^^vocabulary1:AccountTypeVocab ;
+				uco-observable:isActive "true"^^xsd:boolean ;
 			] ;
-			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:AccountFacet ; uco-observable:accountType Literal("Phone" = None, datatype=uco-vocabulary:AccountTypeVocab) ; uco-observable:isActive Literal("true" = True, datatype=xsd:boolean) ]->observable:accountIdentifier' ;
-			sh:resultPath observable:accountIdentifier ;
+			sh:resultMessage 'Less than 1 values on [ rdf:type uco-observable:AccountFacet ; uco-observable:accountType Literal("Phone" = None, datatype=uco-vocabulary:AccountTypeVocab) ; uco-observable:isActive Literal("true" = True, datatype=xsd:boolean) ]->uco-observable:accountIdentifier' ;
+			sh:resultPath uco-observable:accountIdentifier ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
 			sh:sourceShape [
@@ -259,18 +259,18 @@
 				sh:maxCount "1"^^xsd:integer ;
 				sh:minCount "1"^^xsd:integer ;
 				sh:nodeKind sh:Literal ;
-				sh:path observable:accountIdentifier ;
+				sh:path uco-observable:accountIdentifier ;
 			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
-				a observable:AccountFacet ;
-				observable:accountType "Phone"^^vocabulary1:AccountTypeVocab ;
-				observable:isActive "true"^^xsd:boolean ;
+				a uco-observable:AccountFacet ;
+				uco-observable:accountType "Phone"^^vocabulary1:AccountTypeVocab ;
+				uco-observable:isActive "true"^^xsd:boolean ;
 			] ;
 			sh:resultMessage "Value is not member of the vocabulary AccountTypeVocab." ;
-			sh:resultPath observable:accountType ;
+			sh:resultPath uco-observable:accountType ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:OrConstraintComponent ;
 			sh:sourceShape [
@@ -284,68 +284,68 @@
 						sh:datatype xsd:string ;
 					]
 				) ;
-				sh:path observable:accountType ;
+				sh:path uco-observable:accountType ;
 			] ;
 			sh:value "Phone"^^vocabulary1:AccountTypeVocab ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
-				a observable:ExtInodeFacet ;
-				observable:extInodeChangeTime "__NOT_PROVIDED" ;
-				observable:extInodeID "522962"^^xsd:integer ;
-				observable:extSGID "10092"^^xsd:integer ;
-				observable:extSUID "10092"^^xsd:integer ;
+				a uco-observable:ExtInodeFacet ;
+				uco-observable:extInodeChangeTime "__NOT_PROVIDED" ;
+				uco-observable:extInodeID "522962"^^xsd:integer ;
+				uco-observable:extSGID "10092"^^xsd:integer ;
+				uco-observable:extSUID "10092"^^xsd:integer ;
 			] ;
 			sh:resultMessage "Value is not Literal with datatype xsd:dateTime" ;
-			sh:resultPath observable:extInodeChangeTime ;
+			sh:resultPath uco-observable:extInodeChangeTime ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
 				sh:datatype xsd:dateTime ;
 				sh:maxCount "1"^^xsd:integer ;
 				sh:nodeKind sh:Literal ;
-				sh:path observable:extInodeChangeTime ;
+				sh:path uco-observable:extInodeChangeTime ;
 			] ;
 			sh:value "__NOT_PROVIDED" ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
-				a observable:SIMCardFacet ;
-				observable:ICCID "8935302143531284380" ;
-				observable:IMSI "__NOT_PROVIDED" ;
-				observable:carrier "__NOT_PROVIDED" ;
+				a uco-observable:SIMCardFacet ;
+				uco-observable:ICCID "8935302143531284380" ;
+				uco-observable:IMSI "__NOT_PROVIDED" ;
+				uco-observable:carrier "__NOT_PROVIDED" ;
 			] ;
 			sh:resultMessage "Value does not have class identity:Identity" ;
-			sh:resultPath observable:carrier ;
+			sh:resultPath uco-observable:carrier ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
 			sh:sourceShape [
 				sh:class identity:Identity ;
 				sh:maxCount "1"^^xsd:integer ;
 				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path observable:carrier ;
+				sh:path uco-observable:carrier ;
 			] ;
 			sh:value "__NOT_PROVIDED" ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
-				a observable:SIMCardFacet ;
-				observable:ICCID "8935302143531284380" ;
-				observable:IMSI "__NOT_PROVIDED" ;
-				observable:carrier "__NOT_PROVIDED" ;
+				a uco-observable:SIMCardFacet ;
+				uco-observable:ICCID "8935302143531284380" ;
+				uco-observable:IMSI "__NOT_PROVIDED" ;
+				uco-observable:carrier "__NOT_PROVIDED" ;
 			] ;
 			sh:resultMessage "Value is not of Node Kind sh:BlankNodeOrIRI" ;
-			sh:resultPath observable:carrier ;
+			sh:resultPath uco-observable:carrier ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
 			sh:sourceShape [
 				sh:class identity:Identity ;
 				sh:maxCount "1"^^xsd:integer ;
 				sh:nodeKind sh:BlankNodeOrIRI ;
-				sh:path observable:carrier ;
+				sh:path uco-observable:carrier ;
 			] ;
 			sh:value "__NOT_PROVIDED" ;
 		]

@@ -13,94 +13,35 @@
 
 SHELL := /bin/bash
 
-top_srcdir := ..
+# Set up descending into each directory that has a Makefile.
+example_dirs := $(shell ls */Makefile | xargs dirname)
+
+all_targets   := $(foreach example_dir,$(example_dirs),all-$(example_dir))
+check_targets := $(foreach example_dir,$(example_dirs),check-$(example_dir))
+clean_targets := $(foreach example_dir,$(example_dirs),clean-$(example_dir))
 
 all: \
-  all-asgard \
-  all-crossover_wmd \
-  all-owl_trafficking \
-  all-urgent_evidence
+  $(all_targets)
 
-.PHONY: \
-  all-asgard \
-  all-crossover_wmd \
-  all-owl_trafficking \
-  all-urgent_evidence \
-  check-asgard \
-  check-crossover_wmd \
-  check-owl_trafficking \
-  check-urgent_evidence \
-  clean-asgard \
-  clean-crossover_wmd \
-  clean-owl_trafficking \
-  clean-urgent_evidence
-
-all-asgard:
+all-%: \
+  %/Makefile
 	$(MAKE) \
-	  --directory asgard
-
-all-crossover_wmd:
-	$(MAKE) \
-	  --directory crossover_wmd
-
-all-owl_trafficking:
-	$(MAKE) \
-	  --directory owl_trafficking
-
-all-urgent_evidence: \
-  $(top_srcdir)/.venv.done.log
-	$(MAKE) \
-	  --directory urgent_evidence
+	  --directory $$(dirname $<)
 
 check: \
-  check-asgard \
-  check-crossover_wmd \
-  check-owl_trafficking \
-  check-urgent_evidence
+  $(check_targets)
 
-check-asgard:
+check-%: \
+  %/Makefile
 	$(MAKE) \
-	  --directory asgard \
-	  check
-
-check-crossover_wmd:
-	$(MAKE) \
-	  --directory crossover_wmd \
-	  check
-
-check-owl_trafficking:
-	$(MAKE) \
-	  --directory owl_trafficking \
-	  check
-
-check-urgent_evidence: \
-  $(top_srcdir)/.venv.done.log
-	$(MAKE) \
-	  --directory urgent_evidence \
+	  --directory $$(dirname $<) \
 	  check
 
 clean: \
-  clean-asgard \
-  clean-crossover_wmd \
-  clean-owl_trafficking \
-  clean-urgent_evidence
+  $(clean_targets)
 
-clean-asgard:
+clean-%: \
+  %/Makefile
 	@$(MAKE) \
-	  --directory asgard \
-	  clean
-
-clean-crossover_wmd:
-	@$(MAKE) \
-	  --directory crossover_wmd \
-	  clean
-
-clean-owl_trafficking:
-	@$(MAKE) \
-	  --directory owl_trafficking \
-	  clean
-
-clean-urgent_evidence:
-	@$(MAKE) \
-	  --directory urgent_evidence \
+	  --directory $$(dirname $<) \
 	  clean

@@ -7,8 +7,10 @@
     - name: Archived Releases
       link: /releases/archive/
     - name: SPACE
-    - name: Under Development
-      link: /releases/0.8.0/
+    - name: Under Development (0.7.1)
+      link: /releases/0.7.1/
+    - name: Under Development (1.0.0)
+      link: /releases/1.0.0/
 - name: Ontology
   submenuitems:
     - name: Introduction

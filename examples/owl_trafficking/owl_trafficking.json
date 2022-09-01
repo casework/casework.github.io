@@ -1090,6 +1090,11 @@
             "uco-core:isDirectional": true
         },
         {
+            "@id": "kb:magnet-acquire2005412-83715215-c5fc-4231-99ff-29a3c51cb5f1",
+            "@type": "uco-tool:Tool",
+            "rdfs:comment": "TODO: The tool:Tool type is redundant after the release of 1.0.0."
+        },
+        {
             "@id": "kb:forensic-computer-2132063b-7753-4b51-b146-827e9a1d5037",
             "@type": "uco-observable:Device"
         },
