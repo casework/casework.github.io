@@ -86,8 +86,8 @@ jumbo_desc:
                 {
                    "@id":"kb:Relationship-ec126575-d6a4-4590-9690-f2571a48b8ac", 
                    "@type":"uco-observable:ObservableRelationship",
-                   "uco-core:source":"kb:Identity-cbfbd171-e56c-4f59-a01b-4404a1e5eb28",
-                   "uco-core:target":"kb:Role-870e2626-5ffd-4a80-83c2-8ee429709c81",
+                   "uco-core:source": { "@id": "kb:Identity-cbfbd171-e56c-4f59-a01b-4404a1e5eb28" },
+                   "uco-core:target": { "@id": "kb:Role-870e2626-5ffd-4a80-83c2-8ee429709c81" },
                    "uco-core:kindOfRelationship":"Has_Role",
                    "uco-core:isDirectional":"True"
                 },
@@ -386,8 +386,8 @@ Another LNK file on the hard drive:
             "@type": "uco-observable:File"
         },
         {
-            "uco-core:source": "kb:lnkfile-f3c23080-0236-4ee7-83e7-cccc5fa06ee0",
-            "uco-core:target": "kb:harddrive-partition2-e3f25b0b-37bf-4111-bae3-d355aff3c8a2",
+            "uco-core:source": { "@id": "kb:lnkfile-f3c23080-0236-4ee7-83e7-cccc5fa06ee0" },
+            "uco-core:target": { "@id": "kb:harddrive-partition2-e3f25b0b-37bf-4111-bae3-d355aff3c8a2" },
             "uco-core:kindOfRelationship": "contained-within",
             "uco-core:isDirectional": true,
             "@id": "kb:Relationship-e29bbd14-396d-48d4-abbf-acdfd346ca64",
@@ -416,8 +416,8 @@ The thebatletter.docx file referenced in the LNK file is no longer in allocated 
             "@type": "uco-observable:File"
         },
         {
-            "uco-core:source": "kb:File-ed7c30a2-e233-4732-adee-8514955b6dfb",
-            "uco-core:target": "kb:usbimage-b2dbb227-06ec-432d-9f63-058e8ab73944",
+            "uco-core:source": { "@id": "kb:File-ed7c30a2-e233-4732-adee-8514955b6dfb" },
+            "uco-core:target": { "@id": "kb:usbimage-b2dbb227-06ec-432d-9f63-058e8ab73944" },
             "uco-core:kindOfRelationship": "contained-within",
             "uco-core:isDirectional": true,
             "@id": "kb:Relationship-b3a202b4-ee2b-4f26-9a31-6d10801524e7",
@@ -489,8 +489,8 @@ The thebatletter.docx file referenced in the LNK file is no longer in allocated 
             ]
         },
         {   
-            "uco-core:source": "kb:content-2ea73bc6-801a-47ff-a8fa-837c226bfa14",
-            "uco-core:target": "kb:file-ed7c30a2-e233-4732-adee-8514955b6dfb",
+            "uco-core:source": { "@id": "kb:content-2ea73bc6-801a-47ff-a8fa-837c226bfa14" },
+            "uco-core:target": { "@id": "kb:file-ed7c30a2-e233-4732-adee-8514955b6dfb" },
             "uco-core:kindOfRelationship": "Contained-Within",
             "uco-core:isDirectional": true,
             "@id": "kb:Relationship-59a90c3f-12a9-4ed4-b175-2e56b75abd74",
@@ -518,8 +518,8 @@ Another LNK file on the hard drive:
             "@type": "uco-observable:File"
         },
         {
-            "uco-core:source": "kb:File-31c06b79-ad9f-446a-859a-62b848e2e1f8",
-            "uco-core:target": "kb:harddrive-partition2-e3f25b0b-37bf-4111-bae3-d355aff3c8a2",
+            "uco-core:source": { "@id": "kb:File-31c06b79-ad9f-446a-859a-62b848e2e1f8" },
+            "uco-core:target": { "@id": "kb:harddrive-partition2-e3f25b0b-37bf-4111-bae3-d355aff3c8a2" },
             "uco-core:kindOfRelationship": "contained-within",
             "uco-core:isDirectional": true,
             "@id": "kb:Relationship-df9f6a42-fbb6-4e7e-bf60-6518680241dd",
@@ -543,8 +543,8 @@ Another LNK file on the hard drive:
             "@type": "uco-observable:File"
         },
         {
-            "uco-core:source": "kb:File-26adfe08-e545-4d24-872b-84f95bd01284",
-            "uco-core:target": "kb:harddrive-partition2-e3f25b0b-37bf-4111-bae3-d355aff3c8a2",
+            "uco-core:source": { "@id": "kb:File-26adfe08-e545-4d24-872b-84f95bd01284" },
+            "uco-core:target": { "@id": "kb:harddrive-partition2-e3f25b0b-37bf-4111-bae3-d355aff3c8a2" },
             "uco-core:kindOfRelationship": "Contained-Within",
             "uco-core:isDirectional": true,
             "@id": "kb:Relationship-d70472d2-42a7-4ea1-9f3f-4fd7637bd4ff",
@@ -571,10 +571,10 @@ Another LNK file on the hard drive:
             ]
         },
        {
-            "source": "kb:url-def4ae18-9181-4cce-8f5f-a9aba022b98b",
-            "target": "kb:file-webcache-12c51c62-e5e2-4018-ac45-e0e69e36573f",
-            "kindOfRelationship": "contained-within",
-            "isDirectional": true,
+            "uco-core:source": { "@id": "kb:url-def4ae18-9181-4cce-8f5f-a9aba022b98b" },
+            "uco-core:target": { "@id": "kb:file-webcache-12c51c62-e5e2-4018-ac45-e0e69e36573f" },
+            "uco-core:kindOfRelationship": "contained-within",
+            "uco-core:isDirectional": true,
             "@id": "kb:Relationship-47601a3c-d962-4e3a-b90d-fa2bad7a0be3",
             "@type": "uco-observable:ObservableRelationship"
         },
@@ -666,8 +666,8 @@ The referenced file on the USB drive:
             "@type": "uco-observable:File"
         },
         {
-            "uco-core:source": "kb:File-bbb4f0c4-ea2c-42fa-9ec0-11bc4678b7b8",
-            "uco-core:target": "kb:usbimage-b2dbb227-06ec-432d-9f63-058e8ab73944",
+            "uco-core:source": { "@id": "kb:File-bbb4f0c4-ea2c-42fa-9ec0-11bc4678b7b8" },
+            "uco-core:target": { "@id": "kb:usbimage-b2dbb227-06ec-432d-9f63-058e8ab73944" },
             "uco-core:kindOfRelationship": "Contained-Within",
             "uco-core:isDirectional": true,
             "@id": "kb:Relationship-ce92625b-c5f0-4856-940b-692d82de602c",
