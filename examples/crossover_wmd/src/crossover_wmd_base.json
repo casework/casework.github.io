@@ -20,12 +20,12 @@
     },
     "@graph": [
         {
-            "@id": "kb:bundle-5715FCF3-6BC8-4996-8F7F-FDF289F31649",
+            "@id": "kb:bundle-5715fcf3-6bc8-4996-8f7f-fdf289f31649",
             "@type": "uco-core:Bundle",
             "uco-core:description": "Evidence in cross border investigation into weapon of mass destruction",
             "uco-core:object": [
                 {
-                    "@id": "kb:investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7",
+                    "@id": "kb:investigation-555e5fbb-ba09-449d-af77-8a210d016fd7",
                     "@type": "case-investigation:Investigation",
                     "uco-core:name": "CROSSOVER_2018_12111001",
                     "case-investigation:focus": "Weapon of Mass Destruction (Deathly Hallows)",

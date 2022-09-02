@@ -261,6 +261,24 @@ WHERE {
       <td>2.0.0.5412</td>
       <td>LGE Nexus 5 Full Image.raw</td>
     </tr>
+    <tr>
+      <th>2</th>
+      <td>SD1</td>
+      <td>2017-02-06 22:13:08+00:00</td>
+      <td>Hoel</td>
+      <td>Magnet ACQUIRE</td>
+      <td>2.0.0.5412</td>
+      <td>LGE Nexus 5 Full Image.raw</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>SD1</td>
+      <td>2017-02-06 22:13:08+00:00</td>
+      <td>Hoel</td>
+      <td>Magnet ACQUIRE</td>
+      <td>2.0.0.5412</td>
+      <td>LGE Nexus 5 Full Image.raw</td>
+    </tr>
   </tbody>
 </table>
   </div>
@@ -495,12 +513,16 @@ ORDER BY ?lHashMethod
             {
                 "@type": "uco-observable:BluetoothAddressFacet",
                 "uco-observable:addressValue": "88:c9:d0:03:04:49"
-            },
-            {
-                "@type": "uco-observable:MobileAccountFacet",
-                "uco-observable:MSISDN": "+13046388446"
             }
         ]
+    },
+    {
+        "@id": "kb:relationship-6d7a7a20-ca70-4f7f-994d-c2db39e08545",
+        "@type": "uco-core:Relationship",
+        "uco-core:source": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168",
+        "uco-core:target": "kb:mobileaccount-4b3cdcbd-6a31-462f-be9b-1ca2944c8876",
+        "uco-core:kindOfRelationship": "Has_Account",
+        "uco-core:isDirectional": true
     }
 ]
 {% endhighlight %}

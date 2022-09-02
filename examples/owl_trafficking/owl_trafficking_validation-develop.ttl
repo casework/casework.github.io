@@ -948,23 +948,6 @@
 				sh:path core:hasFacet ;
 			] ;
 			sh:value [
-				a uco-observable:MobileAccountFacet ;
-				uco-observable:MSISDN "+13046388446" ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
 				a uco-observable:OperatingSystemFacet ;
 				core:name "Android" ;
 				uco-observable:advertisingID "48500120-c9c5-402e-a6bc-04e2f92ae259" ;
@@ -1222,6 +1205,68 @@
 				identity:familyName "McAvoy" ;
 				identity:givenName "Sarah" ;
 			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/relationship-6d7a7a20-ca70-4f7f-994d-c2db39e08545> ;
+			sh:resultMessage "Value does not have class core:UcoObject" ;
+			sh:resultPath core:source ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:source ;
+			] ;
+			sh:value "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/relationship-6d7a7a20-ca70-4f7f-994d-c2db39e08545> ;
+			sh:resultMessage "Value does not have class core:UcoObject" ;
+			sh:resultPath core:target ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:target ;
+			] ;
+			sh:value "kb:mobileaccount-4b3cdcbd-6a31-462f-be9b-1ca2944c8876" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/relationship-6d7a7a20-ca70-4f7f-994d-c2db39e08545> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:source ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:source ;
+			] ;
+			sh:value "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/relationship-6d7a7a20-ca70-4f7f-994d-c2db39e08545> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:target ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:target ;
+			] ;
+			sh:value "kb:mobileaccount-4b3cdcbd-6a31-462f-be9b-1ca2944c8876" ;
 		] ,
 		[
 			a sh:ValidationResult ;
@@ -5773,67 +5818,6 @@
 			sh:value [
 				a uco-observable:MobileAccountFacet ;
 				uco-observable:IMSI "310410920169729" ;
-				uco-observable:MSISDN "+13046388446" ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a uco-observable:MobileAccountFacet ;
-				uco-observable:MSISDN "+13046388446" ;
-			] ;
-			sh:resultMessage "UcoThings are required to not be blank nodes." ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				sh:message "UcoThings are required to not be blank nodes."@en ;
-				sh:select """
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER isBlank ($this)
-			}
-		""" ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing ;
-			sh:value [
-				a uco-observable:MobileAccountFacet ;
-				uco-observable:MSISDN "+13046388446" ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a uco-observable:MobileAccountFacet ;
-				uco-observable:MSISDN "+13046388446" ;
-			] ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value [
-				a uco-observable:MobileAccountFacet ;
 				uco-observable:MSISDN "+13046388446" ;
 			] ;
 		] ,

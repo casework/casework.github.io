@@ -1,6 +1,6 @@
 [
     {
-        "@id": "kb:cellebrite-ufed1-uuid",
+        "@id": "kb:configuredtool-aadfa022-0916-497d-aba5-ff8a4033f609",
         "@type": "uco-tool:ConfiguredTool",
         "uco-core:name": "UFED",
         "uco-tool:toolType": "Extraction",
@@ -10,7 +10,7 @@
         },
         "uco-tool:version": "7.1.0.751",
         "uco-configuration:usesConfiguration": {
-            "@id": "kb:7d574534-2013-414e-a349-77d819d5d8d7",
+            "@id": "kb:configuration-eb3f3fa6-7271-4d0c-b0f5-a3b916a9e4ab",
             "@type": "uco-configuration:Configuration",
             "uco-configuration:configurationEntry": [
                 {
@@ -32,15 +32,15 @@
         "uco-core:name": "Cellebrite"
     },
     {
-        "@id": "kb:forensic-computer1-uuid",
+        "@id": "kb:forensic-computer-c782630d-a0c6-4b5b-b1df-bdd514d27bb2",
         "@type": "uco-observable:Device"
     },
     {
-        "@id": "kb:esc-lausanne-uuid",
+        "@id": "kb:esc-lausanne-c3b211ae-6a46-4312-a3c2-b5181e565161",
         "@type": "uco-location:Location"
     },
     {
-        "@id": "kb:investigative-action1-uuid",
+        "@id": "kb:investigative-action-99a5c94f-e6cd-4b7c-b189-ea998ee0b31f",
         "@type": "case-investigation:InvestigativeAction",
         "uco-core:name": "extracted",
         "uco-core:startTime": {
@@ -52,48 +52,48 @@
             "@value": "2018-12-11T09:54:00.00Z"
         },
         "uco-action:location": {
-            "@id": "kb:esc-lausanne-uuid"
+            "@id": "kb:esc-lausanne-c3b211ae-6a46-4312-a3c2-b5181e565161"
         },
         "uco-action:performer": {
-            "@id": "kb:investigator1-uuid"
+            "@id": "kb:investigator-10b3d2da-e801-4afe-b70a-61f16a75e68b"
         },
         "uco-action:instrument": {
-            "@id": "kb:cellebrite-ufed1-uuid"
+            "@id": "kb:configuredtool-aadfa022-0916-497d-aba5-ff8a4033f609"
         },
         "uco-action:environment": {
-            "@id": "kb:forensic-computer1-uuid"
+            "@id": "kb:forensic-computer-c782630d-a0c6-4b5b-b1df-bdd514d27bb2"
         },
         "uco-action:object": [
             {
-                "@id": "kb:provenance-record1-uuid"
+                "@id": "kb:provenancerecord-9326149a-31c5-4d20-ada3-b97743d3e563"
             },
             {
-                "@id": "kb:samsung-device-uuid"
+                "@id": "kb:mobiledevice-803df237-bc7e-4e24-a5cb-8157063014b4"
             }
         ],
         "uco-action:result": [
             {
-                "@id": "kb:provenance-record2-uuid"
+                "@id": "kb:provenancerecord-e64b7aed-cecb-4291-81d4-4adb5b8020b2"
             },
             {
-                "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
+                "@id": "kb:forensicimage-1fedf25f-e662-4dd0-8584-d5b7411acf47"
             }
         ]
     },
     {
-        "@id": "kb:provenance-record1-uuid",
+        "@id": "kb:provenancerecord-9326149a-31c5-4d20-ada3-b97743d3e563",
         "@type": "case-investigation:ProvenanceRecord",
         "uco-core:object": {
-            "@id": "kb:samsung-device-uuid"
+            "@id": "kb:mobiledevice-803df237-bc7e-4e24-a5cb-8157063014b4"
         }
     },
     {
-        "@id": "kb:provenance-record2-uuid",
+        "@id": "kb:provenance-record-e64b7aed-cecb-4291-81d4-4adb5b8020b2",
         "@type": "case-investigation:ProvenanceRecord",
         "uco-core:description": "Forensic duplicate of mobile device used by Ares Lupin",
         "case-investigation:exhibitNumber": "20181211001-002",
         "uco-core:object": {
-            "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
+            "@id": "kb:forensicimage-1fedf25f-e662-4dd0-8584-d5b7411acf47"
         }
     }
 ]
