@@ -1,15 +1,15 @@
 [
     {
-        "@id": "kb:EmailMessage-2c032220-8c21-11e9-9c99-0c4de9c21b53",
+        "@id": "kb:emailmessage-2c032220-8c21-11e9-9c99-0c4de9c21b53",
         "@type": "uco-observable:EmailMessage",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:EmailMessageFacet",
                 "uco-observable:application": {
-                    "@id": "kb:Gmail-uuid"
+                    "@id": "kb:gmail-a1ce9965-ba9c-4fa1-9bfe-58c68ecaadc5"
                 },
                 "uco-observable:sender": {
-                    "@id": "kb:EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53"
+                    "@id": "kb:emailaccount-99d72bac-8c21-11e9-8902-0c4de9c21b53"
                 },
                 "uco-observable:sentTime": {
                     "@type": "xsd:dateTime",
@@ -17,7 +17,7 @@
                 },
                 "uco-observable:subject": "Re: Bank transfer ?",
                 "uco-observable:bodyRaw": {
-                    "@id": "kb:content-data-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d"
+                    "@id": "kb:contentdata-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d"
                 },
                 "uco-observable:fromRef": null,
                 "uco-observable:toRef": null,
@@ -28,7 +28,7 @@
         ]
     },
     {
-        "@id": "kb:content-data-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d",
+        "@id": "kb:contentdata-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d",
         "@type": "uco-observable:ContentData",
         "uco-core:hasFacet": {
             "@type": "uco-observable:ContentDataFacet",
@@ -36,7 +36,7 @@
         }
     },
     {
-        "@id": "kb:456a2bac-8c21-11e9-8902-0c4de9c24de5",
+        "@id": "kb:emailaddress-456a2bac-8c21-11e9-8902-0c4de9c24de5",
         "@type": "uco-observable:EmailAddress",
         "uco-core:hasFacet": [
             {
@@ -46,7 +46,7 @@
         ]
     },
     {
-        "@id": "kb:email-account-99d72bac-8c21-11e9-8902-0c4de9c21b53",
+        "@id": "kb:emailaccount-99d72bac-8c21-11e9-8902-0c4de9c21b53",
         "@type": "uco-observable:EmailAccount",
         "uco-core:hasFacet": [
             {
@@ -56,7 +56,7 @@
             {
                 "@type": "uco-observable:EmailAccountFacet",
                 "uco-observable:emailAddress": {
-                    "@id": "kb:456a2bac-8c21-11e9-8902-0c4de9c24de5"
+                    "@id": "kb:emailaddress-456a2bac-8c21-11e9-8902-0c4de9c24de5"
                 }
             }
         ]

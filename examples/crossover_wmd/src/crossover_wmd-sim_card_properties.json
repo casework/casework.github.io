@@ -1,19 +1,19 @@
 [
     {
-        "@id": "kb:simcard1-uuid",
+        "@id": "kb:simcard-b0252511-4875-4e2e-a27f-d95c35d87c1f",
         "@type": "uco-observable:SIMCard",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:SIMCardFacet",
                 "uco-observable:ICCID": "89390100002217635543",
                 "uco-observable:carrier": {
-                    "@id": "kb:organization-telcom-italia-uuid"
+                    "@id": "kb:organization-d10330bf-8e9e-45cd-bf1a-ec9c964c270d"
                 }
             }
         ]
     },
     {
-        "@id": "kb:mobileaccount1-uuid",
+        "@id": "kb:mobileaccount-85704962-fcaa-40dc-b8f0-f838de819ed7",
         "@type": "uco-observable:MobileAccount",
         "uco-core:hasFacet": [
             {
@@ -31,7 +31,7 @@
         ]
     },
     {
-        "@id": "kb:simcard2-uuid",
+        "@id": "kb:simcard-8c41852e-babb-4a00-a23e-262b4a21ee85",
         "@type": "uco-observable:SIMCard",
         "uco-core:hasFacet": [
             {
@@ -43,7 +43,7 @@
         ]
     },
     {
-        "@id": "kb:simcard3-uuid",
+        "@id": "kb:simcard-1c401020-c200-4b90-9128-adb3b5e0b6fb",
         "@type": "uco-observable:SIMCard",
         "uco-core:hasFacet": [
             {
@@ -57,7 +57,7 @@
         ]
     },
     {
-        "@id": "kb:mobileaccount3-uuid",
+        "@id": "kb:mobileaccount-c27ec1f4-9adb-45e0-aedc-8cc9abe27172",
         "@type": "uco-observable:MobileAccount",
         "uco-core:hasFacet": [
             {
@@ -76,19 +76,28 @@
         ]
     },
     {
-        "@id": "kb:cd52c3b8-7759-40b7-ae10-dfc90a35f644",
-        "@type": "uco-observable:ObservableObject"
+        "@id": "kb:file-cd52c3b8-7759-40b7-ae10-dfc90a35f644",
+        "@type": "uco-observable:File",
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-observable:FileFacet",
+                "uco-observable:fileSystemType": "EXT3",
+                "uco-observable:extension": "db",
+                "uco-observable:fileName": "data/com.android.providers.telephony/databases/telephony.db",
+                "uco-observable:isDirectory": false
+            }
+        ]
     },
     {
-        "@id": "kb:sim3-telephony-relationship-uuid",
-        "@type": "uco-core:Relationship",
+        "@id": "kb:sim3-telephony-relationship-fa7fd470-e58c-4d35-858a-bcc3e04e822a",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
-            "@id": "kb:simcard3-uuid"
+            "@id": "kb:simcard-1c401020-c200-4b90-9128-adb3b5e0b6fb"
         },
         "uco-core:target": {
-            "@id": "kb:cd52c3b8-7759-40b7-ae10-dfc90a35f644"
+            "@id": "kb:file-cd52c3b8-7759-40b7-ae10-dfc90a35f644"
         },
-        "uco-core:kindOfRelationship": "Contained_Within",
+        "uco-core:kindOfRelationship": "Referenced_Within",
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {

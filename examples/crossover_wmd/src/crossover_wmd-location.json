@@ -1,6 +1,6 @@
 [
     {
-        "@id": "kb:LatLong-8667ec82-8c21-11e9-934e-0c4de9c21b53",
+        "@id": "kb:latlong-8667ec82-8c21-11e9-934e-0c4de9c21b53",
         "@type": "uco-location:Location",
         "uco-core:hasFacet": {
             "@type": "uco-location:LatLongCoordinatesFacet",
