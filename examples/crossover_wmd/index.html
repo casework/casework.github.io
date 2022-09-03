@@ -76,7 +76,7 @@ jumbo_desc: Cellebrite XML Report Example
     },
     "@graph": [
         {
-            "@id": "kb:bundle-5715FCF3-6BC8-4996-8F7F-FDF289F31649",
+            "@id": "kb:bundle-5715fcf3-6bc8-4996-8f7f-fdf289f31649",
             "@type": "uco-core:Bundle",
             "uco-core:description": "Evidence in cross border investigation into weapon of mass destruction",
             "uco-core:object": [
@@ -129,29 +129,28 @@ jumbo_desc: Cellebrite XML Report Example
 {% highlight json %}
 [
     {
-        "@id": "kb:cellebrite-pa1-uuid",
-        "@type": "uco-tool:Tool",
+        "@id": "kb:configuredtool-3549621c-818b-4e27-977c-8375c040fc53",
+        "@type": "uco-tool:ConfiguredTool",
         "uco-core:name": "Physical Analyser",
         "uco-tool:toolType": "Analysis",
         "uco-tool:creator": {
             "@id": "kb:organization-ff30d83e-ff57-45f9-8d54-e79b323c2e8b"
         },
         "uco-tool:version": "7.1.0.106",
-        "uco-core:hasFacet": [
+        "uco-configuration:usesConfiguration": {
+           "@id": "kb:Configuration-2afbfbb1-b4d6-4ad5-9691-ff09b9f6eebe",
+           "@type": "uco-configuration:Configuration",
+           "uco-configuration:configurationEntry": [
             {
-                "@type": "uco-tool:ToolConfigurationTypeFacet",
-                "uco-tool:configurationSettings": [
-                    {
-                        "@type": "uco-tool:ConfigurationSettingType",
-                        "uco-tool:itemName": "OutputFormat",
-                        "uco-tool:itemValue": "XML"
-                    }
-                ]
+                "@type": "uco-configuration:ConfigurationEntry",
+                "uco-configuration:itemName": "OutputFormat",
+                "uco-configuration:itemValue": "XML"
             }
-        ]
+         ]
+       }
     },
     {
-        "@id": "kb:investigative-action2-uuid",
+        "@id": "kb:investigativeaction-b4b0805e-84ec-4553-98c2-6f0454829c30",
         "@type": "case-investigation:InvestigativeAction",
         "uco-core:name": "exported",
         "uco-core:startTime": {
@@ -163,50 +162,55 @@ jumbo_desc: Cellebrite XML Report Example
             "@value": "2020-04-12T11:32:12.00Z"
         },
         "uco-action:location": {
-            "@id": "kb:esc-lausanne-uuid"
+            "@id": "kb:esc-lausanne-c3b211ae-6a46-4312-a3c2-b5181e565161"
         },
         "uco-action:performer": {
-            "@id": "kb:investigator1-uuid"
+            "@id": "kb:investigator-10b3d2da-e801-4afe-b70a-61f16a75e68b"
         },
         "uco-action:instrument": {
-            "@id": "kb:cellebrite-pa1-uuid"
+            "@id": "kb:configuredtool-3549621c-818b-4e27-977c-8375c040fc53"
         },
         "uco-action:environment": {
-            "@id": "kb:forensic-computer1-uuid"
+            "@id": "kb:forensic-computer-c782630d-a0c6-4b5b-b1df-bdd514d27bb2"
         },
         "uco-action:object": [
             {
-                "@id": "kb:provenance-record3-uuid"
+                "@id": "kb:provenancerecord-e64b7aed-cecb-4291-81d4-4adb5b8020b2"
             },
             {
-                "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
+                "@id": "kb:forensicimage-f3fd304e-ef6c-4cbd-94cb-425880f82748"
             }
         ],
         "uco-action:result": [
             {
-                "@id": "kb:provenance-record4-uuid"
+                "@id": "kb:provenancerecord-4dee4ff5-bc77-4dad-a785-05b147149678"
             },
             {
-                "@id": "kb:cellebritexml-report-uuid"
+                "@id": "kb:cellebritexml-report-ab6beb0b-2fcc-4326-8685-1159c7ea6deb"
             }
         ]
     },
     {
-        "@id": "kb:cellebritexml-report-uuid",
-        "@type": "uco-observable:File"
+        "@id": "kb:cellebritexml-report-ab6beb0b-2fcc-4326-8685-1159c7ea6deb",
+        "@type": "uco-observable:File",
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-observable:FileFacet",
+                "uco-observable:observableCreatedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2020-05-16:10:12.40Z"
+                },
+                "uco-observable:extension": "xml",
+                "uco-observable:fileName": "19_UFED_ANDROID_CROSSOVER.xml",
+                "uco-observable:isDirectory": false
+            }
+        ]
     },
     {
-        "@id": "kb:provenance-record3-uuid",
+        "@id": "kb:provenancerecord-4dee4ff5-bc77-4dad-a785-05b147149678",
         "@type": "case-investigation:ProvenanceRecord",
         "uco-core:object": {
-            "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
-        }
-    },
-    {
-        "@id": "kb:provenance-record4-uuid",
-        "@type": "case-investigation:ProvenanceRecord",
-        "uco-core:object": {
-            "@id": "kb:cellebritexml-report-uuid"
+            "@id": "kb:cellebritexml-report-ab6beb0b-2fcc-4326-8685-1159c7ea6deb"
         }
     }
 ]
@@ -243,8 +247,8 @@ jumbo_desc: Cellebrite XML Report Example
 {% highlight json %}
 [
     {
-        "@id": "kb:cellebrite-ufed1-uuid",
-        "@type": "uco-tool:Tool",
+        "@id": "kb:configuredtool-aadfa022-0916-497d-aba5-ff8a4033f609",
+        "@type": "uco-tool:ConfiguredTool",
         "uco-core:name": "UFED",
         "uco-tool:toolType": "Extraction",
         "drafting:toolIdentifier": "557488159",
@@ -252,23 +256,22 @@ jumbo_desc: Cellebrite XML Report Example
             "@id": "kb:organization-ff30d83e-ff57-45f9-8d54-e79b323c2e8b"
         },
         "uco-tool:version": "7.1.0.751",
-        "uco-core:hasFacet": [
-            {
-                "@type": "uco-tool:ToolConfigurationTypeFacet",
-                "uco-tool:configurationSettings": [
-                    {
-                        "@type": "uco-tool:ConfigurationSettingType",
-                        "uco-tool:itemName": "DeviceInfoConnectionType",
-                        "uco-tool:itemValue": "Cable No. 130"
-                    },
-                    {
-                        "@type": "uco-tool:ConfigurationSettingType",
-                        "uco-tool:itemName": "ExtractionType",
-                        "uco-tool:itemValue": "Physical"
-                    }
-                ]
-            }
-        ]
+        "uco-configuration:usesConfiguration": {
+            "@id": "kb:configuration-eb3f3fa6-7271-4d0c-b0f5-a3b916a9e4ab",
+            "@type": "uco-configuration:Configuration",
+            "uco-configuration:configurationEntry": [
+                {
+                    "@type": "uco-configuration:ConfigurationEntry",
+                    "uco-tool:itemName": "DeviceInfoConnectionType",
+                    "uco-tool:itemValue": "Cable No. 130"
+                },
+                {
+                    "@type": "uco-configuration:ConfigurationEntry",
+                    "uco-tool:itemName": "ExtractionType",
+                    "uco-tool:itemValue": "Physical"
+                }
+            ]
+        }
     },
     {
         "@id": "kb:organization-ff30d83e-ff57-45f9-8d54-e79b323c2e8b",
@@ -276,15 +279,15 @@ jumbo_desc: Cellebrite XML Report Example
         "uco-core:name": "Cellebrite"
     },
     {
-        "@id": "kb:forensic-computer1-uuid",
+        "@id": "kb:forensic-computer-c782630d-a0c6-4b5b-b1df-bdd514d27bb2",
         "@type": "uco-observable:Device"
     },
     {
-        "@id": "kb:esc-lausanne-uuid",
+        "@id": "kb:esc-lausanne-c3b211ae-6a46-4312-a3c2-b5181e565161",
         "@type": "uco-location:Location"
     },
     {
-        "@id": "kb:investigative-action1-uuid",
+        "@id": "kb:investigative-action-99a5c94f-e6cd-4b7c-b189-ea998ee0b31f",
         "@type": "case-investigation:InvestigativeAction",
         "uco-core:name": "extracted",
         "uco-core:startTime": {
@@ -296,48 +299,48 @@ jumbo_desc: Cellebrite XML Report Example
             "@value": "2018-12-11T09:54:00.00Z"
         },
         "uco-action:location": {
-            "@id": "kb:esc-lausanne-uuid"
+            "@id": "kb:esc-lausanne-c3b211ae-6a46-4312-a3c2-b5181e565161"
         },
         "uco-action:performer": {
-            "@id": "kb:investigator1-uuid"
+            "@id": "kb:investigator-10b3d2da-e801-4afe-b70a-61f16a75e68b"
         },
         "uco-action:instrument": {
-            "@id": "kb:cellebrite-ufed1-uuid"
+            "@id": "kb:configuredtool-aadfa022-0916-497d-aba5-ff8a4033f609"
         },
         "uco-action:environment": {
-            "@id": "kb:forensic-computer1-uuid"
+            "@id": "kb:forensic-computer-c782630d-a0c6-4b5b-b1df-bdd514d27bb2"
         },
         "uco-action:object": [
             {
-                "@id": "kb:provenance-record1-uuid"
+                "@id": "kb:provenancerecord-9326149a-31c5-4d20-ada3-b97743d3e563"
             },
             {
-                "@id": "kb:samsung-device-uuid"
+                "@id": "kb:mobiledevice-803df237-bc7e-4e24-a5cb-8157063014b4"
             }
         ],
         "uco-action:result": [
             {
-                "@id": "kb:provenance-record2-uuid"
+                "@id": "kb:provenancerecord-e64b7aed-cecb-4291-81d4-4adb5b8020b2"
             },
             {
-                "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
+                "@id": "kb:forensicimage-1fedf25f-e662-4dd0-8584-d5b7411acf47"
             }
         ]
     },
     {
-        "@id": "kb:provenance-record1-uuid",
+        "@id": "kb:provenancerecord-9326149a-31c5-4d20-ada3-b97743d3e563",
         "@type": "case-investigation:ProvenanceRecord",
         "uco-core:object": {
-            "@id": "kb:samsung-device-uuid"
+            "@id": "kb:mobiledevice-803df237-bc7e-4e24-a5cb-8157063014b4"
         }
     },
     {
-        "@id": "kb:provenance-record2-uuid",
+        "@id": "kb:provenance-record-e64b7aed-cecb-4291-81d4-4adb5b8020b2",
         "@type": "case-investigation:ProvenanceRecord",
         "uco-core:description": "Forensic duplicate of mobile device used by Ares Lupin",
         "case-investigation:exhibitNumber": "20181211001-002",
         "uco-core:object": {
-            "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
+            "@id": "kb:forensicimage-1fedf25f-e662-4dd0-8584-d5b7411acf47"
         }
     }
 ]
@@ -348,7 +351,7 @@ jumbo_desc: Cellebrite XML Report Example
 {% highlight json %}
 [
     {
-        "@id": "kb:eoghancasey-uuid",
+        "@id": "kb:identity-0108480e-1e7a-4341-8b1d-558877c4cc39",
         "@type": "uco-identity:Identity",
         "uco-core:hasFacet": [
             {
@@ -359,18 +362,18 @@ jumbo_desc: Cellebrite XML Report Example
         ]
     },
     {
-        "@id": "kb:investigator1-uuid",
+        "@id": "kb:investigator-10b3d2da-e801-4afe-b70a-61f16a75e68b",
         "@type": "uco-role:Role",
         "uco-core:name": "Investigator"
     },
     {
-        "@id": "kb:investigatorrole-uuid",
-        "@type": "uco-core:Relationship",
+        "@id": "kb:investigatorrole-e9a01d66-fff4-4fa8-88d4-8e445f3369aa",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
-            "@id": "kb:eoghancasey-uuid"
+            "@id": "kb:identity-0108480e-1e7a-4341-8b1d-558877c4cc39"
         },
         "uco-core:target": {
-            "@id": "kb:investigator1-uuid"
+            "@id": "kb:investigator-10b3d2da-e801-4afe-b70a-61f16a75e68b"
         },
         "uco-core:kindOfRelationship": "Has_Role",
         "uco-core:isDirectional": true
@@ -391,16 +394,16 @@ jumbo_desc: Cellebrite XML Report Example
 {% highlight json %}
 [
     {
-        "@id": "kb:provenance-record13-uuid",
+        "@id": "kb:provenancerecord-1e2690b5-76e9-450f-933f-f178a9320d9d",
         "@type": "case-investigation:ProvenanceRecord",
         "uco-core:description": "Forensic duplicate of smartphone used by subject",
         "case-investigation:exhibitNumber": "002",
         "uco-core:object": {
-            "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
+            "@id": "kb:forensicimage-f3fd304e-ef6c-4cbd-94cb-425880f82748"
         }
     },
     {
-        "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748",
+        "@id": "kb:forensicimage-f3fd304e-ef6c-4cbd-94cb-425880f82748",
         "@type": [
             "uco-observable:File",
             "uco-observable:Image"
@@ -503,7 +506,7 @@ jumbo_desc: Cellebrite XML Report Example
 {% highlight json %}
 [
     {
-        "@id": "kb:samsung-device-uuid",
+        "@id": "kb:mobiledevice-803df237-bc7e-4e24-a5cb-8157063014b4",
         "@type": "uco-observable:MobileDevice",
         "uco-core:hasFacet": [
             {
@@ -577,13 +580,13 @@ SimChangeTime=1528641355649<br />
 {% highlight json %}
 [
     {
-        "@id": "kb:simcard1-relationship-uuid",
-        "@type": "uco-core:Relationship",
+        "@id": "kb:simcard1-relationship-af318ae5-b792-4297-b1c3-74e5bbd9b018",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
-            "@id": "kb:simcard1-uuid"
+            "@id": "kb:simcard-b0252511-4875-4e2e-a27f-d95c35d87c1f"
         },
         "uco-core:target": {
-            "@id": "kb:samsung-device-uuid"
+            "@id": "kb:mobiledevice-803df237-bc7e-4e24-a5cb-8157063014b4"
         },
         "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:startTime": {
@@ -594,13 +597,13 @@ SimChangeTime=1528641355649<br />
         "uco-core:isDirectional": true
     },
     {
-        "@id": "kb:simcard3-relationship-uuid",
-        "@type": "uco-core:Relationship",
+        "@id": "kb:simcard3-relationship-dfba6daa-26fd-4a3e-9638-d85c32f17e2f",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
-            "@id": "kb:simcard1-uuid"
+            "@id": "kb:simcard-b0252511-4875-4e2e-a27f-d95c35d87c1f"
         },
         "uco-core:target": {
-            "@id": "kb:samsung-device-uuid"
+            "@id": "kb:mobiledevice-803df237-bc7e-4e24-a5cb-8157063014b4"
         },
         "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:startTime": {
@@ -631,20 +634,20 @@ SimChangeTime=1528641355649<br />
 {% highlight json %}
 [
     {
-        "@id": "kb:simcard1-uuid",
+        "@id": "kb:simcard-b0252511-4875-4e2e-a27f-d95c35d87c1f",
         "@type": "uco-observable:SIMCard",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:SIMCardFacet",
                 "uco-observable:ICCID": "89390100002217635543",
                 "uco-observable:carrier": {
-                    "@id": "kb:organization-telcom-italia-uuid"
+                    "@id": "kb:organization-d10330bf-8e9e-45cd-bf1a-ec9c964c270d"
                 }
             }
         ]
     },
     {
-        "@id": "kb:mobileaccount1-uuid",
+        "@id": "kb:mobileaccount-85704962-fcaa-40dc-b8f0-f838de819ed7",
         "@type": "uco-observable:MobileAccount",
         "uco-core:hasFacet": [
             {
@@ -662,7 +665,7 @@ SimChangeTime=1528641355649<br />
         ]
     },
     {
-        "@id": "kb:simcard2-uuid",
+        "@id": "kb:simcard-8c41852e-babb-4a00-a23e-262b4a21ee85",
         "@type": "uco-observable:SIMCard",
         "uco-core:hasFacet": [
             {
@@ -674,7 +677,7 @@ SimChangeTime=1528641355649<br />
         ]
     },
     {
-        "@id": "kb:simcard3-uuid",
+        "@id": "kb:simcard-1c401020-c200-4b90-9128-adb3b5e0b6fb",
         "@type": "uco-observable:SIMCard",
         "uco-core:hasFacet": [
             {
@@ -688,7 +691,7 @@ SimChangeTime=1528641355649<br />
         ]
     },
     {
-        "@id": "kb:mobileaccount3-uuid",
+        "@id": "kb:mobileaccount-c27ec1f4-9adb-45e0-aedc-8cc9abe27172",
         "@type": "uco-observable:MobileAccount",
         "uco-core:hasFacet": [
             {
@@ -707,19 +710,28 @@ SimChangeTime=1528641355649<br />
         ]
     },
     {
-        "@id": "kb:cd52c3b8-7759-40b7-ae10-dfc90a35f644",
-        "@type": "uco-observable:ObservableObject"
+        "@id": "kb:file-cd52c3b8-7759-40b7-ae10-dfc90a35f644",
+        "@type": "uco-observable:File",
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-observable:FileFacet",
+                "uco-observable:fileSystemType": "EXT3",
+                "uco-observable:extension": "db",
+                "uco-observable:fileName": "data/com.android.providers.telephony/databases/telephony.db",
+                "uco-observable:isDirectory": false
+            }
+        ]
     },
     {
-        "@id": "kb:sim3-telephony-relationship-uuid",
-        "@type": "uco-core:Relationship",
+        "@id": "kb:sim3-telephony-relationship-fa7fd470-e58c-4d35-858a-bcc3e04e822a",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
-            "@id": "kb:simcard3-uuid"
+            "@id": "kb:simcard-1c401020-c200-4b90-9128-adb3b5e0b6fb"
         },
         "uco-core:target": {
-            "@id": "kb:cd52c3b8-7759-40b7-ae10-dfc90a35f644"
+            "@id": "kb:file-cd52c3b8-7759-40b7-ae10-dfc90a35f644"
         },
-        "uco-core:kindOfRelationship": "Contained_Within",
+        "uco-core:kindOfRelationship": "Referenced_Within",
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
@@ -793,7 +805,7 @@ SimChangeTime=1528641355649<br />
 {% highlight json %}
 [
     {
-        "@id": "kb:primaryuser-uuid",
+        "@id": "kb:primaryuser-1e96406f-d86c-47ee-a6ac-71a57e1c8f19",
         "@type": "uco-identity:Identity",
         "uco-core:hasFacet": [
             {
@@ -804,31 +816,31 @@ SimChangeTime=1528641355649<br />
         ]
     },
     {
-        "@id": "kb:primaryuser-email-uuid",
-        "@type": "uco-core:Relationship",
+        "@id": "kb:primaryuser-email-3c4d0804-6ed0-4dfe-a152-3dab6b5f9111",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
-            "@id": "kb:primaryuser-uuid"
+            "@id": "kb:primaryuser-1e96406f-d86c-47ee-a6ac-71a57e1c8f19"
         },
         "uco-core:target": {
-            "@id": "kb:EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53"
+            "@id": "kb:emailaccount-99d72bac-8c21-11e9-8902-0c4de9c21b53"
         },
         "uco-core:kindOfRelationship": "Has_Account",
         "uco-core:isDirectional": true
     },
     {
-        "@id": "kb:primaryuser-whatsapp-uuid",
-        "@type": "uco-core:Relationship",
+        "@id": "kb:primaryuser-whatsapp-b295bc93-b65c-4670-a5d7-5c2206d78e92",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
-            "@id": "kb:primaryuser-uuid"
+            "@id": "kb:primaryuser-1e96406f-d86c-47ee-a6ac-71a57e1c8f19"
         },
         "uco-core:target": {
-            "@id": "kb:WhatsApp-90652808-7341-40D3-9285-774D865AD3F9"
+            "@id": "kb:whatsapp-90652808-7341-40d3-9285-774d865ad3f9"
         },
         "uco-core:kindOfRelationship": "Has_Account",
         "uco-core:isDirectional": true
     },
     {
-        "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53",
+        "@id": "kb:emailaddress-99d72bac-8c21-11e9-8902-0c4de9c21b53",
         "@type": "uco-observable:EmailAddress",
         "uco-core:hasFacet": [
             {
@@ -838,25 +850,25 @@ SimChangeTime=1528641355649<br />
         ]
     },
     {
-        "@id": "kb:EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53",
+        "@id": "kb:emailaccount-99d72bac-8c21-11e9-8902-0c4de9c21b53",
         "@type": "uco-observable:EmailAccount",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:EmailAccountFacet",
                 "uco-observable:emailAddress": {
-                    "@id": "kb:99d72bac-8c21-11e9-8902-0c4de9c21b53"
+                    "@id": "kb:emailaddress-99d72bac-8c21-11e9-8902-0c4de9c21b53"
                 }
             }
         ]
     },
     {
-        "@id": "kb:C1D3237A-6D7F-4E96-BBEF-6EB4C0A621D1",
+        "@id": "kb:phoneaccount-c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1",
         "@type": "uco-observable:PhoneAccount",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:AccountFacet",
                 "uco-observable:accountIssuer": {
-                    "@id": "kb:organization-salt-uuid"
+                    "@id": "kb:organization-salt-42e95dc6-1326-4de8-93df-c399a3514ae9"
                 },
                 "uco-observable:isActive": true
             },
@@ -868,25 +880,25 @@ SimChangeTime=1528641355649<br />
         ]
     },
     {
-        "@id": "kb:associated-account-phonenumber1",
-        "@type": "uco-core:Relationship",
+        "@id": "kb:relationship-bf423267-3afe-4f4d-aa9f-d903eae55f99",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
-            "@id": "kb:WhatsApp-90652808-7341-40D3-9285-774D865AD3F9"
+            "@id": "kb:whatsapp-90652808-7341-40d3-9285-774d865ad3f9"
         },
         "uco-core:target": {
-            "@id": "kb:C1D3237A-6D7F-4E96-BBEF-6EB4C0A621D1"
+            "@id": "kb:phoneaccount-c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1"
         },
         "uco-core:kindOfRelationship": "Associated_Account",
         "uco-core:isDirectional": true
     },
     {
-        "@id": "kb:WhatsApp-90652808-7341-40D3-9285-774D865AD3F9",
+        "@id": "kb:whatsapp-90652808-7341-40d3-9285-774d865ad3f9",
         "@type": "uco-observable:ApplicationAccount",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:AccountFacet",
                 "uco-observable:accountIssuer": {
-                    "@id": "kb:organization-whatsapp-uuid"
+                    "@id": "kb:organization-whatsapp-7a3fb3d1-0b30-4305-8c9e-f8f90f839bf3"
                 },
                 "uco-observable:accountIdentifier": "31647934784@s.whatsapp.net",
                 "uco-observable:isActive": true
@@ -894,7 +906,7 @@ SimChangeTime=1528641355649<br />
             {
                 "@type": "uco-observable:ApplicationAccountFacet",
                 "uco-observable:application": {
-                    "@id": "kb:application-whatsapp-uuid"
+                    "@id": "kb:application-whatsapp-e662a9de-02bb-47ad-8666-625a0a5dc2fa"
                 }
             },
             {
@@ -904,7 +916,7 @@ SimChangeTime=1528641355649<br />
         ]
     },
     {
-        "@id": "kb:organization-lebara-uuid",
+        "@id": "kb:organization-lebara-3ca7cf13-7d8b-4665-97b9-2c48fdb94ac5",
         "@type": "uco-identity:Organization",
         "uco-core:hasFacet": {
             "@type": "uco-identity:OrganizationDetailsFacet",
@@ -912,7 +924,7 @@ SimChangeTime=1528641355649<br />
         }
     },
     {
-        "@id": "kb:organization-reddit-uuid",
+        "@id": "kb:organization-reddit-d5be6c8f-17ed-43fe-bc03-a5f79132f256",
         "@type": "uco-identity:Organization",
         "uco-core:hasFacet": {
             "@type": "uco-identity:OrganizationDetailsFacet",
@@ -920,7 +932,7 @@ SimChangeTime=1528641355649<br />
         }
     },
     {
-        "@id": "kb:organization-salt-uuid",
+        "@id": "kb:organization-salt-42e95dc6-1326-4de8-93df-c399a3514ae9",
         "@type": "uco-identity:Organization",
         "uco-core:hasFacet": {
             "@type": "uco-identity:OrganizationDetailsFacet",
@@ -928,7 +940,7 @@ SimChangeTime=1528641355649<br />
         }
     },
     {
-        "@id": "kb:organization-telcom-italia-uuid",
+        "@id": "kb:organization-telcom-italia-d10330bf-8e9e-45cd-bf1a-ec9c964c270d",
         "@type": "uco-identity:Organization",
         "uco-core:hasFacet": {
             "@type": "uco-identity:OrganizationDetailsFacet",
@@ -936,7 +948,7 @@ SimChangeTime=1528641355649<br />
         }
     },
     {
-        "@id": "kb:organization-whatsapp-uuid",
+        "@id": "kb:organization-whatsapp-7a3fb3d1-0b30-4305-8c9e-f8f90f839bf3",
         "@type": "uco-identity:Organization",
         "uco-core:hasFacet": {
             "@type": "uco-identity:OrganizationDetailsFacet",
@@ -944,7 +956,7 @@ SimChangeTime=1528641355649<br />
         }
     },
     {
-        "@id": "kb:Gmail-uuid",
+        "@id": "kb:gmail-a1ce9965-ba9c-4fa1-9bfe-58c68ecaadc5",
         "@type": "uco-observable:Application",
         "uco-core:hasFacet": {
             "@type": "uco-observable:ApplicationFacet",
@@ -952,7 +964,7 @@ SimChangeTime=1528641355649<br />
         }
     },
     {
-        "@id": "kb:application-whatsapp-uuid",
+        "@id": "kb:application-whatsapp-e662a9de-02bb-47ad-8666-625a0a5dc2fa",
         "@type": "uco-observable:Application",
         "uco-core:hasFacet": {
             "@type": "uco-observable:ApplicationFacet",
@@ -1008,13 +1020,13 @@ SimChangeTime=1528641355649<br />
 {% highlight json %}
 [
     {
-        "@id": "kb:Reddit-6F321BAA-CC57-4C0A-9DD2-7F2038FD44D1",
+        "@id": "kb:reddit-6f321baa-cc57-4c0a-9dd2-7f2038fd44d1",
         "@type": "uco-observable:DigitalAccount",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:AccountFacet",
                 "uco-observable:accountIssuer": {
-                    "@id": "kb:organization-reddit-uuid"
+                    "@id": "kb:organization-reddit-d5be6c8f-17ed-43fe-bc03-a5f79132f256"
                 },
                 "uco-observable:accountIdentifier": "aresthewerewolf",
                 "uco-observable:isActive": true
@@ -1035,13 +1047,13 @@ SimChangeTime=1528641355649<br />
         ]
     },
     {
-        "@id": "kb:LoginDataC316C405-9326-4F28-9B8D-44A3BB9E7283",
-        "@type": "uco-core:Relationship",
+        "@id": "kb:relationship-e30adaa6-2bc0-45f8-a9e4-24f1c1583fe6",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
-            "@id": "kb:Reddit-6F321BAA-CC57-4C0A-9DD2-7F2038FD44D1"
+            "@id": "kb:reddit-6f321baa-cc57-4c0a-9dd2-7f2038fd44d1"
         },
         "uco-core:target": {
-            "@id": "kb:ChromeLoginData-16805DFF-05F9-4CBA-9266-D5FA712F3D8F"
+            "@id": "kb:chromelogindata-16805dff-05f9-4cba-9266-d5fa712f3d8f"
         },
         "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:isDirectional": true,
@@ -1061,7 +1073,7 @@ SimChangeTime=1528641355649<br />
         ]
     },
     {
-        "@id": "kb:ChromeLoginData-16805DFF-05F9-4CBA-9266-D5FA712F3D8F",
+        "@id": "kb:chromelogindata-16805dff-05f9-4cba-9266-d5fa712f3d8f",
         "@type": "uco-observable:ObservableObject"
     }
 ]
@@ -1113,7 +1125,7 @@ SimChangeTime=1528641355649<br />
 {% highlight json %}
 [
     {
-        "@id": "kb:LatLong-8667ec82-8c21-11e9-934e-0c4de9c21b53",
+        "@id": "kb:latlong-8667ec82-8c21-11e9-934e-0c4de9c21b53",
         "@type": "uco-location:Location",
         "uco-core:hasFacet": {
             "@type": "uco-location:LatLongCoordinatesFacet",
@@ -1145,13 +1157,13 @@ SimChangeTime=1528641355649<br />
 {% highlight json %}
 [
     {
-        "@id": "kb:partition-uuid",
-        "@type": "uco-core:Relationship",
+        "@id": "kb:partition-d0806935-829b-4909-8e2d-2503b28df89b",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
-            "@id": "kb:userdata-partition-uuid"
+            "@id": "kb:filesystem-6c344839-2ee8-4d63-851b-6710a35c33ac"
         },
         "uco-core:target": {
-            "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
+            "@id": "kb:forensicimage-f3fd304e-ef6c-4cbd-94cb-425880f82748"
         },
         "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:isDirectional": true,
@@ -1177,7 +1189,7 @@ SimChangeTime=1528641355649<br />
 {% highlight json %}
 [
     {
-        "@id": "kb:filesystem-uuid",
+        "@id": "kb:filesystem-440e36cc-7451-4cf1-9db0-1a8ca8537a1c",
         "@type": "uco-observable:FileSystem",
         "uco-core:hasFacet": [
             {
@@ -1223,13 +1235,13 @@ SimChangeTime=1528641355649<br />
 {% highlight json %}
 [
     {
-        "@id": "kb:filesystem-relationship-uuid",
-        "@type": "uco-core:Relationship",
+        "@id": "kb:filesystem-relationship-d26cce22-bae1-4d34-ac01-6620f8bdd6b9",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
-            "@id": "kb:F7CAD990-6687-4849-89DC-55795675F3F5"
+            "@id": "kb:file-f7cad990-6687-4849-89dc-55795675f3f5"
         },
         "uco-core:target": {
-            "@id": "kb:filesystem-uuid"
+            "@id": "kb:filesystem-440e36cc-7451-4cf1-9db0-1a8ca8537a1c"
         },
         "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:isDirectional": true,
@@ -1246,7 +1258,7 @@ SimChangeTime=1528641355649<br />
         ]
     },
     {
-        "@id": "kb:userdata-partition-uuid",
+        "@id": "kb:filesystem-6c344839-2ee8-4d63-851b-6710a35c33ac",
         "@type": "uco-observable:FileSystem",
         "uco-core:hasFacet": [
             {
@@ -1321,7 +1333,7 @@ SimChangeTime=1528641355649<br />
 {% highlight json %}
 [
     {
-        "@id": "kb:F7CAD990-6687-4849-89DC-55795675F3F5",
+        "@id": "kb:file-f7cad990-6687-4849-89dc-55795675f3f5",
         "@type": "uco-observable:File",
         "uco-core:tag": [
             "Image"
@@ -1560,7 +1572,7 @@ SimChangeTime=1528641355649<br />
             {
                 "@type": "uco-observable:AccountFacet",
                 "uco-observable:accountIssuer": {
-                    "@id": "kb:organization-whatsapp-uuid"
+                    "@id": "kb:organization-whatsapp-7a3fb3d1-0b30-4305-8c9e-f8f90f839bf3"
                 },
                 "uco-observable:accountIdentifier": "31647934784@s.whatsapp.net",
                 "uco-observable:isActive": true
@@ -1710,7 +1722,7 @@ SimChangeTime=1528641355649<br />
             "@id": "kb:msgstoredb-16805dff-05f9-4cba-9266-d5fa712f3d8f"
         },
         "uco-core:target": {
-            "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
+            "@id": "kb:forensicimage-f3fd304e-ef6c-4cbd-94cb-425880f82748"
         },
         "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:isDirectional": true,
@@ -1733,16 +1745,16 @@ SimChangeTime=1528641355649<br />
 {% highlight json %}
 [
     {
-        "@id": "kb:EmailMessage-2c032220-8c21-11e9-9c99-0c4de9c21b53",
+        "@id": "kb:emailmessage-2c032220-8c21-11e9-9c99-0c4de9c21b53",
         "@type": "uco-observable:EmailMessage",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:EmailMessageFacet",
                 "uco-observable:application": {
-                    "@id": "kb:Gmail-uuid"
+                    "@id": "kb:gmail-a1ce9965-ba9c-4fa1-9bfe-58c68ecaadc5"
                 },
                 "uco-observable:sender": {
-                    "@id": "kb:EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53"
+                    "@id": "kb:emailaccount-99d72bac-8c21-11e9-8902-0c4de9c21b53"
                 },
                 "uco-observable:sentTime": {
                     "@type": "xsd:dateTime",
@@ -1750,7 +1762,7 @@ SimChangeTime=1528641355649<br />
                 },
                 "uco-observable:subject": "Re: Bank transfer ?",
                 "uco-observable:bodyRaw": {
-                    "@id": "kb:content-data-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d"
+                    "@id": "kb:contentdata-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d"
                 },
                 "uco-observable:fromRef": null,
                 "uco-observable:toRef": null,
@@ -1761,7 +1773,7 @@ SimChangeTime=1528641355649<br />
         ]
     },
     {
-        "@id": "kb:content-data-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d",
+        "@id": "kb:contentdata-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d",
         "@type": "uco-observable:ContentData",
         "uco-core:hasFacet": {
             "@type": "uco-observable:ContentDataFacet",
@@ -1769,7 +1781,7 @@ SimChangeTime=1528641355649<br />
         }
     },
     {
-        "@id": "kb:456a2bac-8c21-11e9-8902-0c4de9c24de5",
+        "@id": "kb:emailaddress-456a2bac-8c21-11e9-8902-0c4de9c24de5",
         "@type": "uco-observable:EmailAddress",
         "uco-core:hasFacet": [
             {
@@ -1779,7 +1791,7 @@ SimChangeTime=1528641355649<br />
         ]
     },
     {
-        "@id": "kb:email-account-99d72bac-8c21-11e9-8902-0c4de9c21b53",
+        "@id": "kb:emailaccount-99d72bac-8c21-11e9-8902-0c4de9c21b53",
         "@type": "uco-observable:EmailAccount",
         "uco-core:hasFacet": [
             {
@@ -1789,7 +1801,7 @@ SimChangeTime=1528641355649<br />
             {
                 "@type": "uco-observable:EmailAccountFacet",
                 "uco-observable:emailAddress": {
-                    "@id": "kb:456a2bac-8c21-11e9-8902-0c4de9c24de5"
+                    "@id": "kb:emailaddress-456a2bac-8c21-11e9-8902-0c4de9c24de5"
                 }
             }
         ]
@@ -1835,7 +1847,7 @@ SimChangeTime=1528641355649<br />
 {% highlight json %}
 [
     {
-        "@id": "kb:39ff4987-8ae5-47e3-8369-dbd0d5f79398",
+        "@id": "kb:url-39ff4987-8ae5-47e3-8369-dbd0d5f79398",
         "@type": "uco-observable:URL",
         "uco-core:hasFacet": [
             {
@@ -1845,11 +1857,10 @@ SimChangeTime=1528641355649<br />
         ]
     },
     {
-        "@id": "kb:860FC853-9C3F-41FC-B144-8AC80D8F5849",
+        "@id": "kb:urlhistory-860fc853-9c3f-41fc-b144-8ac80d8f5849",
         "@type": "uco-observable:URLHistory",
         "uco-core:hasFacet": [
             {
-                "@id": "kb:860FC853-9C3F-41FC-B144-8AC80D8F5849-URLHistory",
                 "@type": "uco-observable:URLHistoryFacet",
                 "uco-observable:urlHistoryEntry": [
                     {
@@ -1885,7 +1896,7 @@ SimChangeTime=1528641355649<br />
         ]
     },
     {
-        "@id": "kb:2AF6FCF3-91D3-4457-9333-ABAB67F8FB91",
+        "@id": "kb:file-2af6fcf3-91d3-4457-9333-abab67f8fb91",
         "@type": "uco-observable:File",
         "uco-core:tag": [
             "Database"
@@ -1938,13 +1949,13 @@ SimChangeTime=1528641355649<br />
         ]
     },
     {
-        "@id": "kb:9A3FFCF3-91D3-4457-9333-ABAB67F8AB4F",
+        "@id": "kb:relationship-9a3ffcf3-91d3-4457-9333-abab67f8ab4f",
         "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
-            "@id": "kb:860FC853-9C3F-41FC-B144-8AC80D8F5849-URLHistory"
+            "@id": "kb:urlhistory-860fc853-9c3f-41fc-b144-8ac80d8f5849"
         },
         "uco-core:target": {
-            "@id": "kb:2AF6FCF3-91D3-4457-9333-ABAB67F8FB91"
+            "@id": "kb:2af6fcf3-91d3-4457-9333-abab67f8fb91"
         },
         "uco-core:isDirectional": true,
         "uco-core:kindOfRelationship": "Contained_Within",

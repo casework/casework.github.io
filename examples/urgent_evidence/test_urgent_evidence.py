@@ -26,8 +26,8 @@ _logger = logging.getLogger(os.path.basename(__file__))
 NS_SH = rdflib.SH
 
 graph = rdflib.Graph()
-graph.parse("generated-urgent_evidence.ttl", format="turtle")
-graph.parse("generated-urgent_evidence-wasInformedBy.json", format="json-ld")
+graph.parse("src/generated-urgent_evidence.ttl", format="turtle")
+graph.parse("src/generated-urgent_evidence-wasInformedBy.json", format="json-ld")
 
 # Load subclasses so 'a/rdfs:subClassOf*' query pattern for subclasses
 # without RDFS inferencing works.
@@ -95,7 +95,7 @@ def test_actions_to_photo(action_iris_all: typing.Set[str]) -> None:
     )
 
     select_query_text = None
-    with open("query-actions_to_artifact.sparql", "r") as in_fh:
+    with open("src/query-actions_to_artifact.sparql", "r") as in_fh:
         select_query_text = in_fh.read().strip()
     _logger.debug("select_query_text = %r." % select_query_text)
     for record in graph.query(select_query_text):
@@ -124,7 +124,7 @@ def test_exhibit_photos() -> None:
     file_names_ground_truth_negative = {"IMG_1863.jpg"}
 
     select_query_text = None
-    with open("query-exhibit_photos.sparql", "r") as in_fh:
+    with open("src/query-exhibit_photos.sparql", "r") as in_fh:
         select_query_text = in_fh.read().strip()
     _logger.debug("select_query_text = %r." % select_query_text)
     for record in graph.query(select_query_text):
@@ -153,7 +153,9 @@ def test_photo_selection() -> None:
     }
 
     select_query_text = None
-    with open("query-selection_from_automated_exhibit_extraction.sparql", "r") as in_fh:
+    with open(
+        "src/query-selection_from_automated_exhibit_extraction.sparql", "r"
+    ) as in_fh:
         select_query_text = in_fh.read().strip()
     _logger.debug("select_query_text = %r." % select_query_text)
     for record in graph.query(select_query_text):

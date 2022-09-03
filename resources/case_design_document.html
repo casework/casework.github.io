@@ -1,0 +1,517 @@
+---
+title: CASE Ontology Design and Specification
+---
+<p>
+Comments and corrections are welcome and should be submitted as a GitHub issue: <a href="https://github.com/casework/casework.github.io">https://github.com/casework/casework.github.io</a>
+</p>
+
+<h2 id="CASEOntologyDesignDocument-Revisionhistory">Revision history</h2><div class="table-wrap"><table border=1><colgroup><col style="width: 100.0px;"/><col style="width: 170.0px;"/><col style="width: 200.0px;"/><col style="width: 200.0px;"/></colgroup><tbody><tr><th><p><strong>Version</strong></p></th><th><p><strong>Approval date</strong></p></th><th><p><strong>Point of contact</strong></p></th><th><p><strong>Description of changes</strong></p></th></tr><tr><td><p>0.3</p></td><td><p>13 April 2021</p></td><td><p>Technical director and Ontology SME</p></td><td><p>Initial drafting and community feedback</p></td></tr><tr><td><p>0.4</p></td><td><p>19 April 2022</p></td><td><p>Presiding director and Technical director</p></td><td><p>Public release</p></td></tr><tr><td><p>1.0</p></td><td><p>30 August 2022</p></td><td><p>TSC Chair<p /></td><td><p>Published<p /></td></tr></tbody></table></div>
+<p><h2 id="CASEOntologyDesignDocument-Tableofcontents">Table of contents</h2>
+<ul class='toc-indentation'>
+<li><a href='#CASEOntologyDesignDocument-0.StatusoftheSpecification'>0. Status of the Specification</a></li>
+<li><a href='#CASEOntologyDesignDocument-1.Introduction'>1. Introduction</a>
+<ul class='toc-indentation'>
+<li><a href='#CASEOntologyDesignDocument-1.1ThepurposeoftheCASEontology'>1.1 The purpose of the CASE ontology</a></li>
+<li><a href='#CASEOntologyDesignDocument-1.2DomainoftheCASEontology'>1.2 Domain of the CASE ontology</a></li>
+<li><a href='#CASEOntologyDesignDocument-1.3ScopeoftheCASEontology'>1.3 Scope of the CASE ontology</a></li>
+<li><a href='#CASEOntologyDesignDocument-1.4RelationshiptotheUnifiedCyberOntology(UCO)'>1.4 Relationship to the Unified Cyber Ontology (UCO)</a></li>
+<li><a href='#CASEOntologyDesignDocument-1.5Howtoreadthisdocument'>1.5 How to read this document</a></li>
+<li><a href='#CASEOntologyDesignDocument-1.6SummaryofimportantchangessincetheCASEprototype(CASE0.1)'>1.6 Summary of important changes since the CASE prototype (CASE 0.1)</a></li>
+<li><a href='#CASEOntologyDesignDocument-1.7SummaryofimportantchangessinceCASE0.2.0'>1.7 Summary of important changes since CASE 0.2.0</a></li>
+</ul>
+</li>
+<li><a href='#CASEOntologyDesignDocument-2.CASEasanExtensionoftheUnifiedCyberOntology(UCO)'>2. CASE as an Extension of the Unified Cyber Ontology (UCO)</a>
+<ul class='toc-indentation'>
+<li><a href='#CASEOntologyDesignDocument-2.1.CASErepresentscyber-investigations'>2.1. CASE represents cyber-investigations</a></li>
+<li><a href='#CASEOntologyDesignDocument-2.2.CASEimportsUCOforgeneralcyber-domainconcepts'>2.2. CASE imports UCO for general cyber-domain concepts</a></li>
+<li><a href='#CASEOntologyDesignDocument-2.3.CASEalignswithontologydesignpatternsofUCO'>2.3. CASE aligns with ontology design patterns of UCO</a>
+<ul class='toc-indentation'>
+<li><a href='#CASEOntologyDesignDocument-2.3.1.FacetandObservableObject'>2.3.1. Facet and Observable Object</a></li>
+<li><a href='#CASEOntologyDesignDocument-2.3.2.References'>2.3.2. References</a></li>
+<li><a href='#CASEOntologyDesignDocument-2.3.3.Relationships'>2.3.3. Relationships</a></li>
+<li><a href='#CASEOntologyDesignDocument-2.3.4.DomainAssertions'>2.3.4. Domain Assertions</a></li>
+<li><a href='#CASEOntologyDesignDocument-2.4.CooperationoftheCASEandUCOCommunities'>2.4. Cooperation of the CASE and UCO Communities</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href='#CASEOntologyDesignDocument-3.DomainandScopeofCASE'>3. Domain and Scope of CASE</a>
+<ul class='toc-indentation'>
+<li><a href='#CASEOntologyDesignDocument-3.1.Cyber-investigation'>3.1. Cyber-investigation</a></li>
+<li><a href='#CASEOntologyDesignDocument-3.2.Provenance'>3.2. Provenance</a></li>
+</ul>
+</li>
+<li><a href='#CASEOntologyDesignDocument-4.CASEisanOWLOntology'>4. CASE is an OWL Ontology</a>
+<ul class='toc-indentation'>
+<li><a href='#CASEOntologyDesignDocument-4.1.Introduction'>4.1. Introduction</a></li>
+<li><a href='#CASEOntologyDesignDocument-4.2.ProfileofOWL'>4.2. Profile of OWL</a></li>
+</ul>
+</li>
+<li><a href='#CASEOntologyDesignDocument-5.CASEOntologyArchitectureandNamespaces'>5. CASE Ontology Architecture and Namespaces</a></li>
+<li><a href='#CASEOntologyDesignDocument-6.OntologyDesignPatternsUsedinCASE'>6. Ontology Design Patterns Used in CASE</a>
+<ul class='toc-indentation'>
+<li><a href='#CASEOntologyDesignDocument-6.1.Introduction'>6.1. Introduction</a></li>
+<li><a href='#CASEOntologyDesignDocument-6.3.Tools'>6.3. Tools</a></li>
+<li><a href='#CASEOntologyDesignDocument-6.2.InvestigativeActionandRole'>6.2. InvestigativeAction and Role</a></li>
+<li><a href='#CASEOntologyDesignDocument-6.3.FacetsofObservableObjects'>6.3. Facets of Observable Objects</a></li>
+<li><a href='#CASEOntologyDesignDocument-6.4.References'>6.4. References</a></li>
+<li><a href='#CASEOntologyDesignDocument-6.5.RelationshipsasClasses'>6.5. Relationships as Classes</a></li>
+<li><a href='#CASEOntologyDesignDocument-6.6.Vocabularies'>6.6. Vocabularies</a></li>
+<li><a href='#CASEOntologyDesignDocument-6.7.SeparateNamespaceforDomainAssertions'>6.7. Separate Namespace for Domain Assertions</a></li>
+<li><a href='#CASEOntologyDesignDocument-6.8.Cyber-investigationpatterns'>6.8. Cyber-investigation patterns</a></li>
+<li><a href='#CASEOntologyDesignDocument-6.9.Provenancepatterns'>6.9. Provenance patterns</a></li>
+</ul>
+</li>
+<li><a href='#CASEOntologyDesignDocument-7.CASERe-useofConceptsinUCO'>7. CASE Re-use of Concepts in UCO</a>
+<ul class='toc-indentation'>
+<li><a href='#CASEOntologyDesignDocument-7.1.UCOObjects'>7.1. UCO Objects</a>
+<ul class='toc-indentation'>
+<li><a href='#CASEOntologyDesignDocument-7.1.1.Relationships'>7.1.1. Relationships</a></li>
+</li>
+</ul>
+</li>
+<li><a href='#CASEOntologyDesignDocument-7.2.UCOFacets'>7.2. UCO Facets</a></li>
+<li><a href='#CASEOntologyDesignDocument-7.3.UCOVocabularies'>7.3. UCO Vocabularies</a></li>
+</ul>
+</li>
+<li><a href='#CASEOntologyDesignDocument-9.InstanceDatainCASE'>8. Instance Data in CASE</a></li>
+<li><a href='#CASEOntologyDesignDocument-10.LicenseforCASE'>9. License for CASE</a></li>
+<li><a href='#CASEOntologyDesignDocument-11.Acknowledgements'>10. Acknowledgements</a></li>
+</ul>
+</div>
+<h2 id="CASEOntologyDesignDocument-0.StatusoftheSpecification">0. Status of the Specification</h2><p> </p><p>CASE 1.0.0 is the first full release of the Cyber-investigation Analysis Standard Expression (CASE), which builds on and extends the Unified Cyber Ontology (UCO). </p><p /><p>CASE 1.0.0 provides a stable version for adopters to use. Following <a href="https://semver.org/spec/v2.0.0.html">SemVer</a>, additive improvements will continue to be accepted, but backwards-incompatible changes will be scheduled only for the 2.0.0 release, which will come after at least 6 months to possibly 12 months.
+<p>Details of support for migrating from earlier versions of CASE to CASE 1.0.0 can be found at: <a href="https://caseontology.org/releases/archive/">Releases Archive</a>.</p>
+<p /><h2 id="CASEOntologyDesignDocument-1.Introduction">1. Introduction</h2><p>This ontology design document provides the specification for the CASE 1.0.0 ontology. The document covers: (1) the ontology engineering choices made in creating the CASE ontology, including the W3C standard ontology language (OWL 2), the knowledge representation approach including ontology design patterns, and the supported encodings; (2) the principal classes of entities included in the ontology to represent the cyber-investigation domain; and (3) the re-use of the <a href="https://unifiedcyberontology.org/resources/uco_design_document.html" class="external-link" rel="nofollow">Unified Cyber Ontology (UCO)</a>. Current documentation for UCO is available <a href="https://ontology.unifiedcyberontology.org/" class="external-link" rel="nofollow">here</a>.</p><p> </p><h3 id="CASEOntologyDesignDocument-1.1ThepurposeoftheCASEontology">1.1 The purpose of the CASE ontology</h3><p>The growing number of investigations involving digital evidence from various data sources is driving the demand for a standard way to represent, analyze, and exchange pertinent information. The purpose of CASE is to provide a common language to support automated normalization, interoperation, combination and validation of varied information sources to facilitate analysis and exploration of investigative questions (who, when, how long, where). This ontology-based standard promotes the consistency and reliability of investigative information, and enhances analysis capabilities, including searching, correlation, contextual analysis, pattern recognition, machine learning, and visualization. To this end, CASE provides a standardized, machine-understandable representation for information commonly analyzed and exchanged by people and systems during investigations involving digital evidence. CASE also ensures that analysis results can be protected and traced back to their source(s), keeping track of when, where and who used which tools to perform investigative actions on data sources. </p><p /><h3 id="CASEOntologyDesignDocument-1.2DomainoftheCASEontology">1.2 Domain of the CASE ontology</h3><p>The principal domain of CASE is investigations involving digital evidence, including in criminal, cybersecurity, and intelligence contexts. The cyber-investigation domain places special requirements on the representation of investigation data, due to the nature of evidence and the need for traceability and flexibility in describing data with different degrees of certainty and/or at different stages of the investigation. These requirements are reflected in the namespace architecture and the design patterns used in the ontology. </p><p> </p><h3 id="CASEOntologyDesignDocument-1.3ScopeoftheCASEontology">1.3 Scope of the CASE ontology</h3><p>The scope of the CASE ontology covers investigations in any context, including in criminal, cybersecurity, and intelligence. Digital evidence includes data sources (mobile devices, storage media, memory) and well-known digital objects such as files and folders, messages (email, chat), documents (PDF, Word), multimedia (pictures, video, audio) and logs (browser history, events). CASE ensures that analysis results can be traced back to their source(s), keeping track of when, where and who used which tools to perform investigative actions on data sources. These details are generally referred to as provenance (e.g., chain of custody) and lineage (e.g., chain of evidence). CASE aligns with the <a href="https://github.com/casework/CASE-Implementation-PROV-O" class="external-link" rel="nofollow">PROV-O</a> ontology to support enhanced provenance tracking that is needed in more mature operating environments. Furthermore, data markings are baked into CASE to support protection of information.</p><p /><h3 id="CASEOntologyDesignDocument-1.4RelationshiptotheUnifiedCyberOntology(UCO)">1.4 Relationship to the Unified Cyber Ontology (UCO)</h3><p>The CASE ontology is an extension of the Unified Cyber Ontology (UCO), which is imported by CASE. CASE re-uses concepts from UCO to represent objects in the cyber domain that are of interest in an investigation. Section 2 provides background about CASE as an extension of UCO. Section 7 addresses details of how CASE uses UCO concepts.</p><p> </p><h3 id="CASEOntologyDesignDocument-1.5Howtoreadthisdocument">1.5 How to read this document</h3><p>This document contains two main foci: (1) explanation of the formal organization, including the knowledge representation standards and structures used in CASE (Sections 3 – 5); (2) description of the specific domain content of the CASE ontology (Sections 6).</p><p> </p><p>The format for CASE-compliant instance data is addressed in Section 8.</p><p> </p><p>The full concrete specification of CASE 1.0.0 is expressed in the W3C OWL 2 Turtle (.ttl) syntax.</p><p>The latest release may be accessed from the CASE Community Release web page: <a href="https://caseontology.org/releases/archive/" data-card-appearance="inline" class="external-link" rel="nofollow">https://caseontology.org/releases/archive/</a> .</p><p> </p><h3 id="CASEOntologyDesignDocument-1.6SummaryofimportantchangessincetheCASEprototype(CASE0.1)">1.6 Summary of important changes since the CASE prototype (CASE 0.1)</h3><p>The initial CASE prototype was released in 2017 as a proof of concept. Early applications were developed to support use of the prototype.</p><p> </p><p>The CASE prototype took shortcuts in the interest of quickly developing a proof of concept. Among those was the copying of concepts from the Unified Cyber Ontology (UCO) into the CASE prototype namespace. Subsequently, following ontological best practices beginning with version 0.2.0, the CASE ontology has been published with concepts specific to the domain of investigation in the CASE namespace and importation of general concepts for the cyber domain from UCO. The CASE community provided a <a href="https://caseontology.org/releases/0.2.0/migration/" class="external-link" rel="nofollow">Migration Guide</a> for early adopters, as well as <a href="https://caseontology.org/releases/0.2.0/" class="external-link" rel="nofollow">release notes</a> describing changes and updates.</p><p>Significantly, the class <code>Trace</code> was changed to <code>CyberItem</code>, the class <code>PropertyBundle</code> was changed to <code>Facet</code>, and the property <code>propertyBundle</code>, was changed to <code>uco-core:hasFacet</code>.  </p><h3 id="CASEOntologyDesignDocument-1.7SummaryofimportantchangessinceCASE0.2.0">1.7 Summary of important changes since CASE 0.2.0</h3><p>CASE 0.2.0 (August 2020) implemented significant re-engineering based on ontology best practices. Concurrently, the CASE Community conducted a development process to ensure that CASE 1.0 would cover the domain concepts needed for a Minimum Viable Product (MVP) that could be used to encode cyber investigation data for exchange and analysis. CASE 0.2 incorporated some new concepts based on the early results of that process. The main part of that work is reflected in the expanded domain coverage of concepts in CASE 1.0.0.</p><p> </p>
+<p><p>Specific enhancements and expansion of CASE versions leading to CASE 1.0.0 are described in the <a href="https://caseontology.org/releases/archive/">release notes</a> for each incremental version.</p>
+<h2 id="CASEOntologyDesignDocument-2.CASEasanExtensionoftheUnifiedCyberOntology(UCO)">2. CASE as an Extension of the Unified Cyber Ontology (UCO)</h2>
+<figure style="text-align:center;">
+  <img width="50%" height="50%" src="https://files.caseontology.org/casework.github.io/resources/CASE-Overview.png" alt="Overview of CASE" />
+  <figcaption>"Overview of CASE"</figcaption>
+</figure>
+<h3 id="CASEOntologyDesignDocument-2.1.CASErepresentscyber-investigations">2.1. CASE represents cyber-investigations</h3><p>The purpose of CASE is to define concepts for representing cyber-investigations. Essential concepts for the representation of investigations include <code>InvestigativeAction</code> (human and tools) and <code>ProvenanceRecord</code> for tracking when, where and who performed investigative actions on data sources, with what tool when applicable, and evidence-based hypothesis evaluation (e.g., probability of evidence given alternative hypotheses). </p><p /><ul><li><p>Casey, Barnum, Griffith, Snyder, van Beek, Nelson (2017) <a href="https://drive.google.com/file/d/0B2Z-Slbvlz3aSkluRU1heUtkZEU/view" class="external-link" rel="nofollow">Advancing coordinated cyber-investigations and tool interoperability using a community developed specification language</a></p></li><li><p>Casey, Barnum, Griffith, Snyder, van Beek, Nelson (2018) The Evolution of Expressing and Exchanging Cyber-Investigation Information in a Standardized Form</p></li><li><p>Casey, Biasiotti, Turchi (2017) <a href="http://users.umiacs.umd.edu/~oard/desi7/papers/EC.pdf" class="external-link" rel="nofollow">Using Standardization and Ontology to Enhance Data Protection and Intelligent Analysis</a></p></li><li><p>Chabot, Bertauxa, Nicolle, Kechadi (2015) <a href="https://doi.org/10.1016/j.diin.2015.07.005" class="external-link" rel="nofollow">An ontology-based approach for the reconstruction and analysis of digital incidents timelines</a></p></li><li><p>Casey, Back, Barnum (2015) <a href="https://github.com/dfrws/papers/blob/master/2015%20EU/2015_EU_paper-leveraging_cybox_to_standardize_representation_and_exchange_of_digital_forensic_information.pdf" class="external-link" rel="nofollow">Leveraging CybOX™ to standardize representation and exchange of digital forensic information</a></p></li></ul><p /><p>The fundamental objects that CASE imports from UCO include <code>ObservableObject</code>, <code>Location</code>, <code>Tool</code> and <code>Identity</code>, as well as <code>Action</code>, <code>Annotation</code>, and <code>Relationship</code> objects. The full list of CASE concepts is provided in Section 8.</p><p> </p><p>For other concepts in the cyber domain, CASE imports UCO.</p><p> </p><h3 id="CASEOntologyDesignDocument-2.2.CASEimportsUCOforgeneralcyber-domainconcepts">2.2. CASE imports UCO for general cyber-domain concepts</h3><p>CASE imports the UCO ontology for use in representing objects and events that may be related to investigations (for example, computer files and electronic devices), but which are not inherently investigative concepts. By re-using cyber-domain concepts already defined by UCO, CASE takes advantage of work that experts have already done to represent the semantics of that domain in a machine-interpretable formalism. The UCO ontology includes both a model of the cyber-domain as understood by domain experts, and a terminology used by experts to describe the cyber-domain.</p><p> </p><p>With the release of CASE 1.0.0, the version of UCO that is imported will match, starting with UCO 1.0.0.</p><p> </p><h3 id="CASEOntologyDesignDocument-2.3.CASEalignswithontologydesignpatternsofUCO">2.3. CASE aligns with ontology design patterns of UCO</h3><p>The fundamental objects of study in cyber-investigations are the perceptible results of an event of interest. To represent these objects and their context, CASE makes use of ontology design patterns implemented in UCO, including those for <code>Facet</code>, <code>ObservableObject</code>, and <code>Relationship</code>.</p><p> </p><h4 id="CASEOntologyDesignDocument-2.3.1.FacetandObservableObject">2.3.1.    Facet and Observable Object</h4><p>An Observable Object can be enriched with one of more Facets, each with its own set of properties. Facets provide flexibility for representing the wide variety of data structures that can be encountered in cyber domains, and permit custom (non-standard) properties to be added if needed for internal or proprietary systems.</p>
+
+<figure style="text-align:center;">
+  <img src="https://files.caseontology.org/casework.github.io/resources/facets-properties.png" alt="ObservableObject with Facets that represent various properties" />
+  <figcaption>"<code>ObservableObject</code> with <code>Facets</code> that represent various properties."</figcaption>
+</figure>
+
+<p>Further design details about <code>Facet</code> and <code>ObservableObject</code> are provided in the <a href="https://unifiedcyberontology.org/resources/uco_design_document.html" class="external-link" rel="nofollow">UCO Design Document</a>.</p><p> </p><p>In UCO, <code>ObservableObject</code> is an owl:Class whose instances represent individuals in the cyber domain. Certain aspects of those individuals are described using properties defined on the <code>ObservableObject</code> class; however, other descriptions may be applied to the instance by linking it to one or more Facet-instances. UCO defines Facet as an owl:Class representing a grouping of properties. Property assignment – that is, descriptions of individuals – using Facets differs from descriptions by properties defined directly on the <code>ObservableObject</code> class of which an individual is an instance.</p><p> </p><p>Properties defined on the class <code>ObservableObject</code> are those whose values are not expected to change when an individual is described, while the properties defined in a Facet class are used to assign values that may be updated in the future. Properties can include date-time stamps, the contents of an <code>ObservableObject</code>, the hash values (e.g., MD5 and SHA256) of the data, and other details. Properties are attributed to an <code>ObservableObject</code> using Facets (“hasFacet”), effectively using duck typing (enriching the object with the pattern relating Facet instances to instances of <code>ObservableObject</code>).</p>
+<p> </p><p>A Facet is represented by an owl:Class. However, its instances are not domain individuals (e.g., files, accounts). Instead, they are anonymous individuals that organize properties to describe <em>other</em> individuals which are instances of Observable Object (or one of its subclasses).</p>
+<p>The current range of UCO Facet subclasses with their associated definitions and properties are searchable in the <a href="https://ontology.unifiedcyberontology.org/uco/documentation/entities-tree-classes.html">Classes Tree</a>.
+</p>
+<p>An important use of subclasses is in the properties <code>deviceType</code> and <code>filesystemType</code>, which are fields that house free-form text descriptions of the type of device that an analyst has encountered.  The `@type` field should be preferred when a subclass of `observable:Device` or `observable:FileSystem` are defined and known to the analyst.  When those are not known, `deviceType` and `filesystemType` should be used to cover the representation gap.  Be aware that with the breadth of types available, full coverage is acknowledged as an impossible problem.  The CDO community welcomes feedback on knowledge gaps so taxonomic classes can be standardized, and interoperability improved.
+
+<p> </p><h4 id="CASEOntologyDesignDocument-2.3.2.References">2.3.2.    References</h4><p>Within a Facet, certain Properties reference another object that is linked immutably, i.e., the link will never change. Such linked objects are represented using an identifier reference that specifies the @id of another object. For example, the manufacturer of a device is represented as a reference within the DeviceFacet:</p><p><a href="https://github.com/casework/CASE-Examples/blob/master/examples/illustrations/device/device.json" data-card-appearance="inline" class="external-link" rel="nofollow">https://github.com/casework/CASE-Examples/blob/master/examples/illustrations/device/device.json</a> </p><p /><h4 id="CASEOntologyDesignDocument-2.3.3.Relationships">2.3.3.    Relationships</h4><p>In addition to using Properties as defined in OWL 2, UCO defines a class, <strong>Relationship</strong>, in order to represent information about relationships (such as their duration) that cannot be captured otherwise. For those familiar with UML, a UCO Relationship is similar in structure and purpose to a UML Association Class. </p>
+<p> </p><p>As a general rule, a link between two objects should be represented as an independent Relationship object specifying the type of connection (a.k.a. external relationship). An example “contained-within” Relationship is the representation of a SIM card contained within a mobile device:</p><p><a href="https://github.com/casework/CASE-Examples/tree/master/examples/illustrations/mobile_device_and_sim_card" data-card-appearance="inline" class="external-link" rel="nofollow">https://github.com/casework/CASE-Examples/tree/master/examples/illustrations/mobile_device_and_sim_card</a> </p><p>  </p><h4 id="CASEOntologyDesignDocument-2.3.4.DomainAssertions">2.3.4.    Domain Assertions</h4><p>In the OWL 2 language, domain assertions (i.e., using rdfs:domain) are not constraints on the use of properties. They are expressions of knowledge about the kind of thing to which a property is expected to apply, and those assertions can be used as the basis of an inference that an individual that is the subject of such a property is of a specific kind. [Include explanation of Open World Assumption and consequences of reasoning based on it.]</p><p> </p><p>Domain assertions for properties are included in the CASE ontology to capture knowledge about the type(s) of entity to which a property normally applies. However, CASE implements a design pattern in which those domain assertions are defined in a separate namespace (and ontology document) that may optionally not be loaded with the main ontology. This is to prevent unwanted inferences (based on domain assertions) about the types of individual entities, in applications where an  imposition of domain types on individual entities whose specific type is either unknown or may conflict with the expected type, may result in unwanted consequences.</p>
+<p> </p><h4 id="CASEOntologyDesignDocument-2.4.CooperationoftheCASEandUCOCommunities">2.4. Cooperation of the CASE and UCO Communities</h4>
+<p>The CASE Community has formalized its working relationship with the UCO Community, including written guidance on common software development practices.</p><p /><h2 id="CASEOntologyDesignDocument-3.DomainandScopeofCASE">3.   Domain and Scope of CASE</h2><p> </p><h3 id="CASEOntologyDesignDocument-3.1.Cyber-investigation">3.1. Cyber-investigation</h3><p>Cyber-investigation is the principal domain of the CASE ontology, and is defined most broadly to cover any context, including in criminal, cybersecurity, and intelligence. In cybersecurity contexts, the detection of a potential incident by a Security Operations Center (SOC) is the starting point of an investigation that can lead to Digital Forensics &amp; Incident Response (DFIR),  and ultimately legal action (e.g., regulatory compliance, criminal prosecution). In criminal contexts, the reporting of an offense initiates an investigation, followed by preservation and analysis of evidence, with the aim of apprehending and prosecuting perpetrators. In intelligence contexts, such as counter-terrorism operations, an investigation can combine information from various sources to support analysis and decision-making.</p><p> </p><h3 id="CASEOntologyDesignDocument-3.2.Provenance">3.2. Provenance</h3><p>In any investigation, it is important to maintain links between data sources, their treatment, and analysis results. CASE includes concepts for keeping track of when, where and who used which tools to perform investigative actions on data sources. These details are generally referred to as provenance (e.g., chain of custody) and lineage (e.g., chain of evidence). CASE tracks provenance and lineage with the combination of <strong>ProvenanceRecords</strong> and <strong>InvestigativeActions</strong> on data as shown here.</p><p />
+<figure style="text-align:center;">
+  <img src="https://files.caseontology.org/casework.github.io/resources/provenance.png" alt="Provenance" />
+  <figcaption>"Depiction of <code>ProvenanceRecords</code> as links in chain of <code>InvestigativeActions</code> on data."</figcaption>
+</figure>
+
+<p /><p>CASE aligns with the <a href="https://github.com/casework/CASE-Implementation-PROV-O" class="external-link" rel="nofollow">PROV-O</a> ontology to support enhanced provenance tracking that is needed in more mature operating environments. The PROV-O enhanced representing of the <a href="https://caseontology.org/examples/urgent_evidence/" class="external-link" rel="nofollow">Urgent Evidence</a> scenario is depicted here.</p>
+<figure style="text-align:center;">
+  <img src="https://files.caseontology.org/casework.github.io/resources/prov-o.png" alt="PROV-O Graph" />
+  <figcaption>"PROV-O graph was derived from CASE data, with no modifications"</figcaption>
+</figure>
+<p /><h2 id="CASEOntologyDesignDocument-4.CASEisanOWLOntology">4.   CASE is an OWL Ontology</h2><p> </p><h3 id="CASEOntologyDesignDocument-4.1.Introduction">4.1. Introduction</h3><p>The CASE ontology is a representation of the cyber-investigation domain created using the OWL 2 Web Ontology Language (informally, “OWL 2”). OWL 2 is a W3C Recommendation (<a href="https://www.w3.org/TR/owl2-overview/" data-card-appearance="inline" class="external-link" rel="nofollow">https://www.w3.org/TR/owl2-overview/</a> ). The primary rationale for using OWL 2 is compatibility with other OWL 2 ontologies, enabling reuse of existing representations such as the <a href="https://www.w3.org/TR/vocab-ssn/" class="external-link" rel="nofollow">Semantic Sensor Network</a> (SSN) ontology and the <a href="http://qudt.org/" class="external-link" rel="nofollow">Quantity, Unit, Dimension and Type</a> (QUDT) ontology. The widespread use of OWL 2 supporting Semantic Web provides a stable foundation for development and interoperability. </p><h3 id="CASEOntologyDesignDocument-4.2.ProfileofOWL">4.2. Profile of OWL</h3><p>To ensure compatibility with other OWL ontologies, CASE uses OWL DL rather than more restrictive profiles or OWL Full.<a href="#_ftn1" rel="nofollow">[1]</a> The original OWL profiles OWL Lite and OWL 1 DL are considered valid profiles of OWL 2 (see Section 1 at that URL). CASE probably will not be able to support more restrictive OWL Profiles.</p><p>Throughout the development of CASE and UCO, consideration has been given to the constraints of OWL profiles. See definitions of the OWL 2 profiles: <a href="https://www.w3.org/TR/owl2-profiles/" data-card-appearance="inline" class="external-link" rel="nofollow">https://www.w3.org/TR/owl2-profiles/</a>  . </p><p>Currently, it is necessary to check whether CASE and UCO violate a constraint of OWL 2 DL: (<a href="https://www.w3.org/TR/owl-syntax/#Entity_Declarations_and_Typing" data-card-appearance="inline" class="external-link" rel="nofollow">https://www.w3.org/TR/owl-syntax/#Entity_Declarations_and_Typing</a> ). <em>Note the typing constraint in <strong>5.8.1 Typing Constraints of OWL 2 DL</strong>: “No IRI </em>I<em> is declared in </em>Ax<em> </em>[a set of axioms]<em> to be both a class and a datatype.”</em>]</p><h2 id="CASEOntologyDesignDocument-5.CASEOntologyArchitectureandNamespaces">5.   CASE Ontology Architecture and Namespaces</h2><p>The CASE ontology extends UCO with the Investigation namespaces and associated domain specific vocabulary.</p><ul><li><p>The namespace for the CASE ontology is <code>https://ontology.caseontology.org/case/</code>. UCO and CASE now have a similar IRI structure, including use of sub-ontologies implemented as independently importable namespaces.</p></li><li><p>CASE now provides the Investigation sub-ontology, with the IRI <code>https://ontology.caseontology.org/case/investigation/</code>. Enumerations supporting this sub-ontology are in the vocabulary sub-ontology, with the IRI <code>https://ontology.caseontology.org/case/vocabulary/</code>. These files were imported without revision, aside from minimal IRI string substitution, from UCO.</p></li></ul><p> </p><p><a class="confluence-userlink user-mention" data-username="5d1d2d418636560d1b5bfc4d" data-account-id="5d1d2d418636560d1b5bfc4d" href="https://cyberontology.atlassian.net/wiki/people/5d1d2d418636560d1b5bfc4d?ref=confluence" target="_blank" data-linked-resource-id="98380" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://cyberontology.atlassian.net/wiki">Alexander Nelson</a> [<em>Insert</em> a diagram of CASE namespace and import structure. In this one, UCO could be shown as one shaded block, with a detailed diagram of UCO namespaces used by CASE shown later.]</p><h2 id="CASEOntologyDesignDocument-6.OntologyDesignPatternsUsedinCASE">6.   Ontology Design Patterns Used in CASE</h2><p> </p><h3 id="CASEOntologyDesignDocument-6.1.Introduction">6.1. Introduction</h3><p>This section presents the principal ontology design patterns used in CASE 1.0. As introduced in Section 2.3, some CASE design patterns are based on those of UCO. Other patterns, including those used for representing investigations and provenance, are unique to CASE. The CASE ontology patterns described in this section should be considered best practices for extensions of CASE.</p><p> </p><p>The CASE bundle header provides context for the investigation and represented information.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+  &quot;@context&quot;:{
+    &quot;&quot;: &quot;http://example.org/kb#&quot;,
+    &quot;@vocab&quot;: &quot;http://example.org/ontology/local#&quot;,
+    &quot;case-core&quot;: &quot;https://caseontology.org/ontology/case/core#&quot;,
+    &quot;rdf&quot;: &quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;,
+    &quot;rdfs&quot;: &quot;http://www.w3.org/2000/01/rdf-schema#&quot;,
+    &quot;uco-action&quot;: &quot;https://unifiedcyberontology.org/ontology/uco/action#&quot;,
+    &quot;uco-core&quot;: &quot;https://unifiedcyberontology.org/ontology/uco/core#&quot;,
+    &quot;uco-investigation&quot;: &quot;https://unifiedcyberontology.org/ontology/uco/investigation#&quot;,
+    &quot;uco-observable&quot;: &quot;https://unifiedcyberontology.org/ontology/uco/observable#&quot;,
+    &quot;uco-tool&quot;: &quot;https://unifiedcyberontology.org/ontology/uco/tool#&quot;,
+    &quot;xsd&quot;: &quot;http://www.w3.org/2001/XMLSchema#&quot;
+  },
+  &quot;@id&quot;:&quot;:bundle-32467e43-3d56-4a66-a483-db22cb56e6b9&quot;,
+  &quot;@type&quot;:&quot;uco-case:Bundle&quot;,
+  &quot;uco-case:description&quot;:&quot;Investigation of any crime type&quot;,
+  &quot;uco-case:object&quot;:[
+    {
+      &quot;@id&quot;:&quot;:investigation-12ea9028-290b-46f9-9c8a-d49d00351a3a&quot;,
+      &quot;@type&quot;:&quot;case-investigation:Investigation&quot;,
+      &quot;uco-core:name&quot;:&quot;Investigation_2021_0415&quot;,
+      &quot;uco-core:focus&quot;:&quot;Robbery&quot;,
+      &quot;uco-core:description&quot;:&quot;The theft of intellectual property&quot;,
+      &quot;uco-core:object&quot;:[list of uuids in bundle OR list of uuids of ProvenanceRecords and InvestigatigveActions
+    }
+  ]
+}</pre>
+</div></div><p /><p>The <code>object</code> property in a CASE bundle header can provide a comprehensive list explicit referencing all objects in the bundle, or a shorter list of <code>PropertyBundles</code> and <code>InvestigativeActions</code> which contain implicit references to all objects in the bundle.</p><p /><h3 id="CASEOntologyDesignDocument-6.3.Tools">6.3. Tools</h3><p>The <code>ConfiguredTool</code> object is used to represent tools that are used to treat data, including their configuration options.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+  &quot;@id&quot;: &quot;:configuredtool-771f892b-9830-4d71-b0a2-bcff5072ec80&quot;,
+  &quot;@type&quot;:&quot;uco-tool:ConfiguredTool&quot;,
+  &quot;uco-tool:name&quot;:&quot;dc3dd&quot;,
+  &quot;uco-tool:toolType&quot;:&quot;acquisition&quot;,
+  &quot;uco-tool:creator&quot;:&quot;DC3&quot;,
+  &quot;uco-tool:version&quot;:&quot;7.2.646&quot;,
+  &quot;uco-configuration:usesConfiguration&quot;: {
+    &quot;@id&quot;: &quot;kb:configuration-33b352c2-478d-4bb1-b758-49df5cc0cd49&quot;,
+    &quot;@type&quot;: &quot;uco-configuration:Configuration&quot;,
+    &quot;uco-configuration:configurationEntry&quot;:[
+        {
+          &quot;@type&quot;:&quot;uco-configuration:ConfigurationEntry&quot;,
+          &quot;uco-configuration:itemName&quot;:&quot;bs&quot;,
+          &quot;uco-configuration:itemValue&quot;:&quot;4k&quot;
+        },
+        {
+          &quot;@type&quot;:&quot;uco-configuration:ConfigurationEntry&quot;,
+          &quot;uco-configuration:itemName&quot;:&quot;hash&quot;,
+          &quot;uco-configuration:itemValue&quot;:&quot;md5&quot;
+        },
+        {
+          &quot;@type&quot;:&quot;uco-configuration:ConfigurationEntry&quot;,
+          &quot;uco-configuration:itemName&quot;:&quot;log&quot;,
+          &quot;uco-configuration:itemValue&quot;:&quot;dc3dd.log&quot;
+        },
+        {
+          &quot;@type&quot;:&quot;uco-configuration:ConfigurationEntry&quot;,
+          &quot;uco-configuration:itemName&quot;:&quot;command_line_arguments&quot;,
+          &quot;uco-configuration:itemValue&quot;:&quot;dc3dd if=/dev/sdc of=sdc.dd bs=4k hash=md5 log=dc3dd.log&quot;
+        }
+      ]
+    }
+},</pre>
+</div></div><h3 id="CASEOntologyDesignDocument-6.2.InvestigativeActionandRole">6.2. InvestigativeAction and Role</h3><p>CASE uses <code>InvestigativeActions</code> to represent actions taken as part of an investigation, including initial evidence collection, subsequent tool processing, analysis activities, and reporting results. As a subclass of Action in UCO, an InvestigativeAction references the <code>location</code>, <code>performer</code>, <code>instrument</code>, and <code>environment</code> as well as the input <code>object</code> and output <code>result</code>.</p><p>Notably, the initial <code>InvestigativeAction</code> of seizing/receiving data sources has a null input and a <code>performer</code>  property that references a <code>Role</code>. Assigning a <code>Role</code> within a specific context allows the same person to have multiple roles in different contexts. For example, in the Oresteia example, Clytemnestra has the Role of Offender in Crime E and the Role of Victim in Crime F. Also see <a href="https://doi.org/10.1016/j.diin.2018.10.001" class="external-link" rel="nofollow">https://doi.org/10.1016/j.diin.2018.10.001</a></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+  &quot;@id&quot;: &quot;kb:action-20e71c39-3a5a-4d7a-a01d-95dc6545d31e&quot;,
+  &quot;@type&quot;: &quot;case-investigation:InvestigativeAction&quot;,
+  &quot;uco-core:description&quot;: &quot;Items collected at scene&quot;,
+  &quot;uco-core:hasFacet&quot;: {
+      &quot;@type&quot;: &quot;uco-action:ActionReferences&quot;,
+      &quot;uco-action:endTime&quot;: {
+                    &quot;@type&quot;: &quot;xsd:dateTime&quot;,
+                    &quot;@value&quot;: &quot;2021-04-01T14:00+00:00&quot;
+                },
+      &quot;uco-action:location&quot;: {
+                    &quot;@id&quot;: &quot;kb:location-dd8d6513-389c-413f-9f30-cf75e24ad838&quot;
+                },
+      &quot;uco-action:performer&quot;: {
+                    &quot;@id&quot;: &quot;kb:role-d2cd172c-bc44-429f-be13-d4ea58480852&quot;
+                },
+      &quot;uco-action:result&quot;: [
+                    {
+                        &quot;@id&quot;: &quot;kb:provenancerecord-a5c55cda-c515-4bd5-9f34-f65176ee6d4f&quot;
+                    },
+                    {
+                        &quot;@id&quot;: &quot;kb:device-0e3d3524-c19d-4c22-9edd-2a6e65f82bd7&quot;
+                   },
+                   ... &lt;list all items&gt;
+                    {
+                        &quot;@id&quot;: &quot;kb:device-4358a269-4159-4475-820e-b67660f9c55c&quot;
+                    }
+                ]
+      }
+},
+{
+  &quot;@id&quot;: &quot;kb:provenancerecord-a5c55cda-c515-4bd5-9f34-f65176ee6d4&quot;,
+  &quot;@type&quot;: &quot;case-investigation:ProvenanceRecord&quot;,
+  &quot;case-investigation:exhibitNumber&quot;: &quot;URI-1234&quot;,
+  &quot;case-investigation:rootExhibitNumber&quot;: &quot;URI-1234&quot;,
+  &quot;uco-core:object&quot;: {
+                &quot;@id&quot;: &quot;kb:device-0e3d3524-c19d-4c22-9edd-2a6e65f82bd7&quot;
+  }
+},
+{
+  &quot;@id&quot;: &quot;kb:location-dd8d6513-389c-413f-9f30-cf75e24ad838&quot;,
+  &quot;@type&quot;: &quot;uco-location:Location&quot;,
+  &quot;uco-core:description&quot;: &quot;Location where evidence was seized&quot;,
+  &quot;uco-core:hasFacet&quot;: {
+  &quot;@type&quot;: &quot;uco-location:LatLongCoordinatesFacet&quot;,
+  &quot;uco-location:latitude&quot;: &quot;46.537222222222219&quot;,
+  &quot;uco-location:longitude&quot;: &quot;6.5791666666666666&quot;,
+  }
+},
+{
+  &quot;@id&quot;: &quot;kb:role-d2cd172c-bc44-429f-be13-d4ea58480852&quot;,
+  &quot;@type&quot;: &quot;uco-role:Role&quot;,
+  &quot;uco-core:name&quot;: &quot;Investigator&quot;
+},
+{
+  &quot;@id&quot;: &quot;kb:identity-b02bc46d-3dbb-49a4-9e6d-27a89f162f96&quot;,
+  &quot;@type&quot;: &quot;uco-identity:Identity&quot;,
+  &quot;uco-core:hasFacet&quot;: [
+                {
+                    &quot;@type&quot;: &quot;uco-identity:SimpleName&quot;,
+                    &quot;uco-identity:givenName&quot;: &quot;James&quot;,
+                    &quot;uco-identity:familyName&quot;: &quot;Reese&quot;
+    }
+  ]
+},</pre>
+<p>Part of acquiring digital evidence can involve photographing items using a digital camera for documentation. Any Any <code>InvestigativeAction</code> can reference the tool used to treat the data as the <code>instrument</code> which reference a <code>ConfiguredTool</code> object.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">       {
+            &quot;@id&quot;: &quot;kb:analytictool-34eefb72-19c8-42c8-933c-3c1e13372e491&quot;,
+            &quot;@type&quot;: [
+                &quot;uco-observable:ObservableObject&quot;,
+                &quot;uco-tool:AnalyticTool&quot;
+            ],
+            &quot;uco-core:hasFacet&quot;: [
+                {
+                    &quot;@type&quot;: &quot;uco-observable:DeviceFacet&quot;,
+                    &quot;uco-observable:deviceType&quot;: &quot;camera&quot;,
+                    &quot;uco-observable:manufacturer&quot;: &quot;Canon&quot;,
+                    &quot;uco-observable:model&quot;: &quot;PowerShot SX540&quot;
+                }
+            ],
+            &quot;uco-tool:creator&quot;: &quot;Canon&quot;
+        },
+        {
+            &quot;@id&quot;: &quot;kb:action-5f560f12-2be5-4b9a-a8e8-96aa4e2d0c13&quot;,
+            &quot;@type&quot;: &quot;case-investigation:InvestigativeAction&quot;,
+            &quot;uco-core:name&quot;: &quot;Photographed exhibits&quot;,
+            &quot;uco-core:hasFacet&quot;: {
+                &quot;@type&quot;: &quot;uco-action:ActionReferences&quot;,
+                &quot;uco-action:endTime&quot;: {
+                    &quot;@type&quot;: &quot;xsd:dateTime&quot;,
+                    &quot;@value&quot;: &quot;2021-04-01T14:15+00:00&quot;
+                },
+                &quot;uco-action:instrument&quot;: {
+                    &quot;@id&quot;: &quot;kb:analytictool-34eefb72-19c8-42c8-933c-3c1e13372e491&quot;
+                },
+                &quot;uco-action:location&quot;: {
+                    &quot;@id&quot;: &quot;kb:location-dd8d6513-389c-413f-9f30-cf75e24ad838&quot;
+                },
+                &quot;uco-action:performer&quot;: {
+                    &quot;@id&quot;: &quot;kb:role-d2cd172c-bc44-429f-be13-d4ea58480852&quot;
+                },
+                &quot;uco-action:object&quot;: [
+                    {
+                        &quot;@id&quot;: &quot;kb:provenancerecord-a5c55cda-c515-4bd5-9f34-f65176ee6d4f&quot;
+                    },
+                    {
+                        &quot;@id&quot;: &quot;kb:device-0e3d3524-c19d-4c22-9edd-2a6e65f82bd7&quot;
+                    }
+                ],
+                &quot;uco-action:result&quot;: [
+                    {
+                        &quot;@id&quot;: &quot;kb:provenancerecord-a73ef018-75b2-4522-b485-979ecb36d624&quot;
+                    },
+                    {
+                        &quot;@id&quot;: &quot;kb:camera-mediacard-def63f6a-d031-4104-91b9-76f060a0ece9&quot;
+                    }
+                ]
+            },</pre>
+</div></div><p /><h3 id="CASEOntologyDesignDocument-6.3.FacetsofObservableObjects">6.3. Facets of Observable Objects</h3><p>CASE can enrich <code>ObservableObjects</code> using <code>Facets</code> defined in UCO, as well as custom facets not currently defined in the ontology. For instance, a digital photograph is represented as an <code>ObservableObject</code> with the <code>RasterPictureFacet</code> (see example <a href="https://github.com/casework/CASE-Examples/blob/555c756ba7364ee0c4849f14cc1426dc68bc5a48/examples/exif_data.json" class="external-link" rel="nofollow">https://github.com/casework/CASE-Examples/blob/555c756ba7364ee0c4849f14cc1426dc68bc5a48/examples/exif_data.json</a>  ). This Figure depicts a digital photograph that has been enriched with a custom Facet to define properties associated with contraband using a chosen scale (e.g., COPINE, SAP).</p>
+<figure style="text-align:center;">
+  <img src="https://files.caseontology.org/casework.github.io/resources/facets-properties.png" alt="ObservableObject with Facets that represent various properties" />
+  <figcaption>"Observable Object with Facets that represent properties of a File that is a Picture that a custom facet."</figcaption>
+</figure>
+
+<p><strong>Figure</strong>: Observable Object with Facets that represent properties of a File that is a Picture that a custom facet. </p>
+<p /><p>This depicted example can be represented in CASE as follows:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+            &quot;@id&quot;: &quot;kb:file-fa836108-ed37-44b0-9b2b-0b61c4a0590d&quot;,
+            &quot;@type&quot;: &quot;uco-observable:File&quot;,
+            &quot;uco-core:hasFacet&quot;: [
+                {
+                    &quot;@type&quot;: &quot;uco-observable:FileFacet&quot;,
+                    &quot;uco-observable:fileSystemType&quot;: &quot;EXT4&quot;,
+                    &quot;uco-observable:fileName&quot;: &quot;IMG_0123.jpg&quot;,
+                    &quot;uco-observable:filePath&quot;: &quot;/sdcard/IMG_0123.jpg&quot;,
+                    &quot;uco-observable:extension&quot;: &quot;jpg&quot;,
+                    &quot;uco-observable:sizeInBytes&quot;: {
+                        &quot;@type&quot;: &quot;xsd:long&quot;,
+                        &quot;@value&quot;: 35002
+                    }
+                },
+                {
+                    &quot;@type&quot;: &quot;uco-observable:RasterPictureFacet&quot;,
+                    &quot;uco-observable:pictureType&quot;: &quot;jpg&quot;,
+                    &quot;uco-observable:pictureHeight&quot;: 12345,
+                    &quot;uco-observable:pictureWidth&quot;: 12345,
+                    &quot;uco-observable:bitsPerPixel&quot;: 2
+                },
+                                {
+                    &quot;@type&quot;: &quot;example-custom:Contraband&quot;,
+                    &quot;example-custom:scaleType&quot;: &quot;COPINE&quot;,
+                    &quot;example-custom:scaleCategory&quot;: 5
+                },
+                {
+                    &quot;@type&quot;: &quot;uco-observable:ContentDataFacet&quot;,
+                    &quot;uco-observable:byteOrder&quot;: &quot;BigEndian&quot;,
+                    &quot;uco-observable:magicNumber&quot;: &quot;/9j/ww==&quot;,
+                    &quot;uco-observable:mimeType&quot;: &quot;image/jpg&quot;,
+                    &quot;uco-observable:sizeInBytes&quot;: {
+                        &quot;@type&quot;: &quot;xsd:long&quot;,
+                        &quot;@value&quot;: 35000
+                    },
+                    &quot;uco-observable:dataPayload&quot;: &quot;&lt;base 64 encoded data of the file&gt;&quot;,
+                    &quot;uco-observable:hash&quot;: [
+                        {
+                            &quot;@type&quot;: &quot;uco-types:Hash&quot;,
+                            &quot;uco-types:hashMethod&quot;: {
+                                &quot;@type&quot;: &quot;uco-vocabulary:HashNameVocab&quot;,
+                                &quot;@value&quot;: &quot;SHA256&quot;
+                            },
+                            &quot;uco-types:hashValue&quot;: {
+                                &quot;@type&quot;: &quot;xsd:hexBinary&quot;,
+                                &quot;@value&quot;: &quot;6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b&quot;
+                            }
+                        }
+                    ]
+                }
+}</pre>
+</div></div><h3 id="CASEOntologyDesignDocument-6.4.References">6.4. References</h3><p>When data contains immutable/unchanging links between objects, this is represented using an embedded reference. For instance, the manufacturer of a device is represented as an embedded reference in the <code>DeviceFacet</code>.</p>
+
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">    {
+        &quot;@id&quot;: &quot;kb:kb:disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11&quot;,
+        &quot;@type&quot;: &quot;uco-observable:Disk&quot;,
+        &quot;uco-core:hasFacet&quot; [
+            {
+                &quot;type&quot; &quot;uco-observable:DiskFacet&quot;
+                &quot;uco-observable:model&quot; &quot;TOSHIBA_MQ01ABD100&quot;
+                &quot;uco-observable:serialNumber&quot; &quot;Z612S32MS&quot;
+                &quot;uco-observable:capacity&quot; &quot;1000204886016&quot;
+                &quot;uco-observable:manufacturer&quot; &quot;kb:org-toshiba-d7ce213d-7d2c-4dc7-aa57-33d5792f3078&quot;
+            }
+        ]
+    }</pre>
+
+As another example, in an email message, the sender and recipient accounts are represented as an embedded reference.
+
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">    {
+    {
+        "@id": "kb:emailmessage-56ee7f1d-6710-421b-b22a-67110ff0d4ff",
+        "@type": "uco-observable:EmailMessage",
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-observable:EmailMessageFacet",
+                "uco-observable:subject": "Bank transfer ?",
+                "uco-observable:sentTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-11-20T00:00:30+00:00"
+                },
+                "uco-observable:from": {
+                    "@id": "kb:emailaccount-75f2bf72-5239-4d2b-9ac5-f6e778bdf877"
+                },
+                "uco-observable:to": {
+                    "@id": "kb:emailaccount-2932a717-db7c-4fa2-b435-28a34538312d"
+                }
+            }
+        ]
+    }</pre>
+
+<h3 id="CASEOntologyDesignDocument-6.5.RelationshipsasClasses">6.5. Relationships as Classes</h3>
+
+<p>Relationship are intentionally flexible to allow mutable/changeable links or associations to be defined between any object. For instance, a relationship between one object and another (e.g., SIM card in a mobile device) can last for a limited time period, and then can change (e.g., moving the SIM card to another mobile device). The  “Contained_Within” relationship is commonly used in CASE. The following example represents the relationship between a SIM card and the mobile device it was contained within.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">    {
+        &quot;@id&quot;: &quot;kb:simcard1-relationship-a1dbff0e-974b-4295-b035-e1bc3271945d&quot;,
+        &quot;@type&quot;: &quot;uco-observable:ObservableRelationship&quot;,
+        &quot;uco-core:source&quot;: {
+            &quot;@id&quot;: &quot;kb:simcard-24d20c80-f035-40ae-88dd-fc66f70180f6&quot;
+        },
+        &quot;uco-core:target&quot;: {
+            &quot;@id&quot;: &quot;kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168&quot;
+        },
+        &quot;uco-core:kindOfRelationship&quot;: {
+            &quot;@type&quot;: &quot;uco-vocabulary:ObservableObjectRelationshipVocab&quot;,
+            &quot;@value&quot;: &quot;Contained_Within&quot;
+        },
+        &quot;uco-core:isDirectional&quot;: true
+    }</pre>
+</div></div><p>A relationship object can be enriched with a <code>Facet</code> such as the physical location of one object within another. In the following example, the <code>DataRangeFacet</code> is used to specify where a partition is located within a piece of storage media or forensic copy.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">    {
+        &quot;@id&quot;: &quot;kb:partition-87d669fc-8ab9-47c6-a66d-af09d73361d5&quot;,
+        &quot;@type&quot;: &quot;uco-observable:ObservableRelationship&quot;,
+        &quot;uco-core:source&quot;: {
+            &quot;@id&quot;: &quot;kb:userdata-partition-d94cd1b5-5cf7-4642-8927-5ebea573d68e&quot;
+        },
+        &quot;uco-core:target&quot;: {
+            &quot;@id&quot;: &quot;kb:f3fd304e-ef6c-4cbd-94cb-425880f82748&quot;
+        },
+        &quot;uco-core:kindOfRelationship&quot;: {
+            &quot;@type&quot;: &quot;uco-vocabulary:ObservableObjectRelationshipVocab&quot;,
+            &quot;@value&quot;: &quot;Contained_Within&quot;
+        },
+        &quot;uco-core:isDirectional&quot;: true,
+        &quot;uco-core:hasFacet&quot;: [
+            {
+                &quot;@type&quot;: &quot;uco-observable:DataRangeFacet&quot;,
+                &quot;uco-observable:rangeOffset&quot;: 2032140288,
+                &quot;uco-observable:rangeSize&quot;: 29236373504
+            }
+        ]
+    }</pre>
+</div></div><p>CASE also uses the <code>PathRelationFacet</code> on relationships between a file and its logical location within a file system.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">    {
+        &quot;@id&quot;: &quot;kb:filesystem-relationship-f64f857e-6c87-417f-9166-5aaaed8a6fd2&quot;,
+        &quot;@type&quot;: &quot;uco-observable:ObservableRelationship&quot;,
+        &quot;uco-core:source&quot;: {
+            &quot;@id&quot;: &quot;kb:downloaded-file-3961dae3-2bca-4ccb-97fd-9919192e81db&quot;
+        },
+        &quot;uco-core:target&quot;: {
+            &quot;@id&quot;: &quot;kb:filesystem-e2a02b5a-7e7e-489f-ab43-3ffadab4ac82&quot;
+        },
+        &quot;uco-core:kindOfRelationship&quot;: {
+            &quot;@type&quot;: &quot;uco-vocabulary:ObservableObjectRelationshipVocab&quot;,
+            &quot;@value&quot;: &quot;Contained_Within&quot;
+        },
+        &quot;uco-core:isDirectional&quot;: true,
+        &quot;uco-core:hasFacet&quot;: [
+            {
+                &quot;@type&quot;: &quot;uco-observable:PathRelationFacet&quot;,
+                &quot;uco-observable:path&quot;: &quot;/img_LGE Nexus 5 Full Image.raw/vol_vol31/media/0/Download/download.jpg&quot;
+            }
+        ]
+    }</pre>
+</div></div>
+</div></div><h3 id="CASEOntologyDesignDocument-6.6.Vocabularies">6.6. Vocabularies</h3>
+To maintain consistency, CASE uses the UCO vocabulary pattern to represent certain proporties with a set of known values. For instance, representation of a <a href="https://github.com/casework/CASE-Examples/tree/master/examples/illustrations/reconstructed_file">Reconstructed File</a> uses the <code>HashNameVocab</code> UCO vocabulary to represent the hash algorithm (SHA256) used on the file content), and the <code>RecoveredObjectStatusVocab</code> UCO vocabulary to represent the recovered status of object attributes. 
+
+<p>The vocabularies used in CASE and UCO are semi-open, so that other non-standardized values can be used if the defined vocabulary does not contain a suitable selection. To maintain consistency, it is recommended to add new terms to the vocabulary whenever feasible. 
+
+<p> </p><h3 id="CASEOntologyDesignDocument-6.7.SeparateNamespaceforDomainAssertions">6.7. Separate Namespace for Domain Assertions</h3>
+<p>CASE follows the UCO pattern of using separate name spaces for domain assertions, and uses the same conventions for naming classes and properties. Within CASE, the Investigation namespace contains concepts and terms specific to cyber-investigations.</p>
+<p> </p>
+<h3 id="CASEOntologyDesignDocument-6.8.Cyber-investigationpatterns">6.8. Cyber-investigation patterns</h3>
+<p>The domain of the CASE ontology is cyber-investigations in general, and includes contextual information about an incident/incident as shown here, as well as provenance information as shown in the next section.</p>
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">    {
+        {
+            "@id": "kb:bundle-5715fcf3-6bc8-4996-8f7f-fdf289f31649",
+            "@type": "uco-core:Bundle",
+            "uco-core:description": "Evidence in cross border investigation into weapon of mass destruction",
+            "uco-core:object": [
+                {
+                    "@id": "kb:investigation2-2ca2b7dd-da07-4ad4-9deb-0a0c4c6ff4f6",
+                    "@type": "case-investigation:Investigation",
+                    "uco-core:name": "CROSSOVER_2018_12111001",
+                    "case-investigation:focus": "Weapon of Mass Destruction (Deathly Hallows)",
+                    "uco-core:description": "The subject Ares Lupin was arrested on suspicion of acquiring a weapon of mass destruction. The Samsung smartphone he was carrying was preserved as evidence.",
+                    "uco-core:object": [
+                        "list of uuids"
+                    ]
+                }
+            ]
+        }
+    }</pre>
+
+<p> </p><h3 id="CASEOntologyDesignDocument-6.9.Provenancepatterns">6.9. Provenance patterns</h3><p>Provenance of evidentiary material in an investigation needs to be tracked. Therefore, the CASE ontology includes concepts for representing the source and chain-of-custody (including any operations) for evidence related to an investigation.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">    {
+        &quot;@id&quot;: &quot;kb:provenance-record-b84dc6ca-6187-4fc3-b5f1-c15142b103a8&quot;,
+        &quot;@type&quot;: &quot;case-investigation:ProvenanceRecord&quot;,
+        &quot;case-investigation:exhibitNumber&quot;: &quot;C001-HD1&quot;,
+        &quot;case-investigation:rootExhibitNumber&quot;: &quot;Collection-001&quot;,
+        &quot;uco-core:description&quot;: &quot;Forensic duplicate of hard drive used by subject&quot;,
+        &quot;uco-core:object&quot;: [
+            {
+                &quot;@id&quot;: &quot;kb:hard-drive-d3a2304e-ef6c-4cbd-94cb-425880f88546&quot;
+            }
+        ]
+    },</pre>
+</div></div><ul><li><p>In a <code>ProvenanceRecord</code>, the <code>rootExhibitNumber</code> is a unique identifier assigned to a set of objects at the start of their treatment as part of an investigation. A subsequent <code>ProvenanceRecord</code> can reference more than one <code>rootExhibitNumber</code> when information combines multiple sources.</p></li><li><p>At any stage during the treatment of data, a unique <code>exhibitNumber</code> can be assigned in a <code>ProvenanceRecord</code> by the performer/instrument to differentiate it from other objects within the given context.</p></li><li><p>The optional <code>informedBy</code> relationship between <code>InvestigativeActions</code> explicitly represents backtracking links in the provenance/lineage of an object. An <code>InvestigativeAction</code> can only have one link back to the causal <code>InvestigativeAction</code>.</p></li><li><p>The optional <code>derivedFrom</code> relationship between objects explicitly represents backtracking links in the provenance/lineage of an object. An object can have multiple <code>derivedFrom</code> links back to multiple objects. There is currently no way to track the scenario of a bulk input to an InvestigativeAction with multiple outputs that are not explicitly linked to specific parts of the bulk input (this is currently left to the user, but could be discussed in future).</p></li></ul><p />
+
+<h2 id="CASEOntologyDesignDocument-7.CASERe-useofConceptsinUCO">7.   CASE Re-use of Concepts in UCO </h2><p> </p><p>This section describes the re-use of concepts from the Unified Cyber Ontology (UCO). With respect to UCO content, this section is informative, not normative. The authoritative documentation and encodings of UCO are published at the UCO website [<a href="https://unifiedcyberontology.org/" data-card-appearance="inline" class="external-link" rel="nofollow">https://unifiedcyberontology.org/</a> ]. With respect to the use of UCO with CASE, however, this section should be considered prescriptive. The UCO concepts discussed herein are those that CASE re-uses directly or may interface with.</p><p> </p><h3 id="CASEOntologyDesignDocument-7.1.UCOObjects">7.1. UCO Objects</h3><p>A UCO object is a representation of a fundamental cyber-relevant concept either directly inherent to the cyber domain or indirectly related to the cyber domain and necessary for contextually characterizing cyber domain concepts and relationships. Within the Unified Cyber Ontology (UCO) structure this is the base class defining the minimal core set of properties to act as a consistent, unifying, and interoperable foundation for all explicit and inter-relatable content objects. Objects and Object Identifiers are described in Sections 3 and 4 of the <a href="https://unifiedcyberontology.org/resources/uco_design_document.html" class="external-link" rel="nofollow">UCO Design Document</a>.</p>
+<p> </p><h4 id="CASEOntologyDesignDocument-7.1.1.Relationships">7.1.1.    Relationships</h4><p>See Section 6 of the <a href="https://unifiedcyberontology.org/resources/uco_design_document.html" class="external-link" rel="nofollow">UCO Design Document</a>.</p>
+<h3 id="CASEOntologyDesignDocument-7.2.UCOFacets">7.2.  UCO Facets</h3><p>See Section 5 of the <a href="https://unifiedcyberontology.org/resources/uco_design_document.html" class="external-link" rel="nofollow">UCO Design Document</a>.</p><h3 id="CASEOntologyDesignDocument-7.3.UCOVocabularies">7.3.  UCO Vocabularies</h3><p>See Section 8 of the <a href="https://unifiedcyberontology.org/resources/uco_design_document.html" class="external-link" rel="nofollow">UCO Design Document</a>.</p><h2 id="CASEOntologyDesignDocument-8.InstanceDatainCASE">8.   Instance Data in CASE</h2><p> Data represented using the CASE ontology is serialized in the syntax JSON-LD (<a href="https://www.w3.org/2018/json-ld-wg/" data-card-appearance="inline" class="external-link" rel="nofollow">https://www.w3.org/2018/json-ld-wg/</a> ; specification: <a href="https://www.w3.org/TR/json-ld11/" data-card-appearance="inline" class="external-link" rel="nofollow">https://www.w3.org/TR/json-ld11/</a> ). </p><p> </p>
+<h2 id="CASEOntologyDesignDocument-9.LicenseforCASE">9.        License for CASE</h2><p> All new inbound code contributions to CASE and specifications must be made using the Apache License, Version 2.0, available at <a href="https://www.apache.org/licenses/LICENSE-2.0" class="external-link" rel="nofollow">https://www.apache.org/licenses/LICENSE-2.0</a> </p><p>Documentation other than specifications will be received and made available under the Creative Commons Attribution 4.0 International License (available at <a href="http://creativecommons.org/licenses/by/4.0/" data-card-appearance="inline" class="external-link" rel="nofollow">http://creativecommons.org/licenses/by/4.0/</a> ).</p><h2 id="CASEOntologyDesignDocument-10.Acknowledgements">10.        Acknowledgements</h2><p>Development of CASE began in 2014 as a collaboration between the DoD Cyber Crime Center (DC3) and MITRE, led by Dr. Eoghan Casey and Sean Barnum, involving the National Institute of Standards and Technology (NIST). In response to international interest, this initiative became an open source evolving standard, with hundreds of participants in industry, government and academia around the globe.</p><p>Early contributors include the Netherlands Forensic Institute (NFI), the Italian Institute of Legal Informatics and Judicial Systems (IGSG-CNR), FireEye, and University of Lausanne. CASE governance and community coordination were formalized with support of Harm van Beek, Rich Brown, Ryan Griffith, Cory Hall, Christopher Hargreaves, Jessica Hyde, Deborah Nichols, and Martin Westman. Growing international involvement is tracked on the CASE website: <a href="https://caseontology.org/community/members.html" data-card-appearance="inline" class="external-link" rel="nofollow">https://caseontology.org/community/members.html</a> </p>
+<p><br/></p><hr/><p><a href="#_ftnref1" rel="nofollow">[1]</a> “Profiles” is the current W3C designation for subsets of OWL 2 that are restricted for certain representational and/or computational purposes. Other (and past W3C) sources have referred to OWL profiles as “dialects” (e.g., <a href="https://graphdb.ontotext.com/documentation/8.0/enterprise/introduction-to-semantic-web.html" class="external-link" rel="nofollow">https://graphdb.ontotext.com/documentation/8.0/enterprise/introduction-to-semantic-web.html</a>), “species” (e.g., <a href="https://www.w3.org/2007/OWL/wiki/Profile_Explanations" data-card-appearance="inline" class="external-link" rel="nofollow">https://www.w3.org/2007/OWL/wiki/Profile_Explanations</a> ), or “flavors” (e.g., <a href="https://www.cambridgesemantics.com/blog/semantic-university/learn-owl-rdfs/flavors-of-owl/" class="external-link" rel="nofollow">https://www.cambridgesemantics.com/blog/semantic-university/learn-owl-rdfs/flavors-of-owl/</a>).</p><hr/>
+                    </div>
+                </div>             </div> 
+        </div>     

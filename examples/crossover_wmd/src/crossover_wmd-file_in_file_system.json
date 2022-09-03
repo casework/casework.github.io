@@ -1,12 +1,12 @@
 [
     {
-        "@id": "kb:filesystem-relationship-uuid",
-        "@type": "uco-core:Relationship",
+        "@id": "kb:filesystem-relationship-d26cce22-bae1-4d34-ac01-6620f8bdd6b9",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
-            "@id": "kb:F7CAD990-6687-4849-89DC-55795675F3F5"
+            "@id": "kb:file-f7cad990-6687-4849-89dc-55795675f3f5"
         },
         "uco-core:target": {
-            "@id": "kb:filesystem-uuid"
+            "@id": "kb:filesystem-440e36cc-7451-4cf1-9db0-1a8ca8537a1c"
         },
         "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:isDirectional": true,
@@ -23,7 +23,7 @@
         ]
     },
     {
-        "@id": "kb:userdata-partition-uuid",
+        "@id": "kb:filesystem-6c344839-2ee8-4d63-851b-6710a35c33ac",
         "@type": "uco-observable:FileSystem",
         "uco-core:hasFacet": [
             {

@@ -6,7 +6,7 @@
             "@id": "kb:msgstoredb-16805dff-05f9-4cba-9266-d5fa712f3d8f"
         },
         "uco-core:target": {
-            "@id": "kb:F3FD304E-EF6C-4CBD-94CB-425880F82748"
+            "@id": "kb:forensicimage-f3fd304e-ef6c-4cbd-94cb-425880f82748"
         },
         "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:isDirectional": true,

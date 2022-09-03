@@ -1,12 +1,12 @@
 [
     {
-        "@id": "kb:Reddit-6F321BAA-CC57-4C0A-9DD2-7F2038FD44D1",
+        "@id": "kb:reddit-6f321baa-cc57-4c0a-9dd2-7f2038fd44d1",
         "@type": "uco-observable:DigitalAccount",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:AccountFacet",
                 "uco-observable:accountIssuer": {
-                    "@id": "kb:organization-reddit-uuid"
+                    "@id": "kb:organization-reddit-d5be6c8f-17ed-43fe-bc03-a5f79132f256"
                 },
                 "uco-observable:accountIdentifier": "aresthewerewolf",
                 "uco-observable:isActive": true
@@ -27,13 +27,13 @@
         ]
     },
     {
-        "@id": "kb:LoginDataC316C405-9326-4F28-9B8D-44A3BB9E7283",
-        "@type": "uco-core:Relationship",
+        "@id": "kb:relationship-e30adaa6-2bc0-45f8-a9e4-24f1c1583fe6",
+        "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
-            "@id": "kb:Reddit-6F321BAA-CC57-4C0A-9DD2-7F2038FD44D1"
+            "@id": "kb:reddit-6f321baa-cc57-4c0a-9dd2-7f2038fd44d1"
         },
         "uco-core:target": {
-            "@id": "kb:ChromeLoginData-16805DFF-05F9-4CBA-9266-D5FA712F3D8F"
+            "@id": "kb:chromelogindata-16805dff-05f9-4cba-9266-d5fa712f3d8f"
         },
         "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:isDirectional": true,
@@ -53,7 +53,7 @@
         ]
     },
     {
-        "@id": "kb:ChromeLoginData-16805DFF-05F9-4CBA-9266-D5FA712F3D8F",
+        "@id": "kb:chromelogindata-16805dff-05f9-4cba-9266-d5fa712f3d8f",
         "@type": "uco-observable:ObservableObject"
     }
 ]
