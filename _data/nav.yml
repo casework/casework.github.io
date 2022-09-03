@@ -49,12 +49,12 @@
       link: /resources/charter.html
     - name: Code of Conduct
       link: /resources/coc.html
-    - name: Roadmap
-      link: /resources/roadmap.html
     - name: GitHub Policies
       link: /resources/github_policies.html
     - name: GitHub Repos
       link: /resources/github_repos.html
+    - name: Design Document
+      link: /resources/case_design_document.html
     - name: Data Guidance
       link: /resources/instance_data.html
     - name: FAQ
