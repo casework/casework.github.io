@@ -15,13 +15,13 @@
             "uco-configuration:configurationEntry": [
                 {
                     "@type": "uco-configuration:ConfigurationEntry",
-                    "uco-tool:itemName": "DeviceInfoConnectionType",
-                    "uco-tool:itemValue": "Cable No. 130"
+                    "uco-configuration:itemName": "DeviceInfoConnectionType",
+                    "uco-configuration:itemValue": "Cable No. 130"
                 },
                 {
                     "@type": "uco-configuration:ConfigurationEntry",
-                    "uco-tool:itemName": "ExtractionType",
-                    "uco-tool:itemValue": "Physical"
+                    "uco-configuration:itemName": "ExtractionType",
+                    "uco-configuration:itemValue": "Physical"
                 }
             ]
         }

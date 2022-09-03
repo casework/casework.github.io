@@ -1,3 +1,5 @@
+@prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix configuration: <https://ontology.unifiedcyberontology.org/uco/configuration/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
 @prefix location: <https://ontology.unifiedcyberontology.org/uco/location/> .
@@ -6,7 +8,6 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix tool: <https://ontology.unifiedcyberontology.org/uco/tool/> .
 @prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
@@ -18,7 +19,221 @@
 	sh:result
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/2AF6FCF3-91D3-4457-9333-ABAB67F8FB91> ;
+			sh:focusNode <http://example.org/kb/account-90652808-7341-40d3-9285-774d865ad3f9> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:AccountFacet ;
+				uco-observable:accountIdentifier "31647934784@s.whatsapp.net" ;
+				uco-observable:accountIssuer <http://example.org/kb/organization-whatsapp-7a3fb3d1-0b30-4305-8c9e-f8f90f839bf3> ;
+				uco-observable:isActive "true"^^xsd:boolean ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/account-90652808-7341-40d3-9285-774d865ad3f9> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:ApplicationAccountFacet ;
+				uco-observable:application <http://example.org/kb/whatsapp-868abc08-8c21-11e9-934e-0c4de9c21b53> ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/account-90652808-7341-40d3-9285-774d865ad3f9> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:DigitalAccountFacet ;
+				uco-observable:displayName "Ares Lupin" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/application-whatsapp-e662a9de-02bb-47ad-8666-625a0a5dc2fa> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:ApplicationFacet ;
+				ns1:appName "WhatsApp" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/cellebritexml-report-ab6beb0b-2fcc-4326-8685-1159c7ea6deb> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:FileFacet ;
+				uco-observable:extension "xml" ;
+				uco-observable:fileName "19_UFED_ANDROID_CROSSOVER.xml" ;
+				uco-observable:isDirectory "false"^^xsd:boolean ;
+				uco-observable:observableCreatedTime "2020-05-16:10:12.40Z"^^xsd:dateTime ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/contentdata-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:ContentDataFacet ;
+				uco-observable:dataPayload "Excellent - we need all the help we can get. Sent from my Samsung Galaxy smartphone" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/emailaccount-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:DigitalAccountFacet ;
+				uco-observable:displayName "Harley Quinn" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/emailaccount-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:EmailAccountFacet ;
+				uco-observable:emailAddress <http://example.org/kb/emailaddress-456a2bac-8c21-11e9-8902-0c4de9c24de5> ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/emailaccount-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:EmailAccountFacet ;
+				uco-observable:emailAddress <http://example.org/kb/emailaddress-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/emailaddress-456a2bac-8c21-11e9-8902-0c4de9c24de5> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:EmailAddressFacet ;
+				uco-observable:addressValue "badquinn3@gmail.com " ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/emailaddress-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:EmailAddressFacet ;
+				uco-observable:addressValue "aresthewerewolf@gmail.com" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/emailmessage-2c032220-8c21-11e9-9c99-0c4de9c21b53> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:EmailMessageFacet ;
+				uco-observable:application <http://example.org/kb/gmail-a1ce9965-ba9c-4fa1-9bfe-58c68ecaadc5> ;
+				uco-observable:bodyRaw <http://example.org/kb/contentdata-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d> ;
+				uco-observable:messageID "CAKBqNfyKo+pvHkJy6kwO82jTbkNA@mail.gmail.com" ;
+				uco-observable:sender <http://example.org/kb/emailaccount-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
+				uco-observable:sentTime "2018-11-20T21:28:07+00:00"^^xsd:dateTime ;
+				uco-observable:subject "Re: Bank transfer ?" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/file-2af6fcf3-91d3-4457-9333-abab67f8fb91> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -43,7 +258,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/2AF6FCF3-91D3-4457-9333-ABAB67F8FB91> ;
+			sh:focusNode <http://example.org/kb/file-2af6fcf3-91d3-4457-9333-abab67f8fb91> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -64,7 +279,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/2AF6FCF3-91D3-4457-9333-ABAB67F8FB91> ;
+			sh:focusNode <http://example.org/kb/file-2af6fcf3-91d3-4457-9333-abab67f8fb91> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -84,7 +299,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/39ff4987-8ae5-47e3-8369-dbd0d5f79398> ;
+			sh:focusNode <http://example.org/kb/file-cd52c3b8-7759-40b7-ae10-dfc90a35f644> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -95,13 +310,16 @@
 				sh:path core:hasFacet ;
 			] ;
 			sh:value [
-				a uco-observable:URLFacet ;
-				uco-observable:fullValue "https://www.friday-magazine.ch/fr/" ;
+				a uco-observable:FileFacet ;
+				uco-observable:extension "db" ;
+				uco-observable:fileName "data/com.android.providers.telephony/databases/telephony.db" ;
+				uco-observable:fileSystemType "EXT3" ;
+				uco-observable:isDirectory "false"^^xsd:boolean ;
 			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/456a2bac-8c21-11e9-8902-0c4de9c24de5> ;
+			sh:focusNode <http://example.org/kb/file-f7cad990-6687-4849-89dc-55795675f3f5> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -112,93 +330,23 @@
 				sh:path core:hasFacet ;
 			] ;
 			sh:value [
-				a uco-observable:EmailAddressFacet ;
-				uco-observable:addressValue "badquinn3@gmail.com " ;
+				a uco-observable:FileFacet ;
+				ns1:fileLocalPath "files/image/Elder_Wand.png" ;
+				uco-observable:accessedTime "2018-11-30T09:43:24+00:00"^^xsd:dateTime ;
+				uco-observable:allocationStatus "allocated" ;
+				uco-observable:extension ".png" ;
+				uco-observable:fileName "the.apk" ;
+				uco-observable:filePath "/Root/media/0/Download/Elder_Wand.png" ;
+				uco-observable:fileSystemType "ExtX" ;
+				uco-observable:isDirectory "false"^^xsd:boolean ;
+				uco-observable:modifiedTime "2018-11-30T09:43:25+00:00"^^xsd:dateTime ;
+				uco-observable:observableCreatedTime "2018-11-30T09:43:24+00:00"^^xsd:dateTime ;
+				uco-observable:sizeInBytes "534167"^^xsd:integer ;
 			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/860FC853-9C3F-41FC-B144-8AC80D8F5849-URLHistory> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/860FC853-9C3F-41FC-B144-8AC80D8F5849-URLHistory> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/860FC853-9C3F-41FC-B144-8AC80D8F5849-URLHistory> ;
-			sh:resultMessage "Value does not have class uco-observable:URLHistoryEntry" ;
-			sh:resultPath uco-observable:urlHistoryEntry ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class uco-observable:URLHistoryEntry ;
-				sh:nodeKind sh:IRI ;
-				sh:path uco-observable:urlHistoryEntry ;
-			] ;
-			sh:value [
-				ns1:allocationStatus "allocated" ;
-				uco-observable:browserInformation <http://example.org/kb/5d96df90-d9e1-423c-b8db-c2327812ab38> ;
-				uco-observable:browserUserProfile <http://example.org/kb/profile--account-uuid> ;
-				uco-observable:expirationTime "NULL" ;
-				uco-observable:firstVisit "2018-12-06T18:52:21+00:00"^^xsd:dateTime ;
-				uco-observable:lastVisit "2017-01-25T02:20:22+00:00"^^xsd:dateTime ;
-				uco-observable:manuallyEnteredCount "0"^^xsd:integer ;
-				uco-observable:pageTitle "Friday Magazine | Home" ;
-				uco-observable:referrerUrl <http://example.org/kb/14354987-8ae5-47e3-8369-dbd0d5f77489> ;
-				uco-observable:url <http://example.org/kb/39ff4987-8ae5-47e3-8369-dbd0d5f79398> ;
-				uco-observable:visitCount "1"^^xsd:integer ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/860FC853-9C3F-41FC-B144-8AC80D8F5849-URLHistory> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath uco-observable:urlHistoryEntry ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class uco-observable:URLHistoryEntry ;
-				sh:nodeKind sh:IRI ;
-				sh:path uco-observable:urlHistoryEntry ;
-			] ;
-			sh:value [
-				ns1:allocationStatus "allocated" ;
-				uco-observable:browserInformation <http://example.org/kb/5d96df90-d9e1-423c-b8db-c2327812ab38> ;
-				uco-observable:browserUserProfile <http://example.org/kb/profile--account-uuid> ;
-				uco-observable:expirationTime "NULL" ;
-				uco-observable:firstVisit "2018-12-06T18:52:21+00:00"^^xsd:dateTime ;
-				uco-observable:lastVisit "2017-01-25T02:20:22+00:00"^^xsd:dateTime ;
-				uco-observable:manuallyEnteredCount "0"^^xsd:integer ;
-				uco-observable:pageTitle "Friday Magazine | Home" ;
-				uco-observable:referrerUrl <http://example.org/kb/14354987-8ae5-47e3-8369-dbd0d5f77489> ;
-				uco-observable:url <http://example.org/kb/39ff4987-8ae5-47e3-8369-dbd0d5f79398> ;
-				uco-observable:visitCount "1"^^xsd:integer ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
+			sh:focusNode <http://example.org/kb/file-f7cad990-6687-4849-89dc-55795675f3f5> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -209,28 +357,17 @@
 				sh:path core:hasFacet ;
 			] ;
 			sh:value [
-				a uco-observable:EmailAddressFacet ;
-				uco-observable:addressValue "aresthewerewolf@gmail.com" ;
+				a uco-observable:ContentDataFacet ;
+				uco-observable:hash [
+					a types:Hash ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
+					types:hashValue "13f1393bfe548620da920fac9865965e"^^xsd:hexBinary ;
+				] ;
 			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/9A3FFCF3-91D3-4457-9333-ABAB67F8AB4F> ;
-			sh:resultMessage "Value does not have class core:UcoObject" ;
-			sh:resultPath core:source ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:UcoObject ;
-				sh:minCount "1"^^xsd:integer ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:source ;
-			] ;
-			sh:value <http://example.org/kb/860FC853-9C3F-41FC-B144-8AC80D8F5849-URLHistory> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/9A3FFCF3-91D3-4457-9333-ABAB67F8AB4F> ;
+			sh:focusNode <http://example.org/kb/file-f7cad990-6687-4849-89dc-55795675f3f5> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -241,16 +378,132 @@
 				sh:path core:hasFacet ;
 			] ;
 			sh:value [
-				a
-					ns1:TableRelationFacet ,
-					core:Facet
-					;
-				ns1:tableName "urls" ;
+				a uco-observable:ExtInodeFacet ;
+				uco-observable:extInodeID "930900"^^xsd:integer ;
+				uco-observable:extSGID "1023"^^xsd:integer ;
+				uco-observable:extSUID "1023"^^xsd:integer ;
 			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/9A3FFCF3-91D3-4457-9333-ABAB67F8AB4F> ;
+			sh:focusNode <http://example.org/kb/filesystem-440e36cc-7451-4cf1-9db0-1a8ca8537a1c> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:ContentDataFacet ;
+				uco-observable:hash [
+					a types:Hash ;
+					types:hashMethod "MD5"^^vocabulary:HashNameVocab ;
+					types:hashValue "TBD"^^xsd:hexBinary ;
+				] ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/filesystem-440e36cc-7451-4cf1-9db0-1a8ca8537a1c> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:DiskPartitionFacet ;
+				uco-observable:diskPartitionType "GPT" ;
+				uco-observable:partitionID "06" ;
+				uco-observable:partitionLength "3456630784"^^xsd:integer ;
+				uco-observable:partitionOffset "541196288"^^xsd:integer ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/filesystem-440e36cc-7451-4cf1-9db0-1a8ca8537a1c> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:FileSystemFacet ;
+				uco-observable:fileSystemType "EXT3" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/filesystem-6c344839-2ee8-4d63-851b-6710a35c33ac> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:ContentDataFacet ;
+				uco-observable:hash [
+					a types:Hash ;
+					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
+					types:hashValue "0611ea093d19b1c73a5285ff43741dd77f2a8d983c1c71044eb072e44f5dcb0a"^^xsd:hexBinary ;
+				] ;
+				uco-observable:sizeInBytes "245235000"^^xsd:integer ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/filesystem-6c344839-2ee8-4d63-851b-6710a35c33ac> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:DiskPartitionFacet ;
+				uco-observable:diskPartitionType "GPT" ;
+				uco-observable:partitionID "06" ;
+				uco-observable:partitionLength "245235063"^^xsd:integer ;
+				uco-observable:partitionOffset "63"^^xsd:integer ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/filesystem-6c344839-2ee8-4d63-851b-6710a35c33ac> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:FileSystemFacet ;
+				uco-observable:fileSystemType "EXT3" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/filesystem-relationship-d26cce22-bae1-4d34-ac01-6620f8bdd6b9> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -262,12 +515,13 @@
 			] ;
 			sh:value [
 				a uco-observable:DataRangeFacet ;
-				uco-observable:rangeOffset "22215"^^xsd:integer ;
+				uco-observable:rangeOffset "3121610752"^^xsd:integer ;
+				uco-observable:rangeSize "147871"^^xsd:integer ;
 			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/C1D3237A-6D7F-4E96-BBEF-6EB4C0A621D1> ;
+			sh:focusNode <http://example.org/kb/filesystem-relationship-d26cce22-bae1-4d34-ac01-6620f8bdd6b9> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -278,71 +532,13 @@
 				sh:path core:hasFacet ;
 			] ;
 			sh:value [
-				a uco-observable:AccountFacet ;
-				uco-observable:accountIssuer <http://example.org/kb/organization-salt-uuid> ;
-				uco-observable:isActive "true"^^xsd:boolean ;
+				a uco-observable:PathRelationFacet ;
+				uco-observable:path "/Root/data/com.google.android.gms/app_dg_cache/B0970DD8CBD5F4763E7C602156284D4DD796AE5D/the.apk" ;
 			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/C1D3237A-6D7F-4E96-BBEF-6EB4C0A621D1> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:PhoneAccountFacet ;
-				core:name "" ;
-				uco-observable:phoneNumber "+31647934784" ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:EmailAccountFacet ;
-				uco-observable:emailAddress <http://example.org/kb/99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/EmailMessage-2c032220-8c21-11e9-9c99-0c4de9c21b53> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:EmailMessageFacet ;
-				uco-observable:application <http://example.org/kb/Gmail-uuid> ;
-				uco-observable:bodyRaw <http://example.org/kb/content-data-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d> ;
-				uco-observable:messageID "CAKBqNfyKo+pvHkJy6kwO82jTbkNA@mail.gmail.com" ;
-				uco-observable:sender <http://example.org/kb/EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
-				uco-observable:sentTime "2018-11-20T21:28:07+00:00"^^xsd:dateTime ;
-				uco-observable:subject "Re: Bank transfer ?" ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/F3FD304E-EF6C-4CBD-94CB-425880F82748> ;
+			sh:focusNode <http://example.org/kb/forensicimage-f3fd304e-ef6c-4cbd-94cb-425880f82748> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -370,7 +566,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/F3FD304E-EF6C-4CBD-94CB-425880F82748> ;
+			sh:focusNode <http://example.org/kb/forensicimage-f3fd304e-ef6c-4cbd-94cb-425880f82748> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -393,102 +589,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/F7CAD990-6687-4849-89DC-55795675F3F5> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:FileFacet ;
-				ns1:fileLocalPath "files/image/Elder_Wand.png" ;
-				uco-observable:accessedTime "2018-11-30T09:43:24+00:00"^^xsd:dateTime ;
-				uco-observable:allocationStatus "allocated" ;
-				uco-observable:extension ".png" ;
-				uco-observable:fileName "the.apk" ;
-				uco-observable:filePath "/Root/media/0/Download/Elder_Wand.png" ;
-				uco-observable:fileSystemType "ExtX" ;
-				uco-observable:isDirectory "false"^^xsd:boolean ;
-				uco-observable:modifiedTime "2018-11-30T09:43:25+00:00"^^xsd:dateTime ;
-				uco-observable:observableCreatedTime "2018-11-30T09:43:24+00:00"^^xsd:dateTime ;
-				uco-observable:sizeInBytes "534167"^^xsd:integer ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/F7CAD990-6687-4849-89DC-55795675F3F5> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:ContentDataFacet ;
-				uco-observable:hash [
-					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
-					types:hashValue "13f1393bfe548620da920fac9865965e"^^xsd:hexBinary ;
-				] ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/F7CAD990-6687-4849-89DC-55795675F3F5> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:ExtInodeFacet ;
-				uco-observable:extInodeID "930900"^^xsd:integer ;
-				uco-observable:extSGID "1023"^^xsd:integer ;
-				uco-observable:extSUID "1023"^^xsd:integer ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/Gmail-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/Gmail-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/Gmail-uuid> ;
+			sh:focusNode <http://example.org/kb/gmail-a1ce9965-ba9c-4fa1-9bfe-58c68ecaadc5> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -505,557 +606,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/LatLong-8667ec82-8c21-11e9-934e-0c4de9c21b53> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a location:LatLongCoordinatesFacet ;
-				location:latitude "46.53722222222222"^^xsd:decimal ;
-				location:longitude "6.579166666666667"^^xsd:decimal ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/LoginDataC316C405-9326-4F28-9B8D-44A3BB9E7283> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a
-					ns1:TableRelationFacet ,
-					core:Facet
-					;
-				ns1:name "logins" ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/LoginDataC316C405-9326-4F28-9B8D-44A3BB9E7283> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:DataRangeFacet ;
-				uco-observable:rangeOffset "13751"^^xsd:integer ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/Reddit-6F321BAA-CC57-4C0A-9DD2-7F2038FD44D1> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:AccountAuthenticationFacet ;
-				uco-observable:password "v10j֯�H��x�_�_o�i�" ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/Reddit-6F321BAA-CC57-4C0A-9DD2-7F2038FD44D1> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:AccountFacet ;
-				uco-observable:accountIdentifier "aresthewerewolf" ;
-				uco-observable:accountIssuer <http://example.org/kb/organization-reddit-uuid> ;
-				uco-observable:isActive "true"^^xsd:boolean ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/Reddit-6F321BAA-CC57-4C0A-9DD2-7F2038FD44D1> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:DigitalAccountFacet ;
-				uco-observable:accountLogin "aresthewerewolf" ;
-				uco-observable:displayName "Ares Lupin" ;
-				uco-observable:firstLoginTime "2018-11-26T19:00:31+00:00"^^xsd:dateTime ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/WhatsApp-90652808-7341-40D3-9285-774D865AD3F9> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:AccountFacet ;
-				uco-observable:accountIdentifier "31647934784@s.whatsapp.net" ;
-				uco-observable:accountIssuer <http://example.org/kb/organization-whatsapp-uuid> ;
-				uco-observable:isActive "true"^^xsd:boolean ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/WhatsApp-90652808-7341-40D3-9285-774D865AD3F9> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:ApplicationAccountFacet ;
-				uco-observable:application <http://example.org/kb/application-whatsapp-uuid> ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/WhatsApp-90652808-7341-40D3-9285-774D865AD3F9> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:DigitalAccountFacet ;
-				uco-observable:displayName "Ares Lupin" ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/account-90652808-7341-40d3-9285-774d865ad3f9> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:AccountFacet ;
-				uco-observable:accountIdentifier "31647934784@s.whatsapp.net" ;
-				uco-observable:accountIssuer <http://example.org/kb/organization-whatsapp-uuid> ;
-				uco-observable:isActive "true"^^xsd:boolean ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/account-90652808-7341-40d3-9285-774d865ad3f9> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:ApplicationAccountFacet ;
-				uco-observable:application <http://example.org/kb/whatsapp-868abc08-8c21-11e9-934e-0c4de9c21b53> ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/account-90652808-7341-40d3-9285-774d865ad3f9> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:DigitalAccountFacet ;
-				uco-observable:displayName "Ares Lupin" ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/application-whatsapp-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/application-whatsapp-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/application-whatsapp-uuid> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:ApplicationFacet ;
-				ns1:appName "WhatsApp" ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/associated-account-phonenumber1> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/associated-account-phonenumber1> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/cellebrite-pa1-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/cellebrite-pa1-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/cellebrite-pa1-uuid> ;
-			sh:resultMessage "Value does not have class core:Facet" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a tool:ToolConfigurationTypeFacet ;
-				tool:configurationSettings [
-					a tool:ConfigurationSettingType ;
-					tool:itemName "OutputFormat" ;
-					tool:itemValue "XML" ;
-				] ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/cellebrite-pa1-uuid> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a tool:ToolConfigurationTypeFacet ;
-				tool:configurationSettings [
-					a tool:ConfigurationSettingType ;
-					tool:itemName "OutputFormat" ;
-					tool:itemValue "XML" ;
-				] ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/cellebrite-ufed1-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/cellebrite-ufed1-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/cellebrite-ufed1-uuid> ;
-			sh:resultMessage "Value does not have class core:Facet" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a tool:ToolConfigurationTypeFacet ;
-				tool:configurationSettings
-					[
-						a tool:ConfigurationSettingType ;
-						tool:itemName "DeviceInfoConnectionType" ;
-						tool:itemValue "Cable No. 130" ;
-					] ,
-					[
-						a tool:ConfigurationSettingType ;
-						tool:itemName "ExtractionType" ;
-						tool:itemValue "Physical" ;
-					]
-					;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/cellebrite-ufed1-uuid> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a tool:ToolConfigurationTypeFacet ;
-				tool:configurationSettings
-					[
-						a tool:ConfigurationSettingType ;
-						tool:itemName "DeviceInfoConnectionType" ;
-						tool:itemValue "Cable No. 130" ;
-					] ,
-					[
-						a tool:ConfigurationSettingType ;
-						tool:itemName "ExtractionType" ;
-						tool:itemValue "Physical" ;
-					]
-					;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/cellebritexml-report-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/cellebritexml-report-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/content-data-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:ContentDataFacet ;
-				uco-observable:dataPayload "Excellent - we need all the help we can get. Sent from my Samsung Galaxy smartphone" ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/email-account-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:DigitalAccountFacet ;
-				uco-observable:displayName "Harley Quinn" ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/email-account-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:EmailAccountFacet ;
-				uco-observable:emailAddress <http://example.org/kb/456a2bac-8c21-11e9-8902-0c4de9c24de5> ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/eoghancasey-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/eoghancasey-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/eoghancasey-uuid> ;
+			sh:focusNode <http://example.org/kb/identity-0108480e-1e7a-4341-8b1d-558877c4cc39> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -1073,212 +624,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/esc-lausanne-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/esc-lausanne-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/filesystem-relationship-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/filesystem-relationship-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/filesystem-relationship-uuid> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:DataRangeFacet ;
-				uco-observable:rangeOffset "3121610752"^^xsd:integer ;
-				uco-observable:rangeSize "147871"^^xsd:integer ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/filesystem-relationship-uuid> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:PathRelationFacet ;
-				uco-observable:path "/Root/data/com.google.android.gms/app_dg_cache/B0970DD8CBD5F4763E7C602156284D4DD796AE5D/the.apk" ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/filesystem-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/filesystem-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/filesystem-uuid> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:ContentDataFacet ;
-				uco-observable:hash [
-					a types:Hash ;
-					types:hashMethod "MD5"^^vocabulary:HashNameVocab ;
-					types:hashValue "TBD"^^xsd:hexBinary ;
-				] ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/filesystem-uuid> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:DiskPartitionFacet ;
-				uco-observable:diskPartitionType "GPT" ;
-				uco-observable:partitionID "06" ;
-				uco-observable:partitionLength "3456630784"^^xsd:integer ;
-				uco-observable:partitionOffset "541196288"^^xsd:integer ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/filesystem-uuid> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:FileSystemFacet ;
-				uco-observable:fileSystemType "EXT3" ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/forensic-computer1-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/forensic-computer1-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7> ;
+			sh:focusNode <http://example.org/kb/investigation-555e5fbb-ba09-449d-af77-8a210d016fd7> ;
 			sh:resultMessage "Value does not have class core:UcoObject" ;
 			sh:resultPath core:object ;
 			sh:resultSeverity sh:Violation ;
@@ -1293,7 +639,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/investigation-555E5FBB-BA09-449D-AF77-8A210D016FD7> ;
+			sh:focusNode <http://example.org/kb/investigation-555e5fbb-ba09-449d-af77-8a210d016fd7> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:object ;
 			sh:resultSeverity sh:Violation ;
@@ -1308,115 +654,63 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/investigative-action1-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
+			sh:focusNode <http://example.org/kb/investigative-action-99a5c94f-e6cd-4b7c-b189-ea998ee0b31f> ;
+			sh:resultMessage "Value does not have class core:UcoObject" ;
+			sh:resultPath action:result ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:nodeKind sh:IRI ;
+				sh:path action:result ;
 			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/investigative-action1-uuid> ;
+			sh:value <http://example.org/kb/forensicimage-1fedf25f-e662-4dd0-8584-d5b7411acf47> ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/investigative-action2-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
+			sh:focusNode <http://example.org/kb/investigative-action-99a5c94f-e6cd-4b7c-b189-ea998ee0b31f> ;
+			sh:resultMessage "Value does not have class core:UcoObject" ;
+			sh:resultPath action:result ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:nodeKind sh:IRI ;
+				sh:path action:result ;
 			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/investigative-action2-uuid> ;
+			sh:value <http://example.org/kb/provenancerecord-e64b7aed-cecb-4291-81d4-4adb5b8020b2> ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/investigator1-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
+			sh:focusNode <http://example.org/kb/investigativeaction-b4b0805e-84ec-4553-98c2-6f0454829c30> ;
+			sh:resultMessage "Value does not have class core:UcoObject" ;
+			sh:resultPath action:object ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:nodeKind sh:IRI ;
+				sh:path action:object ;
 			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/investigator1-uuid> ;
+			sh:value <http://example.org/kb/provenancerecord-e64b7aed-cecb-4291-81d4-4adb5b8020b2> ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/investigatorrole-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
+			sh:focusNode <http://example.org/kb/latlong-8667ec82-8c21-11e9-934e-0c4de9c21b53> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
 			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/investigatorrole-uuid> ;
+			sh:value [
+				a location:LatLongCoordinatesFacet ;
+				location:latitude "46.53722222222222"^^xsd:decimal ;
+				location:longitude "6.579166666666667"^^xsd:decimal ;
+			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
@@ -1442,35 +736,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/mobileaccount1-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/mobileaccount1-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/mobileaccount1-uuid> ;
+			sh:focusNode <http://example.org/kb/mobileaccount-85704962-fcaa-40dc-b8f0-f838de819ed7> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -1488,7 +754,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/mobileaccount1-uuid> ;
+			sh:focusNode <http://example.org/kb/mobileaccount-85704962-fcaa-40dc-b8f0-f838de819ed7> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -1505,35 +771,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/mobileaccount3-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/mobileaccount3-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/mobileaccount3-uuid> ;
+			sh:focusNode <http://example.org/kb/mobileaccount-c27ec1f4-9adb-45e0-aedc-8cc9abe27172> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -1551,7 +789,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/mobileaccount3-uuid> ;
+			sh:focusNode <http://example.org/kb/mobileaccount-c27ec1f4-9adb-45e0-aedc-8cc9abe27172> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -1565,6 +803,120 @@
 				a uco-observable:MobileAccountFacet ;
 				uco-observable:IMSI "204080515881398" ;
 				uco-observable:MSISDN "31647934784" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/mobiledevice-803df237-bc7e-4e24-a5cb-8157063014b4> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:MobileDeviceFacet ;
+				ns1:deviceActivationTime "2018-06-10T14:31:30.00Z" ;
+				ns1:locationsServicesEnabled "true"^^xsd:boolean ;
+				uco-observable:IMEI "356420075722843" ;
+				uco-observable:bluetoothDeviceName "Galaxy S6 edge" ;
+				uco-observable:clockSetting "__NOT_PROVIDED" ;
+				uco-observable:keypadUnlockCode "__NOT_PROVIDED" ;
+				uco-observable:storageCapacityInBytes "__NOT_PROVIDED" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/mobiledevice-803df237-bc7e-4e24-a5cb-8157063014b4> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:AndroidDeviceFacet ;
+				uco-observable:androidFingerprint "samsung/zeroltexx/zerolte:6.0.1/MMB29K/G925FXXU4DPIL" ;
+				uco-observable:androidID "64cce130286b31b3"^^xsd:hexBinary ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/mobiledevice-803df237-bc7e-4e24-a5cb-8157063014b4> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:BluetoothAddressFacet ;
+				uco-observable:addressValue "D8:C4:E9:7C:2E:F8" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/mobiledevice-803df237-bc7e-4e24-a5cb-8157063014b4> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:DeviceFacet ;
+				uco-observable:manufacturer <http://example.org/kb/organization-fb6c05a0-b6be-4a10-ba62-0e7b1da4c0ec> ;
+				uco-observable:model "SM-G925F" ;
+				uco-observable:serialNumber "RF8H31GS5SF" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/mobiledevice-803df237-bc7e-4e24-a5cb-8157063014b4> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:OperatingSystemFacet ;
+				core:name "Android" ;
+				uco-observable:advertisingID "48500120-c9c5-402e-a6bc-04e2f92ae259" ;
+				uco-observable:manufacturer <http://example.org/kb/organization-fb6c05a0-b6be-4a10-ba62-0e7b1da4c0ec> ;
+				uco-observable:version "6.0.1" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/mobiledevice-803df237-bc7e-4e24-a5cb-8157063014b4> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:WifiAddressFacet ;
+				uco-observable:addressValue "AC:5F:3E:73:E3:78" ;
 			] ;
 		] ,
 		[
@@ -1612,35 +964,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/organization-lebara-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/organization-lebara-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/organization-lebara-uuid> ;
+			sh:focusNode <http://example.org/kb/organization-lebara-3ca7cf13-7d8b-4665-97b9-2c48fdb94ac5> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -1657,35 +981,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/organization-reddit-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/organization-reddit-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/organization-reddit-uuid> ;
+			sh:focusNode <http://example.org/kb/organization-reddit-d5be6c8f-17ed-43fe-bc03-a5f79132f256> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -1702,35 +998,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/organization-salt-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/organization-salt-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/organization-salt-uuid> ;
+			sh:focusNode <http://example.org/kb/organization-salt-42e95dc6-1326-4de8-93df-c399a3514ae9> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -1747,35 +1015,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/organization-telcom-italia-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/organization-telcom-italia-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/organization-telcom-italia-uuid> ;
+			sh:focusNode <http://example.org/kb/organization-telcom-italia-d10330bf-8e9e-45cd-bf1a-ec9c964c270d> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -1792,35 +1032,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/organization-whatsapp-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/organization-whatsapp-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/organization-whatsapp-uuid> ;
+			sh:focusNode <http://example.org/kb/organization-whatsapp-7a3fb3d1-0b30-4305-8c9e-f8f90f839bf3> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -1837,35 +1049,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/partition-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/partition-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/partition-uuid> ;
+			sh:focusNode <http://example.org/kb/partition-d0806935-829b-4909-8e2d-2503b28df89b> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -1883,63 +1067,43 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/primaryuser-email-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
+			sh:focusNode <http://example.org/kb/phoneaccount-c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
 			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/primaryuser-email-uuid> ;
+			sh:value [
+				a uco-observable:AccountFacet ;
+				uco-observable:accountIssuer <http://example.org/kb/organization-salt-42e95dc6-1326-4de8-93df-c399a3514ae9> ;
+				uco-observable:isActive "true"^^xsd:boolean ;
+			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/primaryuser-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
+			sh:focusNode <http://example.org/kb/phoneaccount-c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
 			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/primaryuser-uuid> ;
+			sh:value [
+				a uco-observable:PhoneAccountFacet ;
+				core:name "" ;
+				uco-observable:phoneNumber "+31647934784" ;
+			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/primaryuser-uuid> ;
+			sh:focusNode <http://example.org/kb/primaryuser-1e96406f-d86c-47ee-a6ac-71a57e1c8f19> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -1957,171 +1121,73 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/primaryuser-whatsapp-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
+			sh:focusNode <http://example.org/kb/provenance-record-e64b7aed-cecb-4291-81d4-4adb5b8020b2> ;
+			sh:resultMessage "Value does not have class core:UcoObject" ;
+			sh:resultPath core:object ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:object ;
 			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/primaryuser-whatsapp-uuid> ;
+			sh:value <http://example.org/kb/forensicimage-1fedf25f-e662-4dd0-8584-d5b7411acf47> ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/provenance-record1-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
+			sh:focusNode <http://example.org/kb/reddit-6f321baa-cc57-4c0a-9dd2-7f2038fd44d1> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
 			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/provenance-record1-uuid> ;
+			sh:value [
+				a uco-observable:AccountAuthenticationFacet ;
+				uco-observable:password "v10j֯�H��x�_�_o�i�" ;
+			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/provenance-record13-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
+			sh:focusNode <http://example.org/kb/reddit-6f321baa-cc57-4c0a-9dd2-7f2038fd44d1> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
 			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/provenance-record13-uuid> ;
+			sh:value [
+				a uco-observable:AccountFacet ;
+				uco-observable:accountIdentifier "aresthewerewolf" ;
+				uco-observable:accountIssuer <http://example.org/kb/organization-reddit-d5be6c8f-17ed-43fe-bc03-a5f79132f256> ;
+				uco-observable:isActive "true"^^xsd:boolean ;
+			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/provenance-record2-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
+			sh:focusNode <http://example.org/kb/reddit-6f321baa-cc57-4c0a-9dd2-7f2038fd44d1> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
 			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/provenance-record2-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/provenance-record3-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
+			sh:value [
+				a uco-observable:DigitalAccountFacet ;
+				uco-observable:accountLogin "aresthewerewolf" ;
+				uco-observable:displayName "Ares Lupin" ;
+				uco-observable:firstLoginTime "2018-11-26T19:00:31+00:00"^^xsd:dateTime ;
 			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/provenance-record3-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/provenance-record4-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/provenance-record4-uuid> ;
 		] ,
 		[
 			a sh:ValidationResult ;
@@ -2138,6 +1204,59 @@
 			sh:value [
 				a uco-observable:PathRelationFacet ;
 				uco-observable:path "/data/com.whatsapp/databases/msgstore.db" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/relationship-9a3ffcf3-91d3-4457-9333-abab67f8ab4f> ;
+			sh:resultMessage "Value does not have class core:UcoObject" ;
+			sh:resultPath core:target ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:UcoObject ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:target ;
+			] ;
+			sh:value <http://example.org/kb/2af6fcf3-91d3-4457-9333-abab67f8fb91> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/relationship-9a3ffcf3-91d3-4457-9333-abab67f8ab4f> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a
+					ns1:TableRelationFacet ,
+					core:Facet
+					;
+				ns1:tableName "urls" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/relationship-9a3ffcf3-91d3-4457-9333-abab67f8ab4f> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:DataRangeFacet ;
+				uco-observable:rangeOffset "22215"^^xsd:integer ;
 			] ;
 		] ,
 		[
@@ -2180,35 +1299,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/samsung-device-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/samsung-device-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/samsung-device-uuid> ;
+			sh:focusNode <http://example.org/kb/relationship-e30adaa6-2bc0-45f8-a9e4-24f1c1583fe6> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -2219,19 +1310,16 @@
 				sh:path core:hasFacet ;
 			] ;
 			sh:value [
-				a uco-observable:MobileDeviceFacet ;
-				ns1:deviceActivationTime "2018-06-10T14:31:30.00Z" ;
-				ns1:locationsServicesEnabled "true"^^xsd:boolean ;
-				uco-observable:IMEI "356420075722843" ;
-				uco-observable:bluetoothDeviceName "Galaxy S6 edge" ;
-				uco-observable:clockSetting "__NOT_PROVIDED" ;
-				uco-observable:keypadUnlockCode "__NOT_PROVIDED" ;
-				uco-observable:storageCapacityInBytes "__NOT_PROVIDED" ;
+				a
+					ns1:TableRelationFacet ,
+					core:Facet
+					;
+				ns1:name "logins" ;
 			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/samsung-device-uuid> ;
+			sh:focusNode <http://example.org/kb/relationship-e30adaa6-2bc0-45f8-a9e4-24f1c1583fe6> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -2242,115 +1330,13 @@
 				sh:path core:hasFacet ;
 			] ;
 			sh:value [
-				a uco-observable:AndroidDeviceFacet ;
-				uco-observable:androidFingerprint "samsung/zeroltexx/zerolte:6.0.1/MMB29K/G925FXXU4DPIL" ;
-				uco-observable:androidID "64cce130286b31b3"^^xsd:hexBinary ;
+				a uco-observable:DataRangeFacet ;
+				uco-observable:rangeOffset "13751"^^xsd:integer ;
 			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/samsung-device-uuid> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:BluetoothAddressFacet ;
-				uco-observable:addressValue "D8:C4:E9:7C:2E:F8" ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/samsung-device-uuid> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:DeviceFacet ;
-				uco-observable:manufacturer <http://example.org/kb/organization-fb6c05a0-b6be-4a10-ba62-0e7b1da4c0ec> ;
-				uco-observable:model "SM-G925F" ;
-				uco-observable:serialNumber "RF8H31GS5SF" ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/samsung-device-uuid> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:OperatingSystemFacet ;
-				core:name "Android" ;
-				uco-observable:advertisingID "48500120-c9c5-402e-a6bc-04e2f92ae259" ;
-				uco-observable:manufacturer <http://example.org/kb/organization-fb6c05a0-b6be-4a10-ba62-0e7b1da4c0ec> ;
-				uco-observable:version "6.0.1" ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/samsung-device-uuid> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:WifiAddressFacet ;
-				uco-observable:addressValue "AC:5F:3E:73:E3:78" ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/sim3-telephony-relationship-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/sim3-telephony-relationship-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/sim3-telephony-relationship-uuid> ;
+			sh:focusNode <http://example.org/kb/sim3-telephony-relationship-fa7fd470-e58c-4d35-858a-bcc3e04e822a> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -2370,7 +1356,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/sim3-telephony-relationship-uuid> ;
+			sh:focusNode <http://example.org/kb/sim3-telephony-relationship-fa7fd470-e58c-4d35-858a-bcc3e04e822a> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -2387,201 +1373,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/simcard1-relationship-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/simcard1-relationship-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/simcard1-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/simcard1-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/simcard1-uuid> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:SIMCardFacet ;
-				uco-observable:ICCID "89390100002217635543" ;
-				uco-observable:carrier <http://example.org/kb/organization-telcom-italia-uuid> ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/simcard2-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/simcard2-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/simcard2-uuid> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:SIMCardFacet ;
-				uco-observable:ICCID "8935302143531284380" ;
-				uco-observable:IMSI "__NOT_PROVIDED" ;
-				uco-observable:carrier "__NOT_PROVIDED" ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/simcard3-relationship-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/simcard3-relationship-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/simcard3-relationship-uuid> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a core:ConfidenceFacet ;
-				core:confidence "95"^^xsd:nonNegativeInteger ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/simcard3-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/simcard3-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/simcard3-uuid> ;
+			sh:focusNode <http://example.org/kb/simcard-1c401020-c200-4b90-9128-adb3b5e0b6fb> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -2600,35 +1392,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/userdata-partition-uuid> ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value <http://example.org/kb/userdata-partition-uuid> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/userdata-partition-uuid> ;
+			sh:focusNode <http://example.org/kb/simcard-8c41852e-babb-4a00-a23e-262b4a21ee85> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -2639,50 +1403,91 @@
 				sh:path core:hasFacet ;
 			] ;
 			sh:value [
-				a uco-observable:ContentDataFacet ;
-				uco-observable:hash [
-					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
-					types:hashValue "0611ea093d19b1c73a5285ff43741dd77f2a8d983c1c71044eb072e44f5dcb0a"^^xsd:hexBinary ;
+				a uco-observable:SIMCardFacet ;
+				uco-observable:ICCID "8935302143531284380" ;
+				uco-observable:IMSI "__NOT_PROVIDED" ;
+				uco-observable:carrier "__NOT_PROVIDED" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/simcard-b0252511-4875-4e2e-a27f-d95c35d87c1f> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:SIMCardFacet ;
+				uco-observable:ICCID "89390100002217635543" ;
+				uco-observable:carrier <http://example.org/kb/organization-d10330bf-8e9e-45cd-bf1a-ec9c964c270d> ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/simcard3-relationship-dfba6daa-26fd-4a3e-9638-d85c32f17e2f> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a core:ConfidenceFacet ;
+				core:confidence "95"^^xsd:nonNegativeInteger ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/url-39ff4987-8ae5-47e3-8369-dbd0d5f79398> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:URLFacet ;
+				uco-observable:fullValue "https://www.friday-magazine.ch/fr/" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/urlhistory-860fc853-9c3f-41fc-b144-8ac80d8f5849> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:URLHistoryFacet ;
+				uco-observable:urlHistoryEntry [
+					ns1:allocationStatus "allocated" ;
+					uco-observable:browserInformation <http://example.org/kb/5d96df90-d9e1-423c-b8db-c2327812ab38> ;
+					uco-observable:browserUserProfile <http://example.org/kb/profile--account-uuid> ;
+					uco-observable:expirationTime "NULL" ;
+					uco-observable:firstVisit "2018-12-06T18:52:21+00:00"^^xsd:dateTime ;
+					uco-observable:lastVisit "2017-01-25T02:20:22+00:00"^^xsd:dateTime ;
+					uco-observable:manuallyEnteredCount "0"^^xsd:integer ;
+					uco-observable:pageTitle "Friday Magazine | Home" ;
+					uco-observable:referrerUrl <http://example.org/kb/14354987-8ae5-47e3-8369-dbd0d5f77489> ;
+					uco-observable:url <http://example.org/kb/39ff4987-8ae5-47e3-8369-dbd0d5f79398> ;
+					uco-observable:visitCount "1"^^xsd:integer ;
 				] ;
-				uco-observable:sizeInBytes "245235000"^^xsd:integer ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/userdata-partition-uuid> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:DiskPartitionFacet ;
-				uco-observable:diskPartitionType "GPT" ;
-				uco-observable:partitionID "06" ;
-				uco-observable:partitionLength "245235063"^^xsd:integer ;
-				uco-observable:partitionOffset "63"^^xsd:integer ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/userdata-partition-uuid> ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath core:hasFacet ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:Facet ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:hasFacet ;
-			] ;
-			sh:value [
-				a uco-observable:FileSystemFacet ;
-				uco-observable:fileSystemType "EXT3" ;
 			] ;
 		] ,
 		[
@@ -2705,6 +1510,59 @@
 				uco-observable:applicationIdentifier "com.whatsapp" ;
 				uco-observable:operatingSystem <http://example.org/kb/Android-class-6f4f675e-9a02-4ab5-8060-50d3d92832d9> ;
 				uco-observable:version "2.18.361" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/whatsapp-90652808-7341-40d3-9285-774d865ad3f9> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:AccountFacet ;
+				uco-observable:accountIdentifier "31647934784@s.whatsapp.net" ;
+				uco-observable:accountIssuer <http://example.org/kb/organization-whatsapp-7a3fb3d1-0b30-4305-8c9e-f8f90f839bf3> ;
+				uco-observable:isActive "true"^^xsd:boolean ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/whatsapp-90652808-7341-40d3-9285-774d865ad3f9> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:ApplicationAccountFacet ;
+				uco-observable:application <http://example.org/kb/application-whatsapp-e662a9de-02bb-47ad-8666-625a0a5dc2fa> ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/whatsapp-90652808-7341-40d3-9285-774d865ad3f9> ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value [
+				a uco-observable:DigitalAccountFacet ;
+				uco-observable:displayName "Ares Lupin" ;
 			] ;
 		] ,
 		[
@@ -3756,6 +2614,201 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
+				a configuration:ConfigurationEntry ;
+				configuration:itemName "DeviceInfoConnectionType" ;
+				configuration:itemValue "Cable No. 130" ;
+			] ;
+			sh:resultMessage "UcoThings are required to not be blank nodes." ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				sh:message "UcoThings are required to not be blank nodes."@en ;
+				sh:select """
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER isBlank ($this)
+			}
+		""" ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:UcoThing ;
+			sh:value [
+				a configuration:ConfigurationEntry ;
+				configuration:itemName "DeviceInfoConnectionType" ;
+				configuration:itemValue "Cable No. 130" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a configuration:ConfigurationEntry ;
+				configuration:itemName "DeviceInfoConnectionType" ;
+				configuration:itemValue "Cable No. 130" ;
+			] ;
+			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
+			sh:resultSeverity sh:Info ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
+				sh:message "UcoThings are suggested to end with a UUID."@en ;
+				sh:select '''
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER (
+			                ! REGEX (
+			                        STR($this),
+			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
+			                        "i"
+			                )
+			        )
+			}
+		''' ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:UcoThing-identifier-regex-shape ;
+			sh:value [
+				a configuration:ConfigurationEntry ;
+				configuration:itemName "DeviceInfoConnectionType" ;
+				configuration:itemValue "Cable No. 130" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a configuration:ConfigurationEntry ;
+				configuration:itemName "ExtractionType" ;
+				configuration:itemValue "Physical" ;
+			] ;
+			sh:resultMessage "UcoThings are required to not be blank nodes." ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				sh:message "UcoThings are required to not be blank nodes."@en ;
+				sh:select """
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER isBlank ($this)
+			}
+		""" ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:UcoThing ;
+			sh:value [
+				a configuration:ConfigurationEntry ;
+				configuration:itemName "ExtractionType" ;
+				configuration:itemValue "Physical" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a configuration:ConfigurationEntry ;
+				configuration:itemName "ExtractionType" ;
+				configuration:itemValue "Physical" ;
+			] ;
+			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
+			sh:resultSeverity sh:Info ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
+				sh:message "UcoThings are suggested to end with a UUID."@en ;
+				sh:select '''
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER (
+			                ! REGEX (
+			                        STR($this),
+			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
+			                        "i"
+			                )
+			        )
+			}
+		''' ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:UcoThing-identifier-regex-shape ;
+			sh:value [
+				a configuration:ConfigurationEntry ;
+				configuration:itemName "ExtractionType" ;
+				configuration:itemValue "Physical" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a configuration:ConfigurationEntry ;
+				configuration:itemName "OutputFormat" ;
+				configuration:itemValue "XML" ;
+			] ;
+			sh:resultMessage "UcoThings are required to not be blank nodes." ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				sh:message "UcoThings are required to not be blank nodes."@en ;
+				sh:select """
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER isBlank ($this)
+			}
+		""" ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:UcoThing ;
+			sh:value [
+				a configuration:ConfigurationEntry ;
+				configuration:itemName "OutputFormat" ;
+				configuration:itemValue "XML" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a configuration:ConfigurationEntry ;
+				configuration:itemName "OutputFormat" ;
+				configuration:itemValue "XML" ;
+			] ;
+			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
+			sh:resultSeverity sh:Info ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
+				sh:message "UcoThings are suggested to end with a UUID."@en ;
+				sh:select '''
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER (
+			                ! REGEX (
+			                        STR($this),
+			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
+			                        "i"
+			                )
+			        )
+			}
+		''' ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:UcoThing-identifier-regex-shape ;
+			sh:value [
+				a configuration:ConfigurationEntry ;
+				configuration:itemName "OutputFormat" ;
+				configuration:itemValue "XML" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
 				a core:ConfidenceFacet ;
 				core:confidence "95"^^xsd:nonNegativeInteger ;
 			] ;
@@ -4075,7 +3128,7 @@
 			sh:focusNode [
 				a uco-observable:AccountFacet ;
 				uco-observable:accountIdentifier "31647934784@s.whatsapp.net" ;
-				uco-observable:accountIssuer <http://example.org/kb/organization-whatsapp-uuid> ;
+				uco-observable:accountIssuer <http://example.org/kb/organization-whatsapp-7a3fb3d1-0b30-4305-8c9e-f8f90f839bf3> ;
 				uco-observable:isActive "true"^^xsd:boolean ;
 			] ;
 			sh:resultMessage "UcoThings are required to not be blank nodes." ;
@@ -4097,7 +3150,7 @@
 			sh:value [
 				a uco-observable:AccountFacet ;
 				uco-observable:accountIdentifier "31647934784@s.whatsapp.net" ;
-				uco-observable:accountIssuer <http://example.org/kb/organization-whatsapp-uuid> ;
+				uco-observable:accountIssuer <http://example.org/kb/organization-whatsapp-7a3fb3d1-0b30-4305-8c9e-f8f90f839bf3> ;
 				uco-observable:isActive "true"^^xsd:boolean ;
 			] ;
 		] ,
@@ -4106,7 +3159,7 @@
 			sh:focusNode [
 				a uco-observable:AccountFacet ;
 				uco-observable:accountIdentifier "31647934784@s.whatsapp.net" ;
-				uco-observable:accountIssuer <http://example.org/kb/organization-whatsapp-uuid> ;
+				uco-observable:accountIssuer <http://example.org/kb/organization-whatsapp-7a3fb3d1-0b30-4305-8c9e-f8f90f839bf3> ;
 				uco-observable:isActive "true"^^xsd:boolean ;
 			] ;
 			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
@@ -4135,7 +3188,7 @@
 			sh:value [
 				a uco-observable:AccountFacet ;
 				uco-observable:accountIdentifier "31647934784@s.whatsapp.net" ;
-				uco-observable:accountIssuer <http://example.org/kb/organization-whatsapp-uuid> ;
+				uco-observable:accountIssuer <http://example.org/kb/organization-whatsapp-7a3fb3d1-0b30-4305-8c9e-f8f90f839bf3> ;
 				uco-observable:isActive "true"^^xsd:boolean ;
 			] ;
 		] ,
@@ -4144,7 +3197,7 @@
 			sh:focusNode [
 				a uco-observable:AccountFacet ;
 				uco-observable:accountIdentifier "31647934784@s.whatsapp.net" ;
-				uco-observable:accountIssuer <http://example.org/kb/organization-whatsapp-uuid> ;
+				uco-observable:accountIssuer <http://example.org/kb/organization-whatsapp-7a3fb3d1-0b30-4305-8c9e-f8f90f839bf3> ;
 				uco-observable:isActive "true"^^xsd:boolean ;
 			] ;
 			sh:resultMessage "UcoThings are required to not be blank nodes." ;
@@ -4166,7 +3219,7 @@
 			sh:value [
 				a uco-observable:AccountFacet ;
 				uco-observable:accountIdentifier "31647934784@s.whatsapp.net" ;
-				uco-observable:accountIssuer <http://example.org/kb/organization-whatsapp-uuid> ;
+				uco-observable:accountIssuer <http://example.org/kb/organization-whatsapp-7a3fb3d1-0b30-4305-8c9e-f8f90f839bf3> ;
 				uco-observable:isActive "true"^^xsd:boolean ;
 			] ;
 		] ,
@@ -4175,7 +3228,7 @@
 			sh:focusNode [
 				a uco-observable:AccountFacet ;
 				uco-observable:accountIdentifier "31647934784@s.whatsapp.net" ;
-				uco-observable:accountIssuer <http://example.org/kb/organization-whatsapp-uuid> ;
+				uco-observable:accountIssuer <http://example.org/kb/organization-whatsapp-7a3fb3d1-0b30-4305-8c9e-f8f90f839bf3> ;
 				uco-observable:isActive "true"^^xsd:boolean ;
 			] ;
 			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
@@ -4204,7 +3257,7 @@
 			sh:value [
 				a uco-observable:AccountFacet ;
 				uco-observable:accountIdentifier "31647934784@s.whatsapp.net" ;
-				uco-observable:accountIssuer <http://example.org/kb/organization-whatsapp-uuid> ;
+				uco-observable:accountIssuer <http://example.org/kb/organization-whatsapp-7a3fb3d1-0b30-4305-8c9e-f8f90f839bf3> ;
 				uco-observable:isActive "true"^^xsd:boolean ;
 			] ;
 		] ,
@@ -4213,7 +3266,7 @@
 			sh:focusNode [
 				a uco-observable:AccountFacet ;
 				uco-observable:accountIdentifier "aresthewerewolf" ;
-				uco-observable:accountIssuer <http://example.org/kb/organization-reddit-uuid> ;
+				uco-observable:accountIssuer <http://example.org/kb/organization-reddit-d5be6c8f-17ed-43fe-bc03-a5f79132f256> ;
 				uco-observable:isActive "true"^^xsd:boolean ;
 			] ;
 			sh:resultMessage "UcoThings are required to not be blank nodes." ;
@@ -4235,7 +3288,7 @@
 			sh:value [
 				a uco-observable:AccountFacet ;
 				uco-observable:accountIdentifier "aresthewerewolf" ;
-				uco-observable:accountIssuer <http://example.org/kb/organization-reddit-uuid> ;
+				uco-observable:accountIssuer <http://example.org/kb/organization-reddit-d5be6c8f-17ed-43fe-bc03-a5f79132f256> ;
 				uco-observable:isActive "true"^^xsd:boolean ;
 			] ;
 		] ,
@@ -4244,7 +3297,7 @@
 			sh:focusNode [
 				a uco-observable:AccountFacet ;
 				uco-observable:accountIdentifier "aresthewerewolf" ;
-				uco-observable:accountIssuer <http://example.org/kb/organization-reddit-uuid> ;
+				uco-observable:accountIssuer <http://example.org/kb/organization-reddit-d5be6c8f-17ed-43fe-bc03-a5f79132f256> ;
 				uco-observable:isActive "true"^^xsd:boolean ;
 			] ;
 			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
@@ -4273,7 +3326,7 @@
 			sh:value [
 				a uco-observable:AccountFacet ;
 				uco-observable:accountIdentifier "aresthewerewolf" ;
-				uco-observable:accountIssuer <http://example.org/kb/organization-reddit-uuid> ;
+				uco-observable:accountIssuer <http://example.org/kb/organization-reddit-d5be6c8f-17ed-43fe-bc03-a5f79132f256> ;
 				uco-observable:isActive "true"^^xsd:boolean ;
 			] ;
 		] ,
@@ -4281,7 +3334,7 @@
 			a sh:ValidationResult ;
 			sh:focusNode [
 				a uco-observable:AccountFacet ;
-				uco-observable:accountIssuer <http://example.org/kb/organization-salt-uuid> ;
+				uco-observable:accountIssuer <http://example.org/kb/organization-salt-42e95dc6-1326-4de8-93df-c399a3514ae9> ;
 				uco-observable:isActive "true"^^xsd:boolean ;
 			] ;
 			sh:resultMessage "UcoThings are required to not be blank nodes." ;
@@ -4302,7 +3355,7 @@
 			sh:sourceShape core:UcoThing ;
 			sh:value [
 				a uco-observable:AccountFacet ;
-				uco-observable:accountIssuer <http://example.org/kb/organization-salt-uuid> ;
+				uco-observable:accountIssuer <http://example.org/kb/organization-salt-42e95dc6-1326-4de8-93df-c399a3514ae9> ;
 				uco-observable:isActive "true"^^xsd:boolean ;
 			] ;
 		] ,
@@ -4310,7 +3363,7 @@
 			a sh:ValidationResult ;
 			sh:focusNode [
 				a uco-observable:AccountFacet ;
-				uco-observable:accountIssuer <http://example.org/kb/organization-salt-uuid> ;
+				uco-observable:accountIssuer <http://example.org/kb/organization-salt-42e95dc6-1326-4de8-93df-c399a3514ae9> ;
 				uco-observable:isActive "true"^^xsd:boolean ;
 			] ;
 			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
@@ -4338,7 +3391,7 @@
 			sh:sourceShape core:UcoThing-identifier-regex-shape ;
 			sh:value [
 				a uco-observable:AccountFacet ;
-				uco-observable:accountIssuer <http://example.org/kb/organization-salt-uuid> ;
+				uco-observable:accountIssuer <http://example.org/kb/organization-salt-42e95dc6-1326-4de8-93df-c399a3514ae9> ;
 				uco-observable:isActive "true"^^xsd:boolean ;
 			] ;
 		] ,
@@ -4611,7 +3664,7 @@
 			a sh:ValidationResult ;
 			sh:focusNode [
 				a uco-observable:ApplicationAccountFacet ;
-				uco-observable:application <http://example.org/kb/application-whatsapp-uuid> ;
+				uco-observable:application <http://example.org/kb/application-whatsapp-e662a9de-02bb-47ad-8666-625a0a5dc2fa> ;
 			] ;
 			sh:resultMessage "UcoThings are required to not be blank nodes." ;
 			sh:resultSeverity sh:Violation ;
@@ -4631,14 +3684,14 @@
 			sh:sourceShape core:UcoThing ;
 			sh:value [
 				a uco-observable:ApplicationAccountFacet ;
-				uco-observable:application <http://example.org/kb/application-whatsapp-uuid> ;
+				uco-observable:application <http://example.org/kb/application-whatsapp-e662a9de-02bb-47ad-8666-625a0a5dc2fa> ;
 			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
 				a uco-observable:ApplicationAccountFacet ;
-				uco-observable:application <http://example.org/kb/application-whatsapp-uuid> ;
+				uco-observable:application <http://example.org/kb/application-whatsapp-e662a9de-02bb-47ad-8666-625a0a5dc2fa> ;
 			] ;
 			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
 			sh:resultSeverity sh:Info ;
@@ -4665,7 +3718,7 @@
 			sh:sourceShape core:UcoThing-identifier-regex-shape ;
 			sh:value [
 				a uco-observable:ApplicationAccountFacet ;
-				uco-observable:application <http://example.org/kb/application-whatsapp-uuid> ;
+				uco-observable:application <http://example.org/kb/application-whatsapp-e662a9de-02bb-47ad-8666-625a0a5dc2fa> ;
 			] ;
 		] ,
 		[
@@ -6465,7 +5518,7 @@
 			a sh:ValidationResult ;
 			sh:focusNode [
 				a uco-observable:EmailAccountFacet ;
-				uco-observable:emailAddress <http://example.org/kb/456a2bac-8c21-11e9-8902-0c4de9c24de5> ;
+				uco-observable:emailAddress <http://example.org/kb/emailaddress-456a2bac-8c21-11e9-8902-0c4de9c24de5> ;
 			] ;
 			sh:resultMessage "UcoThings are required to not be blank nodes." ;
 			sh:resultSeverity sh:Violation ;
@@ -6485,14 +5538,14 @@
 			sh:sourceShape core:UcoThing ;
 			sh:value [
 				a uco-observable:EmailAccountFacet ;
-				uco-observable:emailAddress <http://example.org/kb/456a2bac-8c21-11e9-8902-0c4de9c24de5> ;
+				uco-observable:emailAddress <http://example.org/kb/emailaddress-456a2bac-8c21-11e9-8902-0c4de9c24de5> ;
 			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
 				a uco-observable:EmailAccountFacet ;
-				uco-observable:emailAddress <http://example.org/kb/456a2bac-8c21-11e9-8902-0c4de9c24de5> ;
+				uco-observable:emailAddress <http://example.org/kb/emailaddress-456a2bac-8c21-11e9-8902-0c4de9c24de5> ;
 			] ;
 			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
 			sh:resultSeverity sh:Info ;
@@ -6519,14 +5572,14 @@
 			sh:sourceShape core:UcoThing-identifier-regex-shape ;
 			sh:value [
 				a uco-observable:EmailAccountFacet ;
-				uco-observable:emailAddress <http://example.org/kb/456a2bac-8c21-11e9-8902-0c4de9c24de5> ;
+				uco-observable:emailAddress <http://example.org/kb/emailaddress-456a2bac-8c21-11e9-8902-0c4de9c24de5> ;
 			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
 				a uco-observable:EmailAccountFacet ;
-				uco-observable:emailAddress <http://example.org/kb/99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
+				uco-observable:emailAddress <http://example.org/kb/emailaddress-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
 			] ;
 			sh:resultMessage "UcoThings are required to not be blank nodes." ;
 			sh:resultSeverity sh:Violation ;
@@ -6546,14 +5599,14 @@
 			sh:sourceShape core:UcoThing ;
 			sh:value [
 				a uco-observable:EmailAccountFacet ;
-				uco-observable:emailAddress <http://example.org/kb/99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
+				uco-observable:emailAddress <http://example.org/kb/emailaddress-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
 			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
 				a uco-observable:EmailAccountFacet ;
-				uco-observable:emailAddress <http://example.org/kb/99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
+				uco-observable:emailAddress <http://example.org/kb/emailaddress-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
 			] ;
 			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
 			sh:resultSeverity sh:Info ;
@@ -6580,7 +5633,7 @@
 			sh:sourceShape core:UcoThing-identifier-regex-shape ;
 			sh:value [
 				a uco-observable:EmailAccountFacet ;
-				uco-observable:emailAddress <http://example.org/kb/99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
+				uco-observable:emailAddress <http://example.org/kb/emailaddress-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
 			] ;
 		] ,
 		[
@@ -6709,10 +5762,10 @@
 			a sh:ValidationResult ;
 			sh:focusNode [
 				a uco-observable:EmailMessageFacet ;
-				uco-observable:application <http://example.org/kb/Gmail-uuid> ;
-				uco-observable:bodyRaw <http://example.org/kb/content-data-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d> ;
+				uco-observable:application <http://example.org/kb/gmail-a1ce9965-ba9c-4fa1-9bfe-58c68ecaadc5> ;
+				uco-observable:bodyRaw <http://example.org/kb/contentdata-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d> ;
 				uco-observable:messageID "CAKBqNfyKo+pvHkJy6kwO82jTbkNA@mail.gmail.com" ;
-				uco-observable:sender <http://example.org/kb/EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
+				uco-observable:sender <http://example.org/kb/emailaccount-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
 				uco-observable:sentTime "2018-11-20T21:28:07+00:00"^^xsd:dateTime ;
 				uco-observable:subject "Re: Bank transfer ?" ;
 			] ;
@@ -6734,10 +5787,10 @@
 			sh:sourceShape core:UcoThing ;
 			sh:value [
 				a uco-observable:EmailMessageFacet ;
-				uco-observable:application <http://example.org/kb/Gmail-uuid> ;
-				uco-observable:bodyRaw <http://example.org/kb/content-data-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d> ;
+				uco-observable:application <http://example.org/kb/gmail-a1ce9965-ba9c-4fa1-9bfe-58c68ecaadc5> ;
+				uco-observable:bodyRaw <http://example.org/kb/contentdata-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d> ;
 				uco-observable:messageID "CAKBqNfyKo+pvHkJy6kwO82jTbkNA@mail.gmail.com" ;
-				uco-observable:sender <http://example.org/kb/EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
+				uco-observable:sender <http://example.org/kb/emailaccount-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
 				uco-observable:sentTime "2018-11-20T21:28:07+00:00"^^xsd:dateTime ;
 				uco-observable:subject "Re: Bank transfer ?" ;
 			] ;
@@ -6746,10 +5799,10 @@
 			a sh:ValidationResult ;
 			sh:focusNode [
 				a uco-observable:EmailMessageFacet ;
-				uco-observable:application <http://example.org/kb/Gmail-uuid> ;
-				uco-observable:bodyRaw <http://example.org/kb/content-data-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d> ;
+				uco-observable:application <http://example.org/kb/gmail-a1ce9965-ba9c-4fa1-9bfe-58c68ecaadc5> ;
+				uco-observable:bodyRaw <http://example.org/kb/contentdata-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d> ;
 				uco-observable:messageID "CAKBqNfyKo+pvHkJy6kwO82jTbkNA@mail.gmail.com" ;
-				uco-observable:sender <http://example.org/kb/EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
+				uco-observable:sender <http://example.org/kb/emailaccount-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
 				uco-observable:sentTime "2018-11-20T21:28:07+00:00"^^xsd:dateTime ;
 				uco-observable:subject "Re: Bank transfer ?" ;
 			] ;
@@ -6778,10 +5831,10 @@
 			sh:sourceShape core:UcoThing-identifier-regex-shape ;
 			sh:value [
 				a uco-observable:EmailMessageFacet ;
-				uco-observable:application <http://example.org/kb/Gmail-uuid> ;
-				uco-observable:bodyRaw <http://example.org/kb/content-data-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d> ;
+				uco-observable:application <http://example.org/kb/gmail-a1ce9965-ba9c-4fa1-9bfe-58c68ecaadc5> ;
+				uco-observable:bodyRaw <http://example.org/kb/contentdata-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d> ;
 				uco-observable:messageID "CAKBqNfyKo+pvHkJy6kwO82jTbkNA@mail.gmail.com" ;
-				uco-observable:sender <http://example.org/kb/EmailAccount-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
+				uco-observable:sender <http://example.org/kb/emailaccount-99d72bac-8c21-11e9-8902-0c4de9c21b53> ;
 				uco-observable:sentTime "2018-11-20T21:28:07+00:00"^^xsd:dateTime ;
 				uco-observable:subject "Re: Bank transfer ?" ;
 			] ;
@@ -7118,6 +6171,173 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
+				a uco-observable:FileFacet ;
+				uco-observable:extension "db" ;
+				uco-observable:fileName "data/com.android.providers.telephony/databases/telephony.db" ;
+				uco-observable:fileSystemType "EXT3" ;
+				uco-observable:isDirectory "false"^^xsd:boolean ;
+			] ;
+			sh:resultMessage "UcoThings are required to not be blank nodes." ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				sh:message "UcoThings are required to not be blank nodes."@en ;
+				sh:select """
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER isBlank ($this)
+			}
+		""" ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:UcoThing ;
+			sh:value [
+				a uco-observable:FileFacet ;
+				uco-observable:extension "db" ;
+				uco-observable:fileName "data/com.android.providers.telephony/databases/telephony.db" ;
+				uco-observable:fileSystemType "EXT3" ;
+				uco-observable:isDirectory "false"^^xsd:boolean ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a uco-observable:FileFacet ;
+				uco-observable:extension "db" ;
+				uco-observable:fileName "data/com.android.providers.telephony/databases/telephony.db" ;
+				uco-observable:fileSystemType "EXT3" ;
+				uco-observable:isDirectory "false"^^xsd:boolean ;
+			] ;
+			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
+			sh:resultSeverity sh:Info ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
+				sh:message "UcoThings are suggested to end with a UUID."@en ;
+				sh:select '''
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER (
+			                ! REGEX (
+			                        STR($this),
+			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
+			                        "i"
+			                )
+			        )
+			}
+		''' ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:UcoThing-identifier-regex-shape ;
+			sh:value [
+				a uco-observable:FileFacet ;
+				uco-observable:extension "db" ;
+				uco-observable:fileName "data/com.android.providers.telephony/databases/telephony.db" ;
+				uco-observable:fileSystemType "EXT3" ;
+				uco-observable:isDirectory "false"^^xsd:boolean ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a uco-observable:FileFacet ;
+				uco-observable:extension "xml" ;
+				uco-observable:fileName "19_UFED_ANDROID_CROSSOVER.xml" ;
+				uco-observable:isDirectory "false"^^xsd:boolean ;
+				uco-observable:observableCreatedTime "2020-05-16:10:12.40Z"^^xsd:dateTime ;
+			] ;
+			sh:resultMessage "UcoThings are required to not be blank nodes." ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				sh:message "UcoThings are required to not be blank nodes."@en ;
+				sh:select """
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER isBlank ($this)
+			}
+		""" ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:UcoThing ;
+			sh:value [
+				a uco-observable:FileFacet ;
+				uco-observable:extension "xml" ;
+				uco-observable:fileName "19_UFED_ANDROID_CROSSOVER.xml" ;
+				uco-observable:isDirectory "false"^^xsd:boolean ;
+				uco-observable:observableCreatedTime "2020-05-16:10:12.40Z"^^xsd:dateTime ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a uco-observable:FileFacet ;
+				uco-observable:extension "xml" ;
+				uco-observable:fileName "19_UFED_ANDROID_CROSSOVER.xml" ;
+				uco-observable:isDirectory "false"^^xsd:boolean ;
+				uco-observable:observableCreatedTime "2020-05-16:10:12.40Z"^^xsd:dateTime ;
+			] ;
+			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
+			sh:resultSeverity sh:Info ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
+				sh:message "UcoThings are suggested to end with a UUID."@en ;
+				sh:select '''
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER (
+			                ! REGEX (
+			                        STR($this),
+			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
+			                        "i"
+			                )
+			        )
+			}
+		''' ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:UcoThing-identifier-regex-shape ;
+			sh:value [
+				a uco-observable:FileFacet ;
+				uco-observable:extension "xml" ;
+				uco-observable:fileName "19_UFED_ANDROID_CROSSOVER.xml" ;
+				uco-observable:isDirectory "false"^^xsd:boolean ;
+				uco-observable:observableCreatedTime "2020-05-16:10:12.40Z"^^xsd:dateTime ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a uco-observable:FileFacet ;
+				uco-observable:extension "xml" ;
+				uco-observable:fileName "19_UFED_ANDROID_CROSSOVER.xml" ;
+				uco-observable:isDirectory "false"^^xsd:boolean ;
+				uco-observable:observableCreatedTime "2020-05-16:10:12.40Z"^^xsd:dateTime ;
+			] ;
+			sh:resultMessage "Value is not Literal with datatype xsd:dateTime" ;
+			sh:resultPath uco-observable:observableCreatedTime ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:dateTime ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path uco-observable:observableCreatedTime ;
+			] ;
+			sh:value "2020-05-16:10:12.40Z"^^xsd:dateTime ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
 				a uco-observable:FileSystemFacet ;
 				uco-observable:fileSystemType "EXT3" ;
 			] ;
@@ -7772,6 +6992,26 @@
 				uco-observable:IMSI "{mobileaccount3-uuid}" ;
 				uco-observable:carrier <http://example.org/kb/organization-lebara-uuid> ;
 			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a uco-observable:SIMCardFacet ;
+				uco-observable:ICCID "8931088918010550289" ;
+				uco-observable:IMSI "{mobileaccount3-uuid}" ;
+				uco-observable:carrier <http://example.org/kb/organization-lebara-uuid> ;
+			] ;
+			sh:resultMessage "Value does not have class identity:Identity" ;
+			sh:resultPath uco-observable:carrier ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class identity:Identity ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:IRI ;
+				sh:path uco-observable:carrier ;
+			] ;
+			sh:value <http://example.org/kb/organization-lebara-uuid> ;
 		] ,
 		[
 			a sh:ValidationResult ;
@@ -7887,7 +7127,7 @@
 			sh:focusNode [
 				a uco-observable:SIMCardFacet ;
 				uco-observable:ICCID "89390100002217635543" ;
-				uco-observable:carrier <http://example.org/kb/organization-telcom-italia-uuid> ;
+				uco-observable:carrier <http://example.org/kb/organization-d10330bf-8e9e-45cd-bf1a-ec9c964c270d> ;
 			] ;
 			sh:resultMessage "UcoThings are required to not be blank nodes." ;
 			sh:resultSeverity sh:Violation ;
@@ -7908,7 +7148,7 @@
 			sh:value [
 				a uco-observable:SIMCardFacet ;
 				uco-observable:ICCID "89390100002217635543" ;
-				uco-observable:carrier <http://example.org/kb/organization-telcom-italia-uuid> ;
+				uco-observable:carrier <http://example.org/kb/organization-d10330bf-8e9e-45cd-bf1a-ec9c964c270d> ;
 			] ;
 		] ,
 		[
@@ -7916,7 +7156,7 @@
 			sh:focusNode [
 				a uco-observable:SIMCardFacet ;
 				uco-observable:ICCID "89390100002217635543" ;
-				uco-observable:carrier <http://example.org/kb/organization-telcom-italia-uuid> ;
+				uco-observable:carrier <http://example.org/kb/organization-d10330bf-8e9e-45cd-bf1a-ec9c964c270d> ;
 			] ;
 			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
 			sh:resultSeverity sh:Info ;
@@ -7944,8 +7184,27 @@
 			sh:value [
 				a uco-observable:SIMCardFacet ;
 				uco-observable:ICCID "89390100002217635543" ;
-				uco-observable:carrier <http://example.org/kb/organization-telcom-italia-uuid> ;
+				uco-observable:carrier <http://example.org/kb/organization-d10330bf-8e9e-45cd-bf1a-ec9c964c270d> ;
 			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a uco-observable:SIMCardFacet ;
+				uco-observable:ICCID "89390100002217635543" ;
+				uco-observable:carrier <http://example.org/kb/organization-d10330bf-8e9e-45cd-bf1a-ec9c964c270d> ;
+			] ;
+			sh:resultMessage "Value does not have class identity:Identity" ;
+			sh:resultPath uco-observable:carrier ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class identity:Identity ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:nodeKind sh:IRI ;
+				sh:path uco-observable:carrier ;
+			] ;
+			sh:value <http://example.org/kb/organization-d10330bf-8e9e-45cd-bf1a-ec9c964c270d> ;
 		] ,
 		[
 			a sh:ValidationResult ;
@@ -8006,6 +7265,197 @@
 			sh:value [
 				a uco-observable:URLFacet ;
 				uco-observable:fullValue "https://www.friday-magazine.ch/fr/" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a uco-observable:URLHistoryFacet ;
+				uco-observable:urlHistoryEntry [
+					ns1:allocationStatus "allocated" ;
+					uco-observable:browserInformation <http://example.org/kb/5d96df90-d9e1-423c-b8db-c2327812ab38> ;
+					uco-observable:browserUserProfile <http://example.org/kb/profile--account-uuid> ;
+					uco-observable:expirationTime "NULL" ;
+					uco-observable:firstVisit "2018-12-06T18:52:21+00:00"^^xsd:dateTime ;
+					uco-observable:lastVisit "2017-01-25T02:20:22+00:00"^^xsd:dateTime ;
+					uco-observable:manuallyEnteredCount "0"^^xsd:integer ;
+					uco-observable:pageTitle "Friday Magazine | Home" ;
+					uco-observable:referrerUrl <http://example.org/kb/14354987-8ae5-47e3-8369-dbd0d5f77489> ;
+					uco-observable:url <http://example.org/kb/39ff4987-8ae5-47e3-8369-dbd0d5f79398> ;
+					uco-observable:visitCount "1"^^xsd:integer ;
+				] ;
+			] ;
+			sh:resultMessage "UcoThings are required to not be blank nodes." ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				sh:message "UcoThings are required to not be blank nodes."@en ;
+				sh:select """
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER isBlank ($this)
+			}
+		""" ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:UcoThing ;
+			sh:value [
+				a uco-observable:URLHistoryFacet ;
+				uco-observable:urlHistoryEntry [
+					ns1:allocationStatus "allocated" ;
+					uco-observable:browserInformation <http://example.org/kb/5d96df90-d9e1-423c-b8db-c2327812ab38> ;
+					uco-observable:browserUserProfile <http://example.org/kb/profile--account-uuid> ;
+					uco-observable:expirationTime "NULL" ;
+					uco-observable:firstVisit "2018-12-06T18:52:21+00:00"^^xsd:dateTime ;
+					uco-observable:lastVisit "2017-01-25T02:20:22+00:00"^^xsd:dateTime ;
+					uco-observable:manuallyEnteredCount "0"^^xsd:integer ;
+					uco-observable:pageTitle "Friday Magazine | Home" ;
+					uco-observable:referrerUrl <http://example.org/kb/14354987-8ae5-47e3-8369-dbd0d5f77489> ;
+					uco-observable:url <http://example.org/kb/39ff4987-8ae5-47e3-8369-dbd0d5f79398> ;
+					uco-observable:visitCount "1"^^xsd:integer ;
+				] ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a uco-observable:URLHistoryFacet ;
+				uco-observable:urlHistoryEntry [
+					ns1:allocationStatus "allocated" ;
+					uco-observable:browserInformation <http://example.org/kb/5d96df90-d9e1-423c-b8db-c2327812ab38> ;
+					uco-observable:browserUserProfile <http://example.org/kb/profile--account-uuid> ;
+					uco-observable:expirationTime "NULL" ;
+					uco-observable:firstVisit "2018-12-06T18:52:21+00:00"^^xsd:dateTime ;
+					uco-observable:lastVisit "2017-01-25T02:20:22+00:00"^^xsd:dateTime ;
+					uco-observable:manuallyEnteredCount "0"^^xsd:integer ;
+					uco-observable:pageTitle "Friday Magazine | Home" ;
+					uco-observable:referrerUrl <http://example.org/kb/14354987-8ae5-47e3-8369-dbd0d5f77489> ;
+					uco-observable:url <http://example.org/kb/39ff4987-8ae5-47e3-8369-dbd0d5f79398> ;
+					uco-observable:visitCount "1"^^xsd:integer ;
+				] ;
+			] ;
+			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
+			sh:resultSeverity sh:Info ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
+				sh:message "UcoThings are suggested to end with a UUID."@en ;
+				sh:select '''
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER (
+			                ! REGEX (
+			                        STR($this),
+			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
+			                        "i"
+			                )
+			        )
+			}
+		''' ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:UcoThing-identifier-regex-shape ;
+			sh:value [
+				a uco-observable:URLHistoryFacet ;
+				uco-observable:urlHistoryEntry [
+					ns1:allocationStatus "allocated" ;
+					uco-observable:browserInformation <http://example.org/kb/5d96df90-d9e1-423c-b8db-c2327812ab38> ;
+					uco-observable:browserUserProfile <http://example.org/kb/profile--account-uuid> ;
+					uco-observable:expirationTime "NULL" ;
+					uco-observable:firstVisit "2018-12-06T18:52:21+00:00"^^xsd:dateTime ;
+					uco-observable:lastVisit "2017-01-25T02:20:22+00:00"^^xsd:dateTime ;
+					uco-observable:manuallyEnteredCount "0"^^xsd:integer ;
+					uco-observable:pageTitle "Friday Magazine | Home" ;
+					uco-observable:referrerUrl <http://example.org/kb/14354987-8ae5-47e3-8369-dbd0d5f77489> ;
+					uco-observable:url <http://example.org/kb/39ff4987-8ae5-47e3-8369-dbd0d5f79398> ;
+					uco-observable:visitCount "1"^^xsd:integer ;
+				] ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a uco-observable:URLHistoryFacet ;
+				uco-observable:urlHistoryEntry [
+					ns1:allocationStatus "allocated" ;
+					uco-observable:browserInformation <http://example.org/kb/5d96df90-d9e1-423c-b8db-c2327812ab38> ;
+					uco-observable:browserUserProfile <http://example.org/kb/profile--account-uuid> ;
+					uco-observable:expirationTime "NULL" ;
+					uco-observable:firstVisit "2018-12-06T18:52:21+00:00"^^xsd:dateTime ;
+					uco-observable:lastVisit "2017-01-25T02:20:22+00:00"^^xsd:dateTime ;
+					uco-observable:manuallyEnteredCount "0"^^xsd:integer ;
+					uco-observable:pageTitle "Friday Magazine | Home" ;
+					uco-observable:referrerUrl <http://example.org/kb/14354987-8ae5-47e3-8369-dbd0d5f77489> ;
+					uco-observable:url <http://example.org/kb/39ff4987-8ae5-47e3-8369-dbd0d5f79398> ;
+					uco-observable:visitCount "1"^^xsd:integer ;
+				] ;
+			] ;
+			sh:resultMessage "Value does not have class uco-observable:URLHistoryEntry" ;
+			sh:resultPath uco-observable:urlHistoryEntry ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class uco-observable:URLHistoryEntry ;
+				sh:nodeKind sh:IRI ;
+				sh:path uco-observable:urlHistoryEntry ;
+			] ;
+			sh:value [
+				ns1:allocationStatus "allocated" ;
+				uco-observable:browserInformation <http://example.org/kb/5d96df90-d9e1-423c-b8db-c2327812ab38> ;
+				uco-observable:browserUserProfile <http://example.org/kb/profile--account-uuid> ;
+				uco-observable:expirationTime "NULL" ;
+				uco-observable:firstVisit "2018-12-06T18:52:21+00:00"^^xsd:dateTime ;
+				uco-observable:lastVisit "2017-01-25T02:20:22+00:00"^^xsd:dateTime ;
+				uco-observable:manuallyEnteredCount "0"^^xsd:integer ;
+				uco-observable:pageTitle "Friday Magazine | Home" ;
+				uco-observable:referrerUrl <http://example.org/kb/14354987-8ae5-47e3-8369-dbd0d5f77489> ;
+				uco-observable:url <http://example.org/kb/39ff4987-8ae5-47e3-8369-dbd0d5f79398> ;
+				uco-observable:visitCount "1"^^xsd:integer ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a uco-observable:URLHistoryFacet ;
+				uco-observable:urlHistoryEntry [
+					ns1:allocationStatus "allocated" ;
+					uco-observable:browserInformation <http://example.org/kb/5d96df90-d9e1-423c-b8db-c2327812ab38> ;
+					uco-observable:browserUserProfile <http://example.org/kb/profile--account-uuid> ;
+					uco-observable:expirationTime "NULL" ;
+					uco-observable:firstVisit "2018-12-06T18:52:21+00:00"^^xsd:dateTime ;
+					uco-observable:lastVisit "2017-01-25T02:20:22+00:00"^^xsd:dateTime ;
+					uco-observable:manuallyEnteredCount "0"^^xsd:integer ;
+					uco-observable:pageTitle "Friday Magazine | Home" ;
+					uco-observable:referrerUrl <http://example.org/kb/14354987-8ae5-47e3-8369-dbd0d5f77489> ;
+					uco-observable:url <http://example.org/kb/39ff4987-8ae5-47e3-8369-dbd0d5f79398> ;
+					uco-observable:visitCount "1"^^xsd:integer ;
+				] ;
+			] ;
+			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
+			sh:resultPath uco-observable:urlHistoryEntry ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
+			sh:sourceShape [
+				sh:class uco-observable:URLHistoryEntry ;
+				sh:nodeKind sh:IRI ;
+				sh:path uco-observable:urlHistoryEntry ;
+			] ;
+			sh:value [
+				ns1:allocationStatus "allocated" ;
+				uco-observable:browserInformation <http://example.org/kb/5d96df90-d9e1-423c-b8db-c2327812ab38> ;
+				uco-observable:browserUserProfile <http://example.org/kb/profile--account-uuid> ;
+				uco-observable:expirationTime "NULL" ;
+				uco-observable:firstVisit "2018-12-06T18:52:21+00:00"^^xsd:dateTime ;
+				uco-observable:lastVisit "2017-01-25T02:20:22+00:00"^^xsd:dateTime ;
+				uco-observable:manuallyEnteredCount "0"^^xsd:integer ;
+				uco-observable:pageTitle "Friday Magazine | Home" ;
+				uco-observable:referrerUrl <http://example.org/kb/14354987-8ae5-47e3-8369-dbd0d5f77489> ;
+				uco-observable:url <http://example.org/kb/39ff4987-8ae5-47e3-8369-dbd0d5f79398> ;
+				uco-observable:visitCount "1"^^xsd:integer ;
 			] ;
 		] ,
 		[

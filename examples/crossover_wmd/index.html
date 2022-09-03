@@ -64,6 +64,7 @@ jumbo_desc: Cellebrite XML Report Example
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "kb": "http://example.org/kb/",
         "uco-action": "https://ontology.unifiedcyberontology.org/uco/action/",
+        "uco-configuration": "https://ontology.unifiedcyberontology.org/uco/configuration/",
         "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
         "uco-identity": "https://ontology.unifiedcyberontology.org/uco/identity/",
         "uco-location": "https://ontology.unifiedcyberontology.org/uco/location/",
@@ -138,16 +139,16 @@ jumbo_desc: Cellebrite XML Report Example
         },
         "uco-tool:version": "7.1.0.106",
         "uco-configuration:usesConfiguration": {
-           "@id": "kb:Configuration-2afbfbb1-b4d6-4ad5-9691-ff09b9f6eebe",
-           "@type": "uco-configuration:Configuration",
-           "uco-configuration:configurationEntry": [
-            {
-                "@type": "uco-configuration:ConfigurationEntry",
-                "uco-configuration:itemName": "OutputFormat",
-                "uco-configuration:itemValue": "XML"
-            }
-         ]
-       }
+            "@id": "kb:Configuration-2afbfbb1-b4d6-4ad5-9691-ff09b9f6eebe",
+            "@type": "uco-configuration:Configuration",
+            "uco-configuration:configurationEntry": [
+                {
+                    "@type": "uco-configuration:ConfigurationEntry",
+                    "uco-configuration:itemName": "OutputFormat",
+                    "uco-configuration:itemValue": "XML"
+                }
+            ]
+        }
     },
     {
         "@id": "kb:investigativeaction-b4b0805e-84ec-4553-98c2-6f0454829c30",
@@ -262,13 +263,13 @@ jumbo_desc: Cellebrite XML Report Example
             "uco-configuration:configurationEntry": [
                 {
                     "@type": "uco-configuration:ConfigurationEntry",
-                    "uco-tool:itemName": "DeviceInfoConnectionType",
-                    "uco-tool:itemValue": "Cable No. 130"
+                    "uco-configuration:itemName": "DeviceInfoConnectionType",
+                    "uco-configuration:itemValue": "Cable No. 130"
                 },
                 {
                     "@type": "uco-configuration:ConfigurationEntry",
-                    "uco-tool:itemName": "ExtractionType",
-                    "uco-tool:itemValue": "Physical"
+                    "uco-configuration:itemName": "ExtractionType",
+                    "uco-configuration:itemValue": "Physical"
                 }
             ]
         }

@@ -43,7 +43,7 @@ WHERE {
     .
 
   ?nImagingTool
-    a uco-tool:Tool ;
+    a/rdfs:subClassOf* uco-tool:Tool ;
     uco-core:name ?lToolName ;
     uco-tool:version ?lToolVersion ;
     .

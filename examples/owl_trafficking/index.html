@@ -48,6 +48,7 @@ jumbo_desc: CASE Narrative on Trafficking
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "uco-action": "https://ontology.unifiedcyberontology.org/uco/action/",
+        "uco-configuration": "https://ontology.unifiedcyberontology.org/uco/configuration/",
         "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
         "uco-identity": "https://ontology.unifiedcyberontology.org/uco/identity/",
         "uco-location": "https://ontology.unifiedcyberontology.org/uco/location/",
@@ -87,30 +88,29 @@ jumbo_desc: CASE Narrative on Trafficking
 [
     {
         "@id": "kb:magnet-acquire2005412-83715215-c5fc-4231-99ff-29a3c51cb5f1",
-        "@type": "uco-tool:Tool",
+        "@type": "uco-tool:ConfiguredTool",
         "uco-core:name": "Magnet ACQUIRE",
         "uco-tool:toolType": "Extraction",
         "uco-tool:creator": {
             "@id": "kb:organization-magnet-1ad4338b-fa60-4823-b9af-38de3d388e36"
         },
         "uco-tool:version": "2.0.0.5412",
-        "uco-core:hasFacet": [
-            {
-                "@type": "uco-tool:ToolConfigurationTypeFacet",
-                "uco-tool:configurationSettings": [
-                    {
-                        "@type": "uco-tool:ConfigurationSettingType",
-                        "uco-tool:itemName": "DeviceInfoConnectionType",
-                        "uco-tool:itemValue": "Cable No. 10"
-                    },
-                    {
-                        "@type": "uco-tool:ConfigurationSettingType",
-                        "uco-tool:itemName": "ExtractionType",
-                        "uco-tool:itemValue": "Physical"
-                    }
-                ]
-            }
-        ]
+        "uco-configuration:usesConfiguration": {
+            "@id": "kb:configuration-6cd3efd7-9550-4913-94a4-92d2579dc778",
+            "@type": "uco-configuration:Configuration",
+            "uco-configuration:configurationEntry": [
+                {
+                    "@type": "uco-configuration:ConfigurationEntry",
+                    "uco-configuration:itemName": "DeviceInfoConnectionType",
+                    "uco-configuration:itemValue": "Cable No. 10"
+                },
+                {
+                    "@type": "uco-configuration:ConfigurationEntry",
+                    "uco-configuration:itemName": "ExtractionType",
+                    "uco-configuration:itemValue": "Physical"
+                }
+            ]
+        }
     },
     {
         "@id": "kb:organization-magnet-1ad4338b-fa60-4823-b9af-38de3d388e36",
@@ -214,7 +214,7 @@ WHERE {
     .
 
   ?nImagingTool
-    a uco-tool:Tool ;
+    a/rdfs:subClassOf* uco-tool:Tool ;
     uco-core:name ?lToolName ;
     uco-tool:version ?lToolVersion ;
     .
@@ -254,6 +254,24 @@ WHERE {
     </tr>
     <tr>
       <th>1</th>
+      <td>SD1</td>
+      <td>2017-02-06 22:13:08+00:00</td>
+      <td>Hoel</td>
+      <td>Magnet ACQUIRE</td>
+      <td>2.0.0.5412</td>
+      <td>LGE Nexus 5 Full Image.raw</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>SD1</td>
+      <td>2017-02-06 22:13:08+00:00</td>
+      <td>Hoel</td>
+      <td>Magnet ACQUIRE</td>
+      <td>2.0.0.5412</td>
+      <td>LGE Nexus 5 Full Image.raw</td>
+    </tr>
+    <tr>
+      <th>3</th>
       <td>SD1</td>
       <td>2017-02-06 22:13:08+00:00</td>
       <td>Hoel</td>
@@ -495,12 +513,16 @@ ORDER BY ?lHashMethod
             {
                 "@type": "uco-observable:BluetoothAddressFacet",
                 "uco-observable:addressValue": "88:c9:d0:03:04:49"
-            },
-            {
-                "@type": "uco-observable:MobileAccountFacet",
-                "uco-observable:MSISDN": "+13046388446"
             }
         ]
+    },
+    {
+        "@id": "kb:relationship-6d7a7a20-ca70-4f7f-994d-c2db39e08545",
+        "@type": "uco-core:Relationship",
+        "uco-core:source": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168",
+        "uco-core:target": "kb:mobileaccount-4b3cdcbd-6a31-462f-be9b-1ca2944c8876",
+        "uco-core:kindOfRelationship": "Has_Account",
+        "uco-core:isDirectional": true
     }
 ]
 {% endhighlight %}
