@@ -104,7 +104,7 @@
 				uco-observable:extension "xml" ;
 				uco-observable:fileName "19_UFED_ANDROID_CROSSOVER.xml" ;
 				uco-observable:isDirectory "false"^^xsd:boolean ;
-				uco-observable:observableCreatedTime "2020-05-16:10:12.40Z"^^xsd:dateTime ;
+				uco-observable:observableCreatedTime "2020-05-16T10:12:24+00:00"^^xsd:dateTime ;
 			] ;
 		] ,
 		[
@@ -6248,7 +6248,7 @@
 				uco-observable:extension "xml" ;
 				uco-observable:fileName "19_UFED_ANDROID_CROSSOVER.xml" ;
 				uco-observable:isDirectory "false"^^xsd:boolean ;
-				uco-observable:observableCreatedTime "2020-05-16:10:12.40Z"^^xsd:dateTime ;
+				uco-observable:observableCreatedTime "2020-05-16T10:12:24+00:00"^^xsd:dateTime ;
 			] ;
 			sh:resultMessage "UcoThings are required to not be blank nodes." ;
 			sh:resultSeverity sh:Violation ;
@@ -6271,7 +6271,7 @@
 				uco-observable:extension "xml" ;
 				uco-observable:fileName "19_UFED_ANDROID_CROSSOVER.xml" ;
 				uco-observable:isDirectory "false"^^xsd:boolean ;
-				uco-observable:observableCreatedTime "2020-05-16:10:12.40Z"^^xsd:dateTime ;
+				uco-observable:observableCreatedTime "2020-05-16T10:12:24+00:00"^^xsd:dateTime ;
 			] ;
 		] ,
 		[
@@ -6281,7 +6281,7 @@
 				uco-observable:extension "xml" ;
 				uco-observable:fileName "19_UFED_ANDROID_CROSSOVER.xml" ;
 				uco-observable:isDirectory "false"^^xsd:boolean ;
-				uco-observable:observableCreatedTime "2020-05-16:10:12.40Z"^^xsd:dateTime ;
+				uco-observable:observableCreatedTime "2020-05-16T10:12:24+00:00"^^xsd:dateTime ;
 			] ;
 			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
 			sh:resultSeverity sh:Info ;
@@ -6311,29 +6311,8 @@
 				uco-observable:extension "xml" ;
 				uco-observable:fileName "19_UFED_ANDROID_CROSSOVER.xml" ;
 				uco-observable:isDirectory "false"^^xsd:boolean ;
-				uco-observable:observableCreatedTime "2020-05-16:10:12.40Z"^^xsd:dateTime ;
+				uco-observable:observableCreatedTime "2020-05-16T10:12:24+00:00"^^xsd:dateTime ;
 			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a uco-observable:FileFacet ;
-				uco-observable:extension "xml" ;
-				uco-observable:fileName "19_UFED_ANDROID_CROSSOVER.xml" ;
-				uco-observable:isDirectory "false"^^xsd:boolean ;
-				uco-observable:observableCreatedTime "2020-05-16:10:12.40Z"^^xsd:dateTime ;
-			] ;
-			sh:resultMessage "Value is not Literal with datatype xsd:dateTime" ;
-			sh:resultPath uco-observable:observableCreatedTime ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-			sh:sourceShape [
-				sh:datatype xsd:dateTime ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:path uco-observable:observableCreatedTime ;
-			] ;
-			sh:value "2020-05-16:10:12.40Z"^^xsd:dateTime ;
 		] ,
 		[
 			a sh:ValidationResult ;
@@ -7713,6 +7692,26 @@
 				types:hashMethod "MD5"^^vocabulary:HashNameVocab ;
 				types:hashValue "TBD"^^xsd:hexBinary ;
 			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a types:Hash ;
+				types:hashMethod "MD5"^^vocabulary:HashNameVocab ;
+				types:hashValue "TBD"^^xsd:hexBinary ;
+			] ;
+			sh:resultMessage "Value is not Literal with datatype xsd:hexBinary" ;
+			sh:resultPath types:hashValue ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype xsd:hexBinary ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
+				sh:path types:hashValue ;
+			] ;
+			sh:value "TBD"^^xsd:hexBinary ;
 		] ,
 		[
 			a sh:ValidationResult ;
