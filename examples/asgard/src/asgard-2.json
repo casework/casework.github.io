@@ -53,18 +53,18 @@
         },
         "uco-tool:version": "1.2.0",
         "uco-configuration:usesConfiguration": {
-            "@id": "kb:configuration-f8b9219c-0bcf-4894-8dc2-7f83724e7128",
+            "@id": "kb:configuration-23657472-c4c9-472b-835c-a105e8832064",
             "@type": "uco-configuration:Configuration",
             "uco-configuration:configurationEntry": [
                 {
                     "@type": "uco-configuration:ConfigurationEntry",
-                    "uco-tool:itemName": "ExtractionMethod",
-                    "uco-tool:itemValue": "iOS_Backup"
+                    "uco-configuration:itemName": "ExtractionMethod",
+                    "uco-configuration:itemValue": "iOS_Backup"
                 },
                 {
                     "@type": "uco-configuration:ConfigurationEntry",
-                    "uco-tool:itemName": "ExtractionType",
-                    "uco-tool:itemValue": "File SystemMD5"
+                    "uco-configuration:itemName": "ExtractionType",
+                    "uco-configuration:itemValue": "File SystemMD5"
                 }
             ]
         }
