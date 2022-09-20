@@ -1,6 +1,6 @@
 [
     {
-        "@id": "kb:investigative-action1-uuid",
+        "@id": "kb:investigativeaction-3f7f68f0-f68d-48db-be09-45c1239b0fdd",
         "@type": "case-investigation:InvestigativeAction",
         "uco-core:name": "preserved",
         "uco-action:startTime": {
@@ -8,48 +8,48 @@
             "@value": "2019-03-30T22:36:24.35Z"
         },
         "uco-action:instrument": {
-            "@id": "kb:odin-decree13-uuid"
+            "@id": "kb:odin-decree-c75747d0-d0e9-4ef4-a868-ba6cf9097ac0"
         },
         "uco-action:location": {
-            "@id": "kb:asgard-bifrost-uuid"
+            "@id": "kb:asgard-bifrost-e4bf5ac0-a8b1-490f-930b-38593e87d5b8"
         },
         "uco-action:performer": {
-            "@id": "kb:investigator2-uuid"
+            "@id": "kb:investigator-899bb310-f5cd-4ab5-9e96-1234a37ed1da"
         },
         "uco-action:object": [],
         "uco-action:result": [
             {
-                "@id": "kb:provenance-record1-uuid"
+                "@id": "kb:provenancerecord-c2b73229-9cc1-477a-9024-8117e18d97fa"
             },
             {
-                "@id": "kb:suspect-device-uuid"
+                "@id": "kb:device-9420af3b-4d3a-4239-88fc-d33feec8dc4f"
             }
         ]
     },
     {
-        "@id": "kb:provenance-record1-uuid",
+        "@id": "kb:provenancerecord-c2b73229-9cc1-477a-9024-8117e18d97fa",
         "@type": "case-investigation:ProvenanceRecord",
         "uco-core:description": "Suspect device found near Bifrost Bridge after disruption",
         "case-investigation:exhibitNumber": "AsgardPD-20190330-001A",
         "uco-core:object": [
             {
-                "@id": "kb:suspect-device-uuid"
+                "@id": "kb:device-9420af3b-4d3a-4239-88fc-d33feec8dc4f"
             }
         ]
     },
     {
-        "@id": "kb:organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4",
+        "@id": "kb:organization-92feec0e-e2d0-4a98-bf47-dd0809265611",
         "@type": "uco-identity:Organization",
         "uco-core:name": "Apple"
     },
     {
-        "@id": "kb:suspect-device-uuid",
+        "@id": "kb:device-9420af3b-4d3a-4239-88fc-d33feec8dc4f",
         "@type": "uco-observable:Device",
         "uco-core:hasFacet": [
             {
                 "@type": "uco-observable:DeviceFacet",
                 "uco-observable:manufacturer": {
-                    "@id": "kb:organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4"
+                    "@id": "kb:organization-92feec0e-e2d0-4a98-bf47-dd0809265611"
                 },
                 "uco-observable:deviceType": "iPhone",
                 "uco-observable:model": "MG552",
@@ -59,7 +59,6 @@
                 "@type": "uco-observable:MobileDeviceFacet",
                 "uco-observable:keypadUnlockCode": "123789",
                 "uco-observable:IMEI": "359305065690067",
-                "uco-observable:MSISDN": "1239275339",
                 "uco-observable:clockSetting": {
                     "@type": "xsd:dateTime",
                     "@value": "2019-03-30T22:36:24.35Z"
@@ -96,5 +95,35 @@
                 "uco-observable:addressValue": "d0:33:11:13:e7:a2"
             }
         ]
+    },
+    {
+        "@id": "kb:mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90",
+        "@type": "uco-observable:MobileAccount",
+        "uco-core:hasFacet": [
+            {
+                "@type": "uco-observable:AccountFacet",
+                "uco-observable:accountType": {
+                    "@type": "uco-vocabulary:AccountTypeVocab",
+                    "@value": "Phone"
+                },
+                "uco-observable:isActive": true
+            },
+            {
+                "@type": "uco-observable:MobileAccountFacet",
+                "uco-observable:MSISDN": "1239275339"
+            }
+        ]
+    },
+    {
+        "@id": "kb:relationship-68d4edd7-3aca-449b-8f6d-261f8c70ca08",
+        "@type": "uco-core:Relationship",
+        "uco-core:source": {
+            "@id": "kb:device-9420af3b-4d3a-4239-88fc-d33feec8dc4f"
+        },
+        "uco-core:target": {
+            "@id": "kb:mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90"
+        },
+        "uco-core:kindOfRelationship": "Has_Account",
+        "uco-core:isDirectional": true
     }
 ]

@@ -1,6 +1,6 @@
 [
     {
-        "@id": "kb:network-connection1-uuid",
+        "@id": "kb:networkconnection-9ad57807-8ddd-427a-8985-0b391c0c5179",
         "@type": "uco-observable:NetworkConnection",
         "uco-core:hasFacet": [
             {
@@ -14,11 +14,11 @@
                     "@value": "2009-04-03T02:29:25.6365510Z"
                 },
                 "uco-observable:dst": {
-                    "@id": "kb:destination-host-uuid"
+                    "@id": "kb:destination-host-7f441a17-1c72-4caf-b5e2-f1a08f5dfa82"
                 },
                 "uco-observable:destinationPort": 139,
                 "uco-observable:src": {
-                    "@id": "kb:source-host-uuid"
+                    "@id": "kb:source-host-d77fdc61-b382-4aad-98fd-6dbf8cadd2bf"
                 },
                 "uco-observable:sourcePort": 52960,
                 "uco-observable:protocols": {

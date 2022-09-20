@@ -1,6 +1,6 @@
 [
     {
-        "@id": "kb:219189B6-356C-4D53-A844-F0031E74F156",
+        "@id": "kb:investigativeaction-67f43664-077d-47be-b332-4d1c2b579c49",
         "@type": "case-investigation:InvestigativeAction",
         "uco-core:name": "acquired",
         "uco-core:description": "Suspect device physical acquisition",
@@ -13,34 +13,28 @@
             "@value": "2019-03-30T22:47:32Z"
         },
         "uco-action:instrument": {
-            "@id": "kb:tool-embeddedextractor1-uid"
+            "@id": "kb:configuredtool-4c21b431-1746-410b-bc54-f2fd6a9b2516"
         },
         "uco-action:location": {
-            "@id": "kb:309BC178-1836-47B7-AA15-94EA3A2C7401"
+            "@id": "kb:location-f67042d4-4963-4c31-9807-23662670004f"
         },
         "uco-action:performer": {
-            "@id": "kb:E9AA4F26-D187-4F32-A602-86A6DF4B8528"
+            "@id": "kb:forensicexaminer-acf60326-de21-4a85-9909-692f1780470f"
         },
         "uco-action:object": [
             {
-                "@id": "kb:suspect-device-uuid"
+                "@id": "kb:device-9420af3b-4d3a-4239-88fc-d33feec8dc4f"
+            },
+            {
+                "@id": "kb:provenancerecord-c2b73229-9cc1-477a-9024-8117e18d97fa"
             }
         ],
         "uco-action:result": [
             {
-                "@id": "kb:90F73123-DB7E-41E5-B6CA-493B96E4B89F"
+                "@id": "kb:forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07"
             },
             {
-                "@id": "kb:97C74753-FCEB-49C8-A611-7A70EF46AB5D"
-            },
-            {
-                "@id": "kb:EBAB06EE-7522-42D6-96EA-E3121D67E393"
-            },
-            {
-                "@id": "kb:48C0F0E8-9A63-45EE-99BF-23CC354C3252"
-            },
-            {
-                "@id": "kb:B2A7B20E-8307-40CF-ABAF-9733ABBF4335"
+                "@id": "kb:provenancerecord-a2a5098c-43fd-4556-a437-2d3ddb821a53"
             }
         ]
     },
@@ -50,7 +44,7 @@
         "uco-core:name": "Harald"
     },
     {
-        "@id": "kb:tool-embeddedextractor1-uid",
+        "@id": "kb:configuredtool-4c21b431-1746-410b-bc54-f2fd6a9b2516",
         "@type": "uco-tool:ConfiguredTool",
         "uco-core:name": "Embedded Device Extrator",
         "uco-tool:toolType": "Extraction",
@@ -70,13 +64,24 @@
                 {
                     "@type": "uco-configuration:ConfigurationEntry",
                     "uco-configuration:itemName": "ExtractionType",
-                    "uco-configuration:itemValue": "File System"
+                    "uco-configuration:itemValue": "File SystemMD5"
                 }
             ]
         }
     },
     {
-        "@id": "kb:suspect-mobiledevice-forensicduplicate-uuid",
+        "@id": "kb:provenancerecord-a2a5098c-43fd-4556-a437-2d3ddb821a53",
+        "@type": "case-investigation:ProvenanceRecord",
+        "uco-core:description": "Suspect device found near Bifrost Bridge after disruption",
+        "case-investigation:exhibitNumber": "AsgardPD-20190330-001A",
+        "uco-core:object": [
+            {
+                "@id": "kb:forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07"
+            }
+        ]
+    },
+    {
+        "@id": "kb:forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07",
         "@type": [
             "uco-observable:File",
             "uco-observable:Image"
