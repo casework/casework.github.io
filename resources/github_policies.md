@@ -70,8 +70,8 @@ CASE recommends adoption of these statuses for any repository hosted on github/c
 
 -   Tests are implemented to confirm conformance with the specified versions of CASE and UCO.
 
-#### 5 - Production/Stable
-
 -   Continuous Integration testing is implemented and reported for the main branch in the repository's README.
+
+#### 5 - Production/Stable
 
 -   Branches are managed with the Gitflow branching policy.
