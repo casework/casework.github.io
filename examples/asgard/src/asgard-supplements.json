@@ -25,7 +25,7 @@
     },
     {
         "@id": "kb:investigator-899bb310-f5cd-4ab5-9e96-1234a37ed1da",
-        "@type": "uco-identity:Role"
+        "@type": "case-investigation:Investigator"
     },
     {
         "@id": "kb:application1-8538c226-1ba5-473b-8342-96150a4ab4ed",
