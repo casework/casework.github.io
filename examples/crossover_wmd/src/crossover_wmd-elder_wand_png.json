@@ -41,6 +41,7 @@
                 "uco-observable:hash": [
                     {
                         "@type": "uco-types:Hash",
+                        "rdfs:comment": "TODO: From the hash length, the algorithm appears to be MD5, not SHA2-256.",
                         "uco-types:hashMethod": {
                             "@type": "uco-vocabulary:HashNameVocab",
                             "@value": "SHA256"
