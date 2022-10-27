@@ -47,6 +47,7 @@
         "@type": "uco-observable:Device",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:device-facet-10a08c82-0e17-4aa7-88c1-d6b64b06472c",
                 "@type": "uco-observable:DeviceFacet",
                 "uco-observable:manufacturer": {
                     "@id": "kb:organization-92feec0e-e2d0-4a98-bf47-dd0809265611"
@@ -56,6 +57,7 @@
                 "uco-observable:serialNumber": "F18Q4LGRG5MD"
             },
             {
+                "@id": "kb:mobile-device-facet-20e46067-250b-4a09-a829-5a15cbcfd6c9",
                 "@type": "uco-observable:MobileDeviceFacet",
                 "uco-observable:keypadUnlockCode": "123789",
                 "uco-observable:IMEI": "359305065690067",
@@ -71,6 +73,7 @@
                 "uco-observable:storageCapacityInBytes": 17179869184
             },
             {
+                "@id": "kb:iPhone-device-facet-2263ff04-4025-42ba-a30c-58eb98f84fe2",
                 "@type": [
                     "drafting:iPhoneDeviceFacet",
                     "uco-core:Facet"
@@ -79,6 +82,7 @@
                 "drafting:ownerName": "Loki iPhone"
             },
             {
+                "@id": "kb:operating-system-facet-262f1b31-e23d-4324-84cb-5d55528caf63",
                 "@type": "uco-observable:OperatingSystemFacet",
                 "uco-core:name": "iOS",
                 "uco-observable:manufacturer": {
@@ -87,10 +91,12 @@
                 "uco-observable:version": "10.3"
             },
             {
+                "@id": "kb:wifi-address-facet-27d5903b-0037-4a98-acad-4f5003461899",
                 "@type": "uco-observable:WifiAddressFacet",
                 "uco-observable:addressValue": "d0:33:11:13:e7:a1"
             },
             {
+                "@id": "kb:bluetooth-address-facet-287af7ea-756d-4094-8ed9-fcad5e70bee4",
                 "@type": "uco-observable:BluetoothAddressFacet",
                 "uco-observable:addressValue": "d0:33:11:13:e7:a2"
             }
@@ -101,6 +107,7 @@
         "@type": "uco-observable:MobileAccount",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:account-facet-31df5a8a-fb9f-4fa6-85f9-cea13f4b9f03",
                 "@type": "uco-observable:AccountFacet",
                 "uco-observable:accountType": {
                     "@type": "uco-vocabulary:AccountTypeVocab",
@@ -109,6 +116,7 @@
                 "uco-observable:isActive": true
             },
             {
+                "@id": "kb:mobile-account-facet-50320fc0-d112-4720-9f20-93843d84f3b3",
                 "@type": "uco-observable:MobileAccountFacet",
                 "uco-observable:MSISDN": "1239275339"
             }

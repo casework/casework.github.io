@@ -4,6 +4,7 @@
         "@type": "uco-observable:SMSMessage",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:message-facet-7d687eb6-4b97-4a4d-be1c-e73e0a403f08",
                 "@type": "uco-observable:MessageFacet",
                 "uco-observable:application": {
                     "@id": "kb:application1-8538c226-1ba5-473b-8342-96150a4ab4ed"
@@ -29,6 +30,7 @@
         "@type": "uco-observable:Call",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:call-facet-a33cdd2c-af4a-45f9-8778-1d14c1dd50d6",
                 "@type": "uco-observable:CallFacet",
                 "uco-observable:callType": "mobile",
                 "uco-observable:startTime": {

@@ -4,6 +4,7 @@
         "@type": "uco-observable:File",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:file-facet-68004de9-1139-405f-aea7-2c05f3a84709",
                 "@type": "uco-observable:FileFacet",
                 "uco-observable:observableCreatedTime": {
                     "@type": "xsd:dateTime",
@@ -15,6 +16,7 @@
                 "uco-observable:sizeInBytes": 142925
             },
             {
+                "@id": "kb:content-data-facet-7084b3d6-8c49-4452-b387-b753aaff95f1",
                 "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:sizeInBytes": 122925,
                 "uco-observable:magicNumber": "U1FMaXRlIGZvcm1hdCAzAA==",
@@ -49,6 +51,7 @@
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
+                "@id": "kb:path-relation-facet-79e5625d-5fd3-4e17-bc0c-2ac3dd5d37e9",
                 "@type": "uco-observable:PathRelationFacet",
                 "uco-observable:path": "/mobile/sms.db"
             }
