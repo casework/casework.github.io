@@ -104,6 +104,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-97048c34-6f33-5f9a-ab2b-54438c3beca7",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -115,6 +116,7 @@
                             }
                         },
                         {
+                            "@id": "kb:hash-9a0eabd8-b1a8-5a87-8712-8e89403e516b",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -557,6 +559,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-7075ec42-538a-5688-b59a-e6494e16f832",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -592,6 +595,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-41f6331e-1190-5c29-a8c5-63e93b1162bd",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -627,6 +631,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-af48a01c-cdc3-5bc7-a055-cc15e2629e2e",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -662,6 +667,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-dca56087-1174-55de-b8b7-0e2354bb3ef2",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -697,6 +703,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-d3ba3b98-b06a-5a2e-b45b-3668f50608c2",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -732,6 +739,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-9d0e1cf7-26f2-5ce8-a73f-dd5557d65ff5",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -767,6 +775,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-e3a56b3f-a7dd-5301-a1b2-9b23063b85e1",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -802,6 +811,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-fa37fe1f-5dd7-5ce6-972d-132a65dbddfa",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -837,6 +847,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-c4bda428-31fb-51ad-b477-11c31b9dd624",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -872,6 +883,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-f089a49f-45ce-5721-9806-ba6c3fc639b7",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -907,6 +919,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-ef6c6376-25e8-52c0-94f6-851605d701bd",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -942,6 +955,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-5039341f-80c1-584a-88cb-1a3d0957b0b2",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -977,6 +991,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-d3183f9a-7f14-533a-829b-075389410fb1",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1012,6 +1027,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-c6244bd4-64ec-50fc-9045-cca4880d8728",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1047,6 +1063,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-4c6811cf-22d9-53a5-9084-4e0b3bfde399",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1082,6 +1099,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-e428f48b-5b2a-5002-83a8-7f7bda6b5ffe",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1117,6 +1135,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-cb9c7ec9-1cc6-55a8-bb32-c3d24881eb97",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1152,6 +1171,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-a40849e5-15dd-50ff-ae81-62a94642d90c",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1187,6 +1207,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-e25c0fb6-ade5-57c0-8c58-e110889f9eed",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1222,6 +1243,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-d7afd411-0da4-5761-b031-1aed669fba49",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1257,6 +1279,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-6611ab3e-34cb-57f2-9277-942adbf98d10",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1292,6 +1315,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-6615b5a2-32b3-5453-9c0c-687eea0aaa30",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1327,6 +1351,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-1114a157-d6e6-5fdc-807c-4ae205188bc3",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1362,6 +1387,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-810aaef6-2836-55c4-bfca-bb666f30cc44",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1397,6 +1423,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-b0130e51-fe12-5133-ba7e-8556adad5a09",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1432,6 +1459,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-fa7f690f-5393-5e5d-a370-2c66b40e6a31",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1467,6 +1495,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-df83960c-7ff8-5a8f-a0a0-f8ab4b980189",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1502,6 +1531,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-37e613de-bc76-5f4a-aa6b-e25babfa5393",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1537,6 +1567,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-36c901fe-0d8c-5de0-808b-29e22e99726d",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1572,6 +1603,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-1b2a8da7-ee8f-5abf-a44d-0ba1d435d909",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1607,6 +1639,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-4ae06bd2-52b0-5487-b401-afd81dcf26d5",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1642,6 +1675,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-7b1ab09c-61a5-5a6d-b989-de871655d008",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1677,6 +1711,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-c9bcd939-06f2-5367-b620-72be08d1fb2e",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1712,6 +1747,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-aa0dba0f-d861-5118-ab69-2d8decb156f2",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1747,6 +1783,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-d9e33ad4-3607-5095-95fa-9c8b888a0cce",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1782,6 +1819,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-a87988bc-4b72-5265-b6b8-c333c89e0835",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1817,6 +1855,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-5dd9e9eb-665d-534d-a2cc-5c6d68d27150",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1852,6 +1891,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-3a4926c9-4713-57b5-b980-347a28b38914",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",

@@ -107,6 +107,7 @@
                 "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:hash": [
                     {
+                        "@id": "kb:hash-bfa02feb-6184-5ca5-9ba3-272bf4367c5d",
                         "@type": "uco-types:Hash",
                         "uco-types:hashMethod": {
                             "@type": "uco-vocabulary:HashNameVocab",

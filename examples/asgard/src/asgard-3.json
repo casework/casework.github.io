@@ -22,6 +22,7 @@
                 "uco-observable:magicNumber": "U1FMaXRlIGZvcm1hdCAzAA==",
                 "uco-observable:hash": [
                     {
+                        "@id": "kb:hash-c6cc7dd6-1bf9-5454-9653-37caff09411d",
                         "@type": "uco-types:Hash",
                         "uco-types:hashMethod": {
                             "@type": "uco-vocabulary:HashNameVocab",

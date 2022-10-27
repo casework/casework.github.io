@@ -135,6 +135,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-12a9f855-c237-51d8-8239-0bb130374fde",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -146,15 +147,7 @@
                             }
                         },
                         {
-                            "@type": "uco-types:Hash",
-                            "uco-types:hashMethod": {
-                                "@type": "uco-vocabulary:HashNameVocab",
-                                "@value": "SHA1"
-                            },
-                            "uco-types:hashValue": {
-                                "@type": "xsd:hexBinary",
-                                "@value": "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"
-                            }
+                            "@id": "kb:hash-128996fc-3823-54a5-9ca4-cf6e21fca62f"
                         }
                     ]
                 }
@@ -195,19 +188,9 @@
                 },
                 {
                     "@type": "uco-observable:ContentDataFacet",
-                    "uco-observable:hash": [
-                        {
-                            "@type": "uco-types:Hash",
-                            "uco-types:hashMethod": {
-                                "@type": "uco-vocabulary:HashNameVocab",
-                                "@value": "SHA1"
-                            },
-                            "uco-types:hashValue": {
-                                "@type": "xsd:hexBinary",
-                                "@value": "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"
-                            }
-                        }
-                    ]
+                    "uco-observable:hash": {
+                        "@id": "kb:hash-128996fc-3823-54a5-9ca4-cf6e21fca62f"
+                    }
                 }
             ]
         },
@@ -283,6 +266,7 @@
                     "uco-observable:mimeType": "image/jpeg",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-c5761f3a-a741-5d06-a668-91e308ef19ef",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -411,6 +395,7 @@
                     "uco-observable:mimeType": "application/application/vnd.openxmlformats-officedocument.wordprocessingml.document",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-2cc00152-20ba-5a0f-86df-82293b4b6034",
                             "@type": "uco-types:Hash",
                             "rdfs:comment": "TODO: From the hash length, the algorithm appears to be MD5, not SHA2-256.",
                             "uco-types:hashMethod": {
@@ -727,6 +712,18 @@
                     }
                 }
             ]
+        },
+        {
+            "@id": "kb:hash-128996fc-3823-54a5-9ca4-cf6e21fca62f",
+            "@type": "uco-types:Hash",
+            "uco-types:hashMethod": {
+                "@type": "uco-vocabulary:HashNameVocab",
+                "@value": "SHA1"
+            },
+            "uco-types:hashValue": {
+                "@type": "xsd:hexBinary",
+                "@value": "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"
+            }
         }
     ]
 }

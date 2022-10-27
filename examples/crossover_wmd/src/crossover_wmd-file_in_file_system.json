@@ -42,6 +42,7 @@
                 "uco-observable:sizeInBytes": 245235000,
                 "uco-observable:hash": [
                     {
+                        "@id": "kb:hash-1a6175e1-cef7-5ee3-8703-22f5f7a43603",
                         "@type": "uco-types:Hash",
                         "uco-types:hashMethod": {
                             "@type": "uco-vocabulary:HashNameVocab",
