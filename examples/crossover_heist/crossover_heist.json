@@ -601,13 +601,7 @@
                 {
                     "@type": "uco-observable:ContentData",
                     "uco-observable:sizeInBytes": 756969,
-                    "uco-observable:mimeType": "image/jpeg",
-                    "uco-observable:hash": [
-                        {
-                            "@type": "uco-types:Hash",
-                            "uco-types:hashMethod": "MD5"
-                        }
-                    ]
+                    "uco-observable:mimeType": "image/jpeg"
                 },
                 {
                     "@type": "uco-observable:File",
