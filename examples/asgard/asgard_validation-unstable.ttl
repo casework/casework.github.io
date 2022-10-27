@@ -21,7 +21,7 @@
 	sh:result
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#call-3e3e316c-25dd-4651-98a2-fc3422e577f7> ;
+			sh:focusNode <http://example.org/kb/call-3e3e316c-25dd-4651-98a2-fc3422e577f7> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -36,14 +36,14 @@
 				uco-observable:callType "mobile" ;
 				uco-observable:duration "1862"^^xsd:integer ;
 				uco-observable:endTime "2010-01-15T18:30:41.250000+00:00"^^xsd:dateTime ;
-				uco-observable:from <http://example.org/kb#mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90> ;
+				uco-observable:from <http://example.org/kb/mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90> ;
 				uco-observable:startTime "2010-01-15T17:59:43.250000+00:00"^^xsd:dateTime ;
-				uco-observable:to <http://example.org/kb#mobileaccount-48c627e7-03c9-44d2-9731-2bbf08029c7d> ;
+				uco-observable:to <http://example.org/kb/mobileaccount-48c627e7-03c9-44d2-9731-2bbf08029c7d> ;
 			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#device-9420af3b-4d3a-4239-88fc-d33feec8dc4f> ;
+			sh:focusNode <http://example.org/kb/device-9420af3b-4d3a-4239-88fc-d33feec8dc4f> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -65,7 +65,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#device-9420af3b-4d3a-4239-88fc-d33feec8dc4f> ;
+			sh:focusNode <http://example.org/kb/device-9420af3b-4d3a-4239-88fc-d33feec8dc4f> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -86,7 +86,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#device-9420af3b-4d3a-4239-88fc-d33feec8dc4f> ;
+			sh:focusNode <http://example.org/kb/device-9420af3b-4d3a-4239-88fc-d33feec8dc4f> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -103,7 +103,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#device-9420af3b-4d3a-4239-88fc-d33feec8dc4f> ;
+			sh:focusNode <http://example.org/kb/device-9420af3b-4d3a-4239-88fc-d33feec8dc4f> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -116,14 +116,14 @@
 			sh:value [
 				a uco-observable:DeviceFacet ;
 				uco-observable:deviceType "iPhone" ;
-				uco-observable:manufacturer <http://example.org/kb#organization-92feec0e-e2d0-4a98-bf47-dd0809265611> ;
+				uco-observable:manufacturer <http://example.org/kb/organization-92feec0e-e2d0-4a98-bf47-dd0809265611> ;
 				uco-observable:model "MG552" ;
 				uco-observable:serialNumber "F18Q4LGRG5MD" ;
 			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#device-9420af3b-4d3a-4239-88fc-d33feec8dc4f> ;
+			sh:focusNode <http://example.org/kb/device-9420af3b-4d3a-4239-88fc-d33feec8dc4f> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -136,13 +136,13 @@
 			sh:value [
 				a uco-observable:OperatingSystemFacet ;
 				core:name "iOS" ;
-				uco-observable:manufacturer <http://example.org/kb#organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4> ;
+				uco-observable:manufacturer <http://example.org/kb/organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4> ;
 				uco-observable:version "10.3" ;
 			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#device-9420af3b-4d3a-4239-88fc-d33feec8dc4f> ;
+			sh:focusNode <http://example.org/kb/device-9420af3b-4d3a-4239-88fc-d33feec8dc4f> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -159,7 +159,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#file-mmssms-dcec8d09-a8bc-4b7c-93ab-16c7b363d48b> ;
+			sh:focusNode <http://example.org/kb/file-mmssms-dcec8d09-a8bc-4b7c-93ab-16c7b363d48b> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -182,7 +182,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#file-mmssms-dcec8d09-a8bc-4b7c-93ab-16c7b363d48b> ;
+			sh:focusNode <http://example.org/kb/file-mmssms-dcec8d09-a8bc-4b7c-93ab-16c7b363d48b> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -203,7 +203,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07> ;
+			sh:focusNode <http://example.org/kb/forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -225,7 +225,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07> ;
+			sh:focusNode <http://example.org/kb/forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -247,7 +247,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#investigativeaction-67f43664-077d-47be-b332-4d1c2b579c49> ;
+			sh:focusNode <http://example.org/kb/investigativeaction-67f43664-077d-47be-b332-4d1c2b579c49> ;
 			sh:resultMessage "Value does not have class core:UcoObject" ;
 			sh:resultPath action:performer ;
 			sh:resultSeverity sh:Violation ;
@@ -258,11 +258,11 @@
 				sh:nodeKind sh:IRI ;
 				sh:path action:performer ;
 			] ;
-			sh:value <http://example.org/kb#forensicexaminer-acf60326-de21-4a85-9909-692f1780470f> ;
+			sh:value <http://example.org/kb/forensicexaminer-acf60326-de21-4a85-9909-692f1780470f> ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#investigativeaction-67f43664-077d-47be-b332-4d1c2b579c49> ;
+			sh:focusNode <http://example.org/kb/investigativeaction-67f43664-077d-47be-b332-4d1c2b579c49> ;
 			sh:resultMessage "Value does not have class location:Location" ;
 			sh:resultPath action:location ;
 			sh:resultSeverity sh:Violation ;
@@ -272,11 +272,11 @@
 				sh:nodeKind sh:IRI ;
 				sh:path action:location ;
 			] ;
-			sh:value <http://example.org/kb#location-f67042d4-4963-4c31-9807-23662670004f> ;
+			sh:value <http://example.org/kb/location-f67042d4-4963-4c31-9807-23662670004f> ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90> ;
+			sh:focusNode <http://example.org/kb/mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -294,7 +294,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90> ;
+			sh:focusNode <http://example.org/kb/mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -311,7 +311,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#networkconnection-9ad57807-8ddd-427a-8985-0b391c0c5179> ;
+			sh:focusNode <http://example.org/kb/networkconnection-9ad57807-8ddd-427a-8985-0b391c0c5179> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -325,7 +325,7 @@
 				a uco-observable:NetworkConnectionFacet ;
 				ns1:connectionState "APSF" ;
 				uco-observable:destinationPort "139"^^xsd:integer ;
-				uco-observable:dst <http://example.org/kb#destination-host-7f441a17-1c72-4caf-b5e2-f1a08f5dfa82> ;
+				uco-observable:dst <http://example.org/kb/destination-host-7f441a17-1c72-4caf-b5e2-f1a08f5dfa82> ;
 				uco-observable:endTime "2009-04-03T02:29:25.636551+00:00"^^xsd:dateTime ;
 				uco-observable:protocols [
 					a types:ControlledDictionary ;
@@ -343,13 +343,13 @@
 						;
 				] ;
 				uco-observable:sourcePort "52960"^^xsd:integer ;
-				uco-observable:src <http://example.org/kb#source-host-d77fdc61-b382-4aad-98fd-6dbf8cadd2bf> ;
+				uco-observable:src <http://example.org/kb/source-host-d77fdc61-b382-4aad-98fd-6dbf8cadd2bf> ;
 				uco-observable:startTime "2009-04-03T02:29:25.625626+00:00"^^xsd:dateTime ;
 			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#relationship3-64625b2b-a64e-4ea0-90f0-216dc5f51306> ;
+			sh:focusNode <http://example.org/kb/relationship3-64625b2b-a64e-4ea0-90f0-216dc5f51306> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -366,7 +366,7 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#smsmessage-21b3e39d-772d-47b0-8501-a6945ddbdfcd> ;
+			sh:focusNode <http://example.org/kb/smsmessage-21b3e39d-772d-47b0-8501-a6945ddbdfcd> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -378,11 +378,11 @@
 			] ;
 			sh:value [
 				a uco-observable:MessageFacet ;
-				uco-observable:application <http://example.org/kb#application1-8538c226-1ba5-473b-8342-96150a4ab4ed> ;
-				uco-observable:from <http://example.org/kb#mobileaccount-96f8460f-760e-49cb-adad-bb4a0840fb63> ;
+				uco-observable:application <http://example.org/kb/application1-8538c226-1ba5-473b-8342-96150a4ab4ed> ;
+				uco-observable:from <http://example.org/kb/mobileaccount-96f8460f-760e-49cb-adad-bb4a0840fb63> ;
 				uco-observable:messageText "Yo dude! This is my new number." ;
 				uco-observable:sentTime "2010-01-15T17:59:43.250000+00:00"^^xsd:dateTime ;
-				uco-observable:to <http://example.org/kb#mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90> ;
+				uco-observable:to <http://example.org/kb/mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90> ;
 			] ;
 		] ,
 		[
@@ -547,7 +547,7 @@
 			a sh:ValidationResult ;
 			sh:focusNode [
 				a investigation:Authorization ;
-				ns1:authorizationAuthority <http://example.org/kb#organization-e2322f63-96cb-4fd4-8ddc-351a9826598e> ;
+				ns1:authorizationAuthority <http://example.org/kb/organization-e2322f63-96cb-4fd4-8ddc-351a9826598e> ;
 				ns1:authorizationIssuedDate "20190330" ;
 				investigation:authorizationIdentifier "Decree_2019_00013" ;
 				investigation:authorizationType "Odin_Decree" ;
@@ -570,7 +570,7 @@
 			sh:sourceShape core:UcoThing ;
 			sh:value [
 				a investigation:Authorization ;
-				ns1:authorizationAuthority <http://example.org/kb#organization-e2322f63-96cb-4fd4-8ddc-351a9826598e> ;
+				ns1:authorizationAuthority <http://example.org/kb/organization-e2322f63-96cb-4fd4-8ddc-351a9826598e> ;
 				ns1:authorizationIssuedDate "20190330" ;
 				investigation:authorizationIdentifier "Decree_2019_00013" ;
 				investigation:authorizationType "Odin_Decree" ;
@@ -580,7 +580,7 @@
 			a sh:ValidationResult ;
 			sh:focusNode [
 				a investigation:Authorization ;
-				ns1:authorizationAuthority <http://example.org/kb#organization-e2322f63-96cb-4fd4-8ddc-351a9826598e> ;
+				ns1:authorizationAuthority <http://example.org/kb/organization-e2322f63-96cb-4fd4-8ddc-351a9826598e> ;
 				ns1:authorizationIssuedDate "20190330" ;
 				investigation:authorizationIdentifier "Decree_2019_00013" ;
 				investigation:authorizationType "Odin_Decree" ;
@@ -610,7 +610,7 @@
 			sh:sourceShape core:UcoThing-identifier-regex-shape ;
 			sh:value [
 				a investigation:Authorization ;
-				ns1:authorizationAuthority <http://example.org/kb#organization-e2322f63-96cb-4fd4-8ddc-351a9826598e> ;
+				ns1:authorizationAuthority <http://example.org/kb/organization-e2322f63-96cb-4fd4-8ddc-351a9826598e> ;
 				ns1:authorizationIssuedDate "20190330" ;
 				investigation:authorizationIdentifier "Decree_2019_00013" ;
 				investigation:authorizationType "Odin_Decree" ;
@@ -622,7 +622,7 @@
 				a uco-observable:NetworkConnectionFacet ;
 				ns1:connectionState "APSF" ;
 				uco-observable:destinationPort "139"^^xsd:integer ;
-				uco-observable:dst <http://example.org/kb#destination-host-7f441a17-1c72-4caf-b5e2-f1a08f5dfa82> ;
+				uco-observable:dst <http://example.org/kb/destination-host-7f441a17-1c72-4caf-b5e2-f1a08f5dfa82> ;
 				uco-observable:endTime "2009-04-03T02:29:25.636551+00:00"^^xsd:dateTime ;
 				uco-observable:protocols [
 					a types:ControlledDictionary ;
@@ -640,7 +640,7 @@
 						;
 				] ;
 				uco-observable:sourcePort "52960"^^xsd:integer ;
-				uco-observable:src <http://example.org/kb#source-host-d77fdc61-b382-4aad-98fd-6dbf8cadd2bf> ;
+				uco-observable:src <http://example.org/kb/source-host-d77fdc61-b382-4aad-98fd-6dbf8cadd2bf> ;
 				uco-observable:startTime "2009-04-03T02:29:25.625626+00:00"^^xsd:dateTime ;
 			] ;
 			sh:resultMessage "UcoThings are required to not be blank nodes." ;
@@ -663,7 +663,7 @@
 				a uco-observable:NetworkConnectionFacet ;
 				ns1:connectionState "APSF" ;
 				uco-observable:destinationPort "139"^^xsd:integer ;
-				uco-observable:dst <http://example.org/kb#destination-host-7f441a17-1c72-4caf-b5e2-f1a08f5dfa82> ;
+				uco-observable:dst <http://example.org/kb/destination-host-7f441a17-1c72-4caf-b5e2-f1a08f5dfa82> ;
 				uco-observable:endTime "2009-04-03T02:29:25.636551+00:00"^^xsd:dateTime ;
 				uco-observable:protocols [
 					a types:ControlledDictionary ;
@@ -681,7 +681,7 @@
 						;
 				] ;
 				uco-observable:sourcePort "52960"^^xsd:integer ;
-				uco-observable:src <http://example.org/kb#source-host-d77fdc61-b382-4aad-98fd-6dbf8cadd2bf> ;
+				uco-observable:src <http://example.org/kb/source-host-d77fdc61-b382-4aad-98fd-6dbf8cadd2bf> ;
 				uco-observable:startTime "2009-04-03T02:29:25.625626+00:00"^^xsd:dateTime ;
 			] ;
 		] ,
@@ -691,7 +691,7 @@
 				a uco-observable:NetworkConnectionFacet ;
 				ns1:connectionState "APSF" ;
 				uco-observable:destinationPort "139"^^xsd:integer ;
-				uco-observable:dst <http://example.org/kb#destination-host-7f441a17-1c72-4caf-b5e2-f1a08f5dfa82> ;
+				uco-observable:dst <http://example.org/kb/destination-host-7f441a17-1c72-4caf-b5e2-f1a08f5dfa82> ;
 				uco-observable:endTime "2009-04-03T02:29:25.636551+00:00"^^xsd:dateTime ;
 				uco-observable:protocols [
 					a types:ControlledDictionary ;
@@ -709,7 +709,7 @@
 						;
 				] ;
 				uco-observable:sourcePort "52960"^^xsd:integer ;
-				uco-observable:src <http://example.org/kb#source-host-d77fdc61-b382-4aad-98fd-6dbf8cadd2bf> ;
+				uco-observable:src <http://example.org/kb/source-host-d77fdc61-b382-4aad-98fd-6dbf8cadd2bf> ;
 				uco-observable:startTime "2009-04-03T02:29:25.625626+00:00"^^xsd:dateTime ;
 			] ;
 			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
@@ -739,7 +739,7 @@
 				a uco-observable:NetworkConnectionFacet ;
 				ns1:connectionState "APSF" ;
 				uco-observable:destinationPort "139"^^xsd:integer ;
-				uco-observable:dst <http://example.org/kb#destination-host-7f441a17-1c72-4caf-b5e2-f1a08f5dfa82> ;
+				uco-observable:dst <http://example.org/kb/destination-host-7f441a17-1c72-4caf-b5e2-f1a08f5dfa82> ;
 				uco-observable:endTime "2009-04-03T02:29:25.636551+00:00"^^xsd:dateTime ;
 				uco-observable:protocols [
 					a types:ControlledDictionary ;
@@ -757,7 +757,7 @@
 						;
 				] ;
 				uco-observable:sourcePort "52960"^^xsd:integer ;
-				uco-observable:src <http://example.org/kb#source-host-d77fdc61-b382-4aad-98fd-6dbf8cadd2bf> ;
+				uco-observable:src <http://example.org/kb/source-host-d77fdc61-b382-4aad-98fd-6dbf8cadd2bf> ;
 				uco-observable:startTime "2009-04-03T02:29:25.625626+00:00"^^xsd:dateTime ;
 			] ;
 		] ,
@@ -767,7 +767,7 @@
 				a uco-observable:NetworkConnectionFacet ;
 				ns1:connectionState "APSF" ;
 				uco-observable:destinationPort "139"^^xsd:integer ;
-				uco-observable:dst <http://example.org/kb#destination-host-7f441a17-1c72-4caf-b5e2-f1a08f5dfa82> ;
+				uco-observable:dst <http://example.org/kb/destination-host-7f441a17-1c72-4caf-b5e2-f1a08f5dfa82> ;
 				uco-observable:endTime "2009-04-03T02:29:25.636551+00:00"^^xsd:dateTime ;
 				uco-observable:protocols [
 					a types:ControlledDictionary ;
@@ -785,7 +785,7 @@
 						;
 				] ;
 				uco-observable:sourcePort "52960"^^xsd:integer ;
-				uco-observable:src <http://example.org/kb#source-host-d77fdc61-b382-4aad-98fd-6dbf8cadd2bf> ;
+				uco-observable:src <http://example.org/kb/source-host-d77fdc61-b382-4aad-98fd-6dbf8cadd2bf> ;
 				uco-observable:startTime "2009-04-03T02:29:25.625626+00:00"^^xsd:dateTime ;
 			] ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
@@ -1112,9 +1112,9 @@
 				uco-observable:callType "mobile" ;
 				uco-observable:duration "1862"^^xsd:integer ;
 				uco-observable:endTime "2010-01-15T18:30:41.250000+00:00"^^xsd:dateTime ;
-				uco-observable:from <http://example.org/kb#mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90> ;
+				uco-observable:from <http://example.org/kb/mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90> ;
 				uco-observable:startTime "2010-01-15T17:59:43.250000+00:00"^^xsd:dateTime ;
-				uco-observable:to <http://example.org/kb#mobileaccount-48c627e7-03c9-44d2-9731-2bbf08029c7d> ;
+				uco-observable:to <http://example.org/kb/mobileaccount-48c627e7-03c9-44d2-9731-2bbf08029c7d> ;
 			] ;
 			sh:resultMessage "UcoThings are required to not be blank nodes." ;
 			sh:resultSeverity sh:Violation ;
@@ -1137,9 +1137,9 @@
 				uco-observable:callType "mobile" ;
 				uco-observable:duration "1862"^^xsd:integer ;
 				uco-observable:endTime "2010-01-15T18:30:41.250000+00:00"^^xsd:dateTime ;
-				uco-observable:from <http://example.org/kb#mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90> ;
+				uco-observable:from <http://example.org/kb/mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90> ;
 				uco-observable:startTime "2010-01-15T17:59:43.250000+00:00"^^xsd:dateTime ;
-				uco-observable:to <http://example.org/kb#mobileaccount-48c627e7-03c9-44d2-9731-2bbf08029c7d> ;
+				uco-observable:to <http://example.org/kb/mobileaccount-48c627e7-03c9-44d2-9731-2bbf08029c7d> ;
 			] ;
 		] ,
 		[
@@ -1149,9 +1149,9 @@
 				uco-observable:callType "mobile" ;
 				uco-observable:duration "1862"^^xsd:integer ;
 				uco-observable:endTime "2010-01-15T18:30:41.250000+00:00"^^xsd:dateTime ;
-				uco-observable:from <http://example.org/kb#mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90> ;
+				uco-observable:from <http://example.org/kb/mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90> ;
 				uco-observable:startTime "2010-01-15T17:59:43.250000+00:00"^^xsd:dateTime ;
-				uco-observable:to <http://example.org/kb#mobileaccount-48c627e7-03c9-44d2-9731-2bbf08029c7d> ;
+				uco-observable:to <http://example.org/kb/mobileaccount-48c627e7-03c9-44d2-9731-2bbf08029c7d> ;
 			] ;
 			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
 			sh:resultSeverity sh:Info ;
@@ -1181,9 +1181,9 @@
 				uco-observable:callType "mobile" ;
 				uco-observable:duration "1862"^^xsd:integer ;
 				uco-observable:endTime "2010-01-15T18:30:41.250000+00:00"^^xsd:dateTime ;
-				uco-observable:from <http://example.org/kb#mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90> ;
+				uco-observable:from <http://example.org/kb/mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90> ;
 				uco-observable:startTime "2010-01-15T17:59:43.250000+00:00"^^xsd:dateTime ;
-				uco-observable:to <http://example.org/kb#mobileaccount-48c627e7-03c9-44d2-9731-2bbf08029c7d> ;
+				uco-observable:to <http://example.org/kb/mobileaccount-48c627e7-03c9-44d2-9731-2bbf08029c7d> ;
 			] ;
 		] ,
 		[
@@ -1410,7 +1410,7 @@
 			sh:focusNode [
 				a uco-observable:DeviceFacet ;
 				uco-observable:deviceType "iPhone" ;
-				uco-observable:manufacturer <http://example.org/kb#organization-92feec0e-e2d0-4a98-bf47-dd0809265611> ;
+				uco-observable:manufacturer <http://example.org/kb/organization-92feec0e-e2d0-4a98-bf47-dd0809265611> ;
 				uco-observable:model "MG552" ;
 				uco-observable:serialNumber "F18Q4LGRG5MD" ;
 			] ;
@@ -1433,7 +1433,7 @@
 			sh:value [
 				a uco-observable:DeviceFacet ;
 				uco-observable:deviceType "iPhone" ;
-				uco-observable:manufacturer <http://example.org/kb#organization-92feec0e-e2d0-4a98-bf47-dd0809265611> ;
+				uco-observable:manufacturer <http://example.org/kb/organization-92feec0e-e2d0-4a98-bf47-dd0809265611> ;
 				uco-observable:model "MG552" ;
 				uco-observable:serialNumber "F18Q4LGRG5MD" ;
 			] ;
@@ -1443,7 +1443,7 @@
 			sh:focusNode [
 				a uco-observable:DeviceFacet ;
 				uco-observable:deviceType "iPhone" ;
-				uco-observable:manufacturer <http://example.org/kb#organization-92feec0e-e2d0-4a98-bf47-dd0809265611> ;
+				uco-observable:manufacturer <http://example.org/kb/organization-92feec0e-e2d0-4a98-bf47-dd0809265611> ;
 				uco-observable:model "MG552" ;
 				uco-observable:serialNumber "F18Q4LGRG5MD" ;
 			] ;
@@ -1473,7 +1473,7 @@
 			sh:value [
 				a uco-observable:DeviceFacet ;
 				uco-observable:deviceType "iPhone" ;
-				uco-observable:manufacturer <http://example.org/kb#organization-92feec0e-e2d0-4a98-bf47-dd0809265611> ;
+				uco-observable:manufacturer <http://example.org/kb/organization-92feec0e-e2d0-4a98-bf47-dd0809265611> ;
 				uco-observable:model "MG552" ;
 				uco-observable:serialNumber "F18Q4LGRG5MD" ;
 			] ;
@@ -1640,11 +1640,11 @@
 			a sh:ValidationResult ;
 			sh:focusNode [
 				a uco-observable:MessageFacet ;
-				uco-observable:application <http://example.org/kb#application1-8538c226-1ba5-473b-8342-96150a4ab4ed> ;
-				uco-observable:from <http://example.org/kb#mobileaccount-96f8460f-760e-49cb-adad-bb4a0840fb63> ;
+				uco-observable:application <http://example.org/kb/application1-8538c226-1ba5-473b-8342-96150a4ab4ed> ;
+				uco-observable:from <http://example.org/kb/mobileaccount-96f8460f-760e-49cb-adad-bb4a0840fb63> ;
 				uco-observable:messageText "Yo dude! This is my new number." ;
 				uco-observable:sentTime "2010-01-15T17:59:43.250000+00:00"^^xsd:dateTime ;
-				uco-observable:to <http://example.org/kb#mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90> ;
+				uco-observable:to <http://example.org/kb/mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90> ;
 			] ;
 			sh:resultMessage "UcoThings are required to not be blank nodes." ;
 			sh:resultSeverity sh:Violation ;
@@ -1664,22 +1664,22 @@
 			sh:sourceShape core:UcoThing ;
 			sh:value [
 				a uco-observable:MessageFacet ;
-				uco-observable:application <http://example.org/kb#application1-8538c226-1ba5-473b-8342-96150a4ab4ed> ;
-				uco-observable:from <http://example.org/kb#mobileaccount-96f8460f-760e-49cb-adad-bb4a0840fb63> ;
+				uco-observable:application <http://example.org/kb/application1-8538c226-1ba5-473b-8342-96150a4ab4ed> ;
+				uco-observable:from <http://example.org/kb/mobileaccount-96f8460f-760e-49cb-adad-bb4a0840fb63> ;
 				uco-observable:messageText "Yo dude! This is my new number." ;
 				uco-observable:sentTime "2010-01-15T17:59:43.250000+00:00"^^xsd:dateTime ;
-				uco-observable:to <http://example.org/kb#mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90> ;
+				uco-observable:to <http://example.org/kb/mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90> ;
 			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
 				a uco-observable:MessageFacet ;
-				uco-observable:application <http://example.org/kb#application1-8538c226-1ba5-473b-8342-96150a4ab4ed> ;
-				uco-observable:from <http://example.org/kb#mobileaccount-96f8460f-760e-49cb-adad-bb4a0840fb63> ;
+				uco-observable:application <http://example.org/kb/application1-8538c226-1ba5-473b-8342-96150a4ab4ed> ;
+				uco-observable:from <http://example.org/kb/mobileaccount-96f8460f-760e-49cb-adad-bb4a0840fb63> ;
 				uco-observable:messageText "Yo dude! This is my new number." ;
 				uco-observable:sentTime "2010-01-15T17:59:43.250000+00:00"^^xsd:dateTime ;
-				uco-observable:to <http://example.org/kb#mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90> ;
+				uco-observable:to <http://example.org/kb/mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90> ;
 			] ;
 			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
 			sh:resultSeverity sh:Info ;
@@ -1706,11 +1706,11 @@
 			sh:sourceShape core:UcoThing-identifier-regex-shape ;
 			sh:value [
 				a uco-observable:MessageFacet ;
-				uco-observable:application <http://example.org/kb#application1-8538c226-1ba5-473b-8342-96150a4ab4ed> ;
-				uco-observable:from <http://example.org/kb#mobileaccount-96f8460f-760e-49cb-adad-bb4a0840fb63> ;
+				uco-observable:application <http://example.org/kb/application1-8538c226-1ba5-473b-8342-96150a4ab4ed> ;
+				uco-observable:from <http://example.org/kb/mobileaccount-96f8460f-760e-49cb-adad-bb4a0840fb63> ;
 				uco-observable:messageText "Yo dude! This is my new number." ;
 				uco-observable:sentTime "2010-01-15T17:59:43.250000+00:00"^^xsd:dateTime ;
-				uco-observable:to <http://example.org/kb#mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90> ;
+				uco-observable:to <http://example.org/kb/mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90> ;
 			] ;
 		] ,
 		[
@@ -1779,7 +1779,7 @@
 			sh:focusNode [
 				a uco-observable:OperatingSystemFacet ;
 				core:name "iOS" ;
-				uco-observable:manufacturer <http://example.org/kb#organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4> ;
+				uco-observable:manufacturer <http://example.org/kb/organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4> ;
 				uco-observable:version "10.3" ;
 			] ;
 			sh:resultMessage "UcoThings are required to not be blank nodes." ;
@@ -1801,7 +1801,7 @@
 			sh:value [
 				a uco-observable:OperatingSystemFacet ;
 				core:name "iOS" ;
-				uco-observable:manufacturer <http://example.org/kb#organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4> ;
+				uco-observable:manufacturer <http://example.org/kb/organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4> ;
 				uco-observable:version "10.3" ;
 			] ;
 		] ,
@@ -1810,7 +1810,7 @@
 			sh:focusNode [
 				a uco-observable:OperatingSystemFacet ;
 				core:name "iOS" ;
-				uco-observable:manufacturer <http://example.org/kb#organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4> ;
+				uco-observable:manufacturer <http://example.org/kb/organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4> ;
 				uco-observable:version "10.3" ;
 			] ;
 			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
@@ -1839,7 +1839,7 @@
 			sh:value [
 				a uco-observable:OperatingSystemFacet ;
 				core:name "iOS" ;
-				uco-observable:manufacturer <http://example.org/kb#organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4> ;
+				uco-observable:manufacturer <http://example.org/kb/organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4> ;
 				uco-observable:version "10.3" ;
 			] ;
 		] ,
@@ -1848,7 +1848,7 @@
 			sh:focusNode [
 				a uco-observable:OperatingSystemFacet ;
 				core:name "iOS" ;
-				uco-observable:manufacturer <http://example.org/kb#organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4> ;
+				uco-observable:manufacturer <http://example.org/kb/organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4> ;
 				uco-observable:version "10.3" ;
 			] ;
 			sh:resultMessage "Value does not have class identity:Identity" ;
@@ -1861,7 +1861,7 @@
 				sh:nodeKind sh:IRI ;
 				sh:path uco-observable:manufacturer ;
 			] ;
-			sh:value <http://example.org/kb#organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4> ;
+			sh:value <http://example.org/kb/organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4> ;
 		] ,
 		[
 			a sh:ValidationResult ;
