@@ -53,7 +53,7 @@
                 "@id": "kb:856975ce-3c25-49c3-b6eb-28d1e929f915"
             },
             "uco-core:kindOfRelationship": "Has_Role",
-            "uco-core:isDirectional": "True"
+            "uco-core:isDirectional": true
         },
         {
             "@id": "kb:configuredtool-58f07c30-ae20-4587-9bb8-1a5299821e57",
@@ -165,7 +165,7 @@
                 "@id": "kb:disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11"
             },
             "uco-core:kindOfRelationship": "Contained_Within",
-            "uco-core:isDirectional": "True"
+            "uco-core:isDirectional": true
         },
         {
             "@id": "kb:diskpartition-820d247d-3016-49a0-82ca-705dc9b70254",
@@ -190,7 +190,7 @@
                 "@id": "kb:disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11"
             },
             "uco-core:kindOfRelationship": "Contained_Within",
-            "uco-core:isDirectional": "True"
+            "uco-core:isDirectional": true
         },
         {
             "@id": "kb:diskpartition-e19c38f5-692b-4336-8d6d-fdc34a51b00e",
@@ -215,7 +215,7 @@
                 "@id": "kb:disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11"
             },
             "uco-core:kindOfRelationship": "Contained_Within",
-            "uco-core:isDirectional": "True"
+            "uco-core:isDirectional": true
         },
         {
             "@id": "kb:diskpartition-a193840c-7b8b-4ede-a5a7-e4464b30b9c7",
@@ -240,7 +240,7 @@
                 "@id": "kb:disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11"
             },
             "uco-core:kindOfRelationship": "Contained_Within",
-            "uco-core:isDirectional": "True"
+            "uco-core:isDirectional": true
         },
         {
             "@id": "kb:diskpartition-f90a3ee1-2cde-439f-9768-23c67aafe347",
@@ -265,7 +265,7 @@
                 "@id": "kb:disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11"
             },
             "uco-core:kindOfRelationship": "Contained_Within",
-            "uco-core:isDirectional": "True"
+            "uco-core:isDirectional": true
         },
         {
             "@id": "kb:investigativeAction-414ef4e5-0a1f-43d9-9e93-002bc2a28de4",
@@ -393,7 +393,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E01",
                     "uco-observable:extension": "E01",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -428,7 +428,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E02",
                     "uco-observable:extension": "E02",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -463,7 +463,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E03",
                     "uco-observable:extension": "E03",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -498,7 +498,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E04",
                     "uco-observable:extension": "E04",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -533,7 +533,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E05",
                     "uco-observable:extension": "E05",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -568,7 +568,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E06",
                     "uco-observable:extension": "E06",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -603,7 +603,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E07",
                     "uco-observable:extension": "E07",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -638,7 +638,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E08",
                     "uco-observable:extension": "E08",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -673,7 +673,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E09",
                     "uco-observable:extension": "E09",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -708,7 +708,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E10",
                     "uco-observable:extension": "E10",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -743,7 +743,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E11",
                     "uco-observable:extension": "E11",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -778,7 +778,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E12",
                     "uco-observable:extension": "E12",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -813,7 +813,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E13",
                     "uco-observable:extension": "E13",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -848,7 +848,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E14",
                     "uco-observable:extension": "E14",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -883,7 +883,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E15",
                     "uco-observable:extension": "E15",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -918,7 +918,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E16",
                     "uco-observable:extension": "E16",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -953,7 +953,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E17",
                     "uco-observable:extension": "E17",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -988,7 +988,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E18",
                     "uco-observable:extension": "E18",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -1023,7 +1023,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E19",
                     "uco-observable:extension": "E19",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -1058,7 +1058,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E20",
                     "uco-observable:extension": "E20",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -1093,7 +1093,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E21",
                     "uco-observable:extension": "E21",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -1128,7 +1128,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E22",
                     "uco-observable:extension": "E22",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -1163,7 +1163,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E23",
                     "uco-observable:extension": "E23",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -1198,7 +1198,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E24",
                     "uco-observable:extension": "E24",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -1233,7 +1233,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E25",
                     "uco-observable:extension": "E25",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -1268,7 +1268,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E26",
                     "uco-observable:extension": "E26",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -1303,7 +1303,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E27",
                     "uco-observable:extension": "E27",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -1338,7 +1338,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E28",
                     "uco-observable:extension": "E28",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -1373,7 +1373,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E29",
                     "uco-observable:extension": "E29",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -1408,7 +1408,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E30",
                     "uco-observable:extension": "E30",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -1443,7 +1443,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E31",
                     "uco-observable:extension": "E31",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -1478,7 +1478,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E32",
                     "uco-observable:extension": "E32",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -1513,7 +1513,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E33",
                     "uco-observable:extension": "E33",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -1548,7 +1548,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E34",
                     "uco-observable:extension": "E34",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -1583,7 +1583,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E35",
                     "uco-observable:extension": "E35",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -1618,7 +1618,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E36",
                     "uco-observable:extension": "E36",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -1653,7 +1653,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E37",
                     "uco-observable:extension": "E37",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
@@ -1688,7 +1688,7 @@
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E38",
                     "uco-observable:extension": "E38",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
+                    "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": "4GB",
                     "uco-observable:createdTime": {
                         "@type": "xsd:dateTime",
