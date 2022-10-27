@@ -21,21 +21,6 @@
 	sh:result
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#bundle-616a3d68-eb5e-4b0b-86e4-acd062c8022e> ;
-			sh:resultMessage "Value does not have class core:UcoObject" ;
-			sh:resultPath core:object ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:UcoObject ;
-				sh:minCount "1"^^xsd:integer ;
-				sh:nodeKind sh:IRI ;
-				sh:path core:object ;
-			] ;
-			sh:value <http://example.org/kb#investigator-899bb310-f5cd-4ab5-9e96-1234a37ed1da> ;
-		] ,
-		[
-			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb#call-3e3e316c-25dd-4651-98a2-fc3422e577f7> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
@@ -259,21 +244,6 @@
 				uco-observable:observableCreatedTime "2019-03-30T22:12:19.320000+00:00"^^xsd:dateTime ;
 				uco-observable:sizeInBytes "160080500"^^xsd:integer ;
 			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb#investigativeaction-3f7f68f0-f68d-48db-be09-45c1239b0fdd> ;
-			sh:resultMessage "Value does not have class core:UcoObject" ;
-			sh:resultPath action:performer ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:UcoObject ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:IRI ;
-				sh:path action:performer ;
-			] ;
-			sh:value <http://example.org/kb#investigator-899bb310-f5cd-4ab5-9e96-1234a37ed1da> ;
 		] ,
 		[
 			a sh:ValidationResult ;
