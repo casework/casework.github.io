@@ -401,7 +401,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -436,7 +436,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -471,7 +471,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -506,7 +506,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -541,7 +541,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -576,7 +576,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -611,7 +611,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -646,7 +646,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -681,7 +681,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -716,7 +716,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -751,7 +751,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -786,7 +786,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -821,7 +821,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -856,7 +856,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -891,7 +891,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -926,7 +926,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -961,7 +961,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -996,7 +996,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -1031,7 +1031,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -1066,7 +1066,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -1101,7 +1101,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -1136,7 +1136,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -1171,7 +1171,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -1206,7 +1206,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -1241,7 +1241,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -1276,7 +1276,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -1311,7 +1311,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -1346,7 +1346,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -1381,7 +1381,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -1416,7 +1416,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -1451,7 +1451,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -1486,7 +1486,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -1521,7 +1521,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -1556,7 +1556,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -1591,7 +1591,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -1626,7 +1626,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -1661,7 +1661,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
@@ -1696,7 +1696,7 @@
                     }
                 },
                 {
-                    "type": "uco-observable:ContentDataFacet",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
