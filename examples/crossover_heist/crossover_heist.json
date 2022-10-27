@@ -281,10 +281,10 @@
                 {
                     "uco-observable:sizeInBytes": 1389601,
                     "uco-observable:mimeType": "image/jpeg",
-                    "hash": [
+                    "uco-observable:hash": [
                         {
                             "@type": "uco-types:Hash",
-                            "uco-observable:hashMethod": {
+                            "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
                                 "@value": "MD5"
                             },
@@ -599,26 +599,26 @@
         {
             "uco-core:hasFacet": [
                 {
-                    "sizeInBytes": 756969,
-                    "mimeType": "image/jpeg",
-                    "hash": [
+                    "@type": "uco-observable:ContentData",
+                    "uco-observable:sizeInBytes": 756969,
+                    "uco-observable:mimeType": "image/jpeg",
+                    "uco-observable:hash": [
                         {
-                            "hashMethod": "MD5",
-                            "@type": "Hash"
+                            "@type": "uco-types:Hash",
+                            "uco-types:hashMethod": "MD5"
                         }
-                    ],
-                    "@type": "ContentData"
+                    ]
                 },
                 {
-                    "accessedTime": "2018-11-18T22:53:09Z",
-                    "extension": "jpg",
-                    "fileName": "wow.jpg",
-                    "filePath": "/img_image.E01/wow.jpg",
-                    "isDirectory": false,
-                    "sizeInBytes": 756969,
-                    "@type": "File",
-                    "createdTime": "2018-11-18T22:53:09Z",
-                    "modifiedTime": "2018-11-18T20:28:58Z"
+                    "@type": "uco-observable:File",
+                    "uco-observable:accessedTime": "2018-11-18T22:53:09Z",
+                    "uco-observable:extension": "jpg",
+                    "uco-observable:fileName": "wow.jpg",
+                    "uco-observable:filePath": "/img_image.E01/wow.jpg",
+                    "uco-observable:isDirectory": false,
+                    "uco-observable:sizeInBytes": 756969,
+                    "uco-observable:createdTime": "2018-11-18T22:53:09Z",
+                    "uco-observable:modifiedTime": "2018-11-18T20:28:58Z"
                 }
             ],
             "@id": "kb:File-bbb4f0c4-ea2c-42fa-9ec0-11bc4678b7b8",

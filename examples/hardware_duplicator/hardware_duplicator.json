@@ -147,7 +147,7 @@
             "@type": "uco-observable:DiskPartition",
             "uco-core:hasFacet": [
                 {
-                    "@type": "DiskPartitionFacet",
+                    "@type": "uco-observable:DiskPartitionFacet",
                     "uco-observable:diskpartitionType": "FAT32",
                     "uco-observable:partitionID": "1",
                     "uco-observable:partitionOffset": "1048576",
@@ -172,7 +172,7 @@
             "@type": "uco-observable:DiskPartition",
             "uco-core:hasFacet": [
                 {
-                    "@type": "DiskPartitionFacet",
+                    "@type": "uco-observable:DiskPartitionFacet",
                     "uco-observable:diskpartitionType": "unknown",
                     "uco-observable:partitionID": "2",
                     "uco-observable:partitionOffset": "105906176",
@@ -197,7 +197,7 @@
             "@type": "uco-observable:DiskPartition",
             "uco-core:hasFacet": [
                 {
-                    "@type": "DiskPartitionFacet",
+                    "@type": "uco-observable:DiskPartitionFacet",
                     "uco-observable:diskPartitionType": "ntfs",
                     "uco-observable:partitionID": "3",
                     "uco-observable:partitionOffset": "122683392",
@@ -222,7 +222,7 @@
             "@type": "uco-observable:DiskPartition",
             "uco-core:hasFacet": [
                 {
-                    "@type": "DiskPartitionFacet",
+                    "@type": "uco-observable:DiskPartitionFacet",
                     "uco-observable:diskPartitionType": "ntfs",
                     "uco-observable:partitionID": "4",
                     "uco-observable:partitionOffset": "505199722496",
@@ -247,7 +247,7 @@
             "@type": "uco-observable:DiskPartition",
             "uco-core:hasFacet": [
                 {
-                    "@type": "DiskPartitionFacet",
+                    "@type": "uco-observable:DiskPartitionFacet",
                     "uco-observable:diskPartitionType": "ntfs",
                     "uco-observable:partitionID": "5",
                     "uco-observable:partitionOffset": "999129350144",
