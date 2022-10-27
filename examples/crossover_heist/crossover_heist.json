@@ -2,7 +2,7 @@
     "@context": {
         "@vocab": "http://example.org/ontology/local#",
         "case-investigation": "https://ontology.caseontology.org/case/investigation/",
-        "drafting": "http://example.org/ontology/drafting#",
+        "drafting": "http://example.org/ontology/drafting/",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "kb": "http://example.org/kb/",
@@ -39,7 +39,7 @@
             "uco-core:hasFacet": [
                 {
                     "@type": "uco-identity:Organisation",
-                    "uco-drafting:orgName": "ESC"
+                    "drafting:orgName": "ESC"
                 }
             ]
         },
@@ -127,7 +127,7 @@
                 {
                     "@type": "uco-observable:DiskFacet",
                     "uco-observable:model": "Kingston DataTraveler 2.0",
-                    "uco-drafting:USBSerialNumber": "001D7D06CF09ED91D97F1B1B",
+                    "drafting:USBSerialNumber": "001D7D06CF09ED91D97F1B1B",
                     "uco-observable:serialNumber": "0E0D19D17DD9",
                     "uco-observable:capacity": "7803174912"
                 },
@@ -383,21 +383,21 @@
             "@id": "kb:content-2ea73bc6-801a-47ff-a8fa-837c226bfa14",
             "@type": [
                 "uco-observable:ContentData",
-                "uco-drafting:RecoveredObject"
+                "drafting:RecoveredObject"
             ],
             "uco-core:hasFacet": [
                 {
                     "@type": "drafting:RecoveredObjectFacet",
-                    "uco-drafting:contentRecoveredStatus": {
-                        "@type": "uco-drafting:RecoveredObjectStatusVocab",
+                    "drafting:contentRecoveredStatus": {
+                        "@type": "drafting:RecoveredObjectStatusVocab",
                         "@value": "recovered"
                     },
-                    "uco-drafting:metadataRecoveredStatus": {
-                        "@type": "uco-drafting:RecoveredObjectStatusVocab",
+                    "drafting:metadataRecoveredStatus": {
+                        "@type": "drafting:RecoveredObjectStatusVocab",
                         "@value": "recovered"
                     },
-                    "uco-drafting:nameRecoveredStatus": {
-                        "@type": "uco-drafting:RecoveredObjectStatusVocab",
+                    "drafting:nameRecoveredStatus": {
+                        "@type": "drafting:RecoveredObjectStatusVocab",
                         "@value": "recovered"
                     }
                 },
