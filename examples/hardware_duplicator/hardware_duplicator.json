@@ -103,7 +103,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
-                            "@type": "uco-observable:Hash",
+                            "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
                                 "@value": "MD5"
@@ -114,7 +114,7 @@
                             }
                         },
                         {
-                            "@type": "uco-observable:Hash",
+                            "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
                                 "@value": "SHA1"
@@ -403,7 +403,7 @@
                     "type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
-                            "@type": "uco-observable:Hash",
+                            "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
                                 "@value": "SHA1"
@@ -438,7 +438,7 @@
                     "type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
-                            "@type": "uco-observable:Hash",
+                            "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
                                 "@value": "SHA1"
@@ -473,7 +473,7 @@
                     "type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
-                            "@type": "uco-observable:Hash",
+                            "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
                                 "@value": "SHA1"
@@ -508,7 +508,7 @@
                     "type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
-                            "@type": "uco-observable:Hash",
+                            "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
                                 "@value": "SHA1"
@@ -543,7 +543,7 @@
                     "type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
-                            "@type": "uco-observable:Hash",
+                            "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
                                 "@value": "SHA1"
@@ -578,7 +578,7 @@
                     "type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
-                            "@type": "uco-observable:Hash",
+                            "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
                                 "@value": "SHA1"
@@ -613,7 +613,7 @@
                     "type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
-                            "@type": "uco-observable:Hash",
+                            "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
                                 "@value": "SHA1"
@@ -648,7 +648,7 @@
                     "type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
-                            "@type": "uco-observable:Hash",
+                            "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
                                 "@value": "SHA1"
@@ -683,7 +683,7 @@
                     "type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
-                            "@type": "uco-observable:Hash",
+                            "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
                                 "@value": "SHA1"
@@ -718,7 +718,7 @@
                     "type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
-                            "@type": "uco-observable:Hash",
+                            "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
                                 "@value": "SHA1"
@@ -753,7 +753,7 @@
                     "type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
-                            "@type": "uco-observable:Hash",
+                            "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
                                 "@value": "SHA1"
@@ -788,7 +788,7 @@
                     "type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
-                            "@type": "uco-observable:Hash",
+                            "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
                                 "@value": "SHA1"
@@ -823,7 +823,7 @@
                     "type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
-                            "@type": "uco-observable:Hash",
+                            "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
                                 "@value": "SHA1"
@@ -858,7 +858,7 @@
                     "type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
-                            "@type": "uco-observable:Hash",
+                            "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
                                 "@value": "SHA1"
@@ -893,7 +893,7 @@
                     "type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
-                            "@type": "uco-observable:Hash",
+                            "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
                                 "@value": "SHA1"
@@ -928,7 +928,7 @@
                     "type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
-                            "@type": "uco-observable:Hash",
+                            "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
                                 "@value": "SHA1"
@@ -963,7 +963,7 @@
                     "type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
-                            "@type": "uco-observable:Hash",
+                            "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
                                 "@value": "SHA1"
