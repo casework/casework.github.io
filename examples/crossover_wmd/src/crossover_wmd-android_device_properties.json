@@ -26,8 +26,7 @@
                 "drafting:locationsServicesEnabled": true,
                 "uco-observable:keypadUnlockCode": "__NOT_PROVIDED",
                 "uco-observable:IMEI": "356420075722843",
-                "uco-observable:clockSetting": "__NOT_PROVIDED",
-                "uco-observable:storageCapacityInBytes": "__NOT_PROVIDED"
+                "uco-observable:clockSetting": "__NOT_PROVIDED"
             },
             {
                 "@type": "uco-observable:OperatingSystemFacet",
