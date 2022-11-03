@@ -811,6 +811,20 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value uco-observable:storage-medium-facet-98d450d9-e88e-4d57-98fa-13f631b6c787 ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168> ;
 			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
 			sh:resultPath core:hasFacet ;
 			sh:resultSeverity sh:Violation ;
@@ -872,7 +886,6 @@
 				uco-observable:bluetoothDeviceName "Nexus5" ;
 				uco-observable:clockSetting "2017-02-06T20:51:09.350000+00:00"^^xsd:dateTime ;
 				uco-observable:keypadUnlockCode "NULL" ;
-				uco-observable:storageCapacityInBytes "31268536320"^^xsd:integer ;
 			] ;
 		] ,
 		[
@@ -1943,7 +1956,6 @@
 				uco-observable:bluetoothDeviceName "Nexus5" ;
 				uco-observable:clockSetting "2017-02-06T20:51:09.350000+00:00"^^xsd:dateTime ;
 				uco-observable:keypadUnlockCode "NULL" ;
-				uco-observable:storageCapacityInBytes "31268536320"^^xsd:integer ;
 			] ;
 			sh:resultMessage "UcoThings are required to not be blank nodes." ;
 			sh:resultSeverity sh:Violation ;
@@ -1969,7 +1981,6 @@
 				uco-observable:bluetoothDeviceName "Nexus5" ;
 				uco-observable:clockSetting "2017-02-06T20:51:09.350000+00:00"^^xsd:dateTime ;
 				uco-observable:keypadUnlockCode "NULL" ;
-				uco-observable:storageCapacityInBytes "31268536320"^^xsd:integer ;
 			] ;
 		] ,
 		[
@@ -1982,7 +1993,6 @@
 				uco-observable:bluetoothDeviceName "Nexus5" ;
 				uco-observable:clockSetting "2017-02-06T20:51:09.350000+00:00"^^xsd:dateTime ;
 				uco-observable:keypadUnlockCode "NULL" ;
-				uco-observable:storageCapacityInBytes "31268536320"^^xsd:integer ;
 			] ;
 			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
 			sh:resultSeverity sh:Info ;
@@ -2015,7 +2025,6 @@
 				uco-observable:bluetoothDeviceName "Nexus5" ;
 				uco-observable:clockSetting "2017-02-06T20:51:09.350000+00:00"^^xsd:dateTime ;
 				uco-observable:keypadUnlockCode "NULL" ;
-				uco-observable:storageCapacityInBytes "31268536320"^^xsd:integer ;
 			] ;
 		] ,
 		[

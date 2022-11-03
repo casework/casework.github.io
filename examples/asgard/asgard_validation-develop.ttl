@@ -49,6 +49,20 @@
 		] ,
 		[
 			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/device-9420af3b-4d3a-4239-88fc-d33feec8dc4f> ;
+			sh:resultMessage "Value does not have class core:Facet" ;
+			sh:resultPath core:hasFacet ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class core:Facet ;
+				sh:nodeKind sh:IRI ;
+				sh:path core:hasFacet ;
+			] ;
+			sh:value uco-observable:storage-medium-facet-7dabeb75-73fd-429c-adba-110d7fcbd16e ;
+		] ,
+		[
+			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/investigativeaction-67f43664-077d-47be-b332-4d1c2b579c49> ;
 			sh:resultMessage "Value does not have class core:UcoObject" ;
 			sh:resultPath action:performer ;

@@ -78,20 +78,6 @@
 		] ,
 		[
 			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/mobile-device-facet-20e46067-250b-4a09-a829-5a15cbcfd6c9> ;
-			sh:resultMessage "Deprecation notice: the value referenced by observable:storageCapacityInBytes will be required to be stored in observable:totalStorageCapacityInBytes in UCO 2.0.0."@en ;
-			sh:resultPath uco-observable:storageCapacityInBytes ;
-			sh:resultSeverity sh:Warning ;
-			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
-			sh:sourceShape [
-				sh:maxCount "0"^^xsd:integer ;
-				sh:message "Deprecation notice: the value referenced by observable:storageCapacityInBytes will be required to be stored in observable:totalStorageCapacityInBytes in UCO 2.0.0."@en ;
-				sh:path uco-observable:storageCapacityInBytes ;
-				sh:severity sh:Warning ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/operating-system-facet-262f1b31-e23d-4324-84cb-5d55528caf63> ;
 			sh:resultMessage "Value does not have class identity:Identity" ;
 			sh:resultPath uco-observable:manufacturer ;
