@@ -1653,6 +1653,29 @@
 				uco-observable:keypadUnlockCode "__NOT_PROVIDED" ;
 				uco-observable:storageCapacityInBytes "__NOT_PROVIDED" ;
 			] ;
+			sh:resultMessage "Deprecation notice: the value referenced by observable:storageCapacityInBytes will be required to be stored in observable:totalStorageCapacityInBytes in UCO 2.0.0."@en ;
+			sh:resultPath uco-observable:storageCapacityInBytes ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+			sh:sourceShape [
+				sh:maxCount "0"^^xsd:integer ;
+				sh:message "Deprecation notice: the value referenced by observable:storageCapacityInBytes will be required to be stored in observable:totalStorageCapacityInBytes in UCO 2.0.0."@en ;
+				sh:path uco-observable:storageCapacityInBytes ;
+				sh:severity sh:Warning ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a uco-observable:MobileDeviceFacet ;
+				ns1:deviceActivationTime "2018-06-10T14:31:30.00Z" ;
+				ns1:locationsServicesEnabled "true"^^xsd:boolean ;
+				uco-observable:IMEI "356420075722843" ;
+				uco-observable:bluetoothDeviceName "Galaxy S6 edge" ;
+				uco-observable:clockSetting "__NOT_PROVIDED" ;
+				uco-observable:keypadUnlockCode "__NOT_PROVIDED" ;
+				uco-observable:storageCapacityInBytes "__NOT_PROVIDED" ;
+			] ;
 			sh:resultMessage "UcoThings are required to not be blank nodes." ;
 			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraint [
