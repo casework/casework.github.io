@@ -2,7 +2,7 @@
     "@context": {
         "@vocab": "http://example.org/ontology/local#",
         "case-investigation": "https://ontology.caseontology.org/case/investigation/",
-        "drafting": "http://example.org/ontology/drafting#",
+        "drafting": "http://example.org/ontology/drafting/",
         "kb": "http://example.org/kb/",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -164,6 +164,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-7ca0e7ac-6898-54cd-a97c-1f971dd0b36e",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -175,6 +176,7 @@
                             }
                         },
                         {
+                            "@id": "kb:hash-b5132ecb-a53c-5471-a08d-09426ea2991c",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -665,6 +667,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-4656ab50-2658-5b66-9416-032235d2d8d5",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -676,6 +679,7 @@
                             }
                         },
                         {
+                            "@id": "kb:hash-c20e90ad-56c2-5d39-a82c-9943308f21bc",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -754,6 +758,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-8dcf3da6-f5b1-56b2-b7ad-39a4246f0ff5",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",
@@ -1021,6 +1026,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
+                            "@id": "kb:hash-0fa1dc4c-8fa2-5d5e-a903-fc5d70d151c4",
                             "@type": "uco-types:Hash",
                             "uco-types:hashMethod": {
                                 "@type": "uco-vocabulary:HashNameVocab",

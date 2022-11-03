@@ -13,22 +13,6 @@
             {
                 "@type": "uco-observable:FileSystemFacet",
                 "uco-observable:fileSystemType": "EXT3"
-            },
-            {
-                "@type": "uco-observable:ContentDataFacet",
-                "uco-observable:hash": [
-                    {
-                        "@type": "uco-types:Hash",
-                        "uco-types:hashMethod": {
-                            "@type": "uco-vocabulary:HashNameVocab",
-                            "@value": "MD5"
-                        },
-                        "uco-types:hashValue": {
-                            "@type": "xsd:hexBinary",
-                            "@value": "TBD"
-                        }
-                    }
-                ]
             }
         ]
     }

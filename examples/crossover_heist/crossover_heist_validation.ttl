@@ -1,14 +1,13 @@
 @prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix drafting: <http://example.org/ontology/drafting/> .
 @prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
 @prefix ns1: <http://example.org/ontology/local#> .
-@prefix ns2: <uco-drafting:> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix tool: <https://ontology.unifiedcyberontology.org/uco/tool/> .
-@prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -122,19 +121,11 @@
 				sh:path core:hasFacet ;
 			] ;
 			sh:value [
-				a uco-observable:ContentDataFacet ;
-				uco-observable:hash
-					[
-						a types:Hash ;
-						types:hashMethod "MD5"^^vocabulary:HashNameVocab ;
-						types:hashValue "058f03317c1612eadd624342b7fde511"^^xsd:hexBinary ;
-					] ,
-					[
-						a types:Hash ;
-						types:hashMethod "SHA1"^^vocabulary:HashNameVocab ;
-						types:hashValue "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"^^xsd:hexBinary ;
-					]
-					;
+				a uco-observable:DiskFacet ;
+				drafting:USBSerialNumber "001D7D06CF09ED91D97F1B1B" ;
+				uco-observable:capacity "7803174912" ;
+				uco-observable:model "Kingston DataTraveler 2.0" ;
+				uco-observable:serialNumber "0E0D19D17DD9" ;
 			] ;
 		] ,
 		[
@@ -150,11 +141,11 @@
 				sh:path core:hasFacet ;
 			] ;
 			sh:value [
-				a uco-observable:DiskFacet ;
-				uco-observable:capacity "7803174912" ;
-				uco-observable:model "Kingston DataTraveler 2.0" ;
-				uco-observable:serialNumber "0E0D19D17DD9" ;
-				ns2:USBSerialNumber "001D7D06CF09ED91D97F1B1B" ;
+				a uco-observable:ContentDataFacet ;
+				uco-observable:hash
+					<http://example.org/kb/hash-128996fc-3823-54a5-9ca4-cf6e21fca62f> ,
+					<http://example.org/kb/hash-12a9f855-c237-51d8-8239-0bb130374fde>
+					;
 			] ;
 		] ,
 		[
@@ -379,15 +370,9 @@
 				sh:path core:hasFacet ;
 			] ;
 			sh:value [
-				a ns1:File ;
-				ns1:accessedTime "2018-11-18T22:53:09Z" ;
-				ns1:createdTime "2018-11-18T22:53:09Z" ;
-				ns1:extension "jpg" ;
-				ns1:fileName "wow.jpg" ;
-				ns1:filePath "/img_image.E01/wow.jpg" ;
-				ns1:isDirectory "false"^^xsd:boolean ;
-				ns1:modifiedTime "2018-11-18T20:28:58Z" ;
-				ns1:sizeInBytes "756969"^^xsd:integer ;
+				a uco-observable:ContentData ;
+				uco-observable:mimeType "image/jpeg" ;
+				uco-observable:sizeInBytes "756969"^^xsd:integer ;
 			] ;
 		] ,
 		[
@@ -403,13 +388,15 @@
 				sh:path core:hasFacet ;
 			] ;
 			sh:value [
-				a ns1:ContentData ;
-				ns1:hash [
-					a ns1:Hash ;
-					ns1:hashMethod "MD5" ;
-				] ;
-				ns1:mimeType "image/jpeg" ;
-				ns1:sizeInBytes "756969"^^xsd:integer ;
+				a uco-observable:File ;
+				uco-observable:accessedTime "2018-11-18T22:53:09Z" ;
+				uco-observable:createdTime "2018-11-18T22:53:09Z" ;
+				uco-observable:extension "jpg" ;
+				uco-observable:fileName "wow.jpg" ;
+				uco-observable:filePath "/img_image.E01/wow.jpg" ;
+				uco-observable:isDirectory "false"^^xsd:boolean ;
+				uco-observable:modifiedTime "2018-11-18T20:28:58Z" ;
+				uco-observable:sizeInBytes "756969"^^xsd:integer ;
 			] ;
 		] ,
 		[
@@ -425,15 +412,9 @@
 				sh:path core:hasFacet ;
 			] ;
 			sh:value [
-				a ns1:File ;
-				ns1:accessedTime "2018-11-18T22:53:09Z" ;
-				ns1:createdTime "2018-11-18T22:53:09Z" ;
-				ns1:extension "jpg" ;
-				ns1:fileName "wow.jpg" ;
-				ns1:filePath "/img_image.E01/wow.jpg" ;
-				ns1:isDirectory "false"^^xsd:boolean ;
-				ns1:modifiedTime "2018-11-18T20:28:58Z" ;
-				ns1:sizeInBytes "756969"^^xsd:integer ;
+				a uco-observable:ContentData ;
+				uco-observable:mimeType "image/jpeg" ;
+				uco-observable:sizeInBytes "756969"^^xsd:integer ;
 			] ;
 		] ,
 		[
@@ -449,13 +430,15 @@
 				sh:path core:hasFacet ;
 			] ;
 			sh:value [
-				a ns1:ContentData ;
-				ns1:hash [
-					a ns1:Hash ;
-					ns1:hashMethod "MD5" ;
-				] ;
-				ns1:mimeType "image/jpeg" ;
-				ns1:sizeInBytes "756969"^^xsd:integer ;
+				a uco-observable:File ;
+				uco-observable:accessedTime "2018-11-18T22:53:09Z" ;
+				uco-observable:createdTime "2018-11-18T22:53:09Z" ;
+				uco-observable:extension "jpg" ;
+				uco-observable:fileName "wow.jpg" ;
+				uco-observable:filePath "/img_image.E01/wow.jpg" ;
+				uco-observable:isDirectory "false"^^xsd:boolean ;
+				uco-observable:modifiedTime "2018-11-18T20:28:58Z" ;
+				uco-observable:sizeInBytes "756969"^^xsd:integer ;
 			] ;
 		] ,
 		[
@@ -472,11 +455,7 @@
 			] ;
 			sh:value [
 				a uco-observable:ContentDataFacet ;
-				ns1:hash [
-					a types:Hash ;
-					uco-observable:hashMethod "MD5"^^vocabulary:HashNameVocab ;
-					types:hashValue "2282dddf9378cd1dd0497a3484adf768"^^xsd:hexBinary ;
-				] ;
+				uco-observable:hash <http://example.org/kb/hash-c5761f3a-a741-5d06-a668-91e308ef19ef> ;
 				uco-observable:mimeType "image/jpeg" ;
 				uco-observable:sizeInBytes "1389601"^^xsd:integer ;
 			] ;
@@ -567,7 +546,7 @@
 			] ;
 			sh:value [
 				a identity:Organisation ;
-				ns2:orgName "ESC" ;
+				drafting:orgName "ESC" ;
 			] ;
 		] ,
 		[
@@ -584,7 +563,7 @@
 			] ;
 			sh:value [
 				a identity:Organisation ;
-				ns2:orgName "ESC" ;
+				drafting:orgName "ESC" ;
 			] ;
 		] ,
 		[
@@ -974,10 +953,10 @@
 				sh:path core:hasFacet ;
 			] ;
 			sh:value [
-				a <http://example.org/ontology/drafting#RecoveredObjectFacet> ;
-				ns2:contentRecoveredStatus "recovered"^^ns2:RecoveredObjectStatusVocab ;
-				ns2:metadataRecoveredStatus "recovered"^^ns2:RecoveredObjectStatusVocab ;
-				ns2:nameRecoveredStatus "recovered"^^ns2:RecoveredObjectStatusVocab ;
+				a drafting:RecoveredObjectFacet ;
+				drafting:contentRecoveredStatus "recovered"^^drafting:RecoveredObjectStatusVocab ;
+				drafting:metadataRecoveredStatus "recovered"^^drafting:RecoveredObjectStatusVocab ;
+				drafting:nameRecoveredStatus "recovered"^^drafting:RecoveredObjectStatusVocab ;
 			] ;
 		] ,
 		[
@@ -993,10 +972,10 @@
 				sh:path core:hasFacet ;
 			] ;
 			sh:value [
-				a <http://example.org/ontology/drafting#RecoveredObjectFacet> ;
-				ns2:contentRecoveredStatus "recovered"^^ns2:RecoveredObjectStatusVocab ;
-				ns2:metadataRecoveredStatus "recovered"^^ns2:RecoveredObjectStatusVocab ;
-				ns2:nameRecoveredStatus "recovered"^^ns2:RecoveredObjectStatusVocab ;
+				a drafting:RecoveredObjectFacet ;
+				drafting:contentRecoveredStatus "recovered"^^drafting:RecoveredObjectStatusVocab ;
+				drafting:metadataRecoveredStatus "recovered"^^drafting:RecoveredObjectStatusVocab ;
+				drafting:nameRecoveredStatus "recovered"^^drafting:RecoveredObjectStatusVocab ;
 			] ;
 		] ,
 		[
@@ -1014,11 +993,7 @@
 			sh:value [
 				a uco-observable:ContentDataFacet ;
 				uco-observable:byteOrder "Big-endian"^^vocabulary:EndiannessTypeVocab ;
-				uco-observable:hash [
-					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
-					types:hashValue "701ad15009b0e79af524336f7d069ed1"^^xsd:hexBinary ;
-				] ;
+				uco-observable:hash <http://example.org/kb/hash-2cc00152-20ba-5a0f-86df-82293b4b6034> ;
 				uco-observable:mimeType "application/application/vnd.openxmlformats-officedocument.wordprocessingml.document" ;
 				uco-observable:sizeInBytes "11633"^^xsd:integer ;
 			] ;
@@ -1174,11 +1149,7 @@
 			] ;
 			sh:value [
 				a uco-observable:ContentDataFacet ;
-				uco-observable:hash [
-					a types:Hash ;
-					types:hashMethod "SHA1"^^vocabulary:HashNameVocab ;
-					types:hashValue "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"^^xsd:hexBinary ;
-				] ;
+				uco-observable:hash <http://example.org/kb/hash-128996fc-3823-54a5-9ca4-cf6e21fca62f> ;
 			] ;
 		] ,
 		[
@@ -1207,12 +1178,353 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode [
+				a uco-observable:DiskFacet ;
+				drafting:USBSerialNumber "001D7D06CF09ED91D97F1B1B" ;
+				uco-observable:capacity "7803174912" ;
+				uco-observable:model "Kingston DataTraveler 2.0" ;
+				uco-observable:serialNumber "0E0D19D17DD9" ;
+			] ;
+			sh:resultMessage "UcoThings are required to not be blank nodes." ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				sh:message "UcoThings are required to not be blank nodes."@en ;
+				sh:select """
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER isBlank ($this)
+			}
+		""" ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:UcoThing ;
+			sh:value [
+				a uco-observable:DiskFacet ;
+				drafting:USBSerialNumber "001D7D06CF09ED91D97F1B1B" ;
+				uco-observable:capacity "7803174912" ;
+				uco-observable:model "Kingston DataTraveler 2.0" ;
+				uco-observable:serialNumber "0E0D19D17DD9" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a uco-observable:DiskFacet ;
+				drafting:USBSerialNumber "001D7D06CF09ED91D97F1B1B" ;
+				uco-observable:capacity "7803174912" ;
+				uco-observable:model "Kingston DataTraveler 2.0" ;
+				uco-observable:serialNumber "0E0D19D17DD9" ;
+			] ;
+			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
+			sh:resultSeverity sh:Info ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
+				sh:message "UcoThings are suggested to end with a UUID."@en ;
+				sh:select '''
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER (
+			                ! REGEX (
+			                        STR($this),
+			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
+			                        "i"
+			                )
+			        )
+			}
+		''' ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:UcoThing-identifier-regex-shape ;
+			sh:value [
+				a uco-observable:DiskFacet ;
+				drafting:USBSerialNumber "001D7D06CF09ED91D97F1B1B" ;
+				uco-observable:capacity "7803174912" ;
+				uco-observable:model "Kingston DataTraveler 2.0" ;
+				uco-observable:serialNumber "0E0D19D17DD9" ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a uco-observable:ContentData ;
+				uco-observable:mimeType "image/jpeg" ;
+				uco-observable:sizeInBytes "756969"^^xsd:integer ;
+			] ;
+			sh:resultMessage "UcoThings are required to not be blank nodes." ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				sh:message "UcoThings are required to not be blank nodes."@en ;
+				sh:select """
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER isBlank ($this)
+			}
+		""" ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:UcoThing ;
+			sh:value [
+				a uco-observable:ContentData ;
+				uco-observable:mimeType "image/jpeg" ;
+				uco-observable:sizeInBytes "756969"^^xsd:integer ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a uco-observable:ContentData ;
+				uco-observable:mimeType "image/jpeg" ;
+				uco-observable:sizeInBytes "756969"^^xsd:integer ;
+			] ;
+			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
+			sh:resultSeverity sh:Info ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
+				sh:message "UcoThings are suggested to end with a UUID."@en ;
+				sh:select '''
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER (
+			                ! REGEX (
+			                        STR($this),
+			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
+			                        "i"
+			                )
+			        )
+			}
+		''' ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:UcoThing-identifier-regex-shape ;
+			sh:value [
+				a uco-observable:ContentData ;
+				uco-observable:mimeType "image/jpeg" ;
+				uco-observable:sizeInBytes "756969"^^xsd:integer ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
 				a uco-observable:ContentDataFacet ;
-				ns1:hash [
-					a types:Hash ;
-					uco-observable:hashMethod "MD5"^^vocabulary:HashNameVocab ;
-					types:hashValue "2282dddf9378cd1dd0497a3484adf768"^^xsd:hexBinary ;
-				] ;
+				uco-observable:byteOrder "Big-endian"^^vocabulary:EndiannessTypeVocab ;
+				uco-observable:hash <http://example.org/kb/hash-2cc00152-20ba-5a0f-86df-82293b4b6034> ;
+				uco-observable:mimeType "application/application/vnd.openxmlformats-officedocument.wordprocessingml.document" ;
+				uco-observable:sizeInBytes "11633"^^xsd:integer ;
+			] ;
+			sh:resultMessage "UcoThings are required to not be blank nodes." ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				sh:message "UcoThings are required to not be blank nodes."@en ;
+				sh:select """
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER isBlank ($this)
+			}
+		""" ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:UcoThing ;
+			sh:value [
+				a uco-observable:ContentDataFacet ;
+				uco-observable:byteOrder "Big-endian"^^vocabulary:EndiannessTypeVocab ;
+				uco-observable:hash <http://example.org/kb/hash-2cc00152-20ba-5a0f-86df-82293b4b6034> ;
+				uco-observable:mimeType "application/application/vnd.openxmlformats-officedocument.wordprocessingml.document" ;
+				uco-observable:sizeInBytes "11633"^^xsd:integer ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a uco-observable:ContentDataFacet ;
+				uco-observable:byteOrder "Big-endian"^^vocabulary:EndiannessTypeVocab ;
+				uco-observable:hash <http://example.org/kb/hash-2cc00152-20ba-5a0f-86df-82293b4b6034> ;
+				uco-observable:mimeType "application/application/vnd.openxmlformats-officedocument.wordprocessingml.document" ;
+				uco-observable:sizeInBytes "11633"^^xsd:integer ;
+			] ;
+			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
+			sh:resultSeverity sh:Info ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
+				sh:message "UcoThings are suggested to end with a UUID."@en ;
+				sh:select '''
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER (
+			                ! REGEX (
+			                        STR($this),
+			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
+			                        "i"
+			                )
+			        )
+			}
+		''' ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:UcoThing-identifier-regex-shape ;
+			sh:value [
+				a uco-observable:ContentDataFacet ;
+				uco-observable:byteOrder "Big-endian"^^vocabulary:EndiannessTypeVocab ;
+				uco-observable:hash <http://example.org/kb/hash-2cc00152-20ba-5a0f-86df-82293b4b6034> ;
+				uco-observable:mimeType "application/application/vnd.openxmlformats-officedocument.wordprocessingml.document" ;
+				uco-observable:sizeInBytes "11633"^^xsd:integer ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a uco-observable:ContentDataFacet ;
+				uco-observable:hash <http://example.org/kb/hash-128996fc-3823-54a5-9ca4-cf6e21fca62f> ;
+			] ;
+			sh:resultMessage "UcoThings are required to not be blank nodes." ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				sh:message "UcoThings are required to not be blank nodes."@en ;
+				sh:select """
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER isBlank ($this)
+			}
+		""" ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:UcoThing ;
+			sh:value [
+				a uco-observable:ContentDataFacet ;
+				uco-observable:hash <http://example.org/kb/hash-128996fc-3823-54a5-9ca4-cf6e21fca62f> ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a uco-observable:ContentDataFacet ;
+				uco-observable:hash <http://example.org/kb/hash-128996fc-3823-54a5-9ca4-cf6e21fca62f> ;
+			] ;
+			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
+			sh:resultSeverity sh:Info ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
+				sh:message "UcoThings are suggested to end with a UUID."@en ;
+				sh:select '''
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER (
+			                ! REGEX (
+			                        STR($this),
+			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
+			                        "i"
+			                )
+			        )
+			}
+		''' ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:UcoThing-identifier-regex-shape ;
+			sh:value [
+				a uco-observable:ContentDataFacet ;
+				uco-observable:hash <http://example.org/kb/hash-128996fc-3823-54a5-9ca4-cf6e21fca62f> ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a uco-observable:ContentDataFacet ;
+				uco-observable:hash
+					<http://example.org/kb/hash-128996fc-3823-54a5-9ca4-cf6e21fca62f> ,
+					<http://example.org/kb/hash-12a9f855-c237-51d8-8239-0bb130374fde>
+					;
+			] ;
+			sh:resultMessage "UcoThings are required to not be blank nodes." ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				sh:message "UcoThings are required to not be blank nodes."@en ;
+				sh:select """
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER isBlank ($this)
+			}
+		""" ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:UcoThing ;
+			sh:value [
+				a uco-observable:ContentDataFacet ;
+				uco-observable:hash
+					<http://example.org/kb/hash-128996fc-3823-54a5-9ca4-cf6e21fca62f> ,
+					<http://example.org/kb/hash-12a9f855-c237-51d8-8239-0bb130374fde>
+					;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a uco-observable:ContentDataFacet ;
+				uco-observable:hash
+					<http://example.org/kb/hash-128996fc-3823-54a5-9ca4-cf6e21fca62f> ,
+					<http://example.org/kb/hash-12a9f855-c237-51d8-8239-0bb130374fde>
+					;
+			] ;
+			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
+			sh:resultSeverity sh:Info ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
+				sh:message "UcoThings are suggested to end with a UUID."@en ;
+				sh:select '''
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER (
+			                ! REGEX (
+			                        STR($this),
+			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
+			                        "i"
+			                )
+			        )
+			}
+		''' ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:UcoThing-identifier-regex-shape ;
+			sh:value [
+				a uco-observable:ContentDataFacet ;
+				uco-observable:hash
+					<http://example.org/kb/hash-128996fc-3823-54a5-9ca4-cf6e21fca62f> ,
+					<http://example.org/kb/hash-12a9f855-c237-51d8-8239-0bb130374fde>
+					;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a uco-observable:ContentDataFacet ;
+				uco-observable:hash <http://example.org/kb/hash-c5761f3a-a741-5d06-a668-91e308ef19ef> ;
 				uco-observable:mimeType "image/jpeg" ;
 				uco-observable:sizeInBytes "1389601"^^xsd:integer ;
 			] ;
@@ -1234,11 +1546,7 @@
 			sh:sourceShape core:UcoThing ;
 			sh:value [
 				a uco-observable:ContentDataFacet ;
-				ns1:hash [
-					a types:Hash ;
-					uco-observable:hashMethod "MD5"^^vocabulary:HashNameVocab ;
-					types:hashValue "2282dddf9378cd1dd0497a3484adf768"^^xsd:hexBinary ;
-				] ;
+				uco-observable:hash <http://example.org/kb/hash-c5761f3a-a741-5d06-a668-91e308ef19ef> ;
 				uco-observable:mimeType "image/jpeg" ;
 				uco-observable:sizeInBytes "1389601"^^xsd:integer ;
 			] ;
@@ -1247,11 +1555,7 @@
 			a sh:ValidationResult ;
 			sh:focusNode [
 				a uco-observable:ContentDataFacet ;
-				ns1:hash [
-					a types:Hash ;
-					uco-observable:hashMethod "MD5"^^vocabulary:HashNameVocab ;
-					types:hashValue "2282dddf9378cd1dd0497a3484adf768"^^xsd:hexBinary ;
-				] ;
+				uco-observable:hash <http://example.org/kb/hash-c5761f3a-a741-5d06-a668-91e308ef19ef> ;
 				uco-observable:mimeType "image/jpeg" ;
 				uco-observable:sizeInBytes "1389601"^^xsd:integer ;
 			] ;
@@ -1280,401 +1584,9 @@
 			sh:sourceShape core:UcoThing-identifier-regex-shape ;
 			sh:value [
 				a uco-observable:ContentDataFacet ;
-				ns1:hash [
-					a types:Hash ;
-					uco-observable:hashMethod "MD5"^^vocabulary:HashNameVocab ;
-					types:hashValue "2282dddf9378cd1dd0497a3484adf768"^^xsd:hexBinary ;
-				] ;
+				uco-observable:hash <http://example.org/kb/hash-c5761f3a-a741-5d06-a668-91e308ef19ef> ;
 				uco-observable:mimeType "image/jpeg" ;
 				uco-observable:sizeInBytes "1389601"^^xsd:integer ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a uco-observable:ContentDataFacet ;
-				uco-observable:byteOrder "Big-endian"^^vocabulary:EndiannessTypeVocab ;
-				uco-observable:hash [
-					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
-					types:hashValue "701ad15009b0e79af524336f7d069ed1"^^xsd:hexBinary ;
-				] ;
-				uco-observable:mimeType "application/application/vnd.openxmlformats-officedocument.wordprocessingml.document" ;
-				uco-observable:sizeInBytes "11633"^^xsd:integer ;
-			] ;
-			sh:resultMessage "UcoThings are required to not be blank nodes." ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				sh:message "UcoThings are required to not be blank nodes."@en ;
-				sh:select """
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER isBlank ($this)
-			}
-		""" ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing ;
-			sh:value [
-				a uco-observable:ContentDataFacet ;
-				uco-observable:byteOrder "Big-endian"^^vocabulary:EndiannessTypeVocab ;
-				uco-observable:hash [
-					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
-					types:hashValue "701ad15009b0e79af524336f7d069ed1"^^xsd:hexBinary ;
-				] ;
-				uco-observable:mimeType "application/application/vnd.openxmlformats-officedocument.wordprocessingml.document" ;
-				uco-observable:sizeInBytes "11633"^^xsd:integer ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a uco-observable:ContentDataFacet ;
-				uco-observable:byteOrder "Big-endian"^^vocabulary:EndiannessTypeVocab ;
-				uco-observable:hash [
-					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
-					types:hashValue "701ad15009b0e79af524336f7d069ed1"^^xsd:hexBinary ;
-				] ;
-				uco-observable:mimeType "application/application/vnd.openxmlformats-officedocument.wordprocessingml.document" ;
-				uco-observable:sizeInBytes "11633"^^xsd:integer ;
-			] ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value [
-				a uco-observable:ContentDataFacet ;
-				uco-observable:byteOrder "Big-endian"^^vocabulary:EndiannessTypeVocab ;
-				uco-observable:hash [
-					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
-					types:hashValue "701ad15009b0e79af524336f7d069ed1"^^xsd:hexBinary ;
-				] ;
-				uco-observable:mimeType "application/application/vnd.openxmlformats-officedocument.wordprocessingml.document" ;
-				uco-observable:sizeInBytes "11633"^^xsd:integer ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a uco-observable:ContentDataFacet ;
-				uco-observable:byteOrder "Big-endian"^^vocabulary:EndiannessTypeVocab ;
-				uco-observable:hash [
-					a types:Hash ;
-					types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
-					types:hashValue "701ad15009b0e79af524336f7d069ed1"^^xsd:hexBinary ;
-				] ;
-				uco-observable:mimeType "application/application/vnd.openxmlformats-officedocument.wordprocessingml.document" ;
-				uco-observable:sizeInBytes "11633"^^xsd:integer ;
-			] ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath uco-observable:hash ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class types:Hash ;
-				sh:nodeKind sh:IRI ;
-				sh:path uco-observable:hash ;
-			] ;
-			sh:value [
-				a types:Hash ;
-				types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
-				types:hashValue "701ad15009b0e79af524336f7d069ed1"^^xsd:hexBinary ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a uco-observable:ContentDataFacet ;
-				uco-observable:hash
-					[
-						a types:Hash ;
-						types:hashMethod "MD5"^^vocabulary:HashNameVocab ;
-						types:hashValue "058f03317c1612eadd624342b7fde511"^^xsd:hexBinary ;
-					] ,
-					[
-						a types:Hash ;
-						types:hashMethod "SHA1"^^vocabulary:HashNameVocab ;
-						types:hashValue "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"^^xsd:hexBinary ;
-					]
-					;
-			] ;
-			sh:resultMessage "UcoThings are required to not be blank nodes." ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				sh:message "UcoThings are required to not be blank nodes."@en ;
-				sh:select """
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER isBlank ($this)
-			}
-		""" ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing ;
-			sh:value [
-				a uco-observable:ContentDataFacet ;
-				uco-observable:hash
-					[
-						a types:Hash ;
-						types:hashMethod "MD5"^^vocabulary:HashNameVocab ;
-						types:hashValue "058f03317c1612eadd624342b7fde511"^^xsd:hexBinary ;
-					] ,
-					[
-						a types:Hash ;
-						types:hashMethod "SHA1"^^vocabulary:HashNameVocab ;
-						types:hashValue "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"^^xsd:hexBinary ;
-					]
-					;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a uco-observable:ContentDataFacet ;
-				uco-observable:hash
-					[
-						a types:Hash ;
-						types:hashMethod "MD5"^^vocabulary:HashNameVocab ;
-						types:hashValue "058f03317c1612eadd624342b7fde511"^^xsd:hexBinary ;
-					] ,
-					[
-						a types:Hash ;
-						types:hashMethod "SHA1"^^vocabulary:HashNameVocab ;
-						types:hashValue "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"^^xsd:hexBinary ;
-					]
-					;
-			] ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value [
-				a uco-observable:ContentDataFacet ;
-				uco-observable:hash
-					[
-						a types:Hash ;
-						types:hashMethod "MD5"^^vocabulary:HashNameVocab ;
-						types:hashValue "058f03317c1612eadd624342b7fde511"^^xsd:hexBinary ;
-					] ,
-					[
-						a types:Hash ;
-						types:hashMethod "SHA1"^^vocabulary:HashNameVocab ;
-						types:hashValue "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"^^xsd:hexBinary ;
-					]
-					;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a uco-observable:ContentDataFacet ;
-				uco-observable:hash
-					[
-						a types:Hash ;
-						types:hashMethod "MD5"^^vocabulary:HashNameVocab ;
-						types:hashValue "058f03317c1612eadd624342b7fde511"^^xsd:hexBinary ;
-					] ,
-					[
-						a types:Hash ;
-						types:hashMethod "SHA1"^^vocabulary:HashNameVocab ;
-						types:hashValue "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"^^xsd:hexBinary ;
-					]
-					;
-			] ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath uco-observable:hash ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class types:Hash ;
-				sh:nodeKind sh:IRI ;
-				sh:path uco-observable:hash ;
-			] ;
-			sh:value [
-				a types:Hash ;
-				types:hashMethod "MD5"^^vocabulary:HashNameVocab ;
-				types:hashValue "058f03317c1612eadd624342b7fde511"^^xsd:hexBinary ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a uco-observable:ContentDataFacet ;
-				uco-observable:hash
-					[
-						a types:Hash ;
-						types:hashMethod "MD5"^^vocabulary:HashNameVocab ;
-						types:hashValue "058f03317c1612eadd624342b7fde511"^^xsd:hexBinary ;
-					] ,
-					[
-						a types:Hash ;
-						types:hashMethod "SHA1"^^vocabulary:HashNameVocab ;
-						types:hashValue "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"^^xsd:hexBinary ;
-					]
-					;
-			] ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath uco-observable:hash ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class types:Hash ;
-				sh:nodeKind sh:IRI ;
-				sh:path uco-observable:hash ;
-			] ;
-			sh:value [
-				a types:Hash ;
-				types:hashMethod "SHA1"^^vocabulary:HashNameVocab ;
-				types:hashValue "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"^^xsd:hexBinary ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a uco-observable:ContentDataFacet ;
-				uco-observable:hash [
-					a types:Hash ;
-					types:hashMethod "SHA1"^^vocabulary:HashNameVocab ;
-					types:hashValue "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"^^xsd:hexBinary ;
-				] ;
-			] ;
-			sh:resultMessage "UcoThings are required to not be blank nodes." ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				sh:message "UcoThings are required to not be blank nodes."@en ;
-				sh:select """
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER isBlank ($this)
-			}
-		""" ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing ;
-			sh:value [
-				a uco-observable:ContentDataFacet ;
-				uco-observable:hash [
-					a types:Hash ;
-					types:hashMethod "SHA1"^^vocabulary:HashNameVocab ;
-					types:hashValue "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"^^xsd:hexBinary ;
-				] ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a uco-observable:ContentDataFacet ;
-				uco-observable:hash [
-					a types:Hash ;
-					types:hashMethod "SHA1"^^vocabulary:HashNameVocab ;
-					types:hashValue "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"^^xsd:hexBinary ;
-				] ;
-			] ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value [
-				a uco-observable:ContentDataFacet ;
-				uco-observable:hash [
-					a types:Hash ;
-					types:hashMethod "SHA1"^^vocabulary:HashNameVocab ;
-					types:hashValue "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"^^xsd:hexBinary ;
-				] ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a uco-observable:ContentDataFacet ;
-				uco-observable:hash [
-					a types:Hash ;
-					types:hashMethod "SHA1"^^vocabulary:HashNameVocab ;
-					types:hashValue "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"^^xsd:hexBinary ;
-				] ;
-			] ;
-			sh:resultMessage "Value is not of Node Kind sh:IRI" ;
-			sh:resultPath uco-observable:hash ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:NodeKindConstraintComponent ;
-			sh:sourceShape [
-				sh:class types:Hash ;
-				sh:nodeKind sh:IRI ;
-				sh:path uco-observable:hash ;
-			] ;
-			sh:value [
-				a types:Hash ;
-				types:hashMethod "SHA1"^^vocabulary:HashNameVocab ;
-				types:hashValue "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"^^xsd:hexBinary ;
 			] ;
 		] ,
 		[
@@ -1740,79 +1652,6 @@
 				a uco-observable:DataRangeFacet ;
 				uco-observable:rangeOffset "9994240"^^xsd:integer ;
 				uco-observable:rangeSize "11633"^^xsd:integer ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a uco-observable:DiskFacet ;
-				uco-observable:capacity "7803174912" ;
-				uco-observable:model "Kingston DataTraveler 2.0" ;
-				uco-observable:serialNumber "0E0D19D17DD9" ;
-				ns2:USBSerialNumber "001D7D06CF09ED91D97F1B1B" ;
-			] ;
-			sh:resultMessage "UcoThings are required to not be blank nodes." ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				sh:message "UcoThings are required to not be blank nodes."@en ;
-				sh:select """
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER isBlank ($this)
-			}
-		""" ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing ;
-			sh:value [
-				a uco-observable:DiskFacet ;
-				uco-observable:capacity "7803174912" ;
-				uco-observable:model "Kingston DataTraveler 2.0" ;
-				uco-observable:serialNumber "0E0D19D17DD9" ;
-				ns2:USBSerialNumber "001D7D06CF09ED91D97F1B1B" ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a uco-observable:DiskFacet ;
-				uco-observable:capacity "7803174912" ;
-				uco-observable:model "Kingston DataTraveler 2.0" ;
-				uco-observable:serialNumber "0E0D19D17DD9" ;
-				ns2:USBSerialNumber "001D7D06CF09ED91D97F1B1B" ;
-			] ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value [
-				a uco-observable:DiskFacet ;
-				uco-observable:capacity "7803174912" ;
-				uco-observable:model "Kingston DataTraveler 2.0" ;
-				uco-observable:serialNumber "0E0D19D17DD9" ;
-				ns2:USBSerialNumber "001D7D06CF09ED91D97F1B1B" ;
 			] ;
 		] ,
 		[
@@ -2110,6 +1949,95 @@
 				sh:path uco-observable:to ;
 			] ;
 			sh:value <http://example.org/kb/EmailAccount-ca4bc5e3-33a7-4457-b106-d0213e248979> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a uco-observable:File ;
+				uco-observable:accessedTime "2018-11-18T22:53:09Z" ;
+				uco-observable:createdTime "2018-11-18T22:53:09Z" ;
+				uco-observable:extension "jpg" ;
+				uco-observable:fileName "wow.jpg" ;
+				uco-observable:filePath "/img_image.E01/wow.jpg" ;
+				uco-observable:isDirectory "false"^^xsd:boolean ;
+				uco-observable:modifiedTime "2018-11-18T20:28:58Z" ;
+				uco-observable:sizeInBytes "756969"^^xsd:integer ;
+			] ;
+			sh:resultMessage "UcoThings are required to not be blank nodes." ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				sh:message "UcoThings are required to not be blank nodes."@en ;
+				sh:select """
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER isBlank ($this)
+			}
+		""" ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:UcoThing ;
+			sh:value [
+				a uco-observable:File ;
+				uco-observable:accessedTime "2018-11-18T22:53:09Z" ;
+				uco-observable:createdTime "2018-11-18T22:53:09Z" ;
+				uco-observable:extension "jpg" ;
+				uco-observable:fileName "wow.jpg" ;
+				uco-observable:filePath "/img_image.E01/wow.jpg" ;
+				uco-observable:isDirectory "false"^^xsd:boolean ;
+				uco-observable:modifiedTime "2018-11-18T20:28:58Z" ;
+				uco-observable:sizeInBytes "756969"^^xsd:integer ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode [
+				a uco-observable:File ;
+				uco-observable:accessedTime "2018-11-18T22:53:09Z" ;
+				uco-observable:createdTime "2018-11-18T22:53:09Z" ;
+				uco-observable:extension "jpg" ;
+				uco-observable:fileName "wow.jpg" ;
+				uco-observable:filePath "/img_image.E01/wow.jpg" ;
+				uco-observable:isDirectory "false"^^xsd:boolean ;
+				uco-observable:modifiedTime "2018-11-18T20:28:58Z" ;
+				uco-observable:sizeInBytes "756969"^^xsd:integer ;
+			] ;
+			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
+			sh:resultSeverity sh:Info ;
+			sh:sourceConstraint [
+				a sh:SPARQLConstraint ;
+				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
+				sh:message "UcoThings are suggested to end with a UUID."@en ;
+				sh:select '''
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			SELECT $this
+			WHERE {
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        FILTER (
+			                ! REGEX (
+			                        STR($this),
+			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
+			                        "i"
+			                )
+			        )
+			}
+		''' ;
+			] ;
+			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
+			sh:sourceShape core:UcoThing-identifier-regex-shape ;
+			sh:value [
+				a uco-observable:File ;
+				uco-observable:accessedTime "2018-11-18T22:53:09Z" ;
+				uco-observable:createdTime "2018-11-18T22:53:09Z" ;
+				uco-observable:extension "jpg" ;
+				uco-observable:fileName "wow.jpg" ;
+				uco-observable:filePath "/img_image.E01/wow.jpg" ;
+				uco-observable:isDirectory "false"^^xsd:boolean ;
+				uco-observable:modifiedTime "2018-11-18T20:28:58Z" ;
+				uco-observable:sizeInBytes "756969"^^xsd:integer ;
+			] ;
 		] ,
 		[
 			a sh:ValidationResult ;
@@ -2926,357 +2854,6 @@
 				sh:path uco-observable:numberOfSubkeys ;
 			] ;
 			sh:value "2" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a types:Hash ;
-				uco-observable:hashMethod "MD5"^^vocabulary:HashNameVocab ;
-				types:hashValue "2282dddf9378cd1dd0497a3484adf768"^^xsd:hexBinary ;
-			] ;
-			sh:resultMessage "Less than 1 values on [ rdf:type uco-types:Hash ; uco-observable:hashMethod Literal(\"MD5\" = None, datatype=uco-vocabulary:HashNameVocab) ; uco-types:hashValue Literal(\"2282dddf9378cd1dd0497a3484adf768\" = b'\"\\x82\\xdd\\xdf\\x93x\\xcd\\x1d\\xd0Iz4\\x84\\xad\\xf7h', datatype=xsd:hexBinary) ]->types:hashMethod" ;
-			sh:resultPath types:hashMethod ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-			sh:sourceShape [
-				sh:maxCount "1"^^xsd:integer ;
-				sh:minCount "1"^^xsd:integer ;
-				sh:nodeKind sh:Literal ;
-				sh:or (
-					[
-						sh:datatype vocabulary:HashNameVocab ;
-					]
-					[
-						sh:datatype xsd:string ;
-					]
-				) ;
-				sh:path types:hashMethod ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a types:Hash ;
-				uco-observable:hashMethod "MD5"^^vocabulary:HashNameVocab ;
-				types:hashValue "2282dddf9378cd1dd0497a3484adf768"^^xsd:hexBinary ;
-			] ;
-			sh:resultMessage "UcoThings are required to not be blank nodes." ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				sh:message "UcoThings are required to not be blank nodes."@en ;
-				sh:select """
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER isBlank ($this)
-			}
-		""" ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing ;
-			sh:value [
-				a types:Hash ;
-				uco-observable:hashMethod "MD5"^^vocabulary:HashNameVocab ;
-				types:hashValue "2282dddf9378cd1dd0497a3484adf768"^^xsd:hexBinary ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a types:Hash ;
-				uco-observable:hashMethod "MD5"^^vocabulary:HashNameVocab ;
-				types:hashValue "2282dddf9378cd1dd0497a3484adf768"^^xsd:hexBinary ;
-			] ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value [
-				a types:Hash ;
-				uco-observable:hashMethod "MD5"^^vocabulary:HashNameVocab ;
-				types:hashValue "2282dddf9378cd1dd0497a3484adf768"^^xsd:hexBinary ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a types:Hash ;
-				types:hashMethod "MD5"^^vocabulary:HashNameVocab ;
-				types:hashValue "058f03317c1612eadd624342b7fde511"^^xsd:hexBinary ;
-			] ;
-			sh:resultMessage "UcoThings are required to not be blank nodes." ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				sh:message "UcoThings are required to not be blank nodes."@en ;
-				sh:select """
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER isBlank ($this)
-			}
-		""" ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing ;
-			sh:value [
-				a types:Hash ;
-				types:hashMethod "MD5"^^vocabulary:HashNameVocab ;
-				types:hashValue "058f03317c1612eadd624342b7fde511"^^xsd:hexBinary ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a types:Hash ;
-				types:hashMethod "MD5"^^vocabulary:HashNameVocab ;
-				types:hashValue "058f03317c1612eadd624342b7fde511"^^xsd:hexBinary ;
-			] ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value [
-				a types:Hash ;
-				types:hashMethod "MD5"^^vocabulary:HashNameVocab ;
-				types:hashValue "058f03317c1612eadd624342b7fde511"^^xsd:hexBinary ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a types:Hash ;
-				types:hashMethod "SHA1"^^vocabulary:HashNameVocab ;
-				types:hashValue "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"^^xsd:hexBinary ;
-			] ;
-			sh:resultMessage "UcoThings are required to not be blank nodes." ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				sh:message "UcoThings are required to not be blank nodes."@en ;
-				sh:select """
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER isBlank ($this)
-			}
-		""" ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing ;
-			sh:value [
-				a types:Hash ;
-				types:hashMethod "SHA1"^^vocabulary:HashNameVocab ;
-				types:hashValue "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"^^xsd:hexBinary ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a types:Hash ;
-				types:hashMethod "SHA1"^^vocabulary:HashNameVocab ;
-				types:hashValue "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"^^xsd:hexBinary ;
-			] ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value [
-				a types:Hash ;
-				types:hashMethod "SHA1"^^vocabulary:HashNameVocab ;
-				types:hashValue "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"^^xsd:hexBinary ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a types:Hash ;
-				types:hashMethod "SHA1"^^vocabulary:HashNameVocab ;
-				types:hashValue "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"^^xsd:hexBinary ;
-			] ;
-			sh:resultMessage "UcoThings are required to not be blank nodes." ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				sh:message "UcoThings are required to not be blank nodes."@en ;
-				sh:select """
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER isBlank ($this)
-			}
-		""" ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing ;
-			sh:value [
-				a types:Hash ;
-				types:hashMethod "SHA1"^^vocabulary:HashNameVocab ;
-				types:hashValue "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"^^xsd:hexBinary ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a types:Hash ;
-				types:hashMethod "SHA1"^^vocabulary:HashNameVocab ;
-				types:hashValue "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"^^xsd:hexBinary ;
-			] ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value [
-				a types:Hash ;
-				types:hashMethod "SHA1"^^vocabulary:HashNameVocab ;
-				types:hashValue "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"^^xsd:hexBinary ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a types:Hash ;
-				types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
-				types:hashValue "701ad15009b0e79af524336f7d069ed1"^^xsd:hexBinary ;
-			] ;
-			sh:resultMessage "UcoThings are required to not be blank nodes." ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				sh:message "UcoThings are required to not be blank nodes."@en ;
-				sh:select """
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER isBlank ($this)
-			}
-		""" ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing ;
-			sh:value [
-				a types:Hash ;
-				types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
-				types:hashValue "701ad15009b0e79af524336f7d069ed1"^^xsd:hexBinary ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a types:Hash ;
-				types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
-				types:hashValue "701ad15009b0e79af524336f7d069ed1"^^xsd:hexBinary ;
-			] ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value [
-				a types:Hash ;
-				types:hashMethod "SHA256"^^vocabulary:HashNameVocab ;
-				types:hashValue "701ad15009b0e79af524336f7d069ed1"^^xsd:hexBinary ;
-			] ;
 		]
 		;
 	.

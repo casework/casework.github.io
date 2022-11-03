@@ -32,6 +32,7 @@
                 "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:hash": [
                     {
+                        "@id": "kb:hash-c92fc112-d6d0-512c-964f-92d907dd645e",
                         "@type": "uco-types:Hash",
                         "uco-types:hashMethod": {
                             "@type": "uco-vocabulary:HashNameVocab",
@@ -43,6 +44,7 @@
                         }
                     },
                     {
+                        "@id": "kb:hash-1a37ec6e-565a-5393-92c9-42fff2d7361a",
                         "@type": "uco-types:Hash",
                         "uco-types:hashMethod": {
                             "@type": "uco-vocabulary:HashNameVocab",

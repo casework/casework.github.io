@@ -57,11 +57,13 @@
             "@type": "uco-configuration:Configuration",
             "uco-configuration:configurationEntry": [
                 {
+                    "@id": "kb:configuration-entry-edd150cb-a355-4990-b402-4784f004d2e8",
                     "@type": "uco-configuration:ConfigurationEntry",
                     "uco-configuration:itemName": "ExtractionMethod",
                     "uco-configuration:itemValue": "iOS_Backup"
                 },
                 {
+                    "@id": "kb:configuration-entry-fa517033-8d94-434c-85e9-778246de5b7d",
                     "@type": "uco-configuration:ConfigurationEntry",
                     "uco-configuration:itemName": "ExtractionType",
                     "uco-configuration:itemValue": "File SystemMD5"
@@ -88,6 +90,7 @@
         ],
         "uco-core:hasFacet": [
             {
+                "@id": "kb:file-facet-5a498a1f-7e9d-46b9-8953-174226298969",
                 "@type": "uco-observable:FileFacet",
                 "uco-observable:observableCreatedTime": {
                     "@type": "xsd:dateTime",
@@ -100,9 +103,11 @@
                 "uco-observable:sizeInBytes": 160080500
             },
             {
+                "@id": "kb:content-data-facet-63dc506b-76ba-470d-ac6d-f51e93f40767",
                 "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:hash": [
                     {
+                        "@id": "kb:hash-bfa02feb-6184-5ca5-9ba3-272bf4367c5d",
                         "@type": "uco-types:Hash",
                         "uco-types:hashMethod": {
                             "@type": "uco-vocabulary:HashNameVocab",

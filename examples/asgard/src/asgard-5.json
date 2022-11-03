@@ -4,6 +4,7 @@
         "@type": "uco-observable:NetworkConnection",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:network-connection-facet-a9497bfe-6857-45ac-933d-365a48285f9b",
                 "@type": "uco-observable:NetworkConnectionFacet",
                 "uco-observable:startTime": {
                     "@type": "xsd:dateTime",
@@ -22,14 +23,17 @@
                 },
                 "uco-observable:sourcePort": 52960,
                 "uco-observable:protocols": {
+                    "@id": "kb:controlled-dictionary-b3623b4f-3e80-4a19-ae24-e8b27c1e4256",
                     "@type": "uco-types:ControlledDictionary",
                     "uco-types:entry": [
                         {
+                            "@id": "kb:controlled-dictionary-entry-e54471c3-9a89-4e88-9a52-3cee0e5ab0a2",
                             "@type": "uco-types:ControlledDictionaryEntry",
                             "uco-types:key": "Transport Layer",
                             "uco-types:value": "TCP"
                         },
                         {
+                            "@id": "kb:controlled-dictionary-entry-ebe701c9-f93e-46d9-9d8a-2d8f6ac4e7b3",
                             "@type": "uco-types:ControlledDictionaryEntry",
                             "uco-types:key": "Session Layer",
                             "uco-types:value": "NETBIOSSESSIONSERVICE"
