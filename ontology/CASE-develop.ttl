@@ -16594,7 +16594,7 @@ observable:wirelessNetworkSecurityMode
 	rdfs:label "wirelessNetworkSecurityMode"@en ;
 	rdfs:comment "Specifies the security mode of a wireless network (None, WEP, WPA, etc)."@en ;
 	rdfs:range [
-		a rdfs:DataType ;
+		a rdfs:Datatype ;
 		owl:unionOf (
 			vocabulary:WirelessNetworkSecurityModeVocab
 			xsd:string
@@ -18912,8 +18912,8 @@ vocabulary:WirelessNetworkSecurityModeVocab
 []
 	a owl:Axiom ;
 	rdfs:comment "This triple is repeated from the Collections Ontology."@en ;
-	owl:AnnotatedProperty rdfs:subClassOf ;
-	owl:AnnotatedSource co:ListItem ;
-	owl:AnnotatedTarget co:Item ;
+	owl:annotatedProperty rdfs:subClassOf ;
+	owl:annotatedSource co:ListItem ;
+	owl:annotatedTarget co:Item ;
 	.
 
