@@ -27,6 +27,7 @@ custom_css: releases
 
 *(These are changes to ontologies, classes or properties in the preexisting ontology.)*
 
+* Added a typo checker to upstream design vocabularies ([*GitHub Issue 119*](https://github.com/casework/CASE/issues/119))
 * Expanded CI trigger-branches to include multiple develops and unstables ([*UCO GitHub Issue 493*](https://github.com/ucoProject/UCO/issues/493))
 * Integrated a SHACL conformance checking system into CI ([*UCO GitHub Issue 504*](https://github.com/ucoProject/UCO/issues/504))
 
