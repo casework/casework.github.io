@@ -799,7 +799,11 @@ uco-owl:DatatypeProperty-shacl-constraints-shape
 				WHERE {
 					?value
 						sh:class ?nClass ;
-						sh:path / rdf:rest* / rdf:first? $this ;
+						sh:path / rdf:rest* ?nLastSequenceMember ;
+						.
+					?nLastSequenceMember
+						rdf:first $this ;
+						rdf:rest rdf:nil ;
 						.
 				}
 			""" ;
@@ -812,7 +816,13 @@ uco-owl:DatatypeProperty-shacl-constraints-shape
 				PREFIX sh: <http://www.w3.org/ns/shacl#>
 				SELECT $this ?value
 				WHERE {
-					?value sh:path / rdf:rest* / rdf:first? $this .
+					?value
+						sh:path / rdf:rest* ?nLastSequenceMember ;
+						.
+					?nLastSequenceMember
+						rdf:first $this ;
+						rdf:rest rdf:nil ;
+						.
 
 					{ ?value sh:nodeKind sh:BlankNode . }
 					UNION
@@ -933,7 +943,11 @@ uco-owl:ObjectProperty-shacl-constraints-shape
 				WHERE {
 					?value
 						sh:datatype ?nDatatype ;
-						sh:path / rdf:rest* / rdf:first? $this ;
+						sh:path / rdf:rest* ?nLastSequenceMember ;
+						.
+					?nLastSequenceMember
+						rdf:first $this ;
+						rdf:rest rdf:nil ;
 						.
 				}
 		""" ;
@@ -945,7 +959,13 @@ uco-owl:ObjectProperty-shacl-constraints-shape
 				PREFIX sh: <http://www.w3.org/ns/shacl#>
 				SELECT $this ?value
 				WHERE {
-					?value sh:path / rdf:rest* / rdf:first? $this ;
+					?value
+						sh:path / rdf:rest* ?nLastSequenceMember ;
+						.
+					?nLastSequenceMember
+						rdf:first $this ;
+						rdf:rest rdf:nil ;
+						.
 
 					{ ?value sh:nodeKind sh:BlankNodeOrLiteral . }
 					UNION
@@ -994,31 +1014,12 @@ uco-owl:incompatibleWith-imported-version-iri-shape
 	sh:targetObjectsOf owl:incompatibleWith ;
 	.
 
-uco-owl:ontologyIRI-nodeKind-shape
-	a sh:Shape ;
-	rdfs:comment "This shape is deprecated, due to referencing a non-existent property.  Its constraints have been removed, and the shape's IRI will be removed in UCO 2.0.0."@en ;
-	.
-
-uco-owl:ontologyIRI-ontology-uniqueness-shape
-	a sh:Shape ;
-	rdfs:comment "This shape is deprecated, due to requiring a mechanism to associate an ontology with a graph that is not available to UCO while it lacks a structural concept of an RDF Graph.  Its constraints have been removed, and the shape's IRI will be removed in UCO 2.0.0."@en ;
-	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
-	sh:message "'If an ontology has an ontology IRI but no version IRI, then a different ontology with the same ontology IRI but no version IRI SHOULD NOT exist.'"@en ;
-	.
-
 uco-owl:ontologyIRI-versionIRI-prerequisite-shape
 	a sh:NodeShape ;
 	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
 	sh:message "'An ontology without an ontology IRI MUST NOT contain a version IRI.'"@en ;
 	sh:nodeKind sh:IRI ;
 	sh:targetSubjectsOf owl:versionIRI ;
-	.
-
-uco-owl:ontologyIRI-versionIRI-uniqueness-shape
-	a sh:Shape ;
-	rdfs:comment "This shape is deprecated, due to requiring a mechanism to associate an ontology with a graph that is not available to UCO while it lacks a structural concept of an RDF Graph.  Its constraints have been removed, and the shape's IRI will be removed in UCO 2.0.0."@en ;
-	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
-	sh:message "'If an ontology has both an ontology IRI and a version IRI, then a different ontology with the same ontology IRI and the same version IRI SHOULD NOT exist.'"@en ;
 	.
 
 uco-owl:versionIRI-multiversion-shape
@@ -1575,7 +1576,7 @@ analysis:AnalyticResult
 		;
 	rdfs:subClassOf core:Assertion ;
 	rdfs:label "AnalyticResult"@en ;
-	rdfs:comment "An analytic result is a characterization of the understanding resulting from an analysis action ."@en ;
+	rdfs:comment "An analytic result is a characterization of the understanding resulting from an analysis action."@en ;
 	sh:property
 		[
 			sh:class analysis:Analysis ;
@@ -1599,7 +1600,7 @@ analysis:AnalyticResultFacet
 		;
 	rdfs:subClassOf core:Facet ;
 	rdfs:label "AnalyticResultFacet"@en ;
-	rdfs:comment "An analytic result facet is a grouping of characteristics unique to the results of an analysis action.."@en ;
+	rdfs:comment "An analytic result facet is a grouping of characteristics unique to the results of an analysis action."@en ;
 	sh:targetClass analysis:AnalyticResultFacet ;
 	.
 
@@ -1610,7 +1611,7 @@ analysis:ArtifactClassification
 		;
 	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ArtifactClassification"@en ;
-	rdfs:comment "An artifact classification is an single specific assertion a particular class of a classification taxonomy applies to something."@en ;
+	rdfs:comment "An artifact classification is a single specific assertion that a particular class of a classification taxonomy applies to something."@en ;
 	sh:property
 		[
 			sh:datatype xsd:decimal ;
@@ -6377,6 +6378,12 @@ observable:ExtractedString
 	rdfs:comment "An extracted string is a grouping of characteristics unique to a series of characters pulled from an observable object."@en ;
 	sh:property
 		[
+			sh:datatype xsd:base64Binary ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:byteStringValue ;
+		] ,
+		[
 			sh:datatype xsd:integer ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
@@ -6405,11 +6412,6 @@ observable:ExtractedString
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:stringValue ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:byteStringValue ;
 		]
 		;
 	sh:targetClass observable:ExtractedString ;
@@ -9537,14 +9539,124 @@ observable:TCPConnectionFacet
 		[
 			sh:datatype xsd:hexBinary ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:sourceFlags ;
+			sh:path observable:destinationFlags ;
 		] ,
 		[
+			sh:datatype xsd:hexBinary ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:destinationFlags ;
+			sh:path observable:sourceFlags ;
 		]
 		;
 	sh:targetClass observable:TCPConnectionFacet ;
+	.
+
+observable:TableField
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf observable:ObservableObject ;
+	rdfs:label "TableField"@en ;
+	rdfs:comment "A database table field and its associated value contained within a relational database."@en ;
+	sh:targetClass observable:TableField ;
+	.
+
+observable:TableFieldFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "TableFieldFacet"@en ;
+	rdfs:comment "A database record facet contains properties associated with a specific table record value from a database."@en ;
+	sh:property
+		[
+			sh:datatype xsd:boolean ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:recordFieldIsNull ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:recordFieldName ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:tableName ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:tableSchema ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype xsd:base64Binary ;
+				]
+				[
+					sh:datatype xsd:decimal ;
+				]
+				[
+					sh:datatype xsd:integer ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:recordFieldValue ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype xsd:integer ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:recordRowID ;
+		]
+		;
+	sh:targetClass observable:TableFieldFacet ;
+	sh:xone (
+		[
+			a sh:NodeShape ;
+			sh:property [
+				sh:hasValue "false"^^xsd:boolean ;
+				sh:path observable:recordFieldIsNull ;
+			] ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:property
+				[
+					sh:hasValue "true"^^xsd:boolean ;
+					sh:path observable:recordFieldIsNull ;
+				] ,
+				[
+					sh:maxCount "0"^^xsd:integer ;
+					sh:path observable:recordFieldValue ;
+				]
+				;
+		]
+		[
+			a sh:NodeShape ;
+			sh:property [
+				sh:maxCount "0"^^xsd:integer ;
+				sh:path observable:recordFieldIsNull ;
+			] ;
+		]
+	) ;
 	.
 
 observable:Tablet
@@ -12910,6 +13022,7 @@ observable:byteStringValue
 	a owl:DatatypeProperty ;
 	rdfs:label "byteStringValue"@en ;
 	rdfs:comment "Specifies the raw, byte-string representation of the extracted string."@en ;
+	rdfs:range xsd:base64Binary ;
 	.
 
 observable:callType
@@ -13442,8 +13555,8 @@ observable:destination
 observable:destinationFlags
 	a owl:DatatypeProperty ;
 	rdfs:label "destinationFlags"@en ;
-	rdfs:comment """Specifies the destination TCP flags.
-          """@en ;
+	rdfs:comment "Specifies the destination TCP flags."@en ;
+	rdfs:range xsd:hexBinary ;
 	.
 
 observable:destinationPort
@@ -15604,6 +15717,48 @@ observable:receivedTime
 	rdfs:range xsd:dateTime ;
 	.
 
+observable:recordFieldIsNull
+	a owl:DatatypeProperty ;
+	rdfs:label "recordFieldIsNull"@en ;
+	rdfs:comment "Whether the specified database record field is null."@en ;
+	rdfs:range xsd:boolean ;
+	.
+
+observable:recordFieldName
+	a owl:DatatypeProperty ;
+	rdfs:label "recordFieldName"@en ;
+	rdfs:comment "A field name of a database record value being identified."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:recordFieldValue
+	a owl:DatatypeProperty ;
+	rdfs:label "recordFieldValue"@en ;
+	rdfs:comment "The field value of a specified database record."@en ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			xsd:base64Binary
+			xsd:decimal
+			xsd:integer
+			xsd:string
+		) ;
+	] ;
+	.
+
+observable:recordRowID
+	a owl:DatatypeProperty ;
+	rdfs:label "recordRowID"@en ;
+	rdfs:comment "The unique ID that identifies a database record, supplied by the originating database engine."@en ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			xsd:integer
+			xsd:string
+		) ;
+	] ;
+	.
+
 observable:recurrence
 	a owl:DatatypeProperty ;
 	rdfs:label "recurrence"@en ;
@@ -16307,6 +16462,14 @@ observable:systemTime
 observable:tableName
 	a owl:DatatypeProperty ;
 	rdfs:label "tableName"@en ;
+	rdfs:comment "The table containing a specified database record."@en ;
+	rdfs:range xsd:string ;
+	.
+
+observable:tableSchema
+	a owl:DatatypeProperty ;
+	rdfs:label "tableSchema"@en ;
+	rdfs:comment "The schema that contains the identified database record."@en ;
 	rdfs:range xsd:string ;
 	.
 
