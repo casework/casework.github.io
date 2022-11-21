@@ -1014,31 +1014,12 @@ uco-owl:incompatibleWith-imported-version-iri-shape
 	sh:targetObjectsOf owl:incompatibleWith ;
 	.
 
-uco-owl:ontologyIRI-nodeKind-shape
-	a sh:Shape ;
-	rdfs:comment "This shape is deprecated, due to referencing a non-existent property.  Its constraints have been removed, and the shape's IRI will be removed in UCO 2.0.0."@en ;
-	.
-
-uco-owl:ontologyIRI-ontology-uniqueness-shape
-	a sh:Shape ;
-	rdfs:comment "This shape is deprecated, due to requiring a mechanism to associate an ontology with a graph that is not available to UCO while it lacks a structural concept of an RDF Graph.  Its constraints have been removed, and the shape's IRI will be removed in UCO 2.0.0."@en ;
-	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
-	sh:message "'If an ontology has an ontology IRI but no version IRI, then a different ontology with the same ontology IRI but no version IRI SHOULD NOT exist.'"@en ;
-	.
-
 uco-owl:ontologyIRI-versionIRI-prerequisite-shape
 	a sh:NodeShape ;
 	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
 	sh:message "'An ontology without an ontology IRI MUST NOT contain a version IRI.'"@en ;
 	sh:nodeKind sh:IRI ;
 	sh:targetSubjectsOf owl:versionIRI ;
-	.
-
-uco-owl:ontologyIRI-versionIRI-uniqueness-shape
-	a sh:Shape ;
-	rdfs:comment "This shape is deprecated, due to requiring a mechanism to associate an ontology with a graph that is not available to UCO while it lacks a structural concept of an RDF Graph.  Its constraints have been removed, and the shape's IRI will be removed in UCO 2.0.0."@en ;
-	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Ontology_IRI_and_Version_IRI> ;
-	sh:message "'If an ontology has both an ontology IRI and a version IRI, then a different ontology with the same ontology IRI and the same version IRI SHOULD NOT exist.'"@en ;
 	.
 
 uco-owl:versionIRI-multiversion-shape
@@ -1595,7 +1576,7 @@ analysis:AnalyticResult
 		;
 	rdfs:subClassOf core:Assertion ;
 	rdfs:label "AnalyticResult"@en ;
-	rdfs:comment "An analytic result is a characterization of the understanding resulting from an analysis action ."@en ;
+	rdfs:comment "An analytic result is a characterization of the understanding resulting from an analysis action."@en ;
 	sh:property
 		[
 			sh:class analysis:Analysis ;
@@ -1619,7 +1600,7 @@ analysis:AnalyticResultFacet
 		;
 	rdfs:subClassOf core:Facet ;
 	rdfs:label "AnalyticResultFacet"@en ;
-	rdfs:comment "An analytic result facet is a grouping of characteristics unique to the results of an analysis action.."@en ;
+	rdfs:comment "An analytic result facet is a grouping of characteristics unique to the results of an analysis action."@en ;
 	sh:targetClass analysis:AnalyticResultFacet ;
 	.
 
@@ -1630,7 +1611,7 @@ analysis:ArtifactClassification
 		;
 	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "ArtifactClassification"@en ;
-	rdfs:comment "An artifact classification is an single specific assertion a particular class of a classification taxonomy applies to something."@en ;
+	rdfs:comment "An artifact classification is a single specific assertion that a particular class of a classification taxonomy applies to something."@en ;
 	sh:property
 		[
 			sh:datatype xsd:decimal ;
@@ -9605,12 +9586,6 @@ observable:TableFieldFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:recordRowID ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
 			sh:path observable:tableName ;
 		] ,
 		[
@@ -9637,6 +9612,19 @@ observable:TableFieldFacet
 				]
 			) ;
 			sh:path observable:recordFieldValue ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:or (
+				[
+					sh:datatype xsd:integer ;
+				]
+				[
+					sh:datatype xsd:string ;
+				]
+			) ;
+			sh:path observable:recordRowID ;
 		]
 		;
 	sh:targetClass observable:TableFieldFacet ;
@@ -15761,8 +15749,14 @@ observable:recordFieldValue
 observable:recordRowID
 	a owl:DatatypeProperty ;
 	rdfs:label "recordRowID"@en ;
-	rdfs:comment "The unique ID that identifies a database record."@en ;
-	rdfs:range xsd:string ;
+	rdfs:comment "The unique ID that identifies a database record, supplied by the originating database engine."@en ;
+	rdfs:range [
+		a rdfs:Datatype ;
+		owl:unionOf (
+			xsd:integer
+			xsd:string
+		) ;
+	] ;
 	.
 
 observable:recurrence
