@@ -6,10 +6,12 @@ custom_css: releases
 
 # {{ page.title }}
 
-*Date: TBD*
+*Date: 2022-11-22*
 
 
 ## Ontology File(s)
+
+[GitHub](https://github.com/casework/CASE/releases/tag/1.1.0)
 
 
 ## Release Notes
