@@ -28,3 +28,6 @@
 - title: 1.0.0
   date: 2022-08-31
   desc: Initial major release.
+- title: 1.1.0
+  date: 2022-11-22
+  desc: Adoption of UCO 1.1.0.  Bug fixes and test improvements.
