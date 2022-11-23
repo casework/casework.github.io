@@ -30,7 +30,7 @@
                         }
                     },
                     {
-                        "@id": "kb:hash-c20e90ad-56c2-5d39-a82c-9943308f21bc",
+                        "@id": "kb:hash-eb771978-d3b4-5e6e-a707-99a854a1dcf2",
                         "@type": "uco-types:Hash",
                         "uco-types:hashMethod": {
                             "@type": "uco-vocabulary:HashNameVocab",
