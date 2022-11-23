@@ -395,7 +395,7 @@
                     "uco-observable:mimeType": "application/application/vnd.openxmlformats-officedocument.wordprocessingml.document",
                     "uco-observable:hash": [
                         {
-                            "@id": "kb:hash-2cc00152-20ba-5a0f-86df-82293b4b6034",
+                            "@id": "kb:hash-adece2a7-0017-5e25-be76-f6b78386186b",
                             "@type": "uco-types:Hash",
                             "rdfs:comment": "TODO: From the hash length, the algorithm appears to be MD5, not SHA2-256.",
                             "uco-types:hashMethod": {
