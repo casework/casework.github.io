@@ -993,7 +993,7 @@
 			sh:value [
 				a uco-observable:ContentDataFacet ;
 				uco-observable:byteOrder "Big-endian"^^vocabulary:EndiannessTypeVocab ;
-				uco-observable:hash <http://example.org/kb/hash-2cc00152-20ba-5a0f-86df-82293b4b6034> ;
+				uco-observable:hash <http://example.org/kb/hash-adece2a7-0017-5e25-be76-f6b78386186b> ;
 				uco-observable:mimeType "application/application/vnd.openxmlformats-officedocument.wordprocessingml.document" ;
 				uco-observable:sizeInBytes "11633"^^xsd:integer ;
 			] ;
@@ -1318,7 +1318,7 @@
 			sh:focusNode [
 				a uco-observable:ContentDataFacet ;
 				uco-observable:byteOrder "Big-endian"^^vocabulary:EndiannessTypeVocab ;
-				uco-observable:hash <http://example.org/kb/hash-2cc00152-20ba-5a0f-86df-82293b4b6034> ;
+				uco-observable:hash <http://example.org/kb/hash-adece2a7-0017-5e25-be76-f6b78386186b> ;
 				uco-observable:mimeType "application/application/vnd.openxmlformats-officedocument.wordprocessingml.document" ;
 				uco-observable:sizeInBytes "11633"^^xsd:integer ;
 			] ;
@@ -1341,7 +1341,7 @@
 			sh:value [
 				a uco-observable:ContentDataFacet ;
 				uco-observable:byteOrder "Big-endian"^^vocabulary:EndiannessTypeVocab ;
-				uco-observable:hash <http://example.org/kb/hash-2cc00152-20ba-5a0f-86df-82293b4b6034> ;
+				uco-observable:hash <http://example.org/kb/hash-adece2a7-0017-5e25-be76-f6b78386186b> ;
 				uco-observable:mimeType "application/application/vnd.openxmlformats-officedocument.wordprocessingml.document" ;
 				uco-observable:sizeInBytes "11633"^^xsd:integer ;
 			] ;
@@ -1351,7 +1351,7 @@
 			sh:focusNode [
 				a uco-observable:ContentDataFacet ;
 				uco-observable:byteOrder "Big-endian"^^vocabulary:EndiannessTypeVocab ;
-				uco-observable:hash <http://example.org/kb/hash-2cc00152-20ba-5a0f-86df-82293b4b6034> ;
+				uco-observable:hash <http://example.org/kb/hash-adece2a7-0017-5e25-be76-f6b78386186b> ;
 				uco-observable:mimeType "application/application/vnd.openxmlformats-officedocument.wordprocessingml.document" ;
 				uco-observable:sizeInBytes "11633"^^xsd:integer ;
 			] ;
@@ -1381,7 +1381,7 @@
 			sh:value [
 				a uco-observable:ContentDataFacet ;
 				uco-observable:byteOrder "Big-endian"^^vocabulary:EndiannessTypeVocab ;
-				uco-observable:hash <http://example.org/kb/hash-2cc00152-20ba-5a0f-86df-82293b4b6034> ;
+				uco-observable:hash <http://example.org/kb/hash-adece2a7-0017-5e25-be76-f6b78386186b> ;
 				uco-observable:mimeType "application/application/vnd.openxmlformats-officedocument.wordprocessingml.document" ;
 				uco-observable:sizeInBytes "11633"^^xsd:integer ;
 			] ;

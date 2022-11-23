@@ -228,7 +228,7 @@
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
-                            "@id": "kb:hash-5729291a-95b7-5c81-b738-523334d64cbe",
+                            "@id": "kb:hash-cb86489c-4d91-5261-adcd-4cf377726d94",
                             "@type": "uco-types:Hash",
                             "rdfs:comment": "TODO: From the hash length, the algorithm appears to be MD5, not SHA2-256.",
                             "uco-types:hashMethod": {
