@@ -56,6 +56,7 @@ $(example_name)_validation.ttl: \
 	rm -f __$@
 	source $(top_srcdir)/venv/bin/activate \
 	  && case_validate \
+	    --allow-infos \
 	    --format turtle \
 	    $(local_drafting_validation_flag) \
 	    --ontology-graph $(top_srcdir)/ontology/drafting.ttl \
@@ -83,6 +84,7 @@ $(example_name)_validation-develop.ttl: \
 	rm -f __$@
 	source $(top_srcdir)/venv/bin/activate \
 	  && case_validate \
+	    --allow-infos \
 	    --built-version none \
 	    --format turtle \
 	    $(drafting_validation_flag) \
@@ -111,6 +113,7 @@ $(example_name)_validation-unstable.ttl: \
 	rm -f __$@
 	source $(top_srcdir)/venv/bin/activate \
 	  && case_validate \
+	    --allow-infos \
 	    --built-version none \
 	    --format turtle \
 	    $(drafting_validation_flag) \
