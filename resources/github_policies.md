@@ -64,7 +64,7 @@ CASE recommends adoption of these statuses for any repository hosted on github/c
 
 -   Designation of versions of CASE and UCO the project supports.
 
--   Follow Semantic Versioning (SEMVER).
+-   Follow Semantic Versioning ([SEMVER](https://semver.org/spec/v2.0.0.html)).
 
 #### 4 - Beta
 
@@ -74,4 +74,4 @@ CASE recommends adoption of these statuses for any repository hosted on github/c
 
 #### 5 - Production/Stable
 
--   Branches are managed with the Gitflow branching policy.
+-   Branches are managed with the [Gitflow branching policy](https://cyberdomainontology.org/ontology/development/#branching-cdo-git-flow).
