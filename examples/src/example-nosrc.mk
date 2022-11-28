@@ -61,9 +61,8 @@ $(example_name)_validation.ttl: \
 	    $(local_drafting_validation_flag) \
 	    --ontology-graph $(top_srcdir)/ontology/drafting.ttl \
 	    --output __$@ \
-	    $< \
 	    $(drafting_ttl) \
-	    ; rc=$$? ; test 0 -eq $$rc -o 1 -eq $$rc
+	    $<
 	test -s __$@
 	java -jar $(RDF_TOOLKIT_JAR) \
 	  --inline-blank-nodes \
