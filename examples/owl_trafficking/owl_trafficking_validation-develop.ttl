@@ -685,7 +685,7 @@
 				a uco-observable:ContentDataFacet ;
 				uco-observable:hash
 					<http://example.org/kb/hash-4656ab50-2658-5b66-9416-032235d2d8d5> ,
-					<http://example.org/kb/hash-c20e90ad-56c2-5d39-a82c-9943308f21bc>
+					<http://example.org/kb/hash-eb771978-d3b4-5e6e-a707-99a854a1dcf2>
 					;
 			] ;
 		] ,
@@ -3898,7 +3898,7 @@
 				a uco-observable:ContentDataFacet ;
 				uco-observable:hash
 					<http://example.org/kb/hash-4656ab50-2658-5b66-9416-032235d2d8d5> ,
-					<http://example.org/kb/hash-c20e90ad-56c2-5d39-a82c-9943308f21bc>
+					<http://example.org/kb/hash-eb771978-d3b4-5e6e-a707-99a854a1dcf2>
 					;
 			] ;
 			sh:resultMessage "UcoThings are required to not be blank nodes." ;
@@ -3921,7 +3921,7 @@
 				a uco-observable:ContentDataFacet ;
 				uco-observable:hash
 					<http://example.org/kb/hash-4656ab50-2658-5b66-9416-032235d2d8d5> ,
-					<http://example.org/kb/hash-c20e90ad-56c2-5d39-a82c-9943308f21bc>
+					<http://example.org/kb/hash-eb771978-d3b4-5e6e-a707-99a854a1dcf2>
 					;
 			] ;
 		] ,
@@ -3931,7 +3931,7 @@
 				a uco-observable:ContentDataFacet ;
 				uco-observable:hash
 					<http://example.org/kb/hash-4656ab50-2658-5b66-9416-032235d2d8d5> ,
-					<http://example.org/kb/hash-c20e90ad-56c2-5d39-a82c-9943308f21bc>
+					<http://example.org/kb/hash-eb771978-d3b4-5e6e-a707-99a854a1dcf2>
 					;
 			] ;
 			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
@@ -3961,7 +3961,7 @@
 				a uco-observable:ContentDataFacet ;
 				uco-observable:hash
 					<http://example.org/kb/hash-4656ab50-2658-5b66-9416-032235d2d8d5> ,
-					<http://example.org/kb/hash-c20e90ad-56c2-5d39-a82c-9943308f21bc>
+					<http://example.org/kb/hash-eb771978-d3b4-5e6e-a707-99a854a1dcf2>
 					;
 			] ;
 		] ,

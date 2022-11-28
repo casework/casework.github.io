@@ -1,4 +1,3 @@
 SPARQLWrapper
-case-utils >=0.7.0,<0.8.0
+case-utils >=0.8.0,<0.9.0
 pytest
-rdflib >= 6.2.0
