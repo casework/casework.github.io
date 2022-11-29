@@ -165,18 +165,3 @@ def test_photo_selection() -> None:
         )
 
     assert file_name_status_expected == file_name_status_computed
-
-
-# TODO
-@pytest.mark.xfail(
-    reason="At least one issue known present with vocabulary items.  Once UCO ticket OC-12 is resolved, this xfail annotation should be removed.",
-    strict=True,
-)
-def test_urgent_evidence_validation() -> None:
-    """
-    Confirm the instance data passes validation.
-    """
-    g = load_validation_graph(
-        os.path.join(os.path.dirname(__file__), "urgent_evidence_validation.ttl"), True
-    )
-    assert isinstance(g, rdflib.Graph)
