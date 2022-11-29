@@ -11,6 +11,7 @@
         "uco-identity": "https://ontology.unifiedcyberontology.org/uco/identity/",
         "uco-location": "https://ontology.unifiedcyberontology.org/uco/location/",
         "uco-observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "uco-role": "https://ontology.unifiedcyberontology.org/uco/role/",
         "uco-tool": "https://ontology.unifiedcyberontology.org/uco/tool/",
         "uco-types": "https://ontology.unifiedcyberontology.org/uco/types/",
         "uco-vocabulary": "https://ontology.unifiedcyberontology.org/uco/vocabulary/",
@@ -24,45 +25,52 @@
             "@id": "kb:investigation-e2c24473-63fa-4122-83ee-868325bdd5e8",
             "@type": "case-investigation:Investigation",
             "uco-core:name": "PP 1234_18_21",
-            "uco-core:focus": "Child solicitation",
+            "case-investigation:focus": "Child solicitation",
             "uco-core:description": "Hard drive acquired as evidence.",
-            "uco-core:object": "list uuids in investigation"
-        },
-        {
-            "@id": "kb:identity-c5bb09c3-3612-4bf2-b165-6f12d0e3c6af",
-            "@type": "uco-identity:Identity",
-            "uco-core:hasFacet": [
+            "rdfs:comment": "TODO - uco-core:object to get longer list of IRIs.",
+            "uco-core:object": [
                 {
-                    "@type": "uco-identity:Organisation",
-                    "drafting:orgName": "REALITY NET"
+                    "@id": "kb:disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11"
                 }
             ]
         },
         {
+            "@id": "kb:identity-c5bb09c3-3612-4bf2-b165-6f12d0e3c6af",
+            "@type": "uco-identity:Organization",
+            "uco-core:name": "REALITY NET"
+        },
+        {
             "@id": "kb:role-856975ce-3c25-49c3-b6eb-28d1e929f915",
-            "@type": "uco-core:Role",
+            "@type": "uco-role:Role",
             "uco-core:name": "Forensic Expert"
         },
         {
             "@id": "kb:relationship-d5b4a1e1-0e25-4257-81f7-19febc86ded1",
             "@type": "uco-observable:ObservableRelationship",
             "uco-core:source": {
-                "@id": "kb:c5bb09c3-3612-4bf2-b165-6f12d0e3c6af"
+                "@id": "kb:identity-c5bb09c3-3612-4bf2-b165-6f12d0e3c6af"
             },
             "uco-core:target": {
-                "@id": "kb:856975ce-3c25-49c3-b6eb-28d1e929f915"
+                "@id": "kb:role-856975ce-3c25-49c3-b6eb-28d1e929f915"
             },
             "uco-core:kindOfRelationship": "Has_Role",
             "uco-core:isDirectional": true
         },
         {
-            "@id": "kb:configuredtool-58f07c30-ae20-4587-9bb8-1a5299821e57",
+            "@id": "kb:organization-637dee9d-145d-45e7-b6f8-7ffdf0d4bf4f",
+            "@type": "uco-identity:Organization",
+            "uco-core:name": "Falcon"
+        },
+        {
+            "@id": "kb:ConfiguredTool-58f07c30-ae20-4587-9bb8-1a5299821e57",
             "@type": "uco-tool:ConfiguredTool",
             "uco-core:name": "Logicube",
             "uco-tool:toolType": "acquisition/duplication",
-            "uco-tool:creator": "Falcon",
+            "uco-tool:creator": {
+                "@id": "kb:organization-637dee9d-145d-45e7-b6f8-7ffdf0d4bf4f"
+            },
             "uco-tool:version": "3.2u1",
-            "uco-tool_NOT_EXISTS:toolIdentifier": "134090",
+            "drafting:toolIdentifier": "134090",
             "uco-configuration:usesConfiguration": {
                 "@id": "kb:Configuration-2afbfbb1-b4d6-4ad5-9691-ff09b9f6eebe",
                 "@type": "uco-configuration:Configuration",
@@ -95,12 +103,14 @@
             "@type": "uco-observable:Disk",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:disk-facet-257d2533-2d2d-4263-8467-0fd7ef8de262",
                     "@type": "uco-observable:DiskFacet",
                     "uco-observable:model": "TOSHIBA_MQ01ABD100",
                     "uco-observable:serialNumber": "Z612S32MS",
-                    "uco-observable:capacity": "1000204886016"
+                    "uco-observable:storageCapacityInBytes": 1000204886016
                 },
                 {
+                    "@id": "kb:content-data-facet-c971a595-53c0-4451-a27d-78da68678230",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -134,7 +144,7 @@
         {
             "@id": "kb:provenancerecord-43f26e68-b02f-410b-a917-506c70b732e6",
             "@type": "case-investigation:ProvenanceRecord",
-            "uco-observable:createdTime": {
+            "uco-observable:observableCreatedTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2018-10-26T13:12:48.00Z"
             },
@@ -149,11 +159,12 @@
             "@type": "uco-observable:DiskPartition",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:disk-partition-facet-1fc828ec-77b6-44d4-8810-35d4c7875699",
                     "@type": "uco-observable:DiskPartitionFacet",
-                    "uco-observable:diskpartitionType": "FAT32",
+                    "uco-observable:diskPartitionType": "FAT32",
                     "uco-observable:partitionID": "1",
-                    "uco-observable:partitionOffset": "1048576",
-                    "uco-observable:partitionLength": "104857600"
+                    "uco-observable:partitionOffset": 1048576,
+                    "uco-observable:partitionLength": 104857600
                 }
             ]
         },
@@ -174,11 +185,12 @@
             "@type": "uco-observable:DiskPartition",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:disk-partition-facet-177cecb7-f2cb-44be-b643-672650383865",
                     "@type": "uco-observable:DiskPartitionFacet",
-                    "uco-observable:diskpartitionType": "unknown",
+                    "uco-observable:diskPartitionType": "unknown",
                     "uco-observable:partitionID": "2",
-                    "uco-observable:partitionOffset": "105906176",
-                    "uco-observable:partitionLength": "16777216"
+                    "uco-observable:partitionOffset": 105906176,
+                    "uco-observable:partitionLength": 16777216
                 }
             ]
         },
@@ -199,11 +211,12 @@
             "@type": "uco-observable:DiskPartition",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:disk-partition-facet-4a13df3b-6a69-4d0b-85f1-a0798ebf2c28",
                     "@type": "uco-observable:DiskPartitionFacet",
                     "uco-observable:diskPartitionType": "ntfs",
                     "uco-observable:partitionID": "3",
-                    "uco-observable:partitionOffset": "122683392",
-                    "uco-observable:partitionLength": "505077039104"
+                    "uco-observable:partitionOffset": 122683392,
+                    "uco-observable:partitionLength": 505077039104
                 }
             ]
         },
@@ -211,7 +224,7 @@
             "@id": "kb:relationship-c34de1cd-daa3-4381-a4c6-7a05005cb3d3",
             "@type": "uco-observable:ObservableRelationship",
             "uco-core:source": {
-                "@id": "kb:diskPartition-e19c38f5-692b-4336-8d6d-fdc34a51b00e"
+                "@id": "kb:diskpartition-e19c38f5-692b-4336-8d6d-fdc34a51b00e"
             },
             "uco-core:target": {
                 "@id": "kb:disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11"
@@ -224,11 +237,12 @@
             "@type": "uco-observable:DiskPartition",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:disk-partition-facet-9dadb9d9-10ef-44ab-aa4b-1a96701e7b34",
                     "@type": "uco-observable:DiskPartitionFacet",
                     "uco-observable:diskPartitionType": "ntfs",
                     "uco-observable:partitionID": "4",
-                    "uco-observable:partitionOffset": "505199722496",
-                    "uco-observable:partitionLength": "493928579072"
+                    "uco-observable:partitionOffset": 505199722496,
+                    "uco-observable:partitionLength": 493928579072
                 }
             ]
         },
@@ -249,11 +263,12 @@
             "@type": "uco-observable:DiskPartition",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:disk-partition-facet-c6cc1366-30f5-46f0-9537-64ed9e9e85bc",
                     "@type": "uco-observable:DiskPartitionFacet",
                     "uco-observable:diskPartitionType": "ntfs",
                     "uco-observable:partitionID": "5",
-                    "uco-observable:partitionOffset": "999129350144",
-                    "uco-observable:partitionLength": "1073741824"
+                    "uco-observable:partitionOffset": 999129350144,
+                    "uco-observable:partitionLength": 1073741824
                 }
             ]
         },
@@ -261,7 +276,7 @@
             "@id": "kb:relationship-ff010f40-7f95-498a-9cde-14fa8de501b9",
             "@type": "uco-observable:ObservableRelationship",
             "uco-core:source": {
-                "@id": "kb:diskPartition-f90a3ee1-2cde-439f-9768-23c67aafe347"
+                "@id": "kb:diskpartition-f90a3ee1-2cde-439f-9768-23c67aafe347"
             },
             "uco-core:target": {
                 "@id": "kb:disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11"
@@ -285,16 +300,18 @@
             "uco-action:instrument": {
                 "@id": "kb:ConfiguredTool-58f07c30-ae20-4587-9bb8-1a5299821e57"
             },
-            "uco-action:location": "NOT PROVIDED BY XML REPORT",
+            "drafting:notProvidedByReport": {
+                "@id": "uco-action:location"
+            },
             "uco-action:performer": {
-                "@id": "kb:Role-856975ce-3c25-49c3-b6eb-28d1e929f915"
+                "@id": "kb:role-856975ce-3c25-49c3-b6eb-28d1e929f915"
             },
             "uco-action:object": {
                 "@id": "kb:disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11"
             },
             "uco-action:result": [
                 {
-                    "@id": "kb:ProvenanceRecord-d1828cbb-bb0f-42e3-b021-cfd9d6419ae6"
+                    "@id": "kb:provenancerecord-d1828cbb-bb0f-42e3-b021-cfd9d6419ae6"
                 },
                 {
                     "@id": "kb:file-3366d44d-4e46-43a3-9df6-20aaff011d16"
@@ -416,11 +433,13 @@
             "@id": "kb:provenancerecord-d1828cbb-bb0f-42e3-b021-cfd9d6419ae6",
             "@type": "case-investigation:ProvenanceRecord",
             "uco-core:description": "Segment files (38) partitions with E01Capture",
-            "uco-observable:createdTime": {
+            "uco-observable:observableCreatedTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2018-10-26T13:12:48.00Z"
             },
-            "case-investigation:exhibitNumber": "NOT PROVIDED BY XML REPORT",
+            "drafting:notProvidedByReport": {
+                "@id": "case-investigation:exhibitNumber"
+            },
             "uco-core:object": [
                 {
                     "@id": "kb:file-3366d44d-4e46-43a3-9df6-20aaff011d16"
@@ -543,19 +562,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-81b80de3-c1ca-48ec-a052-4b07da5f4a2e",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E01",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E01",
                     "uco-observable:extension": "E01",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-83493b92-2a26-4bcb-a183-4d39c3795c6a",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -579,19 +600,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-59eb6144-51c1-4c5e-914a-f301c3fc3afe",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E02",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E02",
                     "uco-observable:extension": "E02",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-dce181c7-fbb6-4122-abf4-29be4f9b5441",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -615,19 +638,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-3cc91c06-c33a-4548-82dd-561e17427e7a",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E03",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E03",
                     "uco-observable:extension": "E03",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-96d08ade-7a04-4272-a41b-9bd9450b863a",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -651,19 +676,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-77d2b5db-7f78-4855-a925-e46a562ad88c",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E04",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E04",
                     "uco-observable:extension": "E04",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-5b86e62a-1143-497f-add1-945c72f2ff52",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -687,19 +714,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-8f0f9d96-601f-46a4-b568-767c49a12c8c",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E05",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E05",
                     "uco-observable:extension": "E05",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-79d69309-3b1a-4235-9312-adb0c23eeb52",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -723,19 +752,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-b9d778fa-2826-4f4e-85f1-d369e234e281",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E06",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E06",
                     "uco-observable:extension": "E06",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-9e8a43dd-09de-4190-af9d-0d724acbb1a2",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -759,19 +790,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-fe054752-ca76-475d-908c-6069624c3e45",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E07",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E07",
                     "uco-observable:extension": "E07",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-3925df18-8d68-4a89-8324-6f1da39361a0",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -795,19 +828,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-a8198729-1105-429f-8739-761c38aada55",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E08",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E08",
                     "uco-observable:extension": "E08",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-0f5a95d7-efe5-404f-8062-bd2291d88367",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -831,19 +866,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-eb756eda-521a-4073-9cb3-e2c3952983b0",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E09",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E09",
                     "uco-observable:extension": "E09",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-62e570c6-8fd6-4939-9183-f13533d81801",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -863,23 +900,25 @@
             ]
         },
         {
-            "@id": "kb:File-697cab05-bd2a-4c41-87f4-c279b0fd9089",
+            "@id": "kb:file-697cab05-bd2a-4c41-87f4-c279b0fd9089",
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-ca17615e-efc4-4e76-9f44-06f1d94ee4d5",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E10",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E10",
                     "uco-observable:extension": "E10",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-388da6a1-9cdc-450f-baa1-56ed1be686f4",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -903,19 +942,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-b4738cd2-a3fc-4c91-a0bc-beb8d6f09e22",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E11",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E11",
                     "uco-observable:extension": "E11",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-18c836aa-a1ad-4770-a2c6-58b61655522b",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -939,19 +980,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-736bb987-709d-40e0-88af-aad055fb2f3d",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E12",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E12",
                     "uco-observable:extension": "E12",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-f6b341ef-2d97-4d40-9f49-c483a1a0620e",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -975,19 +1018,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-16479554-f683-4672-923c-0aa647b86802",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E13",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E13",
                     "uco-observable:extension": "E13",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-89044d8e-1a2f-4c68-ba3a-9118908bdf8f",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -1011,19 +1056,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-d0c8c2cd-5528-4bef-83e8-59af8a8ce281",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E14",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E14",
                     "uco-observable:extension": "E14",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-eaf573a3-e2cb-453c-836b-d3f1c0ad0869",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -1047,19 +1094,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-179ef591-aaf9-4941-8a51-ec195a087b89",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E15",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E15",
                     "uco-observable:extension": "E15",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-8dddab43-11c0-4cd3-9478-ecad6b26956b",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -1083,19 +1132,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-853cf3bb-e973-4f09-821b-20ffa2d0969e",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E16",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E16",
                     "uco-observable:extension": "E16",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-e0bfaeaa-2a54-445f-a928-0918d3d02a71",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -1119,19 +1170,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-69e136b4-2d59-45e7-b26d-3611dd34b5d3",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E17",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E17",
                     "uco-observable:extension": "E17",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-de0fcb2b-a062-4fe5-b1dc-45f23dbd3637",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -1155,19 +1208,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-fbcdd931-8efe-4809-923f-89cce9a5bb84",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E18",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E18",
                     "uco-observable:extension": "E18",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-033fb52c-a445-4458-8759-a0b9878374af",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -1191,19 +1246,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-16182747-d679-4bbd-8088-dc9c6da0481f",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E19",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E19",
                     "uco-observable:extension": "E19",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-93acd519-2ae8-43b1-bd13-2aae48511a27",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -1227,19 +1284,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-1c24f350-107a-4207-bfca-c195a97fcd4b",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E20",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E20",
                     "uco-observable:extension": "E20",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-0107676d-66be-4daa-ba74-e1cbde36662f",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -1263,19 +1322,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-a3e941dc-d746-4d7a-a413-7ce15815f0b6",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E21",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E21",
                     "uco-observable:extension": "E21",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-0ff50736-91f1-4b89-ad75-af54283593b9",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -1299,19 +1360,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-282296c0-ee51-4607-96dc-905509419f1c",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E22",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E22",
                     "uco-observable:extension": "E22",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-26948235-5c93-4411-986b-4b23d3f4aa62",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -1335,19 +1398,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-df3d9872-d4a5-499e-86a3-9288dae466c8",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E23",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E23",
                     "uco-observable:extension": "E23",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-d8f23f46-7fd8-4c1e-b83e-b7d58873072e",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -1371,19 +1436,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-92832264-fbb3-4cbb-8d8e-b644eca562a8",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E24",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E24",
                     "uco-observable:extension": "E24",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-05bbeb58-288b-4887-af72-b4574e3e4087",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -1407,19 +1474,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-30327754-ae0b-42f0-ae50-81208bd54989",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E25",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E25",
                     "uco-observable:extension": "E25",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-c30e4632-aa6d-49f2-a136-48a621c7500e",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -1443,19 +1512,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-60069041-51c0-4d81-af87-737f2b353ebb",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E26",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E26",
                     "uco-observable:extension": "E26",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-d4ac7d77-a054-4ac9-b4a4-75995b79a909",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -1479,19 +1550,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-bff60f9d-5676-42b8-8bcc-2c4ffa0d7aa0",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E27",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E27",
                     "uco-observable:extension": "E27",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-c766cef9-f0ca-452b-aeee-830ad8976665",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -1515,19 +1588,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-d3ab1c8e-3e82-4b79-98fa-d5021fd6d5d4",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E28",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E28",
                     "uco-observable:extension": "E28",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-851808fc-6b97-47dd-84ab-d43ab616839f",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -1551,19 +1626,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-a920b4ec-756a-4524-85dd-d61f96ba9ee3",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E29",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E29",
                     "uco-observable:extension": "E29",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-6b9a6470-3e1f-47e7-818b-91c2417d4c75",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -1587,19 +1664,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-bb57c8ff-566e-4a45-a878-e9a0da6e1a51",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E30",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E30",
                     "uco-observable:extension": "E30",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-c1dbfec4-65e6-4fcb-b2dc-e6834db82305",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -1623,19 +1702,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-744d291c-081a-4fbe-a681-51d3f6f9b583",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E31",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E31",
                     "uco-observable:extension": "E31",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-b53a2678-e2ec-46fa-b71b-0f652484a0d3",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -1659,19 +1740,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-a254e4bb-858a-4bca-aff9-516df87909f4",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E32",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E32",
                     "uco-observable:extension": "E32",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-3dc4abc5-279b-45bd-84ae-22794cb83f04",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -1695,19 +1778,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-8406c63a-758d-45f8-a926-8c351bd0ce0c",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E33",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E33",
                     "uco-observable:extension": "E33",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-0ebb2215-c79c-4aad-827b-d8b6d75f93a6",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -1731,19 +1816,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-f3b43554-647d-4d60-aa13-9bd8ed9ad4ee",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E34",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E34",
                     "uco-observable:extension": "E34",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-a1b8c2f6-14d5-4a99-a3cb-d828667274b6",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -1767,19 +1854,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-aee47bc2-e0d1-457c-8651-82c680c9cc58",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E35",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E35",
                     "uco-observable:extension": "E35",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-34895f2f-983b-4fae-b3b3-c763d940cbfb",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -1803,19 +1892,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-aa8d334b-10a5-423e-8431-42c51afaacc2",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E36",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E36",
                     "uco-observable:extension": "E36",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-ce172d0c-aba9-42b0-b5d0-e41b1f6150ca",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -1839,19 +1930,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-d2d7d229-3d5a-4207-811a-d38642a42d95",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E37",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E37",
                     "uco-observable:extension": "E37",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-f297c5bf-f0c2-495b-a78e-e193ca9e4817",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -1875,19 +1968,21 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-33d40dab-c65f-4204-985d-204c381069e0",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "R14_ACER_HD.E38",
                     "uco-observable:filePath": "/var/repo/sas-d1/R14_ACER_HD.E38",
                     "uco-observable:extension": "E38",
                     "uco-observable:fileSystemType": "ntfs",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": "4GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:sizeInBytes": 4294967296,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-10-26T13:12:48.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-687ea678-b8b8-4f2f-af07-c4ddf42533c0",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {

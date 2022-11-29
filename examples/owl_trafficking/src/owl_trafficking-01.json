@@ -13,11 +13,13 @@
             "@type": "uco-configuration:Configuration",
             "uco-configuration:configurationEntry": [
                 {
+                    "@id": "kb:configuration-entry-2f273d07-a72a-4353-a02c-30167e6d7e5a",
                     "@type": "uco-configuration:ConfigurationEntry",
                     "uco-configuration:itemName": "DeviceInfoConnectionType",
                     "uco-configuration:itemValue": "Cable No. 10"
                 },
                 {
+                    "@id": "kb:configuration-entry-a7a16a63-7c5b-4834-97b3-a9f45a32db47",
                     "@type": "uco-configuration:ConfigurationEntry",
                     "uco-configuration:itemName": "ExtractionType",
                     "uco-configuration:itemValue": "Physical"
@@ -28,10 +30,7 @@
     {
         "@id": "kb:organization-magnet-1ad4338b-fa60-4823-b9af-38de3d388e36",
         "@type": "uco-identity:Organization",
-        "uco-core:hasFacet": {
-            "@type": "uco-identity:OrganizationDetailsFacet",
-            "drafting:orgName": "Magnet"
-        }
+        "uco-core:name": "Magnet"
     },
     {
         "@id": "kb:investigative-action-4d3778d9-8376-4277-9852-8e6bf926a5d1",

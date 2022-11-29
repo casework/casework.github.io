@@ -37,6 +37,7 @@
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
+                "@id": "kb:confidence-facet-97f455f3-ae63-4e87-b135-8798be7cc537",
                 "@type": "uco-core:ConfidenceFacet",
                 "uco-core:confidence": {
                     "@type": "xsd:nonNegativeInteger",

@@ -4,6 +4,7 @@
         "@type": "uco-identity:Identity",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:simple-name-facet-6b38c545-8822-4743-82ce-569367b7f7da",
                 "@type": "uco-identity:SimpleNameFacet",
                 "uco-identity:givenName": "Eoghan",
                 "uco-identity:familyName": "Casey"

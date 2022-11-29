@@ -4,11 +4,10 @@
         "@type": "uco-observable:SIMCard",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:sim-card-facet-15765152-c1d9-40f2-91d9-c10885fdf077",
                 "@type": "uco-observable:SIMCardFacet",
                 "uco-observable:ICCID": "89014104279201697299",
-                "uco-observable:IMSI": {
-                    "@id": "kb:mobileaccount-4b3cdcbd-6a31-462f-be9b-1ca2944c8876"
-                },
+                "uco-observable:IMSI": "310410920169729",
                 "uco-observable:carrier": {
                     "@id": "kb:organization-att-d60ffcec-4d89-48a1-b264-9cd4bc700a70"
                 }
@@ -20,14 +19,13 @@
         "@type": "uco-observable:MobileAccount",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:account-facet-ccba5bf1-e927-40a9-bce5-d6dc8a3d8758",
                 "@type": "uco-observable:AccountFacet",
-                "uco-observable:accountType": {
-                    "@type": "uco-vocabulary:AccountTypeVocab",
-                    "@value": "phone"
-                },
+                "uco-observable:accountType": "phone",
                 "uco-observable:isActive": true
             },
             {
+                "@id": "kb:mobile-account-facet-cfaf632e-ea3a-4808-871a-151181040393",
                 "@type": "uco-observable:MobileAccountFacet",
                 "uco-observable:MSISDN": "+13046388446",
                 "uco-observable:IMSI": "310410920169729"
@@ -47,13 +45,17 @@
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
+                "@id": "kb:data-range-facet-f4a40b62-4904-4b09-aa14-9f132b4780bc",
                 "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 13751,
-                "uco-observable:rangeSize": "__NOT_PROVIDED"
+                "drafting:notProvided": {
+                    "@id": "uco-observable:rangeSize"
+                }
             },
             {
+                "@id": "kb:table-relation-facet-f5124067-62a3-4805-93c6-09fe591c63b1",
                 "@type": [
-                    "drafting:TableRelation",
+                    "drafting:TableRelationFacet",
                     "uco-core:Facet"
                 ],
                 "drafting:tableName": "siminfo"

@@ -12,6 +12,7 @@
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
+                "@id": "kb:path-relation-facet-0c7b2d7c-7aaa-406f-b0f7-4fd80c34f0d6",
                 "@type": "uco-observable:PathRelationFacet",
                 "uco-observable:path": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/media/0/Download/download.jpg"
             }

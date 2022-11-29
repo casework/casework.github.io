@@ -3,6 +3,7 @@
         "case-investigation": "https://ontology.caseontology.org/case/investigation/",
         "drafting": "http://example.org/ontology/drafting#",
         "kb": "http://example.org/kb/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "uco-action": "https://ontology.unifiedcyberontology.org/uco/action/",
         "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
         "uco-identity": "https://ontology.unifiedcyberontology.org/uco/identity/",
@@ -336,6 +337,7 @@
             "@type": "uco-observable:Device",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:device-facet-8879fd9c-951e-46c3-99d2-b6dbf62c77b2",
                     "@type": "uco-observable:DeviceFacet",
                     "uco-observable:manufacturer": {
                         "@id": "kb:organization-e84a49ff-f34c-46fe-ab88-6f0f79023925"
@@ -359,6 +361,7 @@
             "uco-core:isDirectional": true,
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:path-relation-facet-da0ef358-bb92-488a-b0c1-0229efdefbf4",
                     "@type": "uco-observable:PathRelationFacet",
                     "uco-observable:path": "/investigation468/results/EXH-20190101-7-KioskReport.pdf"
                 }
@@ -416,12 +419,14 @@
             "uco-core:description": "Intake Form",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-7330ce77-6438-4bbb-86d5-510ea0f21ecd",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "/investigation468/documentation/EXH-20190101-7-IntakeForm.pdf",
                     "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": 165646
                 },
                 {
+                    "@id": "kb:content-data-facet-358d046c-920d-455d-88b3-5c490aa2ca88",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -446,12 +451,14 @@
             "uco-core:description": "Kiosk report",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-03fc4016-6426-43f1-b6fb-b372a55ea689",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "/investigation468/results/EXH-20190101-7-KioskReport.pdf",
                     "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": 5787906
                 },
                 {
+                    "@id": "kb:content-data-facet-264ff4a9-7d84-4f7e-b34f-05375eaeb3f3",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -476,12 +483,14 @@
             "uco-core:description": "Witness statement",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-9a9f5c70-cc3e-4423-804b-ca87dca99eda",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "/investigation468/documentation/EXH-20190101-7-WitnessStatement.pdf",
                     "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": 135625
                 },
                 {
+                    "@id": "kb:content-data-facet-2801ab8a-44e7-4397-89b4-6cafc55da9a7",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -539,6 +548,7 @@
             ],
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:device-facet-dc5d0f34-5b9b-4f1d-b21b-14454c7b8648",
                     "@type": "uco-observable:DeviceFacet",
                     "uco-observable:deviceType": "camera",
                     "uco-observable:manufacturer": {
@@ -563,6 +573,7 @@
             "@type": "uco-location:Location",
             "uco-core:description": "(Room 1-001) Police station intake lab",
             "uco-core:hasFacet": {
+                "@id": "kb:simple-address-facet-0d79372c-2639-4ee6-a76e-a5205dcc7b0d",
                 "@type": "uco-location:SimpleAddressFacet",
                 "drafting:roomId": "1-001",
                 "uco-location:country": "United Kingdom",
@@ -574,6 +585,7 @@
             "@type": "uco-location:Location",
             "uco-core:description": "(Room B-001) Police station evidence vault",
             "uco-core:hasFacet": {
+                "@id": "kb:simple-address-facet-06d3090f-bda0-4a2c-9ffd-a135edb76c19",
                 "@type": "uco-location:SimpleAddressFacet",
                 "drafting:roomId": "B-001",
                 "uco-location:country": "United Kingdom",
@@ -585,6 +597,7 @@
             "@type": "uco-location:Location",
             "uco-core:description": "(Room 2-013) Police station evidence processing lab",
             "uco-core:hasFacet": {
+                "@id": "kb:simple-address-facet-070b776f-f2b1-4f78-a8a9-2f19fb0e45b6",
                 "@type": "uco-location:SimpleAddressFacet",
                 "drafting:roomId": "2-013",
                 "uco-location:country": "United Kingdom",
@@ -596,6 +609,7 @@
             "@type": "uco-location:Location",
             "uco-core:description": "(Room 3-022) Desk of Officer Hudson",
             "uco-core:hasFacet": {
+                "@id": "kb:simple-address-facet-29823947-41f2-4c4e-b8f0-c1664697f9ea",
                 "@type": "uco-location:SimpleAddressFacet",
                 "drafting:roomId": "3-022",
                 "uco-location:country": "United Kingdom",
@@ -606,6 +620,7 @@
             "@id": "kb:officer-uuid-1",
             "@type": "uco-identity:Person",
             "uco-core:hasFacet": {
+                "@id": "kb:simple-name-facet-b43bfc55-7ea1-4159-bd96-763c2c015515",
                 "@type": "uco-identity:SimpleNameFacet",
                 "uco-identity:familyName": "Hudson"
             }
@@ -614,6 +629,7 @@
             "@id": "kb:officer-uuid-2",
             "@type": "uco-identity:Person",
             "uco-core:hasFacet": {
+                "@id": "kb:simple-name-facet-d1eb0c4f-0ed2-4981-ada9-12a3be820ce3",
                 "@type": "uco-identity:SimpleNameFacet",
                 "uco-identity:familyName": "Smith"
             }
@@ -622,6 +638,7 @@
             "@id": "kb:officer-uuid-3",
             "@type": "uco-identity:Person",
             "uco-core:hasFacet": {
+                "@id": "kb:simple-name-facet-841d264a-1bfe-4f7e-b8aa-733554d383e4",
                 "@type": "uco-identity:SimpleNameFacet",
                 "uco-identity:familyName": "Walker"
             }
@@ -780,6 +797,7 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:content-data-facet-2a463871-ebc0-47f4-b79e-9a4cc14c5116",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
                     "uco-observable:sizeInBytes": 4929041,
@@ -799,36 +817,44 @@
                     ]
                 },
                 {
+                    "@id": "kb:exif-facet-fed032db-c60c-452f-99b2-f8ff92636153",
                     "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
+                        "@id": "kb:controlled-dictionary-92e3e3d5-a291-4bc2-80ba-783b13fe0057",
                         "@type": "uco-types:ControlledDictionary",
                         "uco-types:entry": [
                             {
+                                "@id": "kb:controlled-dictionary-entry-84333d44-b169-4a51-88b2-2f72a7d8b242",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "DateTimeDigitized",
                                 "uco-types:value": "2019-01-01 14:14:07"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-7c8a9a79-e968-49d9-bcb8-8a079515abc0",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Image Height",
                                 "uco-types:value": "4000"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-f6a9962d-80bd-4f5d-aa62-a3ebb97bbb02",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Image Width",
                                 "uco-types:value": "6000"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-4d7fc8df-2300-488b-9eec-d2a5af077901",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Make",
                                 "uco-types:value": "Canon"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-9dfedd0e-4988-4074-ac4b-5a5b4e387b37",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Model",
                                 "uco-types:value": "PowerShot SX540"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-71386b46-7e31-41c5-9e67-c8632ec95118",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Orientation",
                                 "uco-types:value": "Horizontal (normal)"
@@ -837,6 +863,7 @@
                     }
                 },
                 {
+                    "@id": "kb:file-facet-0d217aa8-19f0-46ba-bbfc-f9da8acb4d57",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:extension": "jpg",
                     "uco-observable:fileName": "IMG_4829.jpg",
@@ -847,6 +874,7 @@
                     "uco-observable:sizeInBytes": 4929041
                 },
                 {
+                    "@id": "kb:raster-picture-facet-15df6f44-5ac8-4f20-a641-8764bacca2e6",
                     "@type": "uco-observable:RasterPictureFacet",
                     "uco-observable:pictureType": "jpg",
                     "uco-observable:pictureHeight": 6000,
@@ -859,6 +887,7 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:content-data-facet-a855b91f-fa57-4360-9bc3-9c172dc42ec1",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
                     "uco-observable:sizeInBytes": 4491816,
@@ -878,36 +907,44 @@
                     ]
                 },
                 {
+                    "@id": "kb:exif-facet-6e28ec0a-28aa-4a8c-b3fd-e51fd58bc696",
                     "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
+                        "@id": "kb:controlled-dictionary-88f0e102-2cb4-4108-a76c-bcac6642fbb3",
                         "@type": "uco-types:ControlledDictionary",
                         "uco-types:entry": [
                             {
+                                "@id": "kb:controlled-dictionary-entry-ae4829a6-5666-4596-9a26-49cd9350f3a2",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "DateTimeDigitized",
                                 "uco-types:value": "2019-01-01 14:14:30"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-8fbada55-fee7-44e3-b6ce-29c06ee17b9d",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Image Height",
                                 "uco-types:value": "4000"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-bd3d410e-4628-4fc7-a347-42bf66be4c33",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Image Width",
                                 "uco-types:value": "6000"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-2568ba72-e5f2-4ca8-bcf5-678c1f2a0795",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Make",
                                 "uco-types:value": "Canon"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-fc61543a-48f1-4c71-b68f-67ec7e6af8e8",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Model",
                                 "uco-types:value": "PowerShot SX540"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-21ce7a07-2df4-4b91-8790-15d4026a58de",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Orientation",
                                 "uco-types:value": "Horizontal (normal)"
@@ -916,6 +953,7 @@
                     }
                 },
                 {
+                    "@id": "kb:file-facet-885898a6-6cc5-4f10-afcd-658ce8e808b2",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:extension": "jpg",
                     "uco-observable:fileName": "IMG_4830.jpg",
@@ -926,6 +964,7 @@
                     "uco-observable:sizeInBytes": 4491816
                 },
                 {
+                    "@id": "kb:raster-picture-facet-9390354b-1b3e-4f65-b399-a42c497585c9",
                     "@type": "uco-observable:RasterPictureFacet",
                     "uco-observable:pictureType": "jpg",
                     "uco-observable:pictureHeight": 6000,
@@ -938,6 +977,7 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:content-data-facet-477c4c0b-4d54-4d06-a4df-c38cada9da98",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
                     "uco-observable:sizeInBytes": 3236101,
@@ -957,36 +997,44 @@
                     ]
                 },
                 {
+                    "@id": "kb:exif-facet-df699f83-cd11-4d41-bac6-df750604e38b",
                     "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
+                        "@id": "kb:controlled-dictionary-f5cc0713-92cb-4d79-9c17-7165f2a4d6a0",
                         "@type": "uco-types:ControlledDictionary",
                         "uco-types:entry": [
                             {
+                                "@id": "kb:controlled-dictionary-entry-e28e974b-fd8f-40ca-942e-e72b298b1906",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "DateTimeDigitized",
                                 "uco-types:value": "2019-01-01 14:15:00"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-7e16cf38-d997-490c-95cb-a4b148175c01",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Image Height",
                                 "uco-types:value": "4000"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-b7e3561c-6017-4f3e-8f28-96933384bfaf",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Image Width",
                                 "uco-types:value": "6000"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-7bb8bf58-6b79-4918-b223-adb633d7c323",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Make",
                                 "uco-types:value": "Canon"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-d8b1c9c0-4f89-428d-8a19-794909f289fd",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Model",
                                 "uco-types:value": "PowerShot SX540"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-803d188f-d250-4ae5-91b6-d2422767cd6a",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Orientation",
                                 "uco-types:value": "Horizontal (normal)"
@@ -995,6 +1043,7 @@
                     }
                 },
                 {
+                    "@id": "kb:file-facet-091fcb18-03c7-4387-ab42-86be39c0431f",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:extension": "jpg",
                     "uco-observable:fileName": "IMG_4831.jpg",
@@ -1005,6 +1054,7 @@
                     "uco-observable:sizeInBytes": 3236101
                 },
                 {
+                    "@id": "kb:raster-picture-facet-a110216e-5003-4664-9c02-624c608278f5",
                     "@type": "uco-observable:RasterPictureFacet",
                     "uco-observable:pictureType": "jpg",
                     "uco-observable:pictureHeight": 6000,
@@ -1017,6 +1067,7 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:content-data-facet-d2898de9-9d59-470e-b6b0-9c89eaa76f2b",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
                     "uco-observable:sizeInBytes": 3777924,
@@ -1036,36 +1087,44 @@
                     ]
                 },
                 {
+                    "@id": "kb:exif-facet-4a36e6d5-9a91-45ee-a7fc-0d9c7c845081",
                     "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
+                        "@id": "kb:controlled-dictionary-c1104959-6401-4fd1-80aa-01ff98bad685",
                         "@type": "uco-types:ControlledDictionary",
                         "uco-types:entry": [
                             {
+                                "@id": "kb:controlled-dictionary-entry-61358a64-fdce-44dd-8f02-b118ac445f47",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "DateTimeDigitized",
                                 "uco-types:value": "2019-01-01 14:20:07"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-85da1b1d-c0d5-43a4-bb41-571dbd9868ca",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Image Height",
                                 "uco-types:value": "4000"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-3b25097e-8f2c-46f5-b00a-ea5691008e9d",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Image Width",
                                 "uco-types:value": "6000"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-4cee88fb-f996-450e-b98b-75e9ee2e7d63",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Make",
                                 "uco-types:value": "Canon"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-3c523f30-66df-4f64-862f-ed097222e39c",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Model",
                                 "uco-types:value": "PowerShot SX540"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-ac4213a9-f9ce-4bdf-b7fa-94d30b361e54",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Orientation",
                                 "uco-types:value": "Horizontal (normal)"
@@ -1074,6 +1133,7 @@
                     }
                 },
                 {
+                    "@id": "kb:file-facet-d7f549b5-d0ff-4e49-a66f-5bffc40a84d0",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:extension": "jpg",
                     "uco-observable:fileName": "IMG_4832.jpg",
@@ -1084,6 +1144,7 @@
                     "uco-observable:sizeInBytes": 3777924
                 },
                 {
+                    "@id": "kb:raster-picture-facet-5df582f0-cdf7-46df-979c-80daaaf0ac8b",
                     "@type": "uco-observable:RasterPictureFacet",
                     "uco-observable:pictureType": "jpg",
                     "uco-observable:pictureHeight": 6000,
@@ -1096,6 +1157,7 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:content-data-facet-03e1bc0c-84ec-401a-ab08-8be1056b6c21",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
                     "uco-observable:sizeInBytes": 5010291,
@@ -1115,36 +1177,44 @@
                     ]
                 },
                 {
+                    "@id": "kb:exif-facet-aa77ffb8-9f27-4396-abcb-471888ec3d88",
                     "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
+                        "@id": "kb:controlled-dictionary-a697f6b0-2ab9-4958-9b20-b21dacac2649",
                         "@type": "uco-types:ControlledDictionary",
                         "uco-types:entry": [
                             {
+                                "@id": "kb:controlled-dictionary-entry-e518d8a6-c295-4166-ba9d-1835dcb2a2f4",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "DateTimeDigitized",
                                 "uco-types:value": "2019-01-01 14:20:32"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-55930a82-7d44-4b95-a6f5-aa53d4441660",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Image Height",
                                 "uco-types:value": "4000"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-b184df46-5d6b-4fc9-81dd-79b42295f872",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Image Width",
                                 "uco-types:value": "6000"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-154b8d35-59b5-4f34-8b9a-ea7ff276c4c2",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Make",
                                 "uco-types:value": "Canon"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-7b24f039-8d42-4b32-a2b2-ff3a0499325b",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Model",
                                 "uco-types:value": "PowerShot SX540"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-8548f6ea-f0a5-4007-8602-cad47436bf22",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Orientation",
                                 "uco-types:value": "Horizontal (normal)"
@@ -1153,6 +1223,7 @@
                     }
                 },
                 {
+                    "@id": "kb:file-facet-62fd6924-33c1-4dc8-9dd9-8d84b8aecffc",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:extension": "jpg",
                     "uco-observable:fileName": "IMG_4833.jpg",
@@ -1163,6 +1234,7 @@
                     "uco-observable:sizeInBytes": 5010291
                 },
                 {
+                    "@id": "kb:raster-picture-facet-7f8d74a8-6c59-488c-b0d8-7782af3af3d1",
                     "@type": "uco-observable:RasterPictureFacet",
                     "uco-observable:pictureType": "jpg",
                     "uco-observable:pictureHeight": 6000,
@@ -1175,6 +1247,7 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:content-data-facet-ad779cec-95e8-4cc9-a88c-14de4681f67c",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
                     "uco-observable:sizeInBytes": 4565505,
@@ -1194,36 +1267,44 @@
                     ]
                 },
                 {
+                    "@id": "kb:exif-facet-71227318-3208-4687-8047-9e02aebe5b87",
                     "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
+                        "@id": "kb:controlled-dictionary-c67fb262-4f47-499f-b30b-13c5abe09391",
                         "@type": "uco-types:ControlledDictionary",
                         "uco-types:entry": [
                             {
+                                "@id": "kb:controlled-dictionary-entry-59e4a124-f481-43f0-9785-52740fd7a3cf",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "DateTimeDigitized",
                                 "uco-types:value": "2019-01-01 14:21:00"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-41fd1ea7-548a-44d5-b9b1-0996a696a147",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Image Height",
                                 "uco-types:value": "4000"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-0e775e2a-2f64-4cda-af9c-22d88fdc0378",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Image Width",
                                 "uco-types:value": "6000"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-acde186a-d53f-450b-a66f-7094485c6de5",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Make",
                                 "uco-types:value": "Canon"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-c50c2861-0e39-486c-bdf4-3186cdad4f20",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Model",
                                 "uco-types:value": "PowerShot SX540"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-aecde2c9-d056-4421-806c-dd33bb29333b",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Orientation",
                                 "uco-types:value": "Horizontal (normal)"
@@ -1232,6 +1313,7 @@
                     }
                 },
                 {
+                    "@id": "kb:file-facet-2296aad1-9fef-41fa-85cd-1f94ab1b9ab9",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:extension": "jpg",
                     "uco-observable:fileName": "IMG_4834.jpg",
@@ -1242,6 +1324,7 @@
                     "uco-observable:sizeInBytes": 4565505
                 },
                 {
+                    "@id": "kb:raster-picture-facet-5612c8db-fd15-45fe-b7b4-357884203025",
                     "@type": "uco-observable:RasterPictureFacet",
                     "uco-observable:pictureType": "jpg",
                     "uco-observable:pictureHeight": 6000,
@@ -1254,6 +1337,7 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:content-data-facet-66ecac5a-1a1b-4ca6-853b-c1659a7e982b",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
                     "uco-observable:sizeInBytes": 2964571,
@@ -1273,31 +1357,38 @@
                     ]
                 },
                 {
+                    "@id": "kb:exif-facet-f7d7fc1a-67fd-4d86-bdc8-d15a7aac1a1d",
                     "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
+                        "@id": "kb:controlled-dictionary-af89d93f-6a84-4b23-a768-465c5764863b",
                         "@type": "uco-types:ControlledDictionary",
                         "uco-types:entry": [
                             {
+                                "@id": "kb:controlled-dictionary-entry-1acf6681-1d13-4b5b-b7ce-e51e67a41a0c",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "DateTimeDigitized",
                                 "uco-types:value": "2018-12-15 12:11:54"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-450485f9-11ea-4c40-8aa4-8e81829e84f1",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Image Height",
                                 "uco-types:value": "2448"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-d108caf7-cb87-49fd-ba2d-dcc1519842c3",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Image Width",
                                 "uco-types:value": "3264"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-9eb31249-af39-4639-9d25-5eb9d2eb9130",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Make",
                                 "uco-types:value": "Apple"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-05a2d471-43ce-4c74-b4a6-866bcb17977e",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Model",
                                 "uco-types:value": "iPhone 4S"
@@ -1306,6 +1397,7 @@
                     }
                 },
                 {
+                    "@id": "kb:file-facet-f6e6bc41-1c47-4bd4-a167-98c1443aac1a",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:extension": "jpg",
                     "uco-observable:fileName": "IMG_1863.jpg",
@@ -1316,6 +1408,7 @@
                     "uco-observable:sizeInBytes": 2964571
                 },
                 {
+                    "@id": "kb:raster-picture-facet-7de1f1fc-fc8c-41d4-920c-7f5930c1e7aa",
                     "@type": "uco-observable:RasterPictureFacet",
                     "uco-observable:pictureType": "jpg",
                     "uco-observable:pictureHeight": 3264,
@@ -1328,6 +1421,7 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:content-data-facet-bcb6c4dd-2419-4d58-94f6-0fdff68e7777",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
                     "uco-observable:sizeInBytes": 3963541,
@@ -1347,31 +1441,38 @@
                     ]
                 },
                 {
+                    "@id": "kb:exif-facet-9708a444-492c-480d-a60c-13dfbc3ba442",
                     "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
+                        "@id": "kb:controlled-dictionary-b31ee53b-e6c3-4155-a971-433107ab6909",
                         "@type": "uco-types:ControlledDictionary",
                         "uco-types:entry": [
                             {
+                                "@id": "kb:controlled-dictionary-entry-1bd03080-03c9-4606-ac2d-6177ea0ae59c",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "DateTimeDigitized",
                                 "uco-types:value": "2018-12-16 08:18:52"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-46c5e46e-53e1-4d78-966a-5b9a4b7f9034",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Image Height",
                                 "uco-types:value": "2448"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-d579273b-b1e4-4beb-80ea-924e5e3cf727",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Image Width",
                                 "uco-types:value": "3264"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-784384df-102f-408b-8fd2-fd749859bf34",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Make",
                                 "uco-types:value": "Apple"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-a209e37c-ebb4-45b2-87dc-e7d4a85d9915",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Model",
                                 "uco-types:value": "iPhone 4S"
@@ -1380,6 +1481,7 @@
                     }
                 },
                 {
+                    "@id": "kb:file-facet-5f8a7c71-da4d-43a0-a2aa-4e54d8339e3f",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:extension": "jpg",
                     "uco-observable:fileName": "IMG_1864.jpg",
@@ -1390,6 +1492,7 @@
                     "uco-observable:sizeInBytes": 3963541
                 },
                 {
+                    "@id": "kb:raster-picture-facet-5dfee407-d600-41a4-a6df-074d218ec1d2",
                     "@type": "uco-observable:RasterPictureFacet",
                     "uco-observable:pictureType": "jpg",
                     "uco-observable:pictureHeight": 3264,
@@ -1402,6 +1505,7 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:content-data-facet-c28a5033-f69f-440c-b75c-a29d623d45bb",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:mimeType": "image/jpeg",
                     "uco-observable:sizeInBytes": 4007352,
@@ -1421,31 +1525,38 @@
                     ]
                 },
                 {
+                    "@id": "kb:exif-facet-c38d9212-8384-4cd2-a7c3-363a916c77e9",
                     "@type": "uco-observable:EXIFFacet",
                     "uco-observable:exifData": {
+                        "@id": "kb:controlled-dictionary-a61d5758-7c3d-4fb0-9daa-061f8da14b05",
                         "@type": "uco-types:ControlledDictionary",
                         "uco-types:entry": [
                             {
+                                "@id": "kb:controlled-dictionary-entry-e08e2ab6-07d0-4c1a-8681-f3c9c2fd8426",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "DateTimeDigitized",
                                 "uco-types:value": "2018-12-16 08:19:01"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-16a33d87-aa7d-45aa-8ca3-52c7c01cc2b9",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Image Height",
                                 "uco-types:value": "2448"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-3aaa6fa7-10f5-4c87-8732-7d5b0690054b",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Image Width",
                                 "uco-types:value": "3264"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-9af7172d-dd1f-4413-98fc-71face90086e",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Make",
                                 "uco-types:value": "Apple"
                             },
                             {
+                                "@id": "kb:controlled-dictionary-entry-fc0dce38-0e3b-44b8-90bf-7ddb14b87986",
                                 "@type": "uco-types:ControlledDictionaryEntry",
                                 "uco-types:key": "Model",
                                 "uco-types:value": "iPhone 4S"
@@ -1454,6 +1565,7 @@
                     }
                 },
                 {
+                    "@id": "kb:file-facet-8d359dfc-2305-4499-abca-fa0fd8406b5c",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:extension": "jpg",
                     "uco-observable:fileName": "IMG_1865.jpg",
@@ -1464,12 +1576,18 @@
                     "uco-observable:sizeInBytes": 4007352
                 },
                 {
+                    "@id": "kb:raster-picture-facet-943738e6-7a6d-43f1-90b4-7dbe2c0ba6d9",
                     "@type": "uco-observable:RasterPictureFacet",
                     "uco-observable:pictureType": "jpg",
                     "uco-observable:pictureHeight": 3264,
                     "uco-observable:pictureWidth": 2448
                 }
             ]
+        },
+        {
+            "@id": "kb:file2-uuid-1",
+            "@type": "uco-core:UcoObject",
+            "rdfs:comment": "TODO - This node was entered into the chain of custody as a typo.  It will be removed on deployment of an automated provenance review mechanism."
         },
         {
             "@id": "kb:subject-device-uuid-1",

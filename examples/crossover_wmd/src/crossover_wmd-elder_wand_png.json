@@ -7,6 +7,7 @@
         ],
         "uco-core:hasFacet": [
             {
+                "@id": "kb:file-facet-4ae352de-83e2-4554-9ca4-ad8f4b46b700",
                 "@type": "uco-observable:FileFacet",
                 "uco-observable:fileName": "the.apk",
                 "uco-observable:filePath": "/Root/media/0/Download/Elder_Wand.png",
@@ -30,6 +31,7 @@
                 }
             },
             {
+                "@id": "kb:ext-inode-facet-c882b480-7a52-4874-9a08-d086e80d4ea2",
                 "@type": "uco-observable:ExtInodeFacet",
                 "uco-observable:extInodeID": 930900,
                 "uco-observable:extSGID": 1023,
@@ -37,6 +39,7 @@
                 "uco-observable:extInodeChangeTime": null
             },
             {
+                "@id": "kb:content-data-facet-2d2e90f2-1290-4af9-a97a-f7b36c9d76e1",
                 "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:hash": [
                     {

@@ -12,6 +12,7 @@
         "@type": "uco-observable:Message",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:message-facet-d6e7f706-ad87-4a96-82cb-fe54dade5f09",
                 "@type": "uco-observable:MessageFacet",
                 "uco-observable:messageText": "Hey Matt thanks for the hook up",
                 "uco-observable:application": {

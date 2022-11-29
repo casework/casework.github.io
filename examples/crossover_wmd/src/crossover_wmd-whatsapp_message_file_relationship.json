@@ -12,11 +12,13 @@
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
+                "@id": "kb:data-range-facet-0a23fdf3-484c-436a-8aae-f4e8d8dba7bc",
                 "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 293822,
                 "uco-observable:rangeSize": 477952
             },
             {
+                "@id": "kb:table-relation-facet-8cc3fa01-985f-4c0c-8614-3fa4afce58cd",
                 "@type": [
                     "drafting:TableRelationFacet",
                     "uco-core:Facet"

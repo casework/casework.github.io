@@ -3,6 +3,7 @@
         "@id": "kb:investigator-09fb01ce-999e-4521-bd3f-f7be69a63a43",
         "@type": "uco-identity:Person",
         "uco-core:hasFacet": {
+            "@id": "kb:simple-name-facet-f9766ba3-3539-404b-bb05-ed422c56e677",
             "@type": "uco-identity:SimpleNameFacet",
             "uco-identity:familyName": "Hoel"
         }
@@ -37,6 +38,7 @@
         ],
         "uco-core:hasFacet": [
             {
+                "@id": "kb:file-facet-3295df4a-1c4f-4ffc-9c54-b7af1ec9f829",
                 "@type": "uco-observable:FileFacet",
                 "uco-observable:observableCreatedTime": {
                     "@type": "xsd:dateTime",
@@ -50,6 +52,7 @@
                 "uco-observable:sizeInBytes": 31268536320
             },
             {
+                "@id": "kb:content-data-facet-c0a55cb3-6caf-4226-bc99-b2a6b4bfb802",
                 "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:hash": [
                     {

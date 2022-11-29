@@ -4,6 +4,7 @@
         "@type": "uco-observable:DigitalAccount",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:account-facet-6dcb6fea-adb3-49b8-b929-1ef18e82c3f1",
                 "@type": "uco-observable:AccountFacet",
                 "uco-observable:accountIssuer": {
                     "@id": "kb:organization-textapp-a2ba855b-1218-44f5-9f73-a2530defbc73"
@@ -12,6 +13,7 @@
                 "uco-observable:isActive": true
             },
             {
+                "@id": "kb:digital-account-facet-1b9bbc72-e079-49bb-a0dd-eed722015d56",
                 "@type": "uco-observable:DigitalAccountFacet",
                 "uco-observable:displayName": "NULL",
                 "uco-observable:accountLogin": "mcavoy287",
@@ -21,6 +23,7 @@
                 }
             },
             {
+                "@id": "kb:account-authentication-facet-953fadd8-3a81-48f5-bf30-6d2f5b76b264",
                 "@type": "uco-observable:AccountAuthenticationFacet",
                 "uco-observable:password": "huntington*32"
             }
@@ -39,6 +42,7 @@
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
+                "@id": "kb:data-range-facet-139e35d8-3a76-4320-86d1-05d136c8d128",
                 "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 2704,
                 "uco-observable:rangeSize": 9

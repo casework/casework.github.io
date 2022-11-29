@@ -4,6 +4,7 @@
         "@type": "uco-observable:ApplicationAccount",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:account-facet-fb355c63-ac18-47f6-9f6b-fda9dccad2d1",
                 "@type": "uco-observable:AccountFacet",
                 "uco-observable:accountIssuer": {
                     "@id": "kb:organization-whatsapp-7a3fb3d1-0b30-4305-8c9e-f8f90f839bf3"
@@ -12,12 +13,14 @@
                 "uco-observable:isActive": true
             },
             {
+                "@id": "kb:application-account-facet-e3b6c495-f966-4316-9c09-51350a49fe22",
                 "@type": "uco-observable:ApplicationAccountFacet",
                 "uco-observable:application": {
                     "@id": "kb:whatsapp-868abc08-8c21-11e9-934e-0c4de9c21b53"
                 }
             },
             {
+                "@id": "kb:digital-account-facet-ad4907e9-8f92-4960-8eac-0bf13fc42231",
                 "@type": "uco-observable:DigitalAccountFacet",
                 "uco-observable:displayName": "Ares Lupin"
             }

@@ -29,23 +29,23 @@
                     "uco-core:name": "CROSSOVER_2018_11191001",
                     "case-investigation:focus": "Bank Robbery (UBS Lausanne)",
                     "uco-core:description": "Forensic treatment of storage media recovered from getaway car and suspects apartment during investigation of bank robbery.",
-                    "uco-core:object": "list of uuids"
+                    "rdfs:comment": "TODO - uco-core:object is to have a more complete list of IRIs.",
+                    "uco-core:object": [
+                        {
+                            "@id": "kb:Disk-6dbe5066-dfb8-4551-9bda-39aab2ae3db1"
+                        }
+                    ]
                 }
             ]
         },
         {
             "@id": "kb:Identity-cbfbd171-e56c-4f59-a01b-4404a1e5eb28",
-            "@type": "uco-identity:Identity",
-            "uco-core:hasFacet": [
-                {
-                    "@type": "uco-identity:Organisation",
-                    "drafting:orgName": "ESC"
-                }
-            ]
+            "@type": "uco-identity:Organization",
+            "uco-core:name": "ESC"
         },
         {
             "@id": "kb:Role-870e2626-5ffd-4a80-83c2-8ee429709c81",
-            "@type": "uco-core:Role",
+            "@type": "uco-role:Role",
             "uco-core:name": "Forensic Expert"
         },
         {
@@ -58,34 +58,41 @@
                 "@id": "kb:Role-870e2626-5ffd-4a80-83c2-8ee429709c81"
             },
             "uco-core:kindOfRelationship": "Has_Role",
-            "uco-core:isDirectional": "true"
+            "uco-core:isDirectional": true
         },
         {
-            "@id": "kb:ConfiguredTool-22cb1ad6-7910-4a71-8654-5e93280111a",
+            "@id": "kb:organization-cf3010bb-7716-473d-98ee-25e4917e7b80",
+            "@type": "uco-identity:Identity",
+            "uco-core:name": "Opentext"
+        },
+        {
+            "@id": "kb:ConfiguredTool-22cb1ad6-7910-4a71-8654-5e93280111a3",
             "@type": "uco-tool:ConfiguredTool",
             "uco-core:name": "Tableau TD2u",
             "uco-tool:toolType": "acquisition/duplication",
-            "uco-tool:creator": "Opentext",
+            "uco-tool:creator": {
+                "@id": "kb:organization-cf3010bb-7716-473d-98ee-25e4917e7b80"
+            },
             "uco-tool:version": "1.2.1 (build 5241-814712f)",
-            "uco-tool:drafting:toolIdentifier": "000eccd2007540a6",
+            "drafting:toolIdentifier": "000eccd2007540a6",
             "uco-configuration:usesConfiguration": {
                 "@id": "kb:Configuration-d9f82a71-1074-409f-a481-28f1fbc7ee28",
                 "@type": "uco-configuration:Configuration",
                 "uco-configuration:configurationEntry": [
                     {
                         "@type": "uco-configuration:ConfigurationEntry",
-                        "uco-tool:itemName": "Mode",
-                        "uco-tool:itemValue": "DriveToFile"
+                        "uco-configuration:itemName": "Mode",
+                        "uco-configuration:itemValue": "DriveToFile"
                     },
                     {
                         "@type": "uco-configuration:ConfigurationEntry",
-                        "uco-tool:itemName": "Method",
-                        "uco-tool:itemValue": "E01Capture"
+                        "uco-configuration:itemName": "Method",
+                        "uco-configuration:itemValue": "E01Capture"
                     },
                     {
                         "@type": "uco-configuration:ConfigurationEntry",
-                        "uco-tool:itemName": "Hash",
-                        "uco-tool:itemValue": "SHA-1+MD5"
+                        "uco-configuration:itemName": "Hash",
+                        "uco-configuration:itemValue": "SHA-1+MD5"
                     }
                 ]
             }
@@ -103,20 +110,29 @@
                 "@type": "xsd:dateTime",
                 "@value": "2018-11-19T15:58:38.00Z"
             },
-            "uco-core:hasFacet": [
+            "uco-action:instrument": {
+                "@id": "kb:ConfiguredTool-22cb1ad6-7910-4a71-8654-5e93280111a3"
+            },
+            "drafting:notProvidedByReport": {
+                "@id": "uco-action:location"
+            },
+            "uco-action:performer": {
+                "@id": "kb:Role-870e2626-5ffd-4a80-83c2-8ee429709c81"
+            },
+            "uco-action:object": [
                 {
-                    "@type": "uco-action:ActionReferences",
-                    "uco-action:instrument": "kb:ConfiguredTool-22cb1ad6-7910-4a71-8654-5e93280111a",
-                    "uco-action:location": "NOT PROVIDED BY REPORT",
-                    "uco-action:performer": "kb:Role-870e2626-5ffd-4a80-83c2-8ee429709c81",
-                    "uco-action:object": [
-                        "kb:DiskFacet-6dbe5066-dfb8-4551-9bda-39aab2ae3db1",
-                        "kb:ProvenanceRecord-53d614ea-d7cd-4491-a100-2f0b88299e89"
-                    ],
-                    "uco-action:result": [
-                        "kb:usbimage-b2dbb227-06ec-432d-9f63-058e8ab73944",
-                        "kb:ProvenanceRecord-0ff68932-2abc-433c-91b0-5af1ca34b470"
-                    ]
+                    "@id": "kb:Disk-6dbe5066-dfb8-4551-9bda-39aab2ae3db1"
+                },
+                {
+                    "@id": "kb:ProvenanceRecord-53d614ea-d7cd-4491-a100-2f0b88299e89"
+                }
+            ],
+            "uco-action:result": [
+                {
+                    "@id": "kb:usb-b2dbb227-06ec-432d-9f63-058e8ab73944"
+                },
+                {
+                    "@id": "kb:ProvenanceRecord-0ff68932-2abc-433c-91b0-5af1ca34b470"
                 }
             ]
         },
@@ -125,13 +141,15 @@
             "@type": "uco-observable:Disk",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:disk-facet-c9fa6408-85f8-4e0b-bf8f-f653f5bc97c3",
                     "@type": "uco-observable:DiskFacet",
                     "uco-observable:model": "Kingston DataTraveler 2.0",
                     "drafting:USBSerialNumber": "001D7D06CF09ED91D97F1B1B",
                     "uco-observable:serialNumber": "0E0D19D17DD9",
-                    "uco-observable:capacity": "7803174912"
+                    "uco-observable:storageCapacityInBytes": 7803174912
                 },
                 {
+                    "@id": "kb:content-data-facet-25069e03-040a-421b-9bfa-25d532ec23b8",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": [
                         {
@@ -156,15 +174,15 @@
         {
             "@id": "kb:ProvenanceRecord-53d614ea-d7cd-4491-a100-2f0b88299e89",
             "@type": "case-investigation:ProvenanceRecord",
-            "uco-observable:createdTime": {
+            "uco-observable:observableCreatedTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2018-10-26T13:12:48.00Z"
             },
             "uco-core:description": "Kingston DataTraveler 2.0",
             "case-investigation:exhibitNumber": "20181119-001-001",
-            "uco-core:object": [
-                "DiskFacet-6dbe5066-dfb8-4551-9bda-39aab2ae3db1"
-            ]
+            "uco-core:object": {
+                "@id": "kb:Disk-6dbe5066-dfb8-4551-9bda-39aab2ae3db1"
+            }
         },
         {
             "@id": "kb:usb-b2dbb227-06ec-432d-9f63-058e8ab73944",
@@ -174,19 +192,21 @@
             ],
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:file-facet-71922639-1d8f-4494-a399-a8b3282bf55b",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "image.E01",
                     "uco-observable:filePath": "2018-11-19_15-50-58/image.E01",
                     "uco-observable:extension": "E01",
                     "uco-observable:fileSystemType": "ntfs",
-                    "uco-observable:isDirectory": "false",
-                    "uco-observable:sizeInBytes": "2GB",
-                    "uco-observable:createdTime": {
+                    "uco-observable:isDirectory": false,
+                    "uco-observable:sizeInBytes": 2147483648,
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-11-19T15:50:58.00Z"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-17661dfc-7b8a-46c0-8b0e-0f7b1eac3096",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:hash": {
                         "@id": "kb:hash-128996fc-3823-54a5-9ca4-cf6e21fca62f"
@@ -198,14 +218,14 @@
             "@id": "kb:ProvenanceRecord-0ff68932-2abc-433c-91b0-5af1ca34b470",
             "@type": "case-investigation:ProvenanceRecord",
             "uco-core:description": "Forensic image with E01Capture",
-            "uco-observable:createdTime": {
+            "uco-observable:observableCreatedTime": {
                 "@type": "xsd:dateTime",
                 "@value": "2018-11-19T15:50:58.00Z"
             },
             "case-investigation:exhibitNumber": "20181119-001-001-01",
-            "uco-core:object": [
-                "{usb-b2dbb227-06ec-432d-9f63-058e8ab73944}"
-            ]
+            "uco-core:object": {
+                "@id": "kb:usb-b2dbb227-06ec-432d-9f63-058e8ab73944"
+            }
         },
         {
             "@id": "kb:lnkfile-487b236d-e75d-467e-9c6d-dad2d12cf94e",
@@ -221,8 +241,9 @@
                     "uco-observable:filePath": "/img_image.E01/vol_vol3/Users/Harley Quinn/AppData/Roaming/Microsoft/Windows/Recent/Thebatplan.lnk",
                     "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": 508,
+                    "@id": "kb:file-facet-b221fe82-47e7-4a49-81a3-7ba6d3b438a8",
                     "@type": "uco-observable:FileFacet",
-                    "uco-observable:createdTime": {
+                    "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2018-11-19T00:29:15Z"
                     },
@@ -232,6 +253,10 @@
                     }
                 }
             ]
+        },
+        {
+            "@id": "kb:harddrive-partition2-e3f25b0b-37bf-4111-bae3-d355aff3c8a2",
+            "@type": "uco-observable:DiskPartition"
         },
         {
             "@id": "kb:Relationship-f0505f2a-5de0-4651-9486-16746758f6c8",
@@ -258,7 +283,7 @@
             "uco-core:isDirectional": true
         },
         {
-            "@id": "kb:File-d87ecfcb-006c-46e6-a973-e756ee4d4f70",
+            "@id": "kb:file-d87ecfcb-006c-46e6-a973-e756ee4d4f70",
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
@@ -278,18 +303,29 @@
                             }
                         }
                     ],
+                    "@id": "kb:content-data-facet-33dee628-9332-4b77-8853-1dc5481c5460",
                     "@type": "uco-observable:ContentDataFacet"
                 },
                 {
-                    "uco-observable:accessedTime": "2018-11-18T22:53:09Z",
+                    "uco-observable:accessedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-18T22:53:09Z"
+                    },
                     "uco-observable:extension": "",
                     "uco-observable:fileName": "Thebatplan",
                     "uco-observable:filePath": "/img_image.E01/Thebatplan",
                     "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": 1389601,
+                    "@id": "kb:file-facet-4fc6467e-dbc1-403b-876a-05a97efa7c81",
                     "@type": "uco-observable:FileFacet",
-                    "uco-observable:createdTime": "2018-11-18T22:53:09Z",
-                    "uco-observable:modifiedTime": "2018-11-18T20:10:48Z"
+                    "uco-observable:observableCreatedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-18T22:53:09Z"
+                    },
+                    "uco-observable:modifiedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-18T20:10:48Z"
+                    }
                 }
             ]
         },
@@ -308,15 +344,25 @@
         {
             "uco-core:hasFacet": [
                 {
-                    "accessedTime": "2018-11-19T00:23:50Z",
-                    "extension": "lnk",
-                    "fileName": "thebatletter.lnk",
-                    "filePath": "/img_image.E01/vol_vol3/Users/Harley Quinn/AppData/Roaming/Microsoft/Windows/Recent/thebatletter.lnk",
-                    "isDirectory": false,
-                    "sizeInBytes": 535,
-                    "@type": "File",
-                    "createdTime": "2018-11-19T00:23:50Z",
-                    "modifiedTime": "2018-11-19T00:23:50Z"
+                    "uco-observable:accessedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-19T00:23:50Z"
+                    },
+                    "uco-observable:extension": "lnk",
+                    "uco-observable:fileName": "thebatletter.lnk",
+                    "uco-observable:filePath": "/img_image.E01/vol_vol3/Users/Harley Quinn/AppData/Roaming/Microsoft/Windows/Recent/thebatletter.lnk",
+                    "uco-observable:isDirectory": false,
+                    "uco-observable:sizeInBytes": 535,
+                    "@id": "kb:file-facet-16b6a9f9-0b3d-4b7a-9c61-6859e7ca7e45",
+                    "@type": "uco-observable:FileFacet",
+                    "uco-observable:observableCreatedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-19T00:23:50Z"
+                    },
+                    "uco-observable:modifiedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-19T00:23:50Z"
+                    }
                 }
             ],
             "@id": "kb:lnkfile-f3c23080-0236-4ee7-83e7-cccc5fa06ee0",
@@ -337,15 +383,25 @@
         {
             "uco-core:hasFacet": [
                 {
-                    "accessedTime": "2018-11-18T22:53:09Z",
-                    "extension": "docx",
-                    "fileName": "thebatletter.docx",
-                    "filePath": "/thebatletter.docx",
-                    "isDirectory": false,
-                    "sizeInBytes": 11633,
-                    "@type": "File",
-                    "createdTime": "2018-11-18T22:53:09Z",
-                    "modifiedTime": "2018-11-18T21:30:48Z"
+                    "@id": "kb:file-facet-929bcdfd-ca54-4df7-989a-6b7206b8661e",
+                    "uco-observable:accessedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-18T22:53:09Z"
+                    },
+                    "uco-observable:extension": "docx",
+                    "uco-observable:fileName": "thebatletter.docx",
+                    "uco-observable:filePath": "/thebatletter.docx",
+                    "uco-observable:isDirectory": false,
+                    "uco-observable:sizeInBytes": 11633,
+                    "@type": "uco-observable:FileFacet",
+                    "uco-observable:observableCreatedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-18T22:53:09Z"
+                    },
+                    "uco-observable:modifiedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-18T21:30:48Z"
+                    }
                 }
             ],
             "@id": "kb:File-ed7c30a2-e233-4732-adee-8514955b6dfb",
@@ -367,25 +423,27 @@
             "@id": "kb:content-2ea73bc6-801a-47ff-a8fa-837c226bfa14",
             "@type": [
                 "uco-observable:ContentData",
-                "drafting:RecoveredObject"
+                "uco-observable:RecoveredObject"
             ],
             "uco-core:hasFacet": [
                 {
-                    "@type": "drafting:RecoveredObjectFacet",
-                    "drafting:contentRecoveredStatus": {
-                        "@type": "drafting:RecoveredObjectStatusVocab",
+                    "@id": "kb:recovered-object-facet-0a916246-a9a0-43ad-a158-ae76cc2c1bb7",
+                    "@type": "uco-observable:RecoveredObjectFacet",
+                    "uco-observable:contentRecoveredStatus": {
+                        "@type": "uco-vocabulary:RecoveredObjectStatusVocab",
                         "@value": "recovered"
                     },
-                    "drafting:metadataRecoveredStatus": {
-                        "@type": "drafting:RecoveredObjectStatusVocab",
+                    "uco-observable:metadataRecoveredStatus": {
+                        "@type": "uco-vocabulary:RecoveredObjectStatusVocab",
                         "@value": "recovered"
                     },
-                    "drafting:nameRecoveredStatus": {
-                        "@type": "drafting:RecoveredObjectStatusVocab",
+                    "uco-observable:nameRecoveredStatus": {
+                        "@type": "uco-vocabulary:RecoveredObjectStatusVocab",
                         "@value": "recovered"
                     }
                 },
                 {
+                    "@id": "kb:content-data-facet-17d9f5ea-d00b-4130-866f-e7399332ae5e",
                     "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:byteOrder": {
                         "@type": "uco-vocabulary:EndiannessTypeVocab",
@@ -424,6 +482,7 @@
             "uco-core:isDirectional": true,
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:data-range-facet-9bd1e773-0e69-4c21-b168-c05c834dd756",
                     "@type": "uco-observable:DataRangeFacet",
                     "uco-observable:rangeOffset": 9994240,
                     "uco-observable:rangeSize": 11633
@@ -437,7 +496,7 @@
                 "@id": "kb:content-2ea73bc6-801a-47ff-a8fa-837c226bfa14"
             },
             "uco-core:target": {
-                "@id": "kb:file-ed7c30a2-e233-4732-adee-8514955b6dfb"
+                "@id": "kb:File-ed7c30a2-e233-4732-adee-8514955b6dfb"
             },
             "uco-core:kindOfRelationship": "Contained-Within",
             "uco-core:isDirectional": true
@@ -445,15 +504,25 @@
         {
             "uco-core:hasFacet": [
                 {
-                    "accessedTime": "2018-11-19T00:27:14Z",
-                    "extension": "lnk",
-                    "fileName": "wow.lnk",
-                    "filePath": "/img_image.E01/vol_vol3/Users/Harley Quinn/AppData/Roaming/Microsoft/Windows/Recent/wow.lnk",
-                    "isDirectory": false,
-                    "sizeInBytes": 495,
-                    "@type": "File",
-                    "createdTime": "2018-11-19T00:27:14Z",
-                    "modifiedTime": "2018-11-19T00:27:14Z"
+                    "uco-observable:accessedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-19T00:27:14Z"
+                    },
+                    "uco-observable:extension": "lnk",
+                    "uco-observable:fileName": "wow.lnk",
+                    "uco-observable:filePath": "/img_image.E01/vol_vol3/Users/Harley Quinn/AppData/Roaming/Microsoft/Windows/Recent/wow.lnk",
+                    "uco-observable:isDirectory": false,
+                    "uco-observable:sizeInBytes": 495,
+                    "@id": "kb:file-facet-763c6961-c335-40b6-a8b3-36b6f5f15ecb",
+                    "@type": "uco-observable:FileFacet",
+                    "uco-observable:observableCreatedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-19T00:27:14Z"
+                    },
+                    "uco-observable:modifiedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-19T00:27:14Z"
+                    }
                 }
             ],
             "@id": "kb:File-31c06b79-ad9f-446a-859a-62b848e2e1f8",
@@ -474,15 +543,25 @@
         {
             "uco-core:hasFacet": [
                 {
-                    "accessedTime": "2018-11-19T00:28:41Z",
-                    "extension": "lnk",
-                    "fileName": "wow (2).lnk",
-                    "filePath": "/img_image.E01/vol_vol3/Users/Harley Quinn/AppData/Roaming/Microsoft/Windows/Recent/wow (2).lnk",
-                    "isDirectory": false,
-                    "sizeInBytes": 457,
-                    "@type": "File",
-                    "createdTime": "2018-11-19T00:28:28Z",
-                    "modifiedTime": "2018-11-19T00:28:41Z"
+                    "uco-observable:accessedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-19T00:28:41Z"
+                    },
+                    "uco-observable:extension": "lnk",
+                    "uco-observable:fileName": "wow (2).lnk",
+                    "uco-observable:filePath": "/img_image.E01/vol_vol3/Users/Harley Quinn/AppData/Roaming/Microsoft/Windows/Recent/wow (2).lnk",
+                    "uco-observable:isDirectory": false,
+                    "uco-observable:sizeInBytes": 457,
+                    "@id": "kb:file-facet-fa661a0f-1b8d-4552-870e-daf7b93404be",
+                    "@type": "uco-observable:FileFacet",
+                    "uco-observable:observableCreatedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-19T00:28:28Z"
+                    },
+                    "uco-observable:modifiedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-19T00:28:41Z"
+                    }
                 }
             ],
             "@id": "kb:File-26adfe08-e545-4d24-872b-84f95bd01284",
@@ -501,16 +580,18 @@
             "@type": "uco-observable:ObservableRelationship"
         },
         {
-            "@id": "kb:URL-def4ae18-9181-4cce-8f5f-a9aba022b98b",
+            "@id": "kb:url-def4ae18-9181-4cce-8f5f-a9aba022b98b",
             "@type": "uco-observable:URL",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:url-facet-37438f61-d440-429a-ab30-9fc9b2464274",
                     "@type": "uco-observable:URLFacet",
                     "uco-observable:fullValue": "file:///D:/wow.jpg"
                 },
                 {
-                    "value": "",
-                    "@type": "DomainName"
+                    "uco-observable:value": "",
+                    "@id": "kb:domain-name-facet-b05e0e6b-deb0-4989-8214-d6d2b99ef1ea",
+                    "@type": "uco-observable:DomainNameFacet"
                 }
             ]
         },
@@ -527,12 +608,17 @@
             "@type": "uco-observable:ObservableRelationship"
         },
         {
+            "@id": "kb:file-webcache-12c51c62-e5e2-4018-ac45-e0e69e36573f",
+            "@type": "uco-observable:ObservableObject"
+        },
+        {
             "@id": "kb:ApplicationAccount-580d7253-5086-41a5-b788-69e3ceaa4bae",
             "@type": "uco-observable:ApplicationAccount",
             "uco-core:hasFacet": [
                 {
-                    "@type": "ApplicationAccountFacet",
-                    "displayName": "Harley Quinn"
+                    "@id": "kb:application-account-facet-b26e6f07-0436-48ca-8d39-2e7dafd055ec",
+                    "@type": "uco-observable:ApplicationAccountFacet",
+                    "uco-observable:displayName": "Harley Quinn"
                 }
             ]
         },
@@ -541,8 +627,9 @@
             "@id": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38",
             "uco-core:hasFacet": [
                 {
-                    "applicationIdentifier": "Microsoft Edge",
-                    "@type": "ApplicationFacet"
+                    "uco-observable:applicationIdentifier": "Microsoft Edge",
+                    "@id": "kb:application-facet-ed282901-6700-419b-9a03-aa56d7252c8a",
+                    "@type": "uco-observable:ApplicationFacet"
                 }
             ]
         },
@@ -551,12 +638,15 @@
             "@type": "uco-observable:URLHistoryFacet",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:url-history-facet-728d325b-d3df-4e4b-97b2-dbf9c7c64da8",
                     "@type": "uco-observable:URLHistoryFacet",
                     "uco-observable:browserInformation": {
                         "@id": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38"
                     },
                     "uco-observable:urlHistoryEntry": [
                         {
+                            "@id": "kb:url-history-entry-b2e78940-dc49-44f5-ac7e-ef9b8a9bc976",
+                            "@type": "uco-observable:URLHistoryEntry",
                             "uco-observable:firstVisit": {
                                 "@type": "xsd:dateTime",
                                 "@value": "2018-11-19T00:27:14.00Z"
@@ -566,16 +656,20 @@
                                 "@value": "2018-11-19T00:27:14.00Z"
                             },
                             "uco-observable:expirationTime": null,
-                            "uco-observable:browserUserProfile": {
+                            "rdfs:comment": "TODO - Was uco-observable:browserUserProfile intended to be an object property?",
+                            "drafting:browserUserProfileAccount": {
                                 "@id": "kb:ApplicationAccount-580d7253-5086-41a5-b788-69e3ceaa4bae"
                             },
                             "uco-observable:url": {
-                                "@id": "kb:URL-def4ae18-9181-4cce-8f5f-a9aba022b98b"
+                                "@id": "kb:url-def4ae18-9181-4cce-8f5f-a9aba022b98b"
                             },
                             "uco-observable:referrerUrl": null,
                             "uco-observable:pageTitle": null,
                             "uco-observable:visitCount": 1,
-                            "uco-observable:manuallyEnteredCount": 0,
+                            "uco-observable:manuallyEnteredCount": {
+                                "@type": "xsd:nonNegativeInteger",
+                                "@value": "0"
+                            },
                             "uco-observable:keywordSearchTerm": null
                         }
                     ]
@@ -585,20 +679,31 @@
         {
             "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:ContentData",
+                    "@id": "kb:content-data-facet-40ab2874-6f85-4623-8a17-5f105ed2042b",
+                    "@type": "uco-observable:ContentDataFacet",
                     "uco-observable:sizeInBytes": 756969,
                     "uco-observable:mimeType": "image/jpeg"
                 },
                 {
-                    "@type": "uco-observable:File",
-                    "uco-observable:accessedTime": "2018-11-18T22:53:09Z",
+                    "@id": "kb:file-facet-4afdcc08-f93f-472e-89db-ade60d84ca6f",
+                    "@type": "uco-observable:FileFacet",
+                    "uco-observable:accessedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-18T22:53:09Z"
+                    },
                     "uco-observable:extension": "jpg",
                     "uco-observable:fileName": "wow.jpg",
                     "uco-observable:filePath": "/img_image.E01/wow.jpg",
                     "uco-observable:isDirectory": false,
                     "uco-observable:sizeInBytes": 756969,
-                    "uco-observable:createdTime": "2018-11-18T22:53:09Z",
-                    "uco-observable:modifiedTime": "2018-11-18T20:28:58Z"
+                    "uco-observable:observableCreatedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-18T22:53:09Z"
+                    },
+                    "uco-observable:modifiedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-18T20:28:58Z"
+                    }
                 }
             ],
             "@id": "kb:File-bbb4f0c4-ea2c-42fa-9ec0-11bc4678b7b8",
@@ -621,17 +726,16 @@
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
                 {
-                    "@type": "uco-observable:File",
+                    "@id": "kb:file-facet-5734cd54-aa04-4c70-a0b4-909032e408c1",
+                    "@type": "uco-observable:FileFacet",
                     "uco-observable:fileName": "SYSTEM",
                     "uco-observable:filePath": "/Windows/system32/config/SYSTEM",
                     "uco-observable:isDirectory": false
                 },
                 {
+                    "@id": "kb:windows-registry-hive-facet-34c54d87-0ddc-43d5-a185-062da9693e3e",
                     "@type": "uco-observable:WindowsRegistryHiveFacet",
-                    "uco-observable:hiveType": {
-                        "@type": "uco-vocabulary:HiveTypeVocab",
-                        "@value": "SYSTEM"
-                    }
+                    "uco-observable:hiveType": "SYSTEM"
                 }
             ]
         },
@@ -652,13 +756,14 @@
             "@type": "uco-observable:WindowsRegistryKey",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:windows-registry-key-facet-840333f7-e6b8-415e-b08e-8b33cc7dcc90",
                     "@type": "uco-observable:WindowsRegistryKeyFacet",
                     "uco-observable:key": "SYSTEM/ControlSet001/Enum/USB/VID_0781&PID_5575/001D7D06CF09ED91D97F1B1B",
                     "uco-observable:modifiedTime": {
                         "@type": "xsd:dateTime",
                         "@value": "2017-02-02T22:38:09.00Z"
                     },
-                    "uco-observable:numberOfSubkeys": "2"
+                    "uco-observable:numberOfSubkeys": 2
                 }
             ]
         },
@@ -666,13 +771,16 @@
             "@id": "kb:EmailAddress-d2bc0936-e1c5-4b55-8a1b-af2b3a2b145c",
             "@type": "uco-observable:EmailAddress",
             "uco-core:hasFacet": {
+                "@id": "kb:email-address-facet-20454f34-043e-48fc-bb66-dcf91aa11a5c",
                 "@type": "uco-observable:EmailAddressFacet",
                 "uco-observable:addressValue": "aresthewerewolf@gmail.com <aresthewerewolf>"
             }
         },
         {
             "@id": "kb:EmailAccount-ca4bc5e3-33a7-4457-b106-d0213e248979",
+            "@type": "uco-observable:EmailAccount",
             "uco-core:hasFacet": {
+                "@id": "kb:email-address-facet-9e20866a-4533-4d02-9aa5-cc563299315f",
                 "@type": "uco-observable:EmailAddressFacet",
                 "uco-observable:emailAddress": {
                     "@id": "kb:EmailAddress-5f63c12b-115a-474f-b1b2-15ebdb2fce31"
@@ -683,6 +791,7 @@
             "@id": "kb:EmailAddress-5f63c12b-115a-474f-b1b2-15ebdb2fce31",
             "@type": "uco-observable:EmailAddress",
             "uco-core:hasFacet": {
+                "@id": "kb:email-address-facet-f0081a6a-3c18-47d5-87bf-6367d30d2c8c",
                 "@type": "uco-observable:EmailAddressFacet",
                 "uco-observable:addressValue": "badquinn3@gmail.com"
             }
@@ -692,6 +801,7 @@
             "@type": "uco-observable:EmailMessage",
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:email-message-facet-f57e953c-95af-437d-b115-94585eb0ac13",
                     "@type": "uco-observable:EmailMessageFacet",
                     "uco-observable:body": "",
                     "uco-observable:from": {

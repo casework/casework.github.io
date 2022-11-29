@@ -27,13 +27,17 @@
             "@type": "case-investigation:Authorization",
             "case-investigation:relevantAuthorization": [
                 {
+                    "@id": "kb:odin-decree-c75747d0-d0e9-4ef4-a868-ba6cf9097ac0",
                     "@type": "case-investigation:Authorization",
                     "case-investigation:authorizationType": "Odin_Decree",
                     "case-investigation:authorizationIdentifier": "Decree_2019_00013",
-                    "authorizationAuthority": {
+                    "drafting:authorizationAuthority": {
                         "@id": "kb:organization-e2322f63-96cb-4fd4-8ddc-351a9826598e"
                     },
-                    "authorizationIssuedDate": "20190330"
+                    "drafting:authorizationIssuedDate": {
+                        "@type": "xsd:date",
+                        "@value": "2019-03-30"
+                    }
                 }
             ]
         },

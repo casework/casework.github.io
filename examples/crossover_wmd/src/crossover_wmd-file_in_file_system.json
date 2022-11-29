@@ -12,10 +12,12 @@
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
+                "@id": "kb:path-relation-facet-44a7738f-f00d-4ae6-9a71-0f18e5a40bec",
                 "@type": "uco-observable:PathRelationFacet",
                 "uco-observable:path": "/Root/data/com.google.android.gms/app_dg_cache/B0970DD8CBD5F4763E7C602156284D4DD796AE5D/the.apk"
             },
             {
+                "@id": "kb:data-range-facet-625fdfe2-a48e-4117-8166-2985a904fb43",
                 "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 3121610752,
                 "uco-observable:rangeSize": 147871
@@ -27,6 +29,7 @@
         "@type": "uco-observable:FileSystem",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:disk-partition-facet-7eb4b7cf-35ab-4b71-ad45-428b53db9b44",
                 "@type": "uco-observable:DiskPartitionFacet",
                 "uco-observable:diskPartitionType": "GPT",
                 "uco-observable:partitionID": "06",
@@ -34,10 +37,12 @@
                 "uco-observable:partitionLength": 245235063
             },
             {
+                "@id": "kb:file-system-facet-d14c4ae7-75e4-4043-97c5-e16b383ca714",
                 "@type": "uco-observable:FileSystemFacet",
                 "uco-observable:fileSystemType": "EXT3"
             },
             {
+                "@id": "kb:content-data-facet-bba72ec6-1c79-46d7-aa22-ef833d3127d6",
                 "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:sizeInBytes": 245235000,
                 "uco-observable:hash": [

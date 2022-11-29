@@ -4,6 +4,7 @@
         "@type": "uco-identity:Person",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:simple-name-facet-deeb96a3-4ff4-421b-af13-b0c6088e05c8",
                 "@type": "uco-identity:SimpleNameFacet",
                 "uco-identity:givenName": "Sarah",
                 "uco-identity:familyName": "McAvoy"
@@ -39,6 +40,7 @@
         "@type": "uco-observable:EmailAddress",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:email-address-facet-0d246f05-1cf0-49f0-a7b9-47aa62185113",
                 "@type": "uco-observable:EmailAddressFacet",
                 "uco-observable:addressValue": "mcavoys87@gmail.com"
             }
@@ -49,12 +51,14 @@
         "@type": "uco-observable:EmailAccount",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:email-account-facet-94be1c5b-247e-45a0-84e3-ef1c270ccf81",
                 "@type": "uco-observable:EmailAccountFacet",
                 "uco-observable:emailAddress": {
                     "@id": "kb:email-address-d6fbe80f-9098-4650-b7a8-0b0e225cec2b"
                 }
             },
             {
+                "@id": "kb:account-authentication-facet-75964c74-1054-4f3c-bf9d-1e3f3edcff30",
                 "@type": "uco-observable:AccountAuthenticationFacet",
                 "uco-observable:password": "louisville!21"
             }
@@ -65,6 +69,7 @@
         "@type": "uco-observable:PhoneAccount",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:account-facet-c90795be-47ec-49cc-9f1d-e74a427262e9",
                 "@type": "uco-observable:AccountFacet",
                 "uco-observable:accountIssuer": {
                     "@id": "kb:organization-att-d60ffcec-4d89-48a1-b264-9cd4bc700a70"
@@ -72,6 +77,7 @@
                 "uco-observable:isActive": true
             },
             {
+                "@id": "kb:phone-account-facet-c34e1761-ed44-40fa-aac0-33305c743958",
                 "@type": "uco-observable:PhoneAccountFacet",
                 "uco-observable:phoneNumber": "+19014449108"
             }
@@ -94,6 +100,7 @@
         "@type": "uco-observable:DigitalAccount",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:account-facet-fb1a2b29-018f-4c2d-ac02-797112901c8c",
                 "@type": "uco-observable:AccountFacet",
                 "uco-observable:accountIssuer": {
                     "@id": "kb:organization-facebook-fcb0d2ee-e681-4314-98c3-47fb2541aae9"
@@ -102,12 +109,14 @@
                 "uco-observable:isActive": true
             },
             {
+                "@id": "kb:application-account-facet-074bd62f-b071-44d9-a934-d11d21b45970",
                 "@type": "uco-observable:ApplicationAccountFacet",
                 "uco-observable:application": {
                     "@id": "kb:application-facebook-25e8018f-49be-4898-bb1d-731e387e9eb7"
                 }
             },
             {
+                "@id": "kb:digital-account-facet-90a397d9-d615-4d57-af0d-9013a45ff862",
                 "@type": "uco-observable:DigitalAccountFacet",
                 "uco-observable:displayName": "????"
             }
@@ -116,18 +125,14 @@
     {
         "@id": "kb:organization-facebook-fcb0d2ee-e681-4314-98c3-47fb2541aae9",
         "@type": "uco-identity:Organization",
-        "uco-core:hasFacet": [
-            {
-                "@type": "uco-identity:OrganizationDetailsFacet",
-                "drafting:orgName": "Facebook"
-            }
-        ]
+        "uco-core:name": "Facebook"
     },
     {
         "@id": "kb:application-facebook-25e8018f-49be-4898-bb1d-731e387e9eb7",
         "@type": "uco-observable:Application",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:application-facet-134b1129-c58e-4fbb-9383-923688bf8a16",
                 "@type": "uco-observable:ApplicationFacet",
                 "drafting:appName": "Facebook"
             }

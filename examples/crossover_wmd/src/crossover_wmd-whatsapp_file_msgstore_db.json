@@ -4,6 +4,7 @@
         "@type": "uco-observable:File",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:file-facet-e15c9993-0d14-43c0-a168-35bac26450fe",
                 "@type": "uco-observable:FileFacet",
                 "uco-observable:observableCreatedTime": {
                     "@type": "xsd:dateTime",
@@ -16,6 +17,7 @@
                 "uco-observable:sizeInBytes": 327680
             },
             {
+                "@id": "kb:content-data-facet-191aebdd-749f-4dba-8ec8-52c9a766970c",
                 "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:hash": [
                     {

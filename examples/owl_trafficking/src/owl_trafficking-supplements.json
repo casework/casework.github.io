@@ -15,18 +15,12 @@
     {
         "@id": "kb:organization-att-d60ffcec-4d89-48a1-b264-9cd4bc700a70",
         "@type": "uco-identity:Organization",
-        "uco-core:hasFacet": {
-            "@type": "uco-identity:OrganizationDetailsFacet",
-            "drafting:orgName": "AT&T"
-        }
+        "uco-core:name": "AT&T"
     },
     {
         "@id": "kb:organization-lge-e7ae1d96-e054-44b5-9943-8da6515e8332",
         "@type": "uco-identity:Organization",
-        "uco-core:hasFacet": {
-            "@type": "uco-identity:OrganizationDetailsFacet",
-            "drafting:orgName": "LGE"
-        }
+        "uco-core:name": "LGE"
     },
     {
         "@id": "kb:organization-skypeapp-cc44c2ae-bdd3-4df8-9ca3-1f58d682d62b",

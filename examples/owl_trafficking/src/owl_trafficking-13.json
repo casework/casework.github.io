@@ -8,6 +8,7 @@
         ],
         "uco-core:hasFacet": [
             {
+                "@id": "kb:file-facet-0ed4b885-1229-45f8-b31c-4c48392ac5a8",
                 "@type": "uco-observable:FileFacet",
                 "uco-observable:fileName": "download.jpg",
                 "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/media/0/Download/download.jpg",
@@ -30,6 +31,7 @@
                 }
             },
             {
+                "@id": "kb:ext-inode-facet-405861b3-82e1-49d1-90f7-26fbfc3bc19c",
                 "@type": "uco-observable:ExtInodeFacet",
                 "uco-observable:extInodeID": 1344287,
                 "uco-observable:extSGID": 1023,
@@ -42,6 +44,7 @@
                 }
             },
             {
+                "@id": "kb:content-data-facet-bc527b6f-af29-4d16-9557-05d79b51ac6b",
                 "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:hash": [
                     {

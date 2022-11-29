@@ -1,26 +1,28 @@
 [
     {
-        "@id": "kb:mmssmsdb-journalfile-uuid",
+        "@id": "kb:mmssmsdb-journalfile-c05ebe49-b8a9-4f61-b872-88f6f304a3c6",
         "@type": "uco-observable:File"
     },
     {
-        "@id": "kb:message-database-relationship-uuid",
+        "@id": "kb:message-database-relationship-e83e0484-c8fb-4c66-8c7e-0b17052bb826",
         "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
             "@id": "kb:sms-message-2c032220-8c21-11e9-9c99-0c4de9c21b53"
         },
         "uco-core:target": {
-            "@id": "kb:mmssmsdb-journalfile-uuid"
+            "@id": "kb:mmssmsdb-journalfile-c05ebe49-b8a9-4f61-b872-88f6f304a3c6"
         },
         "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
+                "@id": "kb:data-range-facet-15096817-ed26-4b4d-9697-c4291e1d055a",
                 "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 2560,
                 "uco-observable:rangeSize": 96
             },
             {
+                "@id": "kb:table-relation-facet-cd4940c2-f1ad-4b12-b57c-f07150958f94",
                 "@type": [
                     "drafting:TableRelationFacet",
                     "uco-core:Facet"
