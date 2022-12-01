@@ -4,6 +4,7 @@
         "@type": "uco-observable:File",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:file-facet-2761e29c-e282-4147-a6d5-1a6fde1d75ec",
                 "@type": "uco-observable:FileFacet",
                 "uco-observable:fileName": "IMG_20170203_121618.jpg",
                 "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/media/0/DCIM/Camera/IMG_20170203_121618.jpg",
@@ -26,6 +27,7 @@
                 }
             },
             {
+                "@id": "kb:ext-inode-facet-7fff44a4-d05d-4149-b6a4-6b66ebfa6a17",
                 "@type": "uco-observable:ExtInodeFacet",
                 "uco-observable:extInodeID": 1351746,
                 "uco-observable:extSGID": 1023,
@@ -38,13 +40,20 @@
                 }
             },
             {
-                "@type": [
-                    "drafting:UnallocatedRecoverabilityFacet",
-                    "uco-core:Facet"
-                ],
-                "drafting:nameStatus": "recoverable",
-                "drafting:metadataStatus": "recoverable",
-                "drafting:contentStatus": "unrecoverable"
+                "@id": "kb:recovered-object-facet-7892602f-d286-4a16-bd12-2cba8feae993",
+                "@type": "uco-observable:RecoveredObjectFacet",
+                "uco-observable:nameRecoveredStatus": {
+                    "@type": "uco-vocabulary:RecoveredObjectStatusVocab",
+                    "@value": "recovered"
+                },
+                "uco-observable:metadataRecoveredStatus": {
+                    "@type": "uco-vocabulary:RecoveredObjectStatusVocab",
+                    "@value": "recovered"
+                },
+                "uco-observable:contentRecoveredStatus": {
+                    "@type": "uco-vocabulary:RecoveredObjectStatusVocab",
+                    "@value": "overwritten"
+                }
             }
         ]
     }

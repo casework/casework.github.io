@@ -4,6 +4,7 @@
         "@type": "uco-observable:Message",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:message-facet-07316f05-6363-4c84-8400-f9a1473de776",
                 "@type": "uco-observable:MessageFacet",
                 "uco-observable:messageText": "20 minutes away",
                 "uco-observable:application": {

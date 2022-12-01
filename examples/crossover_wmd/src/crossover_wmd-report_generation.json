@@ -13,6 +13,7 @@
             "@type": "uco-configuration:Configuration",
             "uco-configuration:configurationEntry": [
                 {
+                    "@id": "kb:configuration-entry-f17752eb-4a30-4596-8a7e-e8efba956842",
                     "@type": "uco-configuration:ConfigurationEntry",
                     "uco-configuration:itemName": "OutputFormat",
                     "uco-configuration:itemValue": "XML"
@@ -46,7 +47,7 @@
         },
         "uco-action:object": [
             {
-                "@id": "kb:provenancerecord-e64b7aed-cecb-4291-81d4-4adb5b8020b2"
+                "@id": "kb:provenance-record-e64b7aed-cecb-4291-81d4-4adb5b8020b2"
             },
             {
                 "@id": "kb:forensicimage-f3fd304e-ef6c-4cbd-94cb-425880f82748"
@@ -66,6 +67,7 @@
         "@type": "uco-observable:File",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:file-facet-56a66502-4585-46c5-bfe0-4f81366e6f25",
                 "@type": "uco-observable:FileFacet",
                 "uco-observable:observableCreatedTime": {
                     "@type": "xsd:dateTime",

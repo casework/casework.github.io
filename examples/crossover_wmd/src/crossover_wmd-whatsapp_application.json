@@ -4,6 +4,7 @@
         "@type": "uco-observable:Application",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:application-facet-f089c7c8-e260-483f-b9dc-e95da12b5906",
                 "@type": "uco-observable:ApplicationFacet",
                 "rdfs:comment": "Note that there is an open design issue on class-level references to Android operating systems.  OWL punning (linking the OWL class) might or might not be the mechanism to use on the uco-observable:operatingSystem property here.",
                 "rdfs:seeAlso": {

@@ -1,9 +1,3 @@
-@prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
-@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
-@prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
-@prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
-@prefix location: <https://ontology.unifiedcyberontology.org/uco/location/> .
-@prefix ns1: <http://example.org/ontology/local#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -19,62 +13,17 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/account-facet-31df5a8a-fb9f-4fa6-85f9-cea13f4b9f03> ;
-			sh:resultMessage "Value is not member of the vocabulary AccountTypeVocab." ;
+			sh:resultMessage "Value is outside the default vocabulary AccountTypeVocab." ;
 			sh:resultPath uco-observable:accountType ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:OrConstraintComponent ;
+			sh:resultSeverity sh:Info ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
-				sh:message "Value is not member of the vocabulary AccountTypeVocab." ;
-				sh:or (
-					[
-						sh:datatype vocabulary:AccountTypeVocab ;
-						sh:in (
-							"ldap"^^vocabulary:AccountTypeVocab
-							"nis"^^vocabulary:AccountTypeVocab
-							"openid"^^vocabulary:AccountTypeVocab
-							"radius"^^vocabulary:AccountTypeVocab
-							"tacacs"^^vocabulary:AccountTypeVocab
-							"unix"^^vocabulary:AccountTypeVocab
-							"windows_domain"^^vocabulary:AccountTypeVocab
-							"windows_local"^^vocabulary:AccountTypeVocab
-						) ;
-					]
-					[
-						sh:datatype xsd:string ;
-					]
-				) ;
+				sh:datatype vocabulary:AccountTypeVocab ;
+				sh:message "Value is outside the default vocabulary AccountTypeVocab." ;
 				sh:path uco-observable:accountType ;
+				sh:severity sh:Info ;
 			] ;
-			sh:value "Phone"^^vocabulary:AccountTypeVocab ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/investigativeaction-67f43664-077d-47be-b332-4d1c2b579c49> ;
-			sh:resultMessage "Value does not have class core:UcoObject" ;
-			sh:resultPath action:performer ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class core:UcoObject ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:IRI ;
-				sh:path action:performer ;
-			] ;
-			sh:value <http://example.org/kb/forensicexaminer-acf60326-de21-4a85-9909-692f1780470f> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/investigativeaction-67f43664-077d-47be-b332-4d1c2b579c49> ;
-			sh:resultMessage "Value does not have class location:Location" ;
-			sh:resultPath action:location ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class location:Location ;
-				sh:nodeKind sh:IRI ;
-				sh:path action:location ;
-			] ;
-			sh:value <http://example.org/kb/location-f67042d4-4963-4c31-9807-23662670004f> ;
+			sh:value "Phone" ;
 		] ,
 		[
 			a sh:ValidationResult ;
@@ -88,94 +37,6 @@
 				sh:message "Deprecation notice: the value referenced by observable:storageCapacityInBytes will be required to be stored in observable:totalStorageCapacityInBytes in UCO 2.0.0."@en ;
 				sh:path uco-observable:storageCapacityInBytes ;
 				sh:severity sh:Warning ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/operating-system-facet-262f1b31-e23d-4324-84cb-5d55528caf63> ;
-			sh:resultMessage "Value does not have class identity:Identity" ;
-			sh:resultPath uco-observable:manufacturer ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
-			sh:sourceShape [
-				sh:class identity:Identity ;
-				sh:maxCount "1"^^xsd:integer ;
-				sh:nodeKind sh:IRI ;
-				sh:path uco-observable:manufacturer ;
-			] ;
-			sh:value <http://example.org/kb/organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4> ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a investigation:Authorization ;
-				ns1:authorizationAuthority <http://example.org/kb/organization-e2322f63-96cb-4fd4-8ddc-351a9826598e> ;
-				ns1:authorizationIssuedDate "20190330" ;
-				investigation:authorizationIdentifier "Decree_2019_00013" ;
-				investigation:authorizationType "Odin_Decree" ;
-			] ;
-			sh:resultMessage "UcoThings are required to not be blank nodes." ;
-			sh:resultSeverity sh:Violation ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				sh:message "UcoThings are required to not be blank nodes."@en ;
-				sh:select """
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER isBlank ($this)
-			}
-		""" ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing ;
-			sh:value [
-				a investigation:Authorization ;
-				ns1:authorizationAuthority <http://example.org/kb/organization-e2322f63-96cb-4fd4-8ddc-351a9826598e> ;
-				ns1:authorizationIssuedDate "20190330" ;
-				investigation:authorizationIdentifier "Decree_2019_00013" ;
-				investigation:authorizationType "Odin_Decree" ;
-			] ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode [
-				a investigation:Authorization ;
-				ns1:authorizationAuthority <http://example.org/kb/organization-e2322f63-96cb-4fd4-8ddc-351a9826598e> ;
-				ns1:authorizationIssuedDate "20190330" ;
-				investigation:authorizationIdentifier "Decree_2019_00013" ;
-				investigation:authorizationType "Odin_Decree" ;
-			] ;
-			sh:resultMessage "UcoThings are suggested to end with a UUID." ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraint [
-				a sh:SPARQLConstraint ;
-				rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
-				sh:message "UcoThings are suggested to end with a UUID."@en ;
-				sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
-			SELECT $this
-			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
-			        FILTER (
-			                ! REGEX (
-			                        STR($this),
-			                        "[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$",
-			                        "i"
-			                )
-			        )
-			}
-		''' ;
-			] ;
-			sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;
-			sh:sourceShape core:UcoThing-identifier-regex-shape ;
-			sh:value [
-				a investigation:Authorization ;
-				ns1:authorizationAuthority <http://example.org/kb/organization-e2322f63-96cb-4fd4-8ddc-351a9826598e> ;
-				ns1:authorizationIssuedDate "20190330" ;
-				investigation:authorizationIdentifier "Decree_2019_00013" ;
-				investigation:authorizationType "Odin_Decree" ;
 			] ;
 		]
 		;

@@ -109,10 +109,7 @@
             {
                 "@id": "kb:account-facet-31df5a8a-fb9f-4fa6-85f9-cea13f4b9f03",
                 "@type": "uco-observable:AccountFacet",
-                "uco-observable:accountType": {
-                    "@type": "uco-vocabulary:AccountTypeVocab",
-                    "@value": "Phone"
-                },
+                "uco-observable:accountType": "Phone",
                 "uco-observable:isActive": true
             },
             {

@@ -8,6 +8,7 @@
         "@type": "uco-observable:SMSMessage",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:message-facet-9b01629a-6c67-4dce-8d6e-ff0b7b38ccf4",
                 "@type": "uco-observable:MessageFacet",
                 "uco-observable:application": {
                     "@id": "kb:message-9999898c-0178-4534-8107-caea0a0f9999"
@@ -34,6 +35,7 @@
         "@type": "uco-observable:PhoneAccount",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:account-facet-8770c7a5-d027-4ca2-b6ed-953380cc17e4",
                 "@type": "uco-observable:AccountFacet",
                 "uco-observable:accountIssuer": {
                     "@id": "kb:organization-att-d60ffcec-4d89-48a1-b264-9cd4bc700a70"
@@ -41,6 +43,7 @@
                 "uco-observable:isActive": true
             },
             {
+                "@id": "kb:phone-account-facet-0bc2e99c-6734-4072-bc3f-6c2330678d74",
                 "@type": "uco-observable:PhoneAccountFacet",
                 "uco-observable:phoneNumber": "+13045184333"
             }

@@ -59,7 +59,7 @@ jumbo_desc: Cellebrite XML Report Example
     "@context": {
         "@vocab": "http://example.org/ontology/local#",
         "case-investigation": "https://ontology.caseontology.org/case/investigation/",
-        "drafting": "http://example.org/ontology/drafting#",
+        "drafting": "http://example.org/ontology/drafting/",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "kb": "http://example.org/kb/",
@@ -87,8 +87,11 @@ jumbo_desc: Cellebrite XML Report Example
                     "uco-core:name": "CROSSOVER_2018_12111001",
                     "case-investigation:focus": "Weapon of Mass Destruction (Deathly Hallows)",
                     "uco-core:description": "The subject Ares Lupin was arrested on suspicion of acquiring a weapon of mass destruction. The Samsung smartphone he was carrying was preserved as evidence.",
+                    "rdfs:comment": "TODO - uco-core:object to have longer list of IRIs.",
                     "uco-core:object": [
-                        "list of uuids"
+                        {
+                            "@id": "kb:mobiledevice-803df237-bc7e-4e24-a5cb-8157063014b4"
+                        }
                     ]
                 }
             ]
@@ -143,6 +146,7 @@ jumbo_desc: Cellebrite XML Report Example
             "@type": "uco-configuration:Configuration",
             "uco-configuration:configurationEntry": [
                 {
+                    "@id": "kb:configuration-entry-f17752eb-4a30-4596-8a7e-e8efba956842",
                     "@type": "uco-configuration:ConfigurationEntry",
                     "uco-configuration:itemName": "OutputFormat",
                     "uco-configuration:itemValue": "XML"
@@ -176,7 +180,7 @@ jumbo_desc: Cellebrite XML Report Example
         },
         "uco-action:object": [
             {
-                "@id": "kb:provenancerecord-e64b7aed-cecb-4291-81d4-4adb5b8020b2"
+                "@id": "kb:provenance-record-e64b7aed-cecb-4291-81d4-4adb5b8020b2"
             },
             {
                 "@id": "kb:forensicimage-f3fd304e-ef6c-4cbd-94cb-425880f82748"
@@ -196,6 +200,7 @@ jumbo_desc: Cellebrite XML Report Example
         "@type": "uco-observable:File",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:file-facet-56a66502-4585-46c5-bfe0-4f81366e6f25",
                 "@type": "uco-observable:FileFacet",
                 "uco-observable:observableCreatedTime": {
                     "@type": "xsd:dateTime",
@@ -262,11 +267,13 @@ jumbo_desc: Cellebrite XML Report Example
             "@type": "uco-configuration:Configuration",
             "uco-configuration:configurationEntry": [
                 {
+                    "@id": "kb:configuration-entry-e2dbf1e8-4b9b-473d-8eb1-19e5e6c77aa3",
                     "@type": "uco-configuration:ConfigurationEntry",
                     "uco-configuration:itemName": "DeviceInfoConnectionType",
                     "uco-configuration:itemValue": "Cable No. 130"
                 },
                 {
+                    "@id": "kb:configuration-entry-ea526fc0-e542-49c0-87df-e7da1c97de50",
                     "@type": "uco-configuration:ConfigurationEntry",
                     "uco-configuration:itemName": "ExtractionType",
                     "uco-configuration:itemValue": "Physical"
@@ -321,10 +328,10 @@ jumbo_desc: Cellebrite XML Report Example
         ],
         "uco-action:result": [
             {
-                "@id": "kb:provenancerecord-e64b7aed-cecb-4291-81d4-4adb5b8020b2"
+                "@id": "kb:provenance-record-e64b7aed-cecb-4291-81d4-4adb5b8020b2"
             },
             {
-                "@id": "kb:forensicimage-1fedf25f-e662-4dd0-8584-d5b7411acf47"
+                "@id": "kb:forensicimage-f3fd304e-ef6c-4cbd-94cb-425880f82748"
             }
         ]
     },
@@ -333,15 +340,6 @@ jumbo_desc: Cellebrite XML Report Example
         "@type": "case-investigation:ProvenanceRecord",
         "uco-core:object": {
             "@id": "kb:mobiledevice-803df237-bc7e-4e24-a5cb-8157063014b4"
-        }
-    },
-    {
-        "@id": "kb:provenance-record-e64b7aed-cecb-4291-81d4-4adb5b8020b2",
-        "@type": "case-investigation:ProvenanceRecord",
-        "uco-core:description": "Forensic duplicate of mobile device used by Ares Lupin",
-        "case-investigation:exhibitNumber": "20181211001-002",
-        "uco-core:object": {
-            "@id": "kb:forensicimage-1fedf25f-e662-4dd0-8584-d5b7411acf47"
         }
     }
 ]
@@ -356,6 +354,7 @@ jumbo_desc: Cellebrite XML Report Example
         "@type": "uco-identity:Identity",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:simple-name-facet-6b38c545-8822-4743-82ce-569367b7f7da",
                 "@type": "uco-identity:SimpleNameFacet",
                 "uco-identity:givenName": "Eoghan",
                 "uco-identity:familyName": "Casey"
@@ -395,10 +394,10 @@ jumbo_desc: Cellebrite XML Report Example
 {% highlight json %}
 [
     {
-        "@id": "kb:provenancerecord-1e2690b5-76e9-450f-933f-f178a9320d9d",
+        "@id": "kb:provenance-record-e64b7aed-cecb-4291-81d4-4adb5b8020b2",
         "@type": "case-investigation:ProvenanceRecord",
-        "uco-core:description": "Forensic duplicate of smartphone used by subject",
-        "case-investigation:exhibitNumber": "002",
+        "uco-core:description": "Forensic duplicate of mobile device used by Ares Lupin",
+        "case-investigation:exhibitNumber": "20181211001-002",
         "uco-core:object": {
             "@id": "kb:forensicimage-f3fd304e-ef6c-4cbd-94cb-425880f82748"
         }
@@ -411,6 +410,7 @@ jumbo_desc: Cellebrite XML Report Example
         ],
         "uco-core:hasFacet": [
             {
+                "@id": "kb:file-facet-b6a8b437-7767-49f6-96e0-62805ddc7396",
                 "@type": "uco-observable:FileFacet",
                 "uco-observable:observableCreatedTime": {
                     "@type": "xsd:dateTime",
@@ -424,6 +424,7 @@ jumbo_desc: Cellebrite XML Report Example
                 "uco-observable:sizeInBytes": 31989956608
             },
             {
+                "@id": "kb:content-data-facet-b882bbcd-276f-4604-808b-3b678998b90a",
                 "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:hash": [
                     {
@@ -513,6 +514,7 @@ jumbo_desc: Cellebrite XML Report Example
         "@type": "uco-observable:MobileDevice",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:device-facet-9e81040d-e62f-47d3-bcbb-c07bf0829afb",
                 "@type": "uco-observable:DeviceFacet",
                 "uco-observable:manufacturer": {
                     "@id": "kb:organization-fb6c05a0-b6be-4a10-ba62-0e7b1da4c0ec"
@@ -521,6 +523,7 @@ jumbo_desc: Cellebrite XML Report Example
                 "uco-observable:serialNumber": "RF8H31GS5SF"
             },
             {
+                "@id": "kb:android-device-facet-bc0d3928-655c-4347-9b6b-c912972c8798",
                 "@type": "uco-observable:AndroidDeviceFacet",
                 "uco-observable:androidID": {
                     "@type": "xsd:hexBinary",
@@ -529,16 +532,26 @@ jumbo_desc: Cellebrite XML Report Example
                 "uco-observable:androidFingerprint": "samsung/zeroltexx/zerolte:6.0.1/MMB29K/G925FXXU4DPIL"
             },
             {
+                "@id": "kb:mobile-device-facet-1a30ac69-04e1-4952-bedf-d4b25b7b1592",
                 "@type": "uco-observable:MobileDeviceFacet",
                 "uco-observable:bluetoothDeviceName": "Galaxy S6 edge",
                 "drafting:deviceActivationTime": "2018-06-10T14:31:30.00Z",
                 "drafting:locationsServicesEnabled": true,
-                "uco-observable:keypadUnlockCode": "__NOT_PROVIDED",
-                "uco-observable:IMEI": "356420075722843",
-                "uco-observable:clockSetting": "__NOT_PROVIDED",
-                "uco-observable:storageCapacityInBytes": "__NOT_PROVIDED"
+                "drafting:notProvided": [
+                    {
+                        "@id": "uco-observable:keypadUnlockCode"
+                    },
+                    {
+                        "@id": "uco-observable:clockSetting"
+                    },
+                    {
+                        "@id": "uco-observable:storageCapacityInBytes"
+                    }
+                ],
+                "uco-observable:IMEI": "356420075722843"
             },
             {
+                "@id": "kb:operating-system-facet-b55d7244-720f-4fb8-a4d3-2a26d407a353",
                 "@type": "uco-observable:OperatingSystemFacet",
                 "uco-core:name": "Android",
                 "uco-observable:manufacturer": {
@@ -548,10 +561,12 @@ jumbo_desc: Cellebrite XML Report Example
                 "uco-observable:version": "6.0.1"
             },
             {
+                "@id": "kb:wifi-address-facet-047a5278-1e8a-4e38-b2f6-1b77894624b8",
                 "@type": "uco-observable:WifiAddressFacet",
                 "uco-observable:addressValue": "AC:5F:3E:73:E3:78"
             },
             {
+                "@id": "kb:bluetooth-address-facet-39287a41-e138-4550-a9b2-0382b231c845",
                 "@type": "uco-observable:BluetoothAddressFacet",
                 "uco-observable:addressValue": "D8:C4:E9:7C:2E:F8"
             }
@@ -620,6 +635,7 @@ SimChangeTime=1528641355649<br />
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
+                "@id": "kb:confidence-facet-97f455f3-ae63-4e87-b135-8798be7cc537",
                 "@type": "uco-core:ConfidenceFacet",
                 "uco-core:confidence": {
                     "@type": "xsd:nonNegativeInteger",
@@ -641,10 +657,11 @@ SimChangeTime=1528641355649<br />
         "@type": "uco-observable:SIMCard",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:sim-card-facet-778b424f-fbda-4ca0-9097-0f545388a7e7",
                 "@type": "uco-observable:SIMCardFacet",
                 "uco-observable:ICCID": "89390100002217635543",
                 "uco-observable:carrier": {
-                    "@id": "kb:organization-d10330bf-8e9e-45cd-bf1a-ec9c964c270d"
+                    "@id": "kb:organization-telcom-italia-d10330bf-8e9e-45cd-bf1a-ec9c964c270d"
                 }
             }
         ]
@@ -654,14 +671,13 @@ SimChangeTime=1528641355649<br />
         "@type": "uco-observable:MobileAccount",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:account-facet-2ff9009c-69d9-4f96-8cdf-d282ecae4a24",
                 "@type": "uco-observable:AccountFacet",
-                "uco-observable:accountType": {
-                    "@type": "uco-vocabulary:AccountTypeVocab",
-                    "@value": "Phone"
-                },
+                "uco-observable:accountType": "Phone",
                 "uco-observable:isActive": false
             },
             {
+                "@id": "kb:mobile-account-facet-ee7a5fc7-5021-411c-8456-4d14846c95f8",
                 "@type": "uco-observable:MobileAccountFacet",
                 "uco-observable:MSISDN": "3662158453"
             }
@@ -672,23 +688,36 @@ SimChangeTime=1528641355649<br />
         "@type": "uco-observable:SIMCard",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:sim-card-facet-7188a8a8-8793-4191-8ae6-744fae617294",
                 "@type": "uco-observable:SIMCardFacet",
                 "uco-observable:ICCID": "8935302143531284380",
-                "uco-observable:IMSI": "__NOT_PROVIDED",
-                "uco-observable:carrier": "__NOT_PROVIDED"
+                "drafting:notProvided": [
+                    {
+                        "@id": "uco-observable:IMSI"
+                    },
+                    {
+                        "@id": "uco-observable:carrier"
+                    }
+                ]
             }
         ]
+    },
+    {
+        "@id": "kb:organization-4f0b398f-2bb9-457c-b52a-67fb9e0e339a",
+        "@type": "uco-identity:Organization",
+        "uco-core:name": "Lebara"
     },
     {
         "@id": "kb:simcard-1c401020-c200-4b90-9128-adb3b5e0b6fb",
         "@type": "uco-observable:SIMCard",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:sim-card-facet-257de106-19ac-4c39-9332-90b7227f0129",
                 "@type": "uco-observable:SIMCardFacet",
                 "uco-observable:ICCID": "8931088918010550289",
                 "uco-observable:IMSI": "{mobileaccount3-uuid}",
                 "uco-observable:carrier": {
-                    "@id": "kb:organization-lebara-uuid"
+                    "@id": "kb:organization-4f0b398f-2bb9-457c-b52a-67fb9e0e339a"
                 }
             }
         ]
@@ -698,14 +727,13 @@ SimChangeTime=1528641355649<br />
         "@type": "uco-observable:MobileAccount",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:account-facet-a1397192-d69e-427a-ba4a-b55afc4480f5",
                 "@type": "uco-observable:AccountFacet",
-                "uco-observable:accountType": {
-                    "@type": "uco-vocabulary:AccountTypeVocab",
-                    "@value": "Phone"
-                },
+                "uco-observable:accountType": "Phone",
                 "uco-observable:isActive": true
             },
             {
+                "@id": "kb:mobile-account-facet-7a486740-f680-4fe2-87e9-ab99a645ab89",
                 "@type": "uco-observable:MobileAccountFacet",
                 "uco-observable:MSISDN": "31647934784",
                 "uco-observable:IMSI": "204080515881398"
@@ -717,6 +745,7 @@ SimChangeTime=1528641355649<br />
         "@type": "uco-observable:File",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:file-facet-b6bc7e31-cb7b-49be-bdf9-74b4d5da2997",
                 "@type": "uco-observable:FileFacet",
                 "uco-observable:fileSystemType": "EXT3",
                 "uco-observable:extension": "db",
@@ -738,11 +767,13 @@ SimChangeTime=1528641355649<br />
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
+                "@id": "kb:data-range-facet-cfcf2117-d3db-4fc7-90bc-947ee497dbd1",
                 "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 13751,
                 "uco-observable:rangeSize": null
             },
             {
+                "@id": "kb:table-relation-facet-859d7e32-9422-4d73-bbf2-7364da0c2fe9",
                 "@type": [
                     "drafting:TableRelationFacet",
                     "uco-core:Facet"
@@ -812,6 +843,7 @@ SimChangeTime=1528641355649<br />
         "@type": "uco-identity:Identity",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:simple-name-facet-abe8f440-874f-40fe-b48f-ecfdc18b8dc4",
                 "@type": "uco-identity:SimpleNameFacet",
                 "uco-identity:givenName": "Ares",
                 "uco-identity:familyName": "Lupin"
@@ -847,6 +879,7 @@ SimChangeTime=1528641355649<br />
         "@type": "uco-observable:EmailAddress",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:email-address-facet-7ce6f940-5f1d-435f-9cf5-03db933d72d8",
                 "@type": "uco-observable:EmailAddressFacet",
                 "uco-observable:addressValue": "aresthewerewolf@gmail.com"
             }
@@ -857,6 +890,7 @@ SimChangeTime=1528641355649<br />
         "@type": "uco-observable:EmailAccount",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:email-account-facet-e0dd5970-71d8-4261-a43a-1d216b84680f",
                 "@type": "uco-observable:EmailAccountFacet",
                 "uco-observable:emailAddress": {
                     "@id": "kb:emailaddress-99d72bac-8c21-11e9-8902-0c4de9c21b53"
@@ -869,6 +903,7 @@ SimChangeTime=1528641355649<br />
         "@type": "uco-observable:PhoneAccount",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:account-facet-cd215e9d-e16c-46e4-a969-77b7e3341174",
                 "@type": "uco-observable:AccountFacet",
                 "uco-observable:accountIssuer": {
                     "@id": "kb:organization-salt-42e95dc6-1326-4de8-93df-c399a3514ae9"
@@ -876,6 +911,7 @@ SimChangeTime=1528641355649<br />
                 "uco-observable:isActive": true
             },
             {
+                "@id": "kb:phone-account-facet-a4492f65-3fe1-4a75-a821-676a175b25ab",
                 "@type": "uco-observable:PhoneAccountFacet",
                 "uco-observable:phoneNumber": "+31647934784",
                 "uco-core:name": ""
@@ -899,6 +935,7 @@ SimChangeTime=1528641355649<br />
         "@type": "uco-observable:ApplicationAccount",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:account-facet-502bc393-9727-415d-b336-e466f0fa21bf",
                 "@type": "uco-observable:AccountFacet",
                 "uco-observable:accountIssuer": {
                     "@id": "kb:organization-whatsapp-7a3fb3d1-0b30-4305-8c9e-f8f90f839bf3"
@@ -907,12 +944,14 @@ SimChangeTime=1528641355649<br />
                 "uco-observable:isActive": true
             },
             {
+                "@id": "kb:application-account-facet-15811836-e4ed-48d1-ae51-1822aab89aa9",
                 "@type": "uco-observable:ApplicationAccountFacet",
                 "uco-observable:application": {
                     "@id": "kb:application-whatsapp-e662a9de-02bb-47ad-8666-625a0a5dc2fa"
                 }
             },
             {
+                "@id": "kb:digital-account-facet-8794c717-cc13-44ab-8f93-77cca75fc649",
                 "@type": "uco-observable:DigitalAccountFacet",
                 "uco-observable:displayName": "Ares Lupin"
             }
@@ -921,47 +960,33 @@ SimChangeTime=1528641355649<br />
     {
         "@id": "kb:organization-lebara-3ca7cf13-7d8b-4665-97b9-2c48fdb94ac5",
         "@type": "uco-identity:Organization",
-        "uco-core:hasFacet": {
-            "@type": "uco-identity:OrganizationDetailsFacet",
-            "drafting:orgName": "Lebara"
-        }
+        "uco-core:name": "Lebara"
     },
     {
         "@id": "kb:organization-reddit-d5be6c8f-17ed-43fe-bc03-a5f79132f256",
         "@type": "uco-identity:Organization",
-        "uco-core:hasFacet": {
-            "@type": "uco-identity:OrganizationDetailsFacet",
-            "drafting:orgName": "Reddit"
-        }
+        "uco-core:name": "Reddit"
     },
     {
         "@id": "kb:organization-salt-42e95dc6-1326-4de8-93df-c399a3514ae9",
         "@type": "uco-identity:Organization",
-        "uco-core:hasFacet": {
-            "@type": "uco-identity:OrganizationDetailsFacet",
-            "drafting:orgName": "Salt"
-        }
+        "uco-core:name": "Salt"
     },
     {
         "@id": "kb:organization-telcom-italia-d10330bf-8e9e-45cd-bf1a-ec9c964c270d",
         "@type": "uco-identity:Organization",
-        "uco-core:hasFacet": {
-            "@type": "uco-identity:OrganizationDetailsFacet",
-            "drafting:orgName": "Telcom Italia"
-        }
+        "uco-core:name": "Telcom Italia"
     },
     {
         "@id": "kb:organization-whatsapp-7a3fb3d1-0b30-4305-8c9e-f8f90f839bf3",
         "@type": "uco-identity:Organization",
-        "uco-core:hasFacet": {
-            "@type": "uco-identity:OrganizationDetailsFacet",
-            "drafting:orgName": "WhatsApp"
-        }
+        "uco-core:name": "WhatsApp"
     },
     {
         "@id": "kb:gmail-a1ce9965-ba9c-4fa1-9bfe-58c68ecaadc5",
         "@type": "uco-observable:Application",
         "uco-core:hasFacet": {
+            "@id": "kb:application-facet-3ecd5cd2-d118-4b03-970f-e1196ad0a133",
             "@type": "uco-observable:ApplicationFacet",
             "drafting:appName": "GMail"
         }
@@ -970,6 +995,7 @@ SimChangeTime=1528641355649<br />
         "@id": "kb:application-whatsapp-e662a9de-02bb-47ad-8666-625a0a5dc2fa",
         "@type": "uco-observable:Application",
         "uco-core:hasFacet": {
+            "@id": "kb:application-facet-74e8a566-4575-4ce2-84d5-4bcea81f9b70",
             "@type": "uco-observable:ApplicationFacet",
             "drafting:appName": "WhatsApp"
         }
@@ -1027,6 +1053,7 @@ SimChangeTime=1528641355649<br />
         "@type": "uco-observable:DigitalAccount",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:account-facet-dfe7da12-4956-40bd-8c64-315f21a0de80",
                 "@type": "uco-observable:AccountFacet",
                 "uco-observable:accountIssuer": {
                     "@id": "kb:organization-reddit-d5be6c8f-17ed-43fe-bc03-a5f79132f256"
@@ -1035,6 +1062,7 @@ SimChangeTime=1528641355649<br />
                 "uco-observable:isActive": true
             },
             {
+                "@id": "kb:digital-account-facet-5c2fb3ea-669b-4948-85ab-77d874af8241",
                 "@type": "uco-observable:DigitalAccountFacet",
                 "uco-observable:displayName": "Ares Lupin",
                 "uco-observable:accountLogin": "aresthewerewolf",
@@ -1044,6 +1072,7 @@ SimChangeTime=1528641355649<br />
                 }
             },
             {
+                "@id": "kb:account-authentication-facet-99704d04-bc9b-457f-80e4-19bf671fde01",
                 "@type": "uco-observable:AccountAuthenticationFacet",
                 "uco-observable:password": "v10j\u05af\ufffdH\ufffd\ufffdx\ufffd_\ufffd_o\ufffdi\ufffd"
             }
@@ -1062,11 +1091,13 @@ SimChangeTime=1528641355649<br />
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
+                "@id": "kb:data-range-facet-e274824d-c0c2-4721-92dd-821e57327a98",
                 "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 13751,
                 "uco-observable:rangeSize": null
             },
             {
+                "@id": "kb:table-relation-facet-def095e1-db25-4cca-a0f6-0d9e9ca4eebb",
                 "@type": [
                     "drafting:TableRelationFacet",
                     "uco-core:Facet"
@@ -1131,6 +1162,7 @@ SimChangeTime=1528641355649<br />
         "@id": "kb:latlong-8667ec82-8c21-11e9-934e-0c4de9c21b53",
         "@type": "uco-location:Location",
         "uco-core:hasFacet": {
+            "@id": "kb:lat-long-coordinates-facet-fdd17ba5-70f8-43c4-b072-4874a8b8633d",
             "@type": "uco-location:LatLongCoordinatesFacet",
             "uco-location:latitude": {
                 "@type": "xsd:decimal",
@@ -1172,6 +1204,7 @@ SimChangeTime=1528641355649<br />
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
+                "@id": "kb:data-range-facet-cb5a6a48-f68c-44a0-bc63-a4ebb1911be8",
                 "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 541196288,
                 "uco-observable:rangeSize": 3456630784
@@ -1196,6 +1229,7 @@ SimChangeTime=1528641355649<br />
         "@type": "uco-observable:FileSystem",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:disk-partition-facet-3b9dd6e4-29ea-42c4-88de-9056790f5de3",
                 "@type": "uco-observable:DiskPartitionFacet",
                 "uco-observable:diskPartitionType": "GPT",
                 "uco-observable:partitionID": "06",
@@ -1203,6 +1237,7 @@ SimChangeTime=1528641355649<br />
                 "uco-observable:partitionLength": 3456630784
             },
             {
+                "@id": "kb:file-system-facet-179b7a12-7086-4a11-94f9-1b2bec8a48a4",
                 "@type": "uco-observable:FileSystemFacet",
                 "uco-observable:fileSystemType": "EXT3"
             }
@@ -1234,10 +1269,12 @@ SimChangeTime=1528641355649<br />
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
+                "@id": "kb:path-relation-facet-44a7738f-f00d-4ae6-9a71-0f18e5a40bec",
                 "@type": "uco-observable:PathRelationFacet",
                 "uco-observable:path": "/Root/data/com.google.android.gms/app_dg_cache/B0970DD8CBD5F4763E7C602156284D4DD796AE5D/the.apk"
             },
             {
+                "@id": "kb:data-range-facet-625fdfe2-a48e-4117-8166-2985a904fb43",
                 "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 3121610752,
                 "uco-observable:rangeSize": 147871
@@ -1249,6 +1286,7 @@ SimChangeTime=1528641355649<br />
         "@type": "uco-observable:FileSystem",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:disk-partition-facet-7eb4b7cf-35ab-4b71-ad45-428b53db9b44",
                 "@type": "uco-observable:DiskPartitionFacet",
                 "uco-observable:diskPartitionType": "GPT",
                 "uco-observable:partitionID": "06",
@@ -1256,10 +1294,12 @@ SimChangeTime=1528641355649<br />
                 "uco-observable:partitionLength": 245235063
             },
             {
+                "@id": "kb:file-system-facet-d14c4ae7-75e4-4043-97c5-e16b383ca714",
                 "@type": "uco-observable:FileSystemFacet",
                 "uco-observable:fileSystemType": "EXT3"
             },
             {
+                "@id": "kb:content-data-facet-bba72ec6-1c79-46d7-aa22-ef833d3127d6",
                 "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:sizeInBytes": 245235000,
                 "uco-observable:hash": [
@@ -1328,6 +1368,7 @@ SimChangeTime=1528641355649<br />
         ],
         "uco-core:hasFacet": [
             {
+                "@id": "kb:file-facet-4ae352de-83e2-4554-9ca4-ad8f4b46b700",
                 "@type": "uco-observable:FileFacet",
                 "uco-observable:fileName": "the.apk",
                 "uco-observable:filePath": "/Root/media/0/Download/Elder_Wand.png",
@@ -1351,6 +1392,7 @@ SimChangeTime=1528641355649<br />
                 }
             },
             {
+                "@id": "kb:ext-inode-facet-c882b480-7a52-4874-9a08-d086e80d4ea2",
                 "@type": "uco-observable:ExtInodeFacet",
                 "uco-observable:extInodeID": 930900,
                 "uco-observable:extSGID": 1023,
@@ -1358,6 +1400,7 @@ SimChangeTime=1528641355649<br />
                 "uco-observable:extInodeChangeTime": null
             },
             {
+                "@id": "kb:content-data-facet-2d2e90f2-1290-4af9-a97a-f7b36c9d76e1",
                 "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:hash": [
                     {
@@ -1529,6 +1572,7 @@ SimChangeTime=1528641355649<br />
         "@type": "uco-observable:Application",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:application-facet-f089c7c8-e260-483f-b9dc-e95da12b5906",
                 "@type": "uco-observable:ApplicationFacet",
                 "rdfs:comment": "Note that there is an open design issue on class-level references to Android operating systems.  OWL punning (linking the OWL class) might or might not be the mechanism to use on the uco-observable:operatingSystem property here.",
                 "rdfs:seeAlso": {
@@ -1560,6 +1604,7 @@ SimChangeTime=1528641355649<br />
         "@type": "uco-observable:ApplicationAccount",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:account-facet-fb355c63-ac18-47f6-9f6b-fda9dccad2d1",
                 "@type": "uco-observable:AccountFacet",
                 "uco-observable:accountIssuer": {
                     "@id": "kb:organization-whatsapp-7a3fb3d1-0b30-4305-8c9e-f8f90f839bf3"
@@ -1568,12 +1613,14 @@ SimChangeTime=1528641355649<br />
                 "uco-observable:isActive": true
             },
             {
+                "@id": "kb:application-account-facet-e3b6c495-f966-4316-9c09-51350a49fe22",
                 "@type": "uco-observable:ApplicationAccountFacet",
                 "uco-observable:application": {
                     "@id": "kb:whatsapp-868abc08-8c21-11e9-934e-0c4de9c21b53"
                 }
             },
             {
+                "@id": "kb:digital-account-facet-ad4907e9-8f92-4960-8eac-0bf13fc42231",
                 "@type": "uco-observable:DigitalAccountFacet",
                 "uco-observable:displayName": "Ares Lupin"
             }
@@ -1592,6 +1639,7 @@ SimChangeTime=1528641355649<br />
         "@type": "uco-observable:Message",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:message-facet-07316f05-6363-4c84-8400-f9a1473de776",
                 "@type": "uco-observable:MessageFacet",
                 "uco-observable:messageText": "20 minutes away",
                 "uco-observable:application": {
@@ -1640,11 +1688,13 @@ SimChangeTime=1528641355649<br />
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
+                "@id": "kb:data-range-facet-0a23fdf3-484c-436a-8aae-f4e8d8dba7bc",
                 "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 293822,
                 "uco-observable:rangeSize": 477952
             },
             {
+                "@id": "kb:table-relation-facet-8cc3fa01-985f-4c0c-8614-3fa4afce58cd",
                 "@type": [
                     "drafting:TableRelationFacet",
                     "uco-core:Facet"
@@ -1666,6 +1716,7 @@ SimChangeTime=1528641355649<br />
         "@type": "uco-observable:File",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:file-facet-e15c9993-0d14-43c0-a168-35bac26450fe",
                 "@type": "uco-observable:FileFacet",
                 "uco-observable:observableCreatedTime": {
                     "@type": "xsd:dateTime",
@@ -1678,6 +1729,7 @@ SimChangeTime=1528641355649<br />
                 "uco-observable:sizeInBytes": 327680
             },
             {
+                "@id": "kb:content-data-facet-191aebdd-749f-4dba-8ec8-52c9a766970c",
                 "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:hash": [
                     {
@@ -1719,6 +1771,7 @@ SimChangeTime=1528641355649<br />
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
+                "@id": "kb:path-relation-facet-db06c02e-cc75-4904-812f-0382c07aa163",
                 "@type": "uco-observable:PathRelationFacet",
                 "uco-observable:path": "/data/com.whatsapp/databases/msgstore.db"
             }
@@ -1740,6 +1793,7 @@ SimChangeTime=1528641355649<br />
         "@type": "uco-observable:EmailMessage",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:email-message-facet-6c0d5813-5557-481d-95f3-b5f660e3e102",
                 "@type": "uco-observable:EmailMessageFacet",
                 "uco-observable:application": {
                     "@id": "kb:gmail-a1ce9965-ba9c-4fa1-9bfe-58c68ecaadc5"
@@ -1767,6 +1821,7 @@ SimChangeTime=1528641355649<br />
         "@id": "kb:contentdata-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d",
         "@type": "uco-observable:ContentData",
         "uco-core:hasFacet": {
+            "@id": "kb:content-data-facet-645a658d-efad-4671-9eb0-de1608c9d8e2",
             "@type": "uco-observable:ContentDataFacet",
             "uco-observable:dataPayload": "Excellent - we need all the help we can get. Sent from my Samsung Galaxy smartphone"
         }
@@ -1776,6 +1831,7 @@ SimChangeTime=1528641355649<br />
         "@type": "uco-observable:EmailAddress",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:email-address-facet-154d38fe-b6cd-4c75-a930-8f983f25c626",
                 "@type": "uco-observable:EmailAddressFacet",
                 "uco-observable:addressValue": "badquinn3@gmail.com "
             }
@@ -1786,10 +1842,12 @@ SimChangeTime=1528641355649<br />
         "@type": "uco-observable:EmailAccount",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:digital-account-facet-4c39bdf1-0835-4be3-8bd8-e92160d4753b",
                 "@type": "uco-observable:DigitalAccountFacet",
                 "uco-observable:displayName": "Harley Quinn"
             },
             {
+                "@id": "kb:email-account-facet-c77b24e3-a373-4dbc-8837-380668a3247a",
                 "@type": "uco-observable:EmailAccountFacet",
                 "uco-observable:emailAddress": {
                     "@id": "kb:emailaddress-456a2bac-8c21-11e9-8902-0c4de9c24de5"
@@ -1842,19 +1900,27 @@ SimChangeTime=1528641355649<br />
         "@type": "uco-observable:URL",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:url-facet-cfc6f806-50ba-4929-9c93-c8804967555f",
                 "@type": "uco-observable:URLFacet",
                 "uco-observable:fullValue": "https://www.friday-magazine.ch/fr/"
             }
         ]
     },
     {
+        "@id": "kb:14354987-8ae5-47e3-8369-dbd0d5f77489",
+        "@type": "uco-observable:URL"
+    },
+    {
         "@id": "kb:urlhistory-860fc853-9c3f-41fc-b144-8ac80d8f5849",
         "@type": "uco-observable:URLHistory",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:url-history-facet-46324a94-66a8-4f59-aff8-721fdae6071c",
                 "@type": "uco-observable:URLHistoryFacet",
                 "uco-observable:urlHistoryEntry": [
                     {
+                        "@id": "kb:url-history-entry-5fdbb3f9-40e5-42d9-8099-a02bdcec7eee",
+                        "@type": "uco-observable:URLHistoryEntry",
                         "uco-observable:firstVisit": {
                             "@type": "xsd:dateTime",
                             "@value": "2018-12-06T18:52:21Z"
@@ -1863,22 +1929,28 @@ SimChangeTime=1528641355649<br />
                             "@type": "xsd:dateTime",
                             "@value": "2017-01-25T02:20:22.00Z"
                         },
-                        "uco-observable:expirationTime": "NULL",
+                        "drafting:propertyIsNull": {
+                            "@id": "uco-observable:expirationTime"
+                        },
                         "uco-observable:browserInformation": {
                             "@id": "kb:5d96df90-d9e1-423c-b8db-c2327812ab38"
                         },
-                        "uco-observable:browserUserProfile": {
+                        "rdfs:comment": "TODO: Is uco-observable:browserUserProfile meant to be an object reference?",
+                        "drafting:browserUserProfileAccount": {
                             "@id": "kb:profile--account-uuid"
                         },
                         "uco-observable:url": {
-                            "@id": "kb:39ff4987-8ae5-47e3-8369-dbd0d5f79398"
+                            "@id": "kb:url-39ff4987-8ae5-47e3-8369-dbd0d5f79398"
                         },
                         "uco-observable:referrerUrl": {
                             "@id": "kb:14354987-8ae5-47e3-8369-dbd0d5f77489"
                         },
                         "uco-observable:pageTitle": "Friday Magazine | Home",
                         "uco-observable:visitCount": 1,
-                        "uco-observable:manuallyEnteredCount": 0,
+                        "uco-observable:manuallyEnteredCount": {
+                            "@type": "xsd:nonNegativeInteger",
+                            "@value": "0"
+                        },
                         "drafting:allocationStatus": "allocated",
                         "uco-observable:keywordSearchTerm": null
                     }
@@ -1894,6 +1966,7 @@ SimChangeTime=1528641355649<br />
         ],
         "uco-core:hasFacet": [
             {
+                "@id": "kb:file-facet-3bee01ad-6809-461f-865c-bb12ac677c77",
                 "@type": "uco-observable:FileFacet",
                 "uco-observable:fileName": "History",
                 "uco-observable:filePath": "/data/com.android.chrome/app_chrome/Default/History",
@@ -1915,13 +1988,17 @@ SimChangeTime=1528641355649<br />
                 }
             },
             {
+                "@id": "kb:ext-inode-facet-a47033c1-6ffa-404f-bcaa-b8cddb9eeac7",
                 "@type": "uco-observable:ExtInodeFacet",
                 "uco-observable:extInodeID": 522962,
                 "uco-observable:extSGID": 10092,
                 "uco-observable:extSUID": 10092,
-                "uco-observable:extInodeChangeTime": "__NOT_PROVIDED"
+                "drafting:notProvided": {
+                    "@id": "uco-observable:extInodeChangeTime"
+                }
             },
             {
+                "@id": "kb:content-data-facet-e83448b0-76a4-442a-bea3-200271f0feb1",
                 "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:hash": [
                     {
@@ -1947,17 +2024,19 @@ SimChangeTime=1528641355649<br />
             "@id": "kb:urlhistory-860fc853-9c3f-41fc-b144-8ac80d8f5849"
         },
         "uco-core:target": {
-            "@id": "kb:2af6fcf3-91d3-4457-9333-abab67f8fb91"
+            "@id": "kb:file-2af6fcf3-91d3-4457-9333-abab67f8fb91"
         },
         "uco-core:isDirectional": true,
         "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:data-range-facet-386840da-c175-4429-9334-279bd6d4c23a",
                 "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 22215,
                 "uco-observable:rangeSize": null
             },
             {
+                "@id": "kb:table-relation-facet-41f710ca-fa81-4c29-ba7b-4435809394d1",
                 "@type": [
                     "drafting:TableRelationFacet",
                     "uco-core:Facet"

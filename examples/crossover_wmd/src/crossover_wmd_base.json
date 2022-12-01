@@ -2,7 +2,7 @@
     "@context": {
         "@vocab": "http://example.org/ontology/local#",
         "case-investigation": "https://ontology.caseontology.org/case/investigation/",
-        "drafting": "http://example.org/ontology/drafting#",
+        "drafting": "http://example.org/ontology/drafting/",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "kb": "http://example.org/kb/",
@@ -30,8 +30,11 @@
                     "uco-core:name": "CROSSOVER_2018_12111001",
                     "case-investigation:focus": "Weapon of Mass Destruction (Deathly Hallows)",
                     "uco-core:description": "The subject Ares Lupin was arrested on suspicion of acquiring a weapon of mass destruction. The Samsung smartphone he was carrying was preserved as evidence.",
+                    "rdfs:comment": "TODO - uco-core:object to have longer list of IRIs.",
                     "uco-core:object": [
-                        "list of uuids"
+                        {
+                            "@id": "kb:mobiledevice-803df237-bc7e-4e24-a5cb-8157063014b4"
+                        }
                     ]
                 }
             ]

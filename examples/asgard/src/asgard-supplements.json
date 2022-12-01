@@ -4,8 +4,16 @@
         "@type": "uco-location:Location"
     },
     {
-        "@id": "kb:odin-decree-c75747d0-d0e9-4ef4-a868-ba6cf9097ac0",
-        "@type": "uco-core:UcoObject"
+        "@id": "kb:forensicexaminer-acf60326-de21-4a85-9909-692f1780470f",
+        "@type": "uco-identity:Person"
+    },
+    {
+        "@id": "kb:location-f67042d4-4963-4c31-9807-23662670004f",
+        "@type": "uco-location:Location"
+    },
+    {
+        "@id": "kb:organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4",
+        "@type": "uco-identity:Organization"
     },
     {
         "@id": "kb:mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90",

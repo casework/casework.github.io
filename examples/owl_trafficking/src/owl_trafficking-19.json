@@ -3,6 +3,7 @@
         "@id": "kb:latlong-8667ec82-8c21-11e9-934e-0c4de9c21b53",
         "@type": "uco-location:Location",
         "uco-core:hasFacet": {
+            "@id": "kb:lat-long-coordinates-facet-c72523a2-52a7-49f0-9709-b8bacb1dc90a",
             "@type": "uco-location:LatLongCoordinatesFacet",
             "uco-location:latitude": {
                 "@type": "xsd:decimal",
@@ -16,17 +17,17 @@
         }
     },
     {
-        "@id": "kb:camera-xml-uuid",
+        "@id": "kb:camera-xml-e2066a67-4eee-4893-b7b9-ef6c72149044",
         "@type": "uco-observable:File"
     },
     {
-        "@id": "kb:cameralocation-relationship-uuid",
+        "@id": "kb:cameralocation-relationship-c6f64e98-68c5-4d2e-9ae8-a7e110f2ac83",
         "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
             "@id": "kb:latlong-8667ec82-8c21-11e9-934e-0c4de9c21b53"
         },
         "uco-core:target": {
-            "@id": "kb:camera-xml-uuid"
+            "@id": "kb:camera-xml-e2066a67-4eee-4893-b7b9-ef6c72149044"
         },
         "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:isDirectional": true

@@ -4,19 +4,27 @@
         "@type": "uco-observable:URL",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:url-facet-cfc6f806-50ba-4929-9c93-c8804967555f",
                 "@type": "uco-observable:URLFacet",
                 "uco-observable:fullValue": "https://www.friday-magazine.ch/fr/"
             }
         ]
     },
     {
+        "@id": "kb:14354987-8ae5-47e3-8369-dbd0d5f77489",
+        "@type": "uco-observable:URL"
+    },
+    {
         "@id": "kb:urlhistory-860fc853-9c3f-41fc-b144-8ac80d8f5849",
         "@type": "uco-observable:URLHistory",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:url-history-facet-46324a94-66a8-4f59-aff8-721fdae6071c",
                 "@type": "uco-observable:URLHistoryFacet",
                 "uco-observable:urlHistoryEntry": [
                     {
+                        "@id": "kb:url-history-entry-5fdbb3f9-40e5-42d9-8099-a02bdcec7eee",
+                        "@type": "uco-observable:URLHistoryEntry",
                         "uco-observable:firstVisit": {
                             "@type": "xsd:dateTime",
                             "@value": "2018-12-06T18:52:21Z"
@@ -25,22 +33,28 @@
                             "@type": "xsd:dateTime",
                             "@value": "2017-01-25T02:20:22.00Z"
                         },
-                        "uco-observable:expirationTime": "NULL",
+                        "drafting:propertyIsNull": {
+                            "@id": "uco-observable:expirationTime"
+                        },
                         "uco-observable:browserInformation": {
                             "@id": "kb:5d96df90-d9e1-423c-b8db-c2327812ab38"
                         },
-                        "uco-observable:browserUserProfile": {
+                        "rdfs:comment": "TODO: Is uco-observable:browserUserProfile meant to be an object reference?",
+                        "drafting:browserUserProfileAccount": {
                             "@id": "kb:profile--account-uuid"
                         },
                         "uco-observable:url": {
-                            "@id": "kb:39ff4987-8ae5-47e3-8369-dbd0d5f79398"
+                            "@id": "kb:url-39ff4987-8ae5-47e3-8369-dbd0d5f79398"
                         },
                         "uco-observable:referrerUrl": {
                             "@id": "kb:14354987-8ae5-47e3-8369-dbd0d5f77489"
                         },
                         "uco-observable:pageTitle": "Friday Magazine | Home",
                         "uco-observable:visitCount": 1,
-                        "uco-observable:manuallyEnteredCount": 0,
+                        "uco-observable:manuallyEnteredCount": {
+                            "@type": "xsd:nonNegativeInteger",
+                            "@value": "0"
+                        },
                         "drafting:allocationStatus": "allocated",
                         "uco-observable:keywordSearchTerm": null
                     }
@@ -56,6 +70,7 @@
         ],
         "uco-core:hasFacet": [
             {
+                "@id": "kb:file-facet-3bee01ad-6809-461f-865c-bb12ac677c77",
                 "@type": "uco-observable:FileFacet",
                 "uco-observable:fileName": "History",
                 "uco-observable:filePath": "/data/com.android.chrome/app_chrome/Default/History",
@@ -77,13 +92,17 @@
                 }
             },
             {
+                "@id": "kb:ext-inode-facet-a47033c1-6ffa-404f-bcaa-b8cddb9eeac7",
                 "@type": "uco-observable:ExtInodeFacet",
                 "uco-observable:extInodeID": 522962,
                 "uco-observable:extSGID": 10092,
                 "uco-observable:extSUID": 10092,
-                "uco-observable:extInodeChangeTime": "__NOT_PROVIDED"
+                "drafting:notProvided": {
+                    "@id": "uco-observable:extInodeChangeTime"
+                }
             },
             {
+                "@id": "kb:content-data-facet-e83448b0-76a4-442a-bea3-200271f0feb1",
                 "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:hash": [
                     {
@@ -109,17 +128,19 @@
             "@id": "kb:urlhistory-860fc853-9c3f-41fc-b144-8ac80d8f5849"
         },
         "uco-core:target": {
-            "@id": "kb:2af6fcf3-91d3-4457-9333-abab67f8fb91"
+            "@id": "kb:file-2af6fcf3-91d3-4457-9333-abab67f8fb91"
         },
         "uco-core:isDirectional": true,
         "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:data-range-facet-386840da-c175-4429-9334-279bd6d4c23a",
                 "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 22215,
                 "uco-observable:rangeSize": null
             },
             {
+                "@id": "kb:table-relation-facet-41f710ca-fa81-4c29-ba7b-4435809394d1",
                 "@type": [
                     "drafting:TableRelationFacet",
                     "uco-core:Facet"

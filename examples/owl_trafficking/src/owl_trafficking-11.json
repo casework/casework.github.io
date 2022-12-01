@@ -4,6 +4,7 @@
         "@type": "uco-observable:FileSystem",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:disk-partition-facet-2c7eda6d-dd5e-44d4-ba1f-fd9a879bd854",
                 "@type": "uco-observable:DiskPartitionFacet",
                 "uco-observable:diskPartitionType": "GPT",
                 "uco-observable:partitionID": "31",
@@ -11,10 +12,12 @@
                 "uco-observable:partitionLength": 29236373504
             },
             {
+                "@id": "kb:file-system-facet-0195c87e-151f-407f-82e7-9c6b19463430",
                 "@type": "uco-observable:FileSystemFacet",
                 "uco-observable:fileSystemType": "EXT4"
             },
             {
+                "@id": "kb:content-data-facet-72b3d73c-f7a7-419e-957b-6f4fd4dcd8c1",
                 "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:hash": [
                     {

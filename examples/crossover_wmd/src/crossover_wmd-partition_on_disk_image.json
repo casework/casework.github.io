@@ -12,6 +12,7 @@
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
+                "@id": "kb:data-range-facet-cb5a6a48-f68c-44a0-bc63-a4ebb1911be8",
                 "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 541196288,
                 "uco-observable:rangeSize": 3456630784

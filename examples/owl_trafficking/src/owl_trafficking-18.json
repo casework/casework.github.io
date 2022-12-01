@@ -4,12 +4,14 @@
         "@type": "uco-observable:URLHistory",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:url-history-facet-a455b867-957e-4fce-a0ad-1af9c6fa4edb",
                 "@type": "uco-observable:URLHistoryFacet",
                 "uco-observable:browserInformation": {
                     "@id": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38"
                 },
                 "uco-observable:urlHistoryEntry": [
                     {
+                        "@id": "kb:url-history-entry-193a7fc6-5f15-4b3c-8763-f1dc3c9bfd14",
                         "@type": "uco-observable:URLHistoryEntry",
                         "uco-observable:firstVisit": {
                             "@type": "xsd:dateTime",
@@ -20,7 +22,8 @@
                             "@value": "2017-01-25T02:20:22.00Z"
                         },
                         "uco-observable:expirationTime": null,
-                        "uco-observable:browserUserProfile": {
+                        "rdfs:comment": "TODO: Was uco-observable:browserUserProfile meant to be an object property?",
+                        "drafting:browserUserProfileAccount": {
                             "@id": "kb:profile-account-857c7f17-2f6b-4618-aeca-50d79fa69b97"
                         },
                         "uco-observable:url": {
@@ -44,6 +47,7 @@
         "@type": "uco-observable:URL",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:url-facet-f2618636-aec3-459e-bda7-eeedfbeac3c0",
                 "@type": "uco-observable:URLFacet",
                 "uco-observable:fullValue": "https://www.quora.com/Where-can-you-find-baby-owls-for-sale-Are-owls-legal-to-keep-as-pets"
             }
@@ -57,6 +61,7 @@
         ],
         "uco-core:hasFacet": [
             {
+                "@id": "kb:file-facet-3664fa42-2c49-4315-862d-528a99204092",
                 "@type": "uco-observable:FileFacet",
                 "uco-observable:fileName": "History",
                 "uco-observable:filePath": "/img_LGE Nexus 5 Full Image.raw/vol_vol31/data/com.android.chrome/app_chrome/Default/History",
@@ -78,6 +83,7 @@
                 }
             },
             {
+                "@id": "kb:ext-inode-facet-010753fc-e14d-41f2-9d82-2d1caeb45f43",
                 "@type": "uco-observable:ExtInodeFacet",
                 "uco-observable:extInodeID": 1483050,
                 "uco-observable:extSGID": 10034,
@@ -88,6 +94,7 @@
                 }
             },
             {
+                "@id": "kb:content-data-facet-66ebc116-ab04-4371-98d3-37636b8db756",
                 "@type": "uco-observable:ContentDataFacet",
                 "uco-observable:hash": [
                     {
@@ -119,11 +126,13 @@
         "uco-core:kindOfRelationship": "Contained_Within",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:data-range-facet-e5ceec7a-b273-4460-9edf-f778a5744740",
                 "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 100832,
                 "uco-observable:rangeSize": 176
             },
             {
+                "@id": "kb:table-relation-facet-17fb8bb8-91d4-4f16-af9e-17efbae05464",
                 "@type": [
                     "drafting:TableRelationFacet",
                     "uco-core:Facet"

@@ -4,10 +4,11 @@
         "@type": "uco-observable:SIMCard",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:sim-card-facet-778b424f-fbda-4ca0-9097-0f545388a7e7",
                 "@type": "uco-observable:SIMCardFacet",
                 "uco-observable:ICCID": "89390100002217635543",
                 "uco-observable:carrier": {
-                    "@id": "kb:organization-d10330bf-8e9e-45cd-bf1a-ec9c964c270d"
+                    "@id": "kb:organization-telcom-italia-d10330bf-8e9e-45cd-bf1a-ec9c964c270d"
                 }
             }
         ]
@@ -17,14 +18,13 @@
         "@type": "uco-observable:MobileAccount",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:account-facet-2ff9009c-69d9-4f96-8cdf-d282ecae4a24",
                 "@type": "uco-observable:AccountFacet",
-                "uco-observable:accountType": {
-                    "@type": "uco-vocabulary:AccountTypeVocab",
-                    "@value": "Phone"
-                },
+                "uco-observable:accountType": "Phone",
                 "uco-observable:isActive": false
             },
             {
+                "@id": "kb:mobile-account-facet-ee7a5fc7-5021-411c-8456-4d14846c95f8",
                 "@type": "uco-observable:MobileAccountFacet",
                 "uco-observable:MSISDN": "3662158453"
             }
@@ -35,23 +35,36 @@
         "@type": "uco-observable:SIMCard",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:sim-card-facet-7188a8a8-8793-4191-8ae6-744fae617294",
                 "@type": "uco-observable:SIMCardFacet",
                 "uco-observable:ICCID": "8935302143531284380",
-                "uco-observable:IMSI": "__NOT_PROVIDED",
-                "uco-observable:carrier": "__NOT_PROVIDED"
+                "drafting:notProvided": [
+                    {
+                        "@id": "uco-observable:IMSI"
+                    },
+                    {
+                        "@id": "uco-observable:carrier"
+                    }
+                ]
             }
         ]
+    },
+    {
+        "@id": "kb:organization-4f0b398f-2bb9-457c-b52a-67fb9e0e339a",
+        "@type": "uco-identity:Organization",
+        "uco-core:name": "Lebara"
     },
     {
         "@id": "kb:simcard-1c401020-c200-4b90-9128-adb3b5e0b6fb",
         "@type": "uco-observable:SIMCard",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:sim-card-facet-257de106-19ac-4c39-9332-90b7227f0129",
                 "@type": "uco-observable:SIMCardFacet",
                 "uco-observable:ICCID": "8931088918010550289",
                 "uco-observable:IMSI": "{mobileaccount3-uuid}",
                 "uco-observable:carrier": {
-                    "@id": "kb:organization-lebara-uuid"
+                    "@id": "kb:organization-4f0b398f-2bb9-457c-b52a-67fb9e0e339a"
                 }
             }
         ]
@@ -61,14 +74,13 @@
         "@type": "uco-observable:MobileAccount",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:account-facet-a1397192-d69e-427a-ba4a-b55afc4480f5",
                 "@type": "uco-observable:AccountFacet",
-                "uco-observable:accountType": {
-                    "@type": "uco-vocabulary:AccountTypeVocab",
-                    "@value": "Phone"
-                },
+                "uco-observable:accountType": "Phone",
                 "uco-observable:isActive": true
             },
             {
+                "@id": "kb:mobile-account-facet-7a486740-f680-4fe2-87e9-ab99a645ab89",
                 "@type": "uco-observable:MobileAccountFacet",
                 "uco-observable:MSISDN": "31647934784",
                 "uco-observable:IMSI": "204080515881398"
@@ -80,6 +92,7 @@
         "@type": "uco-observable:File",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:file-facet-b6bc7e31-cb7b-49be-bdf9-74b4d5da2997",
                 "@type": "uco-observable:FileFacet",
                 "uco-observable:fileSystemType": "EXT3",
                 "uco-observable:extension": "db",
@@ -101,11 +114,13 @@
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
+                "@id": "kb:data-range-facet-cfcf2117-d3db-4fc7-90bc-947ee497dbd1",
                 "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 13751,
                 "uco-observable:rangeSize": null
             },
             {
+                "@id": "kb:table-relation-facet-859d7e32-9422-4d73-bbf2-7364da0c2fe9",
                 "@type": [
                     "drafting:TableRelationFacet",
                     "uco-core:Facet"

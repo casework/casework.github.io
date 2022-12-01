@@ -4,6 +4,7 @@
         "@type": "uco-observable:MobileDevice",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:device-facet-9e81040d-e62f-47d3-bcbb-c07bf0829afb",
                 "@type": "uco-observable:DeviceFacet",
                 "uco-observable:manufacturer": {
                     "@id": "kb:organization-fb6c05a0-b6be-4a10-ba62-0e7b1da4c0ec"
@@ -12,6 +13,7 @@
                 "uco-observable:serialNumber": "RF8H31GS5SF"
             },
             {
+                "@id": "kb:android-device-facet-bc0d3928-655c-4347-9b6b-c912972c8798",
                 "@type": "uco-observable:AndroidDeviceFacet",
                 "uco-observable:androidID": {
                     "@type": "xsd:hexBinary",
@@ -20,16 +22,26 @@
                 "uco-observable:androidFingerprint": "samsung/zeroltexx/zerolte:6.0.1/MMB29K/G925FXXU4DPIL"
             },
             {
+                "@id": "kb:mobile-device-facet-1a30ac69-04e1-4952-bedf-d4b25b7b1592",
                 "@type": "uco-observable:MobileDeviceFacet",
                 "uco-observable:bluetoothDeviceName": "Galaxy S6 edge",
                 "drafting:deviceActivationTime": "2018-06-10T14:31:30.00Z",
                 "drafting:locationsServicesEnabled": true,
-                "uco-observable:keypadUnlockCode": "__NOT_PROVIDED",
-                "uco-observable:IMEI": "356420075722843",
-                "uco-observable:clockSetting": "__NOT_PROVIDED",
-                "uco-observable:storageCapacityInBytes": "__NOT_PROVIDED"
+                "drafting:notProvided": [
+                    {
+                        "@id": "uco-observable:keypadUnlockCode"
+                    },
+                    {
+                        "@id": "uco-observable:clockSetting"
+                    },
+                    {
+                        "@id": "uco-observable:storageCapacityInBytes"
+                    }
+                ],
+                "uco-observable:IMEI": "356420075722843"
             },
             {
+                "@id": "kb:operating-system-facet-b55d7244-720f-4fb8-a4d3-2a26d407a353",
                 "@type": "uco-observable:OperatingSystemFacet",
                 "uco-core:name": "Android",
                 "uco-observable:manufacturer": {
@@ -39,10 +51,12 @@
                 "uco-observable:version": "6.0.1"
             },
             {
+                "@id": "kb:wifi-address-facet-047a5278-1e8a-4e38-b2f6-1b77894624b8",
                 "@type": "uco-observable:WifiAddressFacet",
                 "uco-observable:addressValue": "AC:5F:3E:73:E3:78"
             },
             {
+                "@id": "kb:bluetooth-address-facet-39287a41-e138-4550-a9b2-0382b231c845",
                 "@type": "uco-observable:BluetoothAddressFacet",
                 "uco-observable:addressValue": "D8:C4:E9:7C:2E:F8"
             }

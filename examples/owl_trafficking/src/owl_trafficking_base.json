@@ -29,8 +29,11 @@
                     "uco-core:name": "OWL_2017_0206001",
                     "case-investigation:focus": "Illegal trafficking (owls)",
                     "uco-core:description": "The subject mcavoy was arrested on suspicion of illegal trafficking of owls. His computer and smartphone were preserved as evidence.",
+                    "rdfs:comment": "TODO - uco-core:object to list more IRIs.",
                     "uco-core:object": [
-                        "(list of uuids)"
+                        {
+                            "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168"
+                        }
                     ]
                 }
             ]

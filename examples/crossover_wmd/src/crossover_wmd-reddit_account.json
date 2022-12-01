@@ -4,6 +4,7 @@
         "@type": "uco-observable:DigitalAccount",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:account-facet-dfe7da12-4956-40bd-8c64-315f21a0de80",
                 "@type": "uco-observable:AccountFacet",
                 "uco-observable:accountIssuer": {
                     "@id": "kb:organization-reddit-d5be6c8f-17ed-43fe-bc03-a5f79132f256"
@@ -12,6 +13,7 @@
                 "uco-observable:isActive": true
             },
             {
+                "@id": "kb:digital-account-facet-5c2fb3ea-669b-4948-85ab-77d874af8241",
                 "@type": "uco-observable:DigitalAccountFacet",
                 "uco-observable:displayName": "Ares Lupin",
                 "uco-observable:accountLogin": "aresthewerewolf",
@@ -21,6 +23,7 @@
                 }
             },
             {
+                "@id": "kb:account-authentication-facet-99704d04-bc9b-457f-80e4-19bf671fde01",
                 "@type": "uco-observable:AccountAuthenticationFacet",
                 "uco-observable:password": "v10j\u05af\ufffdH\ufffd\ufffdx\ufffd_\ufffd_o\ufffdi\ufffd"
             }
@@ -39,11 +42,13 @@
         "uco-core:isDirectional": true,
         "uco-core:hasFacet": [
             {
+                "@id": "kb:data-range-facet-e274824d-c0c2-4721-92dd-821e57327a98",
                 "@type": "uco-observable:DataRangeFacet",
                 "uco-observable:rangeOffset": 13751,
                 "uco-observable:rangeSize": null
             },
             {
+                "@id": "kb:table-relation-facet-def095e1-db25-4cca-a0f6-0d9e9ca4eebb",
                 "@type": [
                     "drafting:TableRelationFacet",
                     "uco-core:Facet"

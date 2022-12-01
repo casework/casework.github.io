@@ -14,11 +14,13 @@
             "@type": "uco-configuration:Configuration",
             "uco-configuration:configurationEntry": [
                 {
+                    "@id": "kb:configuration-entry-e2dbf1e8-4b9b-473d-8eb1-19e5e6c77aa3",
                     "@type": "uco-configuration:ConfigurationEntry",
                     "uco-configuration:itemName": "DeviceInfoConnectionType",
                     "uco-configuration:itemValue": "Cable No. 130"
                 },
                 {
+                    "@id": "kb:configuration-entry-ea526fc0-e542-49c0-87df-e7da1c97de50",
                     "@type": "uco-configuration:ConfigurationEntry",
                     "uco-configuration:itemName": "ExtractionType",
                     "uco-configuration:itemValue": "Physical"
@@ -73,10 +75,10 @@
         ],
         "uco-action:result": [
             {
-                "@id": "kb:provenancerecord-e64b7aed-cecb-4291-81d4-4adb5b8020b2"
+                "@id": "kb:provenance-record-e64b7aed-cecb-4291-81d4-4adb5b8020b2"
             },
             {
-                "@id": "kb:forensicimage-1fedf25f-e662-4dd0-8584-d5b7411acf47"
+                "@id": "kb:forensicimage-f3fd304e-ef6c-4cbd-94cb-425880f82748"
             }
         ]
     },
@@ -85,15 +87,6 @@
         "@type": "case-investigation:ProvenanceRecord",
         "uco-core:object": {
             "@id": "kb:mobiledevice-803df237-bc7e-4e24-a5cb-8157063014b4"
-        }
-    },
-    {
-        "@id": "kb:provenance-record-e64b7aed-cecb-4291-81d4-4adb5b8020b2",
-        "@type": "case-investigation:ProvenanceRecord",
-        "uco-core:description": "Forensic duplicate of mobile device used by Ares Lupin",
-        "case-investigation:exhibitNumber": "20181211001-002",
-        "uco-core:object": {
-            "@id": "kb:forensicimage-1fedf25f-e662-4dd0-8584-d5b7411acf47"
         }
     }
 ]

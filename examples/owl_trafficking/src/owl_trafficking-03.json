@@ -4,6 +4,7 @@
         "@type": "uco-observable:MobileDevice",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:device-facet-27755568-25ae-4db6-850c-ba97da0fd507",
                 "@type": "uco-observable:DeviceFacet",
                 "uco-observable:manufacturer": {
                     "@id": "kb:organization-lge-e7ae1d96-e054-44b5-9943-8da6515e8332"
@@ -15,6 +16,7 @@
                 "drafting:encryptionEnabled": false
             },
             {
+                "@id": "kb:android-device-facet-2b3356eb-0ce4-4671-a80b-7d5cead82a8c",
                 "@type": "uco-observable:AndroidDeviceFacet",
                 "uco-observable:androidID": {
                     "@type": "xsd:hexBinary",
@@ -23,6 +25,7 @@
                 "uco-observable:androidFingerprint": "lge\u2026"
             },
             {
+                "@id": "kb:boot-loader-facet-9ae7f2de-8f58-4bd6-b050-c30704ff7782",
                 "@type": [
                     "drafting:BootLoaderFacet",
                     "uco-core:Facet"
@@ -32,6 +35,7 @@
                 "drafting:buildDate": "2016-11-03T20:03:42.00Z"
             },
             {
+                "@id": "kb:mobile-device-facet-b03b6c7e-85f8-4a07-8069-e40e2f1a06fe",
                 "@type": "uco-observable:MobileDeviceFacet",
                 "uco-observable:bluetoothDeviceName": "Nexus5",
                 "drafting:deviceActivationTime": {
@@ -48,6 +52,7 @@
                 "uco-observable:storageCapacityInBytes": 31268536320
             },
             {
+                "@id": "kb:operating-system-facet-478dc553-2d39-45ff-8974-d3d1b8df7c75",
                 "@type": "uco-observable:OperatingSystemFacet",
                 "uco-core:name": "Android",
                 "uco-observable:manufacturer": {
@@ -57,10 +62,12 @@
                 "uco-observable:version": "6.0.1"
             },
             {
+                "@id": "kb:wifi-address-facet-57724dcb-18f7-4913-a659-64ca79336107",
                 "@type": "uco-observable:WifiAddressFacet",
                 "uco-observable:addressValue": "34:4d:f7:54:20:bb"
             },
             {
+                "@id": "kb:bluetooth-address-facet-d8e6290e-6abc-4efd-af81-8ea6ce8951a1",
                 "@type": "uco-observable:BluetoothAddressFacet",
                 "uco-observable:addressValue": "88:c9:d0:03:04:49"
             }
@@ -69,8 +76,12 @@
     {
         "@id": "kb:relationship-6d7a7a20-ca70-4f7f-994d-c2db39e08545",
         "@type": "uco-core:Relationship",
-        "uco-core:source": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168",
-        "uco-core:target": "kb:mobileaccount-4b3cdcbd-6a31-462f-be9b-1ca2944c8876",
+        "uco-core:source": {
+            "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168"
+        },
+        "uco-core:target": {
+            "@id": "kb:mobileaccount-4b3cdcbd-6a31-462f-be9b-1ca2944c8876"
+        },
         "uco-core:kindOfRelationship": "Has_Account",
         "uco-core:isDirectional": true
     }

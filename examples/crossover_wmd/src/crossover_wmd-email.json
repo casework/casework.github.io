@@ -4,6 +4,7 @@
         "@type": "uco-observable:EmailMessage",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:email-message-facet-6c0d5813-5557-481d-95f3-b5f660e3e102",
                 "@type": "uco-observable:EmailMessageFacet",
                 "uco-observable:application": {
                     "@id": "kb:gmail-a1ce9965-ba9c-4fa1-9bfe-58c68ecaadc5"
@@ -31,6 +32,7 @@
         "@id": "kb:contentdata-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d",
         "@type": "uco-observable:ContentData",
         "uco-core:hasFacet": {
+            "@id": "kb:content-data-facet-645a658d-efad-4671-9eb0-de1608c9d8e2",
             "@type": "uco-observable:ContentDataFacet",
             "uco-observable:dataPayload": "Excellent - we need all the help we can get. Sent from my Samsung Galaxy smartphone"
         }
@@ -40,6 +42,7 @@
         "@type": "uco-observable:EmailAddress",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:email-address-facet-154d38fe-b6cd-4c75-a930-8f983f25c626",
                 "@type": "uco-observable:EmailAddressFacet",
                 "uco-observable:addressValue": "badquinn3@gmail.com "
             }
@@ -50,10 +53,12 @@
         "@type": "uco-observable:EmailAccount",
         "uco-core:hasFacet": [
             {
+                "@id": "kb:digital-account-facet-4c39bdf1-0835-4be3-8bd8-e92160d4753b",
                 "@type": "uco-observable:DigitalAccountFacet",
                 "uco-observable:displayName": "Harley Quinn"
             },
             {
+                "@id": "kb:email-account-facet-c77b24e3-a373-4dbc-8837-380668a3247a",
                 "@type": "uco-observable:EmailAccountFacet",
                 "uco-observable:emailAddress": {
                     "@id": "kb:emailaddress-456a2bac-8c21-11e9-8902-0c4de9c24de5"
