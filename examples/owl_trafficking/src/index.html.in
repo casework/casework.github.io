@@ -58,7 +58,6 @@ jumbo_desc: CASE Narrative on Trafficking
 @QUERY_IMAGING_ACTION_SPARQL@
 {% endhighlight %}
 @QUERY_IMAGING_ACTION_HTML@
-
   </div>
 </div>
 
@@ -78,7 +77,6 @@ jumbo_desc: CASE Narrative on Trafficking
 @QUERY_HASH_VERIFICATION_SPARQL@
 {% endhighlight %}
 @QUERY_HASH_VERIFICATION_HTML@
-
   </div>
 </div>
 
