@@ -67,7 +67,15 @@ The procedure for adding a new narrative *that will have JSON-LD snippets* follo
 * A short Python script should be written to combine the snippets and base JSON files into the combined JSON-LD graph file.  (This step may be handled by a generic program in the future.)  See e.g. the combiners for [Asgard](examples/asgard/src/asgard_json.py) and [Owl Trafficking](examples/owl_trafficking/src/owl_trafficking_json.py).
 
 
-Note that to assure example base functionality, we expect each narrative to have its own JSON-LD passing through Continuous Integration.
+### CASE conformance
+
+Note that to assure example base functionality, we expect each narrative to have its own JSON-LD passing through Continuous Integration.  Continuous Integration calls `case_validate` to review data for conformance against the most recent published CASE version.  The `--allow-infos` flags permits "Info"-severity non-conformance issues (such as UCO individual IRIs ending without a UUID), but fails a conformance check on encountering a "Warning"-level or higher severity.  That is, the examples currently in this repository are all CASE-conformant, and ongoing testing requires new examples are also CASE conformant.
+
+The Cyber Domain Ontology welcomes any questions about ontology-conformance issues on the respective issue tracker:
+
+* [UCO's](https://github.com/ucoProject/UCO/issues)
+* [CASE's](https://github.com/casework/CASE/issues)
+* [The CASE website's](https://github.com/casework/casework.github.io/issues)
 
 
 ### Handling draft ontology concepts
