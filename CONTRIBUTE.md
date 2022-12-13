@@ -17,9 +17,9 @@ That is, a fresh repository clone should not see any output of `git diff` after 
 
 If you have a JSON-LD narrative to edit or contribute, please review this section's directions.
 
-The CASE website makes some trades from ease of development for the sake of presentation with static, version-controlled files.  The narrative pages are backed by JSON snippets, as inline data samples and as functional JSON-LD data.  Each narrative has a file named after its directory's basename, e.g. [`urgent_evidence.json`](examples/urgent_evidence/urgent_evidence.json); this file is also backed by those JSON snippets.  Further, that composite JSON-LD file also backs queries that support the README.
+The CASE website makes some trades from ease of development for the sake of presentation with static, version-controlled files.  `make` is used to compile HTML and aggregated JSON files from source files.  This is because the narrative pages are backed by JSON snippets, as inline data samples, and as functional JSON-LD data.  Each narrative has a file named after its directory's basename, e.g. [`urgent_evidence.json`](examples/urgent_evidence/urgent_evidence.json); this file is also backed by those JSON snippets.  Further, that composite JSON-LD file also backs queries that support the README.
 
-`make` handles compiling the README and its supporting files.  So, to edit a narrative's `index.html`, **don't edit index.html**.  Likewise for the JSON snippet file.  Instead, a source file should be edited, and `make` should be run to build all the "Downstream" affected files.
+To edit a narrative's `index.html`, **don't edit index.html**, because that file is generated; instead, edit `index.html.in` (e.g. [here](examples/urgent_evidence/src/index.html.in) is the Urgent Evidence's template `index.html.in` file).  Likewise for the compiled JSON file:  Instead, a source file should be edited.  After editing, `make` should be run to build all the "Downstream" affected files.
 
 
 ### Before working with narratives
