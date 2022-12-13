@@ -17,9 +17,9 @@ That is, a fresh repository clone should not see any output of `git diff` after 
 
 If you have a JSON-LD narrative to edit or contribute, please review this section's directions.
 
-The CASE website makes some trades from ease of development for the sake of presentation with static, version-controlled files.  The narrative pages are backed by JSON snippets, as inline data samples and as functional JSON-LD data.  Each narrative has a file named after its directory's basename, e.g. [`urgent_evidence.json`](examples/urgent_evidence/urgent_evidence.json); this file is also backed by those JSON snippets.  Further, that composite JSON-LD file also backs one (and soon to be more) queries that support the README.
+The CASE website makes some trades from ease of development for the sake of presentation with static, version-controlled files.  `make` is used to compile HTML and aggregated JSON files from source files.  This is because the narrative pages are backed by JSON snippets, as inline data samples, and as functional JSON-LD data.  Each narrative has a file named after its directory's basename, e.g. [`urgent_evidence.json`](examples/urgent_evidence/urgent_evidence.json); this file is also backed by those JSON snippets.  Further, that composite JSON-LD file also backs queries that support the README.
 
-`make` handles compiling the README and its supporting files.  So, to edit a narrative's `index.html`, **don't edit index.html**.  Likewise for the JSON snippet file.  Instead, a source file should be edited, and `make` should be run to build all the "Downstream" affected files.
+To edit a narrative's `index.html`, **don't edit index.html**, because that file is generated; instead, edit `index.html.in` (e.g. [here](examples/urgent_evidence/src/index.html.in) is the Urgent Evidence's template `index.html.in` file).  Likewise for the compiled JSON file:  Instead, a source file should be edited.  After editing, `make` should be run to build all the "Downstream" affected files.
 
 
 ### Before working with narratives
@@ -30,7 +30,7 @@ To start the editing process:
 
 * Use Git to clone [the website repository](https://github.com/casework/casework.github.io/).
 * Change directory to the cloned directory.
-* Run `make check`.  Resources will download, some code will build, and unit tests will run.  Administrator privileges will not be necessary.
+* Run `make check`.  Resources will download, some code will build, and unit tests will run.  Administrator privileges will not be necessary.  `make -j` will run this first step in parallel.
 
 After running `make check`, you will have confirmed you are starting from a functioning state with tests passing.
 
@@ -63,12 +63,19 @@ Following the name scheme `$(example_name)-*.json` and `query-*.sparql` and the 
 
 The procedure for adding a new narrative *that will have JSON-LD snippets* follows the procedure for editing an existing narrative, though with two additional setup steps:
 
-* The Makefile in `examples/` needs to have the new narrative added to its build chains.  Copy and paste lines corresponding to any other narrative.  (Note we provide `all`, `check`, and `clean` targets, and also add lines to `.PHONY`.)
 * The new narrative should have a Makefile copied from any sibling narrative-directory, and likewise for the new narrative's `src/` directory.  Note the two Makefiles are written in a bare, "Pass-through" manner to call a more complex shared Makefile.
 * A short Python script should be written to combine the snippets and base JSON files into the combined JSON-LD graph file.  (This step may be handled by a generic program in the future.)  See e.g. the combiners for [Asgard](examples/asgard/src/asgard_json.py) and [Owl Trafficking](examples/owl_trafficking/src/owl_trafficking_json.py).
 
 
-Note that to assure example base functionality, we expect each narrative to have its own JSON-LD passing through Continuous Integration.
+### CASE conformance
+
+Note that to assure example base functionality, we expect each narrative to have its own JSON-LD passing through Continuous Integration.  Continuous Integration calls `case_validate` to review data for conformance against the most recent published CASE version.  The `--allow-infos` flags permits "Info"-severity non-conformance issues (such as UCO individual IRIs ending without a UUID), but fails a conformance check on encountering a "Warning"-level or higher severity.  That is, the examples currently in this repository are all CASE-conformant, and ongoing testing requires new examples are also CASE conformant.
+
+The Cyber Domain Ontology welcomes any questions about ontology-conformance issues on the respective issue tracker:
+
+* [UCO's](https://github.com/ucoProject/UCO/issues)
+* [CASE's](https://github.com/casework/CASE/issues)
+* [The CASE website's](https://github.com/casework/casework.github.io/issues)
 
 
 ### Handling draft ontology concepts
