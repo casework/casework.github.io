@@ -8,37 +8,21 @@
 
 []
 	a sh:ValidationReport ;
-	sh:conforms "false"^^xsd:boolean ;
-	sh:result
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/account-facet-31df5a8a-fb9f-4fa6-85f9-cea13f4b9f03> ;
-			sh:resultMessage "Value is outside the default vocabulary AccountTypeVocab." ;
-			sh:resultPath uco-observable:accountType ;
-			sh:resultSeverity sh:Info ;
-			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-			sh:sourceShape [
-				sh:datatype vocabulary:AccountTypeVocab ;
-				sh:message "Value is outside the default vocabulary AccountTypeVocab." ;
-				sh:path uco-observable:accountType ;
-				sh:severity sh:Info ;
-			] ;
-			sh:value "Phone" ;
-		] ,
-		[
-			a sh:ValidationResult ;
-			sh:focusNode <http://example.org/kb/mobile-device-facet-20e46067-250b-4a09-a829-5a15cbcfd6c9> ;
-			sh:resultMessage "Deprecation notice: the value referenced by observable:storageCapacityInBytes will be required to be stored in observable:totalStorageCapacityInBytes in UCO 2.0.0."@en ;
-			sh:resultPath uco-observable:storageCapacityInBytes ;
-			sh:resultSeverity sh:Warning ;
-			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
-			sh:sourceShape [
-				sh:maxCount "0"^^xsd:integer ;
-				sh:message "Deprecation notice: the value referenced by observable:storageCapacityInBytes will be required to be stored in observable:totalStorageCapacityInBytes in UCO 2.0.0."@en ;
-				sh:path uco-observable:storageCapacityInBytes ;
-				sh:severity sh:Warning ;
-			] ;
-		]
-		;
+	sh:conforms "true"^^xsd:boolean ;
+	sh:result [
+		a sh:ValidationResult ;
+		sh:focusNode <http://example.org/kb/account-facet-31df5a8a-fb9f-4fa6-85f9-cea13f4b9f03> ;
+		sh:resultMessage "Value is outside the default vocabulary AccountTypeVocab." ;
+		sh:resultPath uco-observable:accountType ;
+		sh:resultSeverity sh:Info ;
+		sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+		sh:sourceShape [
+			sh:datatype vocabulary:AccountTypeVocab ;
+			sh:message "Value is outside the default vocabulary AccountTypeVocab." ;
+			sh:path uco-observable:accountType ;
+			sh:severity sh:Info ;
+		] ;
+		sh:value "Phone" ;
+	] ;
 	.
 
