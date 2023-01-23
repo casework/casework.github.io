@@ -7,6 +7,7 @@
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "uco-action": "https://ontology.unifiedcyberontology.org/uco/action/",
+        "uco-configuration": "https://ontology.unifiedcyberontology.org/uco/configuration/",
         "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
         "uco-identity": "https://ontology.unifiedcyberontology.org/uco/identity/",
         "uco-location": "https://ontology.unifiedcyberontology.org/uco/location/",
@@ -76,21 +77,25 @@
                 "@type": "uco-configuration:Configuration",
                 "uco-configuration:configurationEntry": [
                     {
+                        "@id": "kb:configuration-entry-7871463a-558f-439b-a883-7715c0c7f098",
                         "@type": "uco-configuration:ConfigurationEntry",
                         "uco-configuration:itemName": "Mode",
                         "uco-configuration:itemValue": "DriveToFile"
                     },
                     {
+                        "@id": "kb:configuration-entry-cc729420-2155-43d9-ade5-15c146eea55d",
                         "@type": "uco-configuration:ConfigurationEntry",
                         "uco-configuration:itemName": "Method",
                         "uco-configuration:itemValue": "E01Capture"
                     },
                     {
+                        "@id": "kb:configuration-entry-d29f59be-8fe3-4ecf-a8ae-4f975e09b5eb",
                         "@type": "uco-configuration:ConfigurationEntry",
                         "uco-configuration:itemName": "Hash",
                         "uco-configuration:itemValue": "SHA-1+MD5"
                     },
                     {
+                        "@id": "kb:configuration-entry-d4202748-bd26-425f-add1-c31d16b64f0a",
                         "@type": "uco-configuration:ConfigurationEntry",
                         "uco-configuration:itemName": "SegmentSize",
                         "uco-configuration:itemValue": "4GB"
