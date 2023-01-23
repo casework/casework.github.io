@@ -14,16 +14,19 @@
             "@type": "uco-configuration:Configuration",
             "uco-configuration:configurationEntry": [
                 {
+                    "@id": "kb:configuration-entry-3345eee3-7d8d-4378-95f2-30b8ca631e30",
                     "@type": "uco-configuration:ConfigurationEntry",
                     "uco-configuration:itemName": "Mode",
                     "uco-configuration:itemValue": "DriveToFile"
                 },
                 {
+                    "@id": "kb:configuration-entry-43c509fc-8755-410a-97e7-a6001d3a3f61",
                     "@type": "uco-configuration:ConfigurationEntry",
                     "uco-configuration:itemName": "Method",
                     "uco-configuration:itemValue": "E01Capture"
                 },
                 {
+                    "@id": "kb:configuration-entry-7bcf9625-cdf4-4cd9-8fc5-b70987abb20c",
                     "@type": "uco-configuration:ConfigurationEntry",
                     "uco-configuration:itemName": "Hash",
                     "uco-configuration:itemValue": "SHA-1+MD5"
