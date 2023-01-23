@@ -19,7 +19,7 @@
         "xsd": "http://www.w3.org/2001/XMLSchema#"
     },
     "@id": "kb:bundle-5db141fc-597b-4771-bea5-b9605292d2ed",
-    "@type": "uco-case:Bundle",
+    "@type": "uco-core:Bundle",
     "uco-core:description": "HARD DISK DA 1TB CONTENUTO NEL PC MARCA ACER DENOMINATO R14_ACER",
     "uco-core:object": [
         {
