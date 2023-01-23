@@ -1,0 +1,123 @@
+[
+    {
+        "uco-core:hasFacet": [
+            {
+                "@id": "kb:file-facet-929bcdfd-ca54-4df7-989a-6b7206b8661e",
+                "uco-observable:accessedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-11-18T22:53:09Z"
+                },
+                "uco-observable:extension": "docx",
+                "uco-observable:fileName": "thebatletter.docx",
+                "uco-observable:filePath": "/thebatletter.docx",
+                "uco-observable:isDirectory": false,
+                "uco-observable:sizeInBytes": 11633,
+                "@type": "uco-observable:FileFacet",
+                "uco-observable:observableCreatedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-11-18T22:53:09Z"
+                },
+                "uco-observable:modifiedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-11-18T21:30:48Z"
+                }
+            }
+        ],
+        "@id": "kb:File-ed7c30a2-e233-4732-adee-8514955b6dfb",
+        "@type": "uco-observable:File"
+    },
+    {
+        "@id": "kb:b3a202b4-ee2b-4f26-9a31-6d10801524e7",
+        "@type": "uco-observable:ObservableRelationship",
+        "uco-core:source": {
+            "@id": "kb:File-ed7c30a2-e233-4732-adee-8514955b6dfb"
+        },
+        "uco-core:target": {
+            "@id": "kb:usb-b2dbb227-06ec-432d-9f63-058e8ab73944"
+        },
+        "uco-core:kindOfRelationship": "contained-within",
+        "uco-core:isDirectional": true
+    },
+    {
+        "@id": "kb:content-2ea73bc6-801a-47ff-a8fa-837c226bfa14",
+        "@type": [
+            "uco-observable:ContentData",
+            "uco-observable:RecoveredObject"
+        ],
+        "uco-core:hasFacet": [
+            {
+                "@id": "kb:recovered-object-facet-0a916246-a9a0-43ad-a158-ae76cc2c1bb7",
+                "@type": "uco-observable:RecoveredObjectFacet",
+                "uco-observable:contentRecoveredStatus": {
+                    "@type": "uco-vocabulary:RecoveredObjectStatusVocab",
+                    "@value": "recovered"
+                },
+                "uco-observable:metadataRecoveredStatus": {
+                    "@type": "uco-vocabulary:RecoveredObjectStatusVocab",
+                    "@value": "recovered"
+                },
+                "uco-observable:nameRecoveredStatus": {
+                    "@type": "uco-vocabulary:RecoveredObjectStatusVocab",
+                    "@value": "recovered"
+                }
+            },
+            {
+                "@id": "kb:content-data-facet-17d9f5ea-d00b-4130-866f-e7399332ae5e",
+                "@type": "uco-observable:ContentDataFacet",
+                "uco-observable:byteOrder": {
+                    "@type": "uco-vocabulary:EndiannessTypeVocab",
+                    "@value": "Big-endian"
+                },
+                "uco-observable:sizeInBytes": 11633,
+                "uco-observable:mimeType": "application/application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                "uco-observable:hash": [
+                    {
+                        "@id": "kb:hash-adece2a7-0017-5e25-be76-f6b78386186b",
+                        "@type": "uco-types:Hash",
+                        "rdfs:comment": "TODO: From the hash length, the algorithm appears to be MD5, not SHA2-256.",
+                        "uco-types:hashMethod": {
+                            "@type": "uco-vocabulary:HashNameVocab",
+                            "@value": "SHA256"
+                        },
+                        "uco-types:hashValue": {
+                            "@type": "xsd:hexBinary",
+                            "@value": "701ad15009b0e79af524336f7d069ed1"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "@id": "kb:Relationship-e4b416ed-4e02-4ecd-bd4d-d57ec485a37e",
+        "@type": "uco-observable:ObservableRelationship",
+        "uco-core:source": {
+            "@id": "kb:content-2ea73bc6-801a-47ff-a8fa-837c226bfa14"
+        },
+        "uco-core:target": {
+            "@id": "kb:usb-b2dbb227-06ec-432d-9f63-058e8ab73944"
+        },
+        "uco-core:kindOfRelationship": "Contained_Within",
+        "uco-core:isDirectional": true,
+        "uco-core:hasFacet": [
+            {
+                "@id": "kb:data-range-facet-9bd1e773-0e69-4c21-b168-c05c834dd756",
+                "@type": "uco-observable:DataRangeFacet",
+                "uco-observable:rangeOffset": 9994240,
+                "uco-observable:rangeSize": 11633
+            }
+        ]
+    },
+    {
+        "@id": "kb:Relationship-59a90c3f-12a9-4ed4-b175-2e56b75abd74",
+        "@type": "uco-observable:ObservableRelationship",
+        "uco-core:source": {
+            "@id": "kb:content-2ea73bc6-801a-47ff-a8fa-837c226bfa14"
+        },
+        "uco-core:target": {
+            "@id": "kb:File-ed7c30a2-e233-4732-adee-8514955b6dfb"
+        },
+        "uco-core:kindOfRelationship": "Contained-Within",
+        "uco-core:isDirectional": true
+    }
+]

@@ -1,0 +1,41 @@
+[
+    {
+        "@id": "kb:lnkfile-487b236d-e75d-467e-9c6d-dad2d12cf94e",
+        "@type": "uco-observable:File",
+        "uco-core:hasFacet": [
+            {
+                "uco-observable:accessedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-11-19T00:29:15Z"
+                },
+                "uco-observable:extension": "lnk",
+                "uco-observable:fileName": "Thebatplan.lnk",
+                "uco-observable:filePath": "/img_image.E01/vol_vol3/Users/Harley Quinn/AppData/Roaming/Microsoft/Windows/Recent/Thebatplan.lnk",
+                "uco-observable:isDirectory": false,
+                "uco-observable:sizeInBytes": 508,
+                "@id": "kb:file-facet-b221fe82-47e7-4a49-81a3-7ba6d3b438a8",
+                "@type": "uco-observable:FileFacet",
+                "uco-observable:observableCreatedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-11-19T00:29:15Z"
+                },
+                "uco-observable:modifiedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-11-19T00:29:15Z"
+                }
+            }
+        ]
+    },
+    {
+        "@id": "kb:Relationship-f0505f2a-5de0-4651-9486-16746758f6c8",
+        "@type": "uco-observable:ObservableRelationship",
+        "uco-core:source": {
+            "@id": "kb:lnkfile-487b236d-e75d-467e-9c6d-dad2d12cf94e"
+        },
+        "uco-core:target": {
+            "@id": "kb:harddrive-partition2-e3f25b0b-37bf-4111-bae3-d355aff3c8a2"
+        },
+        "uco-core:kindOfRelationship": "Contained-Within",
+        "uco-core:isDirectional": true
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "@id": "kb:lnk1-relationship-a1dbff0e-974b-4295-b035-e1bc3271945d",
+        "@type": "uco-observable:ObservableRelationship",
+        "uco-core:source": {
+            "@id": "kb:file-d87ecfcb-006c-46e6-a973-e756ee4d4f70"
+        },
+        "uco-core:target": {
+            "@id": "kb:lnkfile-487b236d-e75d-467e-9c6d-dad2d12cf94e"
+        },
+        "uco-core:kindOfRelationship": "Referenced_Within",
+        "uco-core:isDirectional": true
+    }
+]
