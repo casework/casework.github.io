@@ -1,0 +1,41 @@
+[
+    {
+        "uco-core:hasFacet": [
+            {
+                "uco-observable:accessedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-11-19T00:23:50Z"
+                },
+                "uco-observable:extension": "lnk",
+                "uco-observable:fileName": "thebatletter.lnk",
+                "uco-observable:filePath": "/img_image.E01/vol_vol3/Users/Harley Quinn/AppData/Roaming/Microsoft/Windows/Recent/thebatletter.lnk",
+                "uco-observable:isDirectory": false,
+                "uco-observable:sizeInBytes": 535,
+                "@id": "kb:file-facet-16b6a9f9-0b3d-4b7a-9c61-6859e7ca7e45",
+                "@type": "uco-observable:FileFacet",
+                "uco-observable:observableCreatedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-11-19T00:23:50Z"
+                },
+                "uco-observable:modifiedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-11-19T00:23:50Z"
+                }
+            }
+        ],
+        "@id": "kb:lnkfile-f3c23080-0236-4ee7-83e7-cccc5fa06ee0",
+        "@type": "uco-observable:File"
+    },
+    {
+        "@id": "kb:Relationship-e29bbd14-396d-48d4-abbf-acdfd346ca64",
+        "@type": "uco-observable:ObservableRelationship",
+        "uco-core:source": {
+            "@id": "kb:lnkfile-f3c23080-0236-4ee7-83e7-cccc5fa06ee0"
+        },
+        "uco-core:target": {
+            "@id": "kb:harddrive-partition2-e3f25b0b-37bf-4111-bae3-d355aff3c8a2"
+        },
+        "uco-core:kindOfRelationship": "contained-within",
+        "uco-core:isDirectional": true
+    }
+]

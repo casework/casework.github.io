@@ -1,0 +1,141 @@
+---
+<!-- layout: releases -->
+title: Crossover CASE - Heist
+jumbo_desc:
+---
+
+<h2>Crossover CASE - Heist</h2>
+
+<p>This document uses CASE to represent digital evidence extracted from storage media, specifically a USB storage device and a Windows system. The physical images and scenario introduction can be downloaded from the following location: <a href="https://drive.switch.ch/index.php/s/0c7BiyQZRKOtMMq">https://drive.switch.ch/index.php/s/0c7BiyQZRKOtMMq</a>.</p>
+
+<p>The JSON-LD data on this page are available combined in the file <a href="crossover_heist.json">crossover_heist.json</a>.</p>
+
+<p>The index of scenario portions is <a href="../crossover/">here</a>.</p>
+
+
+<h3>Investigation 1 Background</h3>
+
+<p>On 19 November 2018, at 14:18 (CET), three armed suspects entered a bank (Place de St-François 16, 1003 Lausanne). They blew up the safe and took the money inside. Several people were slightly injured. Witnesses say that the suspects fled northwest toward Place Chaudron in a car. The car was found 40 minutes later near the Lausanne-Blécherette airport. No physical traces were found in the vehicle, except for a USB key. A copy of the USB key was done on site by the investigators. No images were available from the surveillance cameras. Analysis of the bank’s system indicates that they were hacked a few minutes before the heist (19 November 2018 at 14:03 CET).</p>
+
+<p>An IP address was found during the analysis. It was attributed to an apartment on the campus of the University of Lausanne. On 20 November 2018 at 10:00 CET, a search of the apartment led to the arrest of Mr. Joker and the seizure of a computer sitting in the living room. Mr. Joker was questioned and said he knew nothing about the heist. He also said that he lives with Mrs. Quinn. She was not present during the search and was not arrested. He said that she left the house early in the morning.</p>
+
+
+<h3>Disclaimers</h3>
+
+<p>Participation by contributors in the creation of the documentation of mentioned software is not intended to imply a recommendation or endorsement by the United States Government nor any of the contributors' employers, nor is it intended to imply that any specific software is necessarily the best available for the purpose.</p>
+
+<p>Events, locations, tools, and people represented in this and other CASE narratives are presented, and at many times created, for illustration purposes only and do not necessarily represent real events, locations, tools, or people.</p>
+
+<h3>USB DEVICE PROVENANCE AND INTEGRITY</h3>
+
+<p>The initial step of the digital forensic analysis is to assess the provenance and integrity of the digital evidence and to examine device characteristics and identifiers. The overall CASE bundle provides context for the digital evidence.</p>
+
+<h4>CASE Representation of Investigation</h4>
+
+{% highlight json %}
+@CROSSOVER_HEIST_BASE_JSON@
+{% endhighlight %}
+
+
+<h3>INVESTIGATIVE ACTIONS</h3>
+
+<p>Representation of USB forensic acquisition using Tableau.</p>
+
+{% highlight json %}
+@CROSSOVER_HEIST_ACQUISITION_JSON@
+{% endhighlight %}
+
+<p>The forensic acquisition of the hard drive can be represented in a similar manner and its partition structure can be represented and represented using CASE. In this investigation, the hard drive was acquired using Tableau and split into multiple parts. An example of CASE representation for a different tool is available in this [Hardware Duplicator Example](https://caseontology.org/examples/hardware_duplicator/).</p>
+
+
+<h3>RECOVERED FILE SYSTEM AND CONTENT</h3>
+
+When a tool is used to recover file system metadata and content from storage media, the execution of that process can be represented as an Investigative Action in CASE similar to the above example.
+
+The recovered file system metadata and content can be represented as Observable Objects in CASE.
+
+
+<h4>Links Between USB Device and Hard Drive</h4>
+
+<p>Various links between the USB device and hard drive can be represented using CASE, including LNK shortcuts and Registry key entries.
+
+<p>All of these links are in the user account context "Harley Quinn" connecting the USB device to the user of that account.
+
+<p>Recent LNK files on Windows contain metadata for a target file that was recently opened by the user, providing a shortcut link for ease of reopening.
+
+<p>Thebatplan.lnk file on the hard drive represented using CASE:</p>
+
+{% highlight json %}
+@CROSSOVER_HEIST_USB_HDD_LINKS_HDD_FILE_JSON@
+{% endhighlight %}
+
+<p>The LNK file "Users/Harley Quinn/AppData/Roaming/Microsoft/Windows/Recent/Thebatplan.lnk" on the hard drive references a file on USB device "D:\Thebatplan" that contains a floor plan. The metadata captured in the LNK file are all 2018-11-18T22:53:09Z. The LNK file creation and modification timestamps are 2018-11-19T00:29:15Z indicating that the file was opened once at this time.</p>
+
+{% highlight json %}
+@CROSSOVER_HEIST_USB_HDD_LINKS_REFERENCE_RELATIONSHIP_JSON@
+{% endhighlight %}
+
+<p>Thebatplan file on the USB device referenced in the Thebatplan.lnk file:</p>
+
+{% highlight json %}
+@CROSSOVER_HEIST_USB_HDD_LINKS_USB_THEBATPLAN_JSON@
+{% endhighlight %}
+
+<p>Another LNK file on the hard drive:</p>
+
+{% highlight json %}
+@CROSSOVER_HEIST_USB_HDD_LINKS_HDD_THEBATLETTER_LNK_JSON@
+{% endhighlight %}
+
+<p>The thebatletter.docx file referenced in the LNK file is no longer in allocated state on the USB device. However, the content of the document can be recovered using file carving methods. The metadata from the LNK file can be related to the carved document. In this instance, the ground truth is known and the relationship is certain.</p>
+
+{% highlight json %}
+@CROSSOVER_HEIST_USB_HDD_LINKS_RECOVERY_JSON@
+{% endhighlight %}
+
+<p>Another LNK file on the hard drive:</p>
+
+{% highlight json %}
+@CROSSOVER_HEIST_USB_HDD_LINKS_HDD_WOW_LNK_JSON@
+{% endhighlight %}
+
+
+<h4>Web Browser History</h4>
+
+<p>On the hard drive, a URL history entry in WebCacheV01.dat referencing wow.jpg file on USB device:
+
+{% highlight json %}
+@CROSSOVER_HEIST_WEB_BROWSER_HISTORY_WOW_USB_JSON@
+{% endhighlight %}
+
+<p>The referenced file on the USB drive:</p>
+
+{% highlight json %}
+@CROSSOVER_HEIST_WEB_BROWSER_HISTORY_USB_FILE_JSON@
+{% endhighlight %}
+
+
+<h4>Windows Registry</h4>
+
+<p>Registry keys associated with removable USB devices contain manufacturer and model information (VID and PID) as well as the serial number that must be parsed and represented. In the Crossover scenario, the 001D7D06CF09ED91D97F1B1B  key under the SYSTEM Registry hive "SYSTEM/ControlSet001/Enum/USB/" has a last modification timestamp and refers to a "Kingston DataTraveler 102/2.0 / HEMA Flash Drive 2 GB / PNY Attache 4GB Stick" manufactured by Toshiba with serial number 001D7D06CF09ED91D97F1B1B.</p>
+
+<p>A Registry hive can be treated as a volume contained within a file as represented here using the remnants of USB device usage in the SYSTEM Registry as an example:</p>
+
+{% highlight json %}
+@CROSSOVER_HEIST_WINDOWS_REGISTRY_HIVE_JSON@
+{% endhighlight %}
+
+<p>Note that this use of a <code>Contained_Within</code> relationship is analogous to how a file system is contained within an image of a disk partition.</p>
+
+<p>In the same way that some file systems treat both directories and regular files as files, a Registry key and value can both be treated as files (a.k.a. cells) within a hive.</p>
+
+{% highlight json %}
+@CROSSOVER_HEIST_WINDOWS_REGISTRY_KEY_RELATIONSHIP_JSON@
+{% endhighlight %}
+
+
+<h3>REPRESENTING EMAIL</h3>
+
+{% highlight json %}
+@CROSSOVER_HEIST_REPRESENTING_EMAIL_JSON@
+{% endhighlight %}

@@ -1,0 +1,58 @@
+[
+    {
+        "@id": "kb:EmailAddress-d2bc0936-e1c5-4b55-8a1b-af2b3a2b145c",
+        "@type": "uco-observable:EmailAddress",
+        "uco-core:hasFacet": {
+            "@id": "kb:email-address-facet-20454f34-043e-48fc-bb66-dcf91aa11a5c",
+            "@type": "uco-observable:EmailAddressFacet",
+            "uco-observable:addressValue": "aresthewerewolf@gmail.com <aresthewerewolf>"
+        }
+    },
+    {
+        "@id": "kb:EmailAccount-ca4bc5e3-33a7-4457-b106-d0213e248979",
+        "@type": "uco-observable:EmailAccount",
+        "uco-core:hasFacet": {
+            "@id": "kb:email-address-facet-9e20866a-4533-4d02-9aa5-cc563299315f",
+            "@type": "uco-observable:EmailAddressFacet",
+            "uco-observable:emailAddress": {
+                "@id": "kb:EmailAddress-5f63c12b-115a-474f-b1b2-15ebdb2fce31"
+            }
+        }
+    },
+    {
+        "@id": "kb:EmailAddress-5f63c12b-115a-474f-b1b2-15ebdb2fce31",
+        "@type": "uco-observable:EmailAddress",
+        "uco-core:hasFacet": {
+            "@id": "kb:email-address-facet-f0081a6a-3c18-47d5-87bf-6367d30d2c8c",
+            "@type": "uco-observable:EmailAddressFacet",
+            "uco-observable:addressValue": "badquinn3@gmail.com"
+        }
+    },
+    {
+        "@id": "kb:EmailMessage-c5efd42c-d771-43aa-afe5-6b30740348e3",
+        "@type": "uco-observable:EmailMessage",
+        "uco-core:hasFacet": [
+            {
+                "@id": "kb:email-message-facet-f57e953c-95af-437d-b115-94585eb0ac13",
+                "@type": "uco-observable:EmailMessageFacet",
+                "uco-observable:body": "",
+                "uco-observable:from": {
+                    "@id": "kb:EmailAddress-d2bc0936-e1c5-4b55-8a1b-af2b3a2b145c"
+                },
+                "uco-observable:isRead": true,
+                "uco-observable:messageID": "2320dc68-65a3-4f05-8884-945992231a1e",
+                "uco-observable:sender": {
+                    "@id": "kb:EmailAddress-d2bc0936-e1c5-4b55-8a1b-af2b3a2b145c"
+                },
+                "uco-observable:sentTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-11-20T00:00:30+00:00"
+                },
+                "uco-observable:subject": "Bank transfer ?",
+                "uco-observable:to": {
+                    "@id": "kb:EmailAccount-ca4bc5e3-33a7-4457-b106-d0213e248979"
+                }
+            }
+        ]
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "@id": "kb:Relationship-d974c54f-60de-46af-b0fd-a19704543785",
+        "@type": "uco-observable:ObservableRelationship",
+        "uco-core:source": {
+            "@id": "kb:WindowsRegistryKey-684af874-4c95-4be9-9c58-3eda29b94443"
+        },
+        "uco-core:target": {
+            "@id": "kb:File-61082f03-46ed-4bc7-a7c9-571754ffcb60"
+        },
+        "uco-core:kindOfRelationship": "Contained_Within",
+        "uco-core:isDirectional": true
+    },
+    {
+        "@id": "kb:WindowsRegistryKey-684af874-4c95-4be9-9c58-3eda29b94443",
+        "@type": "uco-observable:WindowsRegistryKey",
+        "uco-core:hasFacet": [
+            {
+                "@id": "kb:windows-registry-key-facet-840333f7-e6b8-415e-b08e-8b33cc7dcc90",
+                "@type": "uco-observable:WindowsRegistryKeyFacet",
+                "uco-observable:key": "SYSTEM/ControlSet001/Enum/USB/VID_0781&PID_5575/001D7D06CF09ED91D97F1B1B",
+                "uco-observable:modifiedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2017-02-02T22:38:09.00Z"
+                },
+                "uco-observable:numberOfSubkeys": 2
+            }
+        ]
+    }
+]

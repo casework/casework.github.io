@@ -1,0 +1,18 @@
+[
+    {
+        "@id": "kb:harddrive-partition2-e3f25b0b-37bf-4111-bae3-d355aff3c8a2",
+        "@type": "uco-observable:DiskPartition"
+    },
+    {
+        "@id": "kb:hash-128996fc-3823-54a5-9ca4-cf6e21fca62f",
+        "@type": "uco-types:Hash",
+        "uco-types:hashMethod": {
+            "@type": "uco-vocabulary:HashNameVocab",
+            "@value": "SHA1"
+        },
+        "uco-types:hashValue": {
+            "@type": "xsd:hexBinary",
+            "@value": "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"
+        }
+    }
+]

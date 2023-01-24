@@ -1,0 +1,99 @@
+[
+    {
+        "@id": "kb:url-def4ae18-9181-4cce-8f5f-a9aba022b98b",
+        "@type": "uco-observable:URL",
+        "uco-core:hasFacet": [
+            {
+                "@id": "kb:url-facet-37438f61-d440-429a-ab30-9fc9b2464274",
+                "@type": "uco-observable:URLFacet",
+                "uco-observable:fullValue": "file:///D:/wow.jpg"
+            },
+            {
+                "uco-observable:value": "",
+                "@id": "kb:domain-name-facet-b05e0e6b-deb0-4989-8214-d6d2b99ef1ea",
+                "@type": "uco-observable:DomainNameFacet"
+            }
+        ]
+    },
+    {
+        "uco-core:source": {
+            "@id": "kb:url-def4ae18-9181-4cce-8f5f-a9aba022b98b"
+        },
+        "uco-core:target": {
+            "@id": "kb:file-webcache-12c51c62-e5e2-4018-ac45-e0e69e36573f"
+        },
+        "uco-core:kindOfRelationship": "contained-within",
+        "uco-core:isDirectional": true,
+        "@id": "kb:Relationship-47601a3c-d962-4e3a-b90d-fa2bad7a0be3",
+        "@type": "uco-observable:ObservableRelationship"
+    },
+    {
+        "@id": "kb:file-webcache-12c51c62-e5e2-4018-ac45-e0e69e36573f",
+        "@type": "uco-observable:ObservableObject"
+    },
+    {
+        "@id": "kb:ApplicationAccount-580d7253-5086-41a5-b788-69e3ceaa4bae",
+        "@type": "uco-observable:ApplicationAccount",
+        "uco-core:hasFacet": [
+            {
+                "@id": "kb:application-account-facet-b26e6f07-0436-48ca-8d39-2e7dafd055ec",
+                "@type": "uco-observable:ApplicationAccountFacet",
+                "uco-observable:displayName": "Harley Quinn"
+            }
+        ]
+    },
+    {
+        "@type": "uco-observable:Application",
+        "@id": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38",
+        "uco-core:hasFacet": [
+            {
+                "uco-observable:applicationIdentifier": "Microsoft Edge",
+                "@id": "kb:application-facet-ed282901-6700-419b-9a03-aa56d7252c8a",
+                "@type": "uco-observable:ApplicationFacet"
+            }
+        ]
+    },
+    {
+        "@id": "kb:url-history-39ff4987-8ae5-47e3-8369-dbd0d5f79398",
+        "@type": "uco-observable:URLHistoryFacet",
+        "uco-core:hasFacet": [
+            {
+                "@id": "kb:url-history-facet-728d325b-d3df-4e4b-97b2-dbf9c7c64da8",
+                "@type": "uco-observable:URLHistoryFacet",
+                "uco-observable:browserInformation": {
+                    "@id": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38"
+                },
+                "uco-observable:urlHistoryEntry": [
+                    {
+                        "@id": "kb:url-history-entry-b2e78940-dc49-44f5-ac7e-ef9b8a9bc976",
+                        "@type": "uco-observable:URLHistoryEntry",
+                        "uco-observable:firstVisit": {
+                            "@type": "xsd:dateTime",
+                            "@value": "2018-11-19T00:27:14.00Z"
+                        },
+                        "uco-observable:lastVisit": {
+                            "@type": "xsd:dateTime",
+                            "@value": "2018-11-19T00:27:14.00Z"
+                        },
+                        "uco-observable:expirationTime": null,
+                        "rdfs:comment": "TODO - Was uco-observable:browserUserProfile intended to be an object property?",
+                        "drafting:browserUserProfileAccount": {
+                            "@id": "kb:ApplicationAccount-580d7253-5086-41a5-b788-69e3ceaa4bae"
+                        },
+                        "uco-observable:url": {
+                            "@id": "kb:url-def4ae18-9181-4cce-8f5f-a9aba022b98b"
+                        },
+                        "uco-observable:referrerUrl": null,
+                        "uco-observable:pageTitle": null,
+                        "uco-observable:visitCount": 1,
+                        "uco-observable:manuallyEnteredCount": {
+                            "@type": "xsd:nonNegativeInteger",
+                            "@value": "0"
+                        },
+                        "uco-observable:keywordSearchTerm": null
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "@id": "kb:File-61082f03-46ed-4bc7-a7c9-571754ffcb60",
+        "@type": "uco-observable:File",
+        "uco-core:hasFacet": [
+            {
+                "@id": "kb:file-facet-5734cd54-aa04-4c70-a0b4-909032e408c1",
+                "@type": "uco-observable:FileFacet",
+                "uco-observable:fileName": "SYSTEM",
+                "uco-observable:filePath": "/Windows/system32/config/SYSTEM",
+                "uco-observable:isDirectory": false
+            },
+            {
+                "@id": "kb:windows-registry-hive-facet-34c54d87-0ddc-43d5-a185-062da9693e3e",
+                "@type": "uco-observable:WindowsRegistryHiveFacet",
+                "uco-observable:hiveType": "SYSTEM"
+            }
+        ]
+    }
+]
