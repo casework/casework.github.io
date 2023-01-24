@@ -1,0 +1,111 @@
+{
+    "@context": {
+        "kb": "http://example.org/kb/",
+        "@vocab": "http://example.org/ontology/local#",
+        "case-investigation": "https://ontology.caseontology.org/case/investigation/",
+        "drafting": "http://example.org/ontology/drafting/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "uco-action": "https://ontology.unifiedcyberontology.org/uco/action/",
+        "uco-configuration": "https://ontology.unifiedcyberontology.org/uco/configuration/",
+        "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "uco-identity": "https://ontology.unifiedcyberontology.org/uco/identity/",
+        "uco-location": "https://ontology.unifiedcyberontology.org/uco/location/",
+        "uco-observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "uco-role": "https://ontology.unifiedcyberontology.org/uco/role/",
+        "uco-tool": "https://ontology.unifiedcyberontology.org/uco/tool/",
+        "uco-types": "https://ontology.unifiedcyberontology.org/uco/types/",
+        "uco-vocabulary": "https://ontology.unifiedcyberontology.org/uco/vocabulary/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:bundle-5db141fc-597b-4771-bea5-b9605292d2ed",
+            "@type": "uco-core:Bundle",
+            "uco-core:description": "HARD DISK DA 1TB CONTENUTO NEL PC MARCA ACER DENOMINATO R14_ACER",
+            "uco-core:object": [
+                {
+                    "@id": "kb:investigation-e2c24473-63fa-4122-83ee-868325bdd5e8",
+                    "@type": "case-investigation:Investigation",
+                    "uco-core:name": "PP 1234_18_21",
+                    "case-investigation:focus": "Child solicitation",
+                    "uco-core:description": "Hard drive acquired as evidence.",
+                    "rdfs:comment": "TODO - uco-core:object to get longer list of IRIs.",
+                    "uco-core:object": [
+                        {
+                            "@id": "kb:disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11"
+                        }
+                    ]
+                },
+                {
+                    "@id": "kb:identity-c5bb09c3-3612-4bf2-b165-6f12d0e3c6af",
+                    "@type": "uco-identity:Organization",
+                    "uco-core:name": "REALITY NET"
+                },
+                {
+                    "@id": "kb:role-856975ce-3c25-49c3-b6eb-28d1e929f915",
+                    "@type": "uco-role:Role",
+                    "uco-core:name": "Forensic Expert"
+                },
+                {
+                    "@id": "kb:relationship-d5b4a1e1-0e25-4257-81f7-19febc86ded1",
+                    "@type": "uco-observable:ObservableRelationship",
+                    "uco-core:source": {
+                        "@id": "kb:identity-c5bb09c3-3612-4bf2-b165-6f12d0e3c6af"
+                    },
+                    "uco-core:target": {
+                        "@id": "kb:role-856975ce-3c25-49c3-b6eb-28d1e929f915"
+                    },
+                    "uco-core:kindOfRelationship": "Has_Role",
+                    "uco-core:isDirectional": true
+                },
+                {
+                    "@id": "kb:organization-637dee9d-145d-45e7-b6f8-7ffdf0d4bf4f",
+                    "@type": "uco-identity:Organization",
+                    "uco-core:name": "Falcon"
+                },
+                {
+                    "@id": "kb:ConfiguredTool-58f07c30-ae20-4587-9bb8-1a5299821e57",
+                    "@type": "uco-tool:ConfiguredTool",
+                    "uco-core:name": "Logicube",
+                    "uco-tool:toolType": "acquisition/duplication",
+                    "uco-tool:creator": {
+                        "@id": "kb:organization-637dee9d-145d-45e7-b6f8-7ffdf0d4bf4f"
+                    },
+                    "uco-tool:version": "3.2u1",
+                    "drafting:toolIdentifier": "134090",
+                    "uco-configuration:usesConfiguration": {
+                        "@id": "kb:Configuration-2afbfbb1-b4d6-4ad5-9691-ff09b9f6eebe",
+                        "@type": "uco-configuration:Configuration",
+                        "uco-configuration:configurationEntry": [
+                            {
+                                "@id": "kb:configuration-entry-7871463a-558f-439b-a883-7715c0c7f098",
+                                "@type": "uco-configuration:ConfigurationEntry",
+                                "uco-configuration:itemName": "Mode",
+                                "uco-configuration:itemValue": "DriveToFile"
+                            },
+                            {
+                                "@id": "kb:configuration-entry-cc729420-2155-43d9-ade5-15c146eea55d",
+                                "@type": "uco-configuration:ConfigurationEntry",
+                                "uco-configuration:itemName": "Method",
+                                "uco-configuration:itemValue": "E01Capture"
+                            },
+                            {
+                                "@id": "kb:configuration-entry-d29f59be-8fe3-4ecf-a8ae-4f975e09b5eb",
+                                "@type": "uco-configuration:ConfigurationEntry",
+                                "uco-configuration:itemName": "Hash",
+                                "uco-configuration:itemValue": "SHA-1+MD5"
+                            },
+                            {
+                                "@id": "kb:configuration-entry-d4202748-bd26-425f-add1-c31d16b64f0a",
+                                "@type": "uco-configuration:ConfigurationEntry",
+                                "uco-configuration:itemName": "SegmentSize",
+                                "uco-configuration:itemValue": "4GB"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
