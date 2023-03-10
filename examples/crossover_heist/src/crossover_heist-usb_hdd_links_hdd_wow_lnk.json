@@ -1,0 +1,80 @@
+[
+    {
+        "uco-core:hasFacet": [
+            {
+                "uco-observable:accessedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-11-19T00:27:14Z"
+                },
+                "uco-observable:extension": "lnk",
+                "uco-observable:fileName": "wow.lnk",
+                "uco-observable:filePath": "/img_image.E01/vol_vol3/Users/Harley Quinn/AppData/Roaming/Microsoft/Windows/Recent/wow.lnk",
+                "uco-observable:isDirectory": false,
+                "uco-observable:sizeInBytes": 495,
+                "@id": "kb:file-facet-763c6961-c335-40b6-a8b3-36b6f5f15ecb",
+                "@type": "uco-observable:FileFacet",
+                "uco-observable:observableCreatedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-11-19T00:27:14Z"
+                },
+                "uco-observable:modifiedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-11-19T00:27:14Z"
+                }
+            }
+        ],
+        "@id": "kb:File-31c06b79-ad9f-446a-859a-62b848e2e1f8",
+        "@type": "uco-observable:File"
+    },
+    {
+        "@id": "kb:df9f6a42-fbb6-4e7e-bf60-6518680241dd",
+        "@type": "uco-observable:ObservableRelationship",
+        "uco-core:source": {
+            "@id": "kb:File-31c06b79-ad9f-446a-859a-62b848e2e1f8"
+        },
+        "uco-core:target": {
+            "@id": "kb:harddrive-partition2-e3f25b0b-37bf-4111-bae3-d355aff3c8a2"
+        },
+        "uco-core:kindOfRelationship": "Contained-Within",
+        "uco-core:isDirectional": true
+    },
+    {
+        "uco-core:hasFacet": [
+            {
+                "uco-observable:accessedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-11-19T00:28:41Z"
+                },
+                "uco-observable:extension": "lnk",
+                "uco-observable:fileName": "wow (2).lnk",
+                "uco-observable:filePath": "/img_image.E01/vol_vol3/Users/Harley Quinn/AppData/Roaming/Microsoft/Windows/Recent/wow (2).lnk",
+                "uco-observable:isDirectory": false,
+                "uco-observable:sizeInBytes": 457,
+                "@id": "kb:file-facet-fa661a0f-1b8d-4552-870e-daf7b93404be",
+                "@type": "uco-observable:FileFacet",
+                "uco-observable:observableCreatedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-11-19T00:28:28Z"
+                },
+                "uco-observable:modifiedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-11-19T00:28:41Z"
+                }
+            }
+        ],
+        "@id": "kb:File-26adfe08-e545-4d24-872b-84f95bd01284",
+        "@type": "uco-observable:File"
+    },
+    {
+        "uco-core:source": {
+            "@id": "kb:File-26adfe08-e545-4d24-872b-84f95bd01284"
+        },
+        "uco-core:target": {
+            "@id": "kb:harddrive-partition2-e3f25b0b-37bf-4111-bae3-d355aff3c8a2"
+        },
+        "uco-core:kindOfRelationship": "contained-within",
+        "uco-core:isDirectional": true,
+        "@id": "kb:Relationship-d70472d2-42a7-4ea1-9f3f-4fd7637bd4ff",
+        "@type": "uco-observable:ObservableRelationship"
+    }
+]

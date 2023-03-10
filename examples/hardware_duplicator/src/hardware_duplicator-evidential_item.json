@@ -1,0 +1,58 @@
+[
+    {
+        "@id": "kb:disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11",
+        "@type": "uco-observable:Disk",
+        "uco-core:hasFacet": [
+            {
+                "@id": "kb:disk-facet-257d2533-2d2d-4263-8467-0fd7ef8de262",
+                "@type": "uco-observable:DiskFacet",
+                "uco-observable:model": "TOSHIBA_MQ01ABD100",
+                "uco-observable:serialNumber": "Z612S32MS",
+                "uco-observable:storageCapacityInBytes": 1000204886016
+            },
+            {
+                "@id": "kb:content-data-facet-c971a595-53c0-4451-a27d-78da68678230",
+                "@type": "uco-observable:ContentDataFacet",
+                "uco-observable:hash": [
+                    {
+                        "@id": "kb:hash-97048c34-6f33-5f9a-ab2b-54438c3beca7",
+                        "@type": "uco-types:Hash",
+                        "uco-types:hashMethod": {
+                            "@type": "uco-vocabulary:HashNameVocab",
+                            "@value": "MD5"
+                        },
+                        "uco-types:hashValue": {
+                            "@type": "xsd:hexBinary",
+                            "@value": "dc5a1388b16da810bcb8e524c9b4f549"
+                        }
+                    },
+                    {
+                        "@id": "kb:hash-9a0eabd8-b1a8-5a87-8712-8e89403e516b",
+                        "@type": "uco-types:Hash",
+                        "uco-types:hashMethod": {
+                            "@type": "uco-vocabulary:HashNameVocab",
+                            "@value": "SHA1"
+                        },
+                        "uco-types:hashValue": {
+                            "@type": "xsd:hexBinary",
+                            "@value": "4196297e15b9190b8770fb51a8408d71d6728454"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "@id": "kb:provenancerecord-43f26e68-b02f-410b-a917-506c70b732e6",
+        "@type": "case-investigation:ProvenanceRecord",
+        "uco-observable:observableCreatedTime": {
+            "@type": "xsd:dateTime",
+            "@value": "2018-10-26T13:12:48.00Z"
+        },
+        "uco-core:description": "HD TOSHIBA_MQ01ABD100",
+        "case-investigation:exhibitNumber": "R14_ACER_HD",
+        "uco-core:object": {
+            "@id": "kb:disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11"
+        }
+    }
+]

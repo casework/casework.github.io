@@ -1,0 +1,65 @@
+{
+    "@context": {
+        "@vocab": "http://example.org/ontology/local#",
+        "case-investigation": "https://ontology.caseontology.org/case/investigation/",
+        "drafting": "http://example.org/ontology/drafting/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "kb": "http://example.org/kb/",
+        "uco-action": "https://ontology.unifiedcyberontology.org/uco/action/",
+        "uco-configuration": "https://ontology.unifiedcyberontology.org/uco/configuration/",
+        "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "uco-identity": "https://ontology.unifiedcyberontology.org/uco/identity/",
+        "uco-location": "https://ontology.unifiedcyberontology.org/uco/location/",
+        "uco-observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "uco-role": "https://ontology.unifiedcyberontology.org/uco/role/",
+        "uco-tool": "https://ontology.unifiedcyberontology.org/uco/tool/",
+        "uco-types": "https://ontology.unifiedcyberontology.org/uco/types/",
+        "uco-vocabulary": "https://ontology.unifiedcyberontology.org/uco/vocabulary/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:Bundle-feb83c4b-9d88-41ac-b8d8-82d317b40a53",
+            "@type": "uco-core:Bundle",
+            "uco-core:description": "Evidence in bank robbery",
+            "uco-core:object": [
+                {
+                    "@id": "kb:Investigation1-85c7b8d1-54e0-4023-847a-20e0f55dd48e",
+                    "@type": "case-investigation:Investigation",
+                    "uco-core:name": "CROSSOVER_2018_11191001",
+                    "case-investigation:focus": "Bank Robbery (UBS Lausanne)",
+                    "uco-core:description": "Forensic treatment of storage media recovered from getaway car and suspects apartment during investigation of bank robbery.",
+                    "rdfs:comment": "TODO - uco-core:object is to have a more complete list of IRIs.",
+                    "uco-core:object": [
+                        {
+                            "@id": "kb:Disk-6dbe5066-dfb8-4551-9bda-39aab2ae3db1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "@id": "kb:Identity-cbfbd171-e56c-4f59-a01b-4404a1e5eb28",
+            "@type": "uco-identity:Organization",
+            "uco-core:name": "ESC"
+        },
+        {
+            "@id": "kb:Role-870e2626-5ffd-4a80-83c2-8ee429709c81",
+            "@type": "uco-role:Role",
+            "uco-core:name": "Forensic Expert"
+        },
+        {
+            "@id": "kb:Relationship-ec126575-d6a4-4590-9690-f2571a48b8ac",
+            "@type": "uco-observable:ObservableRelationship",
+            "uco-core:source": {
+                "@id": "kb:Identity-cbfbd171-e56c-4f59-a01b-4404a1e5eb28"
+            },
+            "uco-core:target": {
+                "@id": "kb:Role-870e2626-5ffd-4a80-83c2-8ee429709c81"
+            },
+            "uco-core:kindOfRelationship": "Has_Role",
+            "uco-core:isDirectional": true
+        }
+    ]
+}

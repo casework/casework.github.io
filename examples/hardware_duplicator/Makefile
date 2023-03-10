@@ -11,4 +11,4 @@
 #
 # We would appreciate acknowledgement if the software is used.
 
-include ../src/example-nosrc.mk
+include ../src/example-basedir.mk

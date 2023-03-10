@@ -1,0 +1,61 @@
+[
+    {
+        "@id": "kb:file-d87ecfcb-006c-46e6-a973-e756ee4d4f70",
+        "@type": "uco-observable:File",
+        "uco-core:hasFacet": [
+            {
+                "uco-observable:sizeInBytes": 1389601,
+                "uco-observable:mimeType": "image/jpeg",
+                "uco-observable:hash": [
+                    {
+                        "@id": "kb:hash-c5761f3a-a741-5d06-a668-91e308ef19ef",
+                        "@type": "uco-types:Hash",
+                        "uco-types:hashMethod": {
+                            "@type": "uco-vocabulary:HashNameVocab",
+                            "@value": "MD5"
+                        },
+                        "uco-types:hashValue": {
+                            "@type": "xsd:hexBinary",
+                            "@value": "2282dddf9378cd1dd0497a3484adf768"
+                        }
+                    }
+                ],
+                "@id": "kb:content-data-facet-33dee628-9332-4b77-8853-1dc5481c5460",
+                "@type": "uco-observable:ContentDataFacet"
+            },
+            {
+                "uco-observable:accessedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-11-18T22:53:09Z"
+                },
+                "uco-observable:extension": "",
+                "uco-observable:fileName": "Thebatplan",
+                "uco-observable:filePath": "/img_image.E01/Thebatplan",
+                "uco-observable:isDirectory": false,
+                "uco-observable:sizeInBytes": 1389601,
+                "@id": "kb:file-facet-4fc6467e-dbc1-403b-876a-05a97efa7c81",
+                "@type": "uco-observable:FileFacet",
+                "uco-observable:observableCreatedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-11-18T22:53:09Z"
+                },
+                "uco-observable:modifiedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-11-18T20:10:48Z"
+                }
+            }
+        ]
+    },
+    {
+        "@id": "kb:Relationship-e6d52185-c570-409c-ae35-ceaf3e01080b",
+        "@type": "uco-observable:ObservableRelationship",
+        "uco-core:source": {
+            "@id": "kb:file-d87ecfcb-006c-46e6-a973-e756ee4d4f70"
+        },
+        "uco-core:target": {
+            "@id": "kb:usb-b2dbb227-06ec-432d-9f63-058e8ab73944"
+        },
+        "uco-core:kindOfRelationship": "contained-within",
+        "uco-core:isDirectional": true
+    }
+]

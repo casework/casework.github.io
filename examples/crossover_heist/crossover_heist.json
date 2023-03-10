@@ -7,6 +7,7 @@
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "kb": "http://example.org/kb/",
         "uco-action": "https://ontology.unifiedcyberontology.org/uco/action/",
+        "uco-configuration": "https://ontology.unifiedcyberontology.org/uco/configuration/",
         "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
         "uco-identity": "https://ontology.unifiedcyberontology.org/uco/identity/",
         "uco-location": "https://ontology.unifiedcyberontology.org/uco/location/",
@@ -61,11 +62,6 @@
             "uco-core:isDirectional": true
         },
         {
-            "@id": "kb:organization-cf3010bb-7716-473d-98ee-25e4917e7b80",
-            "@type": "uco-identity:Identity",
-            "uco-core:name": "Opentext"
-        },
-        {
             "@id": "kb:ConfiguredTool-22cb1ad6-7910-4a71-8654-5e93280111a3",
             "@type": "uco-tool:ConfiguredTool",
             "uco-core:name": "Tableau TD2u",
@@ -80,22 +76,30 @@
                 "@type": "uco-configuration:Configuration",
                 "uco-configuration:configurationEntry": [
                     {
+                        "@id": "kb:configuration-entry-3345eee3-7d8d-4378-95f2-30b8ca631e30",
                         "@type": "uco-configuration:ConfigurationEntry",
                         "uco-configuration:itemName": "Mode",
                         "uco-configuration:itemValue": "DriveToFile"
                     },
                     {
+                        "@id": "kb:configuration-entry-43c509fc-8755-410a-97e7-a6001d3a3f61",
                         "@type": "uco-configuration:ConfigurationEntry",
                         "uco-configuration:itemName": "Method",
                         "uco-configuration:itemValue": "E01Capture"
                     },
                     {
+                        "@id": "kb:configuration-entry-7bcf9625-cdf4-4cd9-8fc5-b70987abb20c",
                         "@type": "uco-configuration:ConfigurationEntry",
                         "uco-configuration:itemName": "Hash",
                         "uco-configuration:itemValue": "SHA-1+MD5"
                     }
                 ]
             }
+        },
+        {
+            "@id": "kb:organization-cf3010bb-7716-473d-98ee-25e4917e7b80",
+            "@type": "uco-identity:Identity",
+            "uco-core:name": "Opentext"
         },
         {
             "@id": "kb:InvestigativeAction-e019ed92-af10-4a9f-a914-7a9ba539807c",
@@ -228,6 +232,78 @@
             }
         },
         {
+            "@id": "kb:EmailAddress-d2bc0936-e1c5-4b55-8a1b-af2b3a2b145c",
+            "@type": "uco-observable:EmailAddress",
+            "uco-core:hasFacet": {
+                "@id": "kb:email-address-facet-20454f34-043e-48fc-bb66-dcf91aa11a5c",
+                "@type": "uco-observable:EmailAddressFacet",
+                "uco-observable:addressValue": "aresthewerewolf@gmail.com <aresthewerewolf>"
+            }
+        },
+        {
+            "@id": "kb:EmailAccount-ca4bc5e3-33a7-4457-b106-d0213e248979",
+            "@type": "uco-observable:EmailAccount",
+            "uco-core:hasFacet": {
+                "@id": "kb:email-address-facet-9e20866a-4533-4d02-9aa5-cc563299315f",
+                "@type": "uco-observable:EmailAddressFacet",
+                "uco-observable:emailAddress": {
+                    "@id": "kb:EmailAddress-5f63c12b-115a-474f-b1b2-15ebdb2fce31"
+                }
+            }
+        },
+        {
+            "@id": "kb:EmailAddress-5f63c12b-115a-474f-b1b2-15ebdb2fce31",
+            "@type": "uco-observable:EmailAddress",
+            "uco-core:hasFacet": {
+                "@id": "kb:email-address-facet-f0081a6a-3c18-47d5-87bf-6367d30d2c8c",
+                "@type": "uco-observable:EmailAddressFacet",
+                "uco-observable:addressValue": "badquinn3@gmail.com"
+            }
+        },
+        {
+            "@id": "kb:EmailMessage-c5efd42c-d771-43aa-afe5-6b30740348e3",
+            "@type": "uco-observable:EmailMessage",
+            "uco-core:hasFacet": [
+                {
+                    "@id": "kb:email-message-facet-f57e953c-95af-437d-b115-94585eb0ac13",
+                    "@type": "uco-observable:EmailMessageFacet",
+                    "uco-observable:body": "",
+                    "uco-observable:from": {
+                        "@id": "kb:EmailAddress-d2bc0936-e1c5-4b55-8a1b-af2b3a2b145c"
+                    },
+                    "uco-observable:isRead": true,
+                    "uco-observable:messageID": "2320dc68-65a3-4f05-8884-945992231a1e",
+                    "uco-observable:sender": {
+                        "@id": "kb:EmailAddress-d2bc0936-e1c5-4b55-8a1b-af2b3a2b145c"
+                    },
+                    "uco-observable:sentTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-20T00:00:30+00:00"
+                    },
+                    "uco-observable:subject": "Bank transfer ?",
+                    "uco-observable:to": {
+                        "@id": "kb:EmailAccount-ca4bc5e3-33a7-4457-b106-d0213e248979"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "kb:harddrive-partition2-e3f25b0b-37bf-4111-bae3-d355aff3c8a2",
+            "@type": "uco-observable:DiskPartition"
+        },
+        {
+            "@id": "kb:hash-128996fc-3823-54a5-9ca4-cf6e21fca62f",
+            "@type": "uco-types:Hash",
+            "uco-types:hashMethod": {
+                "@type": "uco-vocabulary:HashNameVocab",
+                "@value": "SHA1"
+            },
+            "uco-types:hashValue": {
+                "@type": "xsd:hexBinary",
+                "@value": "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"
+            }
+        },
+        {
             "@id": "kb:lnkfile-487b236d-e75d-467e-9c6d-dad2d12cf94e",
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
@@ -255,10 +331,6 @@
             ]
         },
         {
-            "@id": "kb:harddrive-partition2-e3f25b0b-37bf-4111-bae3-d355aff3c8a2",
-            "@type": "uco-observable:DiskPartition"
-        },
-        {
             "@id": "kb:Relationship-f0505f2a-5de0-4651-9486-16746758f6c8",
             "@type": "uco-observable:ObservableRelationship",
             "uco-core:source": {
@@ -268,77 +340,6 @@
                 "@id": "kb:harddrive-partition2-e3f25b0b-37bf-4111-bae3-d355aff3c8a2"
             },
             "uco-core:kindOfRelationship": "Contained-Within",
-            "uco-core:isDirectional": true
-        },
-        {
-            "@id": "kb:lnk1-relationship-a1dbff0e-974b-4295-b035-e1bc3271945d",
-            "@type": "uco-observable:ObservableRelationship",
-            "uco-core:source": {
-                "@id": "kb:file-d87ecfcb-006c-46e6-a973-e756ee4d4f70"
-            },
-            "uco-core:target": {
-                "@id": "kb:lnkfile-487b236d-e75d-467e-9c6d-dad2d12cf94e"
-            },
-            "uco-core:kindOfRelationship": "Referenced_Within",
-            "uco-core:isDirectional": true
-        },
-        {
-            "@id": "kb:file-d87ecfcb-006c-46e6-a973-e756ee4d4f70",
-            "@type": "uco-observable:File",
-            "uco-core:hasFacet": [
-                {
-                    "uco-observable:sizeInBytes": 1389601,
-                    "uco-observable:mimeType": "image/jpeg",
-                    "uco-observable:hash": [
-                        {
-                            "@id": "kb:hash-c5761f3a-a741-5d06-a668-91e308ef19ef",
-                            "@type": "uco-types:Hash",
-                            "uco-types:hashMethod": {
-                                "@type": "uco-vocabulary:HashNameVocab",
-                                "@value": "MD5"
-                            },
-                            "uco-types:hashValue": {
-                                "@type": "xsd:hexBinary",
-                                "@value": "2282dddf9378cd1dd0497a3484adf768"
-                            }
-                        }
-                    ],
-                    "@id": "kb:content-data-facet-33dee628-9332-4b77-8853-1dc5481c5460",
-                    "@type": "uco-observable:ContentDataFacet"
-                },
-                {
-                    "uco-observable:accessedTime": {
-                        "@type": "xsd:dateTime",
-                        "@value": "2018-11-18T22:53:09Z"
-                    },
-                    "uco-observable:extension": "",
-                    "uco-observable:fileName": "Thebatplan",
-                    "uco-observable:filePath": "/img_image.E01/Thebatplan",
-                    "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": 1389601,
-                    "@id": "kb:file-facet-4fc6467e-dbc1-403b-876a-05a97efa7c81",
-                    "@type": "uco-observable:FileFacet",
-                    "uco-observable:observableCreatedTime": {
-                        "@type": "xsd:dateTime",
-                        "@value": "2018-11-18T22:53:09Z"
-                    },
-                    "uco-observable:modifiedTime": {
-                        "@type": "xsd:dateTime",
-                        "@value": "2018-11-18T20:10:48Z"
-                    }
-                }
-            ]
-        },
-        {
-            "@id": "kb:Relationship-e6d52185-c570-409c-ae35-ceaf3e01080b",
-            "@type": "uco-observable:ObservableRelationship",
-            "uco-core:source": {
-                "@id": "kb:file-d87ecfcb-006c-46e6-a973-e756ee4d4f70"
-            },
-            "uco-core:target": {
-                "@id": "kb:usb-b2dbb227-06ec-432d-9f63-058e8ab73944"
-            },
-            "uco-core:kindOfRelationship": "contained-within",
             "uco-core:isDirectional": true
         },
         {
@@ -379,6 +380,84 @@
             },
             "uco-core:kindOfRelationship": "contained-within",
             "uco-core:isDirectional": true
+        },
+        {
+            "uco-core:hasFacet": [
+                {
+                    "uco-observable:accessedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-19T00:27:14Z"
+                    },
+                    "uco-observable:extension": "lnk",
+                    "uco-observable:fileName": "wow.lnk",
+                    "uco-observable:filePath": "/img_image.E01/vol_vol3/Users/Harley Quinn/AppData/Roaming/Microsoft/Windows/Recent/wow.lnk",
+                    "uco-observable:isDirectory": false,
+                    "uco-observable:sizeInBytes": 495,
+                    "@id": "kb:file-facet-763c6961-c335-40b6-a8b3-36b6f5f15ecb",
+                    "@type": "uco-observable:FileFacet",
+                    "uco-observable:observableCreatedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-19T00:27:14Z"
+                    },
+                    "uco-observable:modifiedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-19T00:27:14Z"
+                    }
+                }
+            ],
+            "@id": "kb:File-31c06b79-ad9f-446a-859a-62b848e2e1f8",
+            "@type": "uco-observable:File"
+        },
+        {
+            "@id": "kb:df9f6a42-fbb6-4e7e-bf60-6518680241dd",
+            "@type": "uco-observable:ObservableRelationship",
+            "uco-core:source": {
+                "@id": "kb:File-31c06b79-ad9f-446a-859a-62b848e2e1f8"
+            },
+            "uco-core:target": {
+                "@id": "kb:harddrive-partition2-e3f25b0b-37bf-4111-bae3-d355aff3c8a2"
+            },
+            "uco-core:kindOfRelationship": "Contained-Within",
+            "uco-core:isDirectional": true
+        },
+        {
+            "uco-core:hasFacet": [
+                {
+                    "uco-observable:accessedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-19T00:28:41Z"
+                    },
+                    "uco-observable:extension": "lnk",
+                    "uco-observable:fileName": "wow (2).lnk",
+                    "uco-observable:filePath": "/img_image.E01/vol_vol3/Users/Harley Quinn/AppData/Roaming/Microsoft/Windows/Recent/wow (2).lnk",
+                    "uco-observable:isDirectory": false,
+                    "uco-observable:sizeInBytes": 457,
+                    "@id": "kb:file-facet-fa661a0f-1b8d-4552-870e-daf7b93404be",
+                    "@type": "uco-observable:FileFacet",
+                    "uco-observable:observableCreatedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-19T00:28:28Z"
+                    },
+                    "uco-observable:modifiedTime": {
+                        "@type": "xsd:dateTime",
+                        "@value": "2018-11-19T00:28:41Z"
+                    }
+                }
+            ],
+            "@id": "kb:File-26adfe08-e545-4d24-872b-84f95bd01284",
+            "@type": "uco-observable:File"
+        },
+        {
+            "uco-core:source": {
+                "@id": "kb:File-26adfe08-e545-4d24-872b-84f95bd01284"
+            },
+            "uco-core:target": {
+                "@id": "kb:harddrive-partition2-e3f25b0b-37bf-4111-bae3-d355aff3c8a2"
+            },
+            "uco-core:kindOfRelationship": "contained-within",
+            "uco-core:isDirectional": true,
+            "@id": "kb:Relationship-d70472d2-42a7-4ea1-9f3f-4fd7637bd4ff",
+            "@type": "uco-observable:ObservableRelationship"
         },
         {
             "uco-core:hasFacet": [
@@ -502,81 +581,119 @@
             "uco-core:isDirectional": true
         },
         {
+            "@id": "kb:lnk1-relationship-a1dbff0e-974b-4295-b035-e1bc3271945d",
+            "@type": "uco-observable:ObservableRelationship",
+            "uco-core:source": {
+                "@id": "kb:file-d87ecfcb-006c-46e6-a973-e756ee4d4f70"
+            },
+            "uco-core:target": {
+                "@id": "kb:lnkfile-487b236d-e75d-467e-9c6d-dad2d12cf94e"
+            },
+            "uco-core:kindOfRelationship": "Referenced_Within",
+            "uco-core:isDirectional": true
+        },
+        {
+            "@id": "kb:file-d87ecfcb-006c-46e6-a973-e756ee4d4f70",
+            "@type": "uco-observable:File",
             "uco-core:hasFacet": [
+                {
+                    "uco-observable:sizeInBytes": 1389601,
+                    "uco-observable:mimeType": "image/jpeg",
+                    "uco-observable:hash": [
+                        {
+                            "@id": "kb:hash-c5761f3a-a741-5d06-a668-91e308ef19ef",
+                            "@type": "uco-types:Hash",
+                            "uco-types:hashMethod": {
+                                "@type": "uco-vocabulary:HashNameVocab",
+                                "@value": "MD5"
+                            },
+                            "uco-types:hashValue": {
+                                "@type": "xsd:hexBinary",
+                                "@value": "2282dddf9378cd1dd0497a3484adf768"
+                            }
+                        }
+                    ],
+                    "@id": "kb:content-data-facet-33dee628-9332-4b77-8853-1dc5481c5460",
+                    "@type": "uco-observable:ContentDataFacet"
+                },
                 {
                     "uco-observable:accessedTime": {
                         "@type": "xsd:dateTime",
-                        "@value": "2018-11-19T00:27:14Z"
+                        "@value": "2018-11-18T22:53:09Z"
                     },
-                    "uco-observable:extension": "lnk",
-                    "uco-observable:fileName": "wow.lnk",
-                    "uco-observable:filePath": "/img_image.E01/vol_vol3/Users/Harley Quinn/AppData/Roaming/Microsoft/Windows/Recent/wow.lnk",
+                    "uco-observable:extension": "",
+                    "uco-observable:fileName": "Thebatplan",
+                    "uco-observable:filePath": "/img_image.E01/Thebatplan",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": 495,
-                    "@id": "kb:file-facet-763c6961-c335-40b6-a8b3-36b6f5f15ecb",
+                    "uco-observable:sizeInBytes": 1389601,
+                    "@id": "kb:file-facet-4fc6467e-dbc1-403b-876a-05a97efa7c81",
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
-                        "@value": "2018-11-19T00:27:14Z"
+                        "@value": "2018-11-18T22:53:09Z"
                     },
                     "uco-observable:modifiedTime": {
                         "@type": "xsd:dateTime",
-                        "@value": "2018-11-19T00:27:14Z"
+                        "@value": "2018-11-18T20:10:48Z"
                     }
                 }
-            ],
-            "@id": "kb:File-31c06b79-ad9f-446a-859a-62b848e2e1f8",
-            "@type": "uco-observable:File"
+            ]
         },
         {
-            "@id": "kb:df9f6a42-fbb6-4e7e-bf60-6518680241dd",
+            "@id": "kb:Relationship-e6d52185-c570-409c-ae35-ceaf3e01080b",
             "@type": "uco-observable:ObservableRelationship",
             "uco-core:source": {
-                "@id": "kb:File-31c06b79-ad9f-446a-859a-62b848e2e1f8"
+                "@id": "kb:file-d87ecfcb-006c-46e6-a973-e756ee4d4f70"
             },
             "uco-core:target": {
-                "@id": "kb:harddrive-partition2-e3f25b0b-37bf-4111-bae3-d355aff3c8a2"
+                "@id": "kb:usb-b2dbb227-06ec-432d-9f63-058e8ab73944"
             },
-            "uco-core:kindOfRelationship": "Contained-Within",
+            "uco-core:kindOfRelationship": "contained-within",
             "uco-core:isDirectional": true
         },
         {
             "uco-core:hasFacet": [
                 {
+                    "@id": "kb:content-data-facet-40ab2874-6f85-4623-8a17-5f105ed2042b",
+                    "@type": "uco-observable:ContentDataFacet",
+                    "uco-observable:sizeInBytes": 756969,
+                    "uco-observable:mimeType": "image/jpeg"
+                },
+                {
+                    "@id": "kb:file-facet-4afdcc08-f93f-472e-89db-ade60d84ca6f",
+                    "@type": "uco-observable:FileFacet",
                     "uco-observable:accessedTime": {
                         "@type": "xsd:dateTime",
-                        "@value": "2018-11-19T00:28:41Z"
+                        "@value": "2018-11-18T22:53:09Z"
                     },
-                    "uco-observable:extension": "lnk",
-                    "uco-observable:fileName": "wow (2).lnk",
-                    "uco-observable:filePath": "/img_image.E01/vol_vol3/Users/Harley Quinn/AppData/Roaming/Microsoft/Windows/Recent/wow (2).lnk",
+                    "uco-observable:extension": "jpg",
+                    "uco-observable:fileName": "wow.jpg",
+                    "uco-observable:filePath": "/img_image.E01/wow.jpg",
                     "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": 457,
-                    "@id": "kb:file-facet-fa661a0f-1b8d-4552-870e-daf7b93404be",
-                    "@type": "uco-observable:FileFacet",
+                    "uco-observable:sizeInBytes": 756969,
                     "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
-                        "@value": "2018-11-19T00:28:28Z"
+                        "@value": "2018-11-18T22:53:09Z"
                     },
                     "uco-observable:modifiedTime": {
                         "@type": "xsd:dateTime",
-                        "@value": "2018-11-19T00:28:41Z"
+                        "@value": "2018-11-18T20:28:58Z"
                     }
                 }
             ],
-            "@id": "kb:File-26adfe08-e545-4d24-872b-84f95bd01284",
+            "@id": "kb:File-bbb4f0c4-ea2c-42fa-9ec0-11bc4678b7b8",
             "@type": "uco-observable:File"
         },
         {
             "uco-core:source": {
-                "@id": "kb:File-26adfe08-e545-4d24-872b-84f95bd01284"
+                "@id": "kb:File-bbb4f0c4-ea2c-42fa-9ec0-11bc4678b7b8"
             },
             "uco-core:target": {
-                "@id": "kb:harddrive-partition2-e3f25b0b-37bf-4111-bae3-d355aff3c8a2"
+                "@id": "kb:usb-b2dbb227-06ec-432d-9f63-058e8ab73944"
             },
             "uco-core:kindOfRelationship": "contained-within",
             "uco-core:isDirectional": true,
-            "@id": "kb:Relationship-d70472d2-42a7-4ea1-9f3f-4fd7637bd4ff",
+            "@id": "kb:Relationship-ce92625b-c5f0-4856-940b-692d82de602c",
             "@type": "uco-observable:ObservableRelationship"
         },
         {
@@ -677,51 +794,6 @@
             ]
         },
         {
-            "uco-core:hasFacet": [
-                {
-                    "@id": "kb:content-data-facet-40ab2874-6f85-4623-8a17-5f105ed2042b",
-                    "@type": "uco-observable:ContentDataFacet",
-                    "uco-observable:sizeInBytes": 756969,
-                    "uco-observable:mimeType": "image/jpeg"
-                },
-                {
-                    "@id": "kb:file-facet-4afdcc08-f93f-472e-89db-ade60d84ca6f",
-                    "@type": "uco-observable:FileFacet",
-                    "uco-observable:accessedTime": {
-                        "@type": "xsd:dateTime",
-                        "@value": "2018-11-18T22:53:09Z"
-                    },
-                    "uco-observable:extension": "jpg",
-                    "uco-observable:fileName": "wow.jpg",
-                    "uco-observable:filePath": "/img_image.E01/wow.jpg",
-                    "uco-observable:isDirectory": false,
-                    "uco-observable:sizeInBytes": 756969,
-                    "uco-observable:observableCreatedTime": {
-                        "@type": "xsd:dateTime",
-                        "@value": "2018-11-18T22:53:09Z"
-                    },
-                    "uco-observable:modifiedTime": {
-                        "@type": "xsd:dateTime",
-                        "@value": "2018-11-18T20:28:58Z"
-                    }
-                }
-            ],
-            "@id": "kb:File-bbb4f0c4-ea2c-42fa-9ec0-11bc4678b7b8",
-            "@type": "uco-observable:File"
-        },
-        {
-            "uco-core:source": {
-                "@id": "kb:File-bbb4f0c4-ea2c-42fa-9ec0-11bc4678b7b8"
-            },
-            "uco-core:target": {
-                "@id": "kb:usb-b2dbb227-06ec-432d-9f63-058e8ab73944"
-            },
-            "uco-core:kindOfRelationship": "contained-within",
-            "uco-core:isDirectional": true,
-            "@id": "kb:Relationship-ce92625b-c5f0-4856-940b-692d82de602c",
-            "@type": "uco-observable:ObservableRelationship"
-        },
-        {
             "@id": "kb:File-61082f03-46ed-4bc7-a7c9-571754ffcb60",
             "@type": "uco-observable:File",
             "uco-core:hasFacet": [
@@ -766,74 +838,6 @@
                     "uco-observable:numberOfSubkeys": 2
                 }
             ]
-        },
-        {
-            "@id": "kb:EmailAddress-d2bc0936-e1c5-4b55-8a1b-af2b3a2b145c",
-            "@type": "uco-observable:EmailAddress",
-            "uco-core:hasFacet": {
-                "@id": "kb:email-address-facet-20454f34-043e-48fc-bb66-dcf91aa11a5c",
-                "@type": "uco-observable:EmailAddressFacet",
-                "uco-observable:addressValue": "aresthewerewolf@gmail.com <aresthewerewolf>"
-            }
-        },
-        {
-            "@id": "kb:EmailAccount-ca4bc5e3-33a7-4457-b106-d0213e248979",
-            "@type": "uco-observable:EmailAccount",
-            "uco-core:hasFacet": {
-                "@id": "kb:email-address-facet-9e20866a-4533-4d02-9aa5-cc563299315f",
-                "@type": "uco-observable:EmailAddressFacet",
-                "uco-observable:emailAddress": {
-                    "@id": "kb:EmailAddress-5f63c12b-115a-474f-b1b2-15ebdb2fce31"
-                }
-            }
-        },
-        {
-            "@id": "kb:EmailAddress-5f63c12b-115a-474f-b1b2-15ebdb2fce31",
-            "@type": "uco-observable:EmailAddress",
-            "uco-core:hasFacet": {
-                "@id": "kb:email-address-facet-f0081a6a-3c18-47d5-87bf-6367d30d2c8c",
-                "@type": "uco-observable:EmailAddressFacet",
-                "uco-observable:addressValue": "badquinn3@gmail.com"
-            }
-        },
-        {
-            "@id": "kb:EmailMessage-c5efd42c-d771-43aa-afe5-6b30740348e3",
-            "@type": "uco-observable:EmailMessage",
-            "uco-core:hasFacet": [
-                {
-                    "@id": "kb:email-message-facet-f57e953c-95af-437d-b115-94585eb0ac13",
-                    "@type": "uco-observable:EmailMessageFacet",
-                    "uco-observable:body": "",
-                    "uco-observable:from": {
-                        "@id": "kb:EmailAddress-d2bc0936-e1c5-4b55-8a1b-af2b3a2b145c"
-                    },
-                    "uco-observable:isRead": true,
-                    "uco-observable:messageID": "2320dc68-65a3-4f05-8884-945992231a1e",
-                    "uco-observable:sender": {
-                        "@id": "kb:EmailAddress-d2bc0936-e1c5-4b55-8a1b-af2b3a2b145c"
-                    },
-                    "uco-observable:sentTime": {
-                        "@type": "xsd:dateTime",
-                        "@value": "2018-11-20T00:00:30+00:00"
-                    },
-                    "uco-observable:subject": "Bank transfer ?",
-                    "uco-observable:to": {
-                        "@id": "kb:EmailAccount-ca4bc5e3-33a7-4457-b106-d0213e248979"
-                    }
-                }
-            ]
-        },
-        {
-            "@id": "kb:hash-128996fc-3823-54a5-9ca4-cf6e21fca62f",
-            "@type": "uco-types:Hash",
-            "uco-types:hashMethod": {
-                "@type": "uco-vocabulary:HashNameVocab",
-                "@value": "SHA1"
-            },
-            "uco-types:hashValue": {
-                "@type": "xsd:hexBinary",
-                "@value": "a1ecc7523855f23f3f9a96e3ec0f53ece109cd7d"
-            }
         }
     ]
 }

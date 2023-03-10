@@ -1,0 +1,47 @@
+[
+    {
+        "uco-core:hasFacet": [
+            {
+                "@id": "kb:content-data-facet-40ab2874-6f85-4623-8a17-5f105ed2042b",
+                "@type": "uco-observable:ContentDataFacet",
+                "uco-observable:sizeInBytes": 756969,
+                "uco-observable:mimeType": "image/jpeg"
+            },
+            {
+                "@id": "kb:file-facet-4afdcc08-f93f-472e-89db-ade60d84ca6f",
+                "@type": "uco-observable:FileFacet",
+                "uco-observable:accessedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-11-18T22:53:09Z"
+                },
+                "uco-observable:extension": "jpg",
+                "uco-observable:fileName": "wow.jpg",
+                "uco-observable:filePath": "/img_image.E01/wow.jpg",
+                "uco-observable:isDirectory": false,
+                "uco-observable:sizeInBytes": 756969,
+                "uco-observable:observableCreatedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-11-18T22:53:09Z"
+                },
+                "uco-observable:modifiedTime": {
+                    "@type": "xsd:dateTime",
+                    "@value": "2018-11-18T20:28:58Z"
+                }
+            }
+        ],
+        "@id": "kb:File-bbb4f0c4-ea2c-42fa-9ec0-11bc4678b7b8",
+        "@type": "uco-observable:File"
+    },
+    {
+        "uco-core:source": {
+            "@id": "kb:File-bbb4f0c4-ea2c-42fa-9ec0-11bc4678b7b8"
+        },
+        "uco-core:target": {
+            "@id": "kb:usb-b2dbb227-06ec-432d-9f63-058e8ab73944"
+        },
+        "uco-core:kindOfRelationship": "contained-within",
+        "uco-core:isDirectional": true,
+        "@id": "kb:Relationship-ce92625b-c5f0-4856-940b-692d82de602c",
+        "@type": "uco-observable:ObservableRelationship"
+    }
+]
