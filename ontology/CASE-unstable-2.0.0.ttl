@@ -962,7 +962,6 @@ uco-owl:ObjectProperty-shacl-constraints-shape
 			a sh:SPARQLConstraint ;
 			sh:message "An OWL Object Property must not permit a Literal value via SHACL consraints."@en ;
 			sh:select """
-				PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 				PREFIX sh: <http://www.w3.org/ns/shacl#>
 				SELECT $this ?value
 				WHERE {
@@ -2294,11 +2293,10 @@ core:UcoThing
 		a sh:SPARQLConstraint ;
 		sh:message "UcoThings are required to not be blank nodes."@en ;
 		sh:select """
-			PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-			PREFIX core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
 			SELECT $this
 			WHERE {
-			        $this a/rdfs:subClassOf* core:UcoThing .
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
 			        FILTER isBlank ($this)
 			}
 		""" ;
@@ -2316,11 +2314,10 @@ core:UcoThing-identifier-regex-shape
 		rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
 		sh:message "UcoThings are suggested to end with a UUID."@en ;
 		sh:select '''
-			PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-			PREFIX core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
 			SELECT $this
 			WHERE {
-			        $this a/rdfs:subClassOf* core:UcoThing .
+			        $this a/rdfs:subClassOf* uco-core:UcoThing .
 			        FILTER (
 			                ! REGEX (
 			                        STR($this),
@@ -12133,12 +12130,6 @@ observable:WindowsThreadFacet
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:creationTime ;
-		] ,
-		[
-			sh:datatype xsd:dateTime ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
 			sh:path observable:observableCreatedTime ;
 		] ,
 		[
@@ -13480,9 +13471,8 @@ observable:creationTime-deprecation-shape
 	sh:property [
 		a sh:PropertyShape ;
 		sh:maxCount "0"^^xsd:integer ;
-		sh:message "observable:creationTime is deprecated, and will be an error to use in UCO 2.0.0.  observable:observableCreatedTime should be used instead."@en ;
+		sh:message "observable:creationTime is deprecated, and an error to use as of UCO 2.0.0.  observable:observableCreatedTime should be used instead."@en ;
 		sh:path observable:creationTime ;
-		sh:severity sh:Warning ;
 	] ;
 	sh:targetSubjectsOf observable:creationTime ;
 	.
@@ -17617,7 +17607,7 @@ types:Thread
 		;
 	rdfs:subClassOf
 		co:Bag ,
-		core:UcoThing
+		core:UcoInherentCharacterizationThing
 		;
 	rdfs:label "Thread"@en ;
 	rdfs:comment "A semi-ordered array of items, that can be present in multiple copies.  Implemetation of a UCO Thread is similar to a Collections Ontology List, except a Thread may fork and merge - that is, one of its members may have two or more direct successors, and two or more direct predecessors."@en ;
@@ -17635,7 +17625,7 @@ types:ThreadItem
 		;
 	rdfs:subClassOf
 		co:Item ,
-		core:UcoThing
+		core:UcoInherentCharacterizationThing
 		;
 	rdfs:label "ThreadItem"@en ;
 	rdfs:comment "A ThreadItem is a member of a thread."@en ;

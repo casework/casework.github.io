@@ -49,6 +49,12 @@ all: \
 	$(MAKE) \
 	  --directory dependencies/UCO-develop \
 	  .lib.done.log
+	$(MAKE) \
+	  --directory dependencies/CASE-unstable \
+	  .git_submodule_init.done.log
+	$(MAKE) \
+	  --directory dependencies/CASE-unstable-2.0.0 \
+	  .git_submodule_init.done.log
 	touch $@
 
 .venv.done.log: \

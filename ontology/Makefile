@@ -29,7 +29,8 @@ RDF_TOOLKIT_JAR := $(top_srcdir)/dependencies/UCO-develop/lib/rdf-toolkit.jar
 
 all: \
   CASE-develop.ttl \
-  CASE-unstable.ttl
+  CASE-unstable.ttl \
+  CASE-unstable-2.0.0.ttl
 
 .PHONY: \
   check-develop \
@@ -57,9 +58,21 @@ CASE-unstable.ttl: \
 	  --target-format turtle
 	mv _$@ $@
 
+CASE-unstable-2.0.0.ttl: \
+  $(top_srcdir)/dependencies/CASE-unstable-2.0.0.ttl \
+  $(RDF_TOOLKIT_JAR)
+	java -jar $(RDF_TOOLKIT_JAR) \
+	  --inline-blank-nodes \
+	  --source $< \
+	  --source-format turtle \
+	  --target _$@ \
+	  --target-format turtle
+	mv _$@ $@
+
 check: \
   check-develop \
-  check-unstable
+  check-unstable \
+  check-unstable-2.0.0
 
 check-develop: \
   CASE-develop.ttl
@@ -75,7 +88,14 @@ check-unstable: \
 	  $< \
 	  || (echo "ERROR:ontology/Makefile:Generated version of $< does not match Git-tracked state.  Please review and commit $<." ; exit 1)
 
+check-unstable-2.0.0: \
+  CASE-unstable-2.0.0.ttl
+	git diff \
+	  --exit-code \
+	  $< \
+	  || (echo "ERROR:ontology/Makefile:Generated version of $< does not match Git-tracked state.  Please review and commit $<." ; exit 1)
+
 clean:
 	@rm -f \
 	  CASE-develop.ttl \
-	  CASE-unstable.ttl
+	  CASE-unstable*.ttl
