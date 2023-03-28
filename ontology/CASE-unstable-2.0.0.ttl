@@ -25,7 +25,7 @@
 @prefix co: <http://purl.org/co/> .
 @prefix configuration: <https://ontology.unifiedcyberontology.org/uco/configuration/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
 @prefix investigation: <https://ontology.caseontology.org/case/investigation/> .
 @prefix location: <https://ontology.unifiedcyberontology.org/uco/location/> .
@@ -37,7 +37,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix role: <https://ontology.unifiedcyberontology.org/uco/role/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix time: <https://ontology.unifiedcyberontology.org/uco/time/> .
+@prefix time1: <https://ontology.unifiedcyberontology.org/uco/time/> .
 @prefix tool: <https://ontology.unifiedcyberontology.org/uco/tool/> .
 @prefix types: <https://ontology.unifiedcyberontology.org/uco/types/> .
 @prefix uco-co: <https://ontology.unifiedcyberontology.org/co/> .
@@ -51,7 +51,7 @@
 	a owl:Ontology ;
 	rdfs:label "case-master"@en ;
 	rdfs:comment "The Cyber-investigation Analysis Standard Expression (CASE) ontology is a community-developed standard that defines concepts used in a broad range of cyber-investigation domains, including digital forensic science, incident response, counter-terrorism, criminal justice, forensic intelligence, and situational awareness. CASE includes all aspects of the digital forensic process, from evidence-gathering and chain of custody, to generating a final report. The goal is to increase sharing and interoperability of cyber-investigation information among organizations and between forensic analytic tools. CASE aligns with and extends the Unified Cyber Ontology (UCO). The preferred namespace abbreviation for this ontology is: case-master."@en ;
-	dct:title "Cyber-investigation Analysis Standard Expression (CASE)"@en ;
+	dcterms:title "Cyber-investigation Analysis Standard Expression (CASE)"@en ;
 	owl:backwardCompatibleWith <https://ontology.caseontology.org/case/case/1.0.0> ;
 	owl:imports
 		investigation:1.1.0 ,
@@ -219,10 +219,10 @@
 <https://ontology.unifiedcyberontology.org/uco/time>
 	a owl:Ontology ;
 	rdfs:label "uco-time"@en ;
-	owl:backwardCompatibleWith time:1.0.0 ;
+	owl:backwardCompatibleWith time1:1.0.0 ;
 	owl:imports core:1.1.0 ;
-	owl:priorVersion time:1.0.0 ;
-	owl:versionIRI time:1.1.0 ;
+	owl:priorVersion time1:1.0.0 ;
+	owl:versionIRI time1:1.1.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/tool>
@@ -267,7 +267,7 @@
 		observable:1.1.0 ,
 		pattern:1.1.0 ,
 		role:1.1.0 ,
-		time:1.1.0 ,
+		time1:1.1.0 ,
 		tool:1.1.0 ,
 		types:1.1.0 ,
 		victim:1.1.0 ,
@@ -16999,15 +16999,15 @@ role:Role
 	sh:targetClass role:Role ;
 	.
 
-time:Time
+time1:Time
 	a rdfs:Datatype ;
 	.
 
-time:TimeRange
+time1:TimeRange
 	a rdfs:Datatype ;
 	.
 
-time:Timestamp
+time1:Timestamp
 	a rdfs:Datatype ;
 	.
 
