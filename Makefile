@@ -47,7 +47,7 @@ all: \
 	git submodule init
 	git submodule update
 	$(MAKE) \
-	  --directory dependencies/UCO-develop \
+	  --directory dependencies/CASE-develop \
 	  .lib.done.log
 	$(MAKE) \
 	  --directory dependencies/CASE-unstable \
