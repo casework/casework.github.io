@@ -87,5 +87,5 @@ CASE-unstable-2.0.0.ttl: \
 
 clean:
 	@rm -f \
-	  CASE-develop.ttl \
-	  CASE-unstable.ttl
+	  CASE-develop*.ttl \
+	  CASE-unstable*.ttl

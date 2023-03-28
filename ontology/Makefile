@@ -109,5 +109,5 @@ check-unstable-2.0.0: \
 
 clean:
 	@rm -f \
-	  CASE-develop.ttl \
+	  CASE-develop*.ttl \
 	  CASE-unstable*.ttl
