@@ -35,7 +35,7 @@ This release contains no breaking changes scoped to CASE.
 
 *(These are changes to ontologies, classes or properties in the preexisting ontology.)*
 
-* Added support for Protégé ([UCO GitHub Issue 449](https://github.com/ucoProject/UCO/issues/449))
+* Added support for Protégé ([*UCO GitHub Issue 449*](https://github.com/ucoProject/UCO/issues/449))
 
 
 #### Bug Fixes
