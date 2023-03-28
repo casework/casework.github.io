@@ -25,10 +25,11 @@ SHELL := /bin/bash
 
 top_srcdir := $(shell cd .. ; pwd)
 
-RDF_TOOLKIT_JAR := $(top_srcdir)/dependencies/UCO-develop/lib/rdf-toolkit.jar
+RDF_TOOLKIT_JAR := $(top_srcdir)/dependencies/CASE-develop/dependencies/UCO/lib/rdf-toolkit.jar
 
 all: \
   CASE-develop.ttl \
+  CASE-develop-2.0.0.ttl \
   CASE-unstable.ttl \
   CASE-unstable-2.0.0.ttl
 
@@ -38,6 +39,17 @@ all: \
 
 CASE-develop.ttl: \
   $(top_srcdir)/dependencies/CASE-develop.ttl \
+  $(RDF_TOOLKIT_JAR)
+	java -jar $(RDF_TOOLKIT_JAR) \
+	  --inline-blank-nodes \
+	  --source $< \
+	  --source-format turtle \
+	  --target _$@ \
+	  --target-format turtle
+	mv _$@ $@
+
+CASE-develop-2.0.0.ttl: \
+  $(top_srcdir)/dependencies/CASE-develop-2.0.0.ttl \
   $(RDF_TOOLKIT_JAR)
 	java -jar $(RDF_TOOLKIT_JAR) \
 	  --inline-blank-nodes \
@@ -97,5 +109,5 @@ check-unstable-2.0.0: \
 
 clean:
 	@rm -f \
-	  CASE-develop.ttl \
+	  CASE-develop*.ttl \
 	  CASE-unstable*.ttl

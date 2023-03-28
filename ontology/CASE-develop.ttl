@@ -962,6 +962,7 @@ uco-owl:ObjectProperty-shacl-constraints-shape
 			a sh:SPARQLConstraint ;
 			sh:message "An OWL Object Property must not permit a Literal value via SHACL consraints."@en ;
 			sh:select """
+				PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 				PREFIX sh: <http://www.w3.org/ns/shacl#>
 				SELECT $this ?value
 				WHERE {
@@ -2288,15 +2289,16 @@ core:UcoThing
 	rdfs:subClassOf owl:Thing ;
 	rdfs:label "UcoThing"@en ;
 	rdfs:comment "UcoThing is the top-level class within UCO."@en ;
-	rdfs:seeAlso core:UcoThing-identifier-shape ;
+	rdfs:seeAlso core:UcoThing-identifier-regex-shape ;
 	sh:sparql [
 		a sh:SPARQLConstraint ;
 		sh:message "UcoThings are required to not be blank nodes."@en ;
 		sh:select """
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+			PREFIX core: <https://ontology.unifiedcyberontology.org/uco/core/>
 			SELECT $this
 			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        $this a/rdfs:subClassOf* core:UcoThing .
 			        FILTER isBlank ($this)
 			}
 		""" ;
@@ -2314,10 +2316,11 @@ core:UcoThing-identifier-regex-shape
 		rdfs:seeAlso <https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.3> ;
 		sh:message "UcoThings are suggested to end with a UUID."@en ;
 		sh:select '''
-			PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+			PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+			PREFIX core: <https://ontology.unifiedcyberontology.org/uco/core/>
 			SELECT $this
 			WHERE {
-			        $this a/rdfs:subClassOf* uco-core:UcoThing .
+			        $this a/rdfs:subClassOf* core:UcoThing .
 			        FILTER (
 			                ! REGEX (
 			                        STR($this),
@@ -7730,12 +7733,6 @@ observable:MobileDeviceFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:IMEI ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
 			sh:path observable:bluetoothDeviceName ;
 		] ,
 		[
@@ -7749,6 +7746,11 @@ observable:MobileDeviceFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:network ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:IMEI ;
 		]
 		;
 	sh:targetClass observable:MobileDeviceFacet ;
@@ -9463,6 +9465,23 @@ observable:StorageMedium
 	rdfs:label "StorageMedium"@en-US ;
 	rdfs:comment "A storage medium is any digital storage device that applies electromagnetic or optical surfaces, or depends solely on electronic circuits as solid state storage, for storing digital data. Examples include HDD (PATA), SATA, SSD, Optical, Memory_Card, Tape, etc"@en-US ;
 	sh:targetClass observable:StorageMedium ;
+	.
+
+observable:StorageMediumFacet
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Facet ;
+	rdfs:label "StorageMediumFacet"@en ;
+	rdfs:comment "A storage medium facet is a grouping of characteristics unique to a the storage capabilities of a piece of equipment or a mechanism designed to serve a special purpose or perform a special function."@en ;
+	sh:property [
+		sh:datatype xsd:integer ;
+		sh:maxCount "1"^^xsd:integer ;
+		sh:nodeKind sh:Literal ;
+		sh:path observable:totalStorageCapacityInBytes ;
+	] ;
+	sh:targetClass observable:StorageMediumFacet ;
 	.
 
 observable:SymbolicLink
@@ -12116,6 +12135,12 @@ observable:WindowsThreadFacet
 			sh:path observable:creationTime ;
 		] ,
 		[
+			sh:datatype xsd:dateTime ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:observableCreatedTime ;
+		] ,
+		[
 			sh:datatype xsd:hexBinary ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:parameterAddress ;
@@ -13441,9 +13466,24 @@ observable:creationFlags
 	.
 
 observable:creationTime
-	a owl:DatatypeProperty ;
+	a
+		owl:DatatypeProperty ,
+		owl:DeprecatedProperty
+		;
 	rdfs:label "creationTime"@en ;
 	rdfs:range xsd:dateTime ;
+	.
+
+observable:creationTime-deprecation-shape
+	a sh:NodeShape ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "observable:creationTime is deprecated, and will be an error to use in UCO 2.0.0.  observable:observableCreatedTime should be used instead."@en ;
+		sh:path observable:creationTime ;
+		sh:severity sh:Warning ;
+	] ;
+	sh:targetSubjectsOf observable:creationTime ;
 	.
 
 observable:creator
@@ -16542,6 +16582,13 @@ observable:totalSpace
 	rdfs:range xsd:integer ;
 	.
 
+observable:totalStorageCapacityInBytes
+	a owl:DatatypeProperty ;
+	rdfs:label "totalStorageCapacityInBytes"@en ;
+	rdfs:comment "The maximum number of bytes that can be stored on a storage device."@en ;
+	rdfs:range xsd:integer ;
+	.
+
 observable:triggerBeginTime
 	a owl:DatatypeProperty ;
 	rdfs:label "triggerBeginTime"@en ;
@@ -17532,6 +17579,10 @@ types:Hash
 						"SHA1"^^vocabulary:HashNameVocab
 						"SHA224"^^vocabulary:HashNameVocab
 						"SHA256"^^vocabulary:HashNameVocab
+						"SHA3-224"^^vocabulary:HashNameVocab
+						"SHA3-256"^^vocabulary:HashNameVocab
+						"SHA3-384"^^vocabulary:HashNameVocab
+						"SHA3-512"^^vocabulary:HashNameVocab
 						"SHA384"^^vocabulary:HashNameVocab
 						"SHA512"^^vocabulary:HashNameVocab
 						"SSDEEP"^^vocabulary:HashNameVocab
@@ -18441,6 +18492,10 @@ vocabulary:HashNameVocab
 			"SHA1"^^vocabulary:HashNameVocab
 			"SHA224"^^vocabulary:HashNameVocab
 			"SHA256"^^vocabulary:HashNameVocab
+			"SHA3-224"^^vocabulary:HashNameVocab
+			"SHA3-256"^^vocabulary:HashNameVocab
+			"SHA3-384"^^vocabulary:HashNameVocab
+			"SHA3-512"^^vocabulary:HashNameVocab
 			"SHA384"^^vocabulary:HashNameVocab
 			"SHA512"^^vocabulary:HashNameVocab
 			"SSDEEP"^^vocabulary:HashNameVocab
@@ -18608,6 +18663,7 @@ vocabulary:ObservableObjectRelationshipVocab
 			"Sent_Via_Upload"^^vocabulary:ObservableObjectRelationshipVocab
 			"Set_From"^^vocabulary:ObservableObjectRelationshipVocab
 			"Set_To"^^vocabulary:ObservableObjectRelationshipVocab
+			"Signed_By"^^vocabulary:ObservableObjectRelationshipVocab
 			"Sub-domain_Of"^^vocabulary:ObservableObjectRelationshipVocab
 			"Supra-domain_Of"^^vocabulary:ObservableObjectRelationshipVocab
 			"Suspended"^^vocabulary:ObservableObjectRelationshipVocab
