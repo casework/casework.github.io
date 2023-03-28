@@ -54,5 +54,13 @@ CASE 1.0.0 incorporates required refinements and updates to provide a stable ver
 
 * Isodate fails to install (removed legacy requirements) ([*GitHub Issue 106*](https://github.com/casework/CASE/issues/106))
 
+
 ## Documentation
 
+Generated documentation is available at this site:
+
+[https://ontology.caseontology.org/](https://ontology.caseontology.org/)
+
+Be aware that the documentation at that site will only show the most recent release.  The upper-left corner of the documentation pages shows the ontology version being reviewed.
+
+Users interested in seeing the rendered documentation at this version "Back in time" should locally clone the ontology documentation repository, checking out [this branch](https://github.com/casework/ontology.caseontology.org/tree/archive/release-1.0.0), and follow the deployment directions in `CONTRIBUTE.md`.
