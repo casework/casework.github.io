@@ -44,3 +44,11 @@ This release adopts [UCO 1.1.0](https://unifiedcyberontology.org/releases/1.1.0/
 * Removed the errant concept of owl:ontologyIRI ([*UCO GitHub Issue 491*](https://github.com/ucoProject/UCO/issues/491))
 
 ## Documentation
+
+Generated documentation is available at this site:
+
+[https://ontology.caseontology.org/](https://ontology.caseontology.org/)
+
+Be aware that the documentation at that site will only show the most recent release.  The upper-left corner of the documentation pages shows the ontology version being reviewed.
+
+Users interested in seeing the rendered documentation at this version "Back in time" should locally clone the ontology documentation repository, checking out [this branch](https://github.com/casework/ontology.caseontology.org/tree/archive/release-1.1.0), and follow the deployment directions in `CONTRIBUTE.md`.

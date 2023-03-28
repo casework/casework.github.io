@@ -48,3 +48,5 @@ Starting with CASE 0.7.0, generated documentation is available at this site:
 [https://ontology.caseontology.org/](https://ontology.caseontology.org/)
 
 Be aware that the documentation will show the most recent release, until an ontology versioning strategy currently in initial implementation completes its testing.  The upper-left corner of the documentation pages shows the ontology version being reviewed.
+
+Users interested seeing the rendered documentation at this version "Back in time" should locally clone the repository, check out [this branch](https://github.com/casework/ontology.caseontology.org/tree/archive/release-0.7.0), and follow the deployment directions in `CONTRIBUTE.md`.

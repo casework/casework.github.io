@@ -40,10 +40,10 @@ CASE 0.7.1 implements a starting point in CASE for ontology version designation 
 
 ## Documentation
 
-Coming soon to this site:
+Generated documentation is available at this site:
 
 [https://ontology.caseontology.org/](https://ontology.caseontology.org/)
 
 Be aware that the documentation at that site will only show the most recent release.  The upper-left corner of the documentation pages shows the ontology version being reviewed.
 
-After the following CASE release, users interested seeing the rendered documentation at this version "Back in time" should locally clone the repository, check out [this branch](https://github.com/casework/ontology.caseontology.org/tree/archive/release-0.7.1), and follow the deployment directions in `CONTRIBUTE.md`.
+Users interested seeing the rendered documentation at this version "Back in time" should locally clone the repository, check out [this branch](https://github.com/casework/ontology.caseontology.org/tree/archive/release-0.7.1), and follow the deployment directions in `CONTRIBUTE.md`.
