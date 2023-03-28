@@ -50,6 +50,9 @@ all: \
 	  --directory dependencies/CASE-develop \
 	  .lib.done.log
 	$(MAKE) \
+	  --directory dependencies/CASE-develop-2.0.0 \
+	  .lib.done.log
+	$(MAKE) \
 	  --directory dependencies/CASE-unstable \
 	  .git_submodule_init.done.log
 	$(MAKE) \
