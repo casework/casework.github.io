@@ -31,3 +31,6 @@
 - title: 1.1.0
   date: 2022-11-22
   desc: Adoption of UCO 1.1.0.  Bug fixes and test improvements.
+- title: 1.2.0
+  date: 2023-03-29
+  desc: Adoption of UCO 1.2.0.  Addition of catalog-v001.xml files in support of ontology editing tools.
