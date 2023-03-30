@@ -1,5 +1,5 @@
 PREFIX case-investigation: <https://ontology.caseontology.org/case/investigation/>
-PREFIX drafting: <http://example.org/ontology/drafting#>
+PREFIX drafting: <http://example.org/ontology/drafting/>
 PREFIX uco-action: <https://ontology.unifiedcyberontology.org/uco/action/>
 PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
 PREFIX uco-location: <https://ontology.unifiedcyberontology.org/uco/location/>
