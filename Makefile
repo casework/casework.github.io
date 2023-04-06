@@ -34,7 +34,10 @@ all: \
   all-ontology \
   check-examples \
   check-migration-0.2.0 \
-  check-ontology
+  check-ontology \
+  check-supply-chain \
+  check-supply-chain-pre-commit \
+  check-supply-chain-submodules
 
 .dependencies.done.log: \
   .venv.done.log
@@ -137,6 +140,28 @@ check-ontology: \
 	$(MAKE) \
 	  --directory ontology \
 	  check
+
+# This target's dependencies potentially modify the working directory's Git state, so it is intentionally not a dependency of check.
+check-supply-chain: \
+  check-supply-chain-pre-commit \
+  check-supply-chain-submodules
+
+check-supply-chain-pre-commit: \
+  .venv-pre-commit/var/.pre-commit-built.log
+	source .venv-pre-commit/bin/activate \
+	  && pre-commit autoupdate
+	git diff \
+	  --exit-code \
+	  .pre-commit-config.yaml
+
+check-supply-chain-submodules: \
+  .git_submodule_init.done.log
+	git submodule update \
+	  --remote
+	git diff \
+	  --exit-code \
+	  --ignore-submodules=dirty \
+	  dependencies
 
 clean:
 	@$(MAKE) \
