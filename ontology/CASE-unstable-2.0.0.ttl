@@ -1053,7 +1053,7 @@ action:Action
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf core:Perdurant ;
 	rdfs:label "Action"@en ;
 	rdfs:comment "An action is something that may be done or performed."@en ;
 	sh:property
@@ -2053,12 +2053,32 @@ core:EnclosingCompilation
 	sh:targetClass core:EnclosingCompilation ;
 	.
 
-core:Event
+core:Endurant
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
 	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "Endurant"@en ;
+	owl:disjointWith core:Perdurant ;
+	sh:targetClass core:Endurant ;
+	.
+
+core:Endurant-disjointWith-Perdurant
+	a sh:NodeShape ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class core:Perdurant ;
+	] ;
+	sh:targetClass core:Endurant ;
+	.
+
+core:Event
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Perdurant ;
 	rdfs:label "Event"@en ;
 	rdfs:comment "An Event is a noteworthy occurrence (something that happens or might happen)."@en ;
 	sh:property
@@ -2154,7 +2174,7 @@ core:IdentityAbstraction
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf core:Endurant ;
 	rdfs:label "IdentityAbstraction"@en ;
 	rdfs:comment "An identity abstraction is a grouping of identifying characteristics unique to an individual or organization. This class is an ontological structural abstraction for this concept. Implementations of this concept should utilize the identity:Identity class."@en ;
 	sh:targetClass core:IdentityAbstraction ;
@@ -2165,7 +2185,7 @@ core:Item
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf core:Endurant ;
 	rdfs:label "Item"@en ;
 	rdfs:comment "An item is a distinct article or unit."@en ;
 	sh:targetClass core:Item ;
@@ -2191,6 +2211,17 @@ core:ModusOperandi
 	rdfs:label "ModusOperandi"@en ;
 	rdfs:comment "A modus operandi is a particular method of operation (how a particular entity behaves or the resources they use)."@en ;
 	sh:targetClass core:ModusOperandi ;
+	.
+
+core:Perdurant
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "Perdurant"@en ;
+	owl:disjointWith core:Endurant ;
+	sh:targetClass core:Perdurant ;
 	.
 
 core:Relationship
@@ -2506,11 +2537,25 @@ core:hasFacet-shape
 	sh:targetObjectsOf core:hasFacet ;
 	.
 
+core:hasParticipant
+	a owl:ObjectProperty ;
+	rdfs:label "hasParticipant"@en ;
+	rdfs:domain core:Perdurant ;
+	rdfs:range core:Endurant ;
+	.
+
 core:isDirectional
 	a owl:DatatypeProperty ;
 	rdfs:label "isDirectional"@en ;
 	rdfs:comment "A specification whether or not a relationship assertion is limited to the context FROM a source object(s) TO a target object."@en ;
 	rdfs:range xsd:boolean ;
+	.
+
+core:isPerdurantProperPartOf
+	a owl:ObjectProperty ;
+	rdfs:label "isPerdurantProperPartOf"@en ;
+	rdfs:domain core:Perdurant ;
+	rdfs:range core:Perdurant ;
 	.
 
 core:kindOfRelationship
@@ -2987,7 +3032,7 @@ location:Location
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf core:Endurant ;
 	rdfs:label "Location"@en ;
 	rdfs:comment "A location is a geospatial place, site, or position."@en ;
 	sh:targetClass location:Location ;
@@ -8352,7 +8397,10 @@ observable:ObservablePattern
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:Observable ;
+	rdfs:subClassOf
+		core:Endurant ,
+		observable:Observable
+		;
 	rdfs:label "ObservablePattern"@en ;
 	rdfs:comment "An observable pattern is a grouping of characteristics unique to a logical pattern composed of observable object and observable action properties."@en ;
 	sh:targetClass observable:ObservablePattern ;
@@ -16988,7 +17036,10 @@ pattern:LogicalPattern
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf pattern:Pattern ;
+	rdfs:subClassOf
+		core:Endurant ,
+		pattern:Pattern
+		;
 	rdfs:label "LogicalPattern"@en ;
 	rdfs:comment "A logical pattern is a grouping of characteristics unique to an informational pattern expressed via a structured pattern expression following the rules of logic."@en ;
 	sh:property [
