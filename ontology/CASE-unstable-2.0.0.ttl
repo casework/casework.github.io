@@ -1031,6 +1031,15 @@ uco-owl:ontologyIRI-versionIRI-prerequisite-shape
 	sh:targetSubjectsOf owl:versionIRI ;
 	.
 
+uco-owl:sh-datatype-objects-shape
+	a sh:NodeShape ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class owl:Class ;
+	] ;
+	sh:targetObjectsOf sh:datatype ;
+	.
+
 uco-owl:versionIRI-multiversion-shape
 	a sh:PropertyShape ;
 	rdfs:seeAlso <https://www.w3.org/TR/owl2-syntax/#Imports> ;
@@ -1170,14 +1179,10 @@ action:Action
 
 action:Action-disjointWith-Event-shape
 	a sh:NodeShape ;
-	sh:message "action:Action and core:event are disjoint classes."@en ;
-	sh:node [
+	sh:message "action:Action and core:Event are disjoint classes."@en ;
+	sh:not [
 		a sh:NodeShape ;
-		rdfs:comment "This blank node is provided to avoid a SHACL multiple-inheritance issue."@en ;
-		sh:not [
-			a sh:NodeShape ;
-			sh:class core:Event ;
-		] ;
+		sh:class core:Event ;
 	] ;
 	sh:targetClass action:Action ;
 	.
@@ -17061,9 +17066,9 @@ pattern:LogicalPattern
 	rdfs:label "LogicalPattern"@en ;
 	rdfs:comment "A logical pattern is a grouping of characteristics unique to an informational pattern expressed via a structured pattern expression following the rules of logic."@en ;
 	sh:property [
-		sh:datatype pattern:PatternExpression ;
+		sh:class pattern:PatternExpression ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
+		sh:nodeKind sh:IRI ;
 		sh:path pattern:patternExpression ;
 	] ;
 	sh:targetClass pattern:LogicalPattern ;
@@ -17092,7 +17097,7 @@ pattern:PatternExpression
 	.
 
 pattern:patternExpression
-	a owl:DatatypeProperty ;
+	a owl:ObjectProperty ;
 	rdfs:label "patternExpression"@en ;
 	rdfs:comment "An explicit logical pattern expression."@en ;
 	rdfs:range pattern:PatternExpression ;

@@ -1170,14 +1170,10 @@ action:Action
 
 action:Action-disjointWith-Event-shape
 	a sh:NodeShape ;
-	sh:message "action:Action and core:event are disjoint classes."@en ;
-	sh:node [
+	sh:message "action:Action and core:Event are disjoint classes."@en ;
+	sh:not [
 		a sh:NodeShape ;
-		rdfs:comment "This blank node is provided to avoid a SHACL multiple-inheritance issue."@en ;
-		sh:not [
-			a sh:NodeShape ;
-			sh:class core:Event ;
-		] ;
+		sh:class core:Event ;
 	] ;
 	sh:targetClass action:Action ;
 	.
