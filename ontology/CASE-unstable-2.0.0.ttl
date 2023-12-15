@@ -1173,6 +1173,15 @@ uco-owl:rdf-rest-subjects-shape
 	sh:targetSubjectsOf rdf:rest ;
 	.
 
+uco-owl:sh-datatype-objects-shape
+	a sh:NodeShape ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class owl:Class ;
+	] ;
+	sh:targetObjectsOf sh:datatype ;
+	.
+
 uco-owl:unionOf-subjects-shape
 	a sh:NodeShape ;
 	sh:property [
@@ -1215,7 +1224,7 @@ action:Action
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf core:Perdurant ;
 	rdfs:label "Action"@en ;
 	rdfs:comment "An action is something that may be done or performed."@en ;
 	rdfs:isDefinedBy <https://ontology.unifiedcyberontology.org/uco/types> ;
@@ -2227,12 +2236,35 @@ core:EnclosingCompilation
 	sh:targetClass core:EnclosingCompilation ;
 	.
 
-core:Event
+core:Endurant
 	a
 		owl:Class ,
 		sh:NodeShape
 		;
 	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "Endurant"@en ;
+	rdfs:comment "A UcoObject that endures in time and may change qualitatively while keeping its identity. Also termed 'continuant' in the philosophical literature."@en ;
+	dcterms:description "Examples include: ordinary objects of everyday experience, such as a person, a house, and a car; reified relationships, such as a marriage, a rental contract, and a person's love for another; and existentially-dependent aspects of objects, such as a car's weight, a person's language skills, and a house's color."@en ;
+	dcterms:source <https://nemo-ufes.github.io/gufo/#Endurant> ;
+	owl:disjointWith core:Perdurant ;
+	sh:targetClass core:Endurant ;
+	.
+
+core:Endurant-disjointWith-Perdurant
+	a sh:NodeShape ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class core:Perdurant ;
+	] ;
+	sh:targetClass core:Endurant ;
+	.
+
+core:Event
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:Perdurant ;
 	rdfs:label "Event"@en ;
 	rdfs:comment "An Event is a noteworthy occurrence (something that happens or might happen)."@en ;
 	owl:disjointWith action:Action ;
@@ -2329,7 +2361,7 @@ core:IdentityAbstraction
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf core:Endurant ;
 	rdfs:label "IdentityAbstraction"@en ;
 	rdfs:comment "An identity abstraction is a grouping of identifying characteristics unique to an individual or organization. This class is an ontological structural abstraction for this concept. Implementations of this concept should utilize the identity:Identity class."@en ;
 	sh:targetClass core:IdentityAbstraction ;
@@ -2340,7 +2372,7 @@ core:Item
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf core:Endurant ;
 	rdfs:label "Item"@en ;
 	rdfs:comment "An item is a distinct article or unit."@en ;
 	sh:targetClass core:Item ;
@@ -2366,6 +2398,23 @@ core:ModusOperandi
 	rdfs:label "ModusOperandi"@en ;
 	rdfs:comment "A modus operandi is a particular method of operation (how a particular entity behaves or the resources they use)."@en ;
 	sh:targetClass core:ModusOperandi ;
+	.
+
+core:Perdurant
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoObject ;
+	rdfs:label "Perdurant"@en ;
+	rdfs:comment "A UcoObject that 'occurs' or 'happens' in time, or 'unfold' over time. They may be instantaneous or long-running, and represent those 'things that happen to or are performed by' (Casati and Varzi, 2015) endurants or otherwise can count endurants as their participants. Also termed 'happening', 'occurrence', or 'occurrent' in the philosophical literature."@en ;
+	dcterms:description "Examples include actions and processes, such as a business meeting, a communicative act, a soccer match, a goal kick, the clicking of a mouse button; as well as natural occurrences such as an earthquake, the fall of the meteor that caused the extinction of the dinosaurs."@en ;
+	dcterms:source
+		"Casati, R. & Varzi, A. (2015). Events. In E.N. Zalta (Ed.), The Stanford Encyclopedia of Philosophy (Winter 2015 ed.). 19 Metaphysics Research Lab, Stanford University. https://plato.stanford.edu/archives/win2015/entries/events/"@en ,
+		<https://nemo-ufes.github.io/gufo/#Perdurant>
+		;
+	owl:disjointWith core:Endurant ;
+	sh:targetClass core:Perdurant ;
 	.
 
 core:Relationship
@@ -2681,11 +2730,31 @@ core:hasFacet-shape
 	sh:targetObjectsOf core:hasFacet ;
 	.
 
+core:hasParticipant
+	a owl:ObjectProperty ;
+	rdfs:label "hasParticipant"@en ;
+	rdfs:comment "Identifies a core:Endurant that participates in the core:Perdurant"@en ;
+	dcterms:description "Examples include the participation of Freddy Mercury in Queen's Live Aid Concert and the participation of an airplane in a flight."@en ;
+	dcterms:source <http://purl.org/nemo/gufo#participatedIn> ;
+	rdfs:domain core:Perdurant ;
+	rdfs:range core:Endurant ;
+	.
+
 core:isDirectional
 	a owl:DatatypeProperty ;
 	rdfs:label "isDirectional"@en ;
 	rdfs:comment "A specification whether or not a relationship assertion is limited to the context FROM a source object(s) TO a target object."@en ;
 	rdfs:range xsd:boolean ;
+	.
+
+core:isPerdurantProperPartOf
+	a owl:ObjectProperty ;
+	rdfs:label "isPerdurantProperPartOf"@en ;
+	rdfs:comment "Identifies a core:Perdurant of which the endurant is part."@en ;
+	dcterms:description "For example, Cristiano Ronaldo's penalty kick is an event proper part of the 2016 FIFA Club World Cup Final, having ocurred in the 60th minute of that match. That match is itself an event proper part of the 2016 FIFA Club World Cup. The match can be decomposed in different ways. For example, we can identify the participation of each player in the match or decomposed the match using some temporal segmentation (each minute of the match, each of which is a proper part of the match)."@en ;
+	dcterms:source <http://purl.org/nemo/gufo#isEventProperPartOf> ;
+	rdfs:domain core:Perdurant ;
+	rdfs:range core:Perdurant ;
 	.
 
 core:kindOfRelationship
@@ -3162,7 +3231,7 @@ location:Location
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf core:Endurant ;
 	rdfs:label "Location"@en ;
 	rdfs:comment "A location is a geospatial place, site, or position."@en ;
 	sh:targetClass location:Location ;
@@ -6692,12 +6761,11 @@ observable:File
 
 observable:File-disjointWith-URL-shape
 	a sh:NodeShape ;
-	sh:message "observable:File and observable:URL are disjoint classes.  Assigning both types to a single node will be an error in UCO 2.0.0."@en ;
+	sh:message "observable:File and observable:URL are disjoint classes."@en ;
 	sh:not [
 		a sh:NodeShape ;
 		sh:class observable:URL ;
 	] ;
-	sh:severity sh:Warning ;
 	sh:targetClass observable:File ;
 	.
 
@@ -8528,7 +8596,11 @@ observable:ObservablePattern
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf observable:Observable ;
+	rdfs:subClassOf
+		core:Endurant ,
+		observable:Observable ,
+		pattern:Pattern
+		;
 	rdfs:label "ObservablePattern"@en ;
 	rdfs:comment "An observable pattern is a grouping of characteristics unique to a logical pattern composed of observable object and observable action properties."@en ;
 	sh:targetClass observable:ObservablePattern ;
@@ -12380,12 +12452,6 @@ observable:WindowsThreadFacet
 			sh:datatype xsd:dateTime ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:creationTime ;
-		] ,
-		[
-			sh:datatype xsd:dateTime ;
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
 			sh:path observable:observableCreatedTime ;
 		] ,
 		[
@@ -13727,9 +13793,8 @@ observable:creationTime-deprecation-shape
 	sh:property [
 		a sh:PropertyShape ;
 		sh:maxCount "0"^^xsd:integer ;
-		sh:message "observable:creationTime is deprecated, and will be an error to use in UCO 2.0.0.  observable:observableCreatedTime should be used instead."@en ;
+		sh:message "observable:creationTime is deprecated, and an error to use as of UCO 2.0.0.  observable:observableCreatedTime should be used instead."@en ;
 		sh:path observable:creationTime ;
-		sh:severity sh:Warning ;
 	] ;
 	sh:targetSubjectsOf observable:creationTime ;
 	.
@@ -17171,13 +17236,16 @@ pattern:LogicalPattern
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf pattern:Pattern ;
+	rdfs:subClassOf
+		core:Endurant ,
+		pattern:Pattern
+		;
 	rdfs:label "LogicalPattern"@en ;
 	rdfs:comment "A logical pattern is a grouping of characteristics unique to an informational pattern expressed via a structured pattern expression following the rules of logic."@en ;
 	sh:property [
-		sh:datatype pattern:PatternExpression ;
+		sh:class pattern:PatternExpression ;
 		sh:maxCount "1"^^xsd:integer ;
-		sh:nodeKind sh:Literal ;
+		sh:nodeKind sh:IRI ;
 		sh:path pattern:patternExpression ;
 	] ;
 	sh:targetClass pattern:LogicalPattern ;
@@ -17206,7 +17274,7 @@ pattern:PatternExpression
 	.
 
 pattern:patternExpression
-	a owl:DatatypeProperty ;
+	a owl:ObjectProperty ;
 	rdfs:label "patternExpression"@en ;
 	rdfs:comment "An explicit logical pattern expression."@en ;
 	rdfs:range pattern:PatternExpression ;
@@ -17869,7 +17937,7 @@ types:Thread
 		;
 	rdfs:subClassOf
 		co:Bag ,
-		core:UcoThing
+		core:UcoInherentCharacterizationThing
 		;
 	rdfs:label "Thread"@en ;
 	rdfs:comment "A semi-ordered array of items, that can be present in multiple copies.  Implemetation of a UCO Thread is similar to a Collections Ontology List, except a Thread may fork and merge - that is, one of its members may have two or more direct successors, and two or more direct predecessors."@en ;
@@ -17887,7 +17955,7 @@ types:ThreadItem
 		;
 	rdfs:subClassOf
 		co:Item ,
-		core:UcoThing
+		core:UcoInherentCharacterizationThing
 		;
 	rdfs:label "ThreadItem"@en ;
 	rdfs:comment "A ThreadItem is a member of a thread."@en ;
