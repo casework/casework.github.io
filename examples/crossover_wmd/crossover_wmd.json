@@ -278,7 +278,9 @@
                     "uco-observable:bodyRaw": {
                         "@id": "kb:contentdata-f3b4a8da-d3ba-46b7-a7a0-3c17ec13648d"
                     },
-                    "uco-observable:fromRef": null,
+                    "uco-observable:from": {
+                        "@id": "kb:emailaddress-456a2bac-8c21-11e9-8902-0c4de9c24de5"
+                    },
                     "uco-observable:toRef": null,
                     "uco-observable:ccRefs": null,
                     "uco-observable:bccRefs": null,
@@ -859,6 +861,14 @@
                     "drafting:name": "siminfo"
                 }
             ]
+        },
+        {
+            "@id": "kb:emailaccount-99d72bac-8c21-11e9-8902-0c4de9c21b53",
+            "rdfs:comment": "TODO - Discuss."
+        },
+        {
+            "@id": "kb:email-message-facet-6c0d5813-5557-481d-95f3-b5f660e3e102",
+            "rdfs:comment": "TODO - Fill out, or delete, the incomplete 'ref' triples."
         },
         {
             "@id": "kb:url-39ff4987-8ae5-47e3-8369-dbd0d5f79398",
