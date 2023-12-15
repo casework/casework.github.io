@@ -1,0 +1,307 @@
+@prefix case-investigation: <https://ontology.caseontology.org/case/investigation/> .
+@prefix drafting: <http://example.org/ontology/drafting/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+drafting:Endurant
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf uco-core:UcoObject ;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/544> ;
+	owl:disjointWith drafting:Perdurant ;
+	sh:targetClass drafting:Endurant ;
+	.
+
+drafting:Endurant-disjointWith-Perdurant
+	a sh:NodeShape ;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/544> ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class drafting:Perdurant ;
+	] ;
+	sh:targetClass drafting:Endurant ;
+	.
+
+drafting:ParthoodRelationship
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:comment
+		"A Parthood Relationship is a relationship where the source is a part of the target. (I.e., the 'component' thing is the source, the 'composite' thing is the target.)"@en ,
+		"TODO - consider for proposal."@en
+		;
+	rdfs:subClassOf
+		uco-core:Relationship ,
+		[
+			a owl:Restriction ;
+			owl:onProperty uco-core:isDirectional ;
+			owl:hasValue true ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty uco-core:source ;
+			owl:allValuesFrom [
+				a owl:Restriction ;
+				owl:onProperty drafting:isPartOf ;
+				owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+			] ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty uco-core:target ;
+			owl:allValuesFrom [
+				a owl:Restriction ;
+				owl:onProperty drafting:hasPart ;
+				owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+			] ;
+		]
+		;
+	sh:not [
+		a sh:NodeShape ;
+		sh:property [
+			a sh:PropertyShape ;
+			sh:hasValue false ;
+			sh:path uco-core:isDirectional ;
+		] ;
+	] ;
+	sh:targetClass drafting:ParthoodRelationship ;
+	.
+
+drafting:ParticipationRelationship
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:comment "The directionality of the ParticipationRelationship is that the source participates in the target."@en ;
+	rdfs:comment "TODO - consider for proposal."@en ;
+	rdfs:subClassOf
+		drafting:ParthoodRelationship ,
+		[
+			a owl:Restriction ;
+			owl:onProperty uco-core:source ;
+			owl:allValuesFrom drafting:Endurant ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty uco-core:target ;
+			owl:allValuesFrom drafting:Perdurant ;
+		]
+		;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:class drafting:Endurant ;
+			sh:path uco-core:source ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:class drafting:Perdurant ;
+			sh:path uco-core:target ;
+		]
+		;
+	sh:targetClass drafting:ParticipationRelationship ;
+	.
+
+drafting:Perdurant
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/544> ;
+	rdfs:subClassOf uco-core:UcoObject ;
+	owl:disjointWith drafting:Endurant ;
+	sh:targetClass drafting:Perdurant ;
+	.
+
+drafting:PerdurantProperParthoodRelationship
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:comment "The directionality of the PerdurantProperParthoodRelationship is that the source is a part of the target in the context of perdurant composition."@en ;
+	rdfs:comment "TODO - consider for proposal."@en ;
+	rdfs:subClassOf
+		drafting:ParthoodRelationship ,
+		[
+			a owl:Restriction ;
+			owl:onProperty uco-core:source ;
+			owl:allValuesFrom drafting:Perdurant ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty uco-core:target ;
+			owl:allValuesFrom drafting:Perdurant ;
+		]
+		;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:class drafting:Perdurant ;
+			sh:path uco-core:source ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:class drafting:Perdurant ;
+			sh:path uco-core:target ;
+		]
+		;
+	sh:targetClass drafting:PerdurantProperParthoodRelationship ;
+	.
+
+drafting:hasPart
+	a owl:ObjectProperty ;
+	rdfs:comment
+		'TODO - Because of the potential for the inferred parthood relationship to end, this may need to be spelled "hadPart" in the general case.'@en ,
+		"TODO - consider for proposal."@en ,
+		"The hasPart predicate implies the existence of a parthood relationship, where the RDF subject of hasPart is the uco-core:target of the parthood relationship."@en
+		;
+	owl:inverseOf drafting:isPartOf ;
+
+	owl:propertyChainAxiom (
+		[
+			owl:inverseOf uco-core:target ;
+		]
+		uco-core:source
+	) ;
+	rdfs:domain uco-core:UcoObject ;
+	rdfs:range uco-core:UcoObject ;
+	.
+
+drafting:hasParticipant
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf drafting:hasPart ;
+	rdfs:comment "The property chain axiom of hasPart is specialized by this property to imply a ParticipationRelationship."@en ;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/544> ;
+	owl:inverseOf drafting:isParticipantIn ;
+	rdfs:domain drafting:Perdurant ;
+	rdfs:range drafting:Endurant ;
+	.
+
+drafting:hasParticipant-objects-shape
+	a sh:NodeShape ;
+	sh:class drafting:Endurant ;
+	sh:targetObjectsOf drafting:hasParticipant ;
+	.
+
+drafting:hasParticipant-subjects-shape
+	a sh:NodeShape ;
+	sh:class drafting:Perdurant ;
+	sh:targetSubjectsOf drafting:hasParticipant ;
+	.
+
+drafting:hasPerdurantProperPart
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf drafting:hasPart ;
+	rdfs:comment
+		"TODO - consider for proposal."@en ,
+		"The property chain axiom of hasPart implies a PerdurantProperParthoodRelationship."@en
+		;
+	owl:inverseOf drafting:isPerdurantProperPartOf ;
+	rdfs:domain drafting:Perdurant ;
+	rdfs:range drafting:Perdurant ;
+	.
+
+drafting:hasPerdurantProperPart-objects-shape
+	a sh:NodeShape ;
+	sh:class drafting:Perdurant ;
+	sh:targetObjectsOf drafting:hasPerdurantProperPart ;
+	.
+
+drafting:hasPerdurantProperPart-subjects-shape
+	a sh:NodeShape ;
+	sh:class drafting:Perdurant ;
+	sh:targetSubjectsOf drafting:hasPerdurantProperPart ;
+	.
+
+drafting:isPartOf
+	a owl:ObjectProperty ;
+	rdfs:comment
+		'TODO - Because of the potential for the inferred parthood relationship to end, this may need to be spelled "wasPartOf" in the general case.'@en ,
+		"TODO - consider for proposal."@en ,
+		"The isPartOf predicate implies the existence of a parthood relationship, where the RDF subject of isPartOf is the uco-core:source of the parthood relationship."@en
+		;
+	owl:propertyChainAxiom (
+		[
+			owl:inverseOf uco-core:source ;
+		]
+		uco-core:target
+	) ;
+	rdfs:domain uco-core:UcoObject ;
+	rdfs:range uco-core:UcoObject ;
+	.
+
+drafting:isParticipantIn
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf drafting:isPartOf ;
+	rdfs:comment
+		"TODO - consider for proposal."@en ,
+		"The property chain axiom of isPartOf is specialized by this property to imply a ParticipationRelationship."@en
+		;
+	owl:inverseOf drafting:hasParticipant ;
+	rdfs:domain drafting:Endurant ;
+	rdfs:range drafting:Perdurant ;
+	.
+
+drafting:isParticipantIn-objects-shape
+	a sh:NodeShape ;
+	sh:class drafting:Perdurant ;
+	sh:targetObjectsOf drafting:isParticipantIn ;
+	.
+
+drafting:isParticipantIn-subjects-shape
+	a sh:NodeShape ;
+	sh:class drafting:Endurant ;
+	sh:targetSubjectsOf drafting:isParticipantIn ;
+	.
+
+drafting:isPerdurantProperPartOf
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf drafting:isPartOf ;
+	rdfs:comment "The property chain axiom of isPartOf implies a PerdurantProperParthoodRelationship."@en ;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/544> ;
+	owl:inverseOf drafting:hasPerdurantProperPart ;
+	rdfs:domain drafting:Perdurant ;
+	rdfs:range drafting:Perdurant ;
+	.
+
+drafting:isPerdurantProperPartOf-objects-shape
+	a sh:NodeShape ;
+	sh:class drafting:Perdurant ;
+	sh:targetObjectsOf drafting:isPerdurantProperPartOf ;
+	.
+
+drafting:isPerdurantProperPartOf-subjects-shape
+	a sh:NodeShape ;
+	sh:class drafting:Perdurant ;
+	sh:targetSubjectsOf drafting:isPerdurantProperPartOf ;
+	.
+
+case-investigation:Investigation
+	rdfs:subClassOf drafting:Perdurant ;
+	.
+
+uco-action:Action
+	rdfs:subClassOf drafting:Perdurant ;
+	.
+
+uco-core:Item
+	rdfs:subClassOf drafting:Endurant ;
+	.
+
+[]
+	a owl:Axiom ;
+	owl:annotatedSource case-investigation:Investigation ;
+	owl:annotatedProperty rdfs:subClassOf ;
+	owl:annotatedTarget drafting:Perdurant ;
+	rdfs:comment "NOTE - At the time of initial drafting of this file, this is known to conflict with the implementation state of CASE's Investigation object."@en ;
+	rdfs:isDefinedBy <https://github.com/casework/CASE/issues/138> ;
+	.
+

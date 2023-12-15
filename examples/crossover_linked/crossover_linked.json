@@ -1,0 +1,137 @@
+{
+    "@context": {
+        "@vocab": "http://example.org/ontology/local#",
+        "case-investigation": "https://ontology.caseontology.org/case/investigation/",
+        "drafting": "http://example.org/ontology/drafting/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "kb": "http://example.org/kb/",
+        "uco-action": "https://ontology.unifiedcyberontology.org/uco/action/",
+        "uco-configuration": "https://ontology.unifiedcyberontology.org/uco/configuration/",
+        "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
+        "uco-identity": "https://ontology.unifiedcyberontology.org/uco/identity/",
+        "uco-location": "https://ontology.unifiedcyberontology.org/uco/location/",
+        "uco-observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+        "uco-role": "https://ontology.unifiedcyberontology.org/uco/role/",
+        "uco-tool": "https://ontology.unifiedcyberontology.org/uco/tool/",
+        "uco-types": "https://ontology.unifiedcyberontology.org/uco/types/",
+        "uco-vocabulary": "https://ontology.unifiedcyberontology.org/uco/vocabulary/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "kb:Investigation-16a1c26a-60bf-4345-a863-53a138b73f0f",
+            "@type": "case-investigation:Investigation",
+            "uco-core:name": "CROSSOVER_2018_JOINT",
+            "uco-core:description": "Joint investigation",
+            "rdfs:comment": [
+                "This investigation's set of uco-core:object values is seeded with the two investigations and the pair of email addresses with fully matching literal-values found in each investigation.",
+                "As an exercise of CASE Issue 138 and UCO Issue 544, the objects linked with uco-core:object are also linked with hasParticipant and hasPerdurantProperPart."
+            ],
+            "uco-core:object": [
+                {
+                    "@id": "kb:Investigation1-85c7b8d1-54e0-4023-847a-20e0f55dd48e"
+                },
+                {
+                    "@id": "kb:EmailAddress-5f63c12b-115a-474f-b1b2-15ebdb2fce31"
+                },
+                {
+                    "@id": "kb:EmailAddress-d2bc0936-e1c5-4b55-8a1b-af2b3a2b145c"
+                },
+                {
+                    "@id": "kb:investigation-99892fd4-ea24-46b5-be68-a69978d6ab98"
+                },
+                {
+                    "@id": "kb:emailaddress-456a2bac-8c21-11e9-8902-0c4de9c24de5"
+                },
+                {
+                    "@id": "kb:emailaddress-99d72bac-8c21-11e9-8902-0c4de9c21b53"
+                }
+            ],
+            "drafting:hasParticipant": [
+                {
+                    "@id": "kb:EmailAddress-5f63c12b-115a-474f-b1b2-15ebdb2fce31"
+                },
+                {
+                    "@id": "kb:EmailAddress-d2bc0936-e1c5-4b55-8a1b-af2b3a2b145c"
+                },
+                {
+                    "@id": "kb:emailaddress-456a2bac-8c21-11e9-8902-0c4de9c24de5"
+                },
+                {
+                    "@id": "kb:emailaddress-99d72bac-8c21-11e9-8902-0c4de9c21b53"
+                }
+            ],
+            "drafting:hasPerdurantProperPart": [
+                {
+                    "@id": "kb:Investigation1-85c7b8d1-54e0-4023-847a-20e0f55dd48e"
+                },
+                {
+                    "@id": "kb:investigation-99892fd4-ea24-46b5-be68-a69978d6ab98"
+                }
+            ]
+        },
+        {
+            "@id": "kb:Relationship-e25bafbb-4621-4c83-aad9-89e69037e17d",
+            "@type": "drafting:PerdurantProperParthoodRelationship",
+            "uco-core:isDirectional": true,
+            "uco-core:kindOfRelationship": "Is_Part_of",
+            "uco-core:source": {
+                "@id": "kb:Investigation1-85c7b8d1-54e0-4023-847a-20e0f55dd48e"
+            },
+            "uco-core:target": {
+                "@id": "kb:Investigation-16a1c26a-60bf-4345-a863-53a138b73f0f"
+            }
+        },
+        {
+            "@id": "kb:Relationship-b8342e2b-8a91-423b-986e-ea9395334dd8",
+            "@type": "drafting:PerdurantProperParthoodRelationship",
+            "uco-core:isDirectional": true,
+            "uco-core:kindOfRelationship": "Is_Part_of",
+            "uco-core:source": {
+                "@id": "kb:investigation-99892fd4-ea24-46b5-be68-a69978d6ab98"
+            },
+            "uco-core:target": {
+                "@id": "kb:Investigation-16a1c26a-60bf-4345-a863-53a138b73f0f"
+            }
+        },
+        {
+            "@id": "kb:Investigation1-85c7b8d1-54e0-4023-847a-20e0f55dd48e",
+            "rdfs:comment": "TODO: This link should be incorporated into crossover_heist.json.",
+            "uco-core:object": {
+                "@id": "kb:InvestigativeAction-ba303f7f-02e8-45d7-bce2-40b846af14e0"
+            },
+            "drafting:hasPerdurantProperPart": {
+                "@id": "kb:InvestigativeAction-ba303f7f-02e8-45d7-bce2-40b846af14e0"
+            }
+        },
+        {
+            "@id": "kb:InvestigativeAction-ba303f7f-02e8-45d7-bce2-40b846af14e0",
+            "@type": "case-investigation:InvestigativeAction",
+            "uco-core:description": "Find email message",
+            "rdfs:comment": "This investigative action stub is incompletely written, but will need to be completed to tie the resulting email message to the chain of custody.",
+            "uco-action:result": {
+                "@id": "kb:EmailMessage-c5efd42c-d771-43aa-afe5-6b30740348e3"
+            }
+        },
+        {
+            "@id": "kb:investigation-99892fd4-ea24-46b5-be68-a69978d6ab98",
+            "rdfs:comment": "TODO: This link should be incorporated into crossover_wmd.json.",
+            "uco-core:object": {
+                "@id": "kb:InvestigativeAction-df787264-ccb0-47fa-9fb3-4e50c0f3b1e2"
+            },
+            "drafting:hasPerdurantProperPart": {
+                "@id": "kb:InvestigativeAction-df787264-ccb0-47fa-9fb3-4e50c0f3b1e2"
+            }
+        },
+        {
+            "@id": "kb:InvestigativeAction-df787264-ccb0-47fa-9fb3-4e50c0f3b1e2",
+            "@type": "case-investigation:InvestigativeAction",
+            "uco-core:description": "Find email message",
+            "rdfs:comment": "This investigative action stub is incompletely written, but will need to be completed to tie the resulting email message to the chain of custody.",
+            "uco-action:result": {
+                "@id": "kb:emailmessage-2c032220-8c21-11e9-9c99-0c4de9c21b53"
+            }
+        }
+    ]
+}

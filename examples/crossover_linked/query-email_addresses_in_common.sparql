@@ -1,0 +1,20 @@
+SELECT ?lAddressValue ?lInvestigationName ?nInvestigation ?nEmailAddress
+WHERE {
+  ?nInvestigation
+    a case-investigation:Investigation ;
+    uco-core:name ?lInvestigationName ;
+    uco-core:object ?nInvestigativeAction ;
+    .
+  ?nInvestigativeAction
+    a case-investigation:InvestigativeAction ;
+    uco-action:result ?nEmailMessage ;
+    .
+  ?nEmailAddress
+    a uco-observable:EmailAddress ;
+    uco-core:hasFacet / uco-observable:addressValue ?lAddressValue ;
+    .
+  ?nEmailMessage
+    uco-core:hasFacet / (uco-observable:from|uco-observable:to|uco-observable:cc|uco-observable:bcc) ?nEmailAddress ;
+    .
+}
+ORDER BY ?lAddressValue ?lInvestigationName ?nInvestigation ?nEmailAddress
