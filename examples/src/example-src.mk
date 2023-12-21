@@ -96,12 +96,7 @@ generated-$(example_name).json: \
 	python3 $(example_name)_json.py \
 	  $(example_name)_base.json \
 	  $(example_snippets_json) \
-	  > __$@
-	@#Use same normalization procedure when constructing generated file.
-	python3 -m json.tool \
-	  __$@ \
-	  _$@
-	rm __$@
+	  > _$@
 	mv _$@ $@
 
 generated-$(example_name).ttl: \
