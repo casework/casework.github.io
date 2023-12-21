@@ -17,7 +17,7 @@ into a single JSON-LD file.  This script is likely to be replaced with
 an alternative mechanism.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 import logging
 import json
@@ -44,6 +44,7 @@ def main() -> None:
                 obj["@graph"].append(item)
 
     json.dump(obj, sys.stdout, indent=4)
+    sys.stdout.write("\n")
 
 
 if __name__ == "__main__":

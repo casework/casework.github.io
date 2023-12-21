@@ -15,7 +15,7 @@
 This script was copied from the Owl Trafficking scenario.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 import logging
 import json
@@ -42,6 +42,7 @@ def main() -> None:
                 obj["@graph"].append(item)
 
     json.dump(obj, sys.stdout, indent=4)
+    sys.stdout.write("\n")
 
 
 if __name__ == "__main__":
