@@ -1,3 +1,4 @@
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -8,7 +9,7 @@
 
 []
 	a sh:ValidationReport ;
-	sh:conforms "true"^^xsd:boolean ;
+	sh:conforms "false"^^xsd:boolean ;
 	sh:result
 		[
 			a sh:ValidationResult ;
@@ -39,6 +40,36 @@
 				sh:severity sh:Info ;
 			] ;
 			sh:value "Phone" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/primaryuser-email-3c4d0804-6ed0-4dfe-a152-3dab6b5f9111> ;
+			sh:resultMessage "The source on an ObservableRelationship is expected to be typed as an Observable, and the noted value node is not.  This will be an error in UCO 2.0.0."@en ;
+			sh:resultPath core:source ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class uco-observable:Observable ;
+				sh:message "The source on an ObservableRelationship is expected to be typed as an Observable, and the noted value node is not.  This will be an error in UCO 2.0.0."@en ;
+				sh:path core:source ;
+				sh:severity sh:Warning ;
+			] ;
+			sh:value <http://example.org/kb/primaryuser-1e96406f-d86c-47ee-a6ac-71a57e1c8f19> ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/primaryuser-whatsapp-b295bc93-b65c-4670-a5d7-5c2206d78e92> ;
+			sh:resultMessage "The source on an ObservableRelationship is expected to be typed as an Observable, and the noted value node is not.  This will be an error in UCO 2.0.0."@en ;
+			sh:resultPath core:source ;
+			sh:resultSeverity sh:Warning ;
+			sh:sourceConstraintComponent sh:ClassConstraintComponent ;
+			sh:sourceShape [
+				sh:class uco-observable:Observable ;
+				sh:message "The source on an ObservableRelationship is expected to be typed as an Observable, and the noted value node is not.  This will be an error in UCO 2.0.0."@en ;
+				sh:path core:source ;
+				sh:severity sh:Warning ;
+			] ;
+			sh:value <http://example.org/kb/primaryuser-1e96406f-d86c-47ee-a6ac-71a57e1c8f19> ;
 		]
 		;
 	.

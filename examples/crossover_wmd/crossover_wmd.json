@@ -487,7 +487,7 @@
         },
         {
             "@id": "kb:investigatorrole-e9a01d66-fff4-4fa8-88d4-8e445f3369aa",
-            "@type": "uco-observable:ObservableRelationship",
+            "@type": "uco-core:Relationship",
             "uco-core:source": {
                 "@id": "kb:identity-0108480e-1e7a-4341-8b1d-558877c4cc39"
             },
