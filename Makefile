@@ -29,6 +29,7 @@ all: \
   all-ontology
 
 .PHONY: \
+  all-dependencies \
   all-examples \
   all-migration-0.2.0 \
   all-ontology \
@@ -38,12 +39,6 @@ all: \
   check-supply-chain \
   check-supply-chain-pre-commit \
   check-supply-chain-submodules
-
-.dependencies.done.log: \
-  .venv.done.log
-	$(MAKE) \
-	  --directory dependencies
-	touch $@
 
 .git_submodule_init.done.log: \
   .gitmodules
@@ -103,9 +98,13 @@ all: \
 	  .venv-pre-commit/var
 	touch $@
 
+all-dependencies: \
+  .venv.done.log
+	$(MAKE) \
+	  --directory dependencies
 
 all-examples: \
-  .dependencies.done.log
+  all-dependencies
 	$(MAKE) \
 	  --directory examples
 
@@ -114,7 +113,7 @@ all-migration-0.2.0:
 	  --directory releases/0.2.0/migration
 
 all-ontology: \
-  .dependencies.done.log
+  all-dependencies
 	$(MAKE) \
 	  --directory ontology
 
@@ -125,7 +124,7 @@ check: \
   check-ontology
 
 check-examples: \
-  .dependencies.done.log
+  all-dependencies
 	$(MAKE) \
 	  --directory examples \
 	  check
@@ -136,7 +135,7 @@ check-migration-0.2.0:
 	  check
 
 check-ontology: \
-  .dependencies.done.log
+  all-dependencies
 	$(MAKE) \
 	  --directory ontology \
 	  check
@@ -170,8 +169,6 @@ clean:
 	@$(MAKE) \
 	  --directory ontology \
 	  clean
-	@rm -f \
-	  .dependencies.done.log
 	@$(MAKE) \
 	  --directory dependencies \
 	  clean
