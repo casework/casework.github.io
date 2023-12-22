@@ -49,7 +49,7 @@
                 },
                 {
                     "@id": "kb:relationship-d5b4a1e1-0e25-4257-81f7-19febc86ded1",
-                    "@type": "uco-observable:ObservableRelationship",
+                    "@type": "uco-core:Relationship",
                     "uco-core:source": {
                         "@id": "kb:identity-c5bb09c3-3612-4bf2-b165-6f12d0e3c6af"
                     },
