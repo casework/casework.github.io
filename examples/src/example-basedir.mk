@@ -62,8 +62,18 @@ all:
 	          > $$TMPDIR/$(example_name).json \
 	          && echo "INFO:examples/$(example_name):Edits found in $(example_name).json, and about to be overwritten.  Stashing state in temporary file in case they were not meant to be overwritten.  Restore by running: 'mv $$TMPDIR/$(example_name).json $(example_name).json'." >&2 \
 	    )
-	cp src/generated-index.html index.html
-	cp src/generated-$(example_name).json $(example_name).json
+	diff \
+	  index.html \
+	  src/generated-index.html \
+	  || cp \
+	    src/generated-index.html \
+	    index.html
+	diff \
+	  $(example_name).json \
+	  src/generated-$(example_name).json \
+	  || cp \
+	    src/generated-$(example_name).json \
+	    $(example_name).json
 
 # Generic tests:
 # * Confirm the Git-committed version of the combined example JSON matches the file generated from the JSON pieces.
