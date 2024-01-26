@@ -13,7 +13,9 @@
                 <li class="nav-item"><a class="nav-link
                   {% if item.link == page.url %}active{% endif %}
                   {% if item.name == "Getting Started" %}text-warning{% endif %}
-                   " href="{{ item.link }}">{{ item.name }}</a></li>
+                   " href="{{ item.link }}">
+                   {% if item.name == "Getting Started" %}<i class="fas fa-power-off text-primary"></i>{% endif %}
+                   {{ item.name }}</a></li>
               {% else %}
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
