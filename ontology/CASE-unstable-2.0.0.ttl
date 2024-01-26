@@ -452,14 +452,34 @@ investigation:InvestigativeAction
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf action:Action ;
+	rdfs:subClassOf
+		action:Action ,
+		[
+			a owl:Restriction ;
+			owl:onProperty action:result ;
+			owl:onClass investigation:ProvenanceRecord ;
+			owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		]
+		;
 	rdfs:label "InvestigativeAction"@en ;
 	rdfs:comment "An investigative action is something that may be done or performed within the context of an investigation, typically to examine or analyze evidence or other data."@en ;
-	sh:property [
-		sh:class investigation:InvestigativeAction ;
-		sh:nodeKind sh:BlankNodeOrIRI ;
-		sh:path investigation:wasInformedBy ;
-	] ;
+	sh:property
+		[
+			sh:class investigation:InvestigativeAction ;
+			sh:nodeKind sh:BlankNodeOrIRI ;
+			sh:path investigation:wasInformedBy ;
+		] ,
+		[
+			sh:message "An InvestigativeAction should have a ProvenanceRecord among its results.  This will be a requirement in CASE 2.0.0."@en ;
+			sh:path action:result ;
+			sh:qualifiedMinCount "1"^^xsd:integer ;
+			sh:qualifiedValueShape [
+				a sh:NodeShape ;
+				sh:class investigation:ProvenanceRecord ;
+			] ;
+			sh:severity sh:Warning ;
+		]
+		;
 	sh:targetClass investigation:InvestigativeAction ;
 	.
 
