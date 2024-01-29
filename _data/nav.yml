@@ -30,20 +30,16 @@
     #   link: /ontology/spec.html
 - name: Community
   submenuitems:
-    # - name: 2020 Governance Committee Elections
-    #   link: /community/elections.html
-    - name: Governance
+    - name: Cyber Domain Ontology (CDO) Website
+      link: https://cyberdomainontology.org
+    - name: CDO Technical Steering Committee
       link: https://cyberdomainontology.org/community/tsc.html
-    # - name: Ontology Committee
-    #   link: /community/ontology.html
-    - name: Members
-      link: /community/members.html
     - name: Adopters
       link: /community/adopters.html
     - name: Meetings
       link: /community/meetings.html
     - name: SPACE
-    - name: Join CASE Community
+    - name: Join CDO Community
       link: /community/membership.html
 - name: Resources
   submenuitems:
