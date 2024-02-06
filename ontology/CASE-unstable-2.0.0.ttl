@@ -2261,7 +2261,7 @@ core:Endurant
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:UcoObject ;
+	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "Endurant"@en ;
 	rdfs:comment "A UcoObject that endures in time and may change qualitatively while keeping its identity. Also termed 'continuant' in the philosophical literature."@en ;
 	dcterms:description "Examples include: ordinary objects of everyday experience, such as a person, a house, and a car; reified relationships, such as a marriage, a rental contract, and a person's love for another; and existentially-dependent aspects of objects, such as a car's weight, a person's language skills, and a house's color."@en ;
@@ -2381,7 +2381,10 @@ core:IdentityAbstraction
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:Endurant ;
+	rdfs:subClassOf
+		core:Endurant ,
+		core:UcoObject
+		;
 	rdfs:label "IdentityAbstraction"@en ;
 	rdfs:comment "An identity abstraction is a grouping of identifying characteristics unique to an individual or organization. This class is an ontological structural abstraction for this concept. Implementations of this concept should utilize the identity:Identity class."@en ;
 	sh:targetClass core:IdentityAbstraction ;
@@ -2392,7 +2395,10 @@ core:Item
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:Endurant ;
+	rdfs:subClassOf
+		core:Endurant ,
+		core:UcoObject
+		;
 	rdfs:label "Item"@en ;
 	rdfs:comment "An item is a distinct article or unit."@en ;
 	sh:targetClass core:Item ;
@@ -2494,6 +2500,16 @@ core:UcoInherentCharacterizationThing
 	rdfs:subClassOf core:UcoThing ;
 	rdfs:label "UcoInherentCharacterizationThing"@en ;
 	rdfs:comment "A UCO inherent characterization thing is a grouping of characteristics unique to a particular inherent aspect of a UCO domain object."@en ;
+	sh:targetClass core:UcoInherentCharacterizationThing ;
+	.
+
+core:UcoInherentCharacterizationThing-disjointWith-UcoObject-shape
+	a sh:NodeShape ;
+	sh:message "observable:UcoInherentCharacterizationThing and observable:UcoObject are disjoint classes."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class core:UcoObject ;
+	] ;
 	sh:targetClass core:UcoInherentCharacterizationThing ;
 	.
 
@@ -3251,7 +3267,10 @@ location:Location
 		owl:Class ,
 		sh:NodeShape
 		;
-	rdfs:subClassOf core:Endurant ;
+	rdfs:subClassOf
+		core:Endurant ,
+		core:UcoObject
+		;
 	rdfs:label "Location"@en ;
 	rdfs:comment "A location is a geospatial place, site, or position."@en ;
 	sh:targetClass location:Location ;
@@ -17978,6 +17997,16 @@ types:Thread
 	] ;
 	.
 
+types:Thread-disjointWith-co-List-shape
+	a sh:NodeShape ;
+	sh:message "types:Thread and co:List are disjoint classes."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class co:List ;
+	] ;
+	sh:targetClass types:Thread ;
+	.
+
 types:ThreadItem
 	a
 		owl:Class ,
@@ -17994,6 +18023,16 @@ types:ThreadItem
 		sh:class core:UcoObject ;
 		sh:path co:itemContent ;
 	] ;
+	.
+
+types:ThreadItem-disjointWith-co-ListItem-shape
+	a sh:NodeShape ;
+	sh:message "types:ThreadItem and co:ListItem are disjoint classes."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class co:ListItem ;
+	] ;
+	sh:targetClass types:ThreadItem ;
 	.
 
 types:entry
