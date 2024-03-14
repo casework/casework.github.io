@@ -13,7 +13,7 @@
     },
     {
         "@id": "kb:primaryuser-faceboook-cb34b068-324b-4162-a9e5-6c96879b061c",
-        "@type": "uco-observable:ObservableRelationship",
+        "@type": "uco-core:Relationship",
         "uco-core:source": {
             "@id": "kb:primaryuser-d28a3fad-10a1-459c-9a1a-6aa07a04e76f"
         },
@@ -25,7 +25,7 @@
     },
     {
         "@id": "kb:primaryuser-email-cb34b068-324b-4162-a9e5-6c96879b061c",
-        "@type": "uco-observable:ObservableRelationship",
+        "@type": "uco-core:Relationship",
         "uco-core:source": {
             "@id": "kb:primaryuser-d28a3fad-10a1-459c-9a1a-6aa07a04e76f"
         },

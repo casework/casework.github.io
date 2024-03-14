@@ -22,7 +22,7 @@
     },
     {
         "@id": "kb:cameralocation-relationship-c6f64e98-68c5-4d2e-9ae8-a7e110f2ac83",
-        "@type": "uco-observable:ObservableRelationship",
+        "@type": "uco-core:Relationship",
         "uco-core:source": {
             "@id": "kb:latlong-8667ec82-8c21-11e9-934e-0c4de9c21b53"
         },

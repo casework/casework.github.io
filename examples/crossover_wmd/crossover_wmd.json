@@ -1024,7 +1024,7 @@
         },
         {
             "@id": "kb:primaryuser-email-3c4d0804-6ed0-4dfe-a152-3dab6b5f9111",
-            "@type": "uco-observable:ObservableRelationship",
+            "@type": "uco-core:Relationship",
             "uco-core:source": {
                 "@id": "kb:primaryuser-1e96406f-d86c-47ee-a6ac-71a57e1c8f19"
             },
@@ -1036,7 +1036,7 @@
         },
         {
             "@id": "kb:primaryuser-whatsapp-b295bc93-b65c-4670-a5d7-5c2206d78e92",
-            "@type": "uco-observable:ObservableRelationship",
+            "@type": "uco-core:Relationship",
             "uco-core:source": {
                 "@id": "kb:primaryuser-1e96406f-d86c-47ee-a6ac-71a57e1c8f19"
             },
