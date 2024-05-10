@@ -740,7 +740,10 @@
             ]
         },
         {
-            "@type": "uco-observable:Application",
+            "@type": [
+                "uco-observable:Application",
+                "uco-observable:Software"
+            ],
             "@id": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38",
             "uco-core:hasFacet": [
                 {
