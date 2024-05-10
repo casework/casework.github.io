@@ -1,7 +1,10 @@
 [
     {
         "@id": "kb:whatsapp-868abc08-8c21-11e9-934e-0c4de9c21b53",
-        "@type": "uco-observable:Application",
+        "@type": [
+            "uco-observable:Application",
+            "uco-observable:Software"
+        ],
         "uco-core:hasFacet": [
             {
                 "@id": "kb:application-facet-f089c7c8-e260-483f-b9dc-e95da12b5906",
@@ -21,7 +24,10 @@
     },
     {
         "@id": "kb:Android-class-6f4f675e-9a02-4ab5-8060-50d3d92832d9",
-        "@type": "uco-observable:OperatingSystem",
+        "@type": [
+            "uco-observable:OperatingSystem",
+            "uco-observable:Software"
+        ],
         "uco-core:description": "The general class of Android operating system instances, treated as an abstract individual."
     }
 ]

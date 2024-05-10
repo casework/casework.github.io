@@ -527,7 +527,10 @@
         },
         {
             "@id": "kb:application1-8538c226-1ba5-473b-8342-96150a4ab4ed",
-            "@type": "uco-observable:Application"
+            "@type": [
+                "uco-observable:Application",
+                "uco-observable:Software"
+            ]
         },
         {
             "@id": "kb:source-host-d77fdc61-b382-4aad-98fd-6dbf8cadd2bf",

@@ -1,5 +1,20 @@
 [
     {
+        "@id": "kb:application-facebook-25e8018f-49be-4898-bb1d-731e387e9eb7",
+        "@type": "uco-observable:Software",
+        "rdfs:comment": "TODO: The uco-observable:Software type is redundant after the release of 2.0.0."
+    },
+    {
+        "@id": "kb:message-9999898c-0178-4534-8107-caea0a0f9999",
+        "@type": "uco-observable:Software",
+        "rdfs:comment": "TODO: The uco-observable:Software type is redundant after the release of 2.0.0."
+    },
+    {
+        "@id": "kb:skypeapp-a6b73e78-00da-11eb-a396-acde48001122",
+        "@type": "uco-observable:Software",
+        "rdfs:comment": "TODO: The uco-observable:Software type is redundant after the release of 2.0.0."
+    },
+    {
         "@id": "kb:magnet-acquire2005412-83715215-c5fc-4231-99ff-29a3c51cb5f1",
         "@type": "uco-tool:Tool",
         "rdfs:comment": "TODO: The tool:Tool type is redundant after the release of 1.0.0."
@@ -32,7 +47,11 @@
     },
     {
         "@id": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38",
-        "@type": "uco-observable:Application"
+        "@type": [
+            "uco-observable:Application",
+            "uco-observable:Software"
+        ],
+        "rdfs:comment": "TODO: The uco-observable:Software type is redundant after the release of 2.0.0."
     },
     {
         "@id": "kb:textapplogcat-1a717ea6-8990-4709-92f0-d748cacb817e",

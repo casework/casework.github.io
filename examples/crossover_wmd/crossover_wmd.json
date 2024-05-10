@@ -1156,7 +1156,10 @@
         },
         {
             "@id": "kb:gmail-a1ce9965-ba9c-4fa1-9bfe-58c68ecaadc5",
-            "@type": "uco-observable:Application",
+            "@type": [
+                "uco-observable:Application",
+                "uco-observable:Software"
+            ],
             "uco-core:hasFacet": {
                 "@id": "kb:application-facet-3ecd5cd2-d118-4b03-970f-e1196ad0a133",
                 "@type": "uco-observable:ApplicationFacet",
@@ -1165,7 +1168,10 @@
         },
         {
             "@id": "kb:application-whatsapp-e662a9de-02bb-47ad-8666-625a0a5dc2fa",
-            "@type": "uco-observable:Application",
+            "@type": [
+                "uco-observable:Application",
+                "uco-observable:Software"
+            ],
             "uco-core:hasFacet": {
                 "@id": "kb:application-facet-74e8a566-4575-4ce2-84d5-4bcea81f9b70",
                 "@type": "uco-observable:ApplicationFacet",
@@ -1201,7 +1207,10 @@
         },
         {
             "@id": "kb:whatsapp-868abc08-8c21-11e9-934e-0c4de9c21b53",
-            "@type": "uco-observable:Application",
+            "@type": [
+                "uco-observable:Application",
+                "uco-observable:Software"
+            ],
             "uco-core:hasFacet": [
                 {
                     "@id": "kb:application-facet-f089c7c8-e260-483f-b9dc-e95da12b5906",
@@ -1221,7 +1230,10 @@
         },
         {
             "@id": "kb:Android-class-6f4f675e-9a02-4ab5-8060-50d3d92832d9",
-            "@type": "uco-observable:OperatingSystem",
+            "@type": [
+                "uco-observable:OperatingSystem",
+                "uco-observable:Software"
+            ],
             "uco-core:description": "The general class of Android operating system instances, treated as an abstract individual."
         },
         {
