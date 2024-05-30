@@ -26,12 +26,12 @@
         "uco-core:description": "Forensic duplicate of smartphone used by subject",
         "uco-core:object": [
             {
-                "@id": "kb:f3fd304e-ef6c-4cbd-94cb-425880f82748"
+                "@id": "kb:forensicimage-e656ccdf-4341-418b-ad93-20829e6eea5d"
             }
         ]
     },
     {
-        "@id": "kb:f3fd304e-ef6c-4cbd-94cb-425880f82748",
+        "@id": "kb:forensicimage-e656ccdf-4341-418b-ad93-20829e6eea5d",
         "@type": [
             "uco-observable:File",
             "uco-observable:Image"
