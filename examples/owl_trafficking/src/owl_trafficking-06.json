@@ -65,7 +65,7 @@
         ]
     },
     {
-        "@id": "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1",
+        "@id": "kb:phoneaccount-b6f2f869-0e70-4ee8-bc2e-0046fa8fc416",
         "@type": "uco-observable:PhoneAccount",
         "uco-core:hasFacet": [
             {
@@ -90,7 +90,7 @@
             "@id": "kb:facebook-90652808-7341-40d3-9285-774d865ad3f9"
         },
         "uco-core:target": {
-            "@id": "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1"
+            "@id": "kb:phoneaccount-b6f2f869-0e70-4ee8-bc2e-0046fa8fc416"
         },
         "uco-core:kindOfRelationship": "Associated_Account",
         "uco-core:isDirectional": true
