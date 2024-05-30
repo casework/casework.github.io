@@ -10,7 +10,7 @@
                     "@id": "kb:gmail-a1ce9965-ba9c-4fa1-9bfe-58c68ecaadc5"
                 },
                 "uco-observable:sender": {
-                    "@id": "kb:emailaccount-99d72bac-8c21-11e9-8902-0c4de9c21b53"
+                    "@id": "kb:emailaccount-11bf944d-b540-4abf-86a2-b439a157f325"
                 },
                 "uco-observable:sentTime": {
                     "@type": "xsd:dateTime",
@@ -49,7 +49,7 @@
         ]
     },
     {
-        "@id": "kb:emailaccount-99d72bac-8c21-11e9-8902-0c4de9c21b53",
+        "@id": "kb:emailaccount-11bf944d-b540-4abf-86a2-b439a157f325",
         "@type": "uco-observable:EmailAccount",
         "uco-core:hasFacet": [
             {

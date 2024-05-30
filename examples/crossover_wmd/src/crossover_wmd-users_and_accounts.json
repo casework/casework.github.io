@@ -36,7 +36,7 @@
         "uco-core:isDirectional": true
     },
     {
-        "@id": "kb:emailaddress-99d72bac-8c21-11e9-8902-0c4de9c21b53",
+        "@id": "kb:emailaddress-ec940324-eb79-467a-825b-0f1136d2b6d3",
         "@type": "uco-observable:EmailAddress",
         "uco-core:hasFacet": [
             {
@@ -54,7 +54,7 @@
                 "@id": "kb:email-account-facet-e0dd5970-71d8-4261-a43a-1d216b84680f",
                 "@type": "uco-observable:EmailAccountFacet",
                 "uco-observable:emailAddress": {
-                    "@id": "kb:emailaddress-99d72bac-8c21-11e9-8902-0c4de9c21b53"
+                    "@id": "kb:emailaddress-ec940324-eb79-467a-825b-0f1136d2b6d3"
                 }
             }
         ]
