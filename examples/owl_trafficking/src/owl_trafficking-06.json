@@ -12,7 +12,7 @@
         ]
     },
     {
-        "@id": "kb:primaryuser-faceboook-cb34b068-324b-4162-a9e5-6c96879b061c",
+        "@id": "kb:primaryuser-faceboook-64758967-e83a-44ba-9768-dae368c2c953",
         "@type": "uco-core:Relationship",
         "uco-core:source": {
             "@id": "kb:primaryuser-d28a3fad-10a1-459c-9a1a-6aa07a04e76f"
