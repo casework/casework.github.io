@@ -1,6 +1,6 @@
 [
     {
-        "@id": "kb:url-39ff4987-8ae5-47e3-8369-dbd0d5f79398",
+        "@id": "kb:url-8abab405-9029-45b0-a30d-be0dc6f353cc",
         "@type": "uco-observable:URL",
         "uco-core:hasFacet": [
             {
@@ -51,7 +51,7 @@
                             "@id": "kb:profile--account-uuid"
                         },
                         "uco-observable:url": {
-                            "@id": "kb:url-39ff4987-8ae5-47e3-8369-dbd0d5f79398"
+                            "@id": "kb:url-8abab405-9029-45b0-a30d-be0dc6f353cc"
                         },
                         "uco-observable:referrerUrl": {
                             "@id": "kb:14354987-8ae5-47e3-8369-dbd0d5f77489"
