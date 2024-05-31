@@ -12,13 +12,13 @@
         ]
     },
     {
-        "@id": "kb:primaryuser-faceboook-cb34b068-324b-4162-a9e5-6c96879b061c",
+        "@id": "kb:primaryuser-faceboook-64758967-e83a-44ba-9768-dae368c2c953",
         "@type": "uco-core:Relationship",
         "uco-core:source": {
             "@id": "kb:primaryuser-d28a3fad-10a1-459c-9a1a-6aa07a04e76f"
         },
         "uco-core:target": {
-            "@id": "kb:email-account-99d72bac-8c21-11e9-8902-0c4de9c21b53"
+            "@id": "kb:email-account-bfe874d4-b094-4859-85d4-bca2d20e3d1d"
         },
         "uco-core:kindOfRelationship": "Has_Account",
         "uco-core:isDirectional": true
@@ -30,7 +30,7 @@
             "@id": "kb:primaryuser-d28a3fad-10a1-459c-9a1a-6aa07a04e76f"
         },
         "uco-core:target": {
-            "@id": "kb:facebook-90652808-7341-40d3-9285-774d865ad3f9"
+            "@id": "kb:facebook-4dd9cd88-0acd-475c-ba45-c5bc6ad7244d"
         },
         "uco-core:kindOfRelationship": "Has_Account",
         "uco-core:isDirectional": true
@@ -47,7 +47,7 @@
         ]
     },
     {
-        "@id": "kb:email-account-99d72bac-8c21-11e9-8902-0c4de9c21b53",
+        "@id": "kb:email-account-bfe874d4-b094-4859-85d4-bca2d20e3d1d",
         "@type": "uco-observable:EmailAccount",
         "uco-core:hasFacet": [
             {
@@ -65,7 +65,7 @@
         ]
     },
     {
-        "@id": "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1",
+        "@id": "kb:phoneaccount-b6f2f869-0e70-4ee8-bc2e-0046fa8fc416",
         "@type": "uco-observable:PhoneAccount",
         "uco-core:hasFacet": [
             {
@@ -87,16 +87,16 @@
         "@id": "kb:associated-account-phonenumber-0307a497-f1fb-4af4-9877-90c56ee76fba",
         "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
-            "@id": "kb:facebook-90652808-7341-40d3-9285-774d865ad3f9"
+            "@id": "kb:facebook-4dd9cd88-0acd-475c-ba45-c5bc6ad7244d"
         },
         "uco-core:target": {
-            "@id": "kb:c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1"
+            "@id": "kb:phoneaccount-b6f2f869-0e70-4ee8-bc2e-0046fa8fc416"
         },
         "uco-core:kindOfRelationship": "Associated_Account",
         "uco-core:isDirectional": true
     },
     {
-        "@id": "kb:facebook-90652808-7341-40d3-9285-774d865ad3f9",
+        "@id": "kb:facebook-4dd9cd88-0acd-475c-ba45-c5bc6ad7244d",
         "@type": "uco-observable:DigitalAccount",
         "uco-core:hasFacet": [
             {

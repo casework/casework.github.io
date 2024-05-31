@@ -30,6 +30,9 @@ all-%: \
 
 check: \
   $(check_targets)
+	$(MAKE) \
+	  --file postvisit.mk \
+	  check
 
 check-%: \
   %/Makefile
@@ -39,6 +42,9 @@ check-%: \
 
 clean: \
   $(clean_targets)
+	@$(MAKE) \
+	  --file postvisit.mk \
+	  clean
 
 clean-%: \
   %/Makefile

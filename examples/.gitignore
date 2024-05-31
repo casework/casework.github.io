@@ -1,4 +1,6 @@
 *.diff
+all-drafting.ttl
 generated-*
 query-*.html
 query-*.md
+kb.ttl

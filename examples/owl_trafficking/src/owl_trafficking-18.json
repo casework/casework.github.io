@@ -1,13 +1,13 @@
 [
     {
-        "@id": "kb:url-history-39ff4987-8ae5-47e3-8369-dbd0d5f79398",
+        "@id": "kb:url-history-d86828ae-ea1f-4433-97ad-114ace6c36ca",
         "@type": "uco-observable:URLHistory",
         "uco-core:hasFacet": [
             {
                 "@id": "kb:url-history-facet-a455b867-957e-4fce-a0ad-1af9c6fa4edb",
                 "@type": "uco-observable:URLHistoryFacet",
                 "uco-observable:browserInformation": {
-                    "@id": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38"
+                    "@id": "kb:software-cc22d2f4-636d-4cf2-bec4-0b91aa9926de"
                 },
                 "uco-observable:urlHistoryEntry": [
                     {
@@ -114,10 +114,10 @@
         ]
     },
     {
-        "@id": "kb:2af6fcf3-91d3-4457-9333-abab67f8fb91",
+        "@id": "kb:relationship-6d96bcc8-5527-49a3-9442-3f8b0319c33f",
         "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
-            "@id": "kb:url-history-39ff4987-8ae5-47e3-8369-dbd0d5f79398"
+            "@id": "kb:url-history-d86828ae-ea1f-4433-97ad-114ace6c36ca"
         },
         "uco-core:target": {
             "@id": "kb:bfe049a6-fa3f-4bf6-9c37-9b09cc6afe6b"
