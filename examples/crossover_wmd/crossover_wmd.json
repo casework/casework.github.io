@@ -1041,7 +1041,7 @@
                 "@id": "kb:primaryuser-1e96406f-d86c-47ee-a6ac-71a57e1c8f19"
             },
             "uco-core:target": {
-                "@id": "kb:whatsapp-90652808-7341-40d3-9285-774d865ad3f9"
+                "@id": "kb:account-90652808-7341-40d3-9285-774d865ad3f9"
             },
             "uco-core:kindOfRelationship": "Has_Account",
             "uco-core:isDirectional": true
@@ -1094,40 +1094,13 @@
             "@id": "kb:relationship-bf423267-3afe-4f4d-aa9f-d903eae55f99",
             "@type": "uco-observable:ObservableRelationship",
             "uco-core:source": {
-                "@id": "kb:whatsapp-90652808-7341-40d3-9285-774d865ad3f9"
+                "@id": "kb:account-90652808-7341-40d3-9285-774d865ad3f9"
             },
             "uco-core:target": {
                 "@id": "kb:phoneaccount-c1d3237a-6d7f-4e96-bbef-6eb4c0a621d1"
             },
             "uco-core:kindOfRelationship": "Associated_Account",
             "uco-core:isDirectional": true
-        },
-        {
-            "@id": "kb:whatsapp-90652808-7341-40d3-9285-774d865ad3f9",
-            "@type": "uco-observable:ApplicationAccount",
-            "uco-core:hasFacet": [
-                {
-                    "@id": "kb:account-facet-502bc393-9727-415d-b336-e466f0fa21bf",
-                    "@type": "uco-observable:AccountFacet",
-                    "uco-observable:accountIssuer": {
-                        "@id": "kb:organization-whatsapp-7a3fb3d1-0b30-4305-8c9e-f8f90f839bf3"
-                    },
-                    "uco-observable:accountIdentifier": "31647934784@s.whatsapp.net",
-                    "uco-observable:isActive": true
-                },
-                {
-                    "@id": "kb:application-account-facet-15811836-e4ed-48d1-ae51-1822aab89aa9",
-                    "@type": "uco-observable:ApplicationAccountFacet",
-                    "uco-observable:application": {
-                        "@id": "kb:application-whatsapp-e662a9de-02bb-47ad-8666-625a0a5dc2fa"
-                    }
-                },
-                {
-                    "@id": "kb:digital-account-facet-8794c717-cc13-44ab-8f93-77cca75fc649",
-                    "@type": "uco-observable:DigitalAccountFacet",
-                    "uco-observable:displayName": "Ares Lupin"
-                }
-            ]
         },
         {
             "@id": "kb:organization-lebara-3ca7cf13-7d8b-4665-97b9-2c48fdb94ac5",
@@ -1164,18 +1137,6 @@
                 "@id": "kb:application-facet-3ecd5cd2-d118-4b03-970f-e1196ad0a133",
                 "@type": "uco-observable:ApplicationFacet",
                 "drafting:appName": "GMail"
-            }
-        },
-        {
-            "@id": "kb:application-whatsapp-e662a9de-02bb-47ad-8666-625a0a5dc2fa",
-            "@type": [
-                "uco-observable:Application",
-                "uco-observable:Software"
-            ],
-            "uco-core:hasFacet": {
-                "@id": "kb:application-facet-74e8a566-4575-4ce2-84d5-4bcea81f9b70",
-                "@type": "uco-observable:ApplicationFacet",
-                "drafting:appName": "WhatsApp"
             }
         },
         {
