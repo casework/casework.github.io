@@ -3,7 +3,7 @@
         "@id": "kb:relationship-20f7ade6-93a7-4d67-a657-adeffba35dc7",
         "@type": "uco-observable:ObservableRelationship",
         "uco-core:source": {
-            "@id": "kb:msgstoredb-16805dff-05f9-4cba-9266-d5fa712f3d8f"
+            "@id": "kb:msgstoredb-d82c3aae-488c-43d4-bcbd-a3ac38bacfd4"
         },
         "uco-core:target": {
             "@id": "kb:forensicimage-f3fd304e-ef6c-4cbd-94cb-425880f82748"
