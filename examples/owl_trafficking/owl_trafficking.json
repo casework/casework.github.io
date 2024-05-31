@@ -997,7 +997,7 @@
                     "@id": "kb:url-history-facet-a455b867-957e-4fce-a0ad-1af9c6fa4edb",
                     "@type": "uco-observable:URLHistoryFacet",
                     "uco-observable:browserInformation": {
-                        "@id": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38"
+                        "@id": "kb:software-cc22d2f4-636d-4cf2-bec4-0b91aa9926de"
                     },
                     "uco-observable:urlHistoryEntry": [
                         {
@@ -1211,7 +1211,7 @@
             "@type": "uco-identity:Organization"
         },
         {
-            "@id": "kb:software-5d96df90-d9e1-423c-b8db-c2327812ab38",
+            "@id": "kb:software-cc22d2f4-636d-4cf2-bec4-0b91aa9926de",
             "@type": [
                 "uco-observable:Application",
                 "uco-observable:Software"
