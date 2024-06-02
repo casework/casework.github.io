@@ -19,15 +19,15 @@
                 "uco-observable:sizeInBytes": 534167,
                 "uco-observable:observableCreatedTime": {
                     "@type": "xsd:dateTime",
-                    "@value": "2018-11-30T09:43:24.00Z"
+                    "@value": "2018-11-30T08:43:24.00Z"
                 },
                 "uco-observable:modifiedTime": {
                     "@type": "xsd:dateTime",
-                    "@value": "2018-11-30T09:43:25.00Z"
+                    "@value": "2018-11-30T08:43:25.00Z"
                 },
                 "uco-observable:accessedTime": {
                     "@type": "xsd:dateTime",
-                    "@value": "2018-11-30T09:43:24.00Z"
+                    "@value": "2018-11-30T08:43:24.00Z"
                 }
             },
             {
@@ -45,10 +45,9 @@
                     {
                         "@id": "kb:hash-cb86489c-4d91-5261-adcd-4cf377726d94",
                         "@type": "uco-types:Hash",
-                        "rdfs:comment": "TODO: From the hash length, the algorithm appears to be MD5, not SHA2-256.",
                         "uco-types:hashMethod": {
                             "@type": "uco-vocabulary:HashNameVocab",
-                            "@value": "SHA256"
+                            "@value": "MD5"
                         },
                         "uco-types:hashValue": {
                             "@type": "xsd:hexBinary",
