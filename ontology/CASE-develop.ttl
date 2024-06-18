@@ -2427,6 +2427,17 @@ core:UcoInherentCharacterizationThing
 	sh:targetClass core:UcoInherentCharacterizationThing ;
 	.
 
+core:UcoInherentCharacterizationThing-disjointWith-UcoObject-shape
+	a sh:NodeShape ;
+	sh:message "observable:UcoInherentCharacterizationThing and observable:UcoObject are disjoint classes.  Assigning both types to a single node will be an error in UCO 2.0.0."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class core:UcoObject ;
+	] ;
+	sh:severity sh:Warning ;
+	sh:targetClass core:UcoInherentCharacterizationThing ;
+	.
+
 core:UcoObject
 	a
 		owl:Class ,
@@ -3727,6 +3738,14 @@ observable:AlternateDataStream
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "AlternateDataStream"@en ;
 	rdfs:comment "An alternate data stream is data content stored within an NTFS file that is independent of the standard content stream of the file and is hidden from access by default NTFS file viewing mechanisms."@en ;
+	rdfs:seeAlso [
+		a sh:NodeShape ;
+		rdfs:comment "This anonymous shape is attached with rdfs:seeAlso in order to associate a warning-severity class constraint, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
+		sh:class observable:FileSystemObject ;
+		sh:message "In UCO 2.0.0, uco-observable:AlternateDataStream will be a subclass of uco-observable:FileSystemObject.  In preparation for UCO 2.0.0, the additional type uco-observable:FileSystemObject should be assigned to this node."@en ;
+		sh:severity sh:Warning ;
+		sh:targetClass observable:AlternateDataStream ;
+	] ;
 	sh:targetClass observable:AlternateDataStream ;
 	.
 
@@ -17893,6 +17912,17 @@ types:Thread
 	] ;
 	.
 
+types:Thread-disjointWith-co-List-shape
+	a sh:NodeShape ;
+	sh:message "types:Thread and co:List are disjoint classes.  Assigning both types to a single node will be an error in UCO 2.0.0."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class co:List ;
+	] ;
+	sh:severity sh:Warning ;
+	sh:targetClass types:Thread ;
+	.
+
 types:ThreadItem
 	a
 		owl:Class ,
@@ -17909,6 +17939,17 @@ types:ThreadItem
 		sh:class core:UcoObject ;
 		sh:path co:itemContent ;
 	] ;
+	.
+
+types:ThreadItem-disjointWith-co-ListItem-shape
+	a sh:NodeShape ;
+	sh:message "types:ThreadItem and co:ListItem are disjoint classes.  Assigning both types to a single node will be an error in UCO 2.0.0."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class co:ListItem ;
+	] ;
+	sh:severity sh:Warning ;
+	sh:targetClass types:ThreadItem ;
 	.
 
 types:entry
