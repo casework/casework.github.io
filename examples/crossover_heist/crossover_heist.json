@@ -142,7 +142,10 @@
         },
         {
             "@id": "kb:Disk-6dbe5066-dfb8-4551-9bda-39aab2ae3db1",
-            "@type": "uco-observable:Disk",
+            "@type": [
+                "uco-observable:Disk",
+                "uco-observable:StorageMedium"
+            ],
             "uco-core:hasFacet": [
                 {
                     "@id": "kb:disk-facet-c9fa6408-85f8-4e0b-bf8f-f653f5bc97c3",
