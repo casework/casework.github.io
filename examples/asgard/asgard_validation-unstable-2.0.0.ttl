@@ -8,21 +8,49 @@
 
 []
 	a sh:ValidationReport ;
-	sh:conforms "true"^^xsd:boolean ;
-	sh:result [
-		a sh:ValidationResult ;
-		sh:focusNode <http://example.org/kb/account-facet-31df5a8a-fb9f-4fa6-85f9-cea13f4b9f03> ;
-		sh:resultMessage "Value is outside the default vocabulary AccountTypeVocab." ;
-		sh:resultPath uco-observable:accountType ;
-		sh:resultSeverity sh:Info ;
-		sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-		sh:sourceShape [
-			sh:datatype vocabulary:AccountTypeVocab ;
-			sh:message "Value is outside the default vocabulary AccountTypeVocab." ;
-			sh:path uco-observable:accountType ;
-			sh:severity sh:Info ;
-		] ;
-		sh:value "Phone" ;
-	] ;
+	sh:conforms "false"^^xsd:boolean ;
+	sh:result
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/account-facet-31df5a8a-fb9f-4fa6-85f9-cea13f4b9f03> ;
+			sh:resultMessage "Value is outside the default vocabulary AccountTypeVocab." ;
+			sh:resultPath uco-observable:accountType ;
+			sh:resultSeverity sh:Info ;
+			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+			sh:sourceShape [
+				sh:datatype vocabulary:AccountTypeVocab ;
+				sh:message "Value is outside the default vocabulary AccountTypeVocab." ;
+				sh:path uco-observable:accountType ;
+				sh:severity sh:Info ;
+			] ;
+			sh:value "Phone" ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/operating-system-facet-262f1b31-e23d-4324-84cb-5d55528caf63> ;
+			sh:resultMessage "As of UCO 2.0.0, uco-observable:manufacturer is not associated with uco-observable:OperatingSystemFacet.  Please place this on a uco-observable:SoftwareFacet instead."@en ;
+			sh:resultPath uco-observable:manufacturer ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+			sh:sourceShape [
+				sh:maxCount "0"^^xsd:integer ;
+				sh:message "As of UCO 2.0.0, uco-observable:manufacturer is not associated with uco-observable:OperatingSystemFacet.  Please place this on a uco-observable:SoftwareFacet instead."@en ;
+				sh:path uco-observable:manufacturer ;
+			] ;
+		] ,
+		[
+			a sh:ValidationResult ;
+			sh:focusNode <http://example.org/kb/operating-system-facet-262f1b31-e23d-4324-84cb-5d55528caf63> ;
+			sh:resultMessage "As of UCO 2.0.0, uco-observable:version is not associated with uco-observable:OperatingSystemFacet.  Please place this on a uco-observable:SoftwareFacet instead."@en ;
+			sh:resultPath uco-observable:version ;
+			sh:resultSeverity sh:Violation ;
+			sh:sourceConstraintComponent sh:MaxCountConstraintComponent ;
+			sh:sourceShape [
+				sh:maxCount "0"^^xsd:integer ;
+				sh:message "As of UCO 2.0.0, uco-observable:version is not associated with uco-observable:OperatingSystemFacet.  Please place this on a uco-observable:SoftwareFacet instead."@en ;
+				sh:path uco-observable:version ;
+			] ;
+		]
+		;
 	.
 
