@@ -41,16 +41,6 @@
                 "uco-observable:IMEI": "356420075722843"
             },
             {
-                "@id": "kb:operating-system-facet-b55d7244-720f-4fb8-a4d3-2a26d407a353",
-                "@type": "uco-observable:OperatingSystemFacet",
-                "uco-core:name": "Android",
-                "uco-observable:manufacturer": {
-                    "@id": "kb:organization-fb6c05a0-b6be-4a10-ba62-0e7b1da4c0ec"
-                },
-                "uco-observable:advertisingID": "48500120-c9c5-402e-a6bc-04e2f92ae259",
-                "uco-observable:version": "6.0.1"
-            },
-            {
                 "@id": "kb:wifi-address-facet-047a5278-1e8a-4e38-b2f6-1b77894624b8",
                 "@type": "uco-observable:WifiAddressFacet",
                 "uco-observable:addressValue": "AC:5F:3E:73:E3:78"
@@ -61,6 +51,41 @@
                 "uco-observable:addressValue": "D8:C4:E9:7C:2E:F8"
             }
         ]
+    },
+    {
+        "@id": "kb:operating-system-cbba474a-d58c-4715-a7fa-5854d811021d",
+        "@type": [
+            "uco-observable:OperatingSystem",
+            "uco-observable:Software"
+        ],
+        "uco-core:name": "Android",
+        "uco-core:hasFacet": [
+            {
+                "@id": "kb:operating-system-facet-b55d7244-720f-4fb8-a4d3-2a26d407a353",
+                "@type": "uco-observable:OperatingSystemFacet",
+                "uco-observable:advertisingID": "48500120-c9c5-402e-a6bc-04e2f92ae259"
+            },
+            {
+                "@id": "kb:software-facet-da02e9c9-b35b-42e7-bbc8-013b15e17803",
+                "@type": "uco-observable:SoftwareFacet",
+                "uco-observable:manufacturer": {
+                    "@id": "kb:organization-fb6c05a0-b6be-4a10-ba62-0e7b1da4c0ec"
+                },
+                "uco-observable:version": "6.0.1"
+            }
+        ]
+    },
+    {
+        "@id": "kb:relationship-aca6d788-12e4-45d1-8f00-06a63579309d",
+        "@type": "uco-observable:ObservableRelationship",
+        "uco-core:isDirectional": true,
+        "uco-core:kindOfRelationship": "Has_Operating_System",
+        "uco-core:source": {
+            "@id": "kb:mobiledevice-803df237-bc7e-4e24-a5cb-8157063014b4"
+        },
+        "uco-core:target": {
+            "@id": "kb:operating-system-cbba474a-d58c-4715-a7fa-5854d811021d"
+        }
     },
     {
         "@id": "kb:organization-fb6c05a0-b6be-4a10-ba62-0e7b1da4c0ec",
