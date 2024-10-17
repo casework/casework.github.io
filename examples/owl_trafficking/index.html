@@ -309,6 +309,12 @@ WHERE {
         "uco-core:object": [
             {
                 "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168"
+            },
+            {
+                "@id": "kb:operating-system-c56dde27-0a50-49dc-ae9e-8a0473e80137"
+            },
+            {
+                "@id": "kb:relationship-b41ecf43-d68c-440e-a8ae-b5978ebcbf98"
             }
         ]
     },
@@ -509,16 +515,6 @@ ORDER BY ?lHashMethod
                 "uco-observable:storageCapacityInBytes": 31268536320
             },
             {
-                "@id": "kb:operating-system-facet-478dc553-2d39-45ff-8974-d3d1b8df7c75",
-                "@type": "uco-observable:OperatingSystemFacet",
-                "uco-core:name": "Android",
-                "uco-observable:manufacturer": {
-                    "@id": "kb:organization-lge-e7ae1d96-e054-44b5-9943-8da6515e8332"
-                },
-                "uco-observable:advertisingID": "48500120-c9c5-402e-a6bc-04e2f92ae259",
-                "uco-observable:version": "6.0.1"
-            },
-            {
                 "@id": "kb:wifi-address-facet-57724dcb-18f7-4913-a659-64ca79336107",
                 "@type": "uco-observable:WifiAddressFacet",
                 "uco-observable:addressValue": "34:4d:f7:54:20:bb"
@@ -529,6 +525,41 @@ ORDER BY ?lHashMethod
                 "uco-observable:addressValue": "88:c9:d0:03:04:49"
             }
         ]
+    },
+    {
+        "@id": "kb:operating-system-c56dde27-0a50-49dc-ae9e-8a0473e80137",
+        "@type": [
+            "uco-observable:OperatingSystem",
+            "uco-observable:Software"
+        ],
+        "uco-core:name": "Android",
+        "uco-core:hasFacet": [
+            {
+                "@id": "kb:operating-system-facet-478dc553-2d39-45ff-8974-d3d1b8df7c75",
+                "@type": "uco-observable:OperatingSystemFacet",
+                "uco-observable:advertisingID": "48500120-c9c5-402e-a6bc-04e2f92ae259"
+            },
+            {
+                "@id": "kb:software-facet-a3cd613c-1c35-4f0e-8983-a4720121fa9e",
+                "@type": "uco-observable:SoftwareFacet",
+                "uco-observable:manufacturer": {
+                    "@id": "kb:organization-lge-e7ae1d96-e054-44b5-9943-8da6515e8332"
+                },
+                "uco-observable:version": "6.0.1"
+            }
+        ]
+    },
+    {
+        "@id": "kb:relationship-b41ecf43-d68c-440e-a8ae-b5978ebcbf98",
+        "@type": "uco-observable:ObservableRelationship",
+        "uco-core:source": {
+            "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168"
+        },
+        "uco-core:target": {
+            "@id": "kb:operating-system-c56dde27-0a50-49dc-ae9e-8a0473e80137"
+        },
+        "uco-core:kindOfRelationship": "Has_Operating_System",
+        "uco-core:isDirectional": true
     },
     {
         "@id": "kb:relationship-6d7a7a20-ca70-4f7f-994d-c2db39e08545",

@@ -141,6 +141,12 @@ custom_js:
             },
             {
                 "@id": "kb:device-9420af3b-4d3a-4239-88fc-d33feec8dc4f"
+            },
+            {
+                "@id": "kb:operating-system-1b7f841a-8df7-454f-9b7d-1a2ace0573e3"
+            },
+            {
+                "@id": "kb:relationship-b6951277-419f-4226-b0d3-76c4d6ae33b4"
             }
         ]
     },
@@ -152,6 +158,12 @@ custom_js:
         "uco-core:object": [
             {
                 "@id": "kb:device-9420af3b-4d3a-4239-88fc-d33feec8dc4f"
+            },
+            {
+                "@id": "kb:operating-system-1b7f841a-8df7-454f-9b7d-1a2ace0573e3"
+            },
+            {
+                "@id": "kb:relationship-b6951277-419f-4226-b0d3-76c4d6ae33b4"
             }
         ]
     },
@@ -200,15 +212,6 @@ custom_js:
                 "drafting:ownerName": "Loki iPhone"
             },
             {
-                "@id": "kb:operating-system-facet-262f1b31-e23d-4324-84cb-5d55528caf63",
-                "@type": "uco-observable:OperatingSystemFacet",
-                "uco-core:name": "iOS",
-                "uco-observable:manufacturer": {
-                    "@id": "kb:organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4"
-                },
-                "uco-observable:version": "10.3"
-            },
-            {
                 "@id": "kb:wifi-address-facet-27d5903b-0037-4a98-acad-4f5003461899",
                 "@type": "uco-observable:WifiAddressFacet",
                 "uco-observable:addressValue": "d0:33:11:13:e7:a1"
@@ -219,6 +222,34 @@ custom_js:
                 "uco-observable:addressValue": "d0:33:11:13:e7:a2"
             }
         ]
+    },
+    {
+        "@id": "kb:operating-system-1b7f841a-8df7-454f-9b7d-1a2ace0573e3",
+        "@type": [
+            "uco-observable:OperatingSystem",
+            "uco-observable:Software"
+        ],
+        "uco-core:name": "iOS",
+        "uco-core:hasFacet": {
+            "@id": "kb:software-facet-fbedb8fd-0b1c-4470-a8dd-14612514bd56",
+            "@type": "uco-observable:SoftwareFacet",
+            "uco-observable:manufacturer": {
+                "@id": "kb:organization-0645704f-fc66-4d90-810a-dc0fb8a95fa4"
+            },
+            "uco-observable:version": "10.3"
+        }
+    },
+    {
+        "@id": "kb:relationship-b6951277-419f-4226-b0d3-76c4d6ae33b4",
+        "@type": "uco-observable:ObservableRelationship",
+        "uco-core:kindOfRelationship": "Has_Operating_System",
+        "uco-core:isDirectional": true,
+        "uco-core:source": {
+            "@id": "kb:device-9420af3b-4d3a-4239-88fc-d33feec8dc4f"
+        },
+        "uco-core:target": {
+            "@id": "kb:operating-system-1b7f841a-8df7-454f-9b7d-1a2ace0573e3"
+        }
     },
     {
         "@id": "kb:mobileaccount-74b4e46a-bee3-48f7-a5db-a6178d92aa90",
