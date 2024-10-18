@@ -616,7 +616,6 @@ vocab:InvestigationFormVocab
 	rdfs:comment "Defines an open-vocabulary of investigation forms."@en-US ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"case"^^vocab:InvestigationFormVocab
 			"incident"^^vocab:InvestigationFormVocab
@@ -2372,7 +2371,6 @@ core:ObjectStatusVocab
 	rdfs:label "Object Status Vocabulary"@en-US ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"Draft"^^core:ObjectStatusVocab
 			"Final"^^core:ObjectStatusVocab
@@ -18342,7 +18340,6 @@ vocabulary:AccountTypeVocab
 	rdfs:label "Account Type Vocabulary"@en-US ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"ldap"^^vocabulary:AccountTypeVocab
 			"nis"^^vocabulary:AccountTypeVocab
@@ -18362,7 +18359,6 @@ vocabulary:ActionArgumentNameVocab
 	rdfs:comment "Defines an open-vocabulary for common arguments of cyber actions."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"APC Address"^^vocabulary:ActionArgumentNameVocab
 			"APC Mode"^^vocabulary:ActionArgumentNameVocab
@@ -18425,7 +18421,6 @@ vocabulary:ActionNameVocab
 	rdfs:comment "Defines an open-vocabulary of common specific cyber action names."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"Accept Socket Connection"^^vocabulary:ActionNameVocab
 			"Add Connection to Network Share"^^vocabulary:ActionNameVocab
@@ -18618,7 +18613,6 @@ vocabulary:ActionRelationshipTypeVocab
 	rdfs:comment "Defines an open-vocabulary for capturing types of relationships between actions."@en-US ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"Dependent_On"^^vocabulary:ActionRelationshipTypeVocab
 			"Equivalent_To"^^vocabulary:ActionRelationshipTypeVocab
@@ -18637,7 +18631,6 @@ vocabulary:ActionStatusTypeVocab
 	rdfs:comment "Defines an open-vocabulary of action status types."@en-US ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"Complete/Finish"^^vocabulary:ActionStatusTypeVocab
 			"Error"^^vocabulary:ActionStatusTypeVocab
@@ -18656,7 +18649,6 @@ vocabulary:ActionTypeVocab
 	rdfs:comment "Defines an open-vocabulary of common general action types."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"Accept"^^vocabulary:ActionTypeVocab
 			"Access"^^vocabulary:ActionTypeVocab
@@ -18779,7 +18771,6 @@ vocabulary:BitnessVocab
 	rdfs:comment "Defines an open-vocabulary of word sizes that define classes of operating systems."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"32"^^vocabulary:BitnessVocab
 			"64"^^vocabulary:BitnessVocab
@@ -18793,7 +18784,6 @@ vocabulary:CharacterEncodingVocab
 	rdfs:comment "Defines an open-vocabulary of character encodings."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"ASCII"^^vocabulary:CharacterEncodingVocab
 			"UTF-16"^^vocabulary:CharacterEncodingVocab
@@ -18818,7 +18808,6 @@ vocabulary:ContactAddressScopeVocab
 	rdfs:comment "Defines an open-vocabulary of scopes for address entries of digital contacts."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"home"^^vocabulary:ContactAddressScopeVocab
 			"work"^^vocabulary:ContactAddressScopeVocab
@@ -18833,7 +18822,6 @@ vocabulary:ContactEmailScopeVocab
 	rdfs:comment "Defines an open-vocabulary of scopes for email entries of digital contacts."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"home"^^vocabulary:ContactEmailScopeVocab
 			"work"^^vocabulary:ContactEmailScopeVocab
@@ -18849,7 +18837,6 @@ vocabulary:ContactPhoneScopeVocab
 	rdfs:comment "Defines an open-vocabulary of scopes for phone entries of digital contacts."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"home"^^vocabulary:ContactPhoneScopeVocab
 			"work"^^vocabulary:ContactPhoneScopeVocab
@@ -18869,7 +18856,6 @@ vocabulary:ContactSIPScopeVocab
 	rdfs:comment "Defines an open-vocabulary of scopes for Session Initiation Protocol (SIP) entries of digital contacts."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"home"^^vocabulary:ContactSIPScopeVocab
 			"work"^^vocabulary:ContactSIPScopeVocab
@@ -18884,7 +18870,6 @@ vocabulary:ContactURLScopeVocab
 	rdfs:comment "Defines an open-vocabulary of scopes for URL entries of digital contacts."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"home"^^vocabulary:ContactURLScopeVocab
 			"work"^^vocabulary:ContactURLScopeVocab
@@ -18900,7 +18885,6 @@ vocabulary:DiskTypeVocab
 	rdfs:comment "Defines an open-vocabulary of disk types."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"CDRom"^^vocabulary:DiskTypeVocab
 			"Fixed"^^vocabulary:DiskTypeVocab
@@ -18917,7 +18901,6 @@ vocabulary:EndiannessTypeVocab
 	rdfs:comment "Defines an open-vocabulary of byte ordering methods."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"Big-endian"^^vocabulary:EndiannessTypeVocab
 			"Little-endian"^^vocabulary:EndiannessTypeVocab
@@ -18932,7 +18915,6 @@ vocabulary:HashNameVocab
 	rdfs:comment "Defines an open-vocabulary of hashing algorithm names."@en-US ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"MD5"^^vocabulary:HashNameVocab
 			"MD6"^^vocabulary:HashNameVocab
@@ -18956,7 +18938,6 @@ vocabulary:LibraryTypeVocab
 	rdfs:comment "Defines an open-vocabulary of library types."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"Dynamic"^^vocabulary:LibraryTypeVocab
 			"Other"^^vocabulary:LibraryTypeVocab
@@ -18973,7 +18954,6 @@ vocabulary:MemoryBlockTypeVocab
 	rdfs:comment "Defines an open-vocabulary of types of memory blocks."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"Bit-mapped"^^vocabulary:MemoryBlockTypeVocab
 			"Byte-mapped"^^vocabulary:MemoryBlockTypeVocab
@@ -18990,7 +18970,6 @@ vocabulary:ObservableObjectRelationshipVocab
 	rdfs:comment "Defines an open-vocabulary of inter-observable object relationships."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"Allocated"^^vocabulary:ObservableObjectRelationshipVocab
 			"Allocated_By"^^vocabulary:ObservableObjectRelationshipVocab
@@ -19141,7 +19120,6 @@ vocabulary:ObservableObjectStateVocab
 	rdfs:comment "Defines an open-vocabulary of observable object states."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"Active"^^vocabulary:ObservableObjectStateVocab
 			"Closed"^^vocabulary:ObservableObjectStateVocab
@@ -19163,7 +19141,6 @@ vocabulary:PartitionTypeVocab
 	rdfs:comment "Defines an open-vocabulary of partition types. See http://www.win.tue.nl/~aeb/partitions/partition_types-1.html for more information about the various partition types."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"PARTITION_ENTRY_UNUSED"^^vocabulary:PartitionTypeVocab
 			"PARTITION_EXTENDED"^^vocabulary:PartitionTypeVocab
@@ -19194,7 +19171,6 @@ vocabulary:ProcessorArchVocab
 	rdfs:comment "Defines an open-vocabulary of computer processor architectures."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"ARM"^^vocabulary:ProcessorArchVocab
 			"Alpha"^^vocabulary:ProcessorArchVocab
@@ -19218,7 +19194,6 @@ vocabulary:RecoveredObjectStatusVocab
 	rdfs:comment "Defines the vocabulary for Recovered Object status of data."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"recovered"^^vocabulary:RecoveredObjectStatusVocab
 			"partially recovered"^^vocabulary:RecoveredObjectStatusVocab
@@ -19234,7 +19209,6 @@ vocabulary:RegionalRegistryTypeVocab
 	rdfs:comment "Defines an open-vocabulary of Regional Internet Registries (RIRs) names, represented via their respective acronyms."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"APNIC"^^vocabulary:RegionalRegistryTypeVocab
 			"ARIN"^^vocabulary:RegionalRegistryTypeVocab
@@ -19250,7 +19224,6 @@ vocabulary:RegistryDatatypeVocab
 	rdfs:label "Registry Datatype Vocabulary"@en-US ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"reg_binary"^^vocabulary:RegistryDatatypeVocab
 			"reg_dword"^^vocabulary:RegistryDatatypeVocab
@@ -19275,7 +19248,6 @@ vocabulary:SIMFormVocab
 	rdfs:comment "Defines an open-vocabulary of common SIM card form factors."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"Full-size SIM"^^vocabulary:SIMFormVocab
 			"Micro SIM"^^vocabulary:SIMFormVocab
@@ -19290,7 +19262,6 @@ vocabulary:SIMTypeVocab
 	rdfs:comment "Defines an open-vocabulary of common SIM card types."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"SIM"^^vocabulary:SIMTypeVocab
 			"UICC"^^vocabulary:SIMTypeVocab
@@ -19305,7 +19276,6 @@ vocabulary:TaskActionTypeVocab
 	rdfs:comment "Defines an open-vocabulary of task action types. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380596(v=vs.85).aspx."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"TASK_ACTION_COM_HANDLER"^^vocabulary:TaskActionTypeVocab
 			"TASK_ACTION_EXEC"^^vocabulary:TaskActionTypeVocab
@@ -19321,7 +19291,6 @@ vocabulary:TaskFlagVocab
 	rdfs:comment "Defines an open-vocabulary of the run flags for a task scheduler task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381283(v=vs.85).aspx See Also: http://msdn.microsoft.com/en-us/library/microsoft.office.excel.server.addins.computecluster.taskscheduler.taskflags(v=office.12).aspx."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"TASK_FLAG_DELETE_WHEN_DONE"^^vocabulary:TaskFlagVocab
 			"TASK_FLAG_DISABLED"^^vocabulary:TaskFlagVocab
@@ -19346,7 +19315,6 @@ vocabulary:TaskPriorityVocab
 	rdfs:comment "Defines an open-vocabulary of the priority levels of task scheduler tasks. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383512(v=vs.85).aspx."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"ABOVE_NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
 			"BELOW_NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
@@ -19364,7 +19332,6 @@ vocabulary:TaskStatusVocab
 	rdfs:comment "Defines an open-vocabulary of the possible statuses of a scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383604(v=vs.85).aspx See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381263(v=vs.85).aspx See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381833(v=vs.85).aspx See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383617(v=vs.85).aspx."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"SCHED_E_ACCOUNT_DBASE_CORRUPT"^^vocabulary:TaskStatusVocab
 			"SCHED_E_ACCOUNT_INFORMATION_NOT_SET"^^vocabulary:TaskStatusVocab
@@ -19400,7 +19367,6 @@ vocabulary:ThreadRunningStatusVocab
 	rdfs:comment "Defines an open-vocabulary of the various states that a thread may be in before, during, or after execution. See http://msdn.microsoft.com/en-us/library/system.diagnostics.threadstate(v=vs.110).aspx."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"Initialized"^^vocabulary:ThreadRunningStatusVocab
 			"Ready"^^vocabulary:ThreadRunningStatusVocab
@@ -19420,7 +19386,6 @@ vocabulary:TimestampPrecisionVocab
 	rdfs:comment "Defines an open-vocabulary of timestamp precision granularities."@en-US ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"day"^^vocabulary:TimestampPrecisionVocab
 			"hour"^^vocabulary:TimestampPrecisionVocab
@@ -19438,7 +19403,6 @@ vocabulary:TrendVocab
 	rdfs:comment "Defines an open-vocabulary of trend values."@en-US ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"Decreasing"^^vocabulary:TrendVocab
 			"Increasing"^^vocabulary:TrendVocab
@@ -19452,7 +19416,6 @@ vocabulary:TriggerFrequencyVocab
 	rdfs:comment "Defines an open-vocabulary of the frequency types that a trigger may use. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383620(v=vs.85).aspx and http://msdn.microsoft.com/en-us/library/windows/desktop/aa383987(v=vs.85).aspx."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"TASK_EVENT_TRIGGER_AT_LOGON"^^vocabulary:TriggerFrequencyVocab
 			"TASK_EVENT_TRIGGER_AT_SYSTEMSTART"^^vocabulary:TriggerFrequencyVocab
@@ -19472,7 +19435,6 @@ vocabulary:TriggerTypeVocab
 	rdfs:comment "Defines an open-vocabulary of the types of triggers associated with a task."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"TASK_TRIGGER_BOOT"^^vocabulary:TriggerTypeVocab
 			"TASK_TRIGGER_EVENT"^^vocabulary:TriggerTypeVocab
@@ -19491,7 +19453,6 @@ vocabulary:URLTransitionTypeVocab
 	rdfs:comment "Defines an open-vocabulary of types of URL transitions."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"link"^^vocabulary:URLTransitionTypeVocab
 			"typed"^^vocabulary:URLTransitionTypeVocab
@@ -19514,7 +19475,6 @@ vocabulary:UnixProcessStateVocab
 	rdfs:comment "Defines an open-vocabulary of Unix process states"@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"Dead"^^vocabulary:UnixProcessStateVocab
 			"InterruptibleSleep"^^vocabulary:UnixProcessStateVocab
@@ -19533,7 +19493,6 @@ vocabulary:WhoisContactTypeVocab
 	rdfs:comment "Defines an open-vocabulary of types of registrar contacts listed in a whois entry."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"ADMIN"^^vocabulary:WhoisContactTypeVocab
 			"BILLING"^^vocabulary:WhoisContactTypeVocab
@@ -19548,7 +19507,6 @@ vocabulary:WhoisDNSSECTypeVocab
 	rdfs:comment "Defines an open-vocabulary of acceptable values for the DNSSEC field in a Whois entry."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"Signed"^^vocabulary:WhoisDNSSECTypeVocab
 			"Unsigned"^^vocabulary:WhoisDNSSECTypeVocab
@@ -19562,7 +19520,6 @@ vocabulary:WhoisStatusTypeVocab
 	rdfs:comment "Defines an open-vocabulary of all valid statuses for a domain within a whois entry."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"ADD_PERIOD"^^vocabulary:WhoisStatusTypeVocab
 			"AUTO_RENEW_PERIOD"^^vocabulary:WhoisStatusTypeVocab
@@ -19593,7 +19550,6 @@ vocabulary:WindowsDriveTypeVocab
 	rdfs:comment "Defines an open-vocabulary of possible drive types, as enumerated by the WINAPI GetDriveType function: http://msdn.microsoft.com/en-us/library/windows/desktop/aa364939(v=vs.85).aspx."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"DRIVE_CDROM"^^vocabulary:WindowsDriveTypeVocab
 			"DRIVE_FIXED"^^vocabulary:WindowsDriveTypeVocab
@@ -19612,7 +19568,6 @@ vocabulary:WindowsVolumeAttributeVocab
 	rdfs:comment "Defines an open-vocabulary of attributes that may be returned by the diskpart attributes command: http://technet.microsoft.com/en-us/library/cc766465(v=ws.10).aspx."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"Hidden"^^vocabulary:WindowsVolumeAttributeVocab
 			"NoDefaultDriveLetter"^^vocabulary:WindowsVolumeAttributeVocab
@@ -19628,7 +19583,6 @@ vocabulary:WirelessNetworkSecurityModeVocab
 	rdfs:comment "Defines an open-vocabulary of security modes that may be configured for wireless network connections."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
 			"None"^^vocabulary:WirelessNetworkSecurityModeVocab
 			"WEP"^^vocabulary:WirelessNetworkSecurityModeVocab
