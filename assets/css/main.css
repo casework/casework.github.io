@@ -37,3 +37,21 @@ footer.footer {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
+
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  border-collapse: collapse;
+  color: #333;
+}
+
+table th {
+  font-weight: bold;
+  border-bottom: 2px solid #ccc;
+}
+
+table tr {
+  border-bottom: 1px solid #ccc;
+}
