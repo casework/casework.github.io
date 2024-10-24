@@ -228,9 +228,16 @@ These libraries use native data structures to manage the CASE graph data. They p
 |----------|----------|------------|
 | Python      | [case-mapping](https://pypi.org/project/case-mapping/) | [https://github.com/casework/CASE-Mapping-Python](https://github.com/casework/CASE-Mapping-Python) | 
 
+
 ### Full CASE Concepts
 
-The complete Ontology that contains the list of all classes and properties is available at [https://ontology.caseontology.org](https://ontology.caseontology.org/documentation/index.html).
+The rendered documentation for the CASE Ontology, which contains the list of all classes and properties, is available at [https://ontology.caseontology.org](https://ontology.caseontology.org/documentation/index.html).
+
+All of the concepts used in CASE and UCO are identified with IRIs, which redirect to the concept's documentation when visited in a browser.  See for example the location classes used above:
+
+* [`uco-location:Location`](https://ontology.unifiedcyberontology.org/uco/location/Location)
+* [`uco-location:LatLongCoordinatesFacet`](https://ontology.unifiedcyberontology.org/uco/location/LatLongCoordinatesFacet)
+* [`uco-location:SimpleAddressFacet`](https://ontology.unifiedcyberontology.org/uco/location/SimpleAddressFacet)
 
 
 ### Query CASE Graphs
