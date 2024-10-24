@@ -89,7 +89,8 @@ A full (basic) example of a CASE JSON-LD output is below:
 }
 ```
 
-Additional examples are available in the [CASE-Examples](https://github.com/casework/CASE-Examples/tree/master/examples/illustrations) repository.
+Additional examples are available in the [CASE-Examples](https://github.com/casework/CASE-Examples/tree/master/examples/illustrations) repository.  This example was copied from [here](https://github.com/casework/CASE-Examples/blob/master/examples/illustrations/location/location.json).
+
 
 ### Basic Graph Creation
 
