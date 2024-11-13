@@ -230,6 +230,26 @@ All of the concepts used in CASE and UCO are identified with IRIs, which redirec
 * [`uco-location:LatLongCoordinatesFacet`](https://ontology.unifiedcyberontology.org/uco/location/LatLongCoordinatesFacet)
 * [`uco-location:SimpleAddressFacet`](https://ontology.unifiedcyberontology.org/uco/location/SimpleAddressFacet)
 
+
+#### JSON-LD Stubs
+
+Classes in CDO also have "empty" JSON-LD files, sometimes referred to as "stubs," generated to show the properties available in them.  These stubs assist with showing the properties provided by parent classes, and hinting at the available cardinalities (e.g., a property with `none` following has a maximum cardinality of 1, while a property with an empty array following has an unbounded maximum cardinality).  The files are "empty" graphs because each of the statements is incomplete - the `none` and `[]` JSON values are absent information as JSON-LD, and thus would not load in an RDF application.
+
+The classes above have these available stubs:
+
+* [`Location.json`](https://github.com/casework/CASE-Mapping-Template-Stubs/blob/main/templates/uco-location/.json)
+* [`LatLongCoordinatesFacet.json`](https://github.com/casework/CASE-Mapping-Template-Stubs/blob/main/templates/uco-location/.json)
+* [`SimpleAddressFacet.json`](https://github.com/casework/CASE-Mapping-Template-Stubs/blob/main/templates/uco-location/.json)
+
+To assist with recalling `Facet`s available to each of the `UcoObject` subclasses, the stubs also carry `Facet` suggestions from parent classes.  If some `Facet` happens to have no information available in an application, it is not necessary to specify the `Facet`.
+
+See for instance:
+
+* [`AndroidPhone.json`](https://github.com/casework/CASE-Mapping-Template-Stubs/blob/main/templates/uco-observable/AndroidPhone.json)
+* [`BluetoothAddress.json`](https://github.com/casework/CASE-Mapping-Template-Stubs/blob/main/templates/uco-observable/BluetoothAddress.json)
+* [`RasterPicture.json`](https://github.com/casework/CASE-Mapping-Template-Stubs/blob/main/templates/uco-observable/RasterPicture.json)
+
+
 ### Query CASE Graphs
 
 {% tabs log %}
