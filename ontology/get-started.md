@@ -148,10 +148,10 @@ Dictionary<string, object> location = new()
         {
             ["@id"] = "kb:simple-address-facet-" + Guid.NewGuid(),
             ["@type"] = "uco-location:SimpleAddressFacet",
-            ["uco-core:addressLine1"] = "20341 Whitworth Institute 405 N. Whitworth",
-            ["uco-core:city"] = "Seattle",
-            ["uco-core:stateOrProvince"] = "WA",
-            ["uco-core:postalCode"] = "98052",
+            ["uco-location:street"] = "20341 Whitworth Institute 405 N. Whitworth",
+            ["uco-location:locality"] = "Seattle",
+            ["uco-location:region"] = "WA",
+            ["uco-location:postalCode"] = "98052",
         }
     }
 };
@@ -342,7 +342,34 @@ See for instance:
 {% tab log Python %}
 
 ```python
-# TODO
+# Install the dependency package: pip install rdflib
+from rdflib import Graph
+
+# Assuming the input of the case.jsonld from previous examples
+graph: Graph = Graph()
+graph.parse("case.jsonld", format="json-ld")
+
+# Query the graph to list the street(s) in the output
+query = """
+    SELECT ?lStreet
+    WHERE
+    {
+        ?nLocation a uco-location:Location .
+        
+        OPTIONAL {
+            ?nLocation uco-core:hasFacet ?nSimpleAddressFacet .
+            ?nSimpleAddressFacet a uco-location:SimpleAddressFacet .
+            OPTIONAL { ?nSimpleAddressFacet uco-location:street ?lStreet . }
+        }
+    }
+    """
+
+# Execute the query
+results = graph.query(query)
+
+# Print the results to the console
+for row in results:
+    print(row.lStreet)
 ```
 
 {% endtab %}
@@ -350,7 +377,50 @@ See for instance:
 {% tab log C# %}
 
 ```cs
-// TODO
+// Install the dependency package: dotnet add package dotNetRDF
+using VDS.RDF;
+using VDS.RDF.Parsing;
+using VDS.RDF.Query;
+using VDS.RDF.Query.Datasets;
+
+
+// Load the graph from the JSON-LD file
+TripleStore tripleStore = new();
+JsonLdParser jsonLdParser = new();
+jsonLdParser.Load(tripleStore, "case.jsonld");
+ISparqlQueryProcessor queryProcessor = new LeviathanQueryProcessor(new InMemoryDataset(tripleStore));
+SparqlQueryParser parser = new();
+
+// Define the SPARQL query
+var query = """
+            SELECT ?lStreet
+            WHERE {
+                ?nLocation a uco-location:Location .
+                
+                OPTIONAL {
+                    ?nLocation uco-core:hasFacet ?nSimpleAddressFacet .
+                    ?nSimpleAddressFacet a uco-location:SimpleAddressFacet .
+                    OPTIONAL { ?nSimpleAddressFacet uco-location:street ?lStreet . }
+                }
+            }
+            """;
+
+var queryString = new SparqlParameterizedString
+{
+    CommandText = query
+};
+// Define the namespaces used in the query
+queryString.Namespaces.AddNamespace("uco-core", new Uri("https://ontology.unifiedcyberontology.org/uco/core/"));
+queryString.Namespaces.AddNamespace("uco-location", new Uri("https://ontology.unifiedcyberontology.org/uco/location/"));
+
+// Execute the query
+var results = (SparqlResultSet) queryProcessor.ProcessQuery(parser.ParseFromString(queryString));
+
+// Print the results to the console
+foreach (var result in results)
+{
+    Console.WriteLine(result["lStreet"]);
+}
 ```
 
 {% endtab %}
@@ -358,7 +428,49 @@ See for instance:
 {% tab log Java %}
 
 ```java
-// TODO
+// Depends on org.apache.jena (https://mvnrepository.com/artifact/org.apache.jena/jena-arq)
+import org.apache.jena.query.*;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.riot.RDFDataMgr;
+import org.apache.jena.riot.Lang;
+
+public class CASEQuery {
+    public static void main(String[] args) {
+        // Load the graph from the JSON-LD file
+        Model model = RDFDataMgr.loadModel("case.jsonld", Lang.JSONLD);
+
+        // Define the SPARQL query
+        String queryString = """
+            PREFIX uco-location: <https://ontology.unifiedcyberontology.org/uco/location/>
+            PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+
+            SELECT ?lStreet
+            WHERE {
+                ?nLocation a uco-location:Location .
+
+                OPTIONAL {
+                    ?nLocation uco-core:hasFacet ?nSimpleAddressFacet .
+                    ?nSimpleAddressFacet a uco-location:SimpleAddressFacet .
+                    OPTIONAL { ?nSimpleAddressFacet uco-location:street ?lStreet . }
+                }
+            }
+        """;
+
+        // Create the query
+        Query query = QueryFactory.create(queryString);
+
+        // Execute the query and obtain results
+        try (QueryExecution qexec = QueryExecutionFactory.create(query, model)) {
+            ResultSet results = qexec.execSelect();
+
+            // Print the results to the console
+            while (results.hasNext()) {
+                QuerySolution soln = results.nextSolution();
+                System.out.println(soln.getLiteral("lStreet").getString());
+            }
+        }
+    }
+}
 ```
 
 {% endtab %}
