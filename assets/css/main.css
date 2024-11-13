@@ -55,3 +55,7 @@ table th {
 table tr {
   border-bottom: 1px solid #ccc;
 }
+
+pre code {
+  color: #fff;
+}

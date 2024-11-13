@@ -20,7 +20,6 @@ Each object within the `@graph` key is an Object, which contains at least an `@i
 }
 ```
 
-
 ### Full CASE Example Graph
 
 A full (basic) example of a CASE JSON-LD output is below:
@@ -30,7 +29,6 @@ A full (basic) example of a CASE JSON-LD output is below:
     "@context": {
         "@vocab": "http://example.org/local#",
         "kb": "http://example.org/kb/",
-        "acme": "http://custompb.acme.org/core#",
         "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
         "uco-location": "https://ontology.unifiedcyberontology.org/uco/location/",
         "xsd": "http://www.w3.org/2001/XMLSchema#"
@@ -47,15 +45,6 @@ A full (basic) example of a CASE JSON-LD output is below:
                     "uco-location:region": "WA",
                     "uco-location:postalCode": "98052",
                     "uco-location:street": "20341 Whitworth Institute 405 N. Whitworth"
-                },
-                {
-                    "@id": "kb:acme-internal-location-facet-41fb3158-bbab-404d-97e4-ac61debb71f3",
-                    "@type": [
-                        "acme:InternalLocationFacet",
-                        "uco-core:Facet"
-                    ],
-                    "acme:floor": 3,
-                    "acme:roomNumber": 345
                 }
             ]
         },
@@ -91,12 +80,12 @@ A full (basic) example of a CASE JSON-LD output is below:
 
 Additional examples are available in the [CASE-Examples](https://github.com/casework/CASE-Examples/tree/master/examples/illustrations) repository.  This example was copied from [here](https://github.com/casework/CASE-Examples/blob/master/examples/illustrations/location/location.json).
 
-
 ### Basic Graph Creation
 
 {% tabs log %}
 
 {% tab log Python %}
+
 ```python
 import json
 import uuid
@@ -131,22 +120,23 @@ graph["@graph"].append({
 with open('case.jsonld', 'w') as f:
     json.dump(graph, f, indent=4)
 ```
+
 {% endtab %}
 
 {% tab log C# %}
-```
-{% endtab %}
 
-{% tab log C# %}
 ```cs
 // TODO
 ```
+
 {% endtab %}
 
 {% tab log Java %}
+
 ```java
 // TODO
 ```
+
 {% endtab %}
 
 {% endtabs %}
@@ -154,6 +144,7 @@ with open('case.jsonld', 'w') as f:
 ### Validation Tools
 
 #### CLI
+
 Once the JSON-LD output is generated, it can be validated for syntactic correctness using the [`case_validate`](https://github.com/casework/CASE-Utilities-Python) tool. The tool is available as a Python package and can be installed using `pip install case-utils`.
 
 ```bash
@@ -161,6 +152,7 @@ pip install case-utils
 ```
 
 Then the tool can be run on the generated JSON-LD file which will output any errors or warnings.
+
 ```bash
 case_validate case.jsonld
 ```
@@ -228,7 +220,6 @@ These libraries use native data structures to manage the CASE graph data. They p
 |----------|----------|------------|
 | Python      | [case-mapping](https://pypi.org/project/case-mapping/) | [https://github.com/casework/CASE-Mapping-Python](https://github.com/casework/CASE-Mapping-Python) | 
 
-
 ### Full CASE Concepts
 
 The rendered documentation for the CASE Ontology, which contains the list of all classes and properties, is available at [https://ontology.caseontology.org](https://ontology.caseontology.org/documentation/index.html).
@@ -239,27 +230,32 @@ All of the concepts used in CASE and UCO are identified with IRIs, which redirec
 * [`uco-location:LatLongCoordinatesFacet`](https://ontology.unifiedcyberontology.org/uco/location/LatLongCoordinatesFacet)
 * [`uco-location:SimpleAddressFacet`](https://ontology.unifiedcyberontology.org/uco/location/SimpleAddressFacet)
 
-
 ### Query CASE Graphs
 
 {% tabs log %}
 
 {% tab log Python %}
+
 ```python
 # TODO
 ```
+
 {% endtab %}
 
 {% tab log C# %}
+
 ```cs
 // TODO
 ```
+
 {% endtab %}
 
 {% tab log Java %}
+
 ```java
 // TODO
 ```
+
 {% endtab %}
 
 {% endtabs %}
