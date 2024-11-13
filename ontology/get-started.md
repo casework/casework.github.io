@@ -126,7 +126,44 @@ with open('case.jsonld', 'w') as f:
 {% tab log C# %}
 
 ```cs
-// TODO
+// Install the dependency package: dotnet add package Newtonsoft.Json 
+using Newtonsoft.Json;
+
+// Build the base graph dictionary with the context. This must contain all the namespaces used in the graph
+Dictionary<string, object> graph = [];
+graph["@context"] = new Dictionary<string, object>
+{
+    ["kb"] = "http://schema.org/",
+    ["uco-core"] = "https://ontology.unifiedcyberontology.org/uco/core/",
+    ["uco-location"] = "https://ontology.unifiedcyberontology.org/uco/location/"
+};
+
+Dictionary<string, object> location = new()
+{
+    ["@id"] = "kb:location-" + Guid.NewGuid(),
+    ["@type"] = "uco-location:Location",
+    ["uco-core:hasFacet"] = new List<object>
+    {
+        new Dictionary<string, object>
+        {
+            ["@id"] = "kb:simple-address-facet-" + Guid.NewGuid(),
+            ["@type"] = "uco-location:SimpleAddressFacet",
+            ["uco-core:addressLine1"] = "20341 Whitworth Institute 405 N. Whitworth",
+            ["uco-core:city"] = "Seattle",
+            ["uco-core:stateOrProvince"] = "WA",
+            ["uco-core:postalCode"] = "98052",
+        }
+    }
+};
+
+// Add an object to the graph
+graph["@graph"] = new List<object>
+{
+    location
+};
+
+// Write the dictionary to a JSON file
+File.WriteAllText("case.jsonld", JsonConvert.SerializeObject(graph, Formatting.Indented));
 ```
 
 {% endtab %}
@@ -134,7 +171,56 @@ with open('case.jsonld', 'w') as f:
 {% tab log Java %}
 
 ```java
-// TODO
+// Depends on org.json (https://mvnrepository.com/artifact/org.json/json)
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.UUID;
+
+public class GenerateCASE {
+    public static void main(String[] args) {
+        // Build the base graph JSONObject with the context
+        JSONObject graph = new JSONObject();
+        
+        JSONObject context = new JSONObject();
+        context.put("kb", "http://example.org/kb/");
+        context.put("uco-core", "https://ontology.unifiedcyberontology.org/uco/core/");
+        context.put("uco-location", "https://ontology.unifiedcyberontology.org/uco/location/");
+        
+        graph.put("@context", context);
+        graph.put("@graph", new JSONArray());
+        
+        // Add an object to the graph
+        JSONObject locationObject = new JSONObject();
+        locationObject.put("@id", "kb:location-" + UUID.randomUUID());
+        locationObject.put("@type", "uco-location:Location");
+        
+        JSONArray hasFacetArray = new JSONArray();
+        
+        JSONObject simpleAddressFacet = new JSONObject();
+        simpleAddressFacet.put("@id", "kb:simple-address-facet-" + UUID.randomUUID());
+        simpleAddressFacet.put("@type", "uco-location:SimpleAddressFacet");
+        simpleAddressFacet.put("uco-location:locality", "Seattle");
+        simpleAddressFacet.put("uco-location:region", "WA");
+        simpleAddressFacet.put("uco-location:postalCode", "98052");
+        simpleAddressFacet.put("uco-location:street", "20341 Whitworth Institute 405 N. Whitworth");
+        
+        hasFacetArray.put(simpleAddressFacet);
+        
+        locationObject.put("uco-core:hasFacet", hasFacetArray);
+        
+        graph.getJSONArray("@graph").put(locationObject);
+        
+        // Write the JSON-LD to a file
+        try (FileWriter file = new FileWriter("case.jsonld")) {
+            file.write(graph.toString(4)); // 4 is the indent factor for pretty printing
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
 ```
 
 {% endtab %}
@@ -248,7 +334,6 @@ See for instance:
 * [`AndroidPhone.json`](https://github.com/casework/CASE-Mapping-Template-Stubs/blob/main/templates/uco-observable/AndroidPhone.json)
 * [`BluetoothAddress.json`](https://github.com/casework/CASE-Mapping-Template-Stubs/blob/main/templates/uco-observable/BluetoothAddress.json)
 * [`RasterPicture.json`](https://github.com/casework/CASE-Mapping-Template-Stubs/blob/main/templates/uco-observable/RasterPicture.json)
-
 
 ### Query CASE Graphs
 
