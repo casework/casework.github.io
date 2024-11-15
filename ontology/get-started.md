@@ -368,6 +368,9 @@ graph.parse("case.jsonld", format="json-ld")
 
 # Query the graph to list the street(s) in the output
 query = """
+    PREFIX uco-location: <https://ontology.unifiedcyberontology.org/uco/location/>
+    PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+
     SELECT ?lStreet
     WHERE
     {
@@ -410,6 +413,9 @@ SparqlQueryParser parser = new();
 
 // Define the SPARQL query
 var query = """
+            PREFIX uco-location: <https://ontology.unifiedcyberontology.org/uco/location/>
+            PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+
             SELECT ?lStreet
             WHERE {
                 ?nLocation a uco-location:Location .
