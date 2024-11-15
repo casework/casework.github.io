@@ -306,9 +306,11 @@ include:
 Full usage documentation is available at the [GitLab Repository](https://gitlab.com/keith.chason/case-validation-component).
 
 
-## Binding/Mapping Libraries
+## Graph Creation Resources
 
-Several libraries have been developed to assist in the generation of CASE graphs in various programming languages. These libraries provide a more programmatic way to generate CASE graphs using the language's native data structures. These have been categorized between "Bindings" and "Mappings".
+Several libraries and repositories have been developed to assist in the generation of CASE graphs in various programming languages. These libraries provide a more programmatic way to generate CASE graphs using the language's native data structures. These have been categorized between "Bindings" and "Mappings".
+
+Separately, a template repository is available that provides a demonstration command line utility and build system.  This template repository happens to use a Python community graph-library instead of language primitives, but if the bindings or mappings are favored by a developer, the template's build system provides other test infrastructure that is independently assistive.
 
 
 ### Bindings
@@ -327,6 +329,11 @@ These libraries use native data structures to manage the CASE graph data. They p
 | Language | Library  | Repository |
 |----------|----------|------------|
 | Python      | [case-mapping](https://pypi.org/project/case-mapping/) | [https://github.com/casework/CASE-Mapping-Python](https://github.com/casework/CASE-Mapping-Python) | 
+
+
+### Application template
+
+CASE provides a [Python application template repository](https://github.com/casework/CASE-Implementation-Template-Python-CLI) that is one potential style of starting an application.  Lessons learned within the CDO community in maintaining Python repositories are implemented in the template.
 
 
 ## Full CASE Concepts
