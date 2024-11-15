@@ -3,11 +3,12 @@ title: Get Started
 jumbo_desc: Get started with CASE using code examples.
 ---
 
-### Get Started with CASE
+# Get Started with CASE
 
 The full collection of libraries, tools, and documentation for CASE is available on the [CASE GitHub](https://github.com/casework) repository. This guide walks through the anatomy of a CASE graph, full CASE example graph, and how to generate and query CASE graphs.
 
-### Anatomy of a CASE Graph
+
+## Anatomy of a CASE Graph
 
 CASE uses JSON-LD which is JSON with linked relationships between objects within the JSON. It contains two top-level keys, `@context` and `@graph`. The `@context` key is a mapping of aliases and namespaces that point to namespaces within the UCO and CASE ontologys. The `@graph` key is an array/list of objects that represent the data being exchanged.
 
@@ -19,6 +20,7 @@ Each object within the `@graph` key is an Object, which contains at least an `@i
     "@type": "uco-location:Location"
 }
 ```
+
 
 ### Full CASE Example Graph
 
@@ -80,7 +82,8 @@ A full (basic) example of a CASE JSON-LD output is below:
 
 Additional examples are available in the [CASE-Examples](https://github.com/casework/CASE-Examples/tree/master/examples/illustrations) repository.  This example was copied from [here](https://github.com/casework/CASE-Examples/blob/master/examples/illustrations/location/location.json).
 
-### Basic Graph Creation
+
+## Basic Graph Creation
 
 {% tabs log %}
 
@@ -227,9 +230,11 @@ public class GenerateCASE {
 
 {% endtabs %}
 
-### Validation Tools
 
-#### CLI
+## Validation Tools
+
+
+### CLI
 
 Once the JSON-LD output is generated, it can be validated for syntactic correctness using the [`case_validate`](https://github.com/casework/CASE-Utilities-Python) tool. The tool is available as a Python package and can be installed using `pip install case-utils`.
 
@@ -243,7 +248,8 @@ Then the tool can be run on the generated JSON-LD file which will output any err
 case_validate case.jsonld
 ```
 
-#### Docker
+
+### Docker
 
 The `case_validate` tool is also available as a Docker image on [Docker Hub](https://hub.docker.com/r/kchason/case-validator). The container can be run with the following command:
 
@@ -258,7 +264,8 @@ docker run --rm \
 
 Full usage documentation is available at the `kchason/case-validator` [Docker Hub page](https://hub.docker.com/r/kchason/case-validator).
 
-#### GitHub Actions
+
+### GitHub Actions
 
 There is a GitHub Action available to validate CASE graphs in a CI/CD pipeline that are wrappers around the `case_validate` tool which makes it easier to test built graphs from unit and integrated testing frameworks.
 
@@ -273,7 +280,8 @@ There is a GitHub Action available to validate CASE graphs in a CI/CD pipeline t
 
 Full usage documentation is available at the [GitHub Action Marketplace](https://github.com/marketplace/actions/case-ontology-validator) page for the CASE Ontology Validator.
 
-#### GitLab CI Component
+
+### GitLab CI Component
 
 There is also GitLab CI component available to validate CASE graphs in a CI/CD pipeline that are wrappers around the `case_validate` tool which makes it easier to test built graphs from unit and integrated testing frameworks.
 
@@ -286,11 +294,13 @@ include:
 
 Full usage documentation is available at the [GitLab Repository](https://gitlab.com/keith.chason/case-validation-component).
 
-### Binding/Mapping Libraries
+
+## Binding/Mapping Libraries
 
 Several libraries have been developed to assist in the generation of CASE graphs in various programming languages. These libraries provide a more programmatic way to generate CASE graphs using the language's native data structures. These have been categorized between "Bindings" and "Mappings".
 
-#### Bindings
+
+### Bindings
 
 These libraries use RDF graphs to manage the CASE graph data. They provide a more direct mapping to the RDF data model and are more closely aligned with the underlying ontology but can be more resource intensive.
 
@@ -298,7 +308,8 @@ These libraries use RDF graphs to manage the CASE graph data. They provide a mor
 |----------|----------|------------|
 | C#       | [CipherTech.CASE.Bindings](https://www.nuget.org/packages/CipherTech.CASE.Bindings) | [https://github.com/ciphertechsolutions/CASE-Bindings-CSharp](https://github.com/ciphertechsolutions/CASE-Bindings-CSharp) | 
 
-#### Mappings
+
+### Mappings
 
 These libraries use native data structures to manage the CASE graph data. They provide a more programmatic way to generate CASE graphs using the language's native data structures and are then serialized into JSON-LD.
 
@@ -306,7 +317,8 @@ These libraries use native data structures to manage the CASE graph data. They p
 |----------|----------|------------|
 | Python      | [case-mapping](https://pypi.org/project/case-mapping/) | [https://github.com/casework/CASE-Mapping-Python](https://github.com/casework/CASE-Mapping-Python) | 
 
-### Full CASE Concepts
+
+## Full CASE Concepts
 
 The rendered documentation for the CASE Ontology, which contains the list of all classes and properties, is available at [https://ontology.caseontology.org](https://ontology.caseontology.org/documentation/index.html).
 
@@ -317,7 +329,7 @@ All of the concepts used in CASE and UCO are identified with IRIs, which redirec
 * [`uco-location:SimpleAddressFacet`](https://ontology.unifiedcyberontology.org/uco/location/SimpleAddressFacet)
 
 
-#### JSON-LD Stubs
+### JSON-LD Stubs
 
 Classes in CDO also have "empty" JSON-LD files, sometimes referred to as "stubs," generated to show the properties available in them.  These stubs assist with showing the properties provided by parent classes, and hinting at the available cardinalities (e.g., a property with `none` following has a maximum cardinality of 1, while a property with an empty array following has an unbounded maximum cardinality).  The files are "empty" graphs because each of the statements is incomplete - the `none` and `[]` JSON values are absent information as JSON-LD, and thus would not load in an RDF application.
 
@@ -335,7 +347,8 @@ See for instance:
 * [`BluetoothAddress.json`](https://github.com/casework/CASE-Mapping-Template-Stubs/blob/main/templates/uco-observable/BluetoothAddress.json)
 * [`RasterPicture.json`](https://github.com/casework/CASE-Mapping-Template-Stubs/blob/main/templates/uco-observable/RasterPicture.json)
 
-### Query CASE Graphs
+
+## Query CASE Graphs
 
 {% tabs log %}
 
