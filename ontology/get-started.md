@@ -3,6 +3,10 @@ title: Get Started
 jumbo_desc: Get started with CASE using code examples.
 ---
 
+* Display table of contents (this line will not be displayed)
+{:toc}
+
+
 # Get Started with CASE
 
 The full collection of libraries, tools, and documentation for CASE is available on the [CASE GitHub](https://github.com/casework) repository. This guide walks through the anatomy of a CASE graph, full CASE example graph, and how to generate, validate, and query CASE graphs.
