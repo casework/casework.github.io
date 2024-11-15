@@ -10,7 +10,7 @@ The full collection of libraries, tools, and documentation for CASE is available
 
 ## Anatomy of a CASE Graph
 
-CASE uses JSON-LD which is JSON with linked relationships between objects within the JSON. It contains two top-level keys, `@context` and `@graph`. The `@context` key is a mapping of aliases and namespaces that point to namespaces within the UCO and CASE ontologys. The `@graph` key is an array/list of objects that represent the data being exchanged.
+CASE uses JSON-LD which is JSON with linked relationships between objects within the JSON. It contains two top-level keys, `@context` and `@graph`. The `@context` key is a mapping of aliases and namespaces that point to namespaces within the UCO and CASE ontologies. The `@graph` key is an array/list of objects that represent the data being exchanged.
 
 Each object within the `@graph` key is an Object, which contains at least an `@id` key that is a unique identifier for the object. The `@type` key is the aliased type of the object within the ontology. The available and required properties are defined in the ontology schema. A mimimal example is:
 
