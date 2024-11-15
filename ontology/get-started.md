@@ -23,14 +23,69 @@ Portions of this page contributed by NIST are governed by the following statemen
 
 CASE uses JSON-LD which is JSON with linked relationships between objects within the JSON. It contains two top-level keys, `@context` and `@graph`. The `@context` key is a mapping of aliases and namespaces that point to namespaces within the UCO and CASE ontologies. The `@graph` key is an array/list of objects that represent the data being exchanged.
 
-Each object within the `@graph` key is an Object, which contains at least an `@id` key that is a unique identifier for the object. The `@type` key is the aliased type of the object within the ontology. The available and required properties are defined in the ontology schema. A mimimal example is:
+Each object within the `@graph` key is a JSON object (i.e., string-keyed dictionary), which contains at least an `@id` key that is a unique identifier for the object. The `@type` key is the aliased type of the object, using a reference for some class within the ontology compacted in line with the `@context` dictionary's assistance. The available and required properties are defined in the ontology schema. A mimimal example is:
 
 ```json
 {
-    "@id": "kb:location-4511219e-a924-4ba5-aee7-dfad5a2c9c05",
-    "@type": "uco-location:Location"
+    "@context": {
+        "kb": "http://example.org/kb/",
+        "uco-location": "https://ontology.unifiedcyberontology.org/uco/location/"
+    },
+    "@graph": {
+        "@id": "kb:location-4511219e-a924-4ba5-aee7-dfad5a2c9c05",
+        "@type": "uco-location:Location"
+    }
 }
 ```
+
+This example demonstrates a few aspects of CASE and JSON-LD that are specialized over general JSON:
+
+* The prefixes in the `@context` object, aka "context dictionary," often are used in CASE JSON-LD to compact IRIs into a "prefix:local part" form.  Prefixes include some typically fixed values, and typically customized values.
+   - Typically *fixed* prefix values are for ontologies that provide classes and properties.  In CASE, often these will include ontologies starting `case-*` and `uco-*`.
+   - `kb` is an example of a typically *customized* prefix, and is used in CASE examples for "Knowledge base" members.  `kb` does not need to be fixed to `http://example.org/kb/`.  That prefix IRI is only used because of DNS treatment practices around `example.org` (see [RFC 6761, Section 6.5](https://www.rfc-editor.org/rfc/rfc6761.html#section-6.5)).
+* Graph-individuals, identified by the string following `@id`, are suggested in CASE and UCO to have identifiers end with a UUID.  This prevents issues with ambiguities when multiple workflows or processes model similarly-structured individuals that in reality are independent things.
+   - For example, this avoids two directory-walking script emiting objects as `kb:File-1`, `kb:File-2`, etc., sourced from different directories.  If loaded later into one graph, the matched names would collapse and collect each others' properties, and present conflicting information like "There exists a `uco-observable:File`, `kb:File-1`, created at both `2024-01-01T01:23:45Z` and `2018-09-10T23:56:47Z`."
+* `@graph` children, and `@graph` itself, *may* use JSON Arrays (lists) in places where multiple objects may be linked, but where one object is concerned, the array-wrapping is optional in general JSON-LD syntax.  This minimal example graph transmits one "Location" object, and *opts* to skip a wrapping array.  Often, graphs will contain multiple top-level objects - the "Full CASE Example Graph" below contains two.  This could be a point of confusion for JSON consuming applications that are not JSON-LD aware.  Requirement of arrays can be agreed upon between data producers and consumers by settling on `@container` specifications in the context dictionary (such as `{"@container": "@set"}`, described [here, illustrated in example 86](https://www.w3.org/TR/json-ld11/#sets).
+
+One characteristic of JSON-LD is that it is a concrete syntax for RDF.  There are translation mechanisms that convert between various concrete syntaxes, which can serve as an elementary syntax check of JSON as JSON-LD.  The example graph above encodes one statement - that there is a thing with ID `kb:location-4511219e-...`, and RDF-type `uco-location:Location`.  A graph-consuming application could read a JSON-LD file and translate to confirm statements survive a load-save round-trip.  For instance, here is the above graph in various other RDF syntaxes:
+
+{% tabs concrete %}
+
+{% tab concrete Turtle %}
+
+```turtle
+@prefix kb: <http://example.org/kb/> .
+@prefix uco-location: <https://ontology.unifiedcyberontology.org/uco/location/> .
+
+kb:location-4511219e-a924-4ba5-aee7-dfad5a2c9c05 a uco-location:Location .
+```
+
+{% endtab %}
+
+{% tab concrete N-Triples %}
+
+```turtle
+<http://example.org/kb/location-4511219e-a924-4ba5-aee7-dfad5a2c9c05> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://ontology.unifiedcyberontology.org/uco/location/Location> .
+```
+
+{% endtab %}
+
+{% tab concrete RDF-XML %}
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:about="http://example.org/kb/location-4511219e-a924-4ba5-aee7-dfad5a2c9c05">
+    <rdf:type rdf:resource="https://ontology.unifiedcyberontology.org/uco/location/Location"/>
+  </rdf:Description>
+</rdf:RDF>
+```
+
+{% endtab %}
+
+{% endtabs %}
 
 
 ### Full CASE Example Graph
@@ -90,6 +145,114 @@ A full (basic) example of a CASE JSON-LD output is below:
     ]
 }
 ```
+
+The same graph reads as follows in alternate syntaxes:
+
+{% tabs concrete %}
+
+{% tab concrete Turtle %}
+
+```turtle
+@prefix kb: <http://example.org/kb/> .
+@prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix uco-location: <https://ontology.unifiedcyberontology.org/uco/location/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kb:location-4511219e-a924-4ba5-aee7-dfad5a2c9c05 a uco-location:Location ;
+    uco-core:hasFacet kb:simple-address-facet-59334948-00b9-4370-85b0-4dc8e07f5384 .
+
+kb:location-b579264d-6e30-4055-bf9b-72390364f224 a uco-location:Location ;
+    uco-core:hasFacet kb:lat-long-coordinates-facet-36126f9c-0273-48fe-ad4d-6a4e2848458f,
+        kb:simple-address-facet-258f169e-1e9c-4936-ba65-eed0f0c60788 .
+
+kb:lat-long-coordinates-facet-36126f9c-0273-48fe-ad4d-6a4e2848458f a uco-location:LatLongCoordinatesFacet ;
+    uco-location:latitude 48.860346 ;
+    uco-location:longitude 2.331199 .
+
+kb:simple-address-facet-258f169e-1e9c-4936-ba65-eed0f0c60788 a uco-location:SimpleAddressFacet ;
+    uco-location:country "France" ;
+    uco-location:locality "Paris" ;
+    uco-location:postalCode "F-75002" ;
+    uco-location:street "38 Bad Guy Headquarters st." .
+
+kb:simple-address-facet-59334948-00b9-4370-85b0-4dc8e07f5384 a uco-location:SimpleAddressFacet ;
+    uco-location:locality "Seattle" ;
+    uco-location:postalCode "98052" ;
+    uco-location:region "WA" ;
+    uco-location:street "20341 Whitworth Institute 405 N. Whitworth" .
+
+```
+
+{% endtab %}
+
+{% tab concrete N-Triples %}
+
+```turtle
+<http://example.org/kb/lat-long-coordinates-facet-36126f9c-0273-48fe-ad4d-6a4e2848458f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://ontology.unifiedcyberontology.org/uco/location/LatLongCoordinatesFacet> .
+<http://example.org/kb/lat-long-coordinates-facet-36126f9c-0273-48fe-ad4d-6a4e2848458f> <https://ontology.unifiedcyberontology.org/uco/location/latitude> "48.860346"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/kb/lat-long-coordinates-facet-36126f9c-0273-48fe-ad4d-6a4e2848458f> <https://ontology.unifiedcyberontology.org/uco/location/longitude> "2.331199"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/kb/location-4511219e-a924-4ba5-aee7-dfad5a2c9c05> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://ontology.unifiedcyberontology.org/uco/location/Location> .
+<http://example.org/kb/location-4511219e-a924-4ba5-aee7-dfad5a2c9c05> <https://ontology.unifiedcyberontology.org/uco/core/hasFacet> <http://example.org/kb/simple-address-facet-59334948-00b9-4370-85b0-4dc8e07f5384> .
+<http://example.org/kb/location-b579264d-6e30-4055-bf9b-72390364f224> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://ontology.unifiedcyberontology.org/uco/location/Location> .
+<http://example.org/kb/location-b579264d-6e30-4055-bf9b-72390364f224> <https://ontology.unifiedcyberontology.org/uco/core/hasFacet> <http://example.org/kb/lat-long-coordinates-facet-36126f9c-0273-48fe-ad4d-6a4e2848458f> .
+<http://example.org/kb/location-b579264d-6e30-4055-bf9b-72390364f224> <https://ontology.unifiedcyberontology.org/uco/core/hasFacet> <http://example.org/kb/simple-address-facet-258f169e-1e9c-4936-ba65-eed0f0c60788> .
+<http://example.org/kb/simple-address-facet-258f169e-1e9c-4936-ba65-eed0f0c60788> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://ontology.unifiedcyberontology.org/uco/location/SimpleAddressFacet> .
+<http://example.org/kb/simple-address-facet-258f169e-1e9c-4936-ba65-eed0f0c60788> <https://ontology.unifiedcyberontology.org/uco/location/country> "France" .
+<http://example.org/kb/simple-address-facet-258f169e-1e9c-4936-ba65-eed0f0c60788> <https://ontology.unifiedcyberontology.org/uco/location/locality> "Paris" .
+<http://example.org/kb/simple-address-facet-258f169e-1e9c-4936-ba65-eed0f0c60788> <https://ontology.unifiedcyberontology.org/uco/location/postalCode> "F-75002" .
+<http://example.org/kb/simple-address-facet-258f169e-1e9c-4936-ba65-eed0f0c60788> <https://ontology.unifiedcyberontology.org/uco/location/street> "38 Bad Guy Headquarters st." .
+<http://example.org/kb/simple-address-facet-59334948-00b9-4370-85b0-4dc8e07f5384> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://ontology.unifiedcyberontology.org/uco/location/SimpleAddressFacet> .
+<http://example.org/kb/simple-address-facet-59334948-00b9-4370-85b0-4dc8e07f5384> <https://ontology.unifiedcyberontology.org/uco/location/locality> "Seattle" .
+<http://example.org/kb/simple-address-facet-59334948-00b9-4370-85b0-4dc8e07f5384> <https://ontology.unifiedcyberontology.org/uco/location/postalCode> "98052" .
+<http://example.org/kb/simple-address-facet-59334948-00b9-4370-85b0-4dc8e07f5384> <https://ontology.unifiedcyberontology.org/uco/location/region> "WA" .
+<http://example.org/kb/simple-address-facet-59334948-00b9-4370-85b0-4dc8e07f5384> <https://ontology.unifiedcyberontology.org/uco/location/street> "20341 Whitworth Institute 405 N. Whitworth" .
+```
+
+{% endtab %}
+
+{% tab concrete RDF-XML %}
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:uco-core="https://ontology.unifiedcyberontology.org/uco/core/"
+   xmlns:uco-location="https://ontology.unifiedcyberontology.org/uco/location/"
+>
+  <rdf:Description rdf:about="http://example.org/kb/location-b579264d-6e30-4055-bf9b-72390364f224">
+    <rdf:type rdf:resource="https://ontology.unifiedcyberontology.org/uco/location/Location"/>
+    <uco-core:hasFacet rdf:resource="http://example.org/kb/simple-address-facet-258f169e-1e9c-4936-ba65-eed0f0c60788"/>
+    <uco-core:hasFacet rdf:resource="http://example.org/kb/lat-long-coordinates-facet-36126f9c-0273-48fe-ad4d-6a4e2848458f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/kb/simple-address-facet-59334948-00b9-4370-85b0-4dc8e07f5384">
+    <rdf:type rdf:resource="https://ontology.unifiedcyberontology.org/uco/location/SimpleAddressFacet"/>
+    <uco-location:locality>Seattle</uco-location:locality>
+    <uco-location:region>WA</uco-location:region>
+    <uco-location:postalCode>98052</uco-location:postalCode>
+    <uco-location:street>20341 Whitworth Institute 405 N. Whitworth</uco-location:street>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/kb/simple-address-facet-258f169e-1e9c-4936-ba65-eed0f0c60788">
+    <rdf:type rdf:resource="https://ontology.unifiedcyberontology.org/uco/location/SimpleAddressFacet"/>
+    <uco-location:locality>Paris</uco-location:locality>
+    <uco-location:country>France</uco-location:country>
+    <uco-location:postalCode>F-75002</uco-location:postalCode>
+    <uco-location:street>38 Bad Guy Headquarters st.</uco-location:street>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/kb/location-4511219e-a924-4ba5-aee7-dfad5a2c9c05">
+    <rdf:type rdf:resource="https://ontology.unifiedcyberontology.org/uco/location/Location"/>
+    <uco-core:hasFacet rdf:resource="http://example.org/kb/simple-address-facet-59334948-00b9-4370-85b0-4dc8e07f5384"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/kb/lat-long-coordinates-facet-36126f9c-0273-48fe-ad4d-6a4e2848458f">
+    <rdf:type rdf:resource="https://ontology.unifiedcyberontology.org/uco/location/LatLongCoordinatesFacet"/>
+    <uco-location:latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.860346</uco-location:latitude>
+    <uco-location:longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.331199</uco-location:longitude>
+  </rdf:Description>
+</rdf:RDF>
+```
+
+{% endtab %}
+
+{% endtabs %}
 
 Additional examples are available in the [CASE-Examples](https://github.com/casework/CASE-Examples) repository.  This example was copied from [here](https://github.com/casework/CASE-Examples/blob/master/examples/illustrations/location/location.json).
 
@@ -367,6 +530,56 @@ See for instance:
 
 
 ## Query CASE Graphs
+
+A frequent use-case for RDF is graph querying.  JSON-LD users have access to querying using the SPARQL query language.  For instance, the following query can be used to find all street addresses of locations in the knowledge base.  Because these addresses are properties tied to a `uco-location:Location` object, at times, there may be a linked latitude/longitude pair.  This query will find all street addresses, and will optionally find associated latitude/longitude coordinate pairs.
+
+```sparql
+PREFIX uco-location: <https://ontology.unifiedcyberontology.org/uco/location/>
+PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+
+SELECT ?lStreet ?lLatitude ?lLongitude
+WHERE
+{
+    ?nLocation
+        a uco-location:Location ;
+        uco-core:hasFacet ?nSimpleAddressFacet ;
+        .
+    ?nSimpleAddressFacet
+        a uco-location:SimpleAddressFacet ;
+        uco-location:street ?lStreet ;
+        .
+    
+    OPTIONAL {
+        ?nLocation uco-core:hasFacet ?nLatLongCoordinatesFacet .
+        ?nLatLongCoordinatesFacet
+            a uco-location:LatLongCoordinatesFacet ;
+            uco-location:latitude ?lLatitude ;
+            uco-location:longitude ?lLongitude ;
+            .
+    }
+}
+ORDER BY ?lStreet
+```
+
+Run against the example location graph above, this query returns the following results:
+
+|    | ?lStreet                                   | ?lLatitude   | ?lLongitude   |
+|----|--------------------------------------------|--------------|---------------|
+|  0 | 20341 Whitworth Institute 405 N. Whitworth |              |               |
+|  1 | 38 Bad Guy Headquarters st.                | 48.860346    | 2.331199      |
+
+CASE provides a command-line tool alongside `case_validate`, `case_sparql_select`, which can run a SPARQL query against one or more graph files.  The command is documented [here](https://github.com/casework/CASE-Utilities-Python?tab=readme-ov-file#case_sparql_select).  The above table was generated through a command-line session similar to this one:
+
+```bash
+python3 -m venv venv
+source .../venv/bin/activate
+pip install case-utils
+case_sparql_select out.md query.sparql example.jsonld
+```
+
+Programming languages will often have libraries available to run SPARQL queries against loaded graphs.  The following examples show how to load a graph file and run a query similar to the query above, but that just gets the street addresses.
+
+Note that SPARQL's syntactic similarities with Turtle extend to subject-sharing in statements.  Though the queries have a different number of words per line, they achieve the same pattern matching pertaining to finding street addresses.
 
 {% tabs log %}
 

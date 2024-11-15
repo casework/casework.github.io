@@ -1,0 +1,24 @@
+PREFIX uco-location: <https://ontology.unifiedcyberontology.org/uco/location/>
+PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+
+SELECT ?lStreet ?lLatitude ?lLongitude
+WHERE
+{
+    ?nLocation a uco-location:Location .
+    
+    OPTIONAL {
+        ?nLocation uco-core:hasFacet ?nSimpleAddressFacet .
+        ?nSimpleAddressFacet a uco-location:SimpleAddressFacet .
+        OPTIONAL { ?nSimpleAddressFacet uco-location:street ?lStreet . }
+    }
+    
+    OPTIONAL {
+        ?nLocation uco-core:hasFacet ?nLatLongCoordinatesFacet .
+        ?nLatLongCoordinatesFacet
+            a uco-location:LatLongCoordinatesFacet ;
+            uco-location:latitude ?lLatitude ;
+            uco-location:longitude ?lLongitude ;
+            .
+    }
+}
+ORDER BY ?lStreet
