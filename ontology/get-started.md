@@ -382,12 +382,9 @@ query = """
     WHERE
     {
         ?nLocation a uco-location:Location .
-        
-        OPTIONAL {
-            ?nLocation uco-core:hasFacet ?nSimpleAddressFacet .
-            ?nSimpleAddressFacet a uco-location:SimpleAddressFacet .
-            OPTIONAL { ?nSimpleAddressFacet uco-location:street ?lStreet . }
-        }
+        ?nLocation uco-core:hasFacet ?nSimpleAddressFacet .
+        ?nSimpleAddressFacet a uco-location:SimpleAddressFacet .
+        ?nSimpleAddressFacet uco-location:street ?lStreet .
     }
     """
 
@@ -426,12 +423,9 @@ var query = """
             SELECT ?lStreet
             WHERE {
                 ?nLocation a uco-location:Location .
-                
-                OPTIONAL {
-                    ?nLocation uco-core:hasFacet ?nSimpleAddressFacet .
-                    ?nSimpleAddressFacet a uco-location:SimpleAddressFacet .
-                    OPTIONAL { ?nSimpleAddressFacet uco-location:street ?lStreet . }
-                }
+                ?nLocation uco-core:hasFacet ?nSimpleAddressFacet .
+                ?nSimpleAddressFacet a uco-location:SimpleAddressFacet .
+                ?nSimpleAddressFacet uco-location:street ?lStreet .
             }
             """;
 
@@ -477,12 +471,9 @@ public class CASEQuery {
             SELECT ?lStreet
             WHERE {
                 ?nLocation a uco-location:Location .
-
-                OPTIONAL {
-                    ?nLocation uco-core:hasFacet ?nSimpleAddressFacet .
-                    ?nSimpleAddressFacet a uco-location:SimpleAddressFacet .
-                    OPTIONAL { ?nSimpleAddressFacet uco-location:street ?lStreet . }
-                }
+                ?nLocation uco-core:hasFacet ?nSimpleAddressFacet .
+                ?nSimpleAddressFacet a uco-location:SimpleAddressFacet .
+                ?nSimpleAddressFacet uco-location:street ?lStreet .
             }
         """;
 
