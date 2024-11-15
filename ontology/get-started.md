@@ -12,6 +12,13 @@ jumbo_desc: Get started with CASE using code examples.
 The full collection of libraries, tools, and documentation for CASE is available on the [CASE GitHub](https://github.com/casework) repository. This guide walks through the anatomy of a CASE graph, full CASE example graph, and how to generate, validate, and query CASE graphs.
 
 
+## Disclaimer
+
+Portions of this page contributed by NIST are governed by the following statement:
+
+> Participation by NIST in the creation of the documentation of mentioned software is not intended to imply a recommendation or endorsement by the National Institute of Standards and Technology, nor is it intended to imply that any specific software is necessarily the best available for the purpose.
+
+
 ## Anatomy of a CASE Graph
 
 CASE uses JSON-LD which is JSON with linked relationships between objects within the JSON. It contains two top-level keys, `@context` and `@graph`. The `@context` key is a mapping of aliases and namespaces that point to namespaces within the UCO and CASE ontologies. The `@graph` key is an array/list of objects that represent the data being exchanged.
