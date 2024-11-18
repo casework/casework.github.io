@@ -29,6 +29,7 @@ highlighter: rouge
 # theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-tabs
 
 defaults:
   - scope:
