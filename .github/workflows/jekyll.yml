@@ -3,6 +3,9 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
+# This file was started from the example workflow here:
+# https://github.com/actions/starter-workflows/blob/c9a0122a593db43660edaf37cf6cae081c2f45d9/pages/jekyll.yml
+
 # Sample workflow for building and deploying a Jekyll site to GitHub Pages
 name: Deploy Jekyll site to Pages
 
