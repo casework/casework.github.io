@@ -12,6 +12,12 @@
 #
 # We would appreciate acknowledgement if the software is used.
 
+# This workflow confirms a local-machine test scaffolding for the
+# website continues to work with changes, such as to the Gemfile.lock
+# file.
+# On the primary branch, this workflow is a prerequisite of Jekyll
+# deployment.
+
 name: Docker Compose CI
 
 on:
