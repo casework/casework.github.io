@@ -41,4 +41,4 @@ jobs:
     - name: Confirm Docker Compose runs
       run: |
         docker compose up --wait
-        docker stop jekyll
+        docker compose down
