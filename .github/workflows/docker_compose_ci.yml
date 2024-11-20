@@ -41,5 +41,6 @@ jobs:
     - name: Confirm Docker Compose runs
       run: |
         docker compose up --wait
+        sleep 5
         curl http://0.0.0.0:4000 >/dev/null
         docker compose down
