@@ -1,3 +1,17 @@
+# Portions of this file contributed by NIST are governed by the
+# following statement:
+#
+# This software was developed at the National Institute of Standards
+# and Technology by employees of the Federal Government in the course
+# of their official duties. Pursuant to Title 17 Section 105 of the
+# United States Code, this software is not subject to copyright
+# protection within the United States. NIST assumes no responsibility
+# whatsoever for its use by other parties, and makes no guarantees,
+# expressed or implied, about its quality, reliability, or any other
+# characteristic.
+#
+# We would appreciate acknowledgement if the software is used.
+
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
@@ -5,14 +19,21 @@
 
 # This file was started from the example workflow here:
 # https://github.com/actions/starter-workflows/blob/c9a0122a593db43660edaf37cf6cae081c2f45d9/pages/jekyll.yml
+# Adaptations to depend on another workflow's successful conclusion came
+# from here:
+# https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#running-a-workflow-based-on-the-conclusion-of-another-workflow
 
 # Sample workflow for building and deploying a Jekyll site to GitHub Pages
 name: Deploy Jekyll site to Pages
 
 on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["master"]
+  # Runs on completion of the Docker Compose CI workflow, which confirms
+  # the website builds in a local test scaffolding.
+  # The triggering workflow triggers on pushes targeting the default
+  # branch.
+  workflow_run:
+    workflows: [Docker Compose CI]
+    types: [completed]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -30,9 +51,9 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Build job
-  build:
+  on-success:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -54,13 +75,19 @@ jobs:
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
 
+  on-failure:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - run: echo 'The triggering workflow failed'
+
   # Deployment job
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
+    needs: on-success
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
