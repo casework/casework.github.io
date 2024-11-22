@@ -2441,6 +2441,7 @@ configuration:dependencyDescription
 
 configuration:dependencyType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "dependencyType"@en ;
 	rdfs:comment "The type of a tool or other software dependency."@en ;
 	rdfs:range xsd:string ;
@@ -2479,6 +2480,7 @@ configuration:itemObject
 
 configuration:itemType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "itemType"@en ;
 	rdfs:comment "The type of a configuration setting entry item."@en ;
 	rdfs:range xsd:string ;
@@ -3142,6 +3144,7 @@ core:eventContext
 
 core:eventType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "Event Type"@en ;
 	rdfs:comment "An event type specifies a classification type for the event."@en ;
 	rdfs:range xsd:string ;
@@ -3202,6 +3205,12 @@ core:hasParticipant
 	dcterms:source <http://purl.org/nemo/gufo#participatedIn> ;
 	rdfs:domain core:Perdurant ;
 	rdfs:range core:Endurant ;
+	.
+
+core:informalType
+	a owl:DatatypeProperty ;
+	rdfs:label "informalType"@en ;
+	rdfs:comment "Informal Type serves as a parent property for string-valued properties meant to describe a type without implementing a class design.  This property hierarchy supports a balancing point between semantic specificity and operational agility.  The known benefits of describing types rather than implementing them include swift extensibility of some existing, or possibly non-existing, subclass hierarchy in UCO without requiring training in ontological development, taxonomic specification, or OWL, SHACL, or RDF maintenance logistics.  The known detractions of using string-literals for type descriptions include that used vocabularies may require careful maintenance among data-sharing parties; that vocabularies require independent logistics (external to UCO) for providing definitions (i.e., dictionary-style semantics) to string-literals chosen; and that string-literals cannot by themselves encode hierarchical structure or entailments, such as the informal device type string 'ExamplePhone 8 P4321' entailing 'ExamplePhone 8', 'ExamplePhone', or 'ExamplePhone models discontinued in 2020'.  Usage of Informal Type to house strings should be weighed against usage of classes when classes are available, and should periodically be reviewed for potential additions to UCO's class hierarchy or downstream extensions thereof."@en ;
 	.
 
 core:isDirectional
@@ -3768,6 +3777,7 @@ location:SimpleAddressFacet
 
 location:addressType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "addressType"@en ;
 	rdfs:comment "The type of the address, for instance home or work."@en ;
 	rdfs:range xsd:string ;
@@ -4043,6 +4053,7 @@ marking:definition
 
 marking:definitionType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "definitionType"@en ;
 	rdfs:comment "Specifies the Marking Model for a Marking Definition."@en ;
 	rdfs:range xsd:string ;
@@ -8106,6 +8117,7 @@ observable:MSISDN
 
 observable:MSISDNType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "MSISDNType"@en ;
 	rdfs:comment "???."@en ;
 	rdfs:range xsd:string ;
@@ -13553,6 +13565,7 @@ observable:accountLogin
 
 observable:accountLogonType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "accountLogonType"@en ;
 	rdfs:comment "Specifies the security logon method required to run the tasks associated with the account. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383013(v=vs.85).aspx."@en ;
 	rdfs:range xsd:string ;
@@ -13567,6 +13580,7 @@ observable:accountRunLevel
 
 observable:accountType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "accountType"@en ;
 	rdfs:comment "The type of account, for instance bank, phone, application, service, etc."@en ;
 	rdfs:range [
@@ -13594,6 +13608,7 @@ observable:actionList
 
 observable:actionType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "actionType"@en ;
 	rdfs:comment "Specifies the type of the action. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380596(v=vs.85).aspx."@en ;
 	rdfs:range [
@@ -13702,6 +13717,7 @@ observable:applicationIdentifier
 
 observable:archiveType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "archiveType"@en ;
 	rdfs:comment "The type of a file archive, e.g. ZIP, GZIP or RAR."@en ;
 	rdfs:range xsd:string ;
@@ -13735,6 +13751,7 @@ observable:attendant
 
 observable:audioType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "audioType"@en ;
 	rdfs:comment "The type of a audio. For example: music or speech."@en ;
 	rdfs:range xsd:string ;
@@ -13849,6 +13866,7 @@ observable:bitsPerPixel
 
 observable:blockType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "blockType"@en ;
 	rdfs:comment "The blockType property specifies the block type of a particular memory object."@en ;
 	rdfs:range [
@@ -13928,6 +13946,7 @@ observable:byteStringValue
 
 observable:callType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "callType"@en ;
 	rdfs:comment "The type of a phone call,for example incoming, outgoing, missed."@en ;
 	rdfs:range xsd:string ;
@@ -14003,6 +14022,7 @@ observable:cellSiteNetworkCode
 
 observable:cellSiteType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "cellSiteType"@en ;
 	rdfs:comment "Specifies the technology used by the Cell Site (e.g., GSM, CDMA, or LTE)."@en ;
 	rdfs:range xsd:string ;
@@ -14292,6 +14312,7 @@ observable:contentRecoveredStatus
 
 observable:contentType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "contentType"@en ;
 	rdfs:range xsd:string ;
 	.
@@ -14444,6 +14465,7 @@ observable:dataPayloadReferenceURL
 
 observable:dataType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "dataType"@en ;
 	rdfs:range xsd:string ;
 	.
@@ -14483,6 +14505,7 @@ observable:destinationPort
 
 observable:deviceType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "deviceType"@en ;
 	rdfs:range xsd:string ;
 	.
@@ -14510,6 +14533,7 @@ observable:dhcpServer
 
 observable:diskPartitionType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "diskPartitionType"@en ;
 	rdfs:comment "Specifies the type of partition being characterized."@en ;
 	rdfs:range xsd:string ;
@@ -14524,6 +14548,7 @@ observable:diskSize
 
 observable:diskType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "diskType"@en ;
 	rdfs:comment "The type of disk being characterized, e.g., removable."@en ;
 	rdfs:range xsd:string ;
@@ -14586,6 +14611,7 @@ observable:driveLetter
 
 observable:driveType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "driveType"@en ;
 	rdfs:comment "Specifies the drive type of a windows volume."@en ;
 	rdfs:range [
@@ -14779,6 +14805,7 @@ observable:eventStatus
 
 observable:eventType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "eventType"@en ;
 	rdfs:comment "The type of the event, for example 'information', 'warning' or 'error'."@en ;
 	rdfs:range xsd:string ;
@@ -14862,6 +14889,7 @@ observable:extDeletionTime
 
 observable:extFileType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "extFileType"@en ;
 	rdfs:comment "Specifies the EXT file type (FIFO, Directory, Regular file, Symbolic link, etc) for the Inode."@en ;
 	rdfs:range xsd:integer ;
@@ -14966,6 +14994,7 @@ observable:filePath
 
 observable:fileSystemType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "fileSystemType"@en ;
 	rdfs:comment "The specific type of a file system."@en ;
 	rdfs:range xsd:string ;
@@ -15161,6 +15190,7 @@ observable:hexadecimalValue
 
 observable:hiveType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "hiveType"@en ;
 	rdfs:comment "The type of a registry hive."@en ;
 	rdfs:range xsd:string ;
@@ -15251,6 +15281,7 @@ observable:icmpCode
 
 observable:icmpType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "icmpType"@en ;
 	rdfs:comment "Specifies the ICMP type byte."@en ;
 	rdfs:range xsd:hexBinary ;
@@ -15278,6 +15309,7 @@ observable:imageName
 
 observable:imageType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "imageType"@en ;
 	rdfs:comment "The type of the image, e.g. EnCase, RAW or LocalFolder."@en ;
 	rdfs:range xsd:string ;
@@ -15629,6 +15661,7 @@ observable:length
 
 observable:libraryType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "libraryType"@en ;
 	rdfs:comment "Specifies the type of library being characterized."@en ;
 	rdfs:range xsd:string ;
@@ -15780,6 +15813,7 @@ observable:messageThread
 
 observable:messageType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "messageType"@en ;
 	rdfs:comment "Message type specifies what sort of message (email, chat, SMS, etc) a Message is."@en ;
 	rdfs:range xsd:string ;
@@ -15890,6 +15924,7 @@ observable:mimeClass
 
 observable:mimeType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "mimeType"@en ;
 	rdfs:comment "MIME type of the data. For example 'text/html' or 'audio/mp3'."@en ;
 	rdfs:range xsd:string ;
@@ -16313,6 +16348,7 @@ observable:passwordLastChanged
 
 observable:passwordType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "passwordType"@en ;
 	rdfs:comment "The type of password, for instance plain-text or encrypted."@en ;
 	rdfs:range xsd:string ;
@@ -16353,6 +16389,7 @@ observable:pdfModDate
 
 observable:peType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "peType"@en ;
 	rdfs:comment "Specifies the type of the PE binary."@en ;
 	rdfs:range xsd:string ;
@@ -16380,6 +16417,7 @@ observable:pictureHeight
 
 observable:pictureType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "pictureType"@en ;
 	rdfs:comment "The type of a picture, for example a thumbnail."@en ;
 	rdfs:range xsd:string ;
@@ -16607,6 +16645,7 @@ observable:rangeOffset
 
 observable:rangeOffsetType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "rangeOffsetType"@en ;
 	rdfs:comment "The type of offset defined for the range (e.g., image, file, address)."@en ;
 	rdfs:range xsd:string ;
@@ -16963,6 +17002,7 @@ observable:serviceStatus
 
 observable:serviceType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "serviceType"@en ;
 	rdfs:range xsd:string ;
 	.
@@ -17237,6 +17277,7 @@ observable:startTime
 
 observable:startType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "startType"@en ;
 	rdfs:range xsd:string ;
 	.
@@ -17537,6 +17578,7 @@ observable:triggerMaxRunTime
 
 observable:triggerSessionChangeType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "triggerSessionChangeType"@en ;
 	rdfs:comment "Specifies the type of Terminal Server session change that would trigger a task launch. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381298(v=vs.85).aspx."@en ;
 	rdfs:range xsd:string ;
@@ -17544,6 +17586,7 @@ observable:triggerSessionChangeType
 
 observable:triggerType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "triggerType"@en ;
 	rdfs:comment "Specifies the type of the task trigger."@en ;
 	rdfs:range [
@@ -17613,6 +17656,7 @@ observable:urlTargeted
 
 observable:urlTransitionType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "Transition Type"@en ;
 	rdfs:comment "Specifies how a browser navigated to a particular URL on a particular visit."@en ;
 	rdfs:range [
@@ -17712,6 +17756,7 @@ observable:volumeID
 
 observable:whoisContactType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "whoisContactType"@en ;
 	rdfs:comment "Specifies what type of WHOIS contact this is."@en ;
 	rdfs:range [
@@ -18357,6 +18402,7 @@ tool:swid
 
 tool:toolType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "toolType"@en ;
 	rdfs:comment "The type of tool."@en ;
 	rdfs:range xsd:string ;
