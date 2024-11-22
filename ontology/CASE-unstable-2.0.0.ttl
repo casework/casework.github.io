@@ -561,6 +561,7 @@ investigation:authorizationIdentifier
 
 investigation:authorizationType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "authorizationType"@en ;
 	rdfs:comment "A label categorizing a type of authorization (e.g. warrant)"@en ;
 	rdfs:range xsd:string ;
@@ -582,6 +583,7 @@ investigation:focus
 
 investigation:investigationForm
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "investigationForm"@en ;
 	rdfs:comment "A label categorizing a type of investigation (case, incident, suspicious-activity, etc.)"@en ;
 	rdfs:range [
