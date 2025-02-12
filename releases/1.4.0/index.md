@@ -27,6 +27,8 @@ custom_css: releases
 
 *(These are changes to ontologies, classes or properties in the preexisting ontology.)*
 
+* Linked `core:informalType` as parent of type-describing properties ([*UCO GitHub Issue 640*](https://github.com/ucoProject/UCO/issues/640))
+
 
 #### Bug Fixes
 
