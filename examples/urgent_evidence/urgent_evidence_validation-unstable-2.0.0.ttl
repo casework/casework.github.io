@@ -728,25 +728,7 @@
 			sh:resultPath types:hashMethod ;
 			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:InConstraintComponent ;
-			sh:sourceShape [
-				sh:in (
-					"MD5"
-					"MD6"
-					"SHA1"
-					"SHA224"
-					"SHA256"
-					"SHA3-224"
-					"SHA3-256"
-					"SHA3-384"
-					"SHA3-512"
-					"SHA384"
-					"SHA512"
-					"SSDEEP"
-				) ;
-				sh:message "Value is not member of the vocabulary HashNameVocab." ;
-				sh:path types:hashMethod ;
-				sh:severity sh:Info ;
-			] ;
+			sh:sourceShape types:Hash-hashMethod-in-shape ;
 			sh:value "SHA256"^^vocabulary:HashNameVocab ;
 		] ,
 		[
@@ -772,25 +754,7 @@
 			sh:resultPath types:hashMethod ;
 			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:InConstraintComponent ;
-			sh:sourceShape [
-				sh:in (
-					"MD5"
-					"MD6"
-					"SHA1"
-					"SHA224"
-					"SHA256"
-					"SHA3-224"
-					"SHA3-256"
-					"SHA3-384"
-					"SHA3-512"
-					"SHA384"
-					"SHA512"
-					"SSDEEP"
-				) ;
-				sh:message "Value is not member of the vocabulary HashNameVocab." ;
-				sh:path types:hashMethod ;
-				sh:severity sh:Info ;
-			] ;
+			sh:sourceShape types:Hash-hashMethod-in-shape ;
 			sh:value "SHA256"^^vocabulary:HashNameVocab ;
 		] ,
 		[
@@ -816,25 +780,7 @@
 			sh:resultPath types:hashMethod ;
 			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:InConstraintComponent ;
-			sh:sourceShape [
-				sh:in (
-					"MD5"
-					"MD6"
-					"SHA1"
-					"SHA224"
-					"SHA256"
-					"SHA3-224"
-					"SHA3-256"
-					"SHA3-384"
-					"SHA3-512"
-					"SHA384"
-					"SHA512"
-					"SSDEEP"
-				) ;
-				sh:message "Value is not member of the vocabulary HashNameVocab." ;
-				sh:path types:hashMethod ;
-				sh:severity sh:Info ;
-			] ;
+			sh:sourceShape types:Hash-hashMethod-in-shape ;
 			sh:value "SHA256"^^vocabulary:HashNameVocab ;
 		] ,
 		[
@@ -860,25 +806,7 @@
 			sh:resultPath types:hashMethod ;
 			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:InConstraintComponent ;
-			sh:sourceShape [
-				sh:in (
-					"MD5"
-					"MD6"
-					"SHA1"
-					"SHA224"
-					"SHA256"
-					"SHA3-224"
-					"SHA3-256"
-					"SHA3-384"
-					"SHA3-512"
-					"SHA384"
-					"SHA512"
-					"SSDEEP"
-				) ;
-				sh:message "Value is not member of the vocabulary HashNameVocab." ;
-				sh:path types:hashMethod ;
-				sh:severity sh:Info ;
-			] ;
+			sh:sourceShape types:Hash-hashMethod-in-shape ;
 			sh:value "SHA256"^^vocabulary:HashNameVocab ;
 		] ,
 		[
@@ -904,25 +832,7 @@
 			sh:resultPath types:hashMethod ;
 			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:InConstraintComponent ;
-			sh:sourceShape [
-				sh:in (
-					"MD5"
-					"MD6"
-					"SHA1"
-					"SHA224"
-					"SHA256"
-					"SHA3-224"
-					"SHA3-256"
-					"SHA3-384"
-					"SHA3-512"
-					"SHA384"
-					"SHA512"
-					"SSDEEP"
-				) ;
-				sh:message "Value is not member of the vocabulary HashNameVocab." ;
-				sh:path types:hashMethod ;
-				sh:severity sh:Info ;
-			] ;
+			sh:sourceShape types:Hash-hashMethod-in-shape ;
 			sh:value "SHA256"^^vocabulary:HashNameVocab ;
 		] ,
 		[
@@ -948,25 +858,7 @@
 			sh:resultPath types:hashMethod ;
 			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:InConstraintComponent ;
-			sh:sourceShape [
-				sh:in (
-					"MD5"
-					"MD6"
-					"SHA1"
-					"SHA224"
-					"SHA256"
-					"SHA3-224"
-					"SHA3-256"
-					"SHA3-384"
-					"SHA3-512"
-					"SHA384"
-					"SHA512"
-					"SSDEEP"
-				) ;
-				sh:message "Value is not member of the vocabulary HashNameVocab." ;
-				sh:path types:hashMethod ;
-				sh:severity sh:Info ;
-			] ;
+			sh:sourceShape types:Hash-hashMethod-in-shape ;
 			sh:value "SHA256"^^vocabulary:HashNameVocab ;
 		] ,
 		[
@@ -992,25 +884,7 @@
 			sh:resultPath types:hashMethod ;
 			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:InConstraintComponent ;
-			sh:sourceShape [
-				sh:in (
-					"MD5"
-					"MD6"
-					"SHA1"
-					"SHA224"
-					"SHA256"
-					"SHA3-224"
-					"SHA3-256"
-					"SHA3-384"
-					"SHA3-512"
-					"SHA384"
-					"SHA512"
-					"SSDEEP"
-				) ;
-				sh:message "Value is not member of the vocabulary HashNameVocab." ;
-				sh:path types:hashMethod ;
-				sh:severity sh:Info ;
-			] ;
+			sh:sourceShape types:Hash-hashMethod-in-shape ;
 			sh:value "SHA256"^^vocabulary:HashNameVocab ;
 		] ,
 		[
@@ -1036,25 +910,7 @@
 			sh:resultPath types:hashMethod ;
 			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:InConstraintComponent ;
-			sh:sourceShape [
-				sh:in (
-					"MD5"
-					"MD6"
-					"SHA1"
-					"SHA224"
-					"SHA256"
-					"SHA3-224"
-					"SHA3-256"
-					"SHA3-384"
-					"SHA3-512"
-					"SHA384"
-					"SHA512"
-					"SSDEEP"
-				) ;
-				sh:message "Value is not member of the vocabulary HashNameVocab." ;
-				sh:path types:hashMethod ;
-				sh:severity sh:Info ;
-			] ;
+			sh:sourceShape types:Hash-hashMethod-in-shape ;
 			sh:value "SHA256"^^vocabulary:HashNameVocab ;
 		] ,
 		[
@@ -1080,25 +936,7 @@
 			sh:resultPath types:hashMethod ;
 			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:InConstraintComponent ;
-			sh:sourceShape [
-				sh:in (
-					"MD5"
-					"MD6"
-					"SHA1"
-					"SHA224"
-					"SHA256"
-					"SHA3-224"
-					"SHA3-256"
-					"SHA3-384"
-					"SHA3-512"
-					"SHA384"
-					"SHA512"
-					"SSDEEP"
-				) ;
-				sh:message "Value is not member of the vocabulary HashNameVocab." ;
-				sh:path types:hashMethod ;
-				sh:severity sh:Info ;
-			] ;
+			sh:sourceShape types:Hash-hashMethod-in-shape ;
 			sh:value "SHA256"^^vocabulary:HashNameVocab ;
 		] ,
 		[
@@ -1124,25 +962,7 @@
 			sh:resultPath types:hashMethod ;
 			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:InConstraintComponent ;
-			sh:sourceShape [
-				sh:in (
-					"MD5"
-					"MD6"
-					"SHA1"
-					"SHA224"
-					"SHA256"
-					"SHA3-224"
-					"SHA3-256"
-					"SHA3-384"
-					"SHA3-512"
-					"SHA384"
-					"SHA512"
-					"SSDEEP"
-				) ;
-				sh:message "Value is not member of the vocabulary HashNameVocab." ;
-				sh:path types:hashMethod ;
-				sh:severity sh:Info ;
-			] ;
+			sh:sourceShape types:Hash-hashMethod-in-shape ;
 			sh:value "SHA256"^^vocabulary:HashNameVocab ;
 		] ,
 		[
@@ -1168,25 +988,7 @@
 			sh:resultPath types:hashMethod ;
 			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:InConstraintComponent ;
-			sh:sourceShape [
-				sh:in (
-					"MD5"
-					"MD6"
-					"SHA1"
-					"SHA224"
-					"SHA256"
-					"SHA3-224"
-					"SHA3-256"
-					"SHA3-384"
-					"SHA3-512"
-					"SHA384"
-					"SHA512"
-					"SSDEEP"
-				) ;
-				sh:message "Value is not member of the vocabulary HashNameVocab." ;
-				sh:path types:hashMethod ;
-				sh:severity sh:Info ;
-			] ;
+			sh:sourceShape types:Hash-hashMethod-in-shape ;
 			sh:value "SHA256"^^vocabulary:HashNameVocab ;
 		] ,
 		[
@@ -1212,25 +1014,7 @@
 			sh:resultPath types:hashMethod ;
 			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:InConstraintComponent ;
-			sh:sourceShape [
-				sh:in (
-					"MD5"
-					"MD6"
-					"SHA1"
-					"SHA224"
-					"SHA256"
-					"SHA3-224"
-					"SHA3-256"
-					"SHA3-384"
-					"SHA3-512"
-					"SHA384"
-					"SHA512"
-					"SSDEEP"
-				) ;
-				sh:message "Value is not member of the vocabulary HashNameVocab." ;
-				sh:path types:hashMethod ;
-				sh:severity sh:Info ;
-			] ;
+			sh:sourceShape types:Hash-hashMethod-in-shape ;
 			sh:value "SHA256"^^vocabulary:HashNameVocab ;
 		] ,
 		[

@@ -18,21 +18,7 @@
 			sh:resultPath uco-observable:accountType ;
 			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:InConstraintComponent ;
-			sh:sourceShape [
-				sh:in (
-					"ldap"
-					"nis"
-					"openid"
-					"radius"
-					"tacacs"
-					"unix"
-					"windows_domain"
-					"windows_local"
-				) ;
-				sh:message "Value is not member of the vocabulary AccountTypeVocab." ;
-				sh:path uco-observable:accountType ;
-				sh:severity sh:Info ;
-			] ;
+			sh:sourceShape uco-observable:AccountFacet-accountType-in-shape ;
 			sh:value "phone" ;
 		] ,
 		[
@@ -58,25 +44,7 @@
 			sh:resultPath types:hashMethod ;
 			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:InConstraintComponent ;
-			sh:sourceShape [
-				sh:in (
-					"MD5"
-					"MD6"
-					"SHA1"
-					"SHA224"
-					"SHA256"
-					"SHA3-224"
-					"SHA3-256"
-					"SHA3-384"
-					"SHA3-512"
-					"SHA384"
-					"SHA512"
-					"SSDEEP"
-				) ;
-				sh:message "Value is not member of the vocabulary HashNameVocab." ;
-				sh:path types:hashMethod ;
-				sh:severity sh:Info ;
-			] ;
+			sh:sourceShape types:Hash-hashMethod-in-shape ;
 			sh:value "MD5"^^vocabulary:HashNameVocab ;
 		] ,
 		[
@@ -102,25 +70,7 @@
 			sh:resultPath types:hashMethod ;
 			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:InConstraintComponent ;
-			sh:sourceShape [
-				sh:in (
-					"MD5"
-					"MD6"
-					"SHA1"
-					"SHA224"
-					"SHA256"
-					"SHA3-224"
-					"SHA3-256"
-					"SHA3-384"
-					"SHA3-512"
-					"SHA384"
-					"SHA512"
-					"SSDEEP"
-				) ;
-				sh:message "Value is not member of the vocabulary HashNameVocab." ;
-				sh:path types:hashMethod ;
-				sh:severity sh:Info ;
-			] ;
+			sh:sourceShape types:Hash-hashMethod-in-shape ;
 			sh:value "MD5"^^vocabulary:HashNameVocab ;
 		] ,
 		[
@@ -146,25 +96,7 @@
 			sh:resultPath types:hashMethod ;
 			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:InConstraintComponent ;
-			sh:sourceShape [
-				sh:in (
-					"MD5"
-					"MD6"
-					"SHA1"
-					"SHA224"
-					"SHA256"
-					"SHA3-224"
-					"SHA3-256"
-					"SHA3-384"
-					"SHA3-512"
-					"SHA384"
-					"SHA512"
-					"SSDEEP"
-				) ;
-				sh:message "Value is not member of the vocabulary HashNameVocab." ;
-				sh:path types:hashMethod ;
-				sh:severity sh:Info ;
-			] ;
+			sh:sourceShape types:Hash-hashMethod-in-shape ;
 			sh:value "MD5"^^vocabulary:HashNameVocab ;
 		] ,
 		[
@@ -190,25 +122,7 @@
 			sh:resultPath types:hashMethod ;
 			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:InConstraintComponent ;
-			sh:sourceShape [
-				sh:in (
-					"MD5"
-					"MD6"
-					"SHA1"
-					"SHA224"
-					"SHA256"
-					"SHA3-224"
-					"SHA3-256"
-					"SHA3-384"
-					"SHA3-512"
-					"SHA384"
-					"SHA512"
-					"SSDEEP"
-				) ;
-				sh:message "Value is not member of the vocabulary HashNameVocab." ;
-				sh:path types:hashMethod ;
-				sh:severity sh:Info ;
-			] ;
+			sh:sourceShape types:Hash-hashMethod-in-shape ;
 			sh:value "MD5"^^vocabulary:HashNameVocab ;
 		] ,
 		[
@@ -234,25 +148,7 @@
 			sh:resultPath types:hashMethod ;
 			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:InConstraintComponent ;
-			sh:sourceShape [
-				sh:in (
-					"MD5"
-					"MD6"
-					"SHA1"
-					"SHA224"
-					"SHA256"
-					"SHA3-224"
-					"SHA3-256"
-					"SHA3-384"
-					"SHA3-512"
-					"SHA384"
-					"SHA512"
-					"SSDEEP"
-				) ;
-				sh:message "Value is not member of the vocabulary HashNameVocab." ;
-				sh:path types:hashMethod ;
-				sh:severity sh:Info ;
-			] ;
+			sh:sourceShape types:Hash-hashMethod-in-shape ;
 			sh:value "SHA1"^^vocabulary:HashNameVocab ;
 		] ,
 		[
@@ -278,25 +174,7 @@
 			sh:resultPath types:hashMethod ;
 			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:InConstraintComponent ;
-			sh:sourceShape [
-				sh:in (
-					"MD5"
-					"MD6"
-					"SHA1"
-					"SHA224"
-					"SHA256"
-					"SHA3-224"
-					"SHA3-256"
-					"SHA3-384"
-					"SHA3-512"
-					"SHA384"
-					"SHA512"
-					"SSDEEP"
-				) ;
-				sh:message "Value is not member of the vocabulary HashNameVocab." ;
-				sh:path types:hashMethod ;
-				sh:severity sh:Info ;
-			] ;
+			sh:sourceShape types:Hash-hashMethod-in-shape ;
 			sh:value "SHA256"^^vocabulary:HashNameVocab ;
 		] ,
 		[
@@ -351,17 +229,7 @@
 			sh:resultPath uco-observable:contentRecoveredStatus ;
 			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:InConstraintComponent ;
-			sh:sourceShape [
-				sh:in (
-					"recovered"
-					"partially recovered"
-					"overwritten"
-					"unknown"
-				) ;
-				sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
-				sh:path uco-observable:contentRecoveredStatus ;
-				sh:severity sh:Info ;
-			] ;
+			sh:sourceShape uco-observable:RecoveredObjectFacet-contentRecoveredStatus-in-shape ;
 			sh:value "overwritten"^^vocabulary:RecoveredObjectStatusVocab ;
 		] ,
 		[
@@ -371,17 +239,7 @@
 			sh:resultPath uco-observable:metadataRecoveredStatus ;
 			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:InConstraintComponent ;
-			sh:sourceShape [
-				sh:in (
-					"recovered"
-					"partially recovered"
-					"overwritten"
-					"unknown"
-				) ;
-				sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
-				sh:path uco-observable:metadataRecoveredStatus ;
-				sh:severity sh:Info ;
-			] ;
+			sh:sourceShape uco-observable:RecoveredObjectFacet-metadataRecoveredStatus-in-shape ;
 			sh:value "recovered"^^vocabulary:RecoveredObjectStatusVocab ;
 		] ,
 		[
@@ -391,17 +249,7 @@
 			sh:resultPath uco-observable:nameRecoveredStatus ;
 			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:InConstraintComponent ;
-			sh:sourceShape [
-				sh:in (
-					"recovered"
-					"partially recovered"
-					"overwritten"
-					"unknown"
-				) ;
-				sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
-				sh:path uco-observable:nameRecoveredStatus ;
-				sh:severity sh:Info ;
-			] ;
+			sh:sourceShape uco-observable:RecoveredObjectFacet-nameRecoveredStatus-in-shape ;
 			sh:value "recovered"^^vocabulary:RecoveredObjectStatusVocab ;
 		]
 		;
