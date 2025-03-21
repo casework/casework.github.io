@@ -35,6 +35,7 @@ custom_css: releases
 *(These are bugs found within the preexisting ontology that have been fixed.)*
 
 * Removed `owl:onDatatype` from vocabulary definitions ([*UCO GitHub Issue 593*](https://github.com/ucoProject/UCO/issues/593))
+* Revised vocabulary pattern ([*UCO GitHub Issue 629*](https://github.com/ucoProject/UCO/issues/629))
 
 
 ## Documentation
