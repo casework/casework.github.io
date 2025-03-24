@@ -175,7 +175,7 @@
 				sh:nodeKind sh:Literal ;
 				sh:path types:hashMethod ;
 			] ;
-			sh:value "SHA256"^^vocabulary:HashNameVocab ;
+			sh:value "MD5"^^vocabulary:HashNameVocab ;
 		] ,
 		[
 			a sh:ValidationResult ;
@@ -185,7 +185,7 @@
 			sh:resultSeverity sh:Info ;
 			sh:sourceConstraintComponent sh:InConstraintComponent ;
 			sh:sourceShape types:Hash-hashMethod-in-shape ;
-			sh:value "SHA256"^^vocabulary:HashNameVocab ;
+			sh:value "MD5"^^vocabulary:HashNameVocab ;
 		]
 		;
 	.
