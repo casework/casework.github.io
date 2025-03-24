@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 ruby:3.1-bullseye
+FROM --platform=linux/amd64 ruby:3.3-bullseye
 
 # Define the working directory
 WORKDIR /usr/app/src

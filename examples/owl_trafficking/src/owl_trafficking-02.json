@@ -16,6 +16,12 @@
         "uco-core:object": [
             {
                 "@id": "kb:lge-device-eee670c6-01d4-4e42-bb6b-ebeca149b168"
+            },
+            {
+                "@id": "kb:operating-system-c56dde27-0a50-49dc-ae9e-8a0473e80137"
+            },
+            {
+                "@id": "kb:relationship-b41ecf43-d68c-440e-a8ae-b5978ebcbf98"
             }
         ]
     },

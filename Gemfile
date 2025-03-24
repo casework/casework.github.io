@@ -22,6 +22,7 @@ group :jekyll_plugins do
   gem 'jekyll-sitemap'
   gem 'jekyll-feed'
   gem 'jekyll-seo-tag'
+  gem 'jekyll-tabs'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -32,4 +33,4 @@ gem "wdm", "~> 0.1.0" if Gem.win_platform?
 
 # For Ruby >= 3.0.0, install gem "webrick" to prevent error
 # Source: https://github.com/github/pages-gem/issues/752
-gem "webrick", "~> 1.7"
+gem "webrick", "~> 1.8"

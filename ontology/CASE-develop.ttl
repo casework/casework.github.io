@@ -379,6 +379,7 @@ investigation:Investigation
 	rdfs:label "Investigation"@en ;
 	rdfs:comment "An investigation is a grouping of characteristics unique to an exploration of the facts involved in a cyber-relevant set of suspicious activity."@en ;
 	sh:property
+		investigation:Investigation-investigationForm-in-shape ,
 		[
 			sh:class investigation:Authorization ;
 			sh:nodeKind sh:BlankNodeOrIRI ;
@@ -404,47 +405,34 @@ investigation:Investigation
 		] ,
 		[
 			sh:datatype xsd:string ;
+			sh:message "As of CASE 1.4.0, the datatype to use for investigation:investigationForm should be xsd:string.  Not using xsd:string will be an error in CASE 2.0.0." ;
+			sh:path investigation:investigationForm ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path investigation:focus ;
 		] ,
 		[
-			sh:datatype vocab:InvestigationFormVocab ;
-			sh:message "Value is outside the default vocabulary InvestigationFormVocab." ;
-			sh:path investigation:investigationForm ;
-			sh:severity sh:Info ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocab:InvestigationFormVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path investigation:investigationForm ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary InvestigationFormVocab." ;
-			sh:or (
-				[
-					sh:datatype vocab:InvestigationFormVocab ;
-					sh:in (
-						"case"^^vocab:InvestigationFormVocab
-						"incident"^^vocab:InvestigationFormVocab
-						"suspicious-activity"^^vocab:InvestigationFormVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path investigation:investigationForm ;
 		]
 		;
 	sh:targetClass investigation:Investigation ;
+	.
+
+investigation:Investigation-investigationForm-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"case"
+		"incident"
+		"suspicious-activity"
+	) ;
+	sh:message "Value is not member of the vocabulary InvestigationFormVocab." ;
+	sh:path investigation:investigationForm ;
+	sh:severity sh:Info ;
 	.
 
 investigation:InvestigativeAction
@@ -541,6 +529,7 @@ investigation:authorizationIdentifier
 
 investigation:authorizationType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "authorizationType"@en ;
 	rdfs:comment "A label categorizing a type of authorization (e.g. warrant)"@en ;
 	rdfs:range xsd:string ;
@@ -562,6 +551,7 @@ investigation:focus
 
 investigation:investigationForm
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "investigationForm"@en ;
 	rdfs:comment "A label categorizing a type of investigation (case, incident, suspicious-activity, etc.)"@en ;
 	rdfs:range [
@@ -616,11 +606,10 @@ vocab:InvestigationFormVocab
 	rdfs:comment "Defines an open-vocabulary of investigation forms."@en-US ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"case"^^vocab:InvestigationFormVocab
-			"incident"^^vocab:InvestigationFormVocab
-			"suspicious-activity"^^vocab:InvestigationFormVocab
+			"case"
+			"incident"
+			"suspicious-activity"
 		) ;
 	] ;
 	.
@@ -1221,6 +1210,7 @@ action:Action
 	rdfs:isDefinedBy <https://ontology.unifiedcyberontology.org/uco/types> ;
 	owl:disjointWith core:Event ;
 	sh:property
+		action:Action-actionStatus-in-shape ,
 		[
 			sh:class action:Action ;
 			sh:nodeKind sh:IRI ;
@@ -1287,47 +1277,34 @@ action:Action
 			sh:path action:actionCount ;
 		] ,
 		[
-			sh:datatype vocabulary:ActionStatusTypeVocab ;
-			sh:message "Value is outside the default vocabulary ActionStatusTypeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for action:actionStatus should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path action:actionStatus ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ActionStatusTypeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path action:actionStatus ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary ActionStatusTypeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ActionStatusTypeVocab ;
-					sh:in (
-						"Complete/Finish"^^vocabulary:ActionStatusTypeVocab
-						"Error"^^vocabulary:ActionStatusTypeVocab
-						"Fail"^^vocabulary:ActionStatusTypeVocab
-						"Ongoing"^^vocabulary:ActionStatusTypeVocab
-						"Pending"^^vocabulary:ActionStatusTypeVocab
-						"Success"^^vocabulary:ActionStatusTypeVocab
-						"Unknown"^^vocabulary:ActionStatusTypeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path action:actionStatus ;
 		]
 		;
 	sh:targetClass action:Action ;
+	.
+
+action:Action-actionStatus-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"Complete/Finish"
+		"Error"
+		"Fail"
+		"Ongoing"
+		"Pending"
+		"Success"
+		"Unknown"
+	) ;
+	sh:message "Value is not member of the vocabulary ActionStatusTypeVocab." ;
+	sh:path action:actionStatus ;
+	sh:severity sh:Info ;
 	.
 
 action:Action-disjointWith-Event-shape
@@ -1413,6 +1390,7 @@ action:ActionFrequencyFacet
 	rdfs:label "ActionFrequencyFacet"@en ;
 	rdfs:comment "An action frequency facet is a grouping of characteristics unique to the frequency of occurrence for an action."@en ;
 	sh:property
+		action:ActionFrequencyFacet-trend-in-shape ,
 		[
 			sh:datatype xsd:decimal ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -1435,43 +1413,30 @@ action:ActionFrequencyFacet
 			sh:path action:units ;
 		] ,
 		[
-			sh:datatype vocabulary:TrendVocab ;
-			sh:message "Value is outside the default vocabulary TrendVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for action:trend should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path action:trend ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:TrendVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path action:trend ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary TrendVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:TrendVocab ;
-					sh:in (
-						"Decreasing"^^vocabulary:TrendVocab
-						"Increasing"^^vocabulary:TrendVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path action:trend ;
 		]
 		;
 	sh:targetClass action:ActionFrequencyFacet ;
+	.
+
+action:ActionFrequencyFacet-trend-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"Decreasing"
+		"Increasing"
+	) ;
+	sh:message "Value is not member of the vocabulary TrendVocab." ;
+	sh:path action:trend ;
+	sh:severity sh:Info ;
 	.
 
 action:ActionLifecycle
@@ -2007,6 +1972,7 @@ configuration:dependencyDescription
 
 configuration:dependencyType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "dependencyType"@en ;
 	rdfs:comment "The type of a tool or other software dependency."@en ;
 	rdfs:range xsd:string ;
@@ -2045,6 +2011,7 @@ configuration:itemObject
 
 configuration:itemType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "itemType"@en ;
 	rdfs:comment "The type of a configuration setting entry item."@en ;
 	rdfs:range xsd:string ;
@@ -2367,6 +2334,19 @@ core:ModusOperandi
 	sh:targetClass core:ModusOperandi ;
 	.
 
+core:ObjectStatusVocab
+	a rdfs:Datatype ;
+	rdfs:label "Object Status Vocabulary"@en-US ;
+	owl:equivalentClass [
+		a rdfs:Datatype ;
+		owl:oneOf (
+			"Draft"
+			"Final"
+			"Deprecated"
+		) ;
+	] ;
+	.
+
 core:Relationship
 	a
 		owl:Class ,
@@ -2427,6 +2407,17 @@ core:UcoInherentCharacterizationThing
 	sh:targetClass core:UcoInherentCharacterizationThing ;
 	.
 
+core:UcoInherentCharacterizationThing-disjointWith-UcoObject-shape
+	a sh:NodeShape ;
+	sh:message "core:UcoInherentCharacterizationThing and core:UcoObject are disjoint classes.  Assigning both types to a single node will be an error in UCO 2.0.0."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class core:UcoObject ;
+	] ;
+	sh:severity sh:Warning ;
+	sh:targetClass core:UcoInherentCharacterizationThing ;
+	.
+
 core:UcoObject
 	a
 		owl:Class ,
@@ -2468,6 +2459,17 @@ core:UcoObject
 			sh:datatype xsd:dateTime ;
 			sh:nodeKind sh:Literal ;
 			sh:path core:modifiedTime ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:in (
+				"Draft"
+				"Final"
+				"Deprecated"
+			) ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path core:objectStatus ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -2628,6 +2630,7 @@ core:eventContext
 
 core:eventType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "Event Type"@en ;
 	rdfs:comment "An event type specifies a classification type for the event."@en ;
 	rdfs:range xsd:string ;
@@ -2678,6 +2681,12 @@ core:hasFacet-shape
 			""" ;
 	] ;
 	sh:targetObjectsOf core:hasFacet ;
+	.
+
+core:informalType
+	a owl:DatatypeProperty ;
+	rdfs:label "informalType"@en ;
+	rdfs:comment "Informal Type serves as a parent property for string-valued properties meant to describe a type without implementing a class design.  This property hierarchy supports a balancing point between semantic specificity and operational agility.  The known benefits of describing types rather than implementing them include swift extensibility of some existing, or possibly non-existing, subclass hierarchy in UCO without requiring training in ontological development, taxonomic specification, or OWL, SHACL, or RDF maintenance logistics.  The known detractions of using string-literals for type descriptions include that used vocabularies may require careful maintenance among data-sharing parties; that vocabularies require independent logistics (external to UCO) for providing definitions (i.e., dictionary-style semantics) to string-literals chosen; and that string-literals cannot by themselves encode hierarchical structure or entailments, such as the informal device type string 'ExamplePhone 8 P4321' entailing 'ExamplePhone 8', 'ExamplePhone', or 'ExamplePhone models discontinued in 2020'.  Usage of Informal Type to house strings should be weighed against usage of classes when classes are available, and should periodically be reviewed for potential additions to UCO's class hierarchy or downstream extensions thereof."@en ;
 	.
 
 core:isDirectional
@@ -2734,6 +2743,19 @@ core:objectMarking
 	rdfs:label "objectMarking"@en ;
 	rdfs:comment "Marking definitions to be applied to a particular concept characterization in its entirety."@en ;
 	rdfs:range core:MarkingDefinitionAbstraction ;
+	.
+
+core:objectStatus
+	a owl:AnnotationProperty ;
+	rdfs:label "objectStatus"@en ;
+	rdfs:comment "The current state of formality and acceptance for a UCO object."@en-US ;
+	rdfs:range core:ObjectStatusVocab ;
+	.
+
+core:objectStatus-subjects-shape
+	a sh:NodeShape ;
+	sh:class core:UcoObject ;
+	sh:targetSubjectsOf core:objectStatus ;
 	.
 
 core:referenceURL
@@ -3218,6 +3240,7 @@ location:SimpleAddressFacet
 
 location:addressType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "addressType"@en ;
 	rdfs:comment "The type of the address, for instance home or work."@en ;
 	rdfs:range xsd:string ;
@@ -3493,6 +3516,7 @@ marking:definition
 
 marking:definitionType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "definitionType"@en ;
 	rdfs:comment "Specifies the Marking Model for a Marking Definition."@en ;
 	rdfs:range xsd:string ;
@@ -3610,6 +3634,7 @@ observable:AccountFacet
 	rdfs:label "AccountFacet"@en ;
 	rdfs:comment "An account facet is a grouping of characteristics unique to an arrangement with an entity to enable and control the provision of some capability or service."@en ;
 	sh:property
+		observable:AccountFacet-accountType-in-shape ,
 		[
 			sh:class core:UcoObject ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -3653,48 +3678,35 @@ observable:AccountFacet
 			sh:path observable:accountIdentifier ;
 		] ,
 		[
-			sh:datatype vocabulary:AccountTypeVocab ;
-			sh:message "Value is outside the default vocabulary AccountTypeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:accountType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:accountType ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:AccountTypeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:accountType ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary AccountTypeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:AccountTypeVocab ;
-					sh:in (
-						"ldap"^^vocabulary:AccountTypeVocab
-						"nis"^^vocabulary:AccountTypeVocab
-						"openid"^^vocabulary:AccountTypeVocab
-						"radius"^^vocabulary:AccountTypeVocab
-						"tacacs"^^vocabulary:AccountTypeVocab
-						"unix"^^vocabulary:AccountTypeVocab
-						"windows_domain"^^vocabulary:AccountTypeVocab
-						"windows_local"^^vocabulary:AccountTypeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:accountType ;
 		]
 		;
 	sh:targetClass observable:AccountFacet ;
+	.
+
+observable:AccountFacet-accountType-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"ldap"
+		"nis"
+		"openid"
+		"radius"
+		"tacacs"
+		"unix"
+		"windows_domain"
+		"windows_local"
+	) ;
+	sh:message "Value is not member of the vocabulary AccountTypeVocab." ;
+	sh:path observable:accountType ;
+	sh:severity sh:Info ;
 	.
 
 observable:Adaptor
@@ -3727,6 +3739,14 @@ observable:AlternateDataStream
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "AlternateDataStream"@en ;
 	rdfs:comment "An alternate data stream is data content stored within an NTFS file that is independent of the standard content stream of the file and is hidden from access by default NTFS file viewing mechanisms."@en ;
+	rdfs:seeAlso [
+		a sh:NodeShape ;
+		rdfs:comment "This anonymous shape is attached with rdfs:seeAlso in order to associate a warning-severity class constraint, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
+		sh:class observable:FileSystemObject ;
+		sh:message "In UCO 2.0.0, uco-observable:AlternateDataStream will be a subclass of uco-observable:FileSystemObject.  In preparation for UCO 2.0.0, the additional type uco-observable:FileSystemObject should be assigned to this node."@en ;
+		sh:severity sh:Warning ;
+		sh:targetClass observable:AlternateDataStream ;
+	] ;
 	sh:targetClass observable:AlternateDataStream ;
 	.
 
@@ -4137,16 +4157,14 @@ observable:AutonomousSystemFacet
 			sh:path observable:asHandle ;
 		] ,
 		[
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:regionalInternetRegistry should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:path observable:regionalInternetRegistry ;
+			sh:severity sh:Warning ;
+		] ,
+		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:RegionalRegistryTypeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:regionalInternetRegistry ;
 		]
 		;
@@ -4911,6 +4929,7 @@ observable:ContactAddress
 	rdfs:label "ContactAddress"@en ;
 	rdfs:comment "A contact address is a grouping of characteristics unique to a geolocation address of a contact entity."@en ;
 	sh:property
+		observable:ContactAddress-contactAddressScope-in-shape ,
 		[
 			sh:class location:Location ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -4918,43 +4937,30 @@ observable:ContactAddress
 			sh:path observable:geolocationAddress ;
 		] ,
 		[
-			sh:datatype vocabulary:ContactAddressScopeVocab ;
-			sh:message "Value is outside the default vocabulary ContactAddressScopeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:contactAddressScope should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:contactAddressScope ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ContactAddressScopeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:contactAddressScope ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary ContactAddressScopeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ContactAddressScopeVocab ;
-					sh:in (
-						"home"^^vocabulary:ContactAddressScopeVocab
-						"work"^^vocabulary:ContactAddressScopeVocab
-						"school"^^vocabulary:ContactAddressScopeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:contactAddressScope ;
 		]
 		;
 	sh:targetClass observable:ContactAddress ;
+	.
+
+observable:ContactAddress-contactAddressScope-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"home"
+		"work"
+		"school"
+	) ;
+	sh:message "Value is not member of the vocabulary ContactAddressScopeVocab." ;
+	sh:path observable:contactAddressScope ;
+	sh:severity sh:Info ;
 	.
 
 observable:ContactAffiliation
@@ -5033,6 +5039,7 @@ observable:ContactEmail
 	rdfs:label "ContactEmail"@en ;
 	rdfs:comment "A contact email is a grouping of characteristics unique to details for contacting a contact entity by email."@en ;
 	sh:property
+		observable:ContactEmail-contactEmailScope-in-shape ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -5040,44 +5047,31 @@ observable:ContactEmail
 			sh:path observable:emailAddress ;
 		] ,
 		[
-			sh:datatype vocabulary:ContactEmailScopeVocab ;
-			sh:message "Value is outside the default vocabulary ContactEmailScopeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:contactEmailScope should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:contactEmailScope ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ContactEmailScopeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:contactEmailScope ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary ContactEmailScopeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ContactEmailScopeVocab ;
-					sh:in (
-						"home"^^vocabulary:ContactEmailScopeVocab
-						"work"^^vocabulary:ContactEmailScopeVocab
-						"school"^^vocabulary:ContactEmailScopeVocab
-						"cloud"^^vocabulary:ContactEmailScopeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:contactEmailScope ;
 		]
 		;
 	sh:targetClass observable:ContactEmail ;
+	.
+
+observable:ContactEmail-contactEmailScope-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"home"
+		"work"
+		"school"
+		"cloud"
+	) ;
+	sh:message "Value is not member of the vocabulary ContactEmailScopeVocab." ;
+	sh:path observable:contactEmailScope ;
+	sh:severity sh:Info ;
 	.
 
 observable:ContactFacet
@@ -5300,6 +5294,7 @@ observable:ContactPhone
 	rdfs:label "ContactPhone"@en ;
 	rdfs:comment "A contact phone is a grouping of characteristics unique to details for contacting a contact entity by telephone."@en ;
 	sh:property
+		observable:ContactPhone-contactPhoneScope-in-shape ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -5307,48 +5302,35 @@ observable:ContactPhone
 			sh:path observable:contactPhoneNumber ;
 		] ,
 		[
-			sh:datatype vocabulary:ContactPhoneScopeVocab ;
-			sh:message "Value is outside the default vocabulary ContactPhoneScopeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:contactPhoneScope in UCO 2.0.0." ;
 			sh:path observable:contactPhoneScope ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ContactPhoneScopeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:contactPhoneScope ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary ContactPhoneScopeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ContactPhoneScopeVocab ;
-					sh:in (
-						"home"^^vocabulary:ContactPhoneScopeVocab
-						"work"^^vocabulary:ContactPhoneScopeVocab
-						"school"^^vocabulary:ContactPhoneScopeVocab
-						"mobile"^^vocabulary:ContactPhoneScopeVocab
-						"main"^^vocabulary:ContactPhoneScopeVocab
-						"home fax"^^vocabulary:ContactPhoneScopeVocab
-						"work fax"^^vocabulary:ContactPhoneScopeVocab
-						"pager"^^vocabulary:ContactPhoneScopeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:contactPhoneScope ;
 		]
 		;
 	sh:targetClass observable:ContactPhone ;
+	.
+
+observable:ContactPhone-contactPhoneScope-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"home"
+		"work"
+		"school"
+		"mobile"
+		"main"
+		"home fax"
+		"work fax"
+		"pager"
+	) ;
+	sh:message "Value is not member of the vocabulary ContactPhoneScopeVocab." ;
+	sh:path observable:contactPhoneScope ;
+	sh:severity sh:Info ;
 	.
 
 observable:ContactProfile
@@ -5385,6 +5367,7 @@ observable:ContactSIP
 	rdfs:label "ContactSIP"@en ;
 	rdfs:comment "A contact SIP is a grouping of characteristics unique to details for contacting a contact entity by Session Initiation Protocol (SIP)."@en ;
 	sh:property
+		observable:ContactSIP-contactSIPScope-in-shape ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -5392,43 +5375,30 @@ observable:ContactSIP
 			sh:path observable:sipAddress ;
 		] ,
 		[
-			sh:datatype vocabulary:ContactSIPScopeVocab ;
-			sh:message "Value is outside the default vocabulary ContactSIPScopeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:contactSIPScope should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:contactSIPScope ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ContactSIPScopeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:contactSIPScope ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary ContactSIPScopeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ContactSIPScopeVocab ;
-					sh:in (
-						"home"^^vocabulary:ContactSIPScopeVocab
-						"work"^^vocabulary:ContactSIPScopeVocab
-						"school"^^vocabulary:ContactSIPScopeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:contactSIPScope ;
 		]
 		;
 	sh:targetClass observable:ContactSIP ;
+	.
+
+observable:ContactSIP-contactSIPScope-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"home"
+		"work"
+		"school"
+	) ;
+	sh:message "Value is not member of the vocabulary ContactSIPScopeVocab." ;
+	sh:path observable:contactSIPScope ;
+	sh:severity sh:Info ;
 	.
 
 observable:ContactURL
@@ -5440,6 +5410,7 @@ observable:ContactURL
 	rdfs:label "ContactURL"@en ;
 	rdfs:comment "A contact URL is a grouping of characteristics unique to details for contacting a contact entity by Uniform Resource Locator (URL)."@en ;
 	sh:property
+		observable:ContactURL-contactURLScope-in-shape ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -5447,44 +5418,31 @@ observable:ContactURL
 			sh:path observable:url ;
 		] ,
 		[
-			sh:datatype vocabulary:ContactURLScopeVocab ;
-			sh:message "Value is outside the default vocabulary ContactURLScopeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:contactURLScope should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:contactURLScope ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ContactURLScopeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:contactURLScope ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary ContactURLScopeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:ContactURLScopeVocab ;
-					sh:in (
-						"home"^^vocabulary:ContactURLScopeVocab
-						"work"^^vocabulary:ContactURLScopeVocab
-						"school"^^vocabulary:ContactURLScopeVocab
-						"homepage"^^vocabulary:ContactURLScopeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:contactURLScope ;
 		]
 		;
 	sh:targetClass observable:ContactURL ;
+	.
+
+observable:ContactURL-contactURLScope-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"home"
+		"work"
+		"school"
+		"homepage"
+	) ;
+	sh:message "Value is not member of the vocabulary ContactURLScopeVocab." ;
+	sh:path observable:contactURLScope ;
+	sh:severity sh:Info ;
 	.
 
 observable:ContentData
@@ -5507,6 +5465,7 @@ observable:ContentDataFacet
 	rdfs:label "ContentDataFacet"@en ;
 	rdfs:comment "A content data facet is a grouping of characteristics unique to a block of digital data."@en ;
 	sh:property
+		observable:ContentDataFacet-byteOrder-in-shape ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -5556,47 +5515,34 @@ observable:ContentDataFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:byteOrder should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:path observable:byteOrder ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:mimeType ;
 		] ,
 		[
-			sh:datatype vocabulary:EndiannessTypeVocab ;
-			sh:message "Value is outside the default vocabulary EndiannessTypeVocab." ;
-			sh:path observable:byteOrder ;
-			sh:severity sh:Info ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:EndiannessTypeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:byteOrder ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary EndiannessTypeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:EndiannessTypeVocab ;
-					sh:in (
-						"Big-endian"^^vocabulary:EndiannessTypeVocab
-						"Little-endian"^^vocabulary:EndiannessTypeVocab
-						"Middle-endian"^^vocabulary:EndiannessTypeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:byteOrder ;
 		]
 		;
 	sh:targetClass observable:ContentDataFacet ;
+	.
+
+observable:ContentDataFacet-byteOrder-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"Big-endian"
+		"Little-endian"
+		"Middle-endian"
+	) ;
+	sh:message "Value is not member of the vocabulary EndiannessTypeVocab." ;
+	sh:path observable:byteOrder ;
+	sh:severity sh:Info ;
 	.
 
 observable:CookieHistory
@@ -5721,6 +5667,12 @@ observable:DeviceFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:IRI ;
 			sh:path observable:manufacturer ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:cpeid ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -5917,6 +5869,14 @@ observable:Disk
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "Disk"@en ;
 	rdfs:comment "A disk is a storage mechanism where data is recorded by various electronic, magnetic, optical, or mechanical changes to a surface layer of one or more rotating disks."@en ;
+	rdfs:seeAlso [
+		a sh:NodeShape ;
+		rdfs:comment "This anonymous shape is attached with rdfs:seeAlso in order to associate a warning-severity class constraint, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
+		sh:class observable:StorageMedium ;
+		sh:message "In UCO 2.0.0, uco-observable:Disk will be a subclass of uco-observable:StorageMedium.  In preparation for UCO 2.0.0, the additional type uco-observable:StorageMedium should be assigned to this node."@en ;
+		sh:severity sh:Warning ;
+		sh:targetClass observable:Disk ;
+	] ;
 	sh:targetClass observable:Disk ;
 	.
 
@@ -7508,6 +7468,7 @@ observable:MSISDN
 
 observable:MSISDNType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "MSISDNType"@en ;
 	rdfs:comment "???."@en ;
 	rdfs:range xsd:string ;
@@ -7533,6 +7494,7 @@ observable:MemoryFacet
 	rdfs:label "MemoryFacet"@en ;
 	rdfs:comment "A memory facet is a grouping of characteristics unique to a particular region of temporary information storage (e.g., RAM (random access memory), ROM (read only memory)) on a digital device."@en ;
 	sh:property
+		observable:MemoryFacet-blockType-in-shape ,
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -7574,45 +7536,32 @@ observable:MemoryFacet
 			sh:path observable:regionSize ;
 		] ,
 		[
-			sh:datatype vocabulary:MemoryBlockTypeVocab ;
-			sh:message "Value is outside the default vocabulary MemoryBlockTypeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:blockType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:blockType ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:MemoryBlockTypeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:blockType ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary MemoryBlockTypeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:MemoryBlockTypeVocab ;
-					sh:in (
-						"Bit-mapped"^^vocabulary:MemoryBlockTypeVocab
-						"Byte-mapped"^^vocabulary:MemoryBlockTypeVocab
-						"Initialized"^^vocabulary:MemoryBlockTypeVocab
-						"Overlay"^^vocabulary:MemoryBlockTypeVocab
-						"Uninitialized"^^vocabulary:MemoryBlockTypeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:blockType ;
 		]
 		;
 	sh:targetClass observable:MemoryFacet ;
+	.
+
+observable:MemoryFacet-blockType-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"Bit-mapped"
+		"Byte-mapped"
+		"Initialized"
+		"Overlay"
+		"Uninitialized"
+	) ;
+	sh:message "Value is not member of the vocabulary MemoryBlockTypeVocab." ;
+	sh:path observable:blockType ;
+	sh:severity sh:Info ;
 	.
 
 observable:Message
@@ -8630,6 +8579,14 @@ observable:OperatingSystem
 	rdfs:subClassOf observable:ObservableObject ;
 	rdfs:label "OperatingSystem"@en ;
 	rdfs:comment "An operating system is the software that manages computer hardware, software resources, and provides common services for computer programs. [based on https://en.wikipedia.org/wiki/Operating_system]"@en ;
+	rdfs:seeAlso [
+		a sh:NodeShape ;
+		rdfs:comment "This anonymous shape is attached with rdfs:seeAlso in order to associate a warning-severity class constraint, that will only be necessary as an independent shape until UCO 2.0.0."@en ;
+		sh:class observable:Software ;
+		sh:message "In UCO 2.0.0, uco-observable:OperatingSystem will be a subclass of uco-observable:Software.  In preparation for UCO 2.0.0, the additional type uco-observable:Software should be assigned to this node."@en ;
+		sh:severity sh:Warning ;
+		sh:targetClass observable:OperatingSystem ;
+	] ;
 	sh:targetClass observable:OperatingSystem ;
 	.
 
@@ -8682,6 +8639,18 @@ observable:OperatingSystemFacet
 			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:advertisingID ;
+		] ,
+		[
+			sh:maxCount "0"^^xsd:integer ;
+			sh:message "In UCO 2.0.0, uco-observable:manufacturer will not be associated with uco-observable:OperatingSystemFacet.  Please place this on a uco-observable:SoftwareFacet instead."@en ;
+			sh:path observable:manufacturer ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:maxCount "0"^^xsd:integer ;
+			sh:message "In UCO 2.0.0, uco-observable:version will not be associated with uco-observable:OperatingSystemFacet.  Please place this on a uco-observable:SoftwareFacet instead."@en ;
+			sh:path observable:version ;
+			sh:severity sh:Warning ;
 		]
 		;
 	sh:targetClass observable:OperatingSystemFacet ;
@@ -9187,119 +9156,83 @@ observable:RecoveredObjectFacet
 	rdfs:label "RecoveredObjectFacet"@en ;
 	rdfs:comment "Recoverability status of name, metadata, and content."@en ;
 	sh:property
+		observable:RecoveredObjectFacet-contentRecoveredStatus-in-shape ,
+		observable:RecoveredObjectFacet-metadataRecoveredStatus-in-shape ,
+		observable:RecoveredObjectFacet-nameRecoveredStatus-in-shape ,
 		[
-			sh:datatype vocabulary:RecoveredObjectStatusVocab ;
-			sh:message "Value is outside the default vocabulary RecoveredObjectStatusVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:contentRecoveredStatus should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:contentRecoveredStatus ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
-			sh:datatype vocabulary:RecoveredObjectStatusVocab ;
-			sh:message "Value is outside the default vocabulary RecoveredObjectStatusVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:metadataRecoveredStatus should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:metadataRecoveredStatus ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
-			sh:datatype vocabulary:RecoveredObjectStatusVocab ;
-			sh:message "Value is outside the default vocabulary RecoveredObjectStatusVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:nameRecoveredStatus should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:nameRecoveredStatus ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:nameRecoveredStatus ;
+			sh:path observable:contentRecoveredStatus ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:metadataRecoveredStatus ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:contentRecoveredStatus ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
-					sh:in (
-						"recovered"^^vocabulary:RecoveredObjectStatusVocab
-						"partially recovered"^^vocabulary:RecoveredObjectStatusVocab
-						"overwritten"^^vocabulary:RecoveredObjectStatusVocab
-						"unknown"^^vocabulary:RecoveredObjectStatusVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:nameRecoveredStatus ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
-					sh:in (
-						"recovered"^^vocabulary:RecoveredObjectStatusVocab
-						"partially recovered"^^vocabulary:RecoveredObjectStatusVocab
-						"overwritten"^^vocabulary:RecoveredObjectStatusVocab
-						"unknown"^^vocabulary:RecoveredObjectStatusVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:metadataRecoveredStatus ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:RecoveredObjectStatusVocab ;
-					sh:in (
-						"recovered"^^vocabulary:RecoveredObjectStatusVocab
-						"partially recovered"^^vocabulary:RecoveredObjectStatusVocab
-						"overwritten"^^vocabulary:RecoveredObjectStatusVocab
-						"unknown"^^vocabulary:RecoveredObjectStatusVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:contentRecoveredStatus ;
 		]
 		;
 	sh:targetClass observable:RecoveredObjectFacet ;
+	.
+
+observable:RecoveredObjectFacet-contentRecoveredStatus-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"recovered"
+		"partially recovered"
+		"overwritten"
+		"unknown"
+	) ;
+	sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
+	sh:path observable:contentRecoveredStatus ;
+	sh:severity sh:Info ;
+	.
+
+observable:RecoveredObjectFacet-metadataRecoveredStatus-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"recovered"
+		"partially recovered"
+		"overwritten"
+		"unknown"
+	) ;
+	sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
+	sh:path observable:metadataRecoveredStatus ;
+	sh:severity sh:Info ;
+	.
+
+observable:RecoveredObjectFacet-nameRecoveredStatus-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"recovered"
+		"partially recovered"
+		"overwritten"
+		"unknown"
+	) ;
+	sh:message "Value is not member of the vocabulary RecoveredObjectStatusVocab." ;
+	sh:path observable:nameRecoveredStatus ;
+	sh:severity sh:Info ;
 	.
 
 observable:RegistryDatatype
@@ -9940,6 +9873,7 @@ observable:TaskActionType
 	rdfs:label "TaskActionType"@en ;
 	rdfs:comment "A task action type is a grouping of characteristics for a scheduled action to be completed."@en ;
 	sh:property
+		observable:TaskActionType-actionType-in-shape ,
 		[
 			sh:class observable:IComHandlerActionType ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -9971,44 +9905,31 @@ observable:TaskActionType
 			sh:path observable:actionID ;
 		] ,
 		[
-			sh:datatype vocabulary:TaskActionTypeVocab ;
-			sh:message "Value is outside the default vocabulary TaskActionTypeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:actionType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:actionType ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:TaskActionTypeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:actionType ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary TaskActionTypeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:TaskActionTypeVocab ;
-					sh:in (
-						"TASK_ACTION_COM_HANDLER"^^vocabulary:TaskActionTypeVocab
-						"TASK_ACTION_EXEC"^^vocabulary:TaskActionTypeVocab
-						"TASK_ACTION_SEND_EMAIL"^^vocabulary:TaskActionTypeVocab
-						"TASK_ACTION_SHOW_MESSAGE"^^vocabulary:TaskActionTypeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:actionType ;
 		]
 		;
 	sh:targetClass observable:TaskActionType ;
+	.
+
+observable:TaskActionType-actionType-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"TASK_ACTION_COM_HANDLER"
+		"TASK_ACTION_EXEC"
+		"TASK_ACTION_SEND_EMAIL"
+		"TASK_ACTION_SHOW_MESSAGE"
+	) ;
+	sh:message "Value is not member of the vocabulary TaskActionTypeVocab." ;
+	sh:path observable:actionType ;
+	sh:severity sh:Info ;
 	.
 
 observable:TriggerType
@@ -10020,6 +9941,8 @@ observable:TriggerType
 	rdfs:label "TriggerType"@en ;
 	rdfs:comment "A trigger type is a grouping of characterizes unique to a set of criteria that, when met, starts the execution of a task within a Windows operating system. [based on https://docs.microsoft.com/en-us/windows/win32/taskschd/task-triggers]"@en ;
 	sh:property
+		observable:TriggerType-triggerFrequency-in-shape ,
+		observable:TriggerType-triggerType-in-shape ,
 		[
 			sh:datatype xsd:boolean ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -10057,88 +9980,62 @@ observable:TriggerType
 			sh:path observable:triggerSessionChangeType ;
 		] ,
 		[
-			sh:datatype vocabulary:TriggerFrequencyVocab ;
-			sh:message "Value is outside the default vocabulary TriggerFrequencyVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:triggerFrequency should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:triggerFrequency ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
-			sh:datatype vocabulary:TriggerTypeVocab ;
-			sh:message "Value is outside the default vocabulary TriggerTypeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:triggerType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:triggerType ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:TriggerFrequencyVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:triggerFrequency ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:TriggerTypeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:triggerType ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary TriggerFrequencyVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:TriggerFrequencyVocab ;
-					sh:in (
-						"TASK_EVENT_TRIGGER_AT_LOGON"^^vocabulary:TriggerFrequencyVocab
-						"TASK_EVENT_TRIGGER_AT_SYSTEMSTART"^^vocabulary:TriggerFrequencyVocab
-						"TASK_EVENT_TRIGGER_ON_IDLE"^^vocabulary:TriggerFrequencyVocab
-						"TASK_TIME_TRIGGER_DAILY"^^vocabulary:TriggerFrequencyVocab
-						"TASK_TIME_TRIGGER_MONTHLYDATE"^^vocabulary:TriggerFrequencyVocab
-						"TASK_TIME_TRIGGER_MONTHLYDOW"^^vocabulary:TriggerFrequencyVocab
-						"TASK_TIME_TRIGGER_ONCE"^^vocabulary:TriggerFrequencyVocab
-						"TASK_TIME_TRIGGER_WEEKLY"^^vocabulary:TriggerFrequencyVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:triggerFrequency ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary TriggerTypeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:TriggerTypeVocab ;
-					sh:in (
-						"TASK_TRIGGER_BOOT"^^vocabulary:TriggerTypeVocab
-						"TASK_TRIGGER_EVENT"^^vocabulary:TriggerTypeVocab
-						"TASK_TRIGGER_IDLE"^^vocabulary:TriggerTypeVocab
-						"TASK_TRIGGER_LOGON"^^vocabulary:TriggerTypeVocab
-						"TASK_TRIGGER_REGISTRATION"^^vocabulary:TriggerTypeVocab
-						"TASK_TRIGGER_SESSION_STATE_CHANGE"^^vocabulary:TriggerTypeVocab
-						"TASK_TRIGGER_TIME"^^vocabulary:TriggerTypeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:triggerType ;
 		]
 		;
 	sh:targetClass observable:TriggerType ;
+	.
+
+observable:TriggerType-triggerFrequency-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"TASK_EVENT_TRIGGER_AT_LOGON"
+		"TASK_EVENT_TRIGGER_AT_SYSTEMSTART"
+		"TASK_EVENT_TRIGGER_ON_IDLE"
+		"TASK_TIME_TRIGGER_DAILY"
+		"TASK_TIME_TRIGGER_MONTHLYDATE"
+		"TASK_TIME_TRIGGER_MONTHLYDOW"
+		"TASK_TIME_TRIGGER_ONCE"
+		"TASK_TIME_TRIGGER_WEEKLY"
+	) ;
+	sh:message "Value is not member of the vocabulary TriggerFrequencyVocab." ;
+	sh:path observable:triggerFrequency ;
+	sh:severity sh:Info ;
+	.
+
+observable:TriggerType-triggerType-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"TASK_TRIGGER_BOOT"
+		"TASK_TRIGGER_EVENT"
+		"TASK_TRIGGER_IDLE"
+		"TASK_TRIGGER_LOGON"
+		"TASK_TRIGGER_REGISTRATION"
+		"TASK_TRIGGER_SESSION_STATE_CHANGE"
+		"TASK_TRIGGER_TIME"
+	) ;
+	sh:message "Value is not member of the vocabulary TriggerTypeVocab." ;
+	sh:path observable:triggerType ;
+	sh:severity sh:Info ;
 	.
 
 observable:Tweet
@@ -10590,6 +10487,7 @@ observable:URLVisitFacet
 	rdfs:label "URLVisitFacet"@en ;
 	rdfs:comment "A URL visit facet is a grouping of characteristics unique to the properties of a visit of a URL within a particular browser."@en ;
 	sh:property
+		observable:URLVisitFacet-urlTransitionType-in-shape ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -10621,51 +10519,38 @@ observable:URLVisitFacet
 			sh:path observable:visitDuration ;
 		] ,
 		[
-			sh:datatype vocabulary:URLTransitionTypeVocab ;
-			sh:message "Value is outside the default vocabulary URLTransitionTypeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:urlTransitionType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:urlTransitionType ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:URLTransitionTypeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:urlTransitionType ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary URLTransitionTypeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:URLTransitionTypeVocab ;
-					sh:in (
-						"link"^^vocabulary:URLTransitionTypeVocab
-						"typed"^^vocabulary:URLTransitionTypeVocab
-						"auto_bookmark"^^vocabulary:URLTransitionTypeVocab
-						"auto_subframe"^^vocabulary:URLTransitionTypeVocab
-						"manual_subframe"^^vocabulary:URLTransitionTypeVocab
-						"generated"^^vocabulary:URLTransitionTypeVocab
-						"auto_toplevel"^^vocabulary:URLTransitionTypeVocab
-						"form_submit"^^vocabulary:URLTransitionTypeVocab
-						"reload"^^vocabulary:URLTransitionTypeVocab
-						"keyword"^^vocabulary:URLTransitionTypeVocab
-						"keyword_generated"^^vocabulary:URLTransitionTypeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:urlTransitionType ;
 		]
 		;
 	sh:targetClass observable:URLVisitFacet ;
+	.
+
+observable:URLVisitFacet-urlTransitionType-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"link"
+		"typed"
+		"auto_bookmark"
+		"auto_subframe"
+		"manual_subframe"
+		"generated"
+		"auto_toplevel"
+		"form_submit"
+		"reload"
+		"keyword"
+		"keyword_generated"
+	) ;
+	sh:message "Value is not member of the vocabulary URLTransitionTypeVocab." ;
+	sh:path observable:urlTransitionType ;
+	sh:severity sh:Info ;
 	.
 
 observable:UserAccount
@@ -10865,6 +10750,7 @@ observable:WhoIsFacet
 	rdfs:label "WhoIsFacet"@en ;
 	rdfs:comment "A whois facet is a grouping of characteristics unique to a response record conformant to the WHOIS protocol standard (RFC 3912). [based on https://en.wikipedia.org/wiki/WHOIS]"@en ;
 	sh:property
+		observable:WhoIsFacet-status-in-shape ,
 		observable:regionalInternetRegistry-shape-value-not-vocabulary-member ,
 		observable:regionalInternetRegistry-shape-value-outside-default-vocabulary ,
 		[
@@ -10946,6 +10832,18 @@ observable:WhoIsFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:regionalInternetRegistry should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:path observable:regionalInternetRegistry ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:status should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:path observable:status ;
+			sh:severity sh:Warning ;
+		] ,
+		[
+			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:registrantIDs ;
 		] ,
@@ -10956,72 +10854,45 @@ observable:WhoIsFacet
 			sh:path observable:dnssec ;
 		] ,
 		[
-			sh:datatype vocabulary:WhoisStatusTypeVocab ;
-			sh:message "Value is outside the default vocabulary WhoisStatusTypeVocab." ;
-			sh:path observable:status ;
-			sh:severity sh:Info ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:RegionalRegistryTypeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:regionalInternetRegistry ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:WhoisStatusTypeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:status ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary WhoisStatusTypeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:WhoisStatusTypeVocab ;
-					sh:in (
-						"ADD_PERIOD"^^vocabulary:WhoisStatusTypeVocab
-						"AUTO_RENEW_PERIOD"^^vocabulary:WhoisStatusTypeVocab
-						"CLIENT_DELETE_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-						"CLIENT_HOLD"^^vocabulary:WhoisStatusTypeVocab
-						"CLIENT_RENEW_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-						"CLIENT_TRANSFER_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-						"CLIENT_UPDATE_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-						"DELETE_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-						"HOLD"^^vocabulary:WhoisStatusTypeVocab
-						"INACTIVE"^^vocabulary:WhoisStatusTypeVocab
-						"OK"^^vocabulary:WhoisStatusTypeVocab
-						"PENDING_DELETE_RESTORABLE"^^vocabulary:WhoisStatusTypeVocab
-						"PENDING_DELETE_SCHEDULED_FOR_RELEASE"^^vocabulary:WhoisStatusTypeVocab
-						"PENDING_RESTORE"^^vocabulary:WhoisStatusTypeVocab
-						"RENEW_PERIOD"^^vocabulary:WhoisStatusTypeVocab
-						"RENEW_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-						"TRANSFER_PERIOD"^^vocabulary:WhoisStatusTypeVocab
-						"TRANSFER_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-						"UPDATE_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:status ;
 		]
 		;
 	sh:targetClass observable:WhoIsFacet ;
+	.
+
+observable:WhoIsFacet-status-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"ADD_PERIOD"
+		"AUTO_RENEW_PERIOD"
+		"CLIENT_DELETE_PROHIBITED"
+		"CLIENT_HOLD"
+		"CLIENT_RENEW_PROHIBITED"
+		"CLIENT_TRANSFER_PROHIBITED"
+		"CLIENT_UPDATE_PROHIBITED"
+		"DELETE_PROHIBITED"
+		"HOLD"
+		"INACTIVE"
+		"OK"
+		"PENDING_DELETE_RESTORABLE"
+		"PENDING_DELETE_SCHEDULED_FOR_RELEASE"
+		"PENDING_RESTORE"
+		"RENEW_PERIOD"
+		"RENEW_PROHIBITED"
+		"TRANSFER_PERIOD"
+		"TRANSFER_PROHIBITED"
+		"UPDATE_PROHIBITED"
+	) ;
+	sh:message "Value is not member of the vocabulary WhoisStatusTypeVocab." ;
+	sh:path observable:status ;
+	sh:severity sh:Info ;
 	.
 
 observable:WhoisContactFacet
@@ -11033,44 +10904,32 @@ observable:WhoisContactFacet
 	rdfs:label "WhoIsContactFacet"@en ;
 	rdfs:comment "A Whois contact type is a grouping of characteristics unique to contact-related information present in a response record conformant to the WHOIS protocol standard (RFC 3912). [based on https://en.wikipedia.org/wiki/WHOIS]"@en ;
 	sh:property
+		observable:WhoisContactFacet-whoisContactType-in-shape ,
 		[
-			sh:datatype vocabulary:WhoisContactTypeVocab ;
-			sh:message "Value is outside the default vocabulary WhoisContactTypeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:whoisContactType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:whoisContactType ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:WhoisContactTypeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:whoisContactType ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary WhoisContactTypeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:WhoisContactTypeVocab ;
-					sh:in (
-						"ADMIN"^^vocabulary:WhoisContactTypeVocab
-						"BILLING"^^vocabulary:WhoisContactTypeVocab
-						"TECHNICAL"^^vocabulary:WhoisContactTypeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:whoisContactType ;
 		]
 		;
 	sh:targetClass observable:WhoisContactFacet ;
+	.
+
+observable:WhoisContactFacet-whoisContactType-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"ADMIN"
+		"BILLING"
+		"TECHNICAL"
+	) ;
+	sh:message "Value is not member of the vocabulary WhoisContactTypeVocab." ;
+	sh:path observable:whoisContactType ;
+	sh:severity sh:Info ;
 	.
 
 observable:WhoisRegistrarInfoType
@@ -12118,6 +11977,9 @@ observable:WindowsTaskFacet
 	rdfs:label "WindowsTaskFacet"@en ;
 	rdfs:comment "A Windows Task facet is a grouping of characteristics unique to a Windows Task (a process that is scheduled to execute on a Windows operating system by the Windows Task Scheduler). [based on http://msdn.microsoft.com/en-us/library/windows/desktop/aa381311(v=vs.85).aspx]"@en ;
 	sh:property
+		observable:WindowsTaskFacet-flags-in-shape ,
+		observable:WindowsTaskFacet-priority-in-shape ,
+		observable:WindowsTaskFacet-status-in-shape ,
 		[
 			sh:class observable:ObservableObject ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -12219,30 +12081,30 @@ observable:WindowsTaskFacet
 			sh:path observable:taskCreator ;
 		] ,
 		[
-			sh:datatype vocabulary:TaskFlagVocab ;
-			sh:message "Value is outside the default vocabulary TaskFlagVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:flags should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:flags ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
-			sh:datatype vocabulary:TaskPriorityVocab ;
-			sh:message "Value is outside the default vocabulary TaskPriorityVocab." ;
-			sh:path observable:priority ;
-			sh:severity sh:Info ;
-		] ,
-		[
-			sh:datatype vocabulary:TaskStatusVocab ;
-			sh:message "Value is outside the default vocabulary TaskStatusVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:status should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:status ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:path observable:priority ;
+		] ,
+		[
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
+			sh:path observable:status ;
+		] ,
+		[
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:priority should be xsd:string or xsd:integer.  Not using xsd:string or xsd:integer will be an error in UCO 2.0.0." ;
 			sh:or (
-				[
-					sh:datatype vocabulary:TaskPriorityVocab ;
-				]
 				[
 					sh:datatype xsd:integer ;
 				]
@@ -12251,122 +12113,90 @@ observable:WindowsTaskFacet
 				]
 			) ;
 			sh:path observable:priority ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:TaskStatusVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:status ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary TaskFlagVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:TaskFlagVocab ;
-					sh:in (
-						"TASK_FLAG_DELETE_WHEN_DONE"^^vocabulary:TaskFlagVocab
-						"TASK_FLAG_DISABLED"^^vocabulary:TaskFlagVocab
-						"TASK_FLAG_DONT_START_IF_ON_BATTERIES"^^vocabulary:TaskFlagVocab
-						"TASK_FLAG_HIDDEN"^^vocabulary:TaskFlagVocab
-						"TASK_FLAG_INTERACTIVE"^^vocabulary:TaskFlagVocab
-						"TASK_FLAG_KILL_IF_GOING_ON_BATTERIES"^^vocabulary:TaskFlagVocab
-						"TASK_FLAG_KILL_ON_IDLE_END"^^vocabulary:TaskFlagVocab
-						"TASK_FLAG_RESTART_ON_IDLE_RESUME"^^vocabulary:TaskFlagVocab
-						"TASK_FLAG_RUN_IF_CONNECTED_TO_INTERNET"^^vocabulary:TaskFlagVocab
-						"TASK_FLAG_RUN_ONLY_IF_LOGGED_ON"^^vocabulary:TaskFlagVocab
-						"TASK_FLAG_START_ONLY_IF_IDLE"^^vocabulary:TaskFlagVocab
-						"TASK_FLAG_SYSTEM_REQUIRED"^^vocabulary:TaskFlagVocab
-						"TASK_FLAG_ZERO"^^vocabulary:TaskFlagVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:flags ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary TaskPriorityVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:TaskPriorityVocab ;
-					sh:in (
-						"ABOVE_NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-						"BELOW_NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-						"HIGH_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-						"IDLE_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-						"NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-						"REALTIME_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:integer ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:priority ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary TaskStatusVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:TaskStatusVocab ;
-					sh:in (
-						"SCHED_E_ACCOUNT_DBASE_CORRUPT"^^vocabulary:TaskStatusVocab
-						"SCHED_E_ACCOUNT_INFORMATION_NOT_SET"^^vocabulary:TaskStatusVocab
-						"SCHED_E_ACCOUNT_NAME_NOT_FOUND"^^vocabulary:TaskStatusVocab
-						"SCHED_E_CANNOT_OPEN_TASK"^^vocabulary:TaskStatusVocab
-						"SCHED_E_INVALID_TASK"^^vocabulary:TaskStatusVocab
-						"SCHED_E_NO_SECURITY_SERVICES"^^vocabulary:TaskStatusVocab
-						"SCHED_E_SERVICE_NOT_INSTALLED"^^vocabulary:TaskStatusVocab
-						"SCHED_E_SERVICE_NOT_RUNNING"^^vocabulary:TaskStatusVocab
-						"SCHED_E_TASK_NOT_READY"^^vocabulary:TaskStatusVocab
-						"SCHED_E_TASK_NOT_RUNNING"^^vocabulary:TaskStatusVocab
-						"SCHED_E_TRIGGER_NOT_FOUND"^^vocabulary:TaskStatusVocab
-						"SCHED_E_UNKNOWN_OBJECT_VERSION"^^vocabulary:TaskStatusVocab
-						"SCHED_E_UNSUPPORTED_ACCOUNT_OPTION"^^vocabulary:TaskStatusVocab
-						"SCHED_S_EVENT_TRIGGER"^^vocabulary:TaskStatusVocab
-						"SCHED_S_TASK_DISABLED"^^vocabulary:TaskStatusVocab
-						"SCHED_S_TASK_HAS_NOT_RUN"^^vocabulary:TaskStatusVocab
-						"SCHED_S_TASK_NOT_SCHEDULED"^^vocabulary:TaskStatusVocab
-						"SCHED_S_TASK_NO_MORE_RUNS"^^vocabulary:TaskStatusVocab
-						"SCHED_S_TASK_NO_VALID_TRIGGERS"^^vocabulary:TaskStatusVocab
-						"SCHED_S_TASK_READY"^^vocabulary:TaskStatusVocab
-						"SCHED_S_TASK_RUNNING"^^vocabulary:TaskStatusVocab
-						"SCHED_S_TASK_TERMINATED"^^vocabulary:TaskStatusVocab
-						"TASK_STATE_QUEUED"^^vocabulary:TaskStatusVocab
-						"TASK_STATE_UNKNOWN"^^vocabulary:TaskStatusVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:status ;
+			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:TaskFlagVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:flags ;
 		]
 		;
 	sh:targetClass observable:WindowsTaskFacet ;
+	.
+
+observable:WindowsTaskFacet-flags-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"TASK_FLAG_DELETE_WHEN_DONE"
+		"TASK_FLAG_DISABLED"
+		"TASK_FLAG_DONT_START_IF_ON_BATTERIES"
+		"TASK_FLAG_HIDDEN"
+		"TASK_FLAG_INTERACTIVE"
+		"TASK_FLAG_KILL_IF_GOING_ON_BATTERIES"
+		"TASK_FLAG_KILL_ON_IDLE_END"
+		"TASK_FLAG_RESTART_ON_IDLE_RESUME"
+		"TASK_FLAG_RUN_IF_CONNECTED_TO_INTERNET"
+		"TASK_FLAG_RUN_ONLY_IF_LOGGED_ON"
+		"TASK_FLAG_START_ONLY_IF_IDLE"
+		"TASK_FLAG_SYSTEM_REQUIRED"
+		"TASK_FLAG_ZERO"
+	) ;
+	sh:message "Value is not member of the vocabulary TaskFlagVocab." ;
+	sh:path observable:flags ;
+	sh:severity sh:Info ;
+	.
+
+observable:WindowsTaskFacet-priority-in-shape
+	a sh:PropertyShape ;
+	sh:message "Value is not member of the vocabulary TaskPriorityVocab." ;
+	sh:or (
+		[
+			sh:in (
+				"ABOVE_NORMAL_PRIORITY_CLASS"
+				"BELOW_NORMAL_PRIORITY_CLASS"
+				"HIGH_PRIORITY_CLASS"
+				"IDLE_PRIORITY_CLASS"
+				"NORMAL_PRIORITY_CLASS"
+				"REALTIME_PRIORITY_CLASS"
+			) ;
+		]
+		[
+			sh:datatype xsd:integer ;
+		]
+	) ;
+	sh:path observable:priority ;
+	sh:severity sh:Info ;
+	.
+
+observable:WindowsTaskFacet-status-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"SCHED_E_ACCOUNT_DBASE_CORRUPT"
+		"SCHED_E_ACCOUNT_INFORMATION_NOT_SET"
+		"SCHED_E_ACCOUNT_NAME_NOT_FOUND"
+		"SCHED_E_CANNOT_OPEN_TASK"
+		"SCHED_E_INVALID_TASK"
+		"SCHED_E_NO_SECURITY_SERVICES"
+		"SCHED_E_SERVICE_NOT_INSTALLED"
+		"SCHED_E_SERVICE_NOT_RUNNING"
+		"SCHED_E_TASK_NOT_READY"
+		"SCHED_E_TASK_NOT_RUNNING"
+		"SCHED_E_TRIGGER_NOT_FOUND"
+		"SCHED_E_UNKNOWN_OBJECT_VERSION"
+		"SCHED_E_UNSUPPORTED_ACCOUNT_OPTION"
+		"SCHED_S_EVENT_TRIGGER"
+		"SCHED_S_TASK_DISABLED"
+		"SCHED_S_TASK_HAS_NOT_RUN"
+		"SCHED_S_TASK_NOT_SCHEDULED"
+		"SCHED_S_TASK_NO_MORE_RUNS"
+		"SCHED_S_TASK_NO_VALID_TRIGGERS"
+		"SCHED_S_TASK_READY"
+		"SCHED_S_TASK_RUNNING"
+		"SCHED_S_TASK_TERMINATED"
+		"TASK_STATE_QUEUED"
+		"TASK_STATE_UNKNOWN"
+	) ;
+	sh:message "Value is not member of the vocabulary TaskStatusVocab." ;
+	sh:path observable:status ;
 	.
 
 observable:WindowsThread
@@ -12463,6 +12293,7 @@ observable:WindowsVolumeFacet
 	rdfs:label "WindowsVolumeFacet"@en ;
 	rdfs:comment "A Windows volume facet is a grouping of characteristics unique to a single accessible storage area (volume) with a single Windows file system. [based on https://en.wikipedia.org/wiki/Volume_(computing)]"@en ;
 	sh:property
+		observable:WindowsVolumeFacet-driveType-in-shape ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -12470,10 +12301,10 @@ observable:WindowsVolumeFacet
 			sh:path observable:driveLetter ;
 		] ,
 		[
-			sh:datatype vocabulary:WindowsDriveTypeVocab ;
-			sh:message "Value is outside the default vocabulary WindowsDriveTypeVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:driveType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:driveType ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:datatype vocabulary:WindowsVolumeAttributeVocab ;
@@ -12484,39 +12315,26 @@ observable:WindowsVolumeFacet
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:WindowsDriveTypeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path observable:driveType ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary WindowsDriveTypeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:WindowsDriveTypeVocab ;
-					sh:in (
-						"DRIVE_CDROM"^^vocabulary:WindowsDriveTypeVocab
-						"DRIVE_FIXED"^^vocabulary:WindowsDriveTypeVocab
-						"DRIVE_NO_ROOT_DIR"^^vocabulary:WindowsDriveTypeVocab
-						"DRIVE_RAMDISK"^^vocabulary:WindowsDriveTypeVocab
-						"DRIVE_REMOTE"^^vocabulary:WindowsDriveTypeVocab
-						"DRIVE_REMOVABLE"^^vocabulary:WindowsDriveTypeVocab
-						"DRIVE_UNKNOWN"^^vocabulary:WindowsDriveTypeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path observable:driveType ;
 		]
 		;
 	sh:targetClass observable:WindowsVolumeFacet ;
+	.
+
+observable:WindowsVolumeFacet-driveType-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"DRIVE_CDROM"
+		"DRIVE_FIXED"
+		"DRIVE_NO_ROOT_DIR"
+		"DRIVE_RAMDISK"
+		"DRIVE_REMOTE"
+		"DRIVE_REMOVABLE"
+		"DRIVE_UNKNOWN"
+	) ;
+	sh:message "Value is not member of the vocabulary WindowsDriveTypeVocab." ;
+	sh:path observable:driveType ;
+	sh:severity sh:Info ;
 	.
 
 observable:WindowsWaitableTime
@@ -12550,6 +12368,7 @@ observable:WirelessNetworkConnectionFacet
 	rdfs:label "WirelessNetworkConnectionFacet"@en ;
 	rdfs:comment "A wireless network connection facet is a grouping of characteristics unique to a connection (completed or attempted) across an IEEE 802.11 standards-conformant digital network (a group of two or more computer systems linked together). [based on https://www.webopedia.com/TERM/N/network.html]"@en ;
 	sh:property
+		observable:WirelessNetworkConnectionFacet-wirelessNetworkSecurityMode-in-shape ,
 		[
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -12569,41 +12388,34 @@ observable:WirelessNetworkConnectionFacet
 			sh:path observable:ssid ;
 		] ,
 		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:WirelessNetworkSecurityModeVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for observable:wirelessNetworkSecurityMode should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path observable:wirelessNetworkSecurityMode ;
+			sh:severity sh:Warning ;
 		] ,
 		[
-			sh:message "Value is not member of the vocabulary WirelessNetworkSecurityModeVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:WirelessNetworkSecurityModeVocab ;
-					sh:in (
-						"None"^^vocabulary:WirelessNetworkSecurityModeVocab
-						"WEP"^^vocabulary:WirelessNetworkSecurityModeVocab
-						"WPA"^^vocabulary:WirelessNetworkSecurityModeVocab
-						"WPA2-PSK"^^vocabulary:WirelessNetworkSecurityModeVocab
-						"WPA2-Enterprise"^^vocabulary:WirelessNetworkSecurityModeVocab
-						"WPA3-PSK"^^vocabulary:WirelessNetworkSecurityModeVocab
-						"WPA3-Enterprise"^^vocabulary:WirelessNetworkSecurityModeVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:wirelessNetworkSecurityMode ;
 		]
 		;
 	sh:targetClass observable:WirelessNetworkConnectionFacet ;
+	.
+
+observable:WirelessNetworkConnectionFacet-wirelessNetworkSecurityMode-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"None"
+		"WEP"
+		"WPA"
+		"WPA2-PSK"
+		"WPA2-Enterprise"
+		"WPA3-PSK"
+		"WPA3-Enterprise"
+	) ;
+	sh:message "Value is not member of the vocabulary WirelessNetworkSecurityModeVocab." ;
+	sh:path observable:wirelessNetworkSecurityMode ;
+	sh:severity sh:Info ;
 	.
 
 observable:WriteBlocker
@@ -12915,6 +12727,7 @@ observable:accountLogin
 
 observable:accountLogonType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "accountLogonType"@en ;
 	rdfs:comment "Specifies the security logon method required to run the tasks associated with the account. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383013(v=vs.85).aspx."@en ;
 	rdfs:range xsd:string ;
@@ -12929,6 +12742,7 @@ observable:accountRunLevel
 
 observable:accountType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "accountType"@en ;
 	rdfs:comment "The type of account, for instance bank, phone, application, service, etc."@en ;
 	rdfs:range [
@@ -12956,6 +12770,7 @@ observable:actionList
 
 observable:actionType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "actionType"@en ;
 	rdfs:comment "Specifies the type of the action. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380596(v=vs.85).aspx."@en ;
 	rdfs:range [
@@ -13064,6 +12879,7 @@ observable:applicationIdentifier
 
 observable:archiveType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "archiveType"@en ;
 	rdfs:comment "The type of a file archive, e.g. ZIP, GZIP or RAR."@en ;
 	rdfs:range xsd:string ;
@@ -13097,6 +12913,7 @@ observable:attendant
 
 observable:audioType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "audioType"@en ;
 	rdfs:comment "The type of a audio. For example: music or speech."@en ;
 	rdfs:range xsd:string ;
@@ -13211,6 +13028,7 @@ observable:bitsPerPixel
 
 observable:blockType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "blockType"@en ;
 	rdfs:comment "The blockType property specifies the block type of a particular memory object."@en ;
 	rdfs:range [
@@ -13290,6 +13108,7 @@ observable:byteStringValue
 
 observable:callType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "callType"@en ;
 	rdfs:comment "The type of a phone call,for example incoming, outgoing, missed."@en ;
 	rdfs:range xsd:string ;
@@ -13365,6 +13184,7 @@ observable:cellSiteNetworkCode
 
 observable:cellSiteType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "cellSiteType"@en ;
 	rdfs:comment "Specifies the technology used by the Cell Site (e.g., GSM, CDMA, or LTE)."@en ;
 	rdfs:range xsd:string ;
@@ -13654,6 +13474,7 @@ observable:contentRecoveredStatus
 
 observable:contentType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "contentType"@en ;
 	rdfs:range xsd:string ;
 	.
@@ -13807,6 +13628,7 @@ observable:dataPayloadReferenceURL
 
 observable:dataType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "dataType"@en ;
 	rdfs:range xsd:string ;
 	.
@@ -13846,6 +13668,7 @@ observable:destinationPort
 
 observable:deviceType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "deviceType"@en ;
 	rdfs:range xsd:string ;
 	.
@@ -13873,6 +13696,7 @@ observable:dhcpServer
 
 observable:diskPartitionType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "diskPartitionType"@en ;
 	rdfs:comment "Specifies the type of partition being characterized."@en ;
 	rdfs:range xsd:string ;
@@ -13887,6 +13711,7 @@ observable:diskSize
 
 observable:diskType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "diskType"@en ;
 	rdfs:comment "The type of disk being characterized, e.g., removable."@en ;
 	rdfs:range xsd:string ;
@@ -13949,6 +13774,7 @@ observable:driveLetter
 
 observable:driveType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "driveType"@en ;
 	rdfs:comment "Specifies the drive type of a windows volume."@en ;
 	rdfs:range [
@@ -14142,6 +13968,7 @@ observable:eventStatus
 
 observable:eventType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "eventType"@en ;
 	rdfs:comment "The type of the event, for example 'information', 'warning' or 'error'."@en ;
 	rdfs:range xsd:string ;
@@ -14225,6 +14052,7 @@ observable:extDeletionTime
 
 observable:extFileType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "extFileType"@en ;
 	rdfs:comment "Specifies the EXT file type (FIFO, Directory, Regular file, Symbolic link, etc) for the Inode."@en ;
 	rdfs:range xsd:integer ;
@@ -14329,6 +14157,7 @@ observable:filePath
 
 observable:fileSystemType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "fileSystemType"@en ;
 	rdfs:comment "The specific type of a file system."@en ;
 	rdfs:range xsd:string ;
@@ -14524,6 +14353,7 @@ observable:hexadecimalValue
 
 observable:hiveType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "hiveType"@en ;
 	rdfs:comment "The type of a registry hive."@en ;
 	rdfs:range xsd:string ;
@@ -14614,6 +14444,7 @@ observable:icmpCode
 
 observable:icmpType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "icmpType"@en ;
 	rdfs:comment "Specifies the ICMP type byte."@en ;
 	rdfs:range xsd:hexBinary ;
@@ -14641,6 +14472,7 @@ observable:imageName
 
 observable:imageType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "imageType"@en ;
 	rdfs:comment "The type of the image, e.g. EnCase, RAW or LocalFolder."@en ;
 	rdfs:range xsd:string ;
@@ -14992,6 +14824,7 @@ observable:length
 
 observable:libraryType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "libraryType"@en ;
 	rdfs:comment "Specifies the type of library being characterized."@en ;
 	rdfs:range xsd:string ;
@@ -15143,6 +14976,7 @@ observable:messageThread
 
 observable:messageType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "messageType"@en ;
 	rdfs:comment "Message type specifies what sort of message (email, chat, SMS, etc) a Message is."@en ;
 	rdfs:range xsd:string ;
@@ -15253,6 +15087,7 @@ observable:mimeClass
 
 observable:mimeType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "mimeType"@en ;
 	rdfs:comment "MIME type of the data. For example 'text/html' or 'audio/mp3'."@en ;
 	rdfs:range xsd:string ;
@@ -15676,6 +15511,7 @@ observable:passwordLastChanged
 
 observable:passwordType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "passwordType"@en ;
 	rdfs:comment "The type of password, for instance plain-text or encrypted."@en ;
 	rdfs:range xsd:string ;
@@ -15716,6 +15552,7 @@ observable:pdfModDate
 
 observable:peType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "peType"@en ;
 	rdfs:comment "Specifies the type of the PE binary."@en ;
 	rdfs:range xsd:string ;
@@ -15743,6 +15580,7 @@ observable:pictureHeight
 
 observable:pictureType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "pictureType"@en ;
 	rdfs:comment "The type of a picture, for example a thumbnail."@en ;
 	rdfs:range xsd:string ;
@@ -15970,6 +15808,7 @@ observable:rangeOffset
 
 observable:rangeOffsetType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "rangeOffsetType"@en ;
 	rdfs:comment "The type of offset defined for the range (e.g., image, file, address)."@en ;
 	rdfs:range xsd:string ;
@@ -16102,31 +15941,22 @@ observable:regionalInternetRegistry
 
 observable:regionalInternetRegistry-shape-value-not-vocabulary-member
 	a sh:PropertyShape ;
-	sh:message "Value is not member of the vocabulary RegionalRegistryTypeVocab." ;
-	sh:or (
-		[
-			sh:datatype vocabulary:RegionalRegistryTypeVocab ;
-			sh:in (
-				"APNIC"^^vocabulary:RegionalRegistryTypeVocab
-				"ARIN"^^vocabulary:RegionalRegistryTypeVocab
-				"AfriNIC"^^vocabulary:RegionalRegistryTypeVocab
-				"LACNIC"^^vocabulary:RegionalRegistryTypeVocab
-				"RIPE NCC"^^vocabulary:RegionalRegistryTypeVocab
-			) ;
-		]
-		[
-			sh:datatype xsd:string ;
-		]
+	sh:in (
+		"APNIC"
+		"ARIN"
+		"AfriNIC"
+		"LACNIC"
+		"RIPE NCC"
 	) ;
+	sh:message "Value is not member of the vocabulary RegionalRegistryTypeVocab." ;
 	sh:path observable:regionalInternetRegistry ;
+	sh:severity sh:Info ;
 	.
 
 observable:regionalInternetRegistry-shape-value-outside-default-vocabulary
 	a sh:PropertyShape ;
-	sh:datatype vocabulary:RegionalRegistryTypeVocab ;
-	sh:message "Value is outside the default vocabulary RegionalRegistryTypeVocab." ;
+	sh:deactivated "true"^^xsd:boolean ;
 	sh:path observable:regionalInternetRegistry ;
-	sh:severity sh:Info ;
 	.
 
 observable:registeredOrganization
@@ -16326,6 +16156,7 @@ observable:serviceStatus
 
 observable:serviceType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "serviceType"@en ;
 	rdfs:range xsd:string ;
 	.
@@ -16600,6 +16431,7 @@ observable:startTime
 
 observable:startType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "startType"@en ;
 	rdfs:range xsd:string ;
 	.
@@ -16900,6 +16732,7 @@ observable:triggerMaxRunTime
 
 observable:triggerSessionChangeType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "triggerSessionChangeType"@en ;
 	rdfs:comment "Specifies the type of Terminal Server session change that would trigger a task launch. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381298(v=vs.85).aspx."@en ;
 	rdfs:range xsd:string ;
@@ -16907,6 +16740,7 @@ observable:triggerSessionChangeType
 
 observable:triggerType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "triggerType"@en ;
 	rdfs:comment "Specifies the type of the task trigger."@en ;
 	rdfs:range [
@@ -16976,6 +16810,7 @@ observable:urlTargeted
 
 observable:urlTransitionType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "Transition Type"@en ;
 	rdfs:comment "Specifies how a browser navigated to a particular URL on a particular visit."@en ;
 	rdfs:range [
@@ -17075,6 +16910,7 @@ observable:volumeID
 
 observable:whoisContactType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "whoisContactType"@en ;
 	rdfs:comment "Specifies what type of WHOIS contact this is."@en ;
 	rdfs:range [
@@ -17711,6 +17547,7 @@ tool:swid
 
 tool:toolType
 	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf core:informalType ;
 	rdfs:label "toolType"@en ;
 	rdfs:comment "The type of tool."@en ;
 	rdfs:range xsd:string ;
@@ -17756,13 +17593,44 @@ types:Dictionary
 		;
 	rdfs:subClassOf core:UcoInherentCharacterizationThing ;
 	rdfs:label "Dictionary"@en ;
-	rdfs:comment "A dictionary is list of (term/key, value) pairs with each term/key existing no more than once."@en ;
+	rdfs:comment "A dictionary is list of (term/key, value) pairs with each term/key having an expectation to exist no more than once.  types:Dictionary alone does not validate this expectation, but validation is available.  For use cases where this expectation must be validated, the subclass types:ProperDictionary should be used instead of types:Dictionary.  For instances where this expectation has been found to be violated, the subclass types:ImproperDictionary should be used instead of types:Dictionary."@en ;
 	rdfs:isDefinedBy <https://ontology.unifiedcyberontology.org/uco/types> ;
 	sh:property [
 		sh:class types:DictionaryEntry ;
-		sh:minCount "1"^^xsd:integer ;
 		sh:nodeKind sh:IRI ;
 		sh:path types:entry ;
+	] ;
+	sh:targetClass types:Dictionary ;
+	.
+
+types:Dictionary-keyUniqueness-shape
+	a sh:NodeShape ;
+	sh:description "This shape is separated from the types:Dictionary class-shape in order to associate a warning-severity SPARQL-based shape."@en ;
+	sh:severity sh:Warning ;
+	sh:sparql [
+		a sh:SPARQLConstraint ;
+		sh:message "A key in a dictionary should appear no more than once.  The value literal does.  Please consider using the types:ImproperDictionary class and types:repeatsKey property."@en ;
+		sh:select """
+			PREFIX types: <https://ontology.unifiedcyberontology.org/uco/types/>
+			SELECT $this ?value
+			WHERE {
+				$this
+					types:entry/types:key ?value ;
+					.
+				FILTER NOT EXISTS {
+					$this
+						a types:ImproperDictionary ;
+						.
+				}
+				FILTER NOT EXISTS {
+					$this
+						a types:ProperDictionary ;
+						.
+				}
+			}
+			GROUP BY ?value
+			HAVING (COUNT(?value) > 1)
+			""" ;
 	] ;
 	sh:targetClass types:Dictionary ;
 	.
@@ -17803,6 +17671,7 @@ types:Hash
 	rdfs:label "Hash"@en ;
 	rdfs:comment "A hash is a grouping of characteristics unique to the result of applying a mathematical algorithm that maps data of arbitrary size to a bit string (the 'hash') and is a one-way function, that is, a function which is practically infeasible to invert. This is commonly used for integrity checking of data. [based on https://en.wikipedia.org/wiki/Cryptographic_hash_function]"@en ;
 	sh:property
+		types:Hash-hashMethod-in-shape ,
 		[
 			sh:datatype xsd:hexBinary ;
 			sh:maxCount "1"^^xsd:integer ;
@@ -17811,53 +17680,40 @@ types:Hash
 			sh:path types:hashValue ;
 		] ,
 		[
-			sh:datatype vocabulary:HashNameVocab ;
-			sh:message "Value is outside the default vocabulary HashNameVocab." ;
+			sh:datatype xsd:string ;
+			sh:message "As of UCO 1.4.0, the datatype to use for types:hashMethod should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
 			sh:path types:hashMethod ;
-			sh:severity sh:Info ;
+			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:or (
-				[
-					sh:datatype vocabulary:HashNameVocab ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
-			sh:path types:hashMethod ;
-		] ,
-		[
-			sh:message "Value is not member of the vocabulary HashNameVocab." ;
-			sh:or (
-				[
-					sh:datatype vocabulary:HashNameVocab ;
-					sh:in (
-						"MD5"^^vocabulary:HashNameVocab
-						"MD6"^^vocabulary:HashNameVocab
-						"SHA1"^^vocabulary:HashNameVocab
-						"SHA224"^^vocabulary:HashNameVocab
-						"SHA256"^^vocabulary:HashNameVocab
-						"SHA3-224"^^vocabulary:HashNameVocab
-						"SHA3-256"^^vocabulary:HashNameVocab
-						"SHA3-384"^^vocabulary:HashNameVocab
-						"SHA3-512"^^vocabulary:HashNameVocab
-						"SHA384"^^vocabulary:HashNameVocab
-						"SHA512"^^vocabulary:HashNameVocab
-						"SSDEEP"^^vocabulary:HashNameVocab
-					) ;
-				]
-				[
-					sh:datatype xsd:string ;
-				]
-			) ;
 			sh:path types:hashMethod ;
 		]
 		;
 	sh:targetClass types:Hash ;
+	.
+
+types:Hash-hashMethod-in-shape
+	a sh:PropertyShape ;
+	sh:in (
+		"MD5"
+		"MD6"
+		"SHA1"
+		"SHA224"
+		"SHA256"
+		"SHA3-224"
+		"SHA3-256"
+		"SHA3-384"
+		"SHA3-512"
+		"SHA384"
+		"SHA512"
+		"SSDEEP"
+	) ;
+	sh:message "Value is not member of the vocabulary HashNameVocab." ;
+	sh:path types:hashMethod ;
+	sh:severity sh:Info ;
 	.
 
 types:Identifier
@@ -17865,9 +17721,62 @@ types:Identifier
 	rdfs:comment "An identifier is a string conformant to the specified UUID-based format for UCO object identifiers."@en ;
 	.
 
+types:ImproperDictionary
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf types:Dictionary ;
+	rdfs:label "ImproperDictionary"@en ;
+	owl:disjointWith types:ProperDictionary ;
+	sh:property [
+		sh:datatype xsd:string ;
+		sh:nodeKind sh:Literal ;
+		sh:path types:repeatsKey ;
+	] ;
+	sh:targetClass types:ImproperDictionary ;
+	.
+
+types:ImproperDictionary-disjointWith-ProperDictionary-shape
+	a sh:NodeShape ;
+	sh:message "types:ImproperDictionary and types:ProperDictionary are disjoint classes."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class types:ProperDictionary ;
+	] ;
+	sh:targetClass types:ImproperDictionary ;
+	.
+
 types:NativeFormatString
 	a rdfs:Datatype ;
 	rdfs:comment "Specifies data in its native format of some external language. The data may be encoded in Base64 per [RFC4648]. Data encoded in Base64 must be denoted as such using the encoded property."@en ;
+	.
+
+types:ProperDictionary
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf types:Dictionary ;
+	rdfs:label "ProperDictionary"@en ;
+	rdfs:comment "A proper dictionary is list of (term/key, value) pairs with each term/key existing no more than once."@en ;
+	owl:disjointWith types:ImproperDictionary ;
+	sh:sparql [
+		a sh:SPARQLConstraint ;
+		sh:message "A key in a proper dictionary can appear no more than once."@en ;
+		sh:select """
+			PREFIX types: <https://ontology.unifiedcyberontology.org/uco/types/>
+			SELECT $this ?value
+			WHERE {
+				$this
+					types:entry/types:key ?value ;
+					.
+			}
+			GROUP BY ?value
+			HAVING (COUNT(?value) > 1)
+		""" ;
+	] ;
+	sh:targetClass types:ProperDictionary ;
 	.
 
 types:StructuredText
@@ -17893,6 +17802,17 @@ types:Thread
 	] ;
 	.
 
+types:Thread-disjointWith-co-List-shape
+	a sh:NodeShape ;
+	sh:message "types:Thread and co:List are disjoint classes.  Assigning both types to a single node will be an error in UCO 2.0.0."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class co:List ;
+	] ;
+	sh:severity sh:Warning ;
+	sh:targetClass types:Thread ;
+	.
+
 types:ThreadItem
 	a
 		owl:Class ,
@@ -17909,6 +17829,17 @@ types:ThreadItem
 		sh:class core:UcoObject ;
 		sh:path co:itemContent ;
 	] ;
+	.
+
+types:ThreadItem-disjointWith-co-ListItem-shape
+	a sh:NodeShape ;
+	sh:message "types:ThreadItem and co:ListItem are disjoint classes.  Assigning both types to a single node will be an error in UCO 2.0.0."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class co:ListItem ;
+	] ;
+	sh:severity sh:Warning ;
+	sh:targetClass types:ThreadItem ;
 	.
 
 types:entry
@@ -17943,6 +17874,20 @@ types:key
 	rdfs:label "key"@en ;
 	rdfs:comment "A key property of a single dictionary entry."@en ;
 	rdfs:range xsd:string ;
+	.
+
+types:repeatsKey
+	a owl:DatatypeProperty ;
+	rdfs:label "repeatsKey"@en ;
+	rdfs:comment "A key found to be repeated in multiple dictionary entries within one dictionary."@en ;
+	rdfs:domain types:ImproperDictionary ;
+	rdfs:range xsd:string ;
+	.
+
+types:repeatsKey-subjects-shape
+	a sh:NodeShape ;
+	sh:class types:ImproperDictionary ;
+	sh:targetSubjectsOf types:repeatsKey ;
 	.
 
 types:threadNextItem
@@ -18157,16 +18102,15 @@ vocabulary:AccountTypeVocab
 	rdfs:label "Account Type Vocabulary"@en-US ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"ldap"^^vocabulary:AccountTypeVocab
-			"nis"^^vocabulary:AccountTypeVocab
-			"openid"^^vocabulary:AccountTypeVocab
-			"radius"^^vocabulary:AccountTypeVocab
-			"tacacs"^^vocabulary:AccountTypeVocab
-			"unix"^^vocabulary:AccountTypeVocab
-			"windows_domain"^^vocabulary:AccountTypeVocab
-			"windows_local"^^vocabulary:AccountTypeVocab
+			"ldap"
+			"nis"
+			"openid"
+			"radius"
+			"tacacs"
+			"unix"
+			"windows_domain"
+			"windows_local"
 		) ;
 	] ;
 	.
@@ -18177,59 +18121,58 @@ vocabulary:ActionArgumentNameVocab
 	rdfs:comment "Defines an open-vocabulary for common arguments of cyber actions."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"APC Address"^^vocabulary:ActionArgumentNameVocab
-			"APC Mode"^^vocabulary:ActionArgumentNameVocab
-			"API"^^vocabulary:ActionArgumentNameVocab
-			"Access Mode"^^vocabulary:ActionArgumentNameVocab
-			"Application Name"^^vocabulary:ActionArgumentNameVocab
-			"Base Address"^^vocabulary:ActionArgumentNameVocab
-			"Callback Address"^^vocabulary:ActionArgumentNameVocab
-			"Code Address"^^vocabulary:ActionArgumentNameVocab
-			"Command"^^vocabulary:ActionArgumentNameVocab
-			"Control Code"^^vocabulary:ActionArgumentNameVocab
-			"Control Parameter"^^vocabulary:ActionArgumentNameVocab
-			"Creation Flags"^^vocabulary:ActionArgumentNameVocab
-			"Database Name"^^vocabulary:ActionArgumentNameVocab
-			"Delay Time (ms)"^^vocabulary:ActionArgumentNameVocab
-			"Destination Address"^^vocabulary:ActionArgumentNameVocab
-			"Error Control"^^vocabulary:ActionArgumentNameVocab
-			"File Information Class"^^vocabulary:ActionArgumentNameVocab
-			"Flags"^^vocabulary:ActionArgumentNameVocab
-			"Function Address"^^vocabulary:ActionArgumentNameVocab
-			"Function Name"^^vocabulary:ActionArgumentNameVocab
-			"Function Ordinal"^^vocabulary:ActionArgumentNameVocab
-			"Hook Type"^^vocabulary:ActionArgumentNameVocab
-			"Host Name"^^vocabulary:ActionArgumentNameVocab
-			"Hostname"^^vocabulary:ActionArgumentNameVocab
-			"Initial Owner"^^vocabulary:ActionArgumentNameVocab
-			"Mapping Offset"^^vocabulary:ActionArgumentNameVocab
-			"Number of Bytes Per Send"^^vocabulary:ActionArgumentNameVocab
-			"Options"^^vocabulary:ActionArgumentNameVocab
-			"Parameter Address"^^vocabulary:ActionArgumentNameVocab
-			"Password"^^vocabulary:ActionArgumentNameVocab
-			"Privilege Name"^^vocabulary:ActionArgumentNameVocab
-			"Protection"^^vocabulary:ActionArgumentNameVocab
-			"Proxy Bypass"^^vocabulary:ActionArgumentNameVocab
-			"Proxy Name"^^vocabulary:ActionArgumentNameVocab
-			"Reason"^^vocabulary:ActionArgumentNameVocab
-			"Request Size"^^vocabulary:ActionArgumentNameVocab
-			"Requested Version"^^vocabulary:ActionArgumentNameVocab
-			"Server"^^vocabulary:ActionArgumentNameVocab
-			"Service Name"^^vocabulary:ActionArgumentNameVocab
-			"Service State"^^vocabulary:ActionArgumentNameVocab
-			"Service Type"^^vocabulary:ActionArgumentNameVocab
-			"Share Mode"^^vocabulary:ActionArgumentNameVocab
-			"Shutdown Flag"^^vocabulary:ActionArgumentNameVocab
-			"Size (bytes)"^^vocabulary:ActionArgumentNameVocab
-			"Sleep Time (ms)"^^vocabulary:ActionArgumentNameVocab
-			"Source Address"^^vocabulary:ActionArgumentNameVocab
-			"Starting Address"^^vocabulary:ActionArgumentNameVocab
-			"System Metric Index"^^vocabulary:ActionArgumentNameVocab
-			"Target PID"^^vocabulary:ActionArgumentNameVocab
-			"Transfer Flags"^^vocabulary:ActionArgumentNameVocab
-			"Username"^^vocabulary:ActionArgumentNameVocab
+			"APC Address"
+			"APC Mode"
+			"API"
+			"Access Mode"
+			"Application Name"
+			"Base Address"
+			"Callback Address"
+			"Code Address"
+			"Command"
+			"Control Code"
+			"Control Parameter"
+			"Creation Flags"
+			"Database Name"
+			"Delay Time (ms)"
+			"Destination Address"
+			"Error Control"
+			"File Information Class"
+			"Flags"
+			"Function Address"
+			"Function Name"
+			"Function Ordinal"
+			"Hook Type"
+			"Host Name"
+			"Hostname"
+			"Initial Owner"
+			"Mapping Offset"
+			"Number of Bytes Per Send"
+			"Options"
+			"Parameter Address"
+			"Password"
+			"Privilege Name"
+			"Protection"
+			"Proxy Bypass"
+			"Proxy Name"
+			"Reason"
+			"Request Size"
+			"Requested Version"
+			"Server"
+			"Service Name"
+			"Service State"
+			"Service Type"
+			"Share Mode"
+			"Shutdown Flag"
+			"Size (bytes)"
+			"Sleep Time (ms)"
+			"Source Address"
+			"Starting Address"
+			"System Metric Index"
+			"Target PID"
+			"Transfer Flags"
+			"Username"
 		) ;
 	] ;
 	.
@@ -18240,189 +18183,188 @@ vocabulary:ActionNameVocab
 	rdfs:comment "Defines an open-vocabulary of common specific cyber action names."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"Accept Socket Connection"^^vocabulary:ActionNameVocab
-			"Add Connection to Network Share"^^vocabulary:ActionNameVocab
-			"Add Network Share"^^vocabulary:ActionNameVocab
-			"Add Scheduled Task"^^vocabulary:ActionNameVocab
-			"Add System Call Hook"^^vocabulary:ActionNameVocab
-			"Add User"^^vocabulary:ActionNameVocab
-			"Add Windows Hook"^^vocabulary:ActionNameVocab
-			"Allocate Virtual Memory in Process"^^vocabulary:ActionNameVocab
-			"Bind Address to Socket"^^vocabulary:ActionNameVocab
-			"Change Service Configuration"^^vocabulary:ActionNameVocab
-			"Check for Remote Debugger"^^vocabulary:ActionNameVocab
-			"Close Port"^^vocabulary:ActionNameVocab
-			"Close Registry Key"^^vocabulary:ActionNameVocab
-			"Close Socket"^^vocabulary:ActionNameVocab
-			"Configure Service"^^vocabulary:ActionNameVocab
-			"Connect to IP"^^vocabulary:ActionNameVocab
-			"Connect to Named Pipe"^^vocabulary:ActionNameVocab
-			"Connect to Network Share"^^vocabulary:ActionNameVocab
-			"Connect to Socket"^^vocabulary:ActionNameVocab
-			"Connect to URL"^^vocabulary:ActionNameVocab
-			"Control Driver"^^vocabulary:ActionNameVocab
-			"Control Service"^^vocabulary:ActionNameVocab
-			"Copy File"^^vocabulary:ActionNameVocab
-			"Create Dialog Box"^^vocabulary:ActionNameVocab
-			"Create Directory"^^vocabulary:ActionNameVocab
-			"Create Event"^^vocabulary:ActionNameVocab
-			"Create File"^^vocabulary:ActionNameVocab
-			"Create File Alternate Data Stream"^^vocabulary:ActionNameVocab
-			"Create File Mapping"^^vocabulary:ActionNameVocab
-			"Create File Symbolic Link"^^vocabulary:ActionNameVocab
-			"Create Hidden File"^^vocabulary:ActionNameVocab
-			"Create Mailslot"^^vocabulary:ActionNameVocab
-			"Create Module"^^vocabulary:ActionNameVocab
-			"Create Mutex"^^vocabulary:ActionNameVocab
-			"Create Named Pipe"^^vocabulary:ActionNameVocab
-			"Create Process"^^vocabulary:ActionNameVocab
-			"Create Process as User"^^vocabulary:ActionNameVocab
-			"Create Registry Key"^^vocabulary:ActionNameVocab
-			"Create Registry Key Value"^^vocabulary:ActionNameVocab
-			"Create Remote Thread in Process"^^vocabulary:ActionNameVocab
-			"Create Service"^^vocabulary:ActionNameVocab
-			"Create Socket"^^vocabulary:ActionNameVocab
-			"Create Symbolic Link"^^vocabulary:ActionNameVocab
-			"Create Thread"^^vocabulary:ActionNameVocab
-			"Create Window"^^vocabulary:ActionNameVocab
-			"Delete Directory"^^vocabulary:ActionNameVocab
-			"Delete File"^^vocabulary:ActionNameVocab
-			"Delete Named Pipe"^^vocabulary:ActionNameVocab
-			"Delete Network Share"^^vocabulary:ActionNameVocab
-			"Delete Registry Key"^^vocabulary:ActionNameVocab
-			"Delete Registry Key Value"^^vocabulary:ActionNameVocab
-			"Delete Service"^^vocabulary:ActionNameVocab
-			"Delete User"^^vocabulary:ActionNameVocab
-			"Disconnect from Named Pipe"^^vocabulary:ActionNameVocab
-			"Disconnect from Network Share"^^vocabulary:ActionNameVocab
-			"Disconnect from Socket"^^vocabulary:ActionNameVocab
-			"Download File"^^vocabulary:ActionNameVocab
-			"Enumerate DLLs"^^vocabulary:ActionNameVocab
-			"Enumerate Network Shares"^^vocabulary:ActionNameVocab
-			"Enumerate Processes"^^vocabulary:ActionNameVocab
-			"Enumerate Protocols"^^vocabulary:ActionNameVocab
-			"Enumerate Registry Key Subkeys"^^vocabulary:ActionNameVocab
-			"Enumerate Registry Key Values"^^vocabulary:ActionNameVocab
-			"Enumerate Services"^^vocabulary:ActionNameVocab
-			"Enumerate System Handles"^^vocabulary:ActionNameVocab
-			"Enumerate Threads"^^vocabulary:ActionNameVocab
-			"Enumerate Threads in Process"^^vocabulary:ActionNameVocab
-			"Enumerate Users"^^vocabulary:ActionNameVocab
-			"Enumerate Windows"^^vocabulary:ActionNameVocab
-			"Find File"^^vocabulary:ActionNameVocab
-			"Find Window"^^vocabulary:ActionNameVocab
-			"Flush Process Instruction Cache"^^vocabulary:ActionNameVocab
-			"Free Library"^^vocabulary:ActionNameVocab
-			"Free Process Virtual Memory"^^vocabulary:ActionNameVocab
-			"Get Disk Free Space"^^vocabulary:ActionNameVocab
-			"Get Disk Type"^^vocabulary:ActionNameVocab
-			"Get Elapsed System Up Time"^^vocabulary:ActionNameVocab
-			"Get File Attributes"^^vocabulary:ActionNameVocab
-			"Get Function Address"^^vocabulary:ActionNameVocab
-			"Get Host By Address"^^vocabulary:ActionNameVocab
-			"Get Host By Name"^^vocabulary:ActionNameVocab
-			"Get Host Name"^^vocabulary:ActionNameVocab
-			"Get Library File Name"^^vocabulary:ActionNameVocab
-			"Get Library Handle"^^vocabulary:ActionNameVocab
-			"Get NetBIOS Name"^^vocabulary:ActionNameVocab
-			"Get Process Current Directory"^^vocabulary:ActionNameVocab
-			"Get Process Environment Variable"^^vocabulary:ActionNameVocab
-			"Get Process Startup Information"^^vocabulary:ActionNameVocab
-			"Get Processes Snapshot"^^vocabulary:ActionNameVocab
-			"Get Registry Key Attributes"^^vocabulary:ActionNameVocab
-			"Get Service Status"^^vocabulary:ActionNameVocab
-			"Get System Global Flags"^^vocabulary:ActionNameVocab
-			"Get System Host Name"^^vocabulary:ActionNameVocab
-			"Get System Local Time"^^vocabulary:ActionNameVocab
-			"Get System NetBIOS Name"^^vocabulary:ActionNameVocab
-			"Get System Network Parameters"^^vocabulary:ActionNameVocab
-			"Get System Time"^^vocabulary:ActionNameVocab
-			"Get Thread Context"^^vocabulary:ActionNameVocab
-			"Get Thread Username"^^vocabulary:ActionNameVocab
-			"Get User Attributes"^^vocabulary:ActionNameVocab
-			"Get Username"^^vocabulary:ActionNameVocab
-			"Get Windows Directory"^^vocabulary:ActionNameVocab
-			"Get Windows System Directory"^^vocabulary:ActionNameVocab
-			"Get Windows Temporary Files Directory"^^vocabulary:ActionNameVocab
-			"Hide Window"^^vocabulary:ActionNameVocab
-			"Impersonate Process"^^vocabulary:ActionNameVocab
-			"Impersonate Thread"^^vocabulary:ActionNameVocab
-			"Inject Memory Page"^^vocabulary:ActionNameVocab
-			"Kill Process"^^vocabulary:ActionNameVocab
-			"Kill Thread"^^vocabulary:ActionNameVocab
-			"Kill Window"^^vocabulary:ActionNameVocab
-			"Listen on Port"^^vocabulary:ActionNameVocab
-			"Listen on Socket"^^vocabulary:ActionNameVocab
-			"Load Driver"^^vocabulary:ActionNameVocab
-			"Load Library"^^vocabulary:ActionNameVocab
-			"Load Module"^^vocabulary:ActionNameVocab
-			"Load and Call Driver"^^vocabulary:ActionNameVocab
-			"Lock File"^^vocabulary:ActionNameVocab
-			"Logon as User"^^vocabulary:ActionNameVocab
-			"Map File"^^vocabulary:ActionNameVocab
-			"Map Library"^^vocabulary:ActionNameVocab
-			"Map View of File"^^vocabulary:ActionNameVocab
-			"Modify File"^^vocabulary:ActionNameVocab
-			"Modify Named Pipe"^^vocabulary:ActionNameVocab
-			"Modify Process"^^vocabulary:ActionNameVocab
-			"Modify Registry Key"^^vocabulary:ActionNameVocab
-			"Modify Registry Key Value"^^vocabulary:ActionNameVocab
-			"Modify Service"^^vocabulary:ActionNameVocab
-			"Monitor Registry Key"^^vocabulary:ActionNameVocab
-			"Move File"^^vocabulary:ActionNameVocab
-			"Open File"^^vocabulary:ActionNameVocab
-			"Open File Mapping"^^vocabulary:ActionNameVocab
-			"Open Mutex"^^vocabulary:ActionNameVocab
-			"Open Port"^^vocabulary:ActionNameVocab
-			"Open Process"^^vocabulary:ActionNameVocab
-			"Open Registry Key"^^vocabulary:ActionNameVocab
-			"Open Service"^^vocabulary:ActionNameVocab
-			"Open Service Control Manager"^^vocabulary:ActionNameVocab
-			"Protect Virtual Memory"^^vocabulary:ActionNameVocab
-			"Query DNS"^^vocabulary:ActionNameVocab
-			"Query Disk Attributes"^^vocabulary:ActionNameVocab
-			"Query Process Virtual Memory"^^vocabulary:ActionNameVocab
-			"Queue APC in Thread"^^vocabulary:ActionNameVocab
-			"Read File"^^vocabulary:ActionNameVocab
-			"Read From Named Pipe"^^vocabulary:ActionNameVocab
-			"Read From Process Memory"^^vocabulary:ActionNameVocab
-			"Read Registry Key Value"^^vocabulary:ActionNameVocab
-			"Receive Data on Socket"^^vocabulary:ActionNameVocab
-			"Receive Email Message"^^vocabulary:ActionNameVocab
-			"Release Mutex"^^vocabulary:ActionNameVocab
-			"Rename File"^^vocabulary:ActionNameVocab
-			"Revert Thread to Self"^^vocabulary:ActionNameVocab
-			"Send Control Code to File"^^vocabulary:ActionNameVocab
-			"Send Control Code to Pipe"^^vocabulary:ActionNameVocab
-			"Send Control Code to Service"^^vocabulary:ActionNameVocab
-			"Send DNS Query"^^vocabulary:ActionNameVocab
-			"Send Data on Socket"^^vocabulary:ActionNameVocab
-			"Send Data to Address on Socket"^^vocabulary:ActionNameVocab
-			"Send Email Message"^^vocabulary:ActionNameVocab
-			"Send ICMP Request"^^vocabulary:ActionNameVocab
-			"Send Reverse DNS Query"^^vocabulary:ActionNameVocab
-			"Set File Attributes"^^vocabulary:ActionNameVocab
-			"Set NetBIOS Name"^^vocabulary:ActionNameVocab
-			"Set Process Current Directory"^^vocabulary:ActionNameVocab
-			"Set Process Environment Variable"^^vocabulary:ActionNameVocab
-			"Set System Global Flags"^^vocabulary:ActionNameVocab
-			"Set System Host Name"^^vocabulary:ActionNameVocab
-			"Set System Time"^^vocabulary:ActionNameVocab
-			"Set Thread Context"^^vocabulary:ActionNameVocab
-			"Show Window"^^vocabulary:ActionNameVocab
-			"Shutdown System"^^vocabulary:ActionNameVocab
-			"Sleep Process"^^vocabulary:ActionNameVocab
-			"Sleep System"^^vocabulary:ActionNameVocab
-			"Start Service"^^vocabulary:ActionNameVocab
-			"Unload Driver"^^vocabulary:ActionNameVocab
-			"Unload Module"^^vocabulary:ActionNameVocab
-			"Unlock File"^^vocabulary:ActionNameVocab
-			"Unmap File"^^vocabulary:ActionNameVocab
-			"Upload File"^^vocabulary:ActionNameVocab
-			"Write to File"^^vocabulary:ActionNameVocab
-			"Write to Process Virtual Memory"^^vocabulary:ActionNameVocab
+			"Accept Socket Connection"
+			"Add Connection to Network Share"
+			"Add Network Share"
+			"Add Scheduled Task"
+			"Add System Call Hook"
+			"Add User"
+			"Add Windows Hook"
+			"Allocate Virtual Memory in Process"
+			"Bind Address to Socket"
+			"Change Service Configuration"
+			"Check for Remote Debugger"
+			"Close Port"
+			"Close Registry Key"
+			"Close Socket"
+			"Configure Service"
+			"Connect to IP"
+			"Connect to Named Pipe"
+			"Connect to Network Share"
+			"Connect to Socket"
+			"Connect to URL"
+			"Control Driver"
+			"Control Service"
+			"Copy File"
+			"Create Dialog Box"
+			"Create Directory"
+			"Create Event"
+			"Create File"
+			"Create File Alternate Data Stream"
+			"Create File Mapping"
+			"Create File Symbolic Link"
+			"Create Hidden File"
+			"Create Mailslot"
+			"Create Module"
+			"Create Mutex"
+			"Create Named Pipe"
+			"Create Process"
+			"Create Process as User"
+			"Create Registry Key"
+			"Create Registry Key Value"
+			"Create Remote Thread in Process"
+			"Create Service"
+			"Create Socket"
+			"Create Symbolic Link"
+			"Create Thread"
+			"Create Window"
+			"Delete Directory"
+			"Delete File"
+			"Delete Named Pipe"
+			"Delete Network Share"
+			"Delete Registry Key"
+			"Delete Registry Key Value"
+			"Delete Service"
+			"Delete User"
+			"Disconnect from Named Pipe"
+			"Disconnect from Network Share"
+			"Disconnect from Socket"
+			"Download File"
+			"Enumerate DLLs"
+			"Enumerate Network Shares"
+			"Enumerate Processes"
+			"Enumerate Protocols"
+			"Enumerate Registry Key Subkeys"
+			"Enumerate Registry Key Values"
+			"Enumerate Services"
+			"Enumerate System Handles"
+			"Enumerate Threads"
+			"Enumerate Threads in Process"
+			"Enumerate Users"
+			"Enumerate Windows"
+			"Find File"
+			"Find Window"
+			"Flush Process Instruction Cache"
+			"Free Library"
+			"Free Process Virtual Memory"
+			"Get Disk Free Space"
+			"Get Disk Type"
+			"Get Elapsed System Up Time"
+			"Get File Attributes"
+			"Get Function Address"
+			"Get Host By Address"
+			"Get Host By Name"
+			"Get Host Name"
+			"Get Library File Name"
+			"Get Library Handle"
+			"Get NetBIOS Name"
+			"Get Process Current Directory"
+			"Get Process Environment Variable"
+			"Get Process Startup Information"
+			"Get Processes Snapshot"
+			"Get Registry Key Attributes"
+			"Get Service Status"
+			"Get System Global Flags"
+			"Get System Host Name"
+			"Get System Local Time"
+			"Get System NetBIOS Name"
+			"Get System Network Parameters"
+			"Get System Time"
+			"Get Thread Context"
+			"Get Thread Username"
+			"Get User Attributes"
+			"Get Username"
+			"Get Windows Directory"
+			"Get Windows System Directory"
+			"Get Windows Temporary Files Directory"
+			"Hide Window"
+			"Impersonate Process"
+			"Impersonate Thread"
+			"Inject Memory Page"
+			"Kill Process"
+			"Kill Thread"
+			"Kill Window"
+			"Listen on Port"
+			"Listen on Socket"
+			"Load Driver"
+			"Load Library"
+			"Load Module"
+			"Load and Call Driver"
+			"Lock File"
+			"Logon as User"
+			"Map File"
+			"Map Library"
+			"Map View of File"
+			"Modify File"
+			"Modify Named Pipe"
+			"Modify Process"
+			"Modify Registry Key"
+			"Modify Registry Key Value"
+			"Modify Service"
+			"Monitor Registry Key"
+			"Move File"
+			"Open File"
+			"Open File Mapping"
+			"Open Mutex"
+			"Open Port"
+			"Open Process"
+			"Open Registry Key"
+			"Open Service"
+			"Open Service Control Manager"
+			"Protect Virtual Memory"
+			"Query DNS"
+			"Query Disk Attributes"
+			"Query Process Virtual Memory"
+			"Queue APC in Thread"
+			"Read File"
+			"Read From Named Pipe"
+			"Read From Process Memory"
+			"Read Registry Key Value"
+			"Receive Data on Socket"
+			"Receive Email Message"
+			"Release Mutex"
+			"Rename File"
+			"Revert Thread to Self"
+			"Send Control Code to File"
+			"Send Control Code to Pipe"
+			"Send Control Code to Service"
+			"Send DNS Query"
+			"Send Data on Socket"
+			"Send Data to Address on Socket"
+			"Send Email Message"
+			"Send ICMP Request"
+			"Send Reverse DNS Query"
+			"Set File Attributes"
+			"Set NetBIOS Name"
+			"Set Process Current Directory"
+			"Set Process Environment Variable"
+			"Set System Global Flags"
+			"Set System Host Name"
+			"Set System Time"
+			"Set Thread Context"
+			"Show Window"
+			"Shutdown System"
+			"Sleep Process"
+			"Sleep System"
+			"Start Service"
+			"Unload Driver"
+			"Unload Module"
+			"Unlock File"
+			"Unmap File"
+			"Upload File"
+			"Write to File"
+			"Write to Process Virtual Memory"
 		) ;
 	] ;
 	.
@@ -18433,15 +18375,14 @@ vocabulary:ActionRelationshipTypeVocab
 	rdfs:comment "Defines an open-vocabulary for capturing types of relationships between actions."@en-US ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"Dependent_On"^^vocabulary:ActionRelationshipTypeVocab
-			"Equivalent_To"^^vocabulary:ActionRelationshipTypeVocab
-			"Followed_By"^^vocabulary:ActionRelationshipTypeVocab
-			"Initiated"^^vocabulary:ActionRelationshipTypeVocab
-			"Initiated_By"^^vocabulary:ActionRelationshipTypeVocab
-			"Preceded_By"^^vocabulary:ActionRelationshipTypeVocab
-			"Related_To"^^vocabulary:ActionRelationshipTypeVocab
+			"Dependent_On"
+			"Equivalent_To"
+			"Followed_By"
+			"Initiated"
+			"Initiated_By"
+			"Preceded_By"
+			"Related_To"
 		) ;
 	] ;
 	.
@@ -18452,15 +18393,14 @@ vocabulary:ActionStatusTypeVocab
 	rdfs:comment "Defines an open-vocabulary of action status types."@en-US ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"Complete/Finish"^^vocabulary:ActionStatusTypeVocab
-			"Error"^^vocabulary:ActionStatusTypeVocab
-			"Fail"^^vocabulary:ActionStatusTypeVocab
-			"Ongoing"^^vocabulary:ActionStatusTypeVocab
-			"Pending"^^vocabulary:ActionStatusTypeVocab
-			"Success"^^vocabulary:ActionStatusTypeVocab
-			"Unknown"^^vocabulary:ActionStatusTypeVocab
+			"Complete/Finish"
+			"Error"
+			"Fail"
+			"Ongoing"
+			"Pending"
+			"Success"
+			"Unknown"
 		) ;
 	] ;
 	.
@@ -18471,119 +18411,118 @@ vocabulary:ActionTypeVocab
 	rdfs:comment "Defines an open-vocabulary of common general action types."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"Accept"^^vocabulary:ActionTypeVocab
-			"Access"^^vocabulary:ActionTypeVocab
-			"Add"^^vocabulary:ActionTypeVocab
-			"Alert"^^vocabulary:ActionTypeVocab
-			"Allocate"^^vocabulary:ActionTypeVocab
-			"Archive"^^vocabulary:ActionTypeVocab
-			"Assign"^^vocabulary:ActionTypeVocab
-			"Audit"^^vocabulary:ActionTypeVocab
-			"Backup"^^vocabulary:ActionTypeVocab
-			"Bind"^^vocabulary:ActionTypeVocab
-			"Block"^^vocabulary:ActionTypeVocab
-			"Call"^^vocabulary:ActionTypeVocab
-			"Change"^^vocabulary:ActionTypeVocab
-			"Check"^^vocabulary:ActionTypeVocab
-			"Clean"^^vocabulary:ActionTypeVocab
-			"Click"^^vocabulary:ActionTypeVocab
-			"Close"^^vocabulary:ActionTypeVocab
-			"Compare"^^vocabulary:ActionTypeVocab
-			"Compress"^^vocabulary:ActionTypeVocab
-			"Configure"^^vocabulary:ActionTypeVocab
-			"Connect"^^vocabulary:ActionTypeVocab
-			"Control"^^vocabulary:ActionTypeVocab
-			"Copy/Duplicate"^^vocabulary:ActionTypeVocab
-			"Create"^^vocabulary:ActionTypeVocab
-			"Decode"^^vocabulary:ActionTypeVocab
-			"Decompress"^^vocabulary:ActionTypeVocab
-			"Decrypt"^^vocabulary:ActionTypeVocab
-			"Deny"^^vocabulary:ActionTypeVocab
-			"Depress"^^vocabulary:ActionTypeVocab
-			"Detect"^^vocabulary:ActionTypeVocab
-			"Disconnect"^^vocabulary:ActionTypeVocab
-			"Download"^^vocabulary:ActionTypeVocab
-			"Draw"^^vocabulary:ActionTypeVocab
-			"Drop"^^vocabulary:ActionTypeVocab
-			"Encode"^^vocabulary:ActionTypeVocab
-			"Encrypt"^^vocabulary:ActionTypeVocab
-			"Enumerate"^^vocabulary:ActionTypeVocab
-			"Execute"^^vocabulary:ActionTypeVocab
-			"Extract"^^vocabulary:ActionTypeVocab
-			"Filter"^^vocabulary:ActionTypeVocab
-			"Find"^^vocabulary:ActionTypeVocab
-			"Flush"^^vocabulary:ActionTypeVocab
-			"Fork"^^vocabulary:ActionTypeVocab
-			"Free"^^vocabulary:ActionTypeVocab
-			"Get"^^vocabulary:ActionTypeVocab
-			"Hide"^^vocabulary:ActionTypeVocab
-			"Hook"^^vocabulary:ActionTypeVocab
-			"Impersonate"^^vocabulary:ActionTypeVocab
-			"Initialize"^^vocabulary:ActionTypeVocab
-			"Inject"^^vocabulary:ActionTypeVocab
-			"Install"^^vocabulary:ActionTypeVocab
-			"Interleave"^^vocabulary:ActionTypeVocab
-			"Join"^^vocabulary:ActionTypeVocab
-			"Kill"^^vocabulary:ActionTypeVocab
-			"Listen"^^vocabulary:ActionTypeVocab
-			"Load"^^vocabulary:ActionTypeVocab
-			"Lock"^^vocabulary:ActionTypeVocab
-			"Login/Logon"^^vocabulary:ActionTypeVocab
-			"Logout/Logoff"^^vocabulary:ActionTypeVocab
-			"Map"^^vocabulary:ActionTypeVocab
-			"Merge"^^vocabulary:ActionTypeVocab
-			"Modify"^^vocabulary:ActionTypeVocab
-			"Monitor"^^vocabulary:ActionTypeVocab
-			"Move"^^vocabulary:ActionTypeVocab
-			"Open"^^vocabulary:ActionTypeVocab
-			"Pack"^^vocabulary:ActionTypeVocab
-			"Pause"^^vocabulary:ActionTypeVocab
-			"Press"^^vocabulary:ActionTypeVocab
-			"Protect"^^vocabulary:ActionTypeVocab
-			"Quarantine"^^vocabulary:ActionTypeVocab
-			"Query"^^vocabulary:ActionTypeVocab
-			"Queue"^^vocabulary:ActionTypeVocab
-			"Raise"^^vocabulary:ActionTypeVocab
-			"Read"^^vocabulary:ActionTypeVocab
-			"Receive"^^vocabulary:ActionTypeVocab
-			"Release"^^vocabulary:ActionTypeVocab
-			"Remove/Delete"^^vocabulary:ActionTypeVocab
-			"Rename"^^vocabulary:ActionTypeVocab
-			"Replicate"^^vocabulary:ActionTypeVocab
-			"Restore"^^vocabulary:ActionTypeVocab
-			"Resume"^^vocabulary:ActionTypeVocab
-			"Revert"^^vocabulary:ActionTypeVocab
-			"Run"^^vocabulary:ActionTypeVocab
-			"Save"^^vocabulary:ActionTypeVocab
-			"Scan"^^vocabulary:ActionTypeVocab
-			"Schedule"^^vocabulary:ActionTypeVocab
-			"Search"^^vocabulary:ActionTypeVocab
-			"Send"^^vocabulary:ActionTypeVocab
-			"Set"^^vocabulary:ActionTypeVocab
-			"Shutdown"^^vocabulary:ActionTypeVocab
-			"Sleep"^^vocabulary:ActionTypeVocab
-			"Snapshot"^^vocabulary:ActionTypeVocab
-			"Start"^^vocabulary:ActionTypeVocab
-			"Stop"^^vocabulary:ActionTypeVocab
-			"Suspend"^^vocabulary:ActionTypeVocab
-			"Synchronize"^^vocabulary:ActionTypeVocab
-			"Throw"^^vocabulary:ActionTypeVocab
-			"Transmit"^^vocabulary:ActionTypeVocab
-			"Unblock"^^vocabulary:ActionTypeVocab
-			"Unhide"^^vocabulary:ActionTypeVocab
-			"Unhook"^^vocabulary:ActionTypeVocab
-			"Uninstall"^^vocabulary:ActionTypeVocab
-			"Unload"^^vocabulary:ActionTypeVocab
-			"Unlock"^^vocabulary:ActionTypeVocab
-			"Unmap"^^vocabulary:ActionTypeVocab
-			"Unpack"^^vocabulary:ActionTypeVocab
-			"Update"^^vocabulary:ActionTypeVocab
-			"Upgrade"^^vocabulary:ActionTypeVocab
-			"Upload"^^vocabulary:ActionTypeVocab
-			"Wipe/Destroy/Purge"^^vocabulary:ActionTypeVocab
-			"Write"^^vocabulary:ActionTypeVocab
+			"Accept"
+			"Access"
+			"Add"
+			"Alert"
+			"Allocate"
+			"Archive"
+			"Assign"
+			"Audit"
+			"Backup"
+			"Bind"
+			"Block"
+			"Call"
+			"Change"
+			"Check"
+			"Clean"
+			"Click"
+			"Close"
+			"Compare"
+			"Compress"
+			"Configure"
+			"Connect"
+			"Control"
+			"Copy/Duplicate"
+			"Create"
+			"Decode"
+			"Decompress"
+			"Decrypt"
+			"Deny"
+			"Depress"
+			"Detect"
+			"Disconnect"
+			"Download"
+			"Draw"
+			"Drop"
+			"Encode"
+			"Encrypt"
+			"Enumerate"
+			"Execute"
+			"Extract"
+			"Filter"
+			"Find"
+			"Flush"
+			"Fork"
+			"Free"
+			"Get"
+			"Hide"
+			"Hook"
+			"Impersonate"
+			"Initialize"
+			"Inject"
+			"Install"
+			"Interleave"
+			"Join"
+			"Kill"
+			"Listen"
+			"Load"
+			"Lock"
+			"Login/Logon"
+			"Logout/Logoff"
+			"Map"
+			"Merge"
+			"Modify"
+			"Monitor"
+			"Move"
+			"Open"
+			"Pack"
+			"Pause"
+			"Press"
+			"Protect"
+			"Quarantine"
+			"Query"
+			"Queue"
+			"Raise"
+			"Read"
+			"Receive"
+			"Release"
+			"Remove/Delete"
+			"Rename"
+			"Replicate"
+			"Restore"
+			"Resume"
+			"Revert"
+			"Run"
+			"Save"
+			"Scan"
+			"Schedule"
+			"Search"
+			"Send"
+			"Set"
+			"Shutdown"
+			"Sleep"
+			"Snapshot"
+			"Start"
+			"Stop"
+			"Suspend"
+			"Synchronize"
+			"Throw"
+			"Transmit"
+			"Unblock"
+			"Unhide"
+			"Unhook"
+			"Uninstall"
+			"Unload"
+			"Unlock"
+			"Unmap"
+			"Unpack"
+			"Update"
+			"Upgrade"
+			"Upload"
+			"Wipe/Destroy/Purge"
+			"Write"
 		) ;
 	] ;
 	.
@@ -18594,10 +18533,9 @@ vocabulary:BitnessVocab
 	rdfs:comment "Defines an open-vocabulary of word sizes that define classes of operating systems."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"32"^^vocabulary:BitnessVocab
-			"64"^^vocabulary:BitnessVocab
+			"32"
+			"64"
 		) ;
 	] ;
 	.
@@ -18608,21 +18546,20 @@ vocabulary:CharacterEncodingVocab
 	rdfs:comment "Defines an open-vocabulary of character encodings."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"ASCII"^^vocabulary:CharacterEncodingVocab
-			"UTF-16"^^vocabulary:CharacterEncodingVocab
-			"UTF-32"^^vocabulary:CharacterEncodingVocab
-			"UTF-8"^^vocabulary:CharacterEncodingVocab
-			"Windows-1250"^^vocabulary:CharacterEncodingVocab
-			"Windows-1251"^^vocabulary:CharacterEncodingVocab
-			"Windows-1252"^^vocabulary:CharacterEncodingVocab
-			"Windows-1253"^^vocabulary:CharacterEncodingVocab
-			"Windows-1254"^^vocabulary:CharacterEncodingVocab
-			"Windows-1255"^^vocabulary:CharacterEncodingVocab
-			"Windows-1256"^^vocabulary:CharacterEncodingVocab
-			"Windows-1257"^^vocabulary:CharacterEncodingVocab
-			"Windows-1258"^^vocabulary:CharacterEncodingVocab
+			"ASCII"
+			"UTF-16"
+			"UTF-32"
+			"UTF-8"
+			"Windows-1250"
+			"Windows-1251"
+			"Windows-1252"
+			"Windows-1253"
+			"Windows-1254"
+			"Windows-1255"
+			"Windows-1256"
+			"Windows-1257"
+			"Windows-1258"
 		) ;
 	] ;
 	.
@@ -18633,11 +18570,10 @@ vocabulary:ContactAddressScopeVocab
 	rdfs:comment "Defines an open-vocabulary of scopes for address entries of digital contacts."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"home"^^vocabulary:ContactAddressScopeVocab
-			"work"^^vocabulary:ContactAddressScopeVocab
-			"school"^^vocabulary:ContactAddressScopeVocab
+			"home"
+			"work"
+			"school"
 		) ;
 	] ;
 	.
@@ -18648,12 +18584,11 @@ vocabulary:ContactEmailScopeVocab
 	rdfs:comment "Defines an open-vocabulary of scopes for email entries of digital contacts."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"home"^^vocabulary:ContactEmailScopeVocab
-			"work"^^vocabulary:ContactEmailScopeVocab
-			"school"^^vocabulary:ContactEmailScopeVocab
-			"cloud"^^vocabulary:ContactEmailScopeVocab
+			"home"
+			"work"
+			"school"
+			"cloud"
 		) ;
 	] ;
 	.
@@ -18664,16 +18599,15 @@ vocabulary:ContactPhoneScopeVocab
 	rdfs:comment "Defines an open-vocabulary of scopes for phone entries of digital contacts."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"home"^^vocabulary:ContactPhoneScopeVocab
-			"work"^^vocabulary:ContactPhoneScopeVocab
-			"school"^^vocabulary:ContactPhoneScopeVocab
-			"mobile"^^vocabulary:ContactPhoneScopeVocab
-			"main"^^vocabulary:ContactPhoneScopeVocab
-			"home fax"^^vocabulary:ContactPhoneScopeVocab
-			"work fax"^^vocabulary:ContactPhoneScopeVocab
-			"pager"^^vocabulary:ContactPhoneScopeVocab
+			"home"
+			"work"
+			"school"
+			"mobile"
+			"main"
+			"home fax"
+			"work fax"
+			"pager"
 		) ;
 	] ;
 	.
@@ -18684,11 +18618,10 @@ vocabulary:ContactSIPScopeVocab
 	rdfs:comment "Defines an open-vocabulary of scopes for Session Initiation Protocol (SIP) entries of digital contacts."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"home"^^vocabulary:ContactSIPScopeVocab
-			"work"^^vocabulary:ContactSIPScopeVocab
-			"school"^^vocabulary:ContactSIPScopeVocab
+			"home"
+			"work"
+			"school"
 		) ;
 	] ;
 	.
@@ -18699,12 +18632,11 @@ vocabulary:ContactURLScopeVocab
 	rdfs:comment "Defines an open-vocabulary of scopes for URL entries of digital contacts."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"home"^^vocabulary:ContactURLScopeVocab
-			"work"^^vocabulary:ContactURLScopeVocab
-			"school"^^vocabulary:ContactURLScopeVocab
-			"homepage"^^vocabulary:ContactURLScopeVocab
+			"home"
+			"work"
+			"school"
+			"homepage"
 		) ;
 	] ;
 	.
@@ -18715,13 +18647,12 @@ vocabulary:DiskTypeVocab
 	rdfs:comment "Defines an open-vocabulary of disk types."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"CDRom"^^vocabulary:DiskTypeVocab
-			"Fixed"^^vocabulary:DiskTypeVocab
-			"RAMDisk"^^vocabulary:DiskTypeVocab
-			"Remote"^^vocabulary:DiskTypeVocab
-			"Removable"^^vocabulary:DiskTypeVocab
+			"CDRom"
+			"Fixed"
+			"RAMDisk"
+			"Remote"
+			"Removable"
 		) ;
 	] ;
 	.
@@ -18732,11 +18663,10 @@ vocabulary:EndiannessTypeVocab
 	rdfs:comment "Defines an open-vocabulary of byte ordering methods."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"Big-endian"^^vocabulary:EndiannessTypeVocab
-			"Little-endian"^^vocabulary:EndiannessTypeVocab
-			"Middle-endian"^^vocabulary:EndiannessTypeVocab
+			"Big-endian"
+			"Little-endian"
+			"Middle-endian"
 		) ;
 	] ;
 	.
@@ -18747,20 +18677,19 @@ vocabulary:HashNameVocab
 	rdfs:comment "Defines an open-vocabulary of hashing algorithm names."@en-US ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"MD5"^^vocabulary:HashNameVocab
-			"MD6"^^vocabulary:HashNameVocab
-			"SHA1"^^vocabulary:HashNameVocab
-			"SHA224"^^vocabulary:HashNameVocab
-			"SHA256"^^vocabulary:HashNameVocab
-			"SHA3-224"^^vocabulary:HashNameVocab
-			"SHA3-256"^^vocabulary:HashNameVocab
-			"SHA3-384"^^vocabulary:HashNameVocab
-			"SHA3-512"^^vocabulary:HashNameVocab
-			"SHA384"^^vocabulary:HashNameVocab
-			"SHA512"^^vocabulary:HashNameVocab
-			"SSDEEP"^^vocabulary:HashNameVocab
+			"MD5"
+			"MD6"
+			"SHA1"
+			"SHA224"
+			"SHA256"
+			"SHA3-224"
+			"SHA3-256"
+			"SHA3-384"
+			"SHA3-512"
+			"SHA384"
+			"SHA512"
+			"SSDEEP"
 		) ;
 	] ;
 	.
@@ -18771,13 +18700,12 @@ vocabulary:LibraryTypeVocab
 	rdfs:comment "Defines an open-vocabulary of library types."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"Dynamic"^^vocabulary:LibraryTypeVocab
-			"Other"^^vocabulary:LibraryTypeVocab
-			"Remote"^^vocabulary:LibraryTypeVocab
-			"Shared"^^vocabulary:LibraryTypeVocab
-			"Static"^^vocabulary:LibraryTypeVocab
+			"Dynamic"
+			"Other"
+			"Remote"
+			"Shared"
+			"Static"
 		) ;
 	] ;
 	.
@@ -18788,13 +18716,12 @@ vocabulary:MemoryBlockTypeVocab
 	rdfs:comment "Defines an open-vocabulary of types of memory blocks."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"Bit-mapped"^^vocabulary:MemoryBlockTypeVocab
-			"Byte-mapped"^^vocabulary:MemoryBlockTypeVocab
-			"Initialized"^^vocabulary:MemoryBlockTypeVocab
-			"Overlay"^^vocabulary:MemoryBlockTypeVocab
-			"Uninitialized"^^vocabulary:MemoryBlockTypeVocab
+			"Bit-mapped"
+			"Byte-mapped"
+			"Initialized"
+			"Overlay"
+			"Uninitialized"
 		) ;
 	] ;
 	.
@@ -18805,147 +18732,146 @@ vocabulary:ObservableObjectRelationshipVocab
 	rdfs:comment "Defines an open-vocabulary of inter-observable object relationships."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"Allocated"^^vocabulary:ObservableObjectRelationshipVocab
-			"Allocated_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Attachment_Of"^^vocabulary:ObservableObjectRelationshipVocab
-			"Bound"^^vocabulary:ObservableObjectRelationshipVocab
-			"Bound_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Characterized_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Characterizes"^^vocabulary:ObservableObjectRelationshipVocab
-			"Child_Of"^^vocabulary:ObservableObjectRelationshipVocab
-			"Closed"^^vocabulary:ObservableObjectRelationshipVocab
-			"Closed_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Compressed"^^vocabulary:ObservableObjectRelationshipVocab
-			"Compressed_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Compressed_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Compressed_Into"^^vocabulary:ObservableObjectRelationshipVocab
-			"Connected_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Connected_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Contained_Within"^^vocabulary:ObservableObjectRelationshipVocab
-			"Contains"^^vocabulary:ObservableObjectRelationshipVocab
-			"Copied"^^vocabulary:ObservableObjectRelationshipVocab
-			"Copied_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Copied_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Copied_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Created"^^vocabulary:ObservableObjectRelationshipVocab
-			"Created_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Decoded"^^vocabulary:ObservableObjectRelationshipVocab
-			"Decoded_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Decompressed"^^vocabulary:ObservableObjectRelationshipVocab
-			"Decompressed_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Decrypted"^^vocabulary:ObservableObjectRelationshipVocab
-			"Decrypted_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Deleted"^^vocabulary:ObservableObjectRelationshipVocab
-			"Deleted_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Deleted_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Downloaded"^^vocabulary:ObservableObjectRelationshipVocab
-			"Downloaded_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Downloaded_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Downloaded_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Dropped"^^vocabulary:ObservableObjectRelationshipVocab
-			"Dropped_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Encoded"^^vocabulary:ObservableObjectRelationshipVocab
-			"Encoded_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Encrypted"^^vocabulary:ObservableObjectRelationshipVocab
-			"Encrypted_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Encrypted_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Encrypted_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Extracted_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"FQDN_Of"^^vocabulary:ObservableObjectRelationshipVocab
-			"Freed"^^vocabulary:ObservableObjectRelationshipVocab
-			"Freed_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Had_Attachment"^^vocabulary:ObservableObjectRelationshipVocab
-			"Hooked"^^vocabulary:ObservableObjectRelationshipVocab
-			"Hooked_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Initialized_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Initialized_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Injected"^^vocabulary:ObservableObjectRelationshipVocab
-			"Injected_As"^^vocabulary:ObservableObjectRelationshipVocab
-			"Injected_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Injected_Into"^^vocabulary:ObservableObjectRelationshipVocab
-			"Installed"^^vocabulary:ObservableObjectRelationshipVocab
-			"Installed_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Joined"^^vocabulary:ObservableObjectRelationshipVocab
-			"Joined_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Killed"^^vocabulary:ObservableObjectRelationshipVocab
-			"Killed_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Listened_On"^^vocabulary:ObservableObjectRelationshipVocab
-			"Listened_On_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Loaded_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Loaded_Into"^^vocabulary:ObservableObjectRelationshipVocab
-			"Locked"^^vocabulary:ObservableObjectRelationshipVocab
-			"Locked_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Mapped_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Mapped_Into"^^vocabulary:ObservableObjectRelationshipVocab
-			"Merged"^^vocabulary:ObservableObjectRelationshipVocab
-			"Merged_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Modified_Properties_Of"^^vocabulary:ObservableObjectRelationshipVocab
-			"Monitored"^^vocabulary:ObservableObjectRelationshipVocab
-			"Monitored_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Moved"^^vocabulary:ObservableObjectRelationshipVocab
-			"Moved_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Moved_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Moved_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Opened"^^vocabulary:ObservableObjectRelationshipVocab
-			"Opened_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Packed"^^vocabulary:ObservableObjectRelationshipVocab
-			"Packed_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Packed_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Packed_Into"^^vocabulary:ObservableObjectRelationshipVocab
-			"Parent_Of"^^vocabulary:ObservableObjectRelationshipVocab
-			"Paused"^^vocabulary:ObservableObjectRelationshipVocab
-			"Paused_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Previously_Contained"^^vocabulary:ObservableObjectRelationshipVocab
-			"Properties_Modified_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Properties_Queried"^^vocabulary:ObservableObjectRelationshipVocab
-			"Properties_Queried_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Read_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Read_From_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Received"^^vocabulary:ObservableObjectRelationshipVocab
-			"Received_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Received_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Received_Via_Upload"^^vocabulary:ObservableObjectRelationshipVocab
-			"Redirects_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Related_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Renamed"^^vocabulary:ObservableObjectRelationshipVocab
-			"Renamed_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Renamed_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Renamed_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Resolved_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Resumed"^^vocabulary:ObservableObjectRelationshipVocab
-			"Resumed_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Root_Domain_Of"^^vocabulary:ObservableObjectRelationshipVocab
-			"Searched_For"^^vocabulary:ObservableObjectRelationshipVocab
-			"Searched_For_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Sent"^^vocabulary:ObservableObjectRelationshipVocab
-			"Sent_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Sent_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Sent_Via_Upload"^^vocabulary:ObservableObjectRelationshipVocab
-			"Set_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Set_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Signed_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Sub-domain_Of"^^vocabulary:ObservableObjectRelationshipVocab
-			"Supra-domain_Of"^^vocabulary:ObservableObjectRelationshipVocab
-			"Suspended"^^vocabulary:ObservableObjectRelationshipVocab
-			"Suspended_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Unhooked"^^vocabulary:ObservableObjectRelationshipVocab
-			"Unhooked_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Unlocked"^^vocabulary:ObservableObjectRelationshipVocab
-			"Unlocked_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Unpacked"^^vocabulary:ObservableObjectRelationshipVocab
-			"Unpacked_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Uploaded"^^vocabulary:ObservableObjectRelationshipVocab
-			"Uploaded_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Uploaded_From"^^vocabulary:ObservableObjectRelationshipVocab
-			"Uploaded_To"^^vocabulary:ObservableObjectRelationshipVocab
-			"Used"^^vocabulary:ObservableObjectRelationshipVocab
-			"Used_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Values_Enumerated"^^vocabulary:ObservableObjectRelationshipVocab
-			"Values_Enumerated_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Written_To_By"^^vocabulary:ObservableObjectRelationshipVocab
-			"Wrote_To"^^vocabulary:ObservableObjectRelationshipVocab
+			"Allocated"
+			"Allocated_By"
+			"Attachment_Of"
+			"Bound"
+			"Bound_By"
+			"Characterized_By"
+			"Characterizes"
+			"Child_Of"
+			"Closed"
+			"Closed_By"
+			"Compressed"
+			"Compressed_By"
+			"Compressed_From"
+			"Compressed_Into"
+			"Connected_From"
+			"Connected_To"
+			"Contained_Within"
+			"Contains"
+			"Copied"
+			"Copied_By"
+			"Copied_From"
+			"Copied_To"
+			"Created"
+			"Created_By"
+			"Decoded"
+			"Decoded_By"
+			"Decompressed"
+			"Decompressed_By"
+			"Decrypted"
+			"Decrypted_By"
+			"Deleted"
+			"Deleted_By"
+			"Deleted_From"
+			"Downloaded"
+			"Downloaded_By"
+			"Downloaded_From"
+			"Downloaded_To"
+			"Dropped"
+			"Dropped_By"
+			"Encoded"
+			"Encoded_By"
+			"Encrypted"
+			"Encrypted_By"
+			"Encrypted_From"
+			"Encrypted_To"
+			"Extracted_From"
+			"FQDN_Of"
+			"Freed"
+			"Freed_By"
+			"Had_Attachment"
+			"Hooked"
+			"Hooked_By"
+			"Initialized_By"
+			"Initialized_To"
+			"Injected"
+			"Injected_As"
+			"Injected_By"
+			"Injected_Into"
+			"Installed"
+			"Installed_By"
+			"Joined"
+			"Joined_By"
+			"Killed"
+			"Killed_By"
+			"Listened_On"
+			"Listened_On_By"
+			"Loaded_From"
+			"Loaded_Into"
+			"Locked"
+			"Locked_By"
+			"Mapped_By"
+			"Mapped_Into"
+			"Merged"
+			"Merged_By"
+			"Modified_Properties_Of"
+			"Monitored"
+			"Monitored_By"
+			"Moved"
+			"Moved_By"
+			"Moved_From"
+			"Moved_To"
+			"Opened"
+			"Opened_By"
+			"Packed"
+			"Packed_By"
+			"Packed_From"
+			"Packed_Into"
+			"Parent_Of"
+			"Paused"
+			"Paused_By"
+			"Previously_Contained"
+			"Properties_Modified_By"
+			"Properties_Queried"
+			"Properties_Queried_By"
+			"Read_From"
+			"Read_From_By"
+			"Received"
+			"Received_By"
+			"Received_From"
+			"Received_Via_Upload"
+			"Redirects_To"
+			"Related_To"
+			"Renamed"
+			"Renamed_By"
+			"Renamed_From"
+			"Renamed_To"
+			"Resolved_To"
+			"Resumed"
+			"Resumed_By"
+			"Root_Domain_Of"
+			"Searched_For"
+			"Searched_For_By"
+			"Sent"
+			"Sent_By"
+			"Sent_To"
+			"Sent_Via_Upload"
+			"Set_From"
+			"Set_To"
+			"Signed_By"
+			"Sub-domain_Of"
+			"Supra-domain_Of"
+			"Suspended"
+			"Suspended_By"
+			"Unhooked"
+			"Unhooked_By"
+			"Unlocked"
+			"Unlocked_By"
+			"Unpacked"
+			"Unpacked_By"
+			"Uploaded"
+			"Uploaded_By"
+			"Uploaded_From"
+			"Uploaded_To"
+			"Used"
+			"Used_By"
+			"Values_Enumerated"
+			"Values_Enumerated_By"
+			"Written_To_By"
+			"Wrote_To"
 		) ;
 	] ;
 	.
@@ -18956,18 +18882,17 @@ vocabulary:ObservableObjectStateVocab
 	rdfs:comment "Defines an open-vocabulary of observable object states."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"Active"^^vocabulary:ObservableObjectStateVocab
-			"Closed"^^vocabulary:ObservableObjectStateVocab
-			"Does Not Exist"^^vocabulary:ObservableObjectStateVocab
-			"Exists"^^vocabulary:ObservableObjectStateVocab
-			"Inactive"^^vocabulary:ObservableObjectStateVocab
-			"Locked"^^vocabulary:ObservableObjectStateVocab
-			"Open"^^vocabulary:ObservableObjectStateVocab
-			"Started"^^vocabulary:ObservableObjectStateVocab
-			"Stopped"^^vocabulary:ObservableObjectStateVocab
-			"Unlocked"^^vocabulary:ObservableObjectStateVocab
+			"Active"
+			"Closed"
+			"Does Not Exist"
+			"Exists"
+			"Inactive"
+			"Locked"
+			"Open"
+			"Started"
+			"Stopped"
+			"Unlocked"
 		) ;
 	] ;
 	.
@@ -18978,27 +18903,26 @@ vocabulary:PartitionTypeVocab
 	rdfs:comment "Defines an open-vocabulary of partition types. See http://www.win.tue.nl/~aeb/partitions/partition_types-1.html for more information about the various partition types."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"PARTITION_ENTRY_UNUSED"^^vocabulary:PartitionTypeVocab
-			"PARTITION_EXTENDED"^^vocabulary:PartitionTypeVocab
-			"PARTITION_FAT32"^^vocabulary:PartitionTypeVocab
-			"PARTITION_FAT32_XINT13"^^vocabulary:PartitionTypeVocab
-			"PARTITION_FAT_12"^^vocabulary:PartitionTypeVocab
-			"PARTITION_FAT_16"^^vocabulary:PartitionTypeVocab
-			"PARTITION_HUGE"^^vocabulary:PartitionTypeVocab
-			"PARTITION_IFS"^^vocabulary:PartitionTypeVocab
-			"PARTITION_LDM"^^vocabulary:PartitionTypeVocab
-			"PARTITION_NTFT"^^vocabulary:PartitionTypeVocab
-			"PARTITION_OS2BOOTMGR"^^vocabulary:PartitionTypeVocab
-			"PARTITION_PREP"^^vocabulary:PartitionTypeVocab
-			"PARTITION_UNIX"^^vocabulary:PartitionTypeVocab
-			"PARTITION_XENIX_1"^^vocabulary:PartitionTypeVocab
-			"PARTITION_XENIX_2"^^vocabulary:PartitionTypeVocab
-			"PARTITION_XINT13"^^vocabulary:PartitionTypeVocab
-			"PARTITION_XINT13_EXTENDED"^^vocabulary:PartitionTypeVocab
-			"UNKNOWN"^^vocabulary:PartitionTypeVocab
-			"VALID_NTFT"^^vocabulary:PartitionTypeVocab
+			"PARTITION_ENTRY_UNUSED"
+			"PARTITION_EXTENDED"
+			"PARTITION_FAT32"
+			"PARTITION_FAT32_XINT13"
+			"PARTITION_FAT_12"
+			"PARTITION_FAT_16"
+			"PARTITION_HUGE"
+			"PARTITION_IFS"
+			"PARTITION_LDM"
+			"PARTITION_NTFT"
+			"PARTITION_OS2BOOTMGR"
+			"PARTITION_PREP"
+			"PARTITION_UNIX"
+			"PARTITION_XENIX_1"
+			"PARTITION_XENIX_2"
+			"PARTITION_XINT13"
+			"PARTITION_XINT13_EXTENDED"
+			"UNKNOWN"
+			"VALID_NTFT"
 		) ;
 	] ;
 	.
@@ -19009,20 +18933,19 @@ vocabulary:ProcessorArchVocab
 	rdfs:comment "Defines an open-vocabulary of computer processor architectures."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"ARM"^^vocabulary:ProcessorArchVocab
-			"Alpha"^^vocabulary:ProcessorArchVocab
-			"IA-64"^^vocabulary:ProcessorArchVocab
-			"MIPS"^^vocabulary:ProcessorArchVocab
-			"Motorola 68k"^^vocabulary:ProcessorArchVocab
-			"Other"^^vocabulary:ProcessorArchVocab
-			"PowerPC"^^vocabulary:ProcessorArchVocab
-			"SPARC"^^vocabulary:ProcessorArchVocab
-			"eSi-RISC"^^vocabulary:ProcessorArchVocab
-			"x86-32"^^vocabulary:ProcessorArchVocab
-			"x86-64"^^vocabulary:ProcessorArchVocab
-			"z/Architecture"^^vocabulary:ProcessorArchVocab
+			"ARM"
+			"Alpha"
+			"IA-64"
+			"MIPS"
+			"Motorola 68k"
+			"Other"
+			"PowerPC"
+			"SPARC"
+			"eSi-RISC"
+			"x86-32"
+			"x86-64"
+			"z/Architecture"
 		) ;
 	] ;
 	.
@@ -19033,12 +18956,11 @@ vocabulary:RecoveredObjectStatusVocab
 	rdfs:comment "Defines the vocabulary for Recovered Object status of data."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"recovered"^^vocabulary:RecoveredObjectStatusVocab
-			"partially recovered"^^vocabulary:RecoveredObjectStatusVocab
-			"overwritten"^^vocabulary:RecoveredObjectStatusVocab
-			"unknown"^^vocabulary:RecoveredObjectStatusVocab
+			"recovered"
+			"partially recovered"
+			"overwritten"
+			"unknown"
 		) ;
 	] ;
 	.
@@ -19049,13 +18971,12 @@ vocabulary:RegionalRegistryTypeVocab
 	rdfs:comment "Defines an open-vocabulary of Regional Internet Registries (RIRs) names, represented via their respective acronyms."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"APNIC"^^vocabulary:RegionalRegistryTypeVocab
-			"ARIN"^^vocabulary:RegionalRegistryTypeVocab
-			"AfriNIC"^^vocabulary:RegionalRegistryTypeVocab
-			"LACNIC"^^vocabulary:RegionalRegistryTypeVocab
-			"RIPE NCC"^^vocabulary:RegionalRegistryTypeVocab
+			"APNIC"
+			"ARIN"
+			"AfriNIC"
+			"LACNIC"
+			"RIPE NCC"
 		) ;
 	] ;
 	.
@@ -19065,21 +18986,20 @@ vocabulary:RegistryDatatypeVocab
 	rdfs:label "Registry Datatype Vocabulary"@en-US ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"reg_binary"^^vocabulary:RegistryDatatypeVocab
-			"reg_dword"^^vocabulary:RegistryDatatypeVocab
-			"reg_dword_big_endian"^^vocabulary:RegistryDatatypeVocab
-			"reg_expand_sz"^^vocabulary:RegistryDatatypeVocab
-			"reg_full_resource_descriptor"^^vocabulary:RegistryDatatypeVocab
-			"reg_invalid_type"^^vocabulary:RegistryDatatypeVocab
-			"reg_link"^^vocabulary:RegistryDatatypeVocab
-			"reg_multi_sz"^^vocabulary:RegistryDatatypeVocab
-			"reg_none"^^vocabulary:RegistryDatatypeVocab
-			"reg_qword"^^vocabulary:RegistryDatatypeVocab
-			"reg_resource_list"^^vocabulary:RegistryDatatypeVocab
-			"reg_resource_requirements_list"^^vocabulary:RegistryDatatypeVocab
-			"reg_sz"^^vocabulary:RegistryDatatypeVocab
+			"reg_binary"
+			"reg_dword"
+			"reg_dword_big_endian"
+			"reg_expand_sz"
+			"reg_full_resource_descriptor"
+			"reg_invalid_type"
+			"reg_link"
+			"reg_multi_sz"
+			"reg_none"
+			"reg_qword"
+			"reg_resource_list"
+			"reg_resource_requirements_list"
+			"reg_sz"
 		) ;
 	] ;
 	.
@@ -19090,11 +19010,10 @@ vocabulary:SIMFormVocab
 	rdfs:comment "Defines an open-vocabulary of common SIM card form factors."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"Full-size SIM"^^vocabulary:SIMFormVocab
-			"Micro SIM"^^vocabulary:SIMFormVocab
-			"Nano SIM"^^vocabulary:SIMFormVocab
+			"Full-size SIM"
+			"Micro SIM"
+			"Nano SIM"
 		) ;
 	] ;
 	.
@@ -19105,11 +19024,10 @@ vocabulary:SIMTypeVocab
 	rdfs:comment "Defines an open-vocabulary of common SIM card types."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"SIM"^^vocabulary:SIMTypeVocab
-			"UICC"^^vocabulary:SIMTypeVocab
-			"USIM"^^vocabulary:SIMTypeVocab
+			"SIM"
+			"UICC"
+			"USIM"
 		) ;
 	] ;
 	.
@@ -19120,12 +19038,11 @@ vocabulary:TaskActionTypeVocab
 	rdfs:comment "Defines an open-vocabulary of task action types. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380596(v=vs.85).aspx."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"TASK_ACTION_COM_HANDLER"^^vocabulary:TaskActionTypeVocab
-			"TASK_ACTION_EXEC"^^vocabulary:TaskActionTypeVocab
-			"TASK_ACTION_SEND_EMAIL"^^vocabulary:TaskActionTypeVocab
-			"TASK_ACTION_SHOW_MESSAGE"^^vocabulary:TaskActionTypeVocab
+			"TASK_ACTION_COM_HANDLER"
+			"TASK_ACTION_EXEC"
+			"TASK_ACTION_SEND_EMAIL"
+			"TASK_ACTION_SHOW_MESSAGE"
 		) ;
 	] ;
 	.
@@ -19136,21 +19053,20 @@ vocabulary:TaskFlagVocab
 	rdfs:comment "Defines an open-vocabulary of the run flags for a task scheduler task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381283(v=vs.85).aspx See Also: http://msdn.microsoft.com/en-us/library/microsoft.office.excel.server.addins.computecluster.taskscheduler.taskflags(v=office.12).aspx."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"TASK_FLAG_DELETE_WHEN_DONE"^^vocabulary:TaskFlagVocab
-			"TASK_FLAG_DISABLED"^^vocabulary:TaskFlagVocab
-			"TASK_FLAG_DONT_START_IF_ON_BATTERIES"^^vocabulary:TaskFlagVocab
-			"TASK_FLAG_HIDDEN"^^vocabulary:TaskFlagVocab
-			"TASK_FLAG_INTERACTIVE"^^vocabulary:TaskFlagVocab
-			"TASK_FLAG_KILL_IF_GOING_ON_BATTERIES"^^vocabulary:TaskFlagVocab
-			"TASK_FLAG_KILL_ON_IDLE_END"^^vocabulary:TaskFlagVocab
-			"TASK_FLAG_RESTART_ON_IDLE_RESUME"^^vocabulary:TaskFlagVocab
-			"TASK_FLAG_RUN_IF_CONNECTED_TO_INTERNET"^^vocabulary:TaskFlagVocab
-			"TASK_FLAG_RUN_ONLY_IF_LOGGED_ON"^^vocabulary:TaskFlagVocab
-			"TASK_FLAG_START_ONLY_IF_IDLE"^^vocabulary:TaskFlagVocab
-			"TASK_FLAG_SYSTEM_REQUIRED"^^vocabulary:TaskFlagVocab
-			"TASK_FLAG_ZERO"^^vocabulary:TaskFlagVocab
+			"TASK_FLAG_DELETE_WHEN_DONE"
+			"TASK_FLAG_DISABLED"
+			"TASK_FLAG_DONT_START_IF_ON_BATTERIES"
+			"TASK_FLAG_HIDDEN"
+			"TASK_FLAG_INTERACTIVE"
+			"TASK_FLAG_KILL_IF_GOING_ON_BATTERIES"
+			"TASK_FLAG_KILL_ON_IDLE_END"
+			"TASK_FLAG_RESTART_ON_IDLE_RESUME"
+			"TASK_FLAG_RUN_IF_CONNECTED_TO_INTERNET"
+			"TASK_FLAG_RUN_ONLY_IF_LOGGED_ON"
+			"TASK_FLAG_START_ONLY_IF_IDLE"
+			"TASK_FLAG_SYSTEM_REQUIRED"
+			"TASK_FLAG_ZERO"
 		) ;
 	] ;
 	.
@@ -19161,14 +19077,13 @@ vocabulary:TaskPriorityVocab
 	rdfs:comment "Defines an open-vocabulary of the priority levels of task scheduler tasks. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383512(v=vs.85).aspx."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"ABOVE_NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-			"BELOW_NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-			"HIGH_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-			"IDLE_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-			"NORMAL_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
-			"REALTIME_PRIORITY_CLASS"^^vocabulary:TaskPriorityVocab
+			"ABOVE_NORMAL_PRIORITY_CLASS"
+			"BELOW_NORMAL_PRIORITY_CLASS"
+			"HIGH_PRIORITY_CLASS"
+			"IDLE_PRIORITY_CLASS"
+			"NORMAL_PRIORITY_CLASS"
+			"REALTIME_PRIORITY_CLASS"
 		) ;
 	] ;
 	.
@@ -19179,32 +19094,31 @@ vocabulary:TaskStatusVocab
 	rdfs:comment "Defines an open-vocabulary of the possible statuses of a scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383604(v=vs.85).aspx See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381263(v=vs.85).aspx See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381833(v=vs.85).aspx See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383617(v=vs.85).aspx."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"SCHED_E_ACCOUNT_DBASE_CORRUPT"^^vocabulary:TaskStatusVocab
-			"SCHED_E_ACCOUNT_INFORMATION_NOT_SET"^^vocabulary:TaskStatusVocab
-			"SCHED_E_ACCOUNT_NAME_NOT_FOUND"^^vocabulary:TaskStatusVocab
-			"SCHED_E_CANNOT_OPEN_TASK"^^vocabulary:TaskStatusVocab
-			"SCHED_E_INVALID_TASK"^^vocabulary:TaskStatusVocab
-			"SCHED_E_NO_SECURITY_SERVICES"^^vocabulary:TaskStatusVocab
-			"SCHED_E_SERVICE_NOT_INSTALLED"^^vocabulary:TaskStatusVocab
-			"SCHED_E_SERVICE_NOT_RUNNING"^^vocabulary:TaskStatusVocab
-			"SCHED_E_TASK_NOT_READY"^^vocabulary:TaskStatusVocab
-			"SCHED_E_TASK_NOT_RUNNING"^^vocabulary:TaskStatusVocab
-			"SCHED_E_TRIGGER_NOT_FOUND"^^vocabulary:TaskStatusVocab
-			"SCHED_E_UNKNOWN_OBJECT_VERSION"^^vocabulary:TaskStatusVocab
-			"SCHED_E_UNSUPPORTED_ACCOUNT_OPTION"^^vocabulary:TaskStatusVocab
-			"SCHED_S_EVENT_TRIGGER"^^vocabulary:TaskStatusVocab
-			"SCHED_S_TASK_DISABLED"^^vocabulary:TaskStatusVocab
-			"SCHED_S_TASK_HAS_NOT_RUN"^^vocabulary:TaskStatusVocab
-			"SCHED_S_TASK_NOT_SCHEDULED"^^vocabulary:TaskStatusVocab
-			"SCHED_S_TASK_NO_MORE_RUNS"^^vocabulary:TaskStatusVocab
-			"SCHED_S_TASK_NO_VALID_TRIGGERS"^^vocabulary:TaskStatusVocab
-			"SCHED_S_TASK_READY"^^vocabulary:TaskStatusVocab
-			"SCHED_S_TASK_RUNNING"^^vocabulary:TaskStatusVocab
-			"SCHED_S_TASK_TERMINATED"^^vocabulary:TaskStatusVocab
-			"TASK_STATE_QUEUED"^^vocabulary:TaskStatusVocab
-			"TASK_STATE_UNKNOWN"^^vocabulary:TaskStatusVocab
+			"SCHED_E_ACCOUNT_DBASE_CORRUPT"
+			"SCHED_E_ACCOUNT_INFORMATION_NOT_SET"
+			"SCHED_E_ACCOUNT_NAME_NOT_FOUND"
+			"SCHED_E_CANNOT_OPEN_TASK"
+			"SCHED_E_INVALID_TASK"
+			"SCHED_E_NO_SECURITY_SERVICES"
+			"SCHED_E_SERVICE_NOT_INSTALLED"
+			"SCHED_E_SERVICE_NOT_RUNNING"
+			"SCHED_E_TASK_NOT_READY"
+			"SCHED_E_TASK_NOT_RUNNING"
+			"SCHED_E_TRIGGER_NOT_FOUND"
+			"SCHED_E_UNKNOWN_OBJECT_VERSION"
+			"SCHED_E_UNSUPPORTED_ACCOUNT_OPTION"
+			"SCHED_S_EVENT_TRIGGER"
+			"SCHED_S_TASK_DISABLED"
+			"SCHED_S_TASK_HAS_NOT_RUN"
+			"SCHED_S_TASK_NOT_SCHEDULED"
+			"SCHED_S_TASK_NO_MORE_RUNS"
+			"SCHED_S_TASK_NO_VALID_TRIGGERS"
+			"SCHED_S_TASK_READY"
+			"SCHED_S_TASK_RUNNING"
+			"SCHED_S_TASK_TERMINATED"
+			"TASK_STATE_QUEUED"
+			"TASK_STATE_UNKNOWN"
 		) ;
 	] ;
 	.
@@ -19215,16 +19129,15 @@ vocabulary:ThreadRunningStatusVocab
 	rdfs:comment "Defines an open-vocabulary of the various states that a thread may be in before, during, or after execution. See http://msdn.microsoft.com/en-us/library/system.diagnostics.threadstate(v=vs.110).aspx."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"Initialized"^^vocabulary:ThreadRunningStatusVocab
-			"Ready"^^vocabulary:ThreadRunningStatusVocab
-			"Running"^^vocabulary:ThreadRunningStatusVocab
-			"Standby"^^vocabulary:ThreadRunningStatusVocab
-			"Terminated"^^vocabulary:ThreadRunningStatusVocab
-			"Transition"^^vocabulary:ThreadRunningStatusVocab
-			"Unknown"^^vocabulary:ThreadRunningStatusVocab
-			"Waiting"^^vocabulary:ThreadRunningStatusVocab
+			"Initialized"
+			"Ready"
+			"Running"
+			"Standby"
+			"Terminated"
+			"Transition"
+			"Unknown"
+			"Waiting"
 		) ;
 	] ;
 	.
@@ -19235,14 +19148,13 @@ vocabulary:TimestampPrecisionVocab
 	rdfs:comment "Defines an open-vocabulary of timestamp precision granularities."@en-US ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"day"^^vocabulary:TimestampPrecisionVocab
-			"hour"^^vocabulary:TimestampPrecisionVocab
-			"minute"^^vocabulary:TimestampPrecisionVocab
-			"month"^^vocabulary:TimestampPrecisionVocab
-			"second"^^vocabulary:TimestampPrecisionVocab
-			"year"^^vocabulary:TimestampPrecisionVocab
+			"day"
+			"hour"
+			"minute"
+			"month"
+			"second"
+			"year"
 		) ;
 	] ;
 	.
@@ -19253,10 +19165,9 @@ vocabulary:TrendVocab
 	rdfs:comment "Defines an open-vocabulary of trend values."@en-US ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"Decreasing"^^vocabulary:TrendVocab
-			"Increasing"^^vocabulary:TrendVocab
+			"Decreasing"
+			"Increasing"
 		) ;
 	] ;
 	.
@@ -19267,16 +19178,15 @@ vocabulary:TriggerFrequencyVocab
 	rdfs:comment "Defines an open-vocabulary of the frequency types that a trigger may use. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383620(v=vs.85).aspx and http://msdn.microsoft.com/en-us/library/windows/desktop/aa383987(v=vs.85).aspx."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"TASK_EVENT_TRIGGER_AT_LOGON"^^vocabulary:TriggerFrequencyVocab
-			"TASK_EVENT_TRIGGER_AT_SYSTEMSTART"^^vocabulary:TriggerFrequencyVocab
-			"TASK_EVENT_TRIGGER_ON_IDLE"^^vocabulary:TriggerFrequencyVocab
-			"TASK_TIME_TRIGGER_DAILY"^^vocabulary:TriggerFrequencyVocab
-			"TASK_TIME_TRIGGER_MONTHLYDATE"^^vocabulary:TriggerFrequencyVocab
-			"TASK_TIME_TRIGGER_MONTHLYDOW"^^vocabulary:TriggerFrequencyVocab
-			"TASK_TIME_TRIGGER_ONCE"^^vocabulary:TriggerFrequencyVocab
-			"TASK_TIME_TRIGGER_WEEKLY"^^vocabulary:TriggerFrequencyVocab
+			"TASK_EVENT_TRIGGER_AT_LOGON"
+			"TASK_EVENT_TRIGGER_AT_SYSTEMSTART"
+			"TASK_EVENT_TRIGGER_ON_IDLE"
+			"TASK_TIME_TRIGGER_DAILY"
+			"TASK_TIME_TRIGGER_MONTHLYDATE"
+			"TASK_TIME_TRIGGER_MONTHLYDOW"
+			"TASK_TIME_TRIGGER_ONCE"
+			"TASK_TIME_TRIGGER_WEEKLY"
 		) ;
 	] ;
 	.
@@ -19287,15 +19197,14 @@ vocabulary:TriggerTypeVocab
 	rdfs:comment "Defines an open-vocabulary of the types of triggers associated with a task."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"TASK_TRIGGER_BOOT"^^vocabulary:TriggerTypeVocab
-			"TASK_TRIGGER_EVENT"^^vocabulary:TriggerTypeVocab
-			"TASK_TRIGGER_IDLE"^^vocabulary:TriggerTypeVocab
-			"TASK_TRIGGER_LOGON"^^vocabulary:TriggerTypeVocab
-			"TASK_TRIGGER_REGISTRATION"^^vocabulary:TriggerTypeVocab
-			"TASK_TRIGGER_SESSION_STATE_CHANGE"^^vocabulary:TriggerTypeVocab
-			"TASK_TRIGGER_TIME"^^vocabulary:TriggerTypeVocab
+			"TASK_TRIGGER_BOOT"
+			"TASK_TRIGGER_EVENT"
+			"TASK_TRIGGER_IDLE"
+			"TASK_TRIGGER_LOGON"
+			"TASK_TRIGGER_REGISTRATION"
+			"TASK_TRIGGER_SESSION_STATE_CHANGE"
+			"TASK_TRIGGER_TIME"
 		) ;
 	] ;
 	.
@@ -19306,19 +19215,18 @@ vocabulary:URLTransitionTypeVocab
 	rdfs:comment "Defines an open-vocabulary of types of URL transitions."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"link"^^vocabulary:URLTransitionTypeVocab
-			"typed"^^vocabulary:URLTransitionTypeVocab
-			"auto_bookmark"^^vocabulary:URLTransitionTypeVocab
-			"auto_subframe"^^vocabulary:URLTransitionTypeVocab
-			"manual_subframe"^^vocabulary:URLTransitionTypeVocab
-			"generated"^^vocabulary:URLTransitionTypeVocab
-			"auto_toplevel"^^vocabulary:URLTransitionTypeVocab
-			"form_submit"^^vocabulary:URLTransitionTypeVocab
-			"reload"^^vocabulary:URLTransitionTypeVocab
-			"keyword"^^vocabulary:URLTransitionTypeVocab
-			"keyword_generated"^^vocabulary:URLTransitionTypeVocab
+			"link"
+			"typed"
+			"auto_bookmark"
+			"auto_subframe"
+			"manual_subframe"
+			"generated"
+			"auto_toplevel"
+			"form_submit"
+			"reload"
+			"keyword"
+			"keyword_generated"
 		) ;
 	] ;
 	.
@@ -19329,15 +19237,14 @@ vocabulary:UnixProcessStateVocab
 	rdfs:comment "Defines an open-vocabulary of Unix process states"@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"Dead"^^vocabulary:UnixProcessStateVocab
-			"InterruptibleSleep"^^vocabulary:UnixProcessStateVocab
-			"Paging"^^vocabulary:UnixProcessStateVocab
-			"Running"^^vocabulary:UnixProcessStateVocab
-			"Stopped"^^vocabulary:UnixProcessStateVocab
-			"UninterruptibleSleep"^^vocabulary:UnixProcessStateVocab
-			"Zombie"^^vocabulary:UnixProcessStateVocab
+			"Dead"
+			"InterruptibleSleep"
+			"Paging"
+			"Running"
+			"Stopped"
+			"UninterruptibleSleep"
+			"Zombie"
 		) ;
 	] ;
 	.
@@ -19348,11 +19255,10 @@ vocabulary:WhoisContactTypeVocab
 	rdfs:comment "Defines an open-vocabulary of types of registrar contacts listed in a whois entry."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"ADMIN"^^vocabulary:WhoisContactTypeVocab
-			"BILLING"^^vocabulary:WhoisContactTypeVocab
-			"TECHNICAL"^^vocabulary:WhoisContactTypeVocab
+			"ADMIN"
+			"BILLING"
+			"TECHNICAL"
 		) ;
 	] ;
 	.
@@ -19363,10 +19269,9 @@ vocabulary:WhoisDNSSECTypeVocab
 	rdfs:comment "Defines an open-vocabulary of acceptable values for the DNSSEC field in a Whois entry."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"Signed"^^vocabulary:WhoisDNSSECTypeVocab
-			"Unsigned"^^vocabulary:WhoisDNSSECTypeVocab
+			"Signed"
+			"Unsigned"
 		) ;
 	] ;
 	.
@@ -19377,27 +19282,26 @@ vocabulary:WhoisStatusTypeVocab
 	rdfs:comment "Defines an open-vocabulary of all valid statuses for a domain within a whois entry."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"ADD_PERIOD"^^vocabulary:WhoisStatusTypeVocab
-			"AUTO_RENEW_PERIOD"^^vocabulary:WhoisStatusTypeVocab
-			"CLIENT_DELETE_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-			"CLIENT_HOLD"^^vocabulary:WhoisStatusTypeVocab
-			"CLIENT_RENEW_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-			"CLIENT_TRANSFER_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-			"CLIENT_UPDATE_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-			"DELETE_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-			"HOLD"^^vocabulary:WhoisStatusTypeVocab
-			"INACTIVE"^^vocabulary:WhoisStatusTypeVocab
-			"OK"^^vocabulary:WhoisStatusTypeVocab
-			"PENDING_DELETE_RESTORABLE"^^vocabulary:WhoisStatusTypeVocab
-			"PENDING_DELETE_SCHEDULED_FOR_RELEASE"^^vocabulary:WhoisStatusTypeVocab
-			"PENDING_RESTORE"^^vocabulary:WhoisStatusTypeVocab
-			"RENEW_PERIOD"^^vocabulary:WhoisStatusTypeVocab
-			"RENEW_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-			"TRANSFER_PERIOD"^^vocabulary:WhoisStatusTypeVocab
-			"TRANSFER_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
-			"UPDATE_PROHIBITED"^^vocabulary:WhoisStatusTypeVocab
+			"ADD_PERIOD"
+			"AUTO_RENEW_PERIOD"
+			"CLIENT_DELETE_PROHIBITED"
+			"CLIENT_HOLD"
+			"CLIENT_RENEW_PROHIBITED"
+			"CLIENT_TRANSFER_PROHIBITED"
+			"CLIENT_UPDATE_PROHIBITED"
+			"DELETE_PROHIBITED"
+			"HOLD"
+			"INACTIVE"
+			"OK"
+			"PENDING_DELETE_RESTORABLE"
+			"PENDING_DELETE_SCHEDULED_FOR_RELEASE"
+			"PENDING_RESTORE"
+			"RENEW_PERIOD"
+			"RENEW_PROHIBITED"
+			"TRANSFER_PERIOD"
+			"TRANSFER_PROHIBITED"
+			"UPDATE_PROHIBITED"
 		) ;
 	] ;
 	.
@@ -19408,15 +19312,14 @@ vocabulary:WindowsDriveTypeVocab
 	rdfs:comment "Defines an open-vocabulary of possible drive types, as enumerated by the WINAPI GetDriveType function: http://msdn.microsoft.com/en-us/library/windows/desktop/aa364939(v=vs.85).aspx."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"DRIVE_CDROM"^^vocabulary:WindowsDriveTypeVocab
-			"DRIVE_FIXED"^^vocabulary:WindowsDriveTypeVocab
-			"DRIVE_NO_ROOT_DIR"^^vocabulary:WindowsDriveTypeVocab
-			"DRIVE_RAMDISK"^^vocabulary:WindowsDriveTypeVocab
-			"DRIVE_REMOTE"^^vocabulary:WindowsDriveTypeVocab
-			"DRIVE_REMOVABLE"^^vocabulary:WindowsDriveTypeVocab
-			"DRIVE_UNKNOWN"^^vocabulary:WindowsDriveTypeVocab
+			"DRIVE_CDROM"
+			"DRIVE_FIXED"
+			"DRIVE_NO_ROOT_DIR"
+			"DRIVE_RAMDISK"
+			"DRIVE_REMOTE"
+			"DRIVE_REMOVABLE"
+			"DRIVE_UNKNOWN"
 		) ;
 	] ;
 	.
@@ -19427,12 +19330,11 @@ vocabulary:WindowsVolumeAttributeVocab
 	rdfs:comment "Defines an open-vocabulary of attributes that may be returned by the diskpart attributes command: http://technet.microsoft.com/en-us/library/cc766465(v=ws.10).aspx."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"Hidden"^^vocabulary:WindowsVolumeAttributeVocab
-			"NoDefaultDriveLetter"^^vocabulary:WindowsVolumeAttributeVocab
-			"ReadOnly"^^vocabulary:WindowsVolumeAttributeVocab
-			"ShadowCopy"^^vocabulary:WindowsVolumeAttributeVocab
+			"Hidden"
+			"NoDefaultDriveLetter"
+			"ReadOnly"
+			"ShadowCopy"
 		) ;
 	] ;
 	.
@@ -19443,15 +19345,14 @@ vocabulary:WirelessNetworkSecurityModeVocab
 	rdfs:comment "Defines an open-vocabulary of security modes that may be configured for wireless network connections."@en ;
 	owl:equivalentClass [
 		a rdfs:Datatype ;
-		owl:onDatatype xsd:string ;
 		owl:oneOf (
-			"None"^^vocabulary:WirelessNetworkSecurityModeVocab
-			"WEP"^^vocabulary:WirelessNetworkSecurityModeVocab
-			"WPA"^^vocabulary:WirelessNetworkSecurityModeVocab
-			"WPA2-PSK"^^vocabulary:WirelessNetworkSecurityModeVocab
-			"WPA2-Enterprise"^^vocabulary:WirelessNetworkSecurityModeVocab
-			"WPA3-PSK"^^vocabulary:WirelessNetworkSecurityModeVocab
-			"WPA3-Enterprise"^^vocabulary:WirelessNetworkSecurityModeVocab
+			"None"
+			"WEP"
+			"WPA"
+			"WPA2-PSK"
+			"WPA2-Enterprise"
+			"WPA3-PSK"
+			"WPA3-Enterprise"
 		) ;
 	] ;
 	.

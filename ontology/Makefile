@@ -35,7 +35,8 @@ all: \
 
 .PHONY: \
   check-develop \
-  check-unstable
+  check-unstable \
+  get-started-resources
 
 CASE-develop.ttl: \
   $(top_srcdir)/dependencies/CASE-develop.ttl \
@@ -84,7 +85,8 @@ CASE-unstable-2.0.0.ttl: \
 check: \
   check-develop \
   check-unstable \
-  check-unstable-2.0.0
+  check-unstable-2.0.0 \
+  get-started-resources
 
 check-develop: \
   CASE-develop.ttl
@@ -110,4 +112,101 @@ check-unstable-2.0.0: \
 clean:
 	@rm -f \
 	  CASE-develop*.ttl \
-	  CASE-unstable*.ttl
+	  CASE-unstable*.ttl \
+	  get-started-example-*.md \
+	  get-started-example-*.nt \
+	  get-started-example-*.rdf \
+	  get-started-example-*.ttl
+
+# This target generates some of the result snippets that were manually
+# copied into get-started.md.  "make check" depends on this to confirm
+# the examples will rebuild.
+get-started-resources: \
+  get-started-example-minimal.nt \
+  get-started-example-minimal.rdf \
+  get-started-example-minimal.ttl \
+  get-started-example-location.nt \
+  get-started-example-location.rdf \
+  get-started-example-location.ttl \
+  get-started-example-location.md
+
+get-started-example-location.md: \
+  $(top_srcdir)/.venv.done.log \
+  get-started-example-location.jsonld \
+  get-started-example-location-query.sparql
+	source $(top_srcdir)/venv/bin/activate \
+	  && case_sparql_select \
+	    _$@ \
+	    get-started-example-location-query.sparql \
+	    get-started-example-location.jsonld
+	mv _$@ $@
+
+get-started-example-location.nt: \
+  get-started-example-location.jsonld \
+  $(top_srcdir)/.venv.done.log
+	source $(top_srcdir)/venv/bin/activate \
+	  && rdfpipe \
+	    --output-format nt \
+	    $< \
+	    > __$@
+	LC_ALL=C \
+	  sort \
+	    __$@ \
+	    > _$@
+	rm __$@
+	mv _$@ $@
+
+get-started-example-location.rdf: \
+  get-started-example-location.jsonld \
+  $(top_srcdir)/.venv.done.log
+	source $(top_srcdir)/venv/bin/activate \
+	  && rdfpipe \
+	    --output-format xml \
+	    $< \
+	    > _$@
+	mv _$@ $@
+
+get-started-example-location.ttl: \
+  get-started-example-location.jsonld \
+  $(top_srcdir)/.venv.done.log
+	source $(top_srcdir)/venv/bin/activate \
+	  && rdfpipe \
+	    --output-format turtle \
+	    $< \
+	    > _$@
+	mv _$@ $@
+
+get-started-example-minimal.nt: \
+  get-started-example-minimal.jsonld \
+  $(top_srcdir)/.venv.done.log
+	source $(top_srcdir)/venv/bin/activate \
+	  && rdfpipe \
+	    --output-format nt \
+	    $< \
+	    > __$@
+	LC_ALL=C \
+	  sort \
+	    __$@ \
+	    > _$@
+	rm __$@
+	mv _$@ $@
+
+get-started-example-minimal.rdf: \
+  get-started-example-minimal.jsonld \
+  $(top_srcdir)/.venv.done.log
+	source $(top_srcdir)/venv/bin/activate \
+	  && rdfpipe \
+	    --output-format xml \
+	    $< \
+	    > _$@
+	mv _$@ $@
+
+get-started-example-minimal.ttl: \
+  get-started-example-minimal.jsonld \
+  $(top_srcdir)/.venv.done.log
+	source $(top_srcdir)/venv/bin/activate \
+	  && rdfpipe \
+	    --output-format turtle \
+	    $< \
+	    > _$@
+	mv _$@ $@

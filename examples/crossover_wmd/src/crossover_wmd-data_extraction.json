@@ -85,8 +85,16 @@
     {
         "@id": "kb:provenancerecord-9326149a-31c5-4d20-ada3-b97743d3e563",
         "@type": "case-investigation:ProvenanceRecord",
-        "uco-core:object": {
-            "@id": "kb:mobiledevice-803df237-bc7e-4e24-a5cb-8157063014b4"
-        }
+        "uco-core:object": [
+            {
+                "@id": "kb:mobiledevice-803df237-bc7e-4e24-a5cb-8157063014b4"
+            },
+            {
+                "@id": "kb:operating-system-cbba474a-d58c-4715-a7fa-5854d811021d"
+            },
+            {
+                "@id": "kb:relationship-aca6d788-12e4-45d1-8f00-06a63579309d"
+            }
+        ]
     }
 ]

@@ -1,7 +1,10 @@
 [
     {
         "@id": "kb:disk-e598c1b3-f76d-4c27-b592-49bfdbf23d11",
-        "@type": "uco-observable:Disk",
+        "@type": [
+            "uco-observable:Disk",
+            "uco-observable:StorageMedium"
+        ],
         "uco-core:hasFacet": [
             {
                 "@id": "kb:disk-facet-257d2533-2d2d-4263-8467-0fd7ef8de262",
