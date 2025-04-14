@@ -60,3 +60,52 @@
   source_url: https://www.journals.elsevier.com/digital-investigation
   date: 2019-07-20
   url: https://doi.org/10.1016/j.diin.2019.06.004
+- title: Discovery of digital forensic dataset characteristics with CASE-Corpora
+  desc: We present CASE-Corpora, a community index of available forensic reference and training datasets.
+  type: Presentation
+  source: DFRWS USA
+  source_url: https://dfrws.org/presentation/discovery-of-digital-forensic-dataset-characteristics-with-case-corpora/
+  date: 2022-07-11
+  url: https://dfrws.org/presentation/discovery-of-digital-forensic-dataset-characteristics-with-case-corpora/
+- title: The Discovery of Digital Forensic Dataset Characteristics With CASE-Corpora
+  desc: We present CASE-Corpora, a community index of available forensic reference and training datasets.
+  type: Presentation
+  source: American Academy of Forensic Sciences
+  source_url: https://www.aafs.org/resources/annual-conference-proceedings
+  date: 2023-02-17
+  url: https://www.aafs.org/sites/default/files/media/documents/2023Proceedings_FINAL-june-1-23.pdf
+- title: Cataloguing Software Ecosystems with swid-reg
+  desc: This presentation describes software indexing challenges and provenance.
+  type: Presentation
+  source: Software Supply Chain Assurance Forum
+  source_url: https://csrc.nist.gov/projects/cyber-supply-chain-risk-management/ssca
+  date: 2023-09-13
+  url: https://csrc.nist.gov/csrc/media/Presentations/2023/cataloguing-software-ecosystems-with-swid-reg/images-media/anelson-wed-sept-13.pdf
+- title: Provenience-Based Cross-Verification of Digital Forensic Artifacts Applied to NTFS
+  desc: This presentation will demonstrate a methodology for comparing the subject data exploratory coverage of two digital forensic processes that share some in-common goals in their reporting.
+  type: Presentation
+  source: American Academy of Forensic Sciences
+  source_url: https://www.aafs.org/resources/annual-conference-proceedings
+  date: 2024-02-23
+  url: https://www.aafs.org/sites/default/files/media/documents/2024ProceedingsFINAL.pdf
+- title: An abstract model for digital forensic analysis tools – A foundation for systematic error mitigation analysis
+  desc: As automation within digital forensic tools becomes more advanced there is a need for a systematic approach to ensure the validity, reliability, and standardization of digital forensic results. This paper argues for intermediate output in a standardized format within digital forensic tools to allow a methodical approach to tool validation that targets errors at each stage of processing.
+  type: Publication
+  source: DFRWS EU
+  source_url: https://dfrws.org/presentation/an-abstract-model-for-digital-forensic-analysis-tools-a-foundation-for-systematic-error-mitigation-analysis/
+  date: 2024-03-17
+  url: https://doi.org/10.1016/j.fsidi.2023.301679
+- title: Interoperability Efforts in the Cyber Domain Ontology
+  desc: This work presents mechanisms for concept refinement and knowledge expansion through interfacing with multiple independent ontologies.
+  type: Presentation
+  source: "Semantic Shields: International Workshop on Modeling for Cybersecurity"
+  source_url: https://www.utwente.nl/en/eemcs/semantic-shields/
+  date: 2024-07-16
+  url: https://www.utwente.nl/en/eemcs/semantic-shields/2024/#program
+- title: "SOLVE-IT: A proposed digital forensic knowledge base inspired by MITRE ATT&CK"
+  desc: This work presents SOLVE-IT (Systematic Objective-based Listing of Various Established (Digital) Investigation Techniques), a digital forensics knowledge base inspired by the MITRE ATT&CK cybersecurity resource.
+  type: Publication
+  source: DFRWS EU
+  source_url: https://dfrws.org/presentation/solve-it-a-proposed-digital-forensic-knowledge-base-inspired-by-mitre-attck/
+  date: 2025-03-30
+  url: https://doi.org/10.1016/j.fsidi.2025.301864
