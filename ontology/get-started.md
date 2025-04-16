@@ -402,6 +402,67 @@ public class GenerateCASE {
 
 {% endtab %}
 
+{% tab log Rust %}
+
+```rust
+// Portions of this file contributed by NIST are governed by the
+// following statement:
+//
+// This software was developed at the National Institute of Standards
+// and Technology by employees of the Federal Government in the course
+// of their official duties. Pursuant to Title 17 Section 105 of the
+// United States Code, this software is not subject to copyright
+// protection within the United States. NIST assumes no responsibility
+// whatsoever for its use by other parties, and makes no guarantees,
+// expressed or implied, about its quality, reliability, or any other
+// characteristic.
+//
+// We would appreciate acknowledgement if the software is used.
+
+/// This program adapted examples near this page section:
+/// https://docs.rs/serde_json/latest/serde_json/#constructing-json-values
+use serde_json::{Value, json};
+use uuid::Uuid;
+
+fn main() {
+    // Build the base graph dictionary with the context. This must
+    // contain all the namespaces used in the graph.
+    // The "@graph" key will be added after populating a vector.
+    let mut graph_top = json!({
+        "@context": {
+            "kb": "http://example.org/kb/",
+            "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
+            "uco-location": "https://ontology.unifiedcyberontology.org/uco/location/",
+        }
+    });
+
+    let mut graph_objects = Vec::<Value>::new();
+
+    // Add an object to the graph.
+    graph_objects.push(json!({
+        "@id": "kb:location-".to_owned() + &Uuid::new_v4().to_string(),
+        "@type": "uco-location:Location",
+        "uco-core:hasFacet": [
+            {
+                "@id": "kb:simple-address-facet-".to_owned() + &Uuid::new_v4().to_string(),
+                "@type": "uco-location:SimpleAddressFacet",
+                "uco-location:locality": "Seattle",
+                "uco-location:region": "WA",
+                "uco-location:postalCode": "98052",
+                "uco-location:street": "20341 Whitworth Institute 405 N. Whitworth"
+            }
+        ]
+    }));
+
+    graph_top["@graph"] = serde_json::Value::Array(graph_objects.clone());
+
+    // Write the dictionary to a JSON file.
+    println!("{}", graph_top.to_string());
+}
+```
+
+{% endtab %}
+
 {% endtabs %}
 
 
@@ -709,6 +770,135 @@ public class CASEQuery {
                 QuerySolution soln = results.nextSolution();
                 System.out.println(soln.getLiteral("lStreet").getString());
             }
+        }
+    }
+}
+```
+
+{% endtab %}
+
+{% tab log Rust %}
+
+```rust
+// Portions of this file contributed by NIST are governed by the
+// following statement:
+//
+// This software was developed at the National Institute of Standards
+// and Technology by employees of the Federal Government in the course
+// of their official duties. Pursuant to Title 17 Section 105 of the
+// United States Code, this software is not subject to copyright
+// protection within the United States. NIST assumes no responsibility
+// whatsoever for its use by other parties, and makes no guarantees,
+// expressed or implied, about its quality, reliability, or any other
+// characteristic.
+//
+// We would appreciate acknowledgement if the software is used.
+
+use json_ld::{
+    JsonLdProcessor, RemoteDocument,
+    rdf_types::{Quad, Term},
+    syntax::{Parse, Value},
+};
+use oxigraph::model::{GraphNameRef, LiteralRef, NamedNodeRef, QuadRef};
+use oxigraph::sparql::QueryResults;
+use oxigraph::store::Store;
+use static_iref::iri;
+use std::fs;
+
+fn unquote_string(mut s: String) -> String {
+    if s.len() > 0 {
+        if s[0..1] == *"\"" {
+            s.pop();
+            if s.len() > 0 {
+                s.remove(0);
+            }
+        }
+    }
+    s
+}
+
+#[tokio::main]
+async fn main() {
+    // Assuming the input of the case.jsonld from previous examples.
+    let file_contents: String =
+        fs::read_to_string("case.jsonld").expect("Should have been able to read the file");
+
+    // Parse the file into RDF object. ...
+    let value = Value::parse_str(&file_contents)
+        .expect("unable to parse file")
+        .0;
+
+    // Create a "remote" document by parsing a file manually.
+    let input = RemoteDocument::new(
+        // We use `IriBuf` as IRI type.
+        Some(iri!("https://example.com/sample.jsonld").to_owned()),
+        // Optional content type.
+        Some("application/ld+json".parse().unwrap()),
+        value,
+    );
+
+    let loader = json_ld::NoLoader;
+
+    let mut generator = json_ld::rdf_types::generator::Blank::new();
+
+    let mut rdf = input
+        .to_rdf(&mut generator, &loader)
+        .await
+        .expect("flattening failed");
+    // ... File parsed into RDF object.
+
+    let store = Store::new().unwrap();
+
+    // Load RDF object into store, which can later be queried with SPARQL.
+    for quad in rdf.quads() {
+        let Quad(s, p, o, _g) = quad;
+        let n_subject = NamedNodeRef::new(s.as_iri().unwrap()).unwrap();
+        let n_predicate = NamedNodeRef::new(p.as_iri().unwrap()).unwrap();
+
+        if let Term::Id(_id) = o.to_owned() {
+            store
+                .insert(QuadRef::new(
+                    n_subject,
+                    n_predicate,
+                    NamedNodeRef::new(_id.as_iri().unwrap()).unwrap(),
+                    GraphNameRef::DefaultGraph,
+                ))
+                .unwrap();
+        };
+
+        if let Term::Literal(_literal) = o.to_owned() {
+            store
+                .insert(QuadRef::new(
+                    n_subject,
+                    n_predicate,
+                    LiteralRef::new_simple_literal(&_literal.value),
+                    GraphNameRef::DefaultGraph,
+                ))
+                .unwrap();
+        };
+    }
+
+    let query = r#"
+PREFIX uco-location: <https://ontology.unifiedcyberontology.org/uco/location/>
+PREFIX uco-core: <https://ontology.unifiedcyberontology.org/uco/core/>
+SELECT ?lStreet
+WHERE
+{
+	?nLocation a uco-location:Location .
+        ?nLocation uco-core:hasFacet ?nSimpleAddressFacet .
+        ?nSimpleAddressFacet a uco-location:SimpleAddressFacet .
+        ?nSimpleAddressFacet uco-location:street ?lStreet .
+}
+"#;
+
+    // Execute the query.
+    if let QueryResults::Solutions(solutions) = store.query(query).unwrap() {
+        for option_solution in solutions {
+            let solution = option_solution.unwrap();
+            let l_street = &solution.get("lStreet").unwrap();
+
+            // Print the results to the console.
+            println!("{}", unquote_string(l_street.to_string()));
         }
     }
 }
