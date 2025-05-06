@@ -700,7 +700,7 @@
                     "@type": "uco-observable:FileFacet",
                     "uco-observable:observableCreatedTime": {
                         "@type": "xsd:dateTime",
-                        "@value": "2020-05-16T10:12.40Z"
+                        "@value": "2020-05-16T10:12:40Z"
                     },
                     "uco-observable:extension": "xml",
                     "uco-observable:fileName": "19_UFED_ANDROID_CROSSOVER.xml",
