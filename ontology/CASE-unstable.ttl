@@ -1632,7 +1632,7 @@ action:Action
 	rdfs:subClassOf core:UcoObject ;
 	rdfs:label "Action"@en ;
 	rdfs:comment "An action is something that may be done or performed."@en ;
-	rdfs:isDefinedBy <https://ontology.unifiedcyberontology.org/uco/types> ;
+	rdfs:isDefinedBy <https://ontology.unifiedcyberontology.org/uco/action> ;
 	owl:disjointWith core:Event ;
 	sh:property
 		action:Action-actionStatus-in-shape ,
