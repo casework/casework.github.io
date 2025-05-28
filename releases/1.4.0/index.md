@@ -36,6 +36,7 @@ custom_css: releases
 
 * Removed `owl:onDatatype` from vocabulary definitions ([*UCO GitHub Issue 593*](https://github.com/ucoProject/UCO/issues/593))
 * Revised vocabulary pattern ([*UCO GitHub Issue 629*](https://github.com/ucoProject/UCO/issues/629))
+* Adjusted top Makefile dependency ordering in submodule initialization ([*CASE GitHub Issue 167*](https://github.com/casework/CASE/issues/167))
 
 
 ## Documentation
