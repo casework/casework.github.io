@@ -24,15 +24,16 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/hash-bfa02feb-6184-5ca5-9ba3-272bf4367c5d> ;
-			sh:resultMessage "As of UCO 1.4.0, the datatype to use for types:hashMethod should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath types:hashMethod ;
-			sh:resultSeverity sh:Warning ;
+			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
 				sh:datatype xsd:string ;
-				sh:message "As of UCO 1.4.0, the datatype to use for types:hashMethod should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
 				sh:path types:hashMethod ;
-				sh:severity sh:Warning ;
 			] ;
 			sh:value "SHA256"^^vocabulary:HashNameVocab ;
 		] ,
@@ -49,15 +50,16 @@
 		[
 			a sh:ValidationResult ;
 			sh:focusNode <http://example.org/kb/hash-c6cc7dd6-1bf9-5454-9653-37caff09411d> ;
-			sh:resultMessage "As of UCO 1.4.0, the datatype to use for types:hashMethod should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:resultMessage "Value is not Literal with datatype xsd:string" ;
 			sh:resultPath types:hashMethod ;
-			sh:resultSeverity sh:Warning ;
+			sh:resultSeverity sh:Violation ;
 			sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
 			sh:sourceShape [
 				sh:datatype xsd:string ;
-				sh:message "As of UCO 1.4.0, the datatype to use for types:hashMethod should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+				sh:maxCount "1"^^xsd:integer ;
+				sh:minCount "1"^^xsd:integer ;
+				sh:nodeKind sh:Literal ;
 				sh:path types:hashMethod ;
-				sh:severity sh:Warning ;
 			] ;
 			sh:value "SHA256"^^vocabulary:HashNameVocab ;
 		] ,
