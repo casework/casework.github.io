@@ -14,6 +14,14 @@ custom_css: releases
 
 ## Release Notes
 
+CASE 1.4.0 incorporates required refinements and updates, building on the stable 1.0.0 release.  Following [SemVer](https://semver.org/spec/v2.0.0.html), additive improvements will continue to be accepted, but backwards-incompatible changes will be scheduled only for the 2.0.0 release, which will come after at least 6 months to possibly 12 months.
+
+This release adopts [UCO 1.4.0](https://unifiedcyberontology.org/releases/1.4.0/), incorporating bugfixes and test improvements from UCO 1.4.0.
+
+CASE users who see warnings arise pertaining to semi-open vocabulary literals, such as those used in `uco-types:Hash` objects, should refer to the [UCO 1.4.0 release notes]((https://unifiedcyberontology.org/releases/1.4.0/) section "Semi-open vocabulary syntax change."
+
+With the adoption of UCO 1.4.0, `case-investigation:ProvenanceRecord`s may now contain no members.  This can be used for `case-investigation:InvestigativeAction`s that turn out to have no results aside from a `ProvenanceRecord`.
+
 
 ### Focus
 
@@ -28,6 +36,7 @@ custom_css: releases
 *(These are changes to ontologies, classes or properties in the preexisting ontology.)*
 
 * Linked `core:informalType` as parent of type-describing properties ([*UCO GitHub Issue 640*](https://github.com/ucoProject/UCO/issues/640))
+* Removed 1-member minimum on `core:ContextualCompilation` ([*UCO GitHub Issue 599*](https://github.com/ucoProject/UCO/issues/599)), which is the parent class of `case-investigation:ProvenanceRecord`
 
 
 #### Bug Fixes
