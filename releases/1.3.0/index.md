@@ -35,7 +35,7 @@ This release contains no breaking changes scoped to CASE beyond UCO's changes.
 
 *(These are changes to ontologies, classes or properties in the preexisting ontology.)*
 
-This release contains no breaking changes scoped to CASE beyond UCO's changes.
+This release contains no non-breaking changes scoped to CASE beyond UCO's changes.
 
 
 #### Bug Fixes

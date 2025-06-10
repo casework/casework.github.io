@@ -37,3 +37,6 @@
 - title: 1.3.0
   date: 2024-01-24
   desc: Adoption of UCO 1.3.0.  Bug fixes and test improvements.
+- title: 1.4.0
+  date: 2025-05-29
+  desc: Adoption of UCO 1.4.0.  Revision to semi-open vocabulary pattern, with other bug fixes and test improvements.  A <code>case-investigation:ProvenanceRecord</code> is now permitted to have 0 contained objects.

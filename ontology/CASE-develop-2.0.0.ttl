@@ -1,24 +1,24 @@
 # imports: http://purl.org/co
-# imports: https://ontology.caseontology.org/case/investigation/1.3.0
-# imports: https://ontology.caseontology.org/case/vocabulary/1.3.0
-# imports: https://ontology.unifiedcyberontology.org/co/1.3.0
-# imports: https://ontology.unifiedcyberontology.org/owl/1.3.0
-# imports: https://ontology.unifiedcyberontology.org/uco/action/1.3.0
-# imports: https://ontology.unifiedcyberontology.org/uco/analysis/1.3.0
-# imports: https://ontology.unifiedcyberontology.org/uco/configuration/1.3.0
-# imports: https://ontology.unifiedcyberontology.org/uco/core/1.3.0
-# imports: https://ontology.unifiedcyberontology.org/uco/identity/1.3.0
-# imports: https://ontology.unifiedcyberontology.org/uco/location/1.3.0
-# imports: https://ontology.unifiedcyberontology.org/uco/marking/1.3.0
-# imports: https://ontology.unifiedcyberontology.org/uco/observable/1.3.0
-# imports: https://ontology.unifiedcyberontology.org/uco/pattern/1.3.0
-# imports: https://ontology.unifiedcyberontology.org/uco/role/1.3.0
-# imports: https://ontology.unifiedcyberontology.org/uco/time/1.3.0
-# imports: https://ontology.unifiedcyberontology.org/uco/tool/1.3.0
-# imports: https://ontology.unifiedcyberontology.org/uco/types/1.3.0
-# imports: https://ontology.unifiedcyberontology.org/uco/uco/1.3.0
-# imports: https://ontology.unifiedcyberontology.org/uco/victim/1.3.0
-# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary/1.3.0
+# imports: https://ontology.caseontology.org/case/investigation/1.4.0
+# imports: https://ontology.caseontology.org/case/vocabulary/1.4.0
+# imports: https://ontology.unifiedcyberontology.org/co/1.4.0
+# imports: https://ontology.unifiedcyberontology.org/owl/1.4.0
+# imports: https://ontology.unifiedcyberontology.org/uco/action/1.4.0
+# imports: https://ontology.unifiedcyberontology.org/uco/analysis/1.4.0
+# imports: https://ontology.unifiedcyberontology.org/uco/configuration/1.4.0
+# imports: https://ontology.unifiedcyberontology.org/uco/core/1.4.0
+# imports: https://ontology.unifiedcyberontology.org/uco/identity/1.4.0
+# imports: https://ontology.unifiedcyberontology.org/uco/location/1.4.0
+# imports: https://ontology.unifiedcyberontology.org/uco/marking/1.4.0
+# imports: https://ontology.unifiedcyberontology.org/uco/observable/1.4.0
+# imports: https://ontology.unifiedcyberontology.org/uco/pattern/1.4.0
+# imports: https://ontology.unifiedcyberontology.org/uco/role/1.4.0
+# imports: https://ontology.unifiedcyberontology.org/uco/time/1.4.0
+# imports: https://ontology.unifiedcyberontology.org/uco/tool/1.4.0
+# imports: https://ontology.unifiedcyberontology.org/uco/types/1.4.0
+# imports: https://ontology.unifiedcyberontology.org/uco/uco/1.4.0
+# imports: https://ontology.unifiedcyberontology.org/uco/victim/1.4.0
+# imports: https://ontology.unifiedcyberontology.org/uco/vocabulary/1.4.0
 
 @prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix analysis: <https://ontology.unifiedcyberontology.org/uco/analysis/> .
@@ -52,47 +52,47 @@
 	rdfs:label "case-master"@en ;
 	rdfs:comment "The Cyber-investigation Analysis Standard Expression (CASE) ontology is a community-developed standard that defines concepts used in a broad range of cyber-investigation domains, including digital forensic science, incident response, counter-terrorism, criminal justice, forensic intelligence, and situational awareness. CASE includes all aspects of the digital forensic process, from evidence-gathering and chain of custody, to generating a final report. The goal is to increase sharing and interoperability of cyber-investigation information among organizations and between forensic analytic tools. CASE aligns with and extends the Unified Cyber Ontology (UCO). The preferred namespace abbreviation for this ontology is: case-master."@en ;
 	dcterms:title "Cyber-investigation Analysis Standard Expression (CASE)"@en ;
-	owl:backwardCompatibleWith <https://ontology.caseontology.org/case/case/1.2.0> ;
+	owl:backwardCompatibleWith <https://ontology.caseontology.org/case/case/1.3.0> ;
 	owl:imports
-		investigation:1.3.0 ,
-		vocab:1.3.0 ,
-		<https://ontology.unifiedcyberontology.org/uco/uco/1.3.0>
+		investigation:1.4.0 ,
+		vocab:1.4.0 ,
+		<https://ontology.unifiedcyberontology.org/uco/uco/1.4.0>
 		;
-	owl:priorVersion <https://ontology.caseontology.org/case/case/1.2.0> ;
-	owl:versionIRI <https://ontology.caseontology.org/case/case/1.3.0> ;
-	owl:versionInfo "1.3.0" ;
+	owl:priorVersion <https://ontology.caseontology.org/case/case/1.3.0> ;
+	owl:versionIRI <https://ontology.caseontology.org/case/case/1.4.0> ;
+	owl:versionInfo "1.4.0" ;
 	.
 
 <https://ontology.caseontology.org/case/investigation>
 	a owl:Ontology ;
 	rdfs:label "investigation"@en ;
 	rdfs:comment "This ontology defines key concepts, and their associated properties and relationships, for characterizing cyber-investigations in the broadest range of contexts, including security incidents, criminal investigations, civil and regulatory matters, intelligence operations, international disputes, accident inquiries, policy violations, and others." ;
-	owl:backwardCompatibleWith investigation:1.2.0 ;
+	owl:backwardCompatibleWith investigation:1.3.0 ;
 	owl:imports
-		vocab:1.3.0 ,
-		action:1.3.0 ,
-		role:1.3.0
+		vocab:1.4.0 ,
+		action:1.4.0 ,
+		role:1.4.0
 		;
-	owl:priorVersion investigation:1.2.0 ;
-	owl:versionIRI investigation:1.3.0 ;
+	owl:priorVersion investigation:1.3.0 ;
+	owl:versionIRI investigation:1.4.0 ;
 	.
 
 <https://ontology.caseontology.org/case/vocabulary>
 	a owl:Ontology ;
 	rdfs:label "vocabularies"@en ;
-	owl:backwardCompatibleWith vocab:1.2.0 ;
-	owl:priorVersion vocab:1.2.0 ;
-	owl:versionIRI vocab:1.3.0 ;
+	owl:backwardCompatibleWith vocab:1.3.0 ;
+	owl:priorVersion vocab:1.3.0 ;
+	owl:versionIRI vocab:1.4.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/co>
 	a owl:Ontology ;
 	rdfs:label "uco-co"@en ;
 	rdfs:comment "This ontology defines SHACL shapes to supplement the OWL 2 DL definitions in the Collections Ontology."@en ;
-	owl:backwardCompatibleWith uco-co:1.2.0 ;
+	owl:backwardCompatibleWith uco-co:1.3.0 ;
 	owl:imports <http://purl.org/co> ;
-	owl:priorVersion uco-co:1.2.0 ;
-	owl:versionIRI uco-co:1.3.0 ;
+	owl:priorVersion uco-co:1.3.0 ;
+	owl:versionIRI uco-co:1.4.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/owl>
@@ -100,25 +100,25 @@
 	rdfs:label "uco-owl"@en ;
 	rdfs:comment "This ontology defines SHACL shapes to perform conformance testing of OWL 2 DL.  Some of these shapes follow rules specified from the canonical, subtractive parsing process of Section 3 of the OWL 2 mapping to RDF.  From the last line of that document's Section 3, 'At the end of this process, the graph G MUST be empty,' anything not strictly matching patterns specified in that section cause the input graph to be non-conformant with OWL 2 DL."@en ;
 	rdfs:seeAlso <https://www.w3.org/TR/2012/REC-owl2-mapping-to-rdf-20121211/#Mapping_from_RDF_Graphs_to_the_Structural_Specification> ;
-	owl:backwardCompatibleWith uco-owl:1.2.0 ;
-	owl:priorVersion uco-owl:1.2.0 ;
-	owl:versionIRI uco-owl:1.3.0 ;
+	owl:backwardCompatibleWith uco-owl:1.3.0 ;
+	owl:priorVersion uco-owl:1.3.0 ;
+	owl:versionIRI uco-owl:1.4.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/action>
 	a owl:Ontology ;
 	rdfs:label "uco-action"@en ;
 	rdfs:comment "This ontology defines classes and properties for characterizing actions."@en-US ;
-	owl:backwardCompatibleWith action:1.2.0 ;
+	owl:backwardCompatibleWith action:1.3.0 ;
 	owl:imports
-		core:1.3.0 ,
-		location:1.3.0 ,
-		pattern:1.3.0 ,
-		types:1.3.0 ,
-		vocabulary:1.3.0
+		core:1.4.0 ,
+		location:1.4.0 ,
+		pattern:1.4.0 ,
+		types:1.4.0 ,
+		vocabulary:1.4.0
 		;
-	owl:priorVersion action:1.2.0 ;
-	owl:versionIRI action:1.3.0 ;
+	owl:priorVersion action:1.3.0 ;
+	owl:versionIRI action:1.4.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/analysis>
@@ -126,10 +126,10 @@
 	rdfs:label "uco-analysis"@en ;
 	rdfs:comment "This ontology defines classes and properties for characterizing analytic actions and results."@en-US ;
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/400> ;
-	owl:backwardCompatibleWith analysis:1.2.0 ;
-	owl:imports action:1.3.0 ;
-	owl:priorVersion analysis:1.2.0 ;
-	owl:versionIRI analysis:1.3.0 ;
+	owl:backwardCompatibleWith analysis:1.3.0 ;
+	owl:imports action:1.4.0 ;
+	owl:priorVersion analysis:1.3.0 ;
+	owl:versionIRI analysis:1.4.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/configuration>
@@ -137,164 +137,164 @@
 	rdfs:label "uco-configuration"@en ;
 	rdfs:comment "This ontology defines classes and properties for characterizing configurations."@en-US ;
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/432> ;
-	owl:backwardCompatibleWith configuration:1.2.0 ;
-	owl:imports core:1.3.0 ;
-	owl:priorVersion configuration:1.2.0 ;
-	owl:versionIRI configuration:1.3.0 ;
+	owl:backwardCompatibleWith configuration:1.3.0 ;
+	owl:imports core:1.4.0 ;
+	owl:priorVersion configuration:1.3.0 ;
+	owl:versionIRI configuration:1.4.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/core>
 	a owl:Ontology ;
 	rdfs:label "uco-core"@en ;
 	rdfs:comment "This ontology defines classes and properties that are shared across the various UCO ontologies.  At a high-level, the UCO core ontology provides base classes, relationship-oriented classes, content-aggregation classes, and shared classes."@en ;
-	owl:backwardCompatibleWith core:1.2.0 ;
-	owl:priorVersion core:1.2.0 ;
-	owl:versionIRI core:1.3.0 ;
+	owl:backwardCompatibleWith core:1.3.0 ;
+	owl:priorVersion core:1.3.0 ;
+	owl:versionIRI core:1.4.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/identity>
 	a owl:Ontology ;
 	rdfs:label "uco-identity"@en ;
-	owl:backwardCompatibleWith identity:1.2.0 ;
+	owl:backwardCompatibleWith identity:1.3.0 ;
 	owl:imports
-		core:1.3.0 ,
-		location:1.3.0
+		core:1.4.0 ,
+		location:1.4.0
 		;
-	owl:priorVersion identity:1.2.0 ;
-	owl:versionIRI identity:1.3.0 ;
+	owl:priorVersion identity:1.3.0 ;
+	owl:versionIRI identity:1.4.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/location>
 	a owl:Ontology ;
 	rdfs:label "uco-location"@en ;
-	owl:backwardCompatibleWith location:1.2.0 ;
-	owl:imports core:1.3.0 ;
-	owl:priorVersion location:1.2.0 ;
-	owl:versionIRI location:1.3.0 ;
+	owl:backwardCompatibleWith location:1.3.0 ;
+	owl:imports core:1.4.0 ;
+	owl:priorVersion location:1.3.0 ;
+	owl:versionIRI location:1.4.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/marking>
 	a owl:Ontology ;
 	rdfs:label "uco-marking"@en ;
 	rdfs:comment "Data markings represent restrictions, permissions, and other guidance for how data can be used and shared."@en ;
-	owl:backwardCompatibleWith marking:1.2.0 ;
-	owl:imports core:1.3.0 ;
-	owl:priorVersion marking:1.2.0 ;
-	owl:versionIRI marking:1.3.0 ;
+	owl:backwardCompatibleWith marking:1.3.0 ;
+	owl:imports core:1.4.0 ;
+	owl:priorVersion marking:1.3.0 ;
+	owl:versionIRI marking:1.4.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/observable>
 	a owl:Ontology ;
 	rdfs:label "uco-observable"@en ;
-	owl:backwardCompatibleWith observable:1.2.0 ;
+	owl:backwardCompatibleWith observable:1.3.0 ;
 	owl:imports
-		action:1.3.0 ,
-		configuration:1.3.0 ,
-		core:1.3.0 ,
-		identity:1.3.0 ,
-		location:1.3.0 ,
-		types:1.3.0 ,
-		vocabulary:1.3.0
+		action:1.4.0 ,
+		configuration:1.4.0 ,
+		core:1.4.0 ,
+		identity:1.4.0 ,
+		location:1.4.0 ,
+		types:1.4.0 ,
+		vocabulary:1.4.0
 		;
-	owl:priorVersion observable:1.2.0 ;
-	owl:versionIRI observable:1.3.0 ;
+	owl:priorVersion observable:1.3.0 ;
+	owl:versionIRI observable:1.4.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/pattern>
 	a owl:Ontology ;
 	rdfs:label "uco-pattern"@en ;
-	owl:backwardCompatibleWith pattern:1.2.0 ;
-	owl:imports core:1.3.0 ;
-	owl:priorVersion pattern:1.2.0 ;
-	owl:versionIRI pattern:1.3.0 ;
+	owl:backwardCompatibleWith pattern:1.3.0 ;
+	owl:imports core:1.4.0 ;
+	owl:priorVersion pattern:1.3.0 ;
+	owl:versionIRI pattern:1.4.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/role>
 	a owl:Ontology ;
 	rdfs:label "uco-role"@en ;
-	owl:backwardCompatibleWith role:1.2.0 ;
-	owl:imports core:1.3.0 ;
-	owl:priorVersion role:1.2.0 ;
-	owl:versionIRI role:1.3.0 ;
+	owl:backwardCompatibleWith role:1.3.0 ;
+	owl:imports core:1.4.0 ;
+	owl:priorVersion role:1.3.0 ;
+	owl:versionIRI role:1.4.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/time>
 	a owl:Ontology ;
 	rdfs:label "uco-time"@en ;
-	owl:backwardCompatibleWith time1:1.2.0 ;
-	owl:imports core:1.3.0 ;
-	owl:priorVersion time1:1.2.0 ;
-	owl:versionIRI time1:1.3.0 ;
+	owl:backwardCompatibleWith time1:1.3.0 ;
+	owl:imports core:1.4.0 ;
+	owl:priorVersion time1:1.3.0 ;
+	owl:versionIRI time1:1.4.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/tool>
 	a owl:Ontology ;
 	rdfs:label "uco-tool"@en ;
-	owl:backwardCompatibleWith tool:1.2.0 ;
+	owl:backwardCompatibleWith tool:1.3.0 ;
 	owl:imports
-		configuration:1.3.0 ,
-		identity:1.3.0
+		configuration:1.4.0 ,
+		identity:1.4.0
 		;
-	owl:priorVersion tool:1.2.0 ;
-	owl:versionIRI tool:1.3.0 ;
+	owl:priorVersion tool:1.3.0 ;
+	owl:versionIRI tool:1.4.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/types>
 	a owl:Ontology ;
 	rdfs:label "uco-types"@en ;
-	owl:backwardCompatibleWith types:1.2.0 ;
+	owl:backwardCompatibleWith types:1.3.0 ;
 	owl:imports
-		uco-co:1.3.0 ,
-		core:1.3.0 ,
-		vocabulary:1.3.0
+		uco-co:1.4.0 ,
+		core:1.4.0 ,
+		vocabulary:1.4.0
 		;
-	owl:priorVersion types:1.2.0 ;
-	owl:versionIRI types:1.3.0 ;
+	owl:priorVersion types:1.3.0 ;
+	owl:versionIRI types:1.4.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/uco>
 	a owl:Ontology ;
 	rdfs:label "uco-master"@en ;
-	owl:backwardCompatibleWith <https://ontology.unifiedcyberontology.org/uco/uco/1.2.0> ;
+	owl:backwardCompatibleWith <https://ontology.unifiedcyberontology.org/uco/uco/1.3.0> ;
 	owl:imports
-		uco-co:1.3.0 ,
-		uco-owl:1.3.0 ,
-		action:1.3.0 ,
-		analysis:1.3.0 ,
-		configuration:1.3.0 ,
-		core:1.3.0 ,
-		identity:1.3.0 ,
-		location:1.3.0 ,
-		marking:1.3.0 ,
-		observable:1.3.0 ,
-		pattern:1.3.0 ,
-		role:1.3.0 ,
-		time1:1.3.0 ,
-		tool:1.3.0 ,
-		types:1.3.0 ,
-		victim:1.3.0 ,
-		vocabulary:1.3.0
+		uco-co:1.4.0 ,
+		uco-owl:1.4.0 ,
+		action:1.4.0 ,
+		analysis:1.4.0 ,
+		configuration:1.4.0 ,
+		core:1.4.0 ,
+		identity:1.4.0 ,
+		location:1.4.0 ,
+		marking:1.4.0 ,
+		observable:1.4.0 ,
+		pattern:1.4.0 ,
+		role:1.4.0 ,
+		time1:1.4.0 ,
+		tool:1.4.0 ,
+		types:1.4.0 ,
+		victim:1.4.0 ,
+		vocabulary:1.4.0
 		;
-	owl:priorVersion <https://ontology.unifiedcyberontology.org/uco/uco/1.2.0> ;
-	owl:versionIRI <https://ontology.unifiedcyberontology.org/uco/uco/1.3.0> ;
-	owl:versionInfo "1.3.0" ;
+	owl:priorVersion <https://ontology.unifiedcyberontology.org/uco/uco/1.3.0> ;
+	owl:versionIRI <https://ontology.unifiedcyberontology.org/uco/uco/1.4.0> ;
+	owl:versionInfo "1.4.0" ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/victim>
 	a owl:Ontology ;
 	rdfs:label "uco-victim"@en ;
-	owl:backwardCompatibleWith victim:1.2.0 ;
-	owl:imports role:1.3.0 ;
-	owl:priorVersion victim:1.2.0 ;
-	owl:versionIRI victim:1.3.0 ;
+	owl:backwardCompatibleWith victim:1.3.0 ;
+	owl:imports role:1.4.0 ;
+	owl:priorVersion victim:1.3.0 ;
+	owl:versionIRI victim:1.4.0 ;
 	.
 
 <https://ontology.unifiedcyberontology.org/uco/vocabulary>
 	a owl:Ontology ;
 	rdfs:label "uco-vocabularies"@en ;
-	owl:backwardCompatibleWith vocabulary:1.2.0 ;
-	owl:priorVersion vocabulary:1.2.0 ;
-	owl:versionIRI vocabulary:1.3.0 ;
+	owl:backwardCompatibleWith vocabulary:1.3.0 ;
+	owl:priorVersion vocabulary:1.3.0 ;
+	owl:versionIRI vocabulary:1.4.0 ;
 	.
 
 co:ListItem
@@ -1217,7 +1217,7 @@ action:Action
 	rdfs:subClassOf core:UcoObject ;
 	rdfs:label "Action"@en ;
 	rdfs:comment "An action is something that may be done or performed."@en ;
-	rdfs:isDefinedBy <https://ontology.unifiedcyberontology.org/uco/types> ;
+	rdfs:isDefinedBy <https://ontology.unifiedcyberontology.org/uco/action> ;
 	owl:disjointWith core:Event ;
 	sh:property
 		action:Action-actionStatus-in-shape ,
@@ -1288,11 +1288,6 @@ action:Action
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for action:actionStatus should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path action:actionStatus ;
-			sh:severity sh:Warning ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path action:actionStatus ;
@@ -1420,19 +1415,14 @@ action:ActionFrequencyFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path action:units ;
+			sh:path action:trend ;
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for action:trend should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path action:trend ;
-			sh:severity sh:Warning ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path action:trend ;
+			sh:path action:units ;
 		]
 		;
 	sh:targetClass action:ActionFrequencyFacet ;
@@ -3688,11 +3678,6 @@ observable:AccountFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:accountType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path observable:accountType ;
-			sh:severity sh:Warning ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:accountType ;
@@ -4159,11 +4144,6 @@ observable:AutonomousSystemFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:regionalInternetRegistry should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path observable:regionalInternetRegistry ;
-			sh:severity sh:Warning ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:regionalInternetRegistry ;
@@ -4939,11 +4919,6 @@ observable:ContactAddress
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:contactAddressScope should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path observable:contactAddressScope ;
-			sh:severity sh:Warning ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:contactAddressScope ;
@@ -5049,11 +5024,6 @@ observable:ContactEmail
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:contactEmailScope should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path observable:contactEmailScope ;
-			sh:severity sh:Warning ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:contactEmailScope ;
@@ -5304,11 +5274,6 @@ observable:ContactPhone
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:contactPhoneScope in UCO 2.0.0." ;
-			sh:path observable:contactPhoneScope ;
-			sh:severity sh:Warning ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:contactPhoneScope ;
@@ -5377,11 +5342,6 @@ observable:ContactSIP
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:contactSIPScope should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path observable:contactSIPScope ;
-			sh:severity sh:Warning ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:contactSIPScope ;
@@ -5420,11 +5380,6 @@ observable:ContactURL
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:contactURLScope should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path observable:contactURLScope ;
-			sh:severity sh:Warning ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:contactURLScope ;
@@ -5500,6 +5455,12 @@ observable:ContentDataFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:path observable:byteOrder ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:dataPayload ;
 		] ,
 		[
@@ -5516,19 +5477,8 @@ observable:ContentDataFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:byteOrder should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path observable:byteOrder ;
-			sh:severity sh:Warning ;
-		] ,
-		[
-			sh:datatype xsd:string ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:mimeType ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:byteOrder ;
 		]
 		;
 	sh:targetClass observable:ContentDataFacet ;
@@ -7529,11 +7479,6 @@ observable:MemoryFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:blockType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path observable:blockType ;
-			sh:severity sh:Warning ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:blockType ;
@@ -9130,33 +9075,18 @@ observable:RecoveredObjectFacet
 		observable:RecoveredObjectFacet-nameRecoveredStatus-in-shape ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:contentRecoveredStatus should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path observable:contentRecoveredStatus ;
-			sh:severity sh:Warning ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:metadataRecoveredStatus should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path observable:metadataRecoveredStatus ;
-			sh:severity sh:Warning ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:nameRecoveredStatus should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path observable:nameRecoveredStatus ;
-			sh:severity sh:Warning ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:contentRecoveredStatus ;
 		] ,
 		[
+			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:metadataRecoveredStatus ;
 		] ,
 		[
+			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:nameRecoveredStatus ;
@@ -9875,11 +9805,6 @@ observable:TaskActionType
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:actionType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path observable:actionType ;
-			sh:severity sh:Warning ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:actionType ;
@@ -9940,6 +9865,12 @@ observable:TriggerType
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:path observable:triggerFrequency ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:triggerMaxRunTime ;
 		] ,
 		[
@@ -9950,22 +9881,6 @@ observable:TriggerType
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:triggerFrequency should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path observable:triggerFrequency ;
-			sh:severity sh:Warning ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:triggerType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path observable:triggerType ;
-			sh:severity sh:Warning ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:triggerFrequency ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:triggerType ;
@@ -10489,11 +10404,6 @@ observable:URLVisitFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:urlTransitionType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path observable:urlTransitionType ;
-			sh:severity sh:Warning ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:urlTransitionType ;
@@ -10791,6 +10701,12 @@ observable:WhoIsFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:path observable:regionalInternetRegistry ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:remarks ;
 		] ,
 		[
@@ -10801,15 +10717,9 @@ observable:WhoIsFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:regionalInternetRegistry should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path observable:regionalInternetRegistry ;
-			sh:severity sh:Warning ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:status should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:status ;
-			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:datatype xsd:string ;
@@ -10821,16 +10731,6 @@ observable:WhoIsFacet
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:dnssec ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:regionalInternetRegistry ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:status ;
 		]
 		;
 	sh:targetClass observable:WhoIsFacet ;
@@ -10876,11 +10776,6 @@ observable:WhoisContactFacet
 		observable:WhoisContactFacet-whoisContactType-in-shape ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:whoisContactType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path observable:whoisContactType ;
-			sh:severity sh:Warning ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:whoisContactType ;
@@ -12041,6 +11936,12 @@ observable:WindowsTaskFacet
 			sh:datatype xsd:string ;
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
+			sh:path observable:status ;
+		] ,
+		[
+			sh:datatype xsd:string ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:taskComment ;
 		] ,
 		[
@@ -12051,28 +11952,12 @@ observable:WindowsTaskFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:flags should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:flags ;
-			sh:severity sh:Warning ;
-		] ,
-		[
-			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:status should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path observable:status ;
-			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
-			sh:path observable:priority ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:status ;
-		] ,
-		[
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:priority should be xsd:string or xsd:integer.  Not using xsd:string or xsd:integer will be an error in UCO 2.0.0." ;
 			sh:or (
 				[
 					sh:datatype xsd:integer ;
@@ -12082,11 +11967,6 @@ observable:WindowsTaskFacet
 				]
 			) ;
 			sh:path observable:priority ;
-			sh:severity sh:Warning ;
-		] ,
-		[
-			sh:nodeKind sh:Literal ;
-			sh:path observable:flags ;
 		]
 		;
 	sh:targetClass observable:WindowsTaskFacet ;
@@ -12265,20 +12145,15 @@ observable:WindowsVolumeFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:driveType should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
+			sh:maxCount "1"^^xsd:integer ;
+			sh:nodeKind sh:Literal ;
 			sh:path observable:driveType ;
-			sh:severity sh:Warning ;
 		] ,
 		[
 			sh:datatype vocabulary:WindowsVolumeAttributeVocab ;
 			sh:maxCount "4"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:windowsVolumeAttributes ;
-		] ,
-		[
-			sh:maxCount "1"^^xsd:integer ;
-			sh:nodeKind sh:Literal ;
-			sh:path observable:driveType ;
 		]
 		;
 	sh:targetClass observable:WindowsVolumeFacet ;
@@ -12352,11 +12227,6 @@ observable:WirelessNetworkConnectionFacet
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for observable:wirelessNetworkSecurityMode should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path observable:wirelessNetworkSecurityMode ;
-			sh:severity sh:Warning ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
 			sh:path observable:wirelessNetworkSecurityMode ;
@@ -17649,11 +17519,6 @@ types:Hash
 		] ,
 		[
 			sh:datatype xsd:string ;
-			sh:message "As of UCO 1.4.0, the datatype to use for types:hashMethod should be xsd:string.  Not using xsd:string will be an error in UCO 2.0.0." ;
-			sh:path types:hashMethod ;
-			sh:severity sh:Warning ;
-		] ,
-		[
 			sh:maxCount "1"^^xsd:integer ;
 			sh:minCount "1"^^xsd:integer ;
 			sh:nodeKind sh:Literal ;
