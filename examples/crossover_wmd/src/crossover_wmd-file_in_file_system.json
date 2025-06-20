@@ -49,10 +49,7 @@
                     {
                         "@id": "kb:hash-1a6175e1-cef7-5ee3-8703-22f5f7a43603",
                         "@type": "uco-types:Hash",
-                        "uco-types:hashMethod": {
-                            "@type": "uco-vocabulary:HashNameVocab",
-                            "@value": "SHA256"
-                        },
+                        "uco-types:hashMethod": "SHA256",
                         "uco-types:hashValue": {
                             "@type": "xsd:hexBinary",
                             "@value": "0611ea093d19b1c73a5285ff43741dd77f2a8d983c1c71044eb072e44f5dcb0a"
