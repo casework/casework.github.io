@@ -3,7 +3,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
-@prefix vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 []
@@ -12,16 +11,11 @@
 	sh:result [
 		a sh:ValidationResult ;
 		sh:focusNode <http://example.org/kb/account-facet-31df5a8a-fb9f-4fa6-85f9-cea13f4b9f03> ;
-		sh:resultMessage "Value is outside the default vocabulary AccountTypeVocab." ;
+		sh:resultMessage "Value is not member of the vocabulary AccountTypeVocab." ;
 		sh:resultPath uco-observable:accountType ;
 		sh:resultSeverity sh:Info ;
-		sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
-		sh:sourceShape [
-			sh:datatype vocabulary:AccountTypeVocab ;
-			sh:message "Value is outside the default vocabulary AccountTypeVocab." ;
-			sh:path uco-observable:accountType ;
-			sh:severity sh:Info ;
-		] ;
+		sh:sourceConstraintComponent sh:InConstraintComponent ;
+		sh:sourceShape uco-observable:AccountFacet-accountType-in-shape ;
 		sh:value "Phone" ;
 	] ;
 	.

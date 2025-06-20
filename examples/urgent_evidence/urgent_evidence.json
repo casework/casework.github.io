@@ -432,10 +432,7 @@
                         {
                             "@id": "kb:hash-1c86f419-621d-5576-b333-319c098cc725",
                             "@type": "uco-types:Hash",
-                            "uco-types:hashMethod": {
-                                "@type": "uco-vocabulary:HashNameVocab",
-                                "@value": "SHA256"
-                            },
+                            "uco-types:hashMethod": "SHA256",
                             "uco-types:hashValue": {
                                 "@type": "xsd:hexBinary",
                                 "@value": "09CC5D284371DB21727F1171A30C6652F062E6DE1282D952D0E9DF36EAE7C594"
@@ -464,10 +461,7 @@
                         {
                             "@id": "kb:hash-e642f5b3-7bb8-5b57-8582-e6dd9701f715",
                             "@type": "uco-types:Hash",
-                            "uco-types:hashMethod": {
-                                "@type": "uco-vocabulary:HashNameVocab",
-                                "@value": "SHA256"
-                            },
+                            "uco-types:hashMethod": "SHA256",
                             "uco-types:hashValue": {
                                 "@type": "xsd:hexBinary",
                                 "@value": "D54A0EAA6C2B49C962A4B172418734311458D976A5866495F3A6A0CD952924D4"
@@ -496,10 +490,7 @@
                         {
                             "@id": "kb:hash-775d1e74-b058-59a0-a50c-e680e041f48d",
                             "@type": "uco-types:Hash",
-                            "uco-types:hashMethod": {
-                                "@type": "uco-vocabulary:HashNameVocab",
-                                "@value": "SHA256"
-                            },
+                            "uco-types:hashMethod": "SHA256",
                             "uco-types:hashValue": {
                                 "@type": "xsd:hexBinary",
                                 "@value": "25961D1D0923BCD919B9560B81EDFF47B478D025E7AE2549F7ED0AC5C2AB6023"
@@ -805,10 +796,7 @@
                         {
                             "@id": "kb:hash-dc27e089-5491-5954-9a7e-5e672096e65b",
                             "@type": "uco-types:Hash",
-                            "uco-types:hashMethod": {
-                                "@type": "uco-vocabulary:HashNameVocab",
-                                "@value": "SHA256"
-                            },
+                            "uco-types:hashMethod": "SHA256",
                             "uco-types:hashValue": {
                                 "@type": "xsd:hexBinary",
                                 "@value": "6ba5b138057cca4e737a86083cf28426093f218efbef64967863a6c83138fe89"
@@ -895,10 +883,7 @@
                         {
                             "@id": "kb:hash-a107dc51-8473-55b3-aeb0-b1d612b06774",
                             "@type": "uco-types:Hash",
-                            "uco-types:hashMethod": {
-                                "@type": "uco-vocabulary:HashNameVocab",
-                                "@value": "SHA256"
-                            },
+                            "uco-types:hashMethod": "SHA256",
                             "uco-types:hashValue": {
                                 "@type": "xsd:hexBinary",
                                 "@value": "cadc54f42a9d01ecb5ecdc3a9a4824c73301d6ce9857eaa73fc28317ccd5d40f"
@@ -985,10 +970,7 @@
                         {
                             "@id": "kb:hash-c9afb845-3b2d-5af8-bf11-35d285209b9c",
                             "@type": "uco-types:Hash",
-                            "uco-types:hashMethod": {
-                                "@type": "uco-vocabulary:HashNameVocab",
-                                "@value": "SHA256"
-                            },
+                            "uco-types:hashMethod": "SHA256",
                             "uco-types:hashValue": {
                                 "@type": "xsd:hexBinary",
                                 "@value": "ee3657ad73c09098312e71a31ca7ac468c1fb1b998b5d6647ad471dcc89c4141"
@@ -1075,10 +1057,7 @@
                         {
                             "@id": "kb:hash-3934df3d-1589-5897-928f-0d8fe22f116b",
                             "@type": "uco-types:Hash",
-                            "uco-types:hashMethod": {
-                                "@type": "uco-vocabulary:HashNameVocab",
-                                "@value": "SHA256"
-                            },
+                            "uco-types:hashMethod": "SHA256",
                             "uco-types:hashValue": {
                                 "@type": "xsd:hexBinary",
                                 "@value": "132bfadcc46addedcafcd84653f1a56007eba2f27bfcb15824536cda65a49c9a"
@@ -1165,10 +1144,7 @@
                         {
                             "@id": "kb:hash-a6c7a86b-7f24-5b4d-87ae-b265bdaf129a",
                             "@type": "uco-types:Hash",
-                            "uco-types:hashMethod": {
-                                "@type": "uco-vocabulary:HashNameVocab",
-                                "@value": "SHA256"
-                            },
+                            "uco-types:hashMethod": "SHA256",
                             "uco-types:hashValue": {
                                 "@type": "xsd:hexBinary",
                                 "@value": "1929ec6c6186f43860da7c77c0c65d1b8543a5543572261a1b71084e7bf80a0e"
@@ -1255,10 +1231,7 @@
                         {
                             "@id": "kb:hash-0c941f0a-241d-56de-941b-e2c8deca9f1e",
                             "@type": "uco-types:Hash",
-                            "uco-types:hashMethod": {
-                                "@type": "uco-vocabulary:HashNameVocab",
-                                "@value": "SHA256"
-                            },
+                            "uco-types:hashMethod": "SHA256",
                             "uco-types:hashValue": {
                                 "@type": "xsd:hexBinary",
                                 "@value": "fc0819ed4dcb2af9c85a041a0da11ea6a146dec0b108c09f5e0d41e8ea3bb041"
@@ -1345,10 +1318,7 @@
                         {
                             "@id": "kb:hash-23419e7a-87fc-5f48-b941-615b3723e578",
                             "@type": "uco-types:Hash",
-                            "uco-types:hashMethod": {
-                                "@type": "uco-vocabulary:HashNameVocab",
-                                "@value": "SHA256"
-                            },
+                            "uco-types:hashMethod": "SHA256",
                             "uco-types:hashValue": {
                                 "@type": "xsd:hexBinary",
                                 "@value": "a49f0716e610bd0f77543b1e7ca7613e9b31bf32509e854c7ba65b79be502a18"
@@ -1429,10 +1399,7 @@
                         {
                             "@id": "kb:hash-4699b931-a66e-5cb0-9093-31ea93b70ba8",
                             "@type": "uco-types:Hash",
-                            "uco-types:hashMethod": {
-                                "@type": "uco-vocabulary:HashNameVocab",
-                                "@value": "SHA256"
-                            },
+                            "uco-types:hashMethod": "SHA256",
                             "uco-types:hashValue": {
                                 "@type": "xsd:hexBinary",
                                 "@value": "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73a43362938b9824"
@@ -1513,10 +1480,7 @@
                         {
                             "@id": "kb:hash-681f5852-ebc6-5b58-a1f4-aa36a5da870c",
                             "@type": "uco-types:Hash",
-                            "uco-types:hashMethod": {
-                                "@type": "uco-vocabulary:HashNameVocab",
-                                "@value": "SHA256"
-                            },
+                            "uco-types:hashMethod": "SHA256",
                             "uco-types:hashValue": {
                                 "@type": "xsd:hexBinary",
                                 "@value": "9a171853eee9f8162e480b28c36f7619a2db8539ccfee849b8ec0068aef53789"

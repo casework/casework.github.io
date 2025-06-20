@@ -276,10 +276,7 @@
                         {
                             "@id": "kb:hash-cb86489c-4d91-5261-adcd-4cf377726d94",
                             "@type": "uco-types:Hash",
-                            "uco-types:hashMethod": {
-                                "@type": "uco-vocabulary:HashNameVocab",
-                                "@value": "MD5"
-                            },
+                            "uco-types:hashMethod": "MD5",
                             "uco-types:hashValue": {
                                 "@type": "xsd:hexBinary",
                                 "@value": "13f1393bfe548620da920fac9865965e"
@@ -406,10 +403,7 @@
                         {
                             "@id": "kb:hash-1a6175e1-cef7-5ee3-8703-22f5f7a43603",
                             "@type": "uco-types:Hash",
-                            "uco-types:hashMethod": {
-                                "@type": "uco-vocabulary:HashNameVocab",
-                                "@value": "SHA256"
-                            },
+                            "uco-types:hashMethod": "SHA256",
                             "uco-types:hashValue": {
                                 "@type": "xsd:hexBinary",
                                 "@value": "0611ea093d19b1c73a5285ff43741dd77f2a8d983c1c71044eb072e44f5dcb0a"
@@ -475,10 +469,7 @@
                         {
                             "@id": "kb:hash-c92fc112-d6d0-512c-964f-92d907dd645e",
                             "@type": "uco-types:Hash",
-                            "uco-types:hashMethod": {
-                                "@type": "uco-vocabulary:HashNameVocab",
-                                "@value": "MD5"
-                            },
+                            "uco-types:hashMethod": "MD5",
                             "uco-types:hashValue": {
                                 "@type": "xsd:hexBinary",
                                 "@value": "569D5663179237798264E2669281DCD7"
@@ -487,10 +478,7 @@
                         {
                             "@id": "kb:hash-1a37ec6e-565a-5393-92c9-42fff2d7361a",
                             "@type": "uco-types:Hash",
-                            "uco-types:hashMethod": {
-                                "@type": "uco-vocabulary:HashNameVocab",
-                                "@value": "SHA1"
-                            },
+                            "uco-types:hashMethod": "SHA1",
                             "uco-types:hashValue": {
                                 "@type": "xsd:hexBinary",
                                 "@value": "F46EE05CE1A2210501EA512ED9E4C7EC59222CCA"
@@ -1008,10 +996,7 @@
                         {
                             "@id": "kb:hash-768aafec-34be-53fb-b4ee-a32666c26145",
                             "@type": "uco-types:Hash",
-                            "uco-types:hashMethod": {
-                                "@type": "uco-vocabulary:HashNameVocab",
-                                "@value": "MD5"
-                            },
+                            "uco-types:hashMethod": "MD5",
                             "uco-types:hashValue": {
                                 "@type": "xsd:hexBinary",
                                 "@value": "7434d3a6c61c2244d6f3a0491c144568"
@@ -1279,10 +1264,7 @@
                         {
                             "@id": "kb:hash-c6cc7dd6-1bf9-5454-9653-37caff09411d",
                             "@type": "uco-types:Hash",
-                            "uco-types:hashMethod": {
-                                "@type": "uco-vocabulary:HashNameVocab",
-                                "@value": "SHA256"
-                            },
+                            "uco-types:hashMethod": "SHA256",
                             "uco-types:hashValue": {
                                 "@type": "xsd:hexBinary",
                                 "@value": "a13225720074371d56a4f4d5117fbb4953c5b1d316b31f21edcb7ed8fdf66c6e"
