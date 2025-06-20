@@ -64,10 +64,7 @@
                     {
                         "@id": "kb:hash-7ca0e7ac-6898-54cd-a97c-1f971dd0b36e",
                         "@type": "uco-types:Hash",
-                        "uco-types:hashMethod": {
-                            "@type": "uco-vocabulary:HashNameVocab",
-                            "@value": "MD5"
-                        },
+                        "uco-types:hashMethod": "MD5",
                         "uco-types:hashValue": {
                             "@type": "xsd:hexBinary",
                             "@value": "B334843A07A9E16494EEBDF3079E6BC6"
@@ -76,10 +73,7 @@
                     {
                         "@id": "kb:hash-b5132ecb-a53c-5471-a08d-09426ea2991c",
                         "@type": "uco-types:Hash",
-                        "uco-types:hashMethod": {
-                            "@type": "uco-vocabulary:HashNameVocab",
-                            "@value": "SHA1"
-                        },
+                        "uco-types:hashMethod": "SHA1",
                         "uco-types:hashValue": {
                             "@type": "xsd:hexBinary",
                             "@value": "5506912AAC41534DC5AF12B51059D5880737AB5E"

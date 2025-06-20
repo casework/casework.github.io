@@ -115,10 +115,7 @@
                     {
                         "@id": "kb:hash-768aafec-34be-53fb-b4ee-a32666c26145",
                         "@type": "uco-types:Hash",
-                        "uco-types:hashMethod": {
-                            "@type": "uco-vocabulary:HashNameVocab",
-                            "@value": "MD5"
-                        },
+                        "uco-types:hashMethod": "MD5",
                         "uco-types:hashValue": {
                             "@type": "xsd:hexBinary",
                             "@value": "7434d3a6c61c2244d6f3a0491c144568"

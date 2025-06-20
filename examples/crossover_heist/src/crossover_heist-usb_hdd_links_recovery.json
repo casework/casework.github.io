@@ -48,26 +48,14 @@
             {
                 "@id": "kb:recovered-object-facet-0a916246-a9a0-43ad-a158-ae76cc2c1bb7",
                 "@type": "uco-observable:RecoveredObjectFacet",
-                "uco-observable:contentRecoveredStatus": {
-                    "@type": "uco-vocabulary:RecoveredObjectStatusVocab",
-                    "@value": "recovered"
-                },
-                "uco-observable:metadataRecoveredStatus": {
-                    "@type": "uco-vocabulary:RecoveredObjectStatusVocab",
-                    "@value": "recovered"
-                },
-                "uco-observable:nameRecoveredStatus": {
-                    "@type": "uco-vocabulary:RecoveredObjectStatusVocab",
-                    "@value": "recovered"
-                }
+                "uco-observable:contentRecoveredStatus": "recovered",
+                "uco-observable:metadataRecoveredStatus": "recovered",
+                "uco-observable:nameRecoveredStatus": "recovered"
             },
             {
                 "@id": "kb:content-data-facet-17d9f5ea-d00b-4130-866f-e7399332ae5e",
                 "@type": "uco-observable:ContentDataFacet",
-                "uco-observable:byteOrder": {
-                    "@type": "uco-vocabulary:EndiannessTypeVocab",
-                    "@value": "Big-endian"
-                },
+                "uco-observable:byteOrder": "Big-endian",
                 "uco-observable:sizeInBytes": 11633,
                 "uco-observable:mimeType": "application/application/vnd.openxmlformats-officedocument.wordprocessingml.document",
                 "uco-observable:hash": [
@@ -75,10 +63,7 @@
                         "@id": "kb:hash-adece2a7-0017-5e25-be76-f6b78386186b",
                         "@type": "uco-types:Hash",
                         "rdfs:comment": "TODO: From the hash length, the algorithm appears to be MD5, not SHA2-256.",
-                        "uco-types:hashMethod": {
-                            "@type": "uco-vocabulary:HashNameVocab",
-                            "@value": "SHA256"
-                        },
+                        "uco-types:hashMethod": "SHA256",
                         "uco-types:hashValue": {
                             "@type": "xsd:hexBinary",
                             "@value": "701ad15009b0e79af524336f7d069ed1"
