@@ -99,7 +99,7 @@ def test_actions_to_photo(action_iris_all: typing.Set[str]) -> None:
         select_query_text = in_fh.read().strip()
     _logger.debug("select_query_text = %r." % select_query_text)
     for record in graph.query(select_query_text):
-        (n_deriving_action, l_description) = record
+        n_deriving_action, l_description = record
         action_iris_computed.add(n_deriving_action.toPython())
 
     action_iris_true_positive = action_iris_computed & action_iris_ground_truth_positive
@@ -159,7 +159,7 @@ def test_photo_selection() -> None:
         select_query_text = in_fh.read().strip()
     _logger.debug("select_query_text = %r." % select_query_text)
     for record in graph.query(select_query_text):
-        (l_file_name, l_review_status) = record
+        l_file_name, l_review_status = record
         file_name_status_computed.add(
             (l_file_name.toPython(), l_review_status.toPython())
         )
