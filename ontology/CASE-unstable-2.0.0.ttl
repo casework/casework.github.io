@@ -2053,6 +2053,31 @@ action:ArrayOfAction
 	sh:targetClass action:ArrayOfAction ;
 	.
 
+action:Technique
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf core:UcoType ;
+	rdfs:label "Technique"@en ;
+	rdfs:comment "A technique is a class of actions joined by some common characteristics.  uco-action:Technique itself is a metaclass.  A Technique instance is an owl:Class that is a subclass of uco-action:Action."@en ;
+	sh:property
+		[
+			rdfs:comment "This shape confirms a Technique is an eventual subclass of Action.  The Action class itself is not a Technique."@en ;
+			sh:hasValue action:Action ;
+			sh:path [
+				sh:oneOrMorePath rdfs:subClassOf ;
+			] ;
+		] ,
+		[
+			rdfs:comment "This shape will find violations after RDFS or OWL-RL inferencing, but might not find some violations without inferencing."@en ;
+			sh:nodeKind sh:Literal ;
+			sh:path action:techniqueID ;
+		]
+		;
+	sh:targetClass action:Technique ;
+	.
+
 action:action
 	a owl:ObjectProperty ;
 	rdfs:label "action"@en ;
@@ -2212,6 +2237,20 @@ action:subaction
 	rdfs:label "subaction"@en ;
 	rdfs:comment "References to other actions that make up part of a larger more complex action."@en ;
 	rdfs:range action:Action ;
+	.
+
+action:techniqueID
+	a owl:DatatypeProperty ;
+	rdfs:label "techniqueID"@en ;
+	rdfs:comment "An identifier for a technique within some cataloguing system.  At the general level of UCO, techniqueID is left optional and minimally-described aside from needing to be Literal-valued.  Specializations of Technique should also consider specializing a corresponding subproperty of techniqueID to enable support of global review of technique identifiers."@en ;
+	rdfs:domain action:Technique ;
+	.
+
+action:techniqueID-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "This shape enforces that action:techniqueID is only used on Techniques."@en ;
+	sh:class action:Technique ;
+	sh:targetSubjectsOf action:techniqueID ;
 	.
 
 action:trend
@@ -3084,7 +3123,7 @@ core:UcoThing
 		;
 	rdfs:subClassOf owl:Thing ;
 	rdfs:label "UcoThing"@en ;
-	rdfs:comment "UcoThing is the top-level class within UCO."@en ;
+	rdfs:comment "UcoThing is the top-level class for individuals within UCO."@en ;
 	rdfs:seeAlso core:UcoThing-identifier-regex-shape ;
 	sh:sparql [
 		a sh:SPARQLConstraint ;
@@ -3098,6 +3137,16 @@ core:UcoThing
 			        FILTER isBlank ($this)
 			}
 		""" ;
+	] ;
+	sh:targetClass core:UcoThing ;
+	.
+
+core:UcoThing-disjointWith-UcoType-shape
+	a sh:NodeShape ;
+	sh:message "core:UcoThing and core:UcoType are disjoint classes."@en ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class core:UcoType ;
 	] ;
 	sh:targetClass core:UcoThing ;
 	.
@@ -3128,6 +3177,25 @@ core:UcoThing-identifier-regex-shape
 		''' ;
 	] ;
 	sh:targetClass core:UcoThing ;
+	.
+
+core:UcoType
+	a
+		owl:Class ,
+		sh:NodeShape
+		;
+	rdfs:subClassOf owl:Thing ;
+	rdfs:label "UcoType"@en ;
+	rdfs:comment "UcoThing is the top-level class for metaclasses within UCO.  An instance of core:UcoType is also an instance of owl:Class, and is or specializes core:UcoThing."@en ;
+	owl:disjointWith core:UcoThing ;
+	sh:class owl:Class ;
+	sh:property [
+		sh:hasValue core:UcoThing ;
+		sh:path [
+			sh:zeroOrMorePath rdfs:subClassOf ;
+		] ;
+	] ;
+	sh:targetClass core:UcoType ;
 	.
 
 core:confidence
@@ -8225,7 +8293,7 @@ observable:MessageThread
 		sh:NodeShape
 		;
 	rdfs:subClassOf observable:ObservableObject ;
-	rdfs:label "MessageTread"@en ;
+	rdfs:label "MessageThread"@en ;
 	rdfs:comment "A message thread is a running commentary of electronic messages pertaining to one topic or question."@en ;
 	sh:targetClass observable:MessageThread ;
 	.
@@ -13572,7 +13640,7 @@ observable:blockType
 observable:bluetoothDeviceName
 	a owl:DatatypeProperty ;
 	rdfs:label "bluetoothDeviceName"@en ;
-	rdfs:comment "Name configured withing Bluetooth settings on a device."@en ;
+	rdfs:comment "Name configured within Bluetooth settings on a device."@en ;
 	rdfs:range xsd:string ;
 	.
 
@@ -18326,7 +18394,7 @@ types:Thread
 		core:UcoInherentCharacterizationThing
 		;
 	rdfs:label "Thread"@en ;
-	rdfs:comment "A semi-ordered array of items, that can be present in multiple copies.  Implemetation of a UCO Thread is similar to a Collections Ontology List, except a Thread may fork and merge - that is, one of its members may have two or more direct successors, and two or more direct predecessors."@en ;
+	rdfs:comment "A semi-ordered array of items, that can be present in multiple copies.  Implementation of a UCO Thread is similar to a Collections Ontology List, except a Thread may fork and merge - that is, one of its members may have two or more direct successors, and two or more direct predecessors."@en ;
 	owl:disjointWith co:List ;
 	sh:property [
 		sh:class types:ThreadItem ;
