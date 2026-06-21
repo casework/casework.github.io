@@ -27,6 +27,8 @@ custom_css: releases
 
 *(These are changes to ontologies, classes or properties in the preexisting ontology.)*
 
+*  Added CASE `investigation:Investigator` subclasses: Academic, Civil Society, Corporate, Human Rights, Insurance, Intelligence, Law Enforcement, Military, Private, Regulatory ([*CASE GitHub Issue 178*](https://github.com/casework/CASE/issues/178))
+
 
 #### Bug Fixes
 
